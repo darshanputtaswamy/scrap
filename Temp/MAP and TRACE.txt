@@ -1,0 +1,54 @@
+
+=====================================================================================================================================================
+APRIL 4th
+======================================================================================================================================================
+ORACLE 
+
+yiying- analysis
+
+	RAC 
+	- Concepts
+	- Install and  Upgrade
+	- Admin
+	- Performance Tune
+	
+      10g RAC Reference (INTERNAL ONLY) (Doc ID 280216.1)
+	  BI and DI BDE: BUG FILING, ESCALATION AND BACKPORT REQUESTS (Doc ID 559141.1)
+	  Oracle11g Real Application Clusters: Best Practices - Performance Diagnostics and Tuning (INTERNAL ONLY) (Doc ID 786048.1)
+	  Troubleshooting 10g and 11.1 Clusterware Reboots (Doc ID 265769.1)
+	  Oracle Clusterware 11g Release 2 (11.2) Technical White Paper (INTERNAL ONLY) (Doc ID 1058357.1)
+	  RAC: Frequently Asked Questions (Doc ID 220970.1)
+	  INTERNAL ONLY: (Methodology For) Troubleshooting Oracle RAC Database Performance Issues / Hangs (Doc ID 1495515.1)
+	  11gR2 Clusterware and Grid Home - What You Need to Know (Doc ID 1053147.1)
+	  Master Note: Database Performance Overview (Doc ID 402983.1)
+	
+	Storage
+	- ASM admin
+	  How to Identify and Map the Real Physical Raw Device on Solaris Used as ASM Member or Candidate Disks on RAC or Standalone Configurations. (Doc ID 1911166.1)
+	- Concepts
+	
+	DataBase
+	- WORKSHOP 1
+	- WORKSHOP 2
+
+	Analysis Tool
+	Note.301137.1 OS Watcher Black Box User Guide (Doc ID 301137.1)
+
+	
+ORACLE DOCUMETATIONS(3),STUDENT GUIDE(3).
+All Documents given by Shrikanth
+
+Code School
+Algorithms
+Review 10 SRs 
+       3 TOPCODER Problems
+	   C/C++/Java
+	   
+conciousness 
+
+SOFT SKILLS
+----------------
+English(Grammer)
+Movies
+Writing
+

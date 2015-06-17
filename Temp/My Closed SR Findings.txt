@@ -1,0 +1,115 @@
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CLOSED SR
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+ASM
+3-10246384461- Sun Storage 6180 Hard disk Upgrade
+              
+RAC PERF
+3-10417747991 RAC performance Issue How To Configure Server Side Transparent Application Failover (Doc ID 460982.1)
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASM 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Issue :Database crash when starting with ORA-15081 after one of failgroup was OFFLINE.
+Refers notes  
+SMON Terminates Database Instance with ORA-15081 With Failgroup Down (Doc ID 1316024.1)
+
+How to start up the ASM instance when the spfile is misconstrued or lost ? (Doc ID 1313657.1)	To BottomTo Bottom	
+
+KEY[ PERMISSION; STARTUP ; STICKY BIT:]
+	ASM device error ORA-27041 ORA-15025 ORA-15081 (Doc ID 1487475.1)
+
+KEY [ RAC NOT DETECTING DISK ]
+ASM Is Not Discovery/Detecting New Candidate Disks On Only One RAC Node Of Several Nodes In The Cluster (Too many open files). (Doc ID 1548607.1)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PERFORMANCE
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- NETWORK
+Three significant conditions that indicate when it may be
+necessary to change the UDP socket receive buffer size are when the MTU size has been
+increased, when excessive fragmentation and/or reassembly of packets is observed, and if
+dropped packets or overflows are observed
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ACFS
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Bug 17666234 : TAIL -F COMMAND ON ACFS GOT ERROR
+Check the Linux version and tail --version
+
+Data to collection
+---------------------
+1] strace of tail command
+2]  cat /etc/redhat-release
+3] uname -a
+
+
+The error that you are seeing :
+
+" tail: unrecognized file system type 0x61636673 for `FULL_DB_BKP_030614134616.log'. Reverting to polling.".
+
+This is due to the the kernel coreutils missing the acfs magic number ie 61636673 ( In ASCII is 'acfs').
+There seems to be issues with the version of coreutils that encountered similar errors on several fS.
+
+There is a bug filed for the same issue Bug 17666234 - TAIL -F COMMAND ON ACFS GOT ERROR, which is with development.
+
+Please provide me with the following :
+
+tail --version
+
+rpm -qa | grep coreutils
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+WINODWS
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1] OS Watcher For Windows (OSWFW) User Guide (Doc ID 433472.1)
+2] Generate the Health Check report( HCVE output).  Refer to RDA - Health Check / Validation Engine Guide Note:250262.1
+3] Collect the OS error logs
+
+Because we need information about the resource usage at the system level. when the issue occurs.
+SRDC - High Resource Usage on Windows: Checklist of Evidence to Supply (Doc ID 1927159.1)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+OS UPGRADE
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Note 'RAC and Oracle Clusterware Best Practices and Starter Kit (Linux) [Article ID 811306.1]'
+Note 'Oracle Database (RDBMS) on Unix AIX,HP-UX,Linux,Mac OS X,Solaris,Tru64 Unix Operating Systems Installation and Configuration Requirements Quick Reference (8.0.5 to 11.2) (Doc ID 169706.1)'
+Note 'Requirements for Installing Oracle 11gR2 RDBMS on RHEL6 or OL6 64-bit (x86-64) (Doc ID 1441282.1)'
+
+to determine this.
+
++ Please also note that a relink of all oracle-home's is required if the operating system is modified.
+
+See Note ‘Is It Necessary To Relink Oracle Following OS Upgrade? (Doc ID 444595.1)’ Question #6 How to relink Oracle_Home? to find out how to relink an rdbms-home.
+
+See Note ‘How To Relink The Oracle Grid Infrastructure Standalone (Restart) Installation Or Oracle Grid Infrastructure RAC/Cluster Installation (11.2 or 12c). (Doc ID 1536057.1)’ to relink the grid-home.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+PRODUCT CODE
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+EM  - 1370
+Exadata - 9435 Oracle database appliances 
+
+
+
+

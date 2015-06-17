@@ -1,0 +1,738 @@
+=====================
+INDEX
+=====================
+1.  Transfer Non Technical 
+2.  WIP / Acknowledge SR   UPDATE
+3.  Language Transfer
+4.  Reminder-1,2 for an update / feedback
+5.  New SR creation / Single issue per SR / SR reopen (In case, if CT reports different issue)
+6.  Closing or putting in Auto close
+7.  Sev-1 Request or Raise a priority of SR
+8.  CALL SUMMARY
+9.  How to upload files to FTP site
+10. INT (Awaiting Internal Response)
+11. BUG - When you raise the Bug SR need to be updated with the below
+12. Consulting out of scope
+13. Escalate the bug.
+14. OWC
+15. BACKPORT AND PATCHES
+
+
+=============================================
+
+1. Transfer Non Technical 
++++++++++++++++++++++++++++++
+1.    How to transfer NON-TECHNICAL  SR to HUB
+
+        a.    Non technical categories
+
+                i.    RDA Issue, Media request, Non-English SRs,License issues etc
+
+        b.    Steps to transfer non-technical SR to hub
+
+        1. Set SR Type: Non-Technical
+
+        2. Set Category: Other Non-Technical Questions
+
+        3. Set Sub Category closely matching to customer's question.
+
+        4. Click on Transfer button and select 4th Option which is "transfer to new owner and new group that GRP will identify for me"
+
+        5. No need to change the product line.
+
+        6. Submit the SR for transfer.
+
+        c. Customer need to set filter to see non-technical SR on MOS
+
+        1.Upon login to MOS , click on "Service Request "
+
+        2.You are able to view the pencil Icon in the region where you see the list of SR's.
+
+        3.Click on the pencil Icon and Select " Feedback Only SR's to view the Non technical SR's created .
+
+
+======================================================		
+
+
+2.    WIP / Acknowledge SR   UPDATE
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+       ======
+	   
+		Hi <CT>,
+
+		Your Service Request got assigned to me. I am Darshan from RAC Team who will assist you on this issue now onward.
+
+		Please keep us informed of any urgent milestones or events (Go Live dates, critical issues, etc.) in time so that we may prioritize better. Also,
+		please keep the SR updated with any developments/information exchanges on this issue, which you may have had with other entities concerned with providing you assistance.
+
+		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+		Have a nice day Ahead ………………..
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+
+		If you need assistance during my off-shift hours, please call the Oracle HUB and request for reassignment of this SR.
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+Mgrracpc.zoban@sbi.co.in
+
+
+==============================================================
+
+
+3. Language Transfer
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+		Hi ,
+
+		You want to work in English or Korean? As this Sr is created with language English but content is in Korean.
+
+		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+		Have a nice day Ahead ………………..
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+ 
+=============================================================
+
+
+4.    Reminder-1 for an update / feedback
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+        UPDATE-1
+        =======
+		
+        Hi<Cust_Name>
+
+ 
+        Please review my earlier technical update.
+
+        Please let us know if still you have concerns on this specific issue and we would be glad to clarify those,
+		otherwise if the issue is clarified /resolved then you are kindly requested to provide us with the SR closure confirmation.
+
+        For any other new issues/concerns, please log a new SR.
+
+        In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+        Have a nice day Ahead………………..
+
+		 
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+ 
+
+***
+
+RACCheck-Oracle RAC Industry Best Practices
+RACCheck is a configuration audit tool that we encourage you to run NOW and on a regular basis that confirms and recommends Oracle Best Practices for your Oracle RAC environment. Be sure to download the latest version of RACCheck utility today (Note 1268927.1) and run it regularly!
+
+Database-RAC/Scalability Community
+To discuss this t opic further with Oracle experts and industry peers, we encourage you to review, join or start a discussion in the My Oracle Support Database-RAC/Scalability Community: https://communities.oracle.com/portal/server.pt/community/scalability_rac/253!
+
+Finally,
+Oracle Support strongly recommends that you take further proactive steps to enhance the diagnosability of your environment by installing the following utility,which will allow for better diagnostics and data collection when interacting with Oracle Support: OSWatcher(OSW) is a lightweight series of tools and data collection utility for these purposes.For more info:OSWatcher Black Box User Guide(Includes:[Video]) (Doc ID 301137.1)
+
+ 
+
+ 
+
+		UPDATE 2
+		========
+		
+		
+		Hi <CT>,
+
+		Please update the SR as soon as possible with the current status and/or requested information so we can continue working the issue.
+
+		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+		Have a nice day Ahead ………………..
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+  
+===============================================================================================
+
+
+5.    New SR creation / Single issue per SR / SR reopen (In case, if CT reports different issue)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+        Recently reported issue seems to be different issue and each an every issue needs separate investigation.
+
+        This is to keep a focus on only one issue at a time and it enables us  to accurately analyze the problem areas.
+
+        This also enables us to route your SR to the engineer with the appropriate skills and report findings back to Development.  
+		
+		So, please keep Service request to a single issue. And also request you to create a new SR for recently reported issue. 
+		
+		Please advice, if you need an assistance to create a new SR.
+
+ 
+
+		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+		Have a nice day Ahead ………………..
+
+ 
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+		
+========================================================		
+
+
+6. Closing or putting in Auto close
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		A] AUTO CLOSUE
+		===========
+		 
+		Hi ,
+		We are placing this SR in "Auto Closure" status. We will be waiting for your response on this SR. If there is no re-sponse from you on it then SR will be placed in "Close" status. 
+
+		In case, if you need further assistance on issue reported in this SR, please feel free to update/re-open the SR and we will be more than happy to assist you on this. For any new issues, please raise a new SR.
+
+		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+		It was my pleasure working with you. Have a nice Day
+
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
+
+		B] Closer Confirmation 
+		============================== 
+
+		Hi ,
+
+		Thank you for confirmation on the resolution. I am proceeding with the closure of this issue as per your request. It was my pleasure working with you. Have a nice Day
+
+		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+		 
+		 
+
+		C] Abandoned Customer 
+		======================
+
+
+		Hi ,
+
+		As there is no response from you after several reminders as well, we tried to call you without response. , I assume the issue is resolved so I am proceeding with the closure of this issue.
+
+		If you still required any help, please feel free to reopen the SR and I will glad to assist you.
+
+		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+		It was my pleasure working with you.
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+ 
+============================================================= 
+
+
+7.    Sev-1 Request or Raise a priority of SR
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+        Support is processing your Severity 1 request. Please note that severity 1 is reserved for
+
+        production down issues. To complete this request, please provide the following required information.
+
+      
+
+ 
+
+        ### SEVERITY 1 REQUEST TEMPLATE #####
+
+        can you easily recover from,  bypass or work around the problem?
+
+        Does your system or application  continue normally after the problem occurs?
+
+        Are the standard features  of the system or application still available; is the loss of service minor? 
+
+        Is this a Data Corruption issue? 
+
+        Do you have a Complete Loss  of Service?
+
+        Is this a Test or Production Environment?
+
+        Are  you unable to proceed with implementation and the go live date is in  less than  3 days?
+
+        ALL PHONE NUMBERS SHOULD INCLUDE THE COUNTRY CODE AND AREA  CODE.
+
+        
+
+        Customers Management name:
+
+        Customer's Management 24x7 contact  number:
+
+        Primary Customer contact name
+
+        Current Customer 24x7 voice phone  number
+
+        Current Customer Email address:
+
+        Current Customer Pager/Fax  number:
+
+        Secondary Contact Name:
+
+        Secondary Contact Phone number: 
+
+        Secondary Contact Email:
+
+      
+
+        ########################################
+
+ 
+
+======================================================= 
+
+
+8.    CALL SUMMARY
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+       Called <customer_name> on <compelte phone no>
+
+        (In case, if you are unable to reach to CT, use one of below appropriately
+
+            - It is just ringing, no one is attending
+
+            - Getting continuous engage tone
+
+            - Left voice message)
+
+ 
+
+        Call Conversation :
+
+          
+
+        Action on Customer:
+
+ 
+
+        Action on Support:
+
+ 
+
+========================================================= 
+
+
+9.  How to upload files to FTP site
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+        Request you to upload all requested files to ftp.oracle.com using ftp.
+
+        FTP IP address: ftp.oracle.com
+
+        USERID: anonymous
+
+        PASSWORD: your_complete_email id (ex: abc@xyz.com - note you need
+
+                                             to ensure '@' is present)
+
+ 
+
+        TO UPLOAD FILES:
+
+ 
+
+        1. Change to directory, for example:
+
+        ftp> cd support/incoming
+
+        (Or may use your competency/incoming, ie, apps, svrtech, etc)
+
+        2. Make a directory named with your current tar number:
+
+        ftp> mkdir <SR#>
+
+        3. Change into that new directory:
+
+        ftp> cd <SR#>
+
+        4. Set the transfer type to binary
+
+        ftp> binary [or bin]
+
+        5. Upload the files
+
+        ftp> put file_name or mput *
+
+ 
+
+        Please note that uploading a file in this fashion does not notify the analyst.
+
+        So, you must update the SR with the full directory path where you have uploaded the file(s) so that the analyst assigned to your SR can
+
+        retrieve the files.
+
+ 
+
+        Reference : Note 77483.1   External Support FTP site: Information Sheet
+
+ 
+
+		External Support FTP site: Information Sheet (Doc ID 77483.1)
+
+		Basically one ftp to this site  ftp.oracle.com login as anonymous/<any password>
+		mkdir under incoming/SR# & upload the files
+
+		 
+
+		(12:33:23 PM) rajendra.k.gupta@oracle.com: open ftp.oracle.com
+
+		username:shidhar
+		pwd:Neeru123
+		(12:42:04 PM) rajendra.k.gupta@oracle.com: /ftp/anonymous/support/
+
+ 
+
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+=================================================================
+
+
+10. INT (Awaiting Internal Response)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+        I am seeking help internally on this issue, please standby. 
+
+ 
+
+        I have sent an email to our internal help group, and awaiting for their feedback.
+
+ 
+
+        Will update you as soon as I have an useful information to share with you.
+
+ 
+
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+		
+
+==========================================================================
+
+
+11. BUG - When you raise the Bug SR need to be updated with the below
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+    I have raised / updated the bug <bug$> opened for this case with the information you have provided and now we are awaiting reply in bug from BDE.
+
+    I will keep you informed soon as I hear back from BDE person working on this bug.
+
+ 
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
+		
+=======================================================================		
+
+
+12. Consulting out of scope
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=+
+ 
+
+		Support can provide only sample setup example or troubleshoot installations and existing configurations
+		Oracle Consulting can evaluate your site's needs and recommend a configuration for you.
+		Oracle Consulting does offer this service. You can contact Consulting through your Sales Representative or
+		Refer to the following URL for the numbers to call:
+		http://www.oracle.com/support/contact.html
+
+
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+		
+		OR
+
+		Oracle Support cannot make any hardware recommendations (beyond the minimum requirements noted in the RAC documentation). 
+		I understand that what you are looking for is a recommendation from Oracle on exactly what hardware is best.  This is not a 
+		function of Oracle Support.  Oracle Support can troubleshoot installations and existing configurations.  Oracle Consulting 
+		can evaluate your site's needs and recommend a configuration for you. Oracle Consulting does offer this service.  You can contact 
+		Consulting through your Sales Representative or if you do nothave this contact information we can find it for Refer to the following
+		URL for the numbers to call:http://www.oracle.com/support/contact.html
+
+		
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+ 
+ 
+===============================================
+
+
+13. Escalate the bug.
++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+		1. Does this bug affect a production or test or Dev instance?
+		<<we know this is affecting a Test instance due to your previous update>>
+
+		2. If this bug affects a major milestone:
+		a. Milestone Date:
+		b. Name of Milestone:
+		c. How will the you be impacted if the milestone is not reached by this date?
+		d. How does this Bug adversely impact the your ability to reach this milestone?
+
+		3. If this bug does not affect a major milestone:
+		a. What is the negative impact of bug to the your system?
+		(please provide specific details / examples)
+
+		b. How does this bug's negative impact affect the your business?
+		(please provide specific details / examples)
+
+		4. Is there a clear step-by-step workaround mentioned in the bug?
+
+		5. If there is a clear workaround, why is this not feasible for you?
+
+		6. Have you created a own workaround? If so, what is it?
+
+		7. Are you unable to release the application? or is it already on production?
+
+
+		Ref: How To Write A Business Case (Doc ID 392393.1)
+
+
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+ 
+
+ 
+==============================================================
+
+
+14. OWC
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		I would like to collaborate with you in a Web Conference (OWC) to progress your
+		issue. Please follow these steps:
+
+		NOTE: IT IS MANDATORY TO DISABLE ALL POP-UP BLOCKERS WITH YOUR INTERNET
+		EXPLOERE (OR ANY BROWSER) BEFORE YOU START THE CONFERENCE.
+
+		1. Please open the following:
+
+		http://strtc.oracle.com
+
+		2. On the right pane, please find the "Join Conference" option, and provide the
+		following details:
+
+		  Enter the Conference ID: 9335644
+		  Enter the Conference Key as your CSI#. 14506394
+		  Enter your name.
+
+		3. Please click on "Join Conference" to join this collaboration session
+
+ 
+
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+		
+===========================================================================
+
+15 . BACKPORT AND PATCHES
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+
+		To file a back port please provide/confirm the following information
+
+		 
+
+		1.Milestone Name and Date if any?
+
+		2.Technical Impact
+
+		3.Business Impact
+
+
+		To obtain the patches , I will need the following questions answered before this will be considered.
+
+		 
+		1.) Business Justification - Please explain the effect this has on your business..monetarily or otherwise.
+
+		2.) Technical Justification - Explain what you must do technically to overcome this problem if this is possible. If a workaround exists, please explain in detail why this workaround cannot b used until the problem is fixed.
+
+		3.) Date when the fix is needed. (Note: ASAP is not acceptable, a fixed date is required.)
+
+		4.) Provide a list of any other patches which you have applied or you need to apply on top of 10.2.0.4 using opatch with the following syntax:
+
+			opatch lsinventory -details
+
+		5.) Platform for the required patches
+
+		 
+		 
+		 
+		To download the patch, please follow the steps below:
+
+		1- Go to MOS
+
+		2- Go to the tab "Patches and updates"
+
+		3- choose simple search
+
+		4- enter your patch number 9008904
+
+		5- select the platform IBM AIX on POWER Systems (64-bit)
+
+		6- press go then download the patch
+
+		7- Read any applicable notes before downloading, then click the Download button.
+
+		Note: Please review the Readme file for instructions on how to install the patch set.
+
+
+		Have a nice Day
+
+		Thanks & Regards,
+		Darshan P
+		Global Customer Support
+		Desk Phone:+918041072121
+
+		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+		Contact number of HUB : http://www.oracle.com/support/contact.html
+		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
+
+ 
+
+ 

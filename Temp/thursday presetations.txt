@@ -1,0 +1,9 @@
+Upstart concepts in linux 6 and 7
+exclusive mode of starting CSSD to put voting disk and OCR
+syslogd must be up and OHASD to starting
+
+shanmuga.sundar.a@oracle.com
+
+
+
+

@@ -1,0 +1,719 @@
+ OPatch.ORACLE_HOME=/oracle/app/oracrs/oracrsdb/crs11g
+   oracle.installer.invPtrLoc=/oracle/app/oracrs/oracrsdb/crs11g/oraInst.loc
+   oracle.installer.oui_loc=/oracle/app/oracrs/oracrsdb/crs11g/oui
+   oracle.installer.library_loc=/oracle/app/oracrs/oracrsdb/crs11g/oui/lib/linux
+   oracle.installer.startup_location=/oracle/app/oracrs/oracrsdb/crs11g/oui
+   OPatch.PLATFORM_ID=
+   os.name=Linux
+   OPatch.NO_FUSER=
+   OPatch.SKIP_VERIFY=null
+   OPatch.SKIP_VERIFY_SPACE=null
+   oracle.installer.clusterEnabled=false
+   TRACING.ENABLED=TRUE
+   TRACING.LEVEL=2
+   OPatch.DEBUG=true
+   OPATCH_VERSION=11.1.0.12.5
+   Bundled OPatch Property File=properties
+   Minimum OUI version: 10.2
+   OPatch.PATH=/usr/local/bin:/usr/bin:/usr/X11R6/bin:/bin:/usr/games:/opt/gnome/bin:/usr/lib/mit/bin:/usr/lib/mit/sbin:/opt/nsr:/oracle/app/emagt/admin/bin:/oracle/app/emagt/admin/scripts:/opt/nsr
+Stand-Alone home : false
+   OPatch.MW_HOME=
+   OPatch.WL_HOME=
+   OPatch.COMMON_COMPONENTS_HOME=
+
+
+Environment:
+   OPatch.ORACLE_HOME=/oracle/app/oracrs/oracrsdb/crs11g
+   oracle.installer.invPtrLoc=/oracle/app/oracrs/oracrsdb/crs11g/oraInst.loc
+   oracle.installer.oui_loc=/oracle/app/oracrs/oracrsdb/crs11g/oui
+   oracle.installer.library_loc=/oracle/app/oracrs/oracrsdb/crs11g/oui/lib/linux
+   oracle.installer.startup_location=/oracle/app/oracrs/oracrsdb/crs11g/oui
+   OPatch.PLATFORM_ID=
+   os.name=Linux
+   OPatch.NO_FUSER=
+   OPatch.SKIP_VERIFY=null
+   OPatch.SKIP_VERIFY_SPACE=null
+   oracle.installer.clusterEnabled=false
+   TRACING.ENABLED=TRUE
+   TRACING.LEVEL=2
+   OPatch.DEBUG=true
+   OPATCH_VERSION=11.1.0.12.5
+   Bundled OPatch Property File=properties
+   Minimum OUI version: 10.2
+   OPatch.PATH=/usr/local/bin:/usr/bin:/usr/X11R6/bin:/bin:/usr/games:/opt/gnome/bin:/usr/lib/mit/bin:/usr/lib/mit/sbin:/opt/nsr:/oracle/app/emagt/admin/bin:/oracle/app/emagt/admin/scripts:/opt/nsr
+Stand-Alone home : false
+   OPatch.MW_HOME=
+   OPatch.WL_HOME=
+   OPatch.COMMON_COMPONENTS_HOME=
+
+
+
+Oracle Home       : /oracle/app/oracrs/oracrsdb/crs11g
+Central Inventory : /oracle/app/oracrs/oracrsoi
+   from           : /oracle/app/oracrs/oracrsdb/crs11g/oraInst.loc
+OPatch version    : 11.1.0.12.5
+OUI version       : 11.1.0.7.0
+Log file location : /oracle/app/oracrs/oracrsdb/crs11g/cfgtoollogs/opatch/opatch2015-04-23_15-38-46PM_1.log
+
+
+---
+
+Hello Gaurabh - 
+
+
+   Result info: <CV_CMD>/oracle/app/oracrs/oracrsdb/crs11g/OPatch/opatch lsinv -oh /oracle/app/oracrs/oracrsdb/crs11g </CV_CMD>
+   <CV_VAL>Invoking OPatch 11.1.0.6.2
+   Oracle Interim Patch Installer version 11.1.0.6.2
+   Copyright (c) 2007, Oracle Corporation.  All rights reserved.
+   Oracle Home       : /oracle/app/oracrs/oracrsdb/crs11gCentral 
+   Inventory : /oracle/app/oracrs/oracrsoi   
+   from           : /etc/oraInst.loc
+   OPatch version    : 11.1.0.6.2
+   OUI version       : 11.1.0.7.0
+   OUI location      : /oracle/app/oracrs/oracrsdb/crs11g/ouiLog 
+   file location : /oracle/app/oracrs/oracrsdb/crs11g/cfgtoollogs/opatch/opatch2015-04-20_15-59-48PM.log
+   Inventory load failed... 
+   OPatch cannot load inventory for the given Oracle Home.
+   LsInventorySession failed: LsInventory cannot create the log directory /oracle/app/oracrs/oracrsdb/crs11g/cfgtoollogs/opatch/lsinv/lsinventory2015-04-20_15-59-48PM.txt
+   OPatch failed with error code 73</CV_VAL><CV_VRES>73</CV_VRES><CV_LOG>Exectask: RunGenCmd successful</CV_LOG><CV_ERES>0</CV_ERES>
+
+
+
+Result info: <CV_CMD>/oracle/app/oracrs/oracrsdb/crs11g/OPatch/opatch lsinv -oh /oracle/app/oracrs/oracrsdb/crs11g 
+</CV_CMD><CV_VAL>Invoking OPatch 11.1.0.6.2
+Oracle Interim Patch Installer version 11.1.0.6.2
+Copyright (c) 2007, Oracle Corporation.  All rights reserved.
+Oracle Home       : /oracle/app/oracrs/oracrsdb/crs11gCentral 
+Inventory : /oracle/app/oracrs/oracrsoi   
+from           : /etc/oraInst.loc
+OPatch version    : 11.1.0.6.2
+OUI version       : 11.1.0.7.0
+OUI location      : /oracle/app/oracrs/oracrsdb/crs11g/oui
+Log file location : /oracle/app/oracrs/oracrsdb/crs11g/cfgtoollogs/opatch/opatch2015-04-20_15-59-48PM.log
+Lsinventory Output file location : /oracle/app/oracrs/oracrsdb/crs11g/cfgtoollogs/opatch/lsinv/lsinventory2015-04-20_15-59-48PM.txt
+
+ kgdsdst() clssscExit() clssgmclientlsnr()+  call clssscthrdmain()+28 __pthread_bound_body  clssscthrdmain
+ 
+ 
+ 
+nrd-oradb-01:~$ ifconfig -a
+lo0: flags=2001000849<UP,LOOPBACK,RUNNING,MULTICAST,IPv4,VIRTUAL> mtu 8232 index 1
+       inet 127.0.0.1 netmask ff000000
+dbipmp0: flags=108001000843<UP,BROADCAST,RUNNING,MULTICAST,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.11 netmask ffffff00 broadcast 10.1.47.255
+       groupname dbipmp0
+dbipmp0:1: flags=108001040843<UP,BROADCAST,RUNNING,MULTICAST,DEPRECATED,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.21 netmask ffffff00 broadcast 10.1.47.255
+dbipmp0:4: flags=108001000843<UP,BROADCAST,RUNNING,MULTICAST,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.53 netmask ffffff00 broadcast 10.1.47.255
+dbipmp0:5: flags=108001000843<UP,BROADCAST,RUNNING,MULTICAST,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.51 netmask ffffff00 broadcast 10.1.47.255
+	   
+
+
+dbipmp0: flags=108001000843<UP,BROADCAST,RUNNING,MULTICAST,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.11 netmask ffffff00 broadcast 10.1.47.255
+       groupname dbipmp0
+dbipmp0:1: flags=108001040843<UP,BROADCAST,RUNNING,MULTICAST,DEPRECATED,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.21 netmask ffffff00 broadcast 10.1.47.255
+dbipmp0:2: flags=108001040843<UP,BROADCAST,RUNNING,MULTICAST,DEPRECATED,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.53 netmask ffffff00 broadcast 10.1.47.255
+dbipmp0:3: flags=108001040843<UP,BROADCAST,RUNNING,MULTICAST,DEPRECATED,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.51 netmask ffffff00 broadcast 10.1.47.255
+
+
+dbipmp0: flags=108001000843<UP,BROADCAST,RUNNING,MULTICAST,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.12 netmask ffffff00 broadcast 10.1.47.255
+       groupname dbipmp0
+dbipmp0:1: flags=108001040843<UP,BROADCAST,RUNNING,MULTICAST,DEPRECATED,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.22 netmask ffffff00 broadcast 10.1.47.255
+dbipmp0:2: flags=108001040843<UP,BROADCAST,RUNNING,MULTICAST,DEPRECATED,IPv4,IPMP,PHYSRUNNING> mtu 1500 index 2
+       inet 10.1.47.52 netmask ffffff00 broadcast 10.1.47.255
+(truncated)
+
+	   
+	   
+	   
+Hi APMM,
+ 
+Refer to se section includes the following procedures to delete nodes from clusters in an
+Oracle RAC environment:
+■ Deleting Instances from Oracle RAC Databases
+■ Removing Oracle RAC
+■ Deleting Nodes from the Cluster
+
+http://docs.oracle.com/cd/E11882_01/rac.112/e41960/adddelunix.htm#RACAD7358
+oracle     20316196   1.2  14.1 grid            Sios          0  % Used     53
+oraroota   15663228   1.0  34.8 root                             % Free     47
+osysmond    7864560   1.0 100.7 root            NFS (calls/sec)
+oraagent   22216744   1.0  60.4 oracle          SerV2         0  WPAR Activ     0
+oracle     40173688   0.6  12.8 grid            CliV2         0  WPAR Total     0
+ocssd.bi   15270038   0.5 112.4 grid            SerV3         0  Press: "h"-help
+oracle     18415700   0.5  24.6 oracle          CliV3         0         "q"-quit
+oraagent   17891542   0.4  91.3 grid
+crsd.bin   15138858   0.4  81.8 root
+oracle     13369378   0.4  15.6 oracle
+oracle     30802054   0.3  14.2 grid
+nfssync_    4784278   0.3   0.7 root
+oracle     11075586   0.3  30.7 oracle
+crsd.bin ocssd.bin oraagent osysmond 
+3-7241330431
+
+Bug 9581000 : ASM DISKGROUP BEING DISMOUNTED BECAUSE OF ERROR: CACHE FAILED TO READ
+
+lrwxrwxrwx   1 oracle   oinstall      67 Feb 17  2012 c3t60080E50002C121C0000026E4F3D86E4d0s3 -> ../../devices/scsi_vhci/ssd@g60080e50002c121c0000026e4f3d86e4:d,raw
+lrwxrwxrwx   1 oracle   oinstall      67 Feb 17  2012 c3t60080E50002C121C0000026E4F3D86E4d0s4 -> ../../devices/scsi_vhci/ssd@g60080e50002c121c0000026e4f3d86e4:e,raw
+lrwxrwxrwx   1 oracle   oinstall      67 Feb 17  2012 c3t60080E50002C121C0000026E4F3D86E4d0s5 -> ../../devices/scsi_vhci/ssd@g60080e50002c121c0000026e4f3d86e4:f,raw
+lrwxrwxrwx   1 oracle   oinstall      67 Feb 17  2012 c3t60080E50002C121C0000027A4F3D895Cd0s3 -> ../../devices/scsi_vhci/ssd@g60080e50002c121c0000027a4f3d895c:d,raw
+lrwxrwxrwx   1 oracle   oinstall      67 Feb 17  2012 c3t60080E50002C121C0000027A4F3D895Cd0s4 -> ../../devices/scsi_vhci/ssd@g60080e50002c121c0000027a4f3d895c:e,raw
+ 
+ c3t60080E50002C121C0000027A4F3D895Cd0s3
+ c3t60080E50002C121C0000026E4F3D86E4d0s5
+ c3t60080E50002C121C0000026E4F3D86E4d0s3
+ c3t60080E50002C121C0000026E4F3D86E4d0s4
+
+ 
+ 
+NOTE: initializing header on grp 2 disk TEST_0000
+kfdp_dismount(): 4
+kfdp_dismountBg(): 4
+NOTE: erasing header on grp 2 disk TEST_0000
+kfdp_dismount(): 5
+kfdp_dismountBg(): 5
+NOTE: De-assigning number (2,0) from disk (/dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s4)
+ERROR: diskgroup TEST was not created
+ORA-15018: diskgroup cannot be created
+ORA-15020: discovered duplicate ASM disk "TEST_0000"
+ERROR: create diskgroup test external redundancy disk '/dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s4'
+2015-03-10 11:00:43.759000 +08:00
+SQL> create diskgroup test2 external redundancy disk '/dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s4'
+NOTE: Assigning number (2,0) to disk (/dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s4)
+NOTE: initializing header on grp 2 disk TEST2_0000
+kfdp_dismount(): 6
+kfdp_dismountBg(): 6
+NOTE: erasing header on grp 2 disk TEST2_0000
+kfdp_dismount(): 7
+kfdp_dismountBg(): 7
+NOTE: De-assigning number (2,0) from disk (/dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s4)
+ERROR: diskgroup TEST2 was not created
+ORA-15018: diskgroup cannot be created
+ORA-15020: discovered duplicate ASM disk "TEST2_0000"
+ERROR: create diskgroup test2 external redundancy disk '/dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s4'
+
+ 
+ ZT_0000            MEMBER              /dev/rdsk/c3t60080E50002C121C0000027A4F3D895Cd0s3
+                         CANDIDATE         /dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s4
+                         CANDIDATE         /dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s3
+                         CANDIDATE         /dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s6
+                         CANDIDAT          /dev/rdsk/c3t60080E50002C121C0000026E4F3D86E4d0s5 
+ 
+ 
+Summary: We are observing high SWAP utilization RAC environment. Attached is the TOPAS output.
+
+Kindly let usknow what all logs are required to troubleshoot the issue further.
+
+ SR - 3-10374945511
+ ------------------------------------------------------------------------------------------------------------------------------
+ ( owner ='USERNAME@RACLE.COM' AND status='Open' AND (sub-Status='New' OR sub-Status='Work In Progress' 
+ OR sub-Status='Review Update' OR sub-Status='Review Defect' OR sub-Status='Reveiw Task' or sub-Status='Awaiting Internal Response' 
+ or sub-Status='Development Working'))  OR (status='Open' AND  nextResponseDue <=  %%SERVER_TIME(36)%% and owner ='USERNAME@ORACLE.COM' )  
+------------------------------------------------------------------------------------------
+OS Watcher and CHM is for 11.2
+Only OS watcher is for below 11.1
+-----------------------------------------------------------------------------------------------
+
+Summary:
+We are observing high SWAP utilization RAC environment. 
+Attached is the TOPAS output.
+
+
+SR: 3-10246384461
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Solution 1:  Conditions :  They should not be using ACFS;  Require down time
+
+From the OS side check what all partitions are been made to the exiting disk.
+the fdisk command is used to display and manipulate the partitions.
+
+If you still have free space in the exiting disk we can create new partitions
+we can add it to the exiting disk group in a rolling fashion.
+
+ref : How to resize a physical disk or LUN and an ASM DISKGROUP (Doc ID 311619.1)
+
+The purpose of this document is to provide the steps required to resize a physical disk
+or LUN at the operating system level and subsequently resize the diskgroup using the new space.
+
+
+Solution 2:  Do not require down time.
+
+In order to begin we would need to make sure that the Disks are visible to the OS
+and formatted correctly as ASM Disks.
+
+Example
+
+1) Create a new partition on the /dev/sdb disk as follow:
+# fdisk /dev/sdX
+
+2) You will see the new partition:
+# ls -l /dev/sdX
+brw-rw---- 1 root disk 8, 16 Sep 18 05:03 /dev/sdX
+brw-rw---- 1 root disk 8, 17 Sep 18 05:03 /dev/sdX1
+
+3) Then update the partition table with the new partition:
+# /sbin/partprobe /dev/sdX1
+
+4) Create the ASMLIB disk on the new partition:
+# /etc/init.d/oracleasm createdisk VOL01 /dev/sdX1
+
+5) Scan the disks (on all the nodes if RAC):
+#/etc/init.d/oracleasm scandisks
+Scanning system for ASM disks: OK ]
+
+6) Make sure the disks can be listed :
+#/etc/init.d/oracleasm listdisks
+VOL1_10G
+
+3) Query each disks:
+#/etc/init.d/oracleasm querydisk VOL1_10G
+Disk "VOL1_10G" is a valid ASM disk on device [3, 18]
+
+4) Check if they exist at OS level:
+#ls -l /dev/oracleasm/disks/VOL1_10G
+brw-rw---- 1 oracle dba 3, 18 Aug 13 09:54 /dev/oracleasm/disks/VOL1_10G
+
+The disks should now be detected with out any problems.
+
+If you have any further questions or concerns update the SR and we would gladly assist.
+If any further ASM issues persist let us know in order for the case to be transferred over to ASM.
+
+I would like to provide as reference the following Documents.
+How To Add a New Disk(s) to An Existing Diskgroup on RAC Cluster or Standalone ASM Configuration (Best Practices). (Doc ID 557348.1)
+ASM is Unable to Detect ASMLIB Disks/Devices. (Doc ID 457369.1)
+Unable To Create ASMLIB Disk (Doc ID 743949.1)
+
+Solution 
+
+SR: 3-10246384461
+
+Summary : 
+Once the new hard disk is inserted, can we simply increase size of the existing partition?
+or does the new added hard disk has to be on a different partition?
+
+If yes, do you have any documentation on how to do this.
+
+***INTERNAL ONLY*** Creating a New ASM Disk Header After Existing One Is Corrupted (Doc ID 417687.1)***INTERNAL ONLY*** Creating a New ASM Disk Header After Existing One Is Corrupted (Doc ID 417687.1)
+----------------------------------------------------------------------------------------------------------
+handled by Nethravathi
+Collab  SR: 3-10296319930  
+ 
+Summary:  In the process of stopping database using srvctl command, it failed with cannot communicate with crsd:
+PRCR-1079 : Failed to start resource ora.ebsd.db Cannot communicate with crsd ...
+Tue Feb 17 09:48:16 PST 2015: Database Status PRCD-1027 : Failed to retrieve database EBSD
+PRCR-1115 : Failed to find entities of type resource that match filters ((NAME == ora.ebsd.db) &&
+(TYPE == ora.database.type)) and contain attributes VERSION,ORACLE_HOME,DATABASE_TYPE
+Cannot communicate with crsd
+
+Date: 5/3/2015
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-=----------------------------------------------------------------------------------------------------------------------------------------------------
+
+	 
+    In the Patch Search section, click the Search tab.
+	
+    Enter 13390677 in the Patch Name or Number field.
+    Select a platform to download from the drop-down list.
+    Click Search.
+
+    In the Patch Search Results page, under Patch Name, click the patch number to display the patch details.
+    Click Download.
+	From the File Download window, click each file name to download the selected software.
+    
+	Table 1 Installation Types and Associated Zip Files
+    Installation Type     Zip File
+    Oracle Database (includes Oracle Database and Oracle RAC)
+	
+    Note: you must download both zip files to install Oracle Database.   
+    p13390677_112040_platform_1of7.zip
+    p13390677_112040_platform_2of7.zip
+
+    Oracle Grid Infrastructure (includes Oracle ASM, Oracle Clusterware, and Oracle Restart)
+    p13390677_112040_platform_3of7.zip
+	
+	
+How to Upgrade to Oracle Grid Infrastructure 11g Release 2
+http://docs.oracle.com/cd/E11882_01/install.112/e48294/procstop.htm#CWAIX372
+
+
+after upgrading to 11.2.0.4.0 update 
+
+Note:19955028.8 11.2.0.4.5 (Jan 2015) Grid Infrastructure Patch Set Update (GI PSU) Yes Patch:19955028 <<----------(((( For Clusterware
+Note:20132580.8 Combo of 11.2.0.4.2 OJVM PSU and 11.2.0.4.5 DB PSU (Jan 2015) Part Patch:20132580<<-----------(((( For Database
+
+
+1. Grid Infrastructure (ASM as well) and CPU Patches
+Things to Consider Before Upgrading to 11.2.0.3/11.2.0.4 Grid Infrastructure/ASM (Doc ID 1363369.1)
+Alternative Way To Upgrade An ASM Standalone Configuration From Release 11.2.0.<#> to release 11.2.0.<#>. (Doc ID 1434351.1)
+2. Oracle Database Patch Set and CPU Patches
+
+
+
+If you have GI/ASM then you need to upgrade it first.
+
+- Things to Consider Before Upgrading to 11.2.0.3/11.2.0.4 Grid Infrastructure/ASM (Doc ID 1363369.1)
+- Alternative Way To Upgrade An ASM Standalone Configuration From Release 11.2.0.<#> to release 11.2.0.<#>. (Doc ID 1434351.1)
+
+after upgrading to 11.2.0.4.0 please allply the the below patch set for your grid home.
+Note:19955028.8 11.2.0.4.5 (Jan 2015) Grid Infrastructure Patch Set Update (GI PSU) Yes Patch:19955028 <<----------(((( For Clusterware
+
+
+Following are the high level outlined action for upgrading your database from 11.2.0.3 to 11.2.0.4.
+
+1. Shutdown Primary and Standby database
+2. Stop all listeners, agents on all nodes. Also ASM if applicable
+3. Install new release of Oracle Software in new Oracle home on Standby and Primary
+4. Restart all listener, agents
+5. startup Mount standby (upgraded version)
+6. Start redo apply on standby
+7. Upgrade the Primary database
+8. Physical standby database(s) will be upgraded when the redo generated by the primary database as it is upgraded is applied.
+9. Open the Upgraded Primary database
+
+Upgrade completed.
+
+There is an whitepaper on Database Rolling Upgrades Made Easy by Using a Data Guard Physical Standby Database
+
+http://www.oracle.com/au/products/database/maa-wp-11g-upgrades-made-easy-131972.pdf
+
+For rolling upgrade please refer the below documents.
+
+Things to Consider Before Upgrading to 11.2.0.3/11.2.0.4 Grid Infrastructure/ASM (Doc ID 1363369.1)
+
+11.2.0.1/11.2.0.2 to 11.2.0.3 Grid Infrastructure and Database Upgrade on Exadata Database Machine (Doc ID 1373255.1)
+
+http://docs.oracle.com/cd/E11882_01/server.112/e25608/rollup.htm#SBYDB4884
+
+http://docs.oracle.com/cd/E11882_01/server.112/e41134.pdf
+Appendix 'B' Upgrading and Downgrading Databases in a Data Guard Configuration
+
+
+
+
+If you are not using JAVAVM component apply
+Note:19955028.8 11.2.0.4.5 (Jan 2015) Grid Infrastructure Patch Set Update (GI PSU) Yes Patch:19955028
+Note:19769489.8 11.2.0.4.5 (Jan 2015) Database Patch Set Update (DB PSU) Yes Patch:19769489 
+	
+	
+Let us know if you need further assistance on this.
+
+
+
+Note 1194734.1 : Where do I find that on My Oracle Support (MOS) [Video]
+Note 549617.1 : How To Verify The Integrity Of A Patch/Software Download? [Video]
+Note 169706.1 : Oracle Database Installation and Configuration Requirements Quick Reference (8.0.5 to 11.2)
+Note 551141.1 : Database Server Upgrade/Downgrade Compatibility Matrix
+
+
+2. Finish the post installation steps as per the patchset README (readme.html).
+
+
+
+Reference:
+Oracle Database Upgrade Path Reference List (Doc ID 730365.1)
+
+I hope this answers your query
+
+
+And then refer below note for Db upgrade.
+Complete checklist for out-of-place manual upgrade from previous 11.2.0.N version to the latest 11.2.0.N patchset. (Doc ID 1276368.1)
+
+The primary and physical standby can't be on different patch versions. This is not supported. Please review the procedure of using logical standby to rolling upgrade database which takes minimum downtime.
+http://www.oracle.com/technetwork/database/features/availability/maa-wp-11g-transientlogicalrollingu-1-131927.pdf
+Using logical standby to rolling upgrade database from 11.1 to 11.2 (Doc ID 1557249.1) - An example of moving from 11.1 to 11.2
+
+
+New SR : 3-10321717211 
+Summary: Oracle Database from 11.2.0.3.0 to 11.2.0.4.0
+----------------
+In multipath.conf file ,what is defined for parameters below,
+no_path_retry ==>> it should be queue to ensure queueing should not stop until the path is fixed.
+Please upload the multipath.conf file for further analysis
+Rakesh
+SR:3-10321448851 
+Summary: ASM 11.2.0.3 not using multi pathing correctly
+
+--------------
+1] Select GROUP_NUMBER,NAME,STATE from V$ASM_DISKGROUP
+2] Select GROUP_NUMBER ,DISK_NUMBER, MOUNT_STATUS,HEADER_STATUS,MODE_STATUS,STATE,REDUNDANCY,NAME,PATH from V$ASM_DISK
+3]show show parameter ASM_DISK
+
+New SR:3-10318647901 
+Summary: ASM Disk String
+
+Date: 2/24/2015
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-=----------------------------------------------------------------------------------------------------------------------------------------------------
+Note.301137.1 OS Watcher Black Box User Guide (Doc ID 301137.1)
+ORAchk - Health Checks for the Oracle Stack (Doc ID 1268927.2)
+LINUX: POOR RAC-INTERCONNECT PERFORMANCE AFTER UPGRADE FROM RHEL3 TO RHEL4/OEL4 (Doc ID 400959.1)
+If running EL4, it is highly recommended that the system be patched to a minimum version of EL 4.7
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+	DISK GROUP     VOLUME SPACE 
+	EXPO_ITCRS124  EXPORT 280
+	OCRS_ITCRS124  OCRS   1
+	
+	If you Database is using JAVAVM component
+Note:19955028.8 11.2.0.4.5 (Jan 2015) Grid Infrastructure Patch Set Update (GI PSU) Yes Patch:19955028 <<----------(((( For Clusterware
+Note:20132580.8 Combo of 11.2.0.4.2 OJVM PSU and 11.2.0.4.5 DB PSU (Jan 2015) Part Patch:20132580<<-----------(((( For Database
+
+If you are not using JAVAVM component apply
+Note:19955028.8 11.2.0.4.5 (Jan 2015) Grid Infrastructure Patch Set Update (GI PSU) Yes Patch:19955028
+Note:19769489.8 11.2.0.4.5 (Jan 2015) Database Patch Set Update (DB PSU) Yes Patch:19769489 
+	
+	How to Identify and Diagnostic ASM Disk Overlapping by an OS Filesystem (ASM Disk Overlapping : Scenario #3) (Doc ID 1934304.1)
+	16281803
+152010   : 2015-04-09 17:52:41.899550 :    CSSD:74: calling              call     entry                argument values in hex
+152011   : 2015-04-09 17:52:41.899561 :    CSSD:74: location             type     point                (? means dubious value)
+152012   : 2015-04-09 17:52:41.899568 :    CSSD:74: -------------------- -------- -------------------- ----------------------------
+152013   : 2015-04-09 17:52:41.930729 :    CSSD:74: clssscExit()+1014    call     kgdsdst()            FFFFFD7FF4CF5C50 ?
+152014   : 2015-04-09 17:52:41.930751 :    CSSD:74:                                                    000000001 ?
+152015   : 2015-04-09 17:52:41.930762 :    CSSD:74:                                                    FFFFFD7FFB993ECE ?
+152016   : 2015-04-09 17:52:41.930777 :    CSSD:74:                                                    FFFFFD7FF4CCFBB8 ?
+152017   : 2015-04-09 17:52:41.930787 :    CSSD:74:                                                    FFFFFD7FF4CD3150 ?
+152018   : 2015-04-09 17:52:41.930794 :    CSSD:74:                                                    FFFFFD7FF4CCF398 ?
+152019   : 2015-04-09 17:52:41.930823 :    CSSD:74: clssnmeventhndlr()+  call     clssscExit()         0027B8590 ? 000000002 ?
+152020   : 2015-04-09 17:52:41.930833 :    CSSD:74: 2622                                               FFFFFD7FFB993ECE ?
+152021   : 2015-04-09 17:52:41.930840 :    CSSD:74:                                                    FFFFFD7FF4CCFBB8 ?
+152022   : 2015-04-09 17:52:41.930847 :    CSSD:74:                                                    FFFFFD7FF4CD3150 ?
+152023   : 2015-04-09 17:52:41.930854 :    CSSD:74:                                                    FFFFFD7FF4CCF398 ?
+152024   : 2015-04-09 17:52:41.930879 :    CSSD:74: clssscSelect()+1500  call     clssnmeventhndlr()   0027B8590 ? 000000002 ?
+152025   : 2015-04-09 17:52:41.930898 :    CSSD:74:                                                    000B20010 ? 00000000F ?
+152026   : 2015-04-09 17:52:41.930906 :    CSSD:74:                                                    FFFFFD7FF4CD3150 ?
+152027   : 2015-04-09 17:52:41.930913 :    CSSD:74:                                                    FFFFFD7FF4CCF398 ?
+152028   : 2015-04-09 17:52:41.930938 :    CSSD:74: clssnmClusterListen  call     clssscSelect()       0027B8590 ? 000B6F010 ?
+152029   : 2015-04-09 17:52:41.930950 :    CSSD:74: er()+614                                           000000002 ? 00046E530 ?
+152030   : 2015-04-09 17:52:41.930957 :    CSSD:74:                                                    FFFFFD7FF4CD3150 ?
+152031   : 2015-04-09 17:52:41.930964 :    CSSD:74:                                                    FFFFFD7FF4CCF398 ?
+152032   : 2015-04-09 17:52:41.930985 :    CSSD:74: clssscthrdmain()+24  call     clssnmClusterListen  0027B8590 ? 000B6F010 ?
+152033   : 2015-04-09 17:52:41.930994 :    CSSD:74: 5                             er()                 000000002 ? 00046E530 ?
+152034   : 2015-04-09 17:52:41.931002 :    CSSD:74:                                                    FFFFFD7FF4CD3150 ?
+152035   : 2015-04-09 17:52:41.931009 :    CSSD:74:                                                    FFFFFD7FF4CCF398 ?
+152036   : 2015-04-09 17:52:41.931030 :    CSSD:74: _thr_setup()+91      call     clssscthrdmain()     0027B8590 ? 000B6F010 ?
+152037   : 2015-04-09 17:52:41.931039 :    CSSD:74:                                                    000000002 ? 00046E530 ?
+152038   : 2015-04-09 17:52:41.931046 :    CSSD:74:                                                    FFFFFD7FF4CD3150 ?
+152039   : 2015-04-09 17:52:41.931053 :    CSSD:74:                                                    FFFFFD7FF4CCF398 ?
+152040   : 2015-04-09 17:52:41.931075 :    CSSD:74: _lwp_start()         call     _thr_setup()         FFFFFD7FF8053680 ?
+152041   : 2015-04-09 17:52:41.931095 :    CSSD:74:                                                    000B6F010 ? 000000002 ?
+152042   : 2015-04-09 17:52:41.931103 :    CSSD:74:                                                    00046E530 ?
+152043   : 2015-04-09 17:52:41.931114 :    CSSD:74:                                                    FFFFFD7FF4CD3150 ?
+152044   : 2015-04-09 17:52:41.931257 :    CSSD:74:                                                    FFFFFD7FF4CCF398 ?
+	
+	clssnmeventhndlr()+2622 <-clssscSelect()+1500<-clssnmClusterListener()+614<-clssscthrdmain()
+	
+	
+	
+	
+	
+	
+	
+	
+Clarified customer that as per "NOTE 421308.1" below are the minimum version of "glib" rpms packages that customer must have for the functionality of the 10.2.0.5 DB.
+
+Reference:
+Requirements For Installing Oracle10gR2 On RHEL 5/OEL 5 (x86_64) (NOTE 421308.1)
+
+glibc-2.5-12 (x86_64)
+glibc-2.5-12 (i686)
+glibc-common-2.5-12 (x86_64)
+glibc-devel-2.5-12 (x86_64)
+glibc-devel-2.5-12 (i386)
+glibc-headers-2.5-12 (x86_64)
+
+
+
+
+- If updating the current "glib" updates the version to higher version than the above, then there is no harm.
+- While updating the glib packages databases and tje services must be down.
+- After updating glib packages, please perform a manual relink as per below note
+Note 131321.1 How to Relink Oracle Database Software on UNIX
+
+- Additional references:
+Note 444595.1 Relinking Oracle Home FAQ ( Frequently Asked Questions)
+Scroll to section ==> 5) Is relinking required after an OS upgrade , Downgrade , Patching or removal of the patch ?
+
+-------------------
+
+
+
+bug 19300424 : ORA-15196: INVALID ASM BLOCK HEADER [KFC.C:26081] [CHECK_KFBH] [2147483679] [207
+
+<-kfdp_query <-kfirefresh <-kfi_set_cb <-kfeinvokelockcallback <-kfgbattrlckregister <-kfgbdriver ORA-15196
+
+
+
+@ While rebalance was running at that time and arb was trying to move 
+@ allocation unit [+DATA1.258.736595131 (120 entries)] it fetch the disk image 
+@ and checksum failed for allocation table .
+@ .
+ksedsts()+461<-kfdp_query()+530<-kfdPstSyncPriv()+575<-kfgbRefreshNow()+832<-kfgbTryFn()+1939<-kfgbTimeout()+1016
+<-kfgbDriver()+2746<-ksbcti()+513<-ksbabs()+1735<-ksbrdp()+971<-opirip()+623<-opidrv()+603<-sou2o()+103<-opimai_real()+266
+<-ssthrdmain()+252<-main()+201 <-__libc_start_main()+244<-_start()+36 
+
+ ksedsts()+461 <-kfcReadBlk()+1934 <-kfcReadBuffer()+2329 <-kfcGet0()+8441 <-kfcGet1Priv()+1532 <-kfcGetPriv()+900
+ <-kfcChangeDHPriv()+494 <-kfrGenerate()+3607 <-kfcCommitPriv()+7056 <-kffRelocateGeneric()+5224 <-kffRelocateSubmit()+53
+ <-kffRelocate()+1642 <-kfdaExecute()+3802 <-kfgbRebalExecute()+774 <-kfgbDriver()+1899 <-ksbabs()+771 <-kfgbRun()+838
+ <-ksbrdp()+971 <-opirip()+623 <-opidrv()+603 <-sou2o()+103 <-opimai_real()+266 <-ssthrdmain()+252 <-main()+201
+ <-__libc_start_main()+244 <-_start()+36
+
+ 
+ <-ksedsts()+315<-kfcReadBlk()+3055<-kfcReadBuffer()+1580<-kfcGet0()+21401<-kfc
+@ Get1Priv()+964<-kfcGetPriv()+213<-kfdAtGetPriv()+392<-kfdAuOpsUpdate1_10()+385
+@ <-kfdAuOpsUpdate()+464<-kffsrdUpdate()+792<-kffRelocateClientData()+4281<-kffR
+@ elocate()+64<-kfdaExecute()+3979
+@ <-kfgbRebalExecute()+715<-kfgbDriver()+1749<-ksbabs()+762<-kfgbRun()+833<-ksbr
+@ dp()+1487<-opirip()+609<-opidrv()+554<-sou2o()+90<-opimai_real()+275<-ssthrdma
+@ in()+177<-main()+215<-__libc_start_main()+244<-_start()+41
+
+0001 1011 0100 0001 0110 0100 0000 1011  1b41640b
+0010 1110 1100 0011 1000 1000 1111 0001  2ec388f1
+ksedsts()+461
+<-kfcReadBlk()+1934
+<-kfcReadBuffer()+2329
+<-kfcGet0()+8441
+<-kfcGet1Priv()+1532
+<-kfcGetPriv()+900
+<-kfcChangeDHPriv()+494
+<-kfrGenerate()+3607
+<-kfcCommitPriv()+7056
+<-kffRelocateGeneric()+5224
+<-kffRelocateSubmit()+53
+<-kffRelocate()+1642
+<-kfdaExecute()+3802
+<-kfgbRebalExecute()+774
+<-kfgbDriver()+1899
+<-ksbabs()+771
+<-kfgbRun()+838
+<-ksbrdp()+971
+<-opirip()+623
+<-opidrv()+603
+<-sou2o()+103
+<-opimai_real()+266
+<-ssthrdmain()+252
+<-main()+201
+<-__libc_start_main()+244
+<-_start()+36 
+
+
+3-9456492681
+GROUP_NUMBER NAME                                                                                       SECTOR_SIZE BLOCK_SIZE
+------------ ------------------------------------------------------------------------------------------ ----------- ----------
+ALLOCATION_UNIT_SIZE STATE                             TYPE                 TOTAL_MB    FREE_MB HOT_USED_MB COLD_USED_MB
+-------------------- --------------------------------- ------------------ ---------- ---------- ----------- ------------
+REQUIRED_MIRROR_FREE_MB USABLE_FILE_MB OFFLINE_DISKS
+----------------------- -------------- -------------
+COMPATIBILITY
+------------------------------------------------------------------------------------------------------------------------------------
+DATABASE_COMPATIBILITY
+------------------------------------------------------------------------------------------------------------------------------------
+VOT
+---
+           1 ARCH_IT0564ELM7_0                                                                                  512       4096
+             1048576 MOUNTED                           EXTERN                1228784     867836           0       360948
+                      0         867836             0
+11.2.0.0.0
+10.1.0.0.0
+N
+
+           2 BKUP_ITCRS124                                                                                      512       4096
+             1048576 MOUNTED                           EXTERN                1535979    1118812           0       417167
+                      0        1118812             0
+11.2.0.0.0
+10.1.0.0.0
+N
+
+           3 DATA_IT0564ELM7_0                                                                                  512       4096
+             1048576 MOUNTED                           EXTERN                2047972     702851           0      1345121
+                      0         702851             0
+11.2.0.0.0
+10.1.0.0.0
+N
+
+           4 OCRS_ITCRS124                                                                                      512       4096
+             1048576 MOUNTED                           NORMAL                  15342      12308           0         3034
+                   5114           3597             0
+11.2.0.0.0
+10.1.0.0.0
+Y
+
+           5 EXPO_ITCRS124                                                                                      512       4096
+             1048576 MOUNTED                           EXTERN                 307196      20376           0       286820
+                      0          20376             0
+11.2.0.0.0
+10.1.0.0.0
+N
+
+riyaz.ahamed.mohammad@oracle.com
+18886789 kclcls_8
+
+Patch 11gR2 Grid Infrastructure Standalone (Oracle Restart) (Doc ID 1089476.1)
+
+
+CSSOPR2 instance is evicted and timing is 26-Jan-2015 16:07 & 18:08. 
+ SR 3-9501730191
+ 
+
+Issue #3  The problem instance was hanging before the instance crashes or is evicted
+Symptoms:
+
+The instance or database was hanging before the instance crashed/evicted.  It could also be that the node hang.
+Possible causes:
+Different processes such as lmon, lmd, and lms communicate with corresponding processes on other instances, so when the instance and database hang, those processes may be waiting for a resource such as a latch, an enqueue, or a data block.  Those processes that are waiting can not respond to the network ping or send any communication over the network to the remote instances.  As a result, other instances evict the problem instance.
+
+You may see a message similar to the following in the alert.log of the instance that is evicting another instance:
+Remote instance kill is issued [112:1]: 8
+or
+Evicting instance 2 from cluster
+Solutions:
+1) Find out the reason for the database or instance hang. Getting a global system state dump and global hang analyze output is critical when troubleshooting the database or instance hang issue. If the global system state dump can not be obtained, get the local system state dump from all instances around same time.
+2) Check CHM (Cluster Health Monitor) output to see if the server had a CPU or memory load problem, network problem, or spinning lmd or lms processes. The CHM output is available only on some platforms and versions, so please check the CHM FAQ Document 1328466.1
+3) Set up to run OSWatcher by following the instruction in the note Document 301137.1 if OSWatcher is not set up already.
+Having OSWatcher output is helpful when CHM output is not available.
+
+-----------------------------------------------------------------------------------------------------
+Rerun DB Post Install or OJVM Post Install (whichever one reported the error)
+For OJVM PSU  Patch:
++++++++++++++++++++++
+cd $ORACLE_HOME/sqlpatch/19877440
+sqlplus /nolog
+SQL> CONNECT / AS SYSDBA
+SQL> @postinstall.sql
+SQL> quit
+cd $ORACLE_HOME/rdbms/admin
+sqlplus /nolog
+SQL> CONNECT / AS SYSDBA
+SQL> @utlrp.sql
+
+
++++++++++++++++++++++
+For Database PSU patch:
++++++++++++++++++++++
+cd $ORACLE_HOME/rdbms/admin
+sqlplus /nolog
+SQL> CONNECT / AS SYSDBA
+SQL> STARTUP
+SQL> @catbundle.sql psu apply
+SQL> QUIT
+cd $ORACLE_HOME/rdbms/admin
+sqlplus /nolog
+SQL> CONNECT / AS SYSDBA
+SQL> @utlrp.sql 
+
+This is regarding your spin of  SR 3-10169761511
+CT name is Uday , I am unable to call to this guy, The number which he as provided ie 9052755678
+is invalid , I had seen in your SR that you had called the CT , can you please check that this is the number 
+
+This is regarding you closed SR 3-10256657171
+CT was atuclly running EM12c Provisioning Patching
+CT wants to know why you gave manually apply post patch instead from EM12c Provisioning Patching Deployment procedures 
+I Just wants to confirm that it could also be done with EM12c Provisioning Patching right ?
