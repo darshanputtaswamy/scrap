@@ -21,6 +21,68 @@ Perforamce
 		   
 5] 
 
+
+
+
+
+
+i Inder,
+
+1. Take the hanganalyze and systemstatedump from the database while you are facing the issue and upload it to this SR.
+
+=============================================
+Collecting Hanganalyze and Systemstate dumps
+=============================================
+
+Using SQL*Plus connect as SYSDBA using the following command:
+
+sqlplus " / as sysdba"
+
+If there are problems making this connection then in 10gR2 and above, the sqlplus "preliminary connection" can be used :
+
+sqlplus -prelim " / as sysdba" (in 11.2.0.2 hanganalyze will not produce output with prelim connection)
+
+Hanganalyze in RAC
+==================
+SQL> oradebug setmypid
+SQL> oradebug unlimit
+SQL> oradebug setinst all
+SQL> oradebug -g all hanganalyze 3
+< wait for 2 min>
+SQL> oradebug -g all hanganalyze 3
+< wait for 2 min>
+SQL> oradebug -g all hanganalyze 3
+SQL> oradebug tracefile_name
+
+Systemstate in RAC
+==================
+SQL> oradebug setmypid
+SQL> oradebug unlimit
+SQL> oradebug setinst all
+SQL> oradebug -g all dump systemstate 267
+< wait for 2 min>
+SQL> oradebug -g all dump systemstate 267
+< wait for 2 min>
+SQL> oradebug -g all dump systemstate 267
+SQL> oradebug tracefile_name
+
+
+2. Also generate 3 errorstack trace for the blocking session as follows and upload it to this SR
+
+++ Find the OS pid for the oracle session opened for sql.
+select spid from v$process where addr=(select paddr from v$session where sid=<blocking session id>);
+This will give the OS pid of the oracle session.
+
+Errorstack
+~~~~~~~~~~~
+SQL> connect / as sysdba
+SQL> oradebug setospid <spid>
+SQL> oradebug dump errorstack 3
+wait for 2 min
+SQL> oradebug dump errorstack 3
+SQL> exit
+
+
 --
 SQL 
 SQLT 215187.1
@@ -87,6 +149,50 @@ Most common disk cloning technologies is mentioned in the following link. The do
 http://www.oracle.com/technetwork/database/index-100339.html
 
 Note: The POC and Procedure of the storage clone comes from the respective Vendor.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ASM
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Key ASMLIB
+Please provide the following:
+
+ASM alert logs
+
+1. Please execute the next commands and show me the output (from each RAC node)
+==================================================================
+$> cat /etc/*release
+$> uname -a
+$> rpm -qa |grep oracleasm
+$> df -ha
+$> ls -l /dev/oracleasm/disks
+==================================================================
+
+2. Check the discovery path from each node::
+==================================================================
+
+$> /etc/init.d/oracleasm status
+$> /usr/sbin/oracleasm-discover
+$> /usr/sbin/oracleasm-discover 'ORCL:*'
+==================================================================
+
+3. Please check if the ASMLIB devices can be accessed from each RAC node
+==================================================================
+$> /etc/init.d/oracleasm scandisks
+$> /etc/init.d/oracleasm listdisks
+$> /etc/init.d/oracleasm querydisk -p <each disk from previous output>
+==================================================================
+
+4. Upload the next files from each RAC node:
+
+=)> /var/log/messages
+=)> /etc/sysconfig/oracleasm
+
+5. Please show me the partition table from each node:
+==================================================================
+$> cat /proc/partitions
+==================================================================
+
+Thank you
 
 
 DISABLE DNFS
@@ -156,14 +262,6 @@ The crs log files using TFA:
 
  
 
-
-
-
-
-
-
-
-
 PLease upload the following information
 Please upload diagcollection logs / TFA logs from all the nodes.
 
@@ -218,3 +316,41 @@ Note 1513912.1 - TFA Collector - Tool for Enhanced Diagnostic Gathering and star
  OS Watcher User's Guide (Doc ID 1531223.1)
  OSWatcher Black Box Analyzer User Guide (Doc ID 461053.1)
  How To Start OSWatcher Black Box (OSWBB) Every System Boot (Doc ID 580513.1)
+
+ 
+ 
+===============================================================================================================================================================
+OS DATA COLLECTION
+ 
+===============================================================================================================================================================
+KEY :  STRACE Process
+ 
++++++++++++++++++++++
+OS Process
+
+2. Get a strace for a process reporting this transient corruption:
+
+In order to do this steps, indentify the process at OS level that makes the backup
+
+2.1.Connect to RMAN
+$rman target /
+2.2.Get the spid for RMAN.
+$sqlplus / a sysdba
+SQL>set linesize 200
+SQL>select p.spid,substr(s.osuser,1,10) osuser,substr(s.username,1,8) username,substr(s.action,1,60) rmaninfo from v$session s, v$process p where s.paddr=p.addr and s.osuser is not null and s.program like '%rman%' order by s.osuser;
+
+2.3. Execute the backup command in RMAN
+2.4. Re-execute the query in SQL*Plus and you will see in RMANINFO column something like " STARTED16"
+2.5. Get the spid and trace it
+
+$ strace -o backupdebug.log -t -p <SPID of Oracle server process>
+
+++++++++++++++++++++++++++++++++++
+ASM 
+
+$ strace -aeft -o /tmp/asmcmd.log asmcmd
+ASMCMD> -- run the command
+
+++++++++++++++++++++++++++++++++++++
+Troubleshooting ORA-27300 ORA-27301 ORA-27302 Errors (Doc ID 579365.1)
+

@@ -3,6 +3,8 @@
 APRIL 4th
 ======================================================================================================================================================
 ORACLE 
+SWAP Physical memory usage 
+
 
 yiying- analysis
 
@@ -21,7 +23,11 @@ yiying- analysis
 	  INTERNAL ONLY: (Methodology For) Troubleshooting Oracle RAC Database Performance Issues / Hangs (Doc ID 1495515.1)
 	  11gR2 Clusterware and Grid Home - What You Need to Know (Doc ID 1053147.1)
 	  Master Note: Database Performance Overview (Doc ID 402983.1)
-	
+	Master Note: Overview of Database Startup and Shutdown (Doc ID 1505155.1)
+	Hang Manager 11.2.0.2 (Internal) (Doc ID 1270563.1)
+	How to turn on rootcrs.pl/roothas.pl debugging for more info if "opatch auto" or "root.sh/rootupgrade.sh" is slow (Doc ID 1498019.1)
+	Click to add to Favorites		UNIX: Checklist for Resolving Connect AS SYSDBA Issues (Doc ID 69642.1)
+	SYSDBA and SYSOPER Privileges in Oracle (Doc ID 50507.1)
 	Storage
 	- ASM admin
 	  How to Identify and Map the Real Physical Raw Device on Solaris Used as ASM Member or Candidate Disks on RAC or Standalone Configurations. (Doc ID 1911166.1)

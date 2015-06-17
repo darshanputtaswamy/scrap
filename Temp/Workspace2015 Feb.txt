@@ -1,3 +1,248 @@
+
+
+KFED.PL for diagnosing - ORA-15063 ORA-15042 ORA-15020 ORA-15033 (Doc ID 1346190.1)
+
+Bug 15924261 : RAC DB GIVING SPORADICALLY (WARNING: ASM COMMUNICATION ERROR) BUT ASM SHOWS NO E
+
+3-8026736687
+	@ connect as SYS and run the below sql
+@ .
+@ @?/rdbms/admin/stdbody.sql
+@ .
+@ Now run
+@ select dbms_qopatch.get_pending_activity from dual ; -- It should go through
+@ fine.
+
+ 	
+	ORA-27300: OS System Dependent Operation:fork Failed With Status: 11 (Doc ID 1546393.1)
+	
+		
+	 
+	
+	
+	
+	
+	
+Bug 13495419 : WARNING: ASM COMMUNICATION ERROR: ERROR: DIRECT CONNECTION
+
+Bug 13092226  ORA-1031 when connecting as SYSDBA if Unix group member list is large - superseded
+ASM Database Instance Is Reporting: “[WARNING: ASM communication error: op 0 state 0x0 (15055)]” (Doc ID 1665311.1)
+	ASM Database Instance Is Reporting: “[WARNING: ASM communication error: op 0 state 0x0 (15055)]” (Doc ID 1665311.1)
+	
+	WARNING: ASM Communication Error: Op 0 State 0x0 (15055), ERROR: Direct Connection Failure With ASM. ORA-1031 reported additionally (Doc ID 1519413.1)
+	
+	
+INSTANCE_NUMBER INSTANCE_NAME
+--------------- ----------------
+HOST_NAME
+----------------------------------------------------------------
+VERSION           STARTUP_T STATUS       PAR    THREAD# ARCHIVE LOG_SWITCH_WAIT
+----------------- --------- ------------ --- ---------- ------- ---------------
+LOGINS     SHU DATABASE_STATUS   INSTANCE_ROLE      ACTIVE_ST BLO
+---------- --- ----------------- ------------------ --------- ---
+              1 BIP
+PIBMAPBIDB02
+11.2.0.2.0        25-MAY-15 MOUNTED      NO           1 STARTED
+ALLOWED    NO  ACTIVE            PRIMARY_INSTANCE   NORMAL    NO
+
+Bug 20838950 : FLEX: CLUSTERWARE INSTALL FAILS, FIRST NODE REBOOTS DURING FIRST ROOT SCRIPT
+
+GPnP Wallets ownership/permissions successfully set. [node-local=0]
+Stopping CSS which is running exclusive mode
+
+crsutils::dietrap
+ main::__ANON__
+ crsinstall::start_cluster
+crsinstall::prepare_to_start_clusterware
+ crsinstall::CRSInstall
+ crsinstall::new
+
+ksedsts()+380<-ksdxfstk()+52<-ksdxcb()+3524<-sspuser()+140<-__sighndlr()+12<-call_user_handler()+992<-sigacthandler()+104
+<-__systemcall6()+36<-__lwp_sigmask()+56
+<-_pthread_sigmask()+452<-sslssalck()+152<-sskgxp_alarm_set()+44<-skgxp_twait()+388<-sslsshandler()+712
+<-__sighndlr()+12<-call_user_handler()+992<-sigacthandler()+104<-__pollsys()+8
+<-_pollsys()+260<-_poll()+136<-ssskgxp_poll()+36<-sskgxp_select()+108<-skgxpiwait()+5380
+<-skgxpwaiti()+3880<-skgxpwait()+1016<-ksxpwait()+3372<-ksliwat()+10480<-kslwait()+240<-ksarcv()+212<-kjclwmg()+36<-kjfcln()+4280<-ksbrdp()+1616<-opirip()+1680<-opidrv()+748<-sou2o()+88<-opimai_real()+276<-ssthrdmain()+316<-main()+316<-_start()+380
+
+
+
+  application name: siebsh@bsssblappv1020 (TNS V1-V3), hash value=3723418616
+   current SQL:
+   UPDATE	SIEBEL.EIM_ALERT_CUT
+     SET	T_ALERT_CUT__STA = 113
+  WHERE (IF_ROW_BATCH_NUM = :V1 AND
+ 	IF_ROW_STAT_NUM = 0 AND
+ T_ALERT_CUT__EXS = 'Y' AND
+ T_ALERT_CUT__UNQ = 'Y' AND
+ 	T_ALERT_CUT__STA = 0)
+	
+	
+	UPDATE	SIEBEL.EIM_ALERT_CUT
+     SET	IF_ROW_STAT_NUM = 0,
+ 	IF_ROW_STAT = 'IN_PROGRESS',
+ 	T_ALERT_CUT__STA = 0,
+ 	T_ALERT_CUT__RID = NULL,
+ 	T_ALERT_CUT__EXS = 'N',
+ 	T_ALERT_CUT__UNQ = 'N',
+ 	T_ALERT_CUT_ACCNTI = NULL,
+ 	T_ALERT_CUT_OWNERE = NULL,
+ 	T_BILL_PROFILE_ID = NULL,
+ 	T_ALERTATTC__STA = NULL,
+ 	ACTION_DUE_DT = DECODE(ACTION_DUE_DT,NULL,TO_DATE(NULL),
+ 		TO_DATE(TO_CHAR(ACTION_DUE_DT,'YYYY-MM-DD')||' 00:00:00','YYYY-MM-DD HH24:MI:SS'))
+  WHERE (IF_ROW_BATCH_NUM = :V1)
+  
+  
+
+
+/u01/app/11.2.0/grid/bin
+bash-4.2# ./crsctl start crs -excl
+CRS-4123: Oracle High Availability Services has been started.
+CRS-2672: Attempting to start 'ora.gipcd' on 'ipaytest2'
+CRS-2672: Attempting to start 'ora.mdnsd' on 'ipaytest2'
+CRS-2676: Start of 'ora.gipcd' on 'ipaytest2' succeeded
+CRS-2676: Start of 'ora.mdnsd' on 'ipaytest2' succeeded
+CRS-2672: Attempting to start 'ora.gpnpd' on 'ipaytest2'
+CRS-2676: Start of 'ora.gpnpd' on 'ipaytest2' succeeded
+CRS-2672: Attempting to start 'ora.cssdmonitor' on 'ipaytest2'
+CRS-2676: Start of 'ora.cssdmonitor' on 'ipaytest2' succeeded
+CRS-2672: Attempting to start 'ora.cssd' on 'ipaytest2'
+CRS-2679: Attempting to clean 'ora.diskmon' on 'ipaytest2'
+CRS-2681: Clean of 'ora.diskmon' on 'ipaytest2' succeeded
+CRS-2672: Attempting to start 'ora.diskmon' on 'ipaytest2'
+
+CRS-2676: Start of 'ora.diskmon' on 'ipaytest2' succeeded
+CRS-2674: Start of 'ora.cssd' on 'ipaytest2' failed
+CRS-2679: Attempting to clean 'ora.cssd' on 'ipaytest2'
+CRS-2681: Clean of 'ora.cssd' on 'ipaytest2' succeeded
+CRS-2673: Attempting to stop 'ora.diskmon' on 'ipaytest2'
+CRS-2677: Stop of 'ora.diskmon' on 'ipaytest2' succeeded
+CRS-2673: Attempting to stop 'ora.cssdmonitor' on 'ipaytest2'
+CRS-2677: Stop of 'ora.cssdmonitor' on 'ipaytest2' succeeded
+CRS-2673: Attempting to stop 'ora.gpnpd' on 'ipaytest2'
+CRS-2677: Stop of 'ora.gpnpd' on 'ipaytest2' succeeded
+CRS-2673: Attempting to stop 'ora.mdnsd' on 'ipaytest2'
+CRS-2677: Stop of 'ora.mdnsd' on 'ipaytest2' succeeded
+CRS-2673: Attempting to stop 'ora.gipcd' on 'ipaytest2'
+CRS-2677: Stop of 'ora.gipcd' on 'ipaytest2' succeeded
+CRS-4000: Command Start failed, or completed with errors.
+bash-4.2#
+bash-4.2# ps -ef | grep d.bin
+    root 422052      1   1 15:29:26      -  0:06 /u01/app/11.2.0/grid/bin/ohasd.bin exclusive
+bash-4.2# ps -ef | grep d.bin
+    root 422052      1   1 15:29:26      -  0:06 /u01/app/11.2.0/grid/bin/ohasd.bin exclusive
+bash-4.2# ./crsctl stat res -t -init
+--------------------------------------------------------------------------------
+NAME           TARGET  STATE        SERVER                   STATE_DETAILS
+--------------------------------------------------------------------------------
+Cluster Resources
+--------------------------------------------------------------------------------
+ora.asm
+      1        OFFLINE OFFLINE
+ora.crsd
+      1        OFFLINE OFFLINE
+ora.cssd
+      1        ONLINE  OFFLINE
+ora.cssdmonitor
+      1        ONLINE  OFFLINE
+ora.ctssd
+      1        OFFLINE OFFLINE
+ora.diskmon
+      1        ONLINE  OFFLINE
+ora.evmd
+      1        OFFLINE OFFLINE
+ora.gipcd
+      1        ONLINE  OFFLINE
+ora.gpnpd
+      1        ONLINE  OFFLINE
+ora.mdnsd
+      1        ONLINE  OFFLINE
+bash-4.2# ./crsctl stop crs
+CRS-4133: Oracle High Availability Services has been stopped.
+bash-4.2# .kfod asm_diskstring='/dev/'
+bash: .kfod: command not found
+bash-4.2# ./kfod asm_diskstring='/dev/'
+
+
+KFOD-00301: file not found; arguments: [2] [kgxgncin]
+-bash-4.2# ./kfod asm_diskstring='/dev/rhdisk*'
+--------------------------------------------------------------------------------
+ Disk          Size Path                                     User     Group
+================================================================================
+   1:     140013 Mb /dev/rhdisk0                             root     system
+   2:     286102 Mb /dev/rhdisk1                             root     system
+   3:     286102 Mb /dev/rhdisk2                             root     system
+   4:      71680 Mb /dev/rhdisk8                             grid     oinstall
+KFOD-00301: file not found; arguments: [2] [kgxgncin]
+-bash-4.2# ./kfod asm_diskstring='/dev/rhdis*'
+--------------------------------------------------------------------------------
+ Disk          Size Path                                     User     Group
+================================================================================
+   1:     140013 Mb /dev/rhdisk0                             root     system
+   2:     286102 Mb /dev/rhdisk1                             root     system
+   3:     286102 Mb /dev/rhdisk2                             root     system
+   4:      71680 Mb /dev/rhdisk8                             grid     oinstall
+KFOD-00301: file not found; arguments: [2] [kgxgncin]
+-bash-4.2# ./kfod asm_diskstring='/dev/rhdisk3'
+KFOD-00301: file not found; arguments: [2] [kgxgncin]
+
+
+
+-bash-4.2# ./kfod asm_diskstring='/dev/rhdis*' disks=all status=true
+--------------------------------------------------------------------------------
+ Disk          Size Header    Path                                     User     Group
+================================================================================
+   1:     140013 Mb CANDIDATE /dev/rhdisk0                             root     system
+   2:     286102 Mb CANDIDATE /dev/rhdisk1                             root     system
+   3:     286102 Mb CANDIDATE /dev/rhdisk2                             root     system
+   4:      71680 Mb MEMBER    /dev/rhdisk3                             grid     oinstall
+   5:      71680 Mb MEMBER    /dev/rhdisk4                             grid     oinstall
+   6:      71680 Mb MEMBER    /dev/rhdisk5                             grid     oinstall
+   7:      71680 Mb MEMBER    /dev/rhdisk6                             grid     oinstall
+   8:      71680 Mb MEMBER    /dev/rhdisk7                             grid     oinstall
+   9:      71680 Mb CANDIDATE /dev/rhdisk8                             grid     oinstall
+
+   
+   
+   
+   
+13583387 : CSSD TAKES 2 HOURS TO COME UP DUE TO DISC DISCOVERY
+Bug 17066656 : CRS DOESN'T START DUE TO MISSING VOTING FILE AFTER STORAGE UPGRADE
+CRS-2797: Shutdown is already in progress for 'ipaytest1', waiting for it to complete
+Closed: remote end failed/disc.
+ SPFile="+CRS/ipaytes-cluster/asmparameterfile/registry.253.819305471"
+ 
+ 
+clssgmClientConnectMsg: Connect from con(1c4) proc(111b47950) pid(962736) version 11:2:1:4, properties: 1,2,3,4
+2015-05-27 12:54:31.403: [    CSSD][1286]clssgmClientConnectMsg: msg flags 0x0000
+2015-05-27 12:54:31.404: [    CSSD][1286]clssgmEvtInformation: reqtype (11) cmProc (111b47950) cli              ent (0)
+2015-05-27 12:54:31.404: [    CSSD][1286]clssgmEvtInformation: reqtype (11) req (111b47d30)
+2015-05-27 12:54:31.404: [    CSSD][1286]clssnmQueueNotification: type (11) 111b47d30
+
+
+
+
+
+2015-05-27 13:03:31.753: [    GPnP][1029]CLSDM requested check alive. Ready:1 [ini:0,eq:0,stp:0]
+2015-05-27 13:03:40.078: [    GPnP][772]clsgpnp_ocrDetectThread: [at clsgpnp0.c:4302 clsgpnp_ocrDetectThread] OCR init check after 90 secs sleep
+
+
+
+2015-05-27 13:03:40.078: [    GPnP][772]clsgpnpou_initocr: [at clsgpnpou.c:124 clsgpnpou_initocr] ENTRY
+2015-05-27 13:03:40.244: [    GPnP][772]clsgpnpou_initocr: [at clsgpnpou.c:155 clsgpnpou_initocr] Result: (59) CLSGPNP_OCR_NOSRV. Failed to init OCR context at level 7. OCR Error: PROC-32: Cluster Ready Services on the local node is not running Messaging error [9]
+2015-05-27 13:03:40.244: [    GPnP][772]clsgpnpou_initocr: GPnP api clsgpnpou_initocr failed
+2015-05-27 13:03:40.244: [    GPnP][772]clsgpnpou_initocr: GPnP error code : 59 (CLSGPNP_OCR_NOSRV)
+2015-05-27 13:03:40.244: [    GPnP][772]clsgpnpou_initocr: [at clsgpnpou.c:173 clsgpnpou_initocr] EXIT (59) CLSGPNP_OCR_NOSRV
+2015-05-27 13:04:01.756: [    GPnP][1029]CLSDM requested check alive. Ready:1 [ini:0,eq:0,stp:0]
+2015-05-27 13:04:08.101: [    GPnP][1]clsgpnpd_bgThread: [at clsgpnpd.c:4203 clsgpnpd_bgThread] GPnPD BG loop - ongoing 5000 sec RD events poll in progress... Thread is alive (this message printed only once every 1 min).
+2015-05-27 13:04:09.149: [    GPnP][1800]clsgpnpd_pushThread: [at clsgpnpd.c:4493 clsgpnpd_pushThread] GPnPD PUSH - ongoing 2 sec PUSH check in progress... Thread is alive (this message printed only once every 1 min). last sltsrv=-78
+2015-05-27 13:04:17.149: [    GPnP][1543]clsgpnpd_dispatchThread: [at clsgpnpd.c:4294 clsgpnpd_dispatchThread] GPnPD Work loop - ongoing 5 sec GIPC wait in progress... Thread is alive (this message printed only once every 1 min).
+2015-05-27 13:04:31.757: [    GPnP][1029]CLSDM requested check alive. Ready:1 [ini:0,eq:0,stp:0]
+
+https://community.oracle.com/thread/2151209
+http://aru.us.oracle.com:8080/ARU/Download/process_download/p17302090_112037_Linux-x86-64.zip?file=p17302090_112037_Linux-x86-64.zip&aru=17364082&patch_file=adcarurepos.us.oracle.com:/vol/patch30/PLATFORM/CORE/Linux-x86-64/R80112030702/p17302090_112037_Linux-x86-64.zip&file_id=77896711
+Bug 8479531:: Database hang on starting up a database (Doc ID 1906957.1)
+
  OPatch.ORACLE_HOME=/oracle/app/oracrs/oracrsdb/crs11g
    oracle.installer.invPtrLoc=/oracle/app/oracrs/oracrsdb/crs11g/oraInst.loc
    oracle.installer.oui_loc=/oracle/app/oracrs/oracrsdb/crs11g/oui

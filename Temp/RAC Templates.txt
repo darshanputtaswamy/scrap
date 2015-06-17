@@ -58,27 +58,27 @@ INDEX
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
        ======
 	   
-		Hi <CT>,
+Hi <CT>,
 
-		Your Service Request got assigned to me. I am Darshan from RAC Team who will assist you on this issue now onward.
+Your Service Request got assigned to me. I am Darshan from  Storage/Scalability Team who will assist you on this issue now onward.
 
-		Please keep us informed of any urgent milestones or events (Go Live dates, critical issues, etc.) in time so that we may prioritize better. Also,
-		please keep the SR updated with any developments/information exchanges on this issue, which you may have had with other entities concerned with providing you assistance.
+Please keep us informed of any urgent milestones or events (Go Live dates, critical issues, etc.) in time so that we may prioritize better. Also,
+please keep the SR updated with any developments/information exchanges on this issue, which you may have had with other entities concerned with providing you assistance.
 
-		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
-		Have a nice day Ahead ………………..
+Have a nice day Ahead ………………..
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
 
-		If you need assistance during my off-shift hours, please call the Oracle HUB and request for reassignment of this SR.
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+If you need assistance during my off-shift hours, please call the Oracle HUB and request for reassignment of this SR.
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
 Mgrracpc.zoban@sbi.co.in
 
@@ -92,20 +92,20 @@ Mgrracpc.zoban@sbi.co.in
 
 		Hi ,
 
-		You want to work in English or Korean? As this Sr is created with language English but content is in Korean.
+You want to work in English or Korean? As this Sr is created with language English but content is in Korean.
 
-		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
-		Have a nice day Ahead ………………..
+Have a nice day Ahead ………………..
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
  
 =============================================================
@@ -120,27 +120,23 @@ Mgrracpc.zoban@sbi.co.in
 		
         Hi<Cust_Name>
 
+
+Please review my earlier technical update.
+
+Please let us know if still you have concerns on this specific issue and we would be glad to clarify those,
+otherwise if the issue is clarified /resolved then we kindly request you to provide us with the SR closure confirmation.
+
+Have a nice day Ahead………………..
+
  
-        Please review my earlier technical update.
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-        Please let us know if still you have concerns on this specific issue and we would be glad to clarify those,
-		otherwise if the issue is clarified /resolved then you are kindly requested to provide us with the SR closure confirmation.
-
-        For any other new issues/concerns, please log a new SR.
-
-        In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
-
-        Have a nice day Ahead………………..
-
-		 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
-
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
  
 
@@ -163,22 +159,22 @@ Oracle Support strongly recommends that you take further proactive steps to enha
 		========
 		
 		
-		Hi <CT>,
+Hi <CT>,
 
-		Please update the SR as soon as possible with the current status and/or requested information so we can continue working the issue.
+Please update the SR as soon as possible with the current status and/or requested information so we can continue working the issue.
 
-		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
-		Have a nice day Ahead ………………..
+Have a nice day Ahead ………………..
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
   
 ===============================================================================================
@@ -224,44 +220,44 @@ Oracle Support strongly recommends that you take further proactive steps to enha
 		A] AUTO CLOSUE
 		===========
 		 
-		Hi ,
-		We are placing this SR in "Auto Closure" status. We will be waiting for your response on this SR. If there is no re-sponse from you on it then SR will be placed in "Close" status. 
+Hi ,
+We are placing this SR in "Auto Closure" status. We will be waiting for your response on this SR. If there is no re-sponse from you on it then SR will be placed in "Close" status. 
 
-		In case, if you need further assistance on issue reported in this SR, please feel free to update/re-open the SR and we will be more than happy to assist you on this. For any new issues, please raise a new SR.
+In case, if you need further assistance on issue reported in this SR, please feel free to update/re-open the SR and we will be more than happy to assist you on this. For any new issues, please raise a new SR.
 
-		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
-		It was my pleasure working with you. Have a nice Day
+It was my pleasure working with you. Have a nice Day
 
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
 
 
 		B] Closer Confirmation 
 		============================== 
 
-		Hi ,
+Hi ,
 
-		Thank you for confirmation on the resolution. I am proceeding with the closure of this issue as per your request. It was my pleasure working with you. Have a nice Day
+Thank you for confirmation on the resolution. I am proceeding with the closure of this issue as per your request. It was my pleasure working with you. Have a nice Day
 
-		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
 		 
 		 

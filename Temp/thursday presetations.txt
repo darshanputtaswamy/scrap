@@ -3,7 +3,3 @@ exclusive mode of starting CSSD to put voting disk and OCR
 syslogd must be up and OHASD to starting
 
 shanmuga.sundar.a@oracle.com
-
-
-
-
