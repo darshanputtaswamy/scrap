@@ -67,6 +67,7 @@ please keep the SR updated with any developments/information exchanges on this i
 
 In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
+
 Have a nice day Ahead ………………..
 
 Thanks & Regards,
@@ -75,10 +76,14 @@ Global Customer Support
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-
 If you need assistance during my off-shift hours, please call the Oracle HUB and request for reassignment of this SR.
+
 Contact number of HUB : http://www.oracle.com/support/contact.html
 Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
+
 
 Mgrracpc.zoban@sbi.co.in
 
@@ -106,6 +111,11 @@ Desk Phone:+918041072121
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
 Contact number of HUB : http://www.oracle.com/support/contact.html
 Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
  
 =============================================================
@@ -138,7 +148,10 @@ Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am E
 Contact number of HUB : http://www.oracle.com/support/contact.html
 Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
- 
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
+
 
 ***
 
@@ -176,39 +189,46 @@ Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am E
 Contact number of HUB : http://www.oracle.com/support/contact.html
 Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
-  
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
+
+
 ===============================================================================================
 
 
 5.    New SR creation / Single issue per SR / SR reopen (In case, if CT reports different issue)
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
 
-        Recently reported issue seems to be different issue and each an every issue needs separate investigation.
 
-        This is to keep a focus on only one issue at a time and it enables us  to accurately analyze the problem areas.
+Recently reported issue seems to be different issue and each an every issue needs separate investigation.
 
-        This also enables us to route your SR to the engineer with the appropriate skills and report findings back to Development.  
-		
-		So, please keep Service request to a single issue. And also request you to create a new SR for recently reported issue. 
-		
-		Please advice, if you need an assistance to create a new SR.
+This is to keep a focus on only one issue at a time and it enables us  to accurately analyze the problem areas.
 
- 
+This also enables us to route your SR to the engineer with the appropriate skills and report findings back to Development.  
 
-		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+So, please keep Service request to a single issue. And also request you to create a new SR for recently reported issue. 
 
-		Have a nice day Ahead ………………..
+Please advice, if you need an assistance to create a new SR.
 
- 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+
+Have a nice day Ahead ………………..
+
+
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
 		
 ========================================================		
@@ -228,6 +248,9 @@ In case, if you need further assistance on issue reported in this SR, please fee
 In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
 It was my pleasure working with you. Have a nice Day
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
 
 Thanks & Regards,
@@ -259,35 +282,39 @@ Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am E
 Contact number of HUB : http://www.oracle.com/support/contact.html
 Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 		 
 		 
 
-		C] Abandoned Customer 
-		======================
+C] Abandoned Customer 
+======================
 
 
-		Hi ,
+Hi ,
 
-		As there is no response from you after several reminders as well, we tried to call you without response. , I assume the issue is resolved so I am proceeding with the closure of this issue.
+As there is no response from you after several reminders as well, we tried to call you without response. , I assume the issue is resolved so I am proceeding with the closure of this issue.
 
-		If you still required any help, please feel free to reopen the SR and I will glad to assist you.
+If you still required any help, please feel free to reopen the SR and I will glad to assist you.
 
-		In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
+In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
-		It was my pleasure working with you.
+It was my pleasure working with you.
 
-		Have a nice Day
+Have a nice Day
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
- 
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
+
 ============================================================= 
 
 

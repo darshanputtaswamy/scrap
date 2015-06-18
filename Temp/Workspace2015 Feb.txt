@@ -1,5 +1,23 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+ksedsts()+461<-kjzdssdmp()+267<-kjzduptcctx()+232<-kjzdicrshnfy()+53<-ksuitm()+1332<-ksbrdp()+3344<-opirip()+623
+<-opidrv()+603<-sou2o()+103<-opimai_real()+266<-ssthrdmain()+252<-main()+201<-__libc_start_main()+253<-_start()+36 
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 KFED.PL for diagnosing - ORA-15063 ORA-15042 ORA-15020 ORA-15033 (Doc ID 1346190.1)
 
 Bug 15924261 : RAC DB GIVING SPORADICALLY (WARNING: ASM COMMUNICATION ERROR) BUT ASM SHOWS NO E
