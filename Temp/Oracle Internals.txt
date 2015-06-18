@@ -4,7 +4,6 @@ Internal Only: Advanced Troubleshooting of CSS Heartbeat Failures (Network) (Doc
 Is the clssnmSendingThread sending a status message to every other node continuously?
 If the answer is no, see if the clssnmSendingThread is stuck (stack traces of all threads of CSS) or if there is a resource problem or network error in OS Watcher (netstat, vmstat, etc...)br013t'.
 
-OS Watcher User's Guide (Doc ID 1531223.1)
-How To Use The Interpret Stack Trace Tool (Doc ID 395799.1)
-	Tuning Inter-Instance Performance in RAC and OPS (Doc ID 181489.1
+
 http://docs.oracle.com/cd/E17076_03/html/programmer_reference/index.html
+http://www.drdobbs.com/
