@@ -56,7 +56,7 @@ c. Customer need to set filter to see non-technical SR on MOS
 
 2.    WIP / Acknowledge SR   UPDATE
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-======
+
 
 Hi <CT>,
 
