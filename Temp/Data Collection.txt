@@ -1,86 +1,97 @@
-DATA COLLECTION
-+++++++++++++++
 
-+++++++++++++++++++++++++++++++++++++++++++
+==================================================================================================================================
+DATA COLLECTION   INDEX 
+==================================================================================================================================
+1. PERFORMANCE TUNING DATA COLLECTION
+		Collecting Hanganalyze and Systemstate dumps
+		Errorstack
+		
+2. STORAGE DATA COLLECTION 
+		STORAGE DATA COLLECTION ASM
+		STORAGE DATA COLLECTION DNFS
+
+		
+3. REAL APPLICATION CLUSTER
+		REAL APPLICATION CLUSTER 
+		REAL APPLICATION CLUSTER DATABASE STARTUP
+		REAL APPLICATION CLUSTER DATABASE ADMIN
+		
+4. GENERIC DATA COLLECTION
+        GENERIC DATA COLLECTION ASM
+		GENERIC DATA COLLECTION STORAGE
+		GENERIC DATA COLLECTION REAL APPLICATION CLUSTER
+		
+5. INSTALL PATCH UPGRADE 
+		
+		
+6. OS TRACING AND DEBUG TOOL 
+		OS TRACING STRACE TRUSS TRUC
+		
+
+=========================================================================================================================================================
+########################################################################################################################################################
+=========================================================================================================================================================
+=========================================================================================================================================================
 PERFORMANCE TUNING DATA COLLECTION
-++++++++++++++++++++++++++++++++++++++++++
-Perforamce 
-
-1] Slow  - DB  AWR,ASH,OSwatcher,CHM(used for Windows)
-           SQL - 1046,tkproof
-		   
-2] Hang  - DB  Global System state dump and Hang analysis <Please check the SGA Size><check alter log already if it has already dumped>,   
-           SQL  Process state dump.            "
-           SQL - Tuning advisor ()
-3] RAC Wait events -
-           COllect the AWR report from all the nodes in same time.1hr or 60min or less
-           LMS - process responsible for cache fusion.
-		   gc lost blocks diagnostic
-4]DFS Lock Handle- 
-           log file sync lfsdiag.sql
-		   
-5] 
+===========================================
 
 
-
-
-
-
-i Inder,
 
 1. Take the hanganalyze and systemstatedump from the database while you are facing the issue and upload it to this SR.
 
-=============================================
-Collecting Hanganalyze and Systemstate dumps
-=============================================
+		=============================================
+		Collecting Hanganalyze and Systemstate dumps
+		=============================================
 
-Using SQL*Plus connect as SYSDBA using the following command:
+		Using SQL*Plus connect as SYSDBA using the following command:
 
-sqlplus " / as sysdba"
+		sqlplus " / as sysdba"
 
-If there are problems making this connection then in 10gR2 and above, the sqlplus "preliminary connection" can be used :
+		If there are problems making this connection then in 10gR2 and above, the sqlplus "preliminary connection" can be used :
 
-sqlplus -prelim " / as sysdba" (in 11.2.0.2 hanganalyze will not produce output with prelim connection)
+		sqlplus -prelim " / as sysdba" (in 11.2.0.2 hanganalyze will not produce output with prelim connection)
 
-Hanganalyze in RAC
-==================
-SQL> oradebug setmypid
-SQL> oradebug unlimit
-SQL> oradebug setinst all
-SQL> oradebug -g all hanganalyze 3
-< wait for 2 min>
-SQL> oradebug -g all hanganalyze 3
-< wait for 2 min>
-SQL> oradebug -g all hanganalyze 3
-SQL> oradebug tracefile_name
+		Hanganalyze in RAC
+		==================
+		SQL> oradebug setmypid
+		SQL> oradebug unlimit
+		SQL> oradebug setinst all
+		SQL> oradebug -g all hanganalyze 3
+		< wait for 2 min>
+		SQL> oradebug -g all hanganalyze 3
+		< wait for 2 min>
+		SQL> oradebug -g all hanganalyze 3
+		SQL> oradebug tracefile_name
 
-Systemstate in RAC
-==================
-SQL> oradebug setmypid
-SQL> oradebug unlimit
-SQL> oradebug setinst all
-SQL> oradebug -g all dump systemstate 267
-< wait for 2 min>
-SQL> oradebug -g all dump systemstate 267
-< wait for 2 min>
-SQL> oradebug -g all dump systemstate 267
-SQL> oradebug tracefile_name
+		Systemstate in RAC
+		==================
+		SQL> oradebug setmypid
+		SQL> oradebug unlimit
+		SQL> oradebug setinst all
+		SQL> oradebug -g all dump systemstate 267
+		< wait for 2 min>
+		SQL> oradebug -g all dump systemstate 267
+		< wait for 2 min>
+		SQL> oradebug -g all dump systemstate 267
+		SQL> oradebug tracefile_name
 
 
 2. Also generate 3 errorstack trace for the blocking session as follows and upload it to this SR
 
-++ Find the OS pid for the oracle session opened for sql.
-select spid from v$process where addr=(select paddr from v$session where sid=<blocking session id>);
-This will give the OS pid of the oracle session.
+		++ Find the OS pid for the oracle session opened for sql.
+		select spid from v$process where addr=(select paddr from v$session where sid=<blocking session id>);
+		This will give the OS pid of the oracle session.
 
-Errorstack
-~~~~~~~~~~~
-SQL> connect / as sysdba
-SQL> oradebug setospid <spid>
-SQL> oradebug dump errorstack 3
-wait for 2 min
-SQL> oradebug dump errorstack 3
-SQL> exit
+		Errorstack
+		============
+		SQL> connect / as sysdba
+		SQL> oradebug setospid <spid>
+		SQL> oradebug dump errorstack 3
+		wait for 2 min
+		SQL> oradebug dump errorstack 3
+		SQL> exit
+
+
 
 
 --
@@ -88,6 +99,7 @@ SQL
 SQLT 215187.1
 224270.1
 sanman.krishnamurthy
+
 1] EXECTUION PLAN CHANGE - bug fix can cause these [OFE - optimiser_ parameter to previous version ]
    10046, AWR , sqlt, v$active session history 
 2] Data Change
@@ -133,107 +145,141 @@ sanman.krishnamurthy
 
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-STORAGE DATA COLLECTION 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-COLNING
-+++++++
-There is various storage cloning methods and technologies used by different storage vendors. As long as the cloning techology creates consistent snapshots of all the disks in an ASM disk group then the diskgroup based on the copied LUNs can be mounted at an alternate site.
-
-- EMC CLARiiON SnapView and MirrorView (also known as BCV copy)
-- Hitachi Data Systems (HDS): Universal Storage Platform Replication Software
-- IBM FlashCopy
-
-Most common disk cloning technologies is mentioned in the following link. The documents specific for each vendor also explains the best practices when creating the disk copies.
-
-http://www.oracle.com/technetwork/database/index-100339.html
-
-Note: The POC and Procedure of the storage clone comes from the respective Vendor.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-ASM
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Key ASMLIB
-Please provide the following:
-
-ASM alert logs
-
-1. Please execute the next commands and show me the output (from each RAC node)
-==================================================================
-$> cat /etc/*release
-$> uname -a
-$> rpm -qa |grep oracleasm
-$> df -ha
-$> ls -l /dev/oracleasm/disks
-==================================================================
-
-2. Check the discovery path from each node::
-==================================================================
-
-$> /etc/init.d/oracleasm status
-$> /usr/sbin/oracleasm-discover
-$> /usr/sbin/oracleasm-discover 'ORCL:*'
-==================================================================
-
-3. Please check if the ASMLIB devices can be accessed from each RAC node
-==================================================================
-$> /etc/init.d/oracleasm scandisks
-$> /etc/init.d/oracleasm listdisks
-$> /etc/init.d/oracleasm querydisk -p <each disk from previous output>
-==================================================================
-
-4. Upload the next files from each RAC node:
-
-=)> /var/log/messages
-=)> /etc/sysconfig/oracleasm
-
-5. Please show me the partition table from each node:
-==================================================================
-$> cat /proc/partitions
-==================================================================
-
-Thank you
 
 
-DISABLE DNFS
-++++++++++++
-DNFS is enabled by default and been used automatically in 12C(DNFS is disabled in 11.2)
-because It has higher priority than regular NFS client.
-
-Please execute command and provide the output.
-$ pwd
-$ cd $ORACLE_HOME/lib
-ls -l *odm*
-
-To disable DHFS , shutdown the DB and do:
-(official way): cd $ORACLE_HOME/rdbms/lib; make -f ins_rdbms.mk dnfs_off ioracle
-(non-official): rename this file:
-Example:
-
-# ll $ORACLE_HOME/rdbms/lib/odm/
-total 100
--rw-r--r--. 1 oracle oinstall 96003 Jul 16 23:12 libnfsodm12.so
-# cd $ORACLE_HOME/rdbms/lib/odm/
-# mv libnfsodm12.so libnfsodm12.so.OLD
-
-Now start the instance, and you should not see the Direct NFS lines in the
-alert.log
-
-This will work only when it is in this half/disabled/enabled state.
-Please follow the first method and use second method for debug/rediscovery
-purposes.
 
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+=========================================================================================================================================================
+########################################################################################################################################################
+=========================================================================================================================================================
+=========================================================================================================================================================
+2. STORAGE DATA COLLECTION 
+=======================
+
+=======================================================================================
+STORAGE DATA COLLECTION ASM
+=======================================================================================
+
+				Key : ASMLIB
+				
+				Please provide the following:
+
+				ASM alert logs
+
+				1. Please execute the next commands and show me the output (from each RAC node)
+				==================================================================
+				$> cat /etc/*release
+				$> uname -a
+				$> rpm -qa |grep oracleasm
+				$> df -ha
+				$> ls -l /dev/oracleasm/disks
+				==================================================================
+
+				2. Check the discovery path from each node::
+				==================================================================
+
+				$> /etc/init.d/oracleasm status
+				$> /usr/sbin/oracleasm-discover
+				$> /usr/sbin/oracleasm-discover 'ORCL:*'
+				==================================================================
+
+				3. Please check if the ASMLIB devices can be accessed from each RAC node
+				==================================================================
+				$> /etc/init.d/oracleasm scandisks
+				$> /etc/init.d/oracleasm listdisks
+				$> /etc/init.d/oracleasm querydisk -p <each disk from previous output>
+				==================================================================
+
+				4. Upload the next files from each RAC node:
+
+				=)> /var/log/messages
+				=)> /etc/sysconfig/oracleasm
+
+				5. Please show me the partition table from each node:
+				==================================================================
+				$> cat /proc/partitions
+				==================================================================
+
+				Thank you
+
+
+
+=====================================================================
+STORAGE DATA COLLECTION DNFS
+=====================================================================
+
+
+						=======================
+						DISABLE DNFS
+						=======================
+						DNFS is enabled by default and been used automatically in 12C(DNFS is disabled in 11.2)
+						because It has higher priority than regular NFS client.
+
+						Please execute command and provide the output.
+						$ pwd
+						$ cd $ORACLE_HOME/lib
+						ls -l *odm*
+
+						To disable DHFS , shutdown the DB and do:
+						(official way): cd $ORACLE_HOME/rdbms/lib; make -f ins_rdbms.mk dnfs_off ioracle
+						(non-official): rename this file:
+						Example:
+
+						# ll $ORACLE_HOME/rdbms/lib/odm/
+						total 100
+						-rw-r--r--. 1 oracle oinstall 96003 Jul 16 23:12 libnfsodm12.so
+						# cd $ORACLE_HOME/rdbms/lib/odm/
+						# mv libnfsodm12.so libnfsodm12.so.OLD
+
+						Now start the instance, and you should not see the Direct NFS lines in the
+						alert.log
+
+						This will work only when it is in this half/disabled/enabled state.
+						Please follow the first method and use second method for debug/rediscovery
+						purposes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================================================================================================================
+########################################################################################################################################################
+=========================================================================================================================================================
+=========================================================================================================================================================
 RAC DATA COLLECTION
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==================================================================
+
+
 
 Would you please clarify me below queries to start troubleshooting.     
 1. How many nodes in cluster..?     
-      Output of   1.crsctl stat res -t  
-                  2. crsctl check crs  
-                  3. ps -ef | grep init  
-	  4. ps -ef | grep d.bin    
+      Output of   
+				  a. crsctl stat res -t  
+                  b. crsctl check crs  
+                  c. ps -ef | grep init  
+				  d. ps -ef | grep d.bin    
 	  
 2. Which node is having the issue..? 
    node name please..?
@@ -318,39 +364,85 @@ Note 1513912.1 - TFA Collector - Tool for Enhanced Diagnostic Gathering and star
  How To Start OSWatcher Black Box (OSWBB) Every System Boot (Doc ID 580513.1)
 
  
- 
-===============================================================================================================================================================
+=========================================================================================================================================================
+########################################################################################################################################################
+=========================================================================================================================================================
+=========================================================================================================================================================
+INSTALL PATCH UPGRADE 
+===========================================
+
+
+			Below are the POST INSTALLATION steps:
+			+++++++++++++++++++++
+			For OJVM PSU Patch:
+			+++++++++++++++++++++
+			cd $ORACLE_HOME/sqlpatch/19877440
+			sqlplus /nolog
+			SQL> CONNECT / AS SYSDBA
+			SQL> @postinstall.sql
+			SQL> quit
+			cd $ORACLE_HOME/rdbms/admin
+			sqlplus /nolog
+			SQL> CONNECT / AS SYSDBA
+			SQL> @utlrp.sql
+			+++++++++++++++++++++
+			For Database PSU patch:
+			+++++++++++++++++++++
+			cd $ORACLE_HOME/rdbms/admin
+			sqlplus /nolog
+			SQL> CONNECT / AS SYSDBA
+			SQL> STARTUP
+			SQL> @catbundle.sql psu apply
+			SQL> QUIT
+			cd $ORACLE_HOME/rdbms/admin
+			sqlplus /nolog
+			SQL> CONNECT / AS SYSDBA
+			SQL> @utlrp.sql
+
+
+			
+
+
+
+
+
+=========================================================================================================================================================
+########################################################################################################################################################
+=========================================================================================================================================================
+=========================================================================================================================================================
 OS DATA COLLECTION
- 
-===============================================================================================================================================================
-KEY :  STRACE Process
- 
-+++++++++++++++++++++
-OS Process
+==================================================================
 
-2. Get a strace for a process reporting this transient corruption:
 
-In order to do this steps, indentify the process at OS level that makes the backup
+			=======================================================
+ 			OS TRACING STRACE TRUSS TRUC
+			=======================================================
+				OS Process
 
-2.1.Connect to RMAN
-$rman target /
-2.2.Get the spid for RMAN.
-$sqlplus / a sysdba
-SQL>set linesize 200
-SQL>select p.spid,substr(s.osuser,1,10) osuser,substr(s.username,1,8) username,substr(s.action,1,60) rmaninfo from v$session s, v$process p where s.paddr=p.addr and s.osuser is not null and s.program like '%rman%' order by s.osuser;
+				2. Get a strace for a process reporting this transient corruption:
 
-2.3. Execute the backup command in RMAN
-2.4. Re-execute the query in SQL*Plus and you will see in RMANINFO column something like " STARTED16"
-2.5. Get the spid and trace it
+				In order to do this steps, indentify the process at OS level that makes the backup
 
-$ strace -o backupdebug.log -t -p <SPID of Oracle server process>
+				2.1.Connect to RMAN
+				$rman target /
+				2.2.Get the spid for RMAN.
+				$sqlplus / a sysdba
+				SQL>set linesize 200
+				SQL>select p.spid,substr(s.osuser,1,10) osuser,substr(s.username,1,8) username,substr(s.action,1,60) 
+				rmaninfo from v$session s, v$process p where s.paddr=p.addr and s.osuser is not null and s.program like '%rman%' order by s.osuser;
 
-++++++++++++++++++++++++++++++++++
-ASM 
+				2.3. Execute the backup command in RMAN
+				2.4. Re-execute the query in SQL*Plus and you will see in RMANINFO column something like " STARTED16"
+				2.5. Get the spid and trace it
 
-$ strace -aeft -o /tmp/asmcmd.log asmcmd
-ASMCMD> -- run the command
+				$ strace -o backupdebug.log -t -p <SPID of Oracle server process>
 
-++++++++++++++++++++++++++++++++++++
-Troubleshooting ORA-27300 ORA-27301 ORA-27302 Errors (Doc ID 579365.1)
+				++++++++++++++++++++++++++++++++++
+				ASMCMD TRACE
+				
+				$ strace -aeft -o /tmp/asmcmd.log asmcmd
+				ASMCMD> -- run the command
 
+
+
+				
