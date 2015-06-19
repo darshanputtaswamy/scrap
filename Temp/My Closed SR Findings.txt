@@ -17,8 +17,8 @@ SR NUMBER		| IRD			| CLOSED DATE	|						DISCRIPTION
 3-10263977365    12-Feb-2015     4-Mar-2015      Question GI patching (Patch # 19955028 - GI PSU 11.2.0.4.5)
 3-10299788681    19-Feb-2015     4-Mar-2015      we have seen cluster activity on the database . Can you check if we have issues on our cluster. generated AWR on that  period.
 3-10273954821    13-Feb-2015 	 4-Mar-2015 	 how long will our support last for 11.2.0.3.0 before we have to switch to 11.2.0.4.x. 
-
-
+3-10196649511	 02-Feb-2015	 9-Mar-2015		 Advise on database 11.1.0.7 patching
+3-10040509901     Upgrade Non-RAC Oracle database 11.2.0.1 to 11.2.0.4 oracle RAC
 
 
 =======================================================================================================================
@@ -45,9 +45,49 @@ FINDINGS:
 
 
 
+
+
+
+
+
 =======================================================================================================================
-SR NUMBER :                     
-DISCRIPTION :                                           
+SR NUMBER :  3-10040509901                   
+DISCRIPTION :     Upgrade Non-RAC Oracle database 11.2.0.1 to 11.2.0.4 oracle RAC                                      
+KEY:                            
+PLATFORM:                        
+VERSION :
+=======================================================================================================================
+
+DATA COLLECTION:
+
+
+FINDINGS:
+We would like to Upgrade our existing Oracle 11.2.0.1 standalone(Non ASM) database to 11.2.0.4 RAC Database.
+It will be out of place upgrade. Proposed RAC database is going to be on new hardware.
+Can you please provide us the Upgrade Path, Migration Steps and also reference document to do it.
+Below are the details of our existing Database details,
+OS - RHEL 5.5,x86_64
+Database Version - 11.2.0.1 Enterprise Edition, Non RAC , Non ASM
+Database Size - 450 GB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======================================================================================================================
+SR NUMBER :    3-10196649511                 
+DISCRIPTION :  Advise on database 11.1.0.7 patching                                     
 KEY:                            
 PLATFORM:                        
 VERSION :
@@ -58,6 +98,21 @@ DATA COLLECTION:
 
 FINDINGS:
 
+The recommended patching tab shows three patches related to Oracle Database 11.1.0.7 for platform Windows 2003 -SP2 32 bits:19852363, 20126914 and 20227146
+The doc id 1454618.1 shows patches numbers 19769499, 19854433 and 20126914
+
+Please apply 20126914 and 20227146 only in the following order
+
+1] 20126914 is the DB 11.1.0.7 Patch 59
+2] 20227146 is OJVM bundle patch which also covers 19852363.
+
+Yes, Both the Patch 20126914, 20227146 download access requires extended support.
+
+Please go through the below docs for more info it might be helpful .
+
+1] http://docs.oracle.com/cd/E25290_01/doc.60/e25224/patchesupdates.htm
+2] https://docs.oracle.com/cd/E25290_01/doc.60/e28848/toc.htm
+3] https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=434525380995246&id=1369860.1&_afrWindowMode=0&_adf.ctrl-state=kunhk2mik_4
 
 
 
