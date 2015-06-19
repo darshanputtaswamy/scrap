@@ -24,31 +24,31 @@ INDEX
 +++++++++++++++++++++++++++++
 1.    How to transfer NON-TECHNICAL  SR to HUB
 
-        a.    Non technical categories
+a.    Non technical categories
 
-                i.    RDA Issue, Media request, Non-English SRs,License issues etc
+i.    RDA Issue, Media request, Non-English SRs,License issues etc
 
-        b.    Steps to transfer non-technical SR to hub
+b.    Steps to transfer non-technical SR to hub
 
-        1. Set SR Type: Non-Technical
+1. Set SR Type: Non-Technical
 
-        2. Set Category: Other Non-Technical Questions
+2. Set Category: Other Non-Technical Questions
 
-        3. Set Sub Category closely matching to customer's question.
+3. Set Sub Category closely matching to customer's question.
 
-        4. Click on Transfer button and select 4th Option which is "transfer to new owner and new group that GRP will identify for me"
+4. Click on Transfer button and select 4th Option which is "transfer to new owner and new group that GRP will identify for me"
 
-        5. No need to change the product line.
+5. No need to change the product line.
 
-        6. Submit the SR for transfer.
+6. Submit the SR for transfer.
 
-        c. Customer need to set filter to see non-technical SR on MOS
+c. Customer need to set filter to see non-technical SR on MOS
 
-        1.Upon login to MOS , click on "Service Request "
+1.Upon login to MOS , click on "Service Request "
 
-        2.You are able to view the pencil Icon in the region where you see the list of SR's.
+2.You are able to view the pencil Icon in the region where you see the list of SR's.
 
-        3.Click on the pencil Icon and Select " Feedback Only SR's to view the Non technical SR's created .
+3.Click on the pencil Icon and Select " Feedback Only SR's to view the Non technical SR's created .
 
 
 ======================================================		
@@ -56,8 +56,8 @@ INDEX
 
 2.    WIP / Acknowledge SR   UPDATE
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-       ======
-	   
+======
+
 Hi <CT>,
 
 Your Service Request got assigned to me. I am Darshan from  Storage/Scalability Team who will assist you on this issue now onward.
@@ -95,7 +95,7 @@ Mgrracpc.zoban@sbi.co.in
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-		Hi ,
+Hi ,
 
 You want to work in English or Korean? As this Sr is created with language English but content is in Korean.
 
@@ -117,18 +117,18 @@ Working Effectively With Oracle Support - (Doc ID 166650.1)
 RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
- 
+
 =============================================================
 
 
 4.    Reminder-1 for an update / feedback
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
 
-        UPDATE-1
-        =======
-		
-        Hi<Cust_Name>
+
+UPDATE-1
+=======
+
+Hi<Cust_Name>
 
 
 Please review my earlier technical update.
@@ -138,7 +138,7 @@ otherwise if the issue is clarified /resolved then we kindly request you to prov
 
 Have a nice day Ahead………………..
 
- 
+
 Thanks & Regards,
 Darshan P
 Global Customer Support
@@ -164,14 +164,14 @@ To discuss this t opic further with Oracle experts and industry peers, we encour
 Finally,
 Oracle Support strongly recommends that you take further proactive steps to enhance the diagnosability of your environment by installing the following utility,which will allow for better diagnostics and data collection when interacting with Oracle Support: OSWatcher(OSW) is a lightweight series of tools and data collection utility for these purposes.For more info:OSWatcher Black Box User Guide(Includes:[Video]) (Doc ID 301137.1)
 
- 
 
- 
 
-		UPDATE 2
-		========
-		
-		
+
+
+UPDATE 2
+========
+
+
 Hi <CT>,
 
 Please update the SR as soon as possible with the current status and/or requested information so we can continue working the issue.
@@ -230,16 +230,16 @@ Working Effectively With Oracle Support - (Doc ID 166650.1)
 RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
-		
+
 ========================================================		
 
 
 6. Closing or putting in Auto close
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-		A] AUTO CLOSUE
-		===========
-		 
+A] AUTO CLOSUE
+===========
+
 Hi ,
 We are placing this SR in "Auto Closure" status. We will be waiting for your response on this SR. If there is no re-sponse from you on it then SR will be placed in "Close" status. 
 
@@ -264,8 +264,8 @@ Working Effectively With Oracle Support - (Doc ID 166650.1)
 
 
 
-		B] Closer Confirmation 
-		============================== 
+B] Closer Confirmation 
+============================== 
 
 Hi ,
 
@@ -284,8 +284,8 @@ Working Effectively With Oracle Support - (Doc ID 166650.1)
 
 RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
-		 
-		 
+
+
 
 C] Abandoned Customer 
 ======================
@@ -320,286 +320,286 @@ Storage: https://community.oracle.com/community/support/oracle_database/storage_
 
 7.    Sev-1 Request or Raise a priority of SR
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
 
-        Support is processing your Severity 1 request. Please note that severity 1 is reserved for
 
-        production down issues. To complete this request, please provide the following required information.
+Support is processing your Severity 1 request. Please note that severity 1 is reserved for
 
-      
+production down issues. To complete this request, please provide the following required information.
 
- 
 
-        ### SEVERITY 1 REQUEST TEMPLATE #####
 
-        can you easily recover from,  bypass or work around the problem?
 
-        Does your system or application  continue normally after the problem occurs?
 
-        Are the standard features  of the system or application still available; is the loss of service minor? 
+### SEVERITY 1 REQUEST TEMPLATE #####
 
-        Is this a Data Corruption issue? 
+can you easily recover from,  bypass or work around the problem?
 
-        Do you have a Complete Loss  of Service?
+Does your system or application  continue normally after the problem occurs?
 
-        Is this a Test or Production Environment?
+Are the standard features  of the system or application still available; is the loss of service minor? 
 
-        Are  you unable to proceed with implementation and the go live date is in  less than  3 days?
+Is this a Data Corruption issue? 
 
-        ALL PHONE NUMBERS SHOULD INCLUDE THE COUNTRY CODE AND AREA  CODE.
+Do you have a Complete Loss  of Service?
 
-        
+Is this a Test or Production Environment?
 
-        Customers Management name:
+Are  you unable to proceed with implementation and the go live date is in  less than  3 days?
 
-        Customer's Management 24x7 contact  number:
+ALL PHONE NUMBERS SHOULD INCLUDE THE COUNTRY CODE AND AREA  CODE.
 
-        Primary Customer contact name
 
-        Current Customer 24x7 voice phone  number
 
-        Current Customer Email address:
+Customers Management name:
 
-        Current Customer Pager/Fax  number:
+Customer's Management 24x7 contact  number:
 
-        Secondary Contact Name:
+Primary Customer contact name
 
-        Secondary Contact Phone number: 
+Current Customer 24x7 voice phone  number
 
-        Secondary Contact Email:
+Current Customer Email address:
 
-      
+Current Customer Pager/Fax  number:
 
-        ########################################
+Secondary Contact Name:
 
- 
+Secondary Contact Phone number: 
+
+Secondary Contact Email:
+
+
+
+########################################
+
+
 
 ======================================================= 
 
 
 8.    CALL SUMMARY
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
 
-       Called <customer_name> on <compelte phone no>
 
-        (In case, if you are unable to reach to CT, use one of below appropriately
+Called <customer_name> on <compelte phone no>
 
-            - It is just ringing, no one is attending
+(In case, if you are unable to reach to CT, use one of below appropriately
 
-            - Getting continuous engage tone
+- It is just ringing, no one is attending
 
-            - Left voice message)
+- Getting continuous engage tone
 
- 
+- Left voice message)
 
-        Call Conversation :
 
-          
 
-        Action on Customer:
+Call Conversation :
 
- 
 
-        Action on Support:
 
- 
+Action on Customer:
+
+
+
+Action on Support:
+
+
 
 ========================================================= 
 
 
 9.  How to upload files to FTP site
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
-
-        Request you to upload all requested files to ftp.oracle.com using ftp.
-
-        FTP IP address: ftp.oracle.com
-
-        USERID: anonymous
-
-        PASSWORD: your_complete_email id (ex: abc@xyz.com - note you need
-
-                                             to ensure '@' is present)
-
- 
-
-        TO UPLOAD FILES:
-
- 
-
-        1. Change to directory, for example:
-
-        ftp> cd support/incoming
-
-        (Or may use your competency/incoming, ie, apps, svrtech, etc)
-
-        2. Make a directory named with your current tar number:
-
-        ftp> mkdir <SR#>
-
-        3. Change into that new directory:
-
-        ftp> cd <SR#>
-
-        4. Set the transfer type to binary
-
-        ftp> binary [or bin]
-
-        5. Upload the files
-
-        ftp> put file_name or mput *
-
- 
-
-        Please note that uploading a file in this fashion does not notify the analyst.
-
-        So, you must update the SR with the full directory path where you have uploaded the file(s) so that the analyst assigned to your SR can
-
-        retrieve the files.
-
- 
-
-        Reference : Note 77483.1   External Support FTP site: Information Sheet
-
- 
-
-		External Support FTP site: Information Sheet (Doc ID 77483.1)
-
-		Basically one ftp to this site  ftp.oracle.com login as anonymous/<any password>
-		mkdir under incoming/SR# & upload the files
-
-		 
-
-		(12:33:23 PM) rajendra.k.gupta@oracle.com: open ftp.oracle.com
-
-		username:shidhar
-		pwd:Neeru123
-		(12:42:04 PM) rajendra.k.gupta@oracle.com: /ftp/anonymous/support/
-
- 
 
 
-		Have a nice Day
+Request you to upload all requested files to ftp.oracle.com using ftp.
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+FTP IP address: ftp.oracle.com
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+USERID: anonymous
+
+PASSWORD: your_complete_email id (ex: abc@xyz.com - note you need
+
+						 to ensure '@' is present)
+
+
+
+TO UPLOAD FILES:
+
+
+
+1. Change to directory, for example:
+
+ftp> cd support/incoming
+
+(Or may use your competency/incoming, ie, apps, svrtech, etc)
+
+2. Make a directory named with your current tar number:
+
+ftp> mkdir <SR#>
+
+3. Change into that new directory:
+
+ftp> cd <SR#>
+
+4. Set the transfer type to binary
+
+ftp> binary [or bin]
+
+5. Upload the files
+
+ftp> put file_name or mput *
+
+
+
+Please note that uploading a file in this fashion does not notify the analyst.
+
+So, you must update the SR with the full directory path where you have uploaded the file(s) so that the analyst assigned to your SR can
+
+retrieve the files.
+
+
+
+Reference : Note 77483.1   External Support FTP site: Information Sheet
+
+
+
+External Support FTP site: Information Sheet (Doc ID 77483.1)
+
+Basically one ftp to this site  ftp.oracle.com login as anonymous/<any password>
+mkdir under incoming/SR# & upload the files
+
+
+
+(12:33:23 PM) rajendra.k.gupta@oracle.com: open ftp.oracle.com
+
+username:shidhar
+pwd:Neeru123
+(12:42:04 PM) rajendra.k.gupta@oracle.com: /ftp/anonymous/support/
+
+
+
+
+Have a nice Day
+
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
 =================================================================
 
 
 10. INT (Awaiting Internal Response)
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
-
-        I am seeking help internally on this issue, please standby. 
-
- 
-
-        I have sent an email to our internal help group, and awaiting for their feedback.
-
- 
-
-        Will update you as soon as I have an useful information to share with you.
-
- 
 
 
-		Have a nice Day
+I am seeking help internally on this issue, please standby. 
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
-		
+I have sent an email to our internal help group, and awaiting for their feedback.
+
+
+
+Will update you as soon as I have an useful information to share with you.
+
+
+
+
+Have a nice Day
+
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
 
 ==========================================================================
 
 
 11. BUG - When you raise the Bug SR need to be updated with the below
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
-
-    I have raised / updated the bug <bug$> opened for this case with the information you have provided and now we are awaiting reply in bug from BDE.
-
-    I will keep you informed soon as I hear back from BDE person working on this bug.
-
- 
-
-		Have a nice Day
-
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
-
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
 
-		
+I have raised / updated the bug <bug$> opened for this case with the information you have provided and now we are awaiting reply in bug from BDE.
+
+I will keep you informed soon as I hear back from BDE person working on this bug.
+
+
+
+Have a nice Day
+
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
+
 =======================================================================		
 
 
 12. Consulting out of scope
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=+
- 
-
-		Support can provide only sample setup example or troubleshoot installations and existing configurations
-		Oracle Consulting can evaluate your site's needs and recommend a configuration for you.
-		Oracle Consulting does offer this service. You can contact Consulting through your Sales Representative or
-		Refer to the following URL for the numbers to call:
-		http://www.oracle.com/support/contact.html
 
 
+Support can provide only sample setup example or troubleshoot installations and existing configurations
+Oracle Consulting can evaluate your site's needs and recommend a configuration for you.
+Oracle Consulting does offer this service. You can contact Consulting through your Sales Representative or
+Refer to the following URL for the numbers to call:
+http://www.oracle.com/support/contact.html
 
-		Have a nice Day
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Have a nice Day
 
-		
-		OR
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
 
-		Oracle Support cannot make any hardware recommendations (beyond the minimum requirements noted in the RAC documentation). 
-		I understand that what you are looking for is a recommendation from Oracle on exactly what hardware is best.  This is not a 
-		function of Oracle Support.  Oracle Support can troubleshoot installations and existing configurations.  Oracle Consulting 
-		can evaluate your site's needs and recommend a configuration for you. Oracle Consulting does offer this service.  You can contact 
-		Consulting through your Sales Representative or if you do nothave this contact information we can find it for Refer to the following
-		URL for the numbers to call:http://www.oracle.com/support/contact.html
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
 
-		
 
-		Have a nice Day
+OR
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
+Oracle Support cannot make any hardware recommendations (beyond the minimum requirements noted in the RAC documentation). 
+I understand that what you are looking for is a recommendation from Oracle on exactly what hardware is best.  This is not a 
+function of Oracle Support.  Oracle Support can troubleshoot installations and existing configurations.  Oracle Consulting 
+can evaluate your site's needs and recommend a configuration for you. Oracle Consulting does offer this service.  You can contact 
+Consulting through your Sales Representative or if you do nothave this contact information we can find it for Refer to the following
+URL for the numbers to call:http://www.oracle.com/support/contact.html
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
- 
- 
+
+
+Have a nice Day
+
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
 ===============================================
 
 
@@ -607,155 +607,154 @@ Storage: https://community.oracle.com/community/support/oracle_database/storage_
 +++++++++++++++++++++++++++++++++++++++++++++++
 
 
-		1. Does this bug affect a production or test or Dev instance?
-		<<we know this is affecting a Test instance due to your previous update>>
+1. Does this bug affect a production or test or Dev instance?
+<<we know this is affecting a Test instance due to your previous update>>
 
-		2. If this bug affects a major milestone:
-		a. Milestone Date:
-		b. Name of Milestone:
-		c. How will the you be impacted if the milestone is not reached by this date?
-		d. How does this Bug adversely impact the your ability to reach this milestone?
+2. If this bug affects a major milestone:
+a. Milestone Date:
+b. Name of Milestone:
+c. How will the you be impacted if the milestone is not reached by this date?
+d. How does this Bug adversely impact the your ability to reach this milestone?
 
-		3. If this bug does not affect a major milestone:
-		a. What is the negative impact of bug to the your system?
-		(please provide specific details / examples)
+3. If this bug does not affect a major milestone:
+a. What is the negative impact of bug to the your system?
+(please provide specific details / examples)
 
-		b. How does this bug's negative impact affect the your business?
-		(please provide specific details / examples)
+b. How does this bug's negative impact affect the your business?
+(please provide specific details / examples)
 
-		4. Is there a clear step-by-step workaround mentioned in the bug?
+4. Is there a clear step-by-step workaround mentioned in the bug?
 
-		5. If there is a clear workaround, why is this not feasible for you?
+5. If there is a clear workaround, why is this not feasible for you?
 
-		6. Have you created a own workaround? If so, what is it?
+6. Have you created a own workaround? If so, what is it?
 
-		7. Are you unable to release the application? or is it already on production?
-
-
-		Ref: How To Write A Business Case (Doc ID 392393.1)
+7. Are you unable to release the application? or is it already on production?
 
 
+Ref: How To Write A Business Case (Doc ID 392393.1)
 
-		Have a nice Day
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
- 
+Have a nice Day
 
- 
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
+
 ==============================================================
 
 
 14. OWC
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-		I would like to collaborate with you in a Web Conference (OWC) to progress your
-		issue. Please follow these steps:
+I would like to collaborate with you in a Web Conference (OWC) to progress your
+issue. Please follow these steps:
 
-		NOTE: IT IS MANDATORY TO DISABLE ALL POP-UP BLOCKERS WITH YOUR INTERNET
-		EXPLOERE (OR ANY BROWSER) BEFORE YOU START THE CONFERENCE.
+NOTE: IT IS MANDATORY TO DISABLE ALL POP-UP BLOCKERS WITH YOUR INTERNET
+EXPLOERE (OR ANY BROWSER) BEFORE YOU START THE CONFERENCE.
 
-		1. Please open the following:
+1. Please open the following:
 
-		http://strtc.oracle.com
+http://strtc.oracle.com
 
-		2. On the right pane, please find the "Join Conference" option, and provide the
-		following details:
+2. On the right pane, please find the "Join Conference" option, and provide the
+following details:
 
-		  Enter the Conference ID: 9335644
-		  Enter the Conference Key as your CSI#. 14506394
-		  Enter your name.
+Enter the Conference ID: 9335644
+Enter the Conference Key as your CSI#. 14506394
+Enter your name.
 
-		3. Please click on "Join Conference" to join this collaboration session
-
- 
+3. Please click on "Join Conference" to join this collaboration session
 
 
-		Have a nice Day
 
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
 
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+Have a nice Day
 
-		
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
 ===========================================================================
 
 15 . BACKPORT AND PATCHES
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 
-
-		To file a back port please provide/confirm the following information
-
-		 
-
-		1.Milestone Name and Date if any?
-
-		2.Technical Impact
-
-		3.Business Impact
 
 
-		To obtain the patches , I will need the following questions answered before this will be considered.
-
-		 
-		1.) Business Justification - Please explain the effect this has on your business..monetarily or otherwise.
-
-		2.) Technical Justification - Explain what you must do technically to overcome this problem if this is possible. If a workaround exists, please explain in detail why this workaround cannot b used until the problem is fixed.
-
-		3.) Date when the fix is needed. (Note: ASAP is not acceptable, a fixed date is required.)
-
-		4.) Provide a list of any other patches which you have applied or you need to apply on top of 10.2.0.4 using opatch with the following syntax:
-
-			opatch lsinventory -details
-
-		5.) Platform for the required patches
-
-		 
-		 
-		 
-		To download the patch, please follow the steps below:
-
-		1- Go to MOS
-
-		2- Go to the tab "Patches and updates"
-
-		3- choose simple search
-
-		4- enter your patch number 9008904
-
-		5- select the platform IBM AIX on POWER Systems (64-bit)
-
-		6- press go then download the patch
-
-		7- Read any applicable notes before downloading, then click the Download button.
-
-		Note: Please review the Readme file for instructions on how to install the patch set.
-
-
-		Have a nice Day
-
-		Thanks & Regards,
-		Darshan P
-		Global Customer Support
-		Desk Phone:+918041072121
-
-		Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-		Contact number of HUB : http://www.oracle.com/support/contact.html
-		Working Effectively With Oracle Support - (Doc ID 166650.1)  
+To file a back port please provide/confirm the following information
 
 
 
- 
+1.Milestone Name and Date if any?
 
- 
+2.Technical Impact
+
+3.Business Impact
+
+
+To obtain the patches , I will need the following questions answered before this will be considered.
+
+
+1.) Business Justification - Please explain the effect this has on your business..monetarily or otherwise.
+
+2.) Technical Justification - Explain what you must do technically to overcome this problem if this is possible. If a workaround exists, please explain in detail why this workaround cannot b used until the problem is fixed.
+
+3.) Date when the fix is needed. (Note: ASAP is not acceptable, a fixed date is required.)
+
+4.) Provide a list of any other patches which you have applied or you need to apply on top of 10.2.0.4 using opatch with the following syntax:
+
+opatch lsinventory -details
+
+5.) Platform for the required patches
+
+
+
+
+To download the patch, please follow the steps below:
+
+1- Go to MOS
+
+2- Go to the tab "Patches and updates"
+
+3- choose simple search
+
+4- enter your patch number 9008904
+
+5- select the platform IBM AIX on POWER Systems (64-bit)
+
+6- press go then download the patch
+
+7- Read any applicable notes before downloading, then click the Download button.
+
+Note: Please review the Readme file for instructions on how to install the patch set.
+
+
+Have a nice Day
+
+Thanks & Regards,
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+Contact number of HUB : http://www.oracle.com/support/contact.html
+Working Effectively With Oracle Support - (Doc ID 166650.1)  
+
+
+
+
+
