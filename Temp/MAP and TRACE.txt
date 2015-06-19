@@ -53,6 +53,9 @@ yiying- analysis
 	OS/SYSTEM
 	==========
 	FAQ: ORA-4030 [Video] [ID 399497.1]
+	http://ufsdump.org/papers/oscon2009-linux-monitoring.pdf
+	
+	
 	
 	
 ORACLE DOCUMETATIONS(3),STUDENT GUIDE(3).
