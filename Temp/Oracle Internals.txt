@@ -1,5 +1,4 @@
 
-
 Internal Only: Advanced Troubleshooting of CSS Heartbeat Failures (Network) (Doc ID 457772.1)
 Is the clssnmSendingThread sending a status message to every other node continuously?
 If the answer is no, see if the clssnmSendingThread is stuck (stack traces of all threads of CSS) or if there is a resource problem or network error in OS Watcher (netstat, vmstat, etc...)br013t'.
@@ -19,11 +18,20 @@ DSI306 Very Large Databases
 DSI307 Distribution and Replication
 DSI308 Parallel Server
 
-DSI401 dump, crash and corruptions
-DSI401 advance support skill
+DSI401 Dump, crash and corruptions
+DSI401 Advance support skill
 DSI401e Advanced Support Skill
 DSI404 SQL TUNNING
 DSI405 Performance Tuning
 DSI406 VLDB
 DSI407 Dataguard replication
 DSI408 Real Application Clusters Internals
+
+====================================================================
+
+ORACLE RAC - STORAGE - CLUSTER - PERFORMANCE- INSTALL UPGRDAE
+LINUX OPERATING SYSTEM
+SOFTEARE ENGINEERING
+OOPS
+13-JULY-2015
+====================================================================

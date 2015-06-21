@@ -87,7 +87,7 @@ Review 10 SRs
        3 TOPCODER Problems
 	   C/C++/Java
 	   
-conciousness 
+Conciousness 
 
 SOFT SKILLS
 ----------------

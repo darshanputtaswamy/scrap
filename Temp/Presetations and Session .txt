@@ -1,0 +1,24 @@
+Upstart concepts in linux 6 and 7
+exclusive mode of starting CSSD to put voting disk and OCR
+syslogd must be up and OHASD to starting
+
+shanmuga.sundar.a@oracle.com
+
+
+Perforamce 
+
+1] Slow  - DB  AWR,ASH,OSwatcher,CHM(used for Windows)
+           SQL - 1046,tkproof
+		   
+2] Hang  - DB  Global System state dump and Hang analysis <Please check the SGA Size><check alter log already if it has already dumped>,   
+           SQL  Process state dump.            "
+           SQL - Tuning advisor ()
+3] RAC Wait events -
+           COllect the AWR report from all the nodes in same time.1hr or 60min or less
+           LMS - process responsible for cache fusion.
+		   gc lost blocks diagnostic
+4]DFS Lock Handle- 
+           log file sync lfsdiag.sql
+		   
+
+		   
