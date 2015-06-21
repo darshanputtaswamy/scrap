@@ -27,5 +27,3 @@ DSI405 Performance Tuning
 DSI406 VLDB
 DSI407 Dataguard replication
 DSI408 Real Application Clusters Internals
-
-
