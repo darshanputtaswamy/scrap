@@ -52,6 +52,84 @@ Touched SR List :
 ============================================================================================================================================
 ....
 
+===========================================================================================================================================
+SR Number                               Description:
+============================================================================================================================================
+Key :
+
+
+
+DAY SUMMARY:
+Data Collection
+--
+@@@@oracheck_10152.log
+
+2015-06-23 13:16:39.484: [OCRCHECK][3731052288]ocrcheck starts...
+2015-06-23 13:16:40.440: [OCRCHECK][3731052288]protchcheck: OCR status : total = [262120], used = [5320], avail = [256800]
+
+2015-06-23 13:16:40.440: [OCRCHECK][3731052288]Produnction ENV: Logical corruption check requires a privileged user
+2015-06-23 13:16:40.440: [OCRCHECK][3731052288]Exiting [status=success]...
+
+==
+
+@@@@ASM Alert Log
+
+Tue Jun 23 13:16:39 2015
+ NOTE: [ocrcheck.bin@prod-ora-n1.int.immi.gov.au (TNS V1 10152] opening OCR file
+
+==
+
+
+015-06-23 13:16:39.481: [UiServer][3852388096] CS(0x7fb3a000d810)set Properties ( oggadm,0x7fb3a815b8a0)
+ 2015-06-23 13:16:39.492: [UiServer][3854489344]{1:63826:49146} Sending message to PE. ctx= 0x7fb398007a50, Client PID: 10150
+ 2015-06-23 13:16:39.501: [UiServer][3854489344]{1:63826:49146} Done for ctx=0x7fb398007a50
+ 2015-06-23 13:16:39.514: [UiServer][3852388096] CS(0x7fb3a0077cb0)set Properties ( oggadm,0x7fb3a815b260)
+ 2015-06-23 13:16:39.524: [UiServer][3854489344]{1:63826:49147} Sending message to PE. ctx= 0x7fb398011760, Client PID: 10150
+ 2015-06-23 13:16:39.531: [UiServer][3854489344]{1:63826:49147} Done for ctx=0x7fb398011760
+ 2015-06-23 13:16:41.114: [UiServer][3852388096] CS(0x7fb3a000a110)set Properties ( nrpe,0x7fb3a815b1a0)
+ 2015-06-23 13:16:41.126: [UiServer][3854489344]{1:63826:49148} Sending message to PE. ctx= 0x7fb398009050, Client PID: 10239
+ 2015-06-23 13:16:41.137: [UiServer][3854489344]{1:63826:49148} Done for ctx=0x7fb398009050
+
+==============================================================================================================
+
+@@@@oracheck_29637.log
+
+Oracle Database 11g Clusterware Release 11.2.0.4.0 - Production Copyright 1996, 2011 Oracle. All rights reserved.
+2015-06-23 11:50:39.360: [OCRCHECK][1066125056]ocrcheck starts...
+2015-06-23 11:50:40.267: [OCRCHECK][1066125056]protchcheck: OCR status : total = [262120], used = [5320], avail = [256800]
+
+2015-06-23 11:50:40.268: [OCRCHECK][1066125056]Produnction ENV: Logical corruption check requires a privileged user
+2015-06-23 11:50:40.268: [OCRCHECK][1066125056]Exiting [status=success]...
+
+
+@@@@ASM Alert Log
+
+ Tue Jun 23 11:50:39 2015
+ NOTE: [ocrcheck.bin@prod-ora-n1.int.immi.gov.au (TNS V1 29637] opening OCR file
+
+@@@CRSD.log 2015-06-23 11:37:24.005: [UiServer][3854489344]{1:63826:31809} Sending message to PE. ctx= 0x7fb398009030, Client PID: 29637
+ 2015-06-23 11:37:24.012: [UiServer][3854489344]{1:63826:31809} Done for ctx=0x7fb398009030
+ 2015-06-23 11:37:24.026: [UiServer][3852388096] CS(0x7fb3a0084930)set Properties ( nrpe,0x7fb3a815c8a0)
+ 2015-06-23 11:37:24.036: [UiServer][3854489344]{1:63826:31810} Sending message to PE. ctx= 0x7fb398010700, Client PID: 29637
+ 2015-06-23 11:37:24.039: [UiServer][3854489344]{1:63826:31810} Done for ctx=0x7fb398010700
+ 2015-06-23 11:37:24.047: [UiServer][3852388096] CS(0x7fb3a005db50)set Properties ( nrpe,0x7fb3a8192e90)
+ 2015-06-23 11:37:24.058: [UiServer][3854489344]{1:63826:31811} Sending message to PE. ctx= 0x7fb398010570, Client PID: 29637
+ 2015-06-23 11:37:24.062: [UiServer][3854489344]{1:63826:31811} Done for ctx=0x7fb398010570
+ 2015-06-23 11:37:24.068: [UiServer][3852388096] CS(0x7fb3a0095870)set Properties ( nrpe,0x7fb3a815c790)
+ 2015-06-23 11:37:24.079: [UiServer][3854489344]{1:63826:31812} Sending message to PE. ctx= 0x7fb398010630, Client PID: 29637
+ 2015-06-23 11:37:24.082: [UiServer][3854489344]{1:63826:31812} Done for ctx=0x7fb398010630
+ 2015-06-23 11:37:24.090: [UiServer][3852388096] CS(0x7fb3a0079610)set Properties ( nrpe,0x7fb3a8194700)
+ 2015-06-23 11:37:24.100: [UiServer][3854489344]{1:63826:31813} Sending message to PE. ctx= 0x7fb398009340, Client PID: 29637
+ 2015-06-23 11:37:24.104: [UiServer][3854489344]{1:63826:31813} Done for ctx=0x7fb398009340
+ 2015-06-23 11:37:24.111: [UiServer][3852388096] CS(0x7fb3a006ca80)set Properties ( nrpe,0x7fb3a815c710)
+ 2015-06-23 11:37:24.121: [UiServer][3854489344]{1:63826:31814} Sending message to PE. ctx= 0x7fb3980086c0, Client PID: 29637
+ 2015-06-23 11:37:24.134: [UiServer][3854489344]{1:63826:31814} Done for ctx=0x7fb3980086c0
+ 2015-06-23 11:37:24.145: [UiServer][3852388096] CS(0x7fb3a0099810)set Properties ( nrpe,0x7fb3a815c960)
+ 2015-06-23 11:37:24.156: [UiServer][3854489344]{1:63826:31815} Sending message to PE. ctx= 0x7fb3980088f0, Client PID: 29637
+ 2015-06-23 11:37:24.160: [UiServer][3854489344]{1:63826:31815} Done for ctx=0x7fb3980088f0
+ 2015-06-23 11:37:24.166: [UiServer][3852388096] CS(0x7fb3a0068060)set Properties ( nrpe,0x7fb3a8193350)
+ 2015-06-23 11:37:24.177: [UiServer][3854489344]{1:63826:31816} Sending message to PE. ctx= 0x7fb398011bd0, Client PID: 29637
+
 
 ===========================================================================================================================================
 SR Number                               Description:
@@ -61,13 +139,69 @@ Key :
 
 
 DAY SUMMARY:
-============================================================================================================================================
+Bug 20299017  11.2.0.3.14 (Apr 2015) Database Patch Set Update (DB PSU)
+
+
+
+===========================================================================================================================================
 SR Number                               Description:
+============================================================================================================================================
+Key :
+Summary
+============================
+
+ksoreq_get ksbsrv ksvspawn ksvcheckpool ksvcheckpool ksvsubmitwait ksvwait             
+ ksvsubmit  kfncSlaveSubmit kfncBlockRepair  kfioBlockRepair kfioCompleteIO      
+ kfioWaitIO kfioRequestPriv kfioRequest  ksfd_kfioRequest 
+DAY SUMMARY:
+
+
+============================================================================================================================================
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ Begin End  <DATE> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+============================================================================================================================================
+
+
+
+
+
+
+
+
+
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ End  <DATE> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+============================================================================================================================================
+New SR  List:
+Closed SR List :
+Touched SR List :
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
+....
+============================================================================================================================================
+SR Number       3-10918248315                        Description:ASM Queries
 ============================================================================================================================================
 Key :
 
 
 DAY SUMMARY: 
+
+Voting files manage information about node membership. OCR is a system that manages cluster and Oracle Real Application Clusters (Oracle RAC) 
+database configuration information. A quorum failure group is a special type of failure group and disks in these failure groups do not contain 
+user data. A quorum failure group is not considered when determining redundancy requirements in respect to storing user data. However, a quorum
+ failure group counts when mounting a disk group. For information about failure groups, see "Oracle ASM Failure Groups".
+ http://docs.oracle.com/cd/E11882_01/server.112/e18951/asmdiskgrps.htm#OSTMG137
+ 
+ select path from v$asm_disk;
+ 
+ You can use the -l and -ll options of the multipath command to display the current multipath configuration. The -l option displays multipath 
+ topology gathered from information in sysfs and the device mapper. The -ll option displays the information the -l option displays in addition 
+ to all other available components of the system. 
+ 
+  /etc/multipath.conf
+  
+  
 ============================================================================================================================================
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ============================================================================================================================================
