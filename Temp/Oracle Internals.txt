@@ -1,4 +1,5 @@
 
+
 Internal Only: Advanced Troubleshooting of CSS Heartbeat Failures (Network) (Doc ID 457772.1)
 Is the clssnmSendingThread sending a status message to every other node continuously?
 If the answer is no, see if the clssnmSendingThread is stuck (stack traces of all threads of CSS) or if there is a resource problem or network error in OS Watcher (netstat, vmstat, etc...)br013t'.
@@ -35,3 +36,11 @@ SOFTEARE ENGINEERING
 OOPS
 13-JULY-2015
 ====================================================================
+Transaction Internals
+======================
+INTERNAL LOCK: V7 TX "Transaction" (Doc ID 34667.1)
+9iRAC Most Common Performance Problem Areas
+WAITEVENT: V7 "transaction" **INTERNAL ONLY** (Doc ID 34621.1)
+INTERNAL LOCK: V7 TX "Transaction" (Doc ID 34667.1)
+COMPONENT: Enqueues (Doc ID 34540.1)
+
