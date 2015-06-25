@@ -11,7 +11,7 @@ yiying- analysis
 	Installation and Upgrade and Patching 
 	========================
 	How to turn on rootcrs.pl/roothas.pl debugging for more info if "opatch auto" or "root.sh/rootupgrade.sh" is slow (Doc ID 1498019.1)
-
+	How to use cloning step by step (Doc ID 1299912.1)
 
 	Clusterware
     ==============
@@ -39,7 +39,9 @@ yiying- analysis
 	OS/SYSTEM
 	==========
 	FAQ: ORA-4030 [Video] [ID 399497.1]
-	 
+	Tuxedo Core Dump Analysis (Doc ID 1204143.1)
+	What Is the Difference Between a Heap Dump and a Core Dump and How to Enable Each? (Doc ID 1981375.1)
+	Generate a Core Dump from Application Crash with Segmentation Fault (Doc ID 1321500.1)
 	 
 	Storage
 	=========
@@ -55,7 +57,7 @@ yiying- analysis
 	Master Note: Database Performance Overview (Doc ID 402983.1)
 	INTERNAL ONLY: (Methodology For) Troubleshooting Oracle RAC Database Performance Issues / Hangs (Doc ID 1495515.1)
 	Oracle11g Real Application Clusters: Best Practices - Performance Diagnostics and Tuning (INTERNAL ONLY) (Doc ID 786048.1)
-	 
+	
 	http://ufsdump.org/papers/oscon2009-linux-monitoring.pdf
 	http://www.brendangregg.com/index.html
 	http://www.brendangregg.com/linuxperf.html

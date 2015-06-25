@@ -43,8 +43,22 @@ Touched SR List :
 ===========================================================================================================================================
 SR Number                               Description:
 ============================================================================================================================================
-Key :
-
+Key :ARCHIVES_SIBUAT
+ 	 DATA_SIBUAT
+ 	 REDO_SIBUAT1
+ 	 REDO_SIBUAT2
+	 ARCHIVES_SIBTEST
+	 DATA_SIBTEST
+	 REDO_SIBTEST1
+	 ARCHIVES_ORCLTEST
+	 ARCHIVES_ORCL
+	 
+	 
+	 
+	 DATA_SIBPRD
+	 REDO_SIBPRD1
+	 REDO_SIBPRD2
+	 
 DAY SUMMARY:
 ============================================================================================================================================
 SR Number                               Description:
