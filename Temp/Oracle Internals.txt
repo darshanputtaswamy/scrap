@@ -43,4 +43,6 @@ INTERNAL LOCK: V7 TX "Transaction" (Doc ID 34667.1)
 WAITEVENT: V7 "transaction" **INTERNAL ONLY** (Doc ID 34621.1)
 INTERNAL LOCK: V7 TX "Transaction" (Doc ID 34667.1)
 COMPONENT: Enqueues (Doc ID 34540.1)
+STATISTIC: V7 ENQUEUE "enqueue_waits" (Doc ID 33811.1)
+QREF: Transaction State Object **INTERNAL ONLY** (Doc ID 33373.1)
 
