@@ -13,6 +13,7 @@ Perforamce
 2] Hang  - DB  Global System state dump and Hang analysis <Please check the SGA Size><check alter log already if it has already dumped>,   
            SQL  Process state dump.            "
            SQL - Tuning advisor ()
+		   
 3] RAC Wait events -
            COllect the AWR report from all the nodes in same time.1hr or 60min or less
            LMS - process responsible for cache fusion.

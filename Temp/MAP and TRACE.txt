@@ -71,7 +71,7 @@ yiying- analysis
 	OS Watcher User's Guide (Doc ID 1531223.1)
 	How To Use The Interpret Stack Trace Tool (Doc ID 395799.1)
 	STACKX User Guide (Doc ID 362791.1)
-	
+	Troubleshooting Database Hang Issues (Doc ID 1378583.1)
 	
 	Work Continuation
 	====================
