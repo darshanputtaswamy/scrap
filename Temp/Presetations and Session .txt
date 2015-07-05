@@ -22,4 +22,4 @@ Perforamce
            log file sync lfsdiag.sql
 		   
 
-		   
+		   RMAN Parallel Recovery Fails With OS and I/O ERROR along with Unable To Communicate With ASM Instance Error (Doc ID 2027819.1)
