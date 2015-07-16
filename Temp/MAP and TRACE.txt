@@ -76,7 +76,11 @@ yiying- analysis
 	Work Continuation
 	====================
 	BI and DI BDE: BUG FILING, ESCALATION AND BACKPORT REQUESTS (Doc ID 559141.1)
+	How to Set Multiple Events in INIT.ORA (Doc ID 1051056.6)
 	
+	BUG FIXED IN PSU 
+	=================
+	11.2.0.x Oracle Database and Networking Patches for Microsoft Platforms (Doc ID 1114533.1)
 	
 	
 	
