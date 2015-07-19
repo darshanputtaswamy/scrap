@@ -231,6 +231,17 @@ RAC: https://community.oracle.com/community/support/oracle_database/database_-_r
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
 
+
+
+In the description I see different errors on different nodes at different dates that doesn't look to be related. The Oracle policy is to analyze one error per SR.
+
+1. Please let me know which of the error would you like to be investigated on this SR .
+2. Please attach the complete alert log, trace files and incident trace file if is the case for the error to be investigated on this SR. For the rested of the error separate SRs will need to be created to be investigated by the proper department.
+
+
+
+
+
 ========================================================		
 
 

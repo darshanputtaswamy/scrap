@@ -10,48 +10,35 @@ But Don't be inhuman ...
 
 Bharman { Space ,Earth, Water, Air , Fire ,light}
 
-
 Plants ,Trees ,Mountains ,Sun ,Gravity  
 
 ===============================================================================================================================================
-
 (2-Days)(3chkras ) AquaticClass    {Fish   Dolphin }
 [Earth , Water , Fire]
                                    |
 								   v
-
 (3-Days)(4chkras)AmphibianClass    {Frog     Tortoise}
 [Earth , Water , Fire, Air]
                                    |
 								   v
-								   
 (4-Days)(5chkras)ArialClass        {Crow -> Cairn   Garuda} 
 [Earth , Water , Fire , Air, Space ]
-
                                                                [ 4 TYPES ] [2 Categories ]
-
 ================================================================================================================================================
-
 								   |
 								   v
-								   
 (5-Days)(6Chkras)WildAnimalClass  {Hyena ->Tiger   Lion}
 [Earth , Water , Fire , Air , Space, Air and Space ]
-
                                    |
 								   v
 (6-Days)(7Chkras)PetAnimalClass  {Dog,Deer ->     Horse Cows }      [ 3 Types ]  [2 Categories ]   [ Materiel Needs : Space , Earth, Water , Air ]
 [ Earth Water , Fire , Air , Space , Air and Space , Light ]
-
 =================================================================================================================================================
-
                                    |
 								   v
-								   
 (7-Days)(8chkras)HumansClass     {Dwarf -> ParasuRama,BalaRama -> Krishna,Rama}
 [ Earth, Water , Fire , Air , Space , Air and Space , Light ,Crown ]
                                                                             [ 3 Categories ]  [ Materiel Needs : Space , Earth, Water , Air ,Fire ]
-
 ===================================================================================================================================================
 
 (NoChkras)God{Shiva}
@@ -77,6 +64,11 @@ LevelGod        100000-1000000              		  (Start Incarnation Level: Krishn
 		        1000000-10000000             		  (Can Incarnate Level : All Previous )
 		        10000000--------------       		  (Required Incarnation Next Level : None )
 
+				
+===========================================
+On Birth , each person come with a defined schema (dependent on birth star + Yoga's) . 
+He need to fill the data/ required information (similar to earning knowledge, materialistic needs etc...)to successfully accomplish the requirement (darma artha kama moksha).
+Birth star and yoga's are decided by the previous karma's and choice of the soul .
 
 ===================================================================================================================================================
 ***************************************************************************************************************************************************
