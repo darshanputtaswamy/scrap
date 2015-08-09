@@ -46,9 +46,17 @@ SYNTAX
 
 
 
-
+http://eserver.livejournal.com/37993.html
+http://unixadmin.free.fr/?p=161
+http://www.santrainingblog.com/2010/03/scsi-sense-data/https://www.ibm.com/developerworks/community/forums/html/topic?id=77777777-0000-0000-0000-000014626629
+http://www.stix.id.au/wiki/Interpreting_SENSE_DATA_in_AIX_errpt
+http://www.stix.id.au/wiki/SCSI_Sense_Data
+http://www.tek-tips.com/viewthread.cfm?qid=1286738
+https://www.ibm.com/developerworks/community/forums/html/topic?id=77777777-0000-0000-0000-000014956737#77777777-0000-0000-0000-000014958279
 3-9872260501
-
+http://publibfp.dhe.ibm.com/epubs/pdf/c2343293.pdf
+https://books.google.co.in/books?id=uuW1AgAAQBAJ&pg=PA169&lpg=PA169&dq=Description+DISK+OPERATION+ERROR++Probable+Causes+DASD+DEVICE++Failure+Causes+DISK+DRIVE+DISK+DRIVE+ELECTRONICS++%09Recommended+Actions+%09PERFORM+PROBLEM+DETERMINATION+PROCEDURES&source=bl&ots=JqCedzIhUD&sig=b50O7_Jhkf5hvjoLIYBjp-YneiI&hl=en&sa=X&ved=0CCQQ6AEwAWoVChMIzrPT5tTtxgIVRh6mCh3P_wVk#v=onepage&q=Description%20DISK%20OPERATION%20ERROR%20%20Probable%20Causes%20DASD%20DEVICE%20%20Failure%20Causes%20DISK%20DRIVE%20DISK%20DRIVE%20ELECTRONICS%20%20%09Recommended%20Actions%20%09PERFORM%20PROBLEM%20DETERMINATION%20PROCEDURES&f=false
+http://publib.boulder.ibm.com/systems/hardware_docs/pdf/234329.pdf
 
 
 
