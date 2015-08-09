@@ -88,6 +88,28 @@ Storage: https://community.oracle.com/community/support/oracle_database/storage_
 Mgrracpc.zoban@sbi.co.in
 
 
+
+
+
+
+
+Hi Team -
+
+Your severity -1 SR requiring 24x7 support has been assigned to me in current shift for progress, reviewing...
+
+
+Darshan P
+Global Customer Support
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm 
+
+
+
+
 ==============================================================
 
 
@@ -251,10 +273,11 @@ In the description I see different errors on different nodes at different dates 
 A] AUTO CLOSUE
 ===========
 
-Hi ,
-We are placing this SR in "Auto Closure" status. We will be waiting for your response on this SR. If there is no re-sponse from you on it then SR will be placed in "Close" status. 
+Hi 
 
-In case, if you need further assistance on issue reported in this SR, please feel free to update/re-open the SR and we will be more than happy to assist you on this. For any new issues, please raise a new SR.
+We are placing this SR in "Auto Closure" status. We will be waiting for your response on this SR. If there is no response from you on it then SR will be placed in "Close" status. 
+In case, if you need further assistance on issue reported in this SR, please feel free to update/re-open the SR and
+I will be happy  to assist you on this. For any new issues, please raise a new SR.
 
 In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
@@ -272,7 +295,6 @@ Desk Phone:+918041072121
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
 Contact number of HUB : http://www.oracle.com/support/contact.html
 Working Effectively With Oracle Support - (Doc ID 166650.1)  
-
 
 
 B] Closer Confirmation 

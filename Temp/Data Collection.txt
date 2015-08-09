@@ -319,8 +319,8 @@ The TFA Collector will extract and collect the trace and log information written
 Issue "$GI_HOME/tfa/bin/tfactl diagcollect -h" to get the help page for tfactl command.
 
 Upload all files that TFA collector creates to SR.
-CRS 10gR2/ 11gR1/ 11gR2 Diagnostic Collection Guide [Document 330358.1]
 
+CRS 10gR2/ 11gR1/ 11gR2 Diagnostic Collection Guide [Document 330358.1]
 * For 11gR2
         o Execute <GRID_HOME>/bin/diagcollection.sh as Root user
 
@@ -444,5 +444,67 @@ OS DATA COLLECTION
 				ASMCMD> -- run the command
 
 
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+2). Provide us with the output of
+
+# cat /etc/hosts
+# nslookup <scan address>
+# ifconfig -a
+# oifcfg iflist -p -n
+# oifcfg getif
+# netstat -ni
+# route
+$ olsnodes
+
+.
+3). We need to see the following
+Please show the command along with the output so we can separate the data
+cd $GRID_HOME/bin
+./crsctl stat res -t
+./crsctl status resource -w  "TYPE = ora.scan_vip.type" -t
+./crsctl stat res -w "TYPE = ora.scan_listener.type"
+./srvctl config scan_listener
+./lsnrctl status <<scan listener name>>
+$GRID_HOME/bin/srvctl config scan
+$GRID_HOME/bin/srvctl config scan_listener
+$GRID_HOME/bin/srvctl status scan
+$GRID_HOME/bin/srvctl status scan_listener
+For the scan listener listening service status:
+ $GRID_HOME/bin/lsnrctl status listener_scan<n>
+         where <n> is from 1 to 3 if there are multiple scan_listeners
+.
+4). Upload the text version of the listener logs
+The 11g listener log in text format is located here:$ORACLE_BASE/diag/tnslsnr/<your_host>/<listener_name>/trace/<listener_name>.log
+.
+5). Provide us with the following
+<grid_home/bin/ crsctl stat res -t >crsctl.out
+upload the crsctl.out file
 
 				
