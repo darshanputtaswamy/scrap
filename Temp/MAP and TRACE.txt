@@ -48,7 +48,8 @@ yiying- analysis
 	- ASM admin
 	  How to Identify and Map the Real Physical Raw Device on Solaris Used as ASM Member or Candidate Disks on RAC or Standalone Configurations. (Doc ID 1911166.1)
 	- Concepts
-	
+	http://www.cubrid.org/blog/dev-platform/how-ssd-changing-software-architecture/
+	http://journal.iis.sinica.edu.tw/paper/1/110517-4.pdf?cd=69E4DA0F006F476C5
 
 	
 	Performance
@@ -57,12 +58,23 @@ yiying- analysis
 	Master Note: Database Performance Overview (Doc ID 402983.1)
 	INTERNAL ONLY: (Methodology For) Troubleshooting Oracle RAC Database Performance Issues / Hangs (Doc ID 1495515.1)
 	Oracle11g Real Application Clusters: Best Practices - Performance Diagnostics and Tuning (INTERNAL ONLY) (Doc ID 786048.1)
-	
+	https://jonathanlewis.wordpress.com/2010/06/21/locks/
 	http://ufsdump.org/papers/oscon2009-linux-monitoring.pdf
 	http://www.brendangregg.com/index.html
 	http://www.brendangregg.com/linuxperf.html
 	https://www.youtube.com/watch?v=SN7Z0eCn0VY 
 	https://www.safaribooksonline.com/library/view/system-performance-tuning/059600284X/ch04.html
+	
+	
+	
+	
+	MULTITENANT DataBase
+	======================
+	Sources of information for the Multitenant Database Option [Oracle Internal] (Doc ID 1519728.1)
+	Support of Oracle Multitenant Issues (Doc ID 1542591.1)
+	Oracle Multitenant Option - 12c : Frequently Asked Questions (Doc ID 1511619.1)
+	Master Note for the Oracle Multitenant Option (Doc ID 1519699.1)
+	
 	
 	
 	Analysis Tool

@@ -34,10 +34,29 @@ SYNTAX
 
 
 
+The lock you see "enq: TX - row lock contention" happens because one session is trying to modify uncommited data from another session. There are 4 common reasons for this particular lock wait event:
 
-
-
-
+    update/delete of the same row
+    inserting the same uniq key
+    modifying the same bitmap index chunk
+    deleting/updating a parent value to a foreign key 
+	
+	Index Block split 
+	Unique index key enforcement
+	Foreign key enforcement
+	ITL Space waits
+	Bitmap chunk conflicys
+	Alert tablespace .. readonly
+	Free lists slot waits
+	Possible with tow phase commit
+	
+	
+http://www.oaktable.net/content/enqueue-%E2%80%93-it-pk-fk-or-bitmap-index-problem
+http://refermefororacle.blogspot.in/2013/06/locking-issues.html
+http://www.slideshare.net/khailey/oracle-10g-performance-chapter-09-enqueues
+https://perfstat.wordpress.com/2014/09/08/deadlocks-due-to-unindexed-foreign-keys/
+https://jonathanlewis.wordpress.com/2010/06/21/locks/
+https://recurrentnull.wordpress.com/2013/12/17/unindexed-foreign-keys-considered-harmful-but-are-they/
 
 
 
