@@ -65,7 +65,7 @@ yiying- analysis
 	https://www.youtube.com/watch?v=SN7Z0eCn0VY 
 	https://www.safaribooksonline.com/library/view/system-performance-tuning/059600284X/ch04.html
 	
-	
+	Oracle11g Real Application Clusters: Best Practices - Performance Diagnostics and Tuning (INTERNAL ONLY) (Doc ID 786048.1)
 	
 	
 	MULTITENANT DataBase
