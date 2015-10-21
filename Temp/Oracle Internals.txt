@@ -46,3 +46,133 @@ COMPONENT: Enqueues (Doc ID 34540.1)
 STATISTIC: V7 ENQUEUE "enqueue_waits" (Doc ID 33811.1)
 QREF: Transaction State Object **INTERNAL ONLY** (Doc ID 33373.1)
 
+
+==================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================================================================================================================================================================================================
+ASM INTERNALS
+=======================================================================================================================================================================================================
+
+
+
+     
+aun\blknum   --->
+       0                          1               2                3                         4                    ... 254                  255 
+0   *** Unknown Enum ***    KFBTYP_ALLOCTBL    KFBTYP_ALLOCTBL      KFBTYP_ALLOCTBL       KFBTYP_ALLOCTBL                                  KFBTYP_ALLOCTBL
+1    KFBTYP_PST_META        KFBTYP_PST_META    KFBTYP_PST_NONE      KFBTYP_PST_DTA        KFBTYP_PST_NONE           KFBTYP_DISKHEAD(509)   KFBTYP_HBEAT
+2    KFBTYP_LISTHEAD        KFBTYP_FILEDIR																		    KFBTYP_FILEDIR         KFBTYP_FILEDIR
+3    KFBTYP_DISKDIR         KFBTYP_DISKDIR     																						       KFBTYP_DISKDIR
+4    KFBTYP_ACDC			KFBTYP_ACDC 																							       KFBTYP_CHNGDIR
+5    KFBTYP_CHNGDIR         KFBTYP_CHNGDIR																							       KFBTYP_CHNGDIR
+.
+.
+.
+94   KFBTYP_CHNGDIR 																												       KFBTYP_CHNGDIR
+95   KFBTYP_COD_DATA        KFBTYP_COD_DATA																							       KFBTYP_COD_DATA
+
+KFBTYP_DISKHEAD  1 
+KFBTYP_FREESPC   2 
+KFBTYP_ALLOCTBL  3
+KFBTYP_FILEDIR   4
+KFBTYP_DISKDIR   6
+KFBTYP_LISTHEAD  5
+KFBTYP_ACDC      7
+KFBTYP_CHNGDIR   8
+
+KFBTYP_PST_NONE  13
+
+KFBTYP_COD_DATA  16
+KFBTYP_PST_META  17 
+KFBTYP_PST_DTA   18
+KFBTYP_HBEAT     19
+
+===========================================================================================================
+
+Important ASM metadata block 0 header data
+
+Data type	Value
+kfbh.endian	System endianness. 0 - big endian, 1 - little endian.
+kfbh.type	ASM block type. KFBTYP_DISKHEAD tells us this is an ASM disk header block.
+kfbh.block.blk	ASM block number. Note the ASM disk header is block number 0.
+
+Important ASM disk header specific data
+
+Data type	Value
+kfdhdb.driver.provstr	ORCLDISK+[ASM disk name] for ASMLIB disks. ORCLDISK for non-ASMLIB disks.
+kfdhdb.dsknum	ASM disk number.
+kfdhdb.grptyp	Disk group redundancy. KFDGTP_EXTERNAL - external, KFDGTP_NORMAL - normal, KFDGTP_HIGH - high.
+kfdhdb.hdrsts	ASM disk header status. For possible values see V$ASM_DISK.HEADER_STATUS.
+kfdhdb.dskname	ASM disk name.
+kfdhdb.grpname	ASM disk group name.
+kfdhdb.fgname	ASM failgroup name. 
+kfdhdb.crestmp.hi|lo	The date and time disk was added to the disk group.
+kfdhdb.mntstmp.hi|lo	Last time the disk was mounted.
+kfdhdb.secsize	Disk sector size (bytes).
+kfdhdb.blksize	ASM metadata block size (bytes).
+kfdhdb.ausize	Alloocation unit size (bytes). 1 MB is the default allocation unit size.
+kfdhdb.dsksize	Disk size (allocation units). In this case the disk size is 10239 MB.
+kfdhdb.fstlocn	Pointer to ASM Free Space Table. 1 = ASM block 1 in this allocation unit.
+kfdhdb.altlocn	Pointer to ASM Allocation Table. 2 = ASM block 2 in this allocation unit.
+kfdhdb.f1b1locn	Pointer to ASM File Directory. 2 = allocation unit 2.
+kfdhdb.dbcompat	Minimum database version. 0x0a100000 = 10.1.
+kfdhdb.grpstmp.hi|lo	The date and time the disk group was created.
+kfdhdb.vfstart|vfend	Start and end allocation unit number for the clusterware voting disk. If this is zero, the disk does not have voting disk data. Version 11.2 and later only.
+kfdhdb.spfile	Allocation unit number of the ASM spfile. Version 11.2 and later only.
+kfdhdb.spfflg	ASM spfile flag. If this is 1, the ASM spfile is on this disk in allocation unit kfdhdb.spfile. Version 11.2 and later only.
+
+
+
