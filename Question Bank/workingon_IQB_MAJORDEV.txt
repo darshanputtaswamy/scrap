@@ -1,0 +1,724 @@
+DECLARE 
+    pls_n pls_integer;
+    pls_question IQB_QESTB.question%type;
+    i pls_integer ;  
+    n pls_integer;
+BEGIN
+
+i:= 1;
+
+ n := :P8_PAPERNUM;
+
+/*htp.p( '<div>QID :'|| n ||'</div>');
+*/
+		FOR	pls_n IN  (SELECT QUESTIONNUM FROM IQB_FINALQESNUMTB )
+		LOOP    
+              
+                
+		SELECT QUESTION INTO pls_question FROM IQB_QESTB WHERE QUESTION_ID = pls_n.QUESTIONNUM  ;
+
+         htp.p('<table><tr> <th class=qesnum>'||i||'. </th><th class=qesdum ></th><th class=qescnt >'||pls_question||'</th></tr>');
+          
+      /*  htp.p('<p class=qa><div class=ql> <span class=qesnum> QUESTION'|| i||'.</span><span class=qes>'||pls_question||'</span></div><br>' );
+
+
+      */
+	              FOR rec IN (SELECT CHOICE, CHOICE_ID FROM IQB_ANSTB WHERE QUES_ID = pls_n.QUESTIONNUM )
+	  	          LOOP 
+
+
+
+                 htp.p('<tr><td class=ansdum></td><td class=ansnum >'||UPPER(rec.CHOICE_ID)||'. </td><td class=anscnt>'||rec.CHOICE||'</td></tr>');
+       /*
+                 htp.p('<div class=a1> <span class=ansnum>'||UPPER(rec.CHOICE_ID)||'. </span><span class=ans>'||rec.CHOICE||' </span></div><br>');
+       */
+
+
+		         END LOOP;
+
+
+             htp.p('</table>');
+
+             i:=i+1;
+                             
+		END LOOP;
+    
+            
+END; 
+
+
+
+:P4_PAPER_NUM := IQB_QUESTION_PAPER_ID.NEXTVAL; 
+:P4_QUESTION_PAPER := '<a href="f?p=25340:8:&APP_SESSION.::NO:8:P8_PAPERNUM,P8_TIME,P8_TOTAL_QES:&P4_PAPER_NUM.,&P4_TOTAL_TIME.,&P4_TOTAL_QUESTION.:&p_trace=YES"  target="_blank">Click</a>' ;
+:P4_SOLUTION_KEY := '<a href="f?p=25340:9:&APP_SESSION.::NO:9:P9_PAPERNUM:&P4_PAPER_NUM:&p_trace=YES"  target="_blank">Click</a>' ;
+
+
+=============================================================
+
+
+DECLARE 
+    pls_n pls_integer;
+    pls_questionid IQB_QESTB.question_id%type;
+	pls_difficulty IQB_QESTB.difficulty%type;
+    i pls_integer ;  
+    pls_var varchar2(200);
+BEGIN
+
+
+
+i:= 1;
+
+		FOR	pls_n IN  (SELECT QUESTIONNUM FROM IQB_FINALQESNUMTB )
+		LOOP
+		
+        pls_var := '';       
+		SELECT QUESTION_ID,DIFFICULTY INTO pls_questionid, pls_difficulty FROM IQB_QESTB WHERE QUESTION_ID = pls_n.QUESTIONNUM  ;
+
+		 FOR rec IN (SELECT CHOICE_ID, CORRECTNESS_FLAG FROM IQB_ANSTB WHERE QUES_ID = pls_n.QUESTIONNUM )
+	  	          LOOP 
+				  
+				  IF rec.CORRECTNESS_FLAG == 1 THEN 
+				  pls_var := pls_var || rec.CHOICE_ID ;
+				  END IF;
+				  
+			      END LOOP;
+
+				  DBMS_OUTPUT.PUT_LINE ( i ||':'|| pls_questionid ||':'|| pls_difficulty ||':'|| pls_var);	                 
+				  i:=i+1;
+
+				  
+        END LOOP;			  
+
+
+END;
+		\\\
+		
+		
+		
+		
+		
+		
+		
+		DECLARE
+
+BEGIN
+
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , :P3_COMPENTENCY ,0 ,0,:P3_DIFFICULTY , :P3_QUESTION);
+
+
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'A' , A ,:P3_CHOICE1 ,NULL);
+
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'B' , B ,:P3_CHOICE2 ,NULL);
+
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'C' , C ,:P3_CHOICE3 ,NULL);
+
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'D' , D ,:P3_CHOICE4 ,NULL);
+
+if :P3_CHOICE5 is not null then 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'E' , E ,:P3_CHOICE5 ,NULL);
+end if;  
+
+if  :P3_CHOICE6 is not null then 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'F' , F ,:P3_CHOICE6 ,NULL);
+end if;
+
+if :P3_CHOICE6 is not null then
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'G' , G ,:P3_CHOICE7 ,NULL);
+end if;
+
+
+commit;
+
+END;
+
+
+BEGIN
+
+if :P3_A is null then
+:P3_A = 0;
+end if
+
+if :P3_B is null then
+:P3_B = 0;
+end if
+
+if :P3_C is null then
+:P3_C = 0;
+end if
+
+if :P3_D is null then
+:P3_D = 0;
+end if
+
+if :P3_E is null then
+:P3_E = 0;
+end if
+
+if :P3_F is null then
+:P3_F = 0;
+end if
+
+if :P3_G is null then
+:P3_G = 0;
+end if
+
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , :P3_COMPENTENCY ,0 ,0,:P3_DIFFICULTY , :P3_QUESTION);
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'A',:P3_A,:P3_CHOICE1 ,NULL);
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL ,'B' ,:P3_B,:P3_CHOICE2 ,NULL);
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL ,'C' ,:P3_C,:P3_CHOICE3 ,NULL);
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL ,'D' ,:P3_D,:P3_CHOICE4 ,NULL);
+
+if :P3_CHOICE5 is not null then 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'E' , :P3_E ,:P3_CHOICE5 ,NULL);
+end if;  
+
+if  :P3_CHOICE6 is not null then 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'F' , :P3_F ,:P3_CHOICE6 ,NULL);
+end if;
+
+if :P3_CHOICE6 is not null then
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'G' , :P3_G ,:P3_CHOICE7 ,NULL);
+end if;
+
+commit;
+
+END;
+
+Select qt.QUESTION_ID,lup.COMPONENT_NAME,qt.DIFFICULTY,qt.OBSOLETE_FLAG,qt.REVIEWED,qt.QUESTION 
+from IQB_QESTB qt,COMPONENT_NAME_LOOKUP lup 
+where lup.COMPONENT_NAME_ID = qt.COMPONENT_NAME_ID;
+
+
+
+insert into IQB_QESTB values (IQB_IQB_QUESTION_ID_SEQ.NEXTVAL , 'GENERIC' ,1 , 1 ,'EASY' , 'Which of these languages can run within the database?');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'a' , 0 ,'C' ,NULL);
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'b' , 1 ,'Java' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'c' , 1 ,'PL/SQL','');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'd' , 1 ,'SQL','');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'e' , 0 ,'Any other language, if it is linked with the OCI libraries','');
+
+
+
+
+BEGIN
+
+:P4_PAPER_NUM := IQB_QUESTION_PAPER_ID.NEXTVAL; 
+:P4_QUESTION_PAPER := '<a href="f?p=25340:8:&APP_SESSION.::NO:8:P8_PAPERNUM:##:&p_trace=YES"  target="_blank">Click</a>' ;
+:P4_SOLUTION_KEY := '<a href="f?p=25340:9:&APP_SESSION.::P8_PAPERNUM:##:&p_trace=YES"  target="_blank">Click</a>' ;
+
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!!------------------------------------------------------------------------------------------------------------------------------
+DECLARE 
+    pls_n pls_integer;
+    pls_question questionTable.question%type;
+    pls_choice  choiceTable.CHOICE%type;
+    pls_choiceid choiceTable.CHOICE_ID%type;
+    
+    
+BEGIN
+    pls_n := dbms_random.value(1,29);
+   
+    SELECT QUESTION INTO pls_question FROM questionTable WHERE QUESTION_ID = pls_n;
+
+   dbms_output.put_line
+   (pls_question);
+
+    FOR rec IN (SELECT CHOICE, CHOICE_ID FROM choiceTable WHERE QUESTION_ID = pls_n)
+   LOOP 
+      DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+      DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+   END LOOP;
+
+END; 
+
+!!------------------------------------------------------------------------------------------------------------------------------
+
+
+DECLARE 
+    pls_n pls_integer;
+    pls_question questionTable.question%type;
+   
+BEGIN
+
+		FOR	pls_n IN  (SELECT QUESTIONNUM FROM GLOBALQUESTIONNO )
+		LOOP    
+		      SELECT QUESTION INTO pls_question FROM questionTable WHERE QUESTION_ID = pls_n.QUESTIONNUM  ;
+		        DBMS_OUTPUT.PUT_LINE(pls_question);
+ 
+	              FOR rec IN (SELECT CHOICE, CHOICE_ID FROM choiceTable WHERE QUESTION_ID = pls_n.QUESTIONNUM )
+	  	      LOOP 
+ 			      DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+		      END LOOP;
+                              DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+		END LOOP;
+                
+END; 
+
+!!!-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+DECLARE
+       ns_diff questionTable.DIFFICULTY%type;
+       ns_comp questionTable.COMPONENT_NAME%type;
+       pls_questNo questionTable.QUESTION_ID%type;
+       pls_n questionTable.QUESTION_ID%type;
+       ns_givenNum  pls_integer;
+       pls_totalQuestion pls_integer;
+       i number(6);
+BEGIN
+
+/*
+GENERIC	        EASY	4
+Architecture	EASY	12
+INSTALL	     MODERATE	1
+INSTALL	        EASY	9
+SQL	        EASY	2
+*/
+
+       ns_diff   := 'EASY';
+       ns_comp   := 'Architecture';
+       ns_givenNum :=5;
+       i := 1;
+
+       INSERT INTO TEMP
+       SELECT QUESTION_ID FROM QUESTIONTABLE
+       WHERE DIFFICULTY = ns_diff AND COMPONENT_NAME = ns_comp;
+       
+       DBMS_OUTPUT.PUT_LINE ( ns_diff || ' : ' || ns_comp  || ns_givenNum  );
+
+       SELECT COUNT(*) INTO pls_totalQuestion FROM TEMP;
+       
+       DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+
+       WHILE i < ns_givenNum
+       LOOP 
+           BEGIN 
+               INSERT INTO RANDNUM
+               SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+               i := i + 1;
+               DBMS_OUTPUT.PUT_LINE ( i );
+           EXCEPTION
+               WHEN DUP_VAL_ON_INDEX THEN
+ 	       i := i - 1;
+               DBMS_OUTPUT.PUT_LINE ( i );
+           END;	  
+       END LOOP;
+
+       FOR pls_n  IN (SELECT serialnum FROM RANDNUM)
+       LOOP
+
+           SELECT QID INTO pls_questNo
+           FROM TEMP T1 WHERE pls_n.serialnum  = ( SELECT COUNT(rowid) FROM TEMP T2 WHERE T1.rowid > T2.rowid );
+           INSERT INTO globalquestionNo VALUES (pls_questNo);
+  
+     END LOOP;
+
+
+       DELETE FROM RANDNUM;
+       DELETE FROM TEMP;
+
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DECLARE 
+    pls_n pls_integer;
+    pls_question IQB_QESTB.question%type;
+   
+BEGIN
+
+		FOR	pls_n IN  (SELECT QUESTIONNUM FROM GLOBALQUESTIONNO )
+		LOOP    
+		      SELECT QUESTION INTO pls_question FROM IQB_QESTB WHERE QUESTION_ID = pls_n.QUESTIONNUM  ;
+		        DBMS_OUTPUT.PUT_LINE(pls_question);
+ 
+	              FOR rec IN (SELECT CHOICE, CHOICE_ID FROM choiceTable WHERE QUESTION_ID = pls_n.QUESTIONNUM )
+	  	      LOOP 
+ 			      DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+		      END LOOP;
+                              DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+		END LOOP;
+                
+END; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DECLARE 
+    pls_n pls_integer;
+
+	
+BEGIN
+    pls_n := :P7_QUESTION_ID;
+   
+    SELECT CHOICE INTO :P7_CHOICE1  FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='a' ;
+    SELECT CHOICE INTO :P7_CHOICE2  FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='b' ;
+    SELECT CHOICE INTO :P7_CHOICE3  FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='c' ;
+    SELECT CHOICE INTO :P7_CHOICE4  FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='d' ;	
+    SELECT CHOICE INTO :P7_CHOICE5  FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='e' ;
+	SELECT CHOICE INTO :P7_CHOICE6  FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='f' ;
+	SELECT CHOICE INTO :P7_CHOICE7  FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='g' ;
+
+Exception
+	
+ when NO_DATA_FOUND
+
+ then null;
+ 
+END; 
+/
+
+
+
+
+DECLARE 
+
+    pls_n choiceTable.QUESTION_ID%type;
+    pls_choice  choiceTable.CHOICE%type;
+P7_QUESTION_ID  choiceTable.QUESTION_ID%type;
+ P7_CHOICE1 choiceTable.CHOICE%type;
+P7_CHOICE2 choiceTable.CHOICE%type;
+ P7_CHOICE3 choiceTable.CHOICE%type;
+P7_CHOICE4 choiceTable.CHOICE%type;
+P7_CHOICE5 choiceTable.CHOICE%type;
+P7_CHOICE6 choiceTable.CHOICE%type;
+P7_CHOICE7 choiceTable.CHOICE%type;
+
+BEGIN
+    pls_n := 2;
+   
+    SELECT CHOICE INTO pls_choice FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID ='a';
+    P7_CHOICE1 := pls_choice  ;
+    SELECT CHOICE INTO pls_choice FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='b' ;
+    P7_CHOICE2 := pls_choice  ;
+    SELECT CHOICE INTO pls_choice FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='c' ;
+    P7_CHOICE3 := pls_choice  ;
+    SELECT CHOICE INTO pls_choice FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='d' ;	
+    P7_CHOICE4 := pls_choice  ;
+    SELECT CHOICE INTO pls_choice FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='e' ;
+    P7_CHOICE5 := pls_choice  ;
+    SELECT CHOICE INTO pls_choice FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='f' ;
+    P7_CHOICE6 := pls_choice  ;
+    SELECT CHOICE INTO pls_choice FROM choiceTable WHERE QUESTION_ID = pls_n and CHOICE_ID='g' ;
+    P7_CHOICE7 := pls_choice  ;
+
+
+
+Exception
+	
+ when NO_DATA_FOUND
+
+ then null;
+
+ 
+END; 
+
+
+
+
+
+
+<script>
+function display()
+{
+if(!apex.item( "P4CHOICE" ).isEmpty()&&!apex.item( "P3CHOICE" ).isEmpty()&&!apex.item( "P2CHOICE" ).isEmpty()&&!apex.item( "P1CHOICE" ).isEmpty() ){
+
+		 if (!apex.item( "P5CHOICE" ).isEmpty()){
+		    
+		         if(!apex.item( "P6CHOICE" ).isEmpty()){
+				      if(!apex.item( "P7CHOICE" ).isEmpty()){
+					  alert("MAX Option Reached");
+					  } else {
+					  apex.item( "P7CHOICE" ).show();
+					  }
+				 } else {
+				  apex.item( "P6CHOICE" ).show();     
+				 }
+			}  
+       		else{
+		        apex.item( "P5CHOICE" ).show();
+		    }
+}else { 
+      alert("Please Filling all above choice first");
+
+      }
+
+
+}
+</script>
+
+
+
+<script>
+function display()
+{
+if (!apex.item( "P7_CHOICE5" ).isEmpty()){
+		    apex.item( "P7_CHOICE5" ).hide();
+		  }
+
+if(!apex.item( "P7_CHOICE6" ).isEmpty()){
+			apex.item( "P7_CHOICE6" ).hide();
+		  }
+				  
+if(!apex.item( "P7_CHOICE7" ).isEmpty()){
+			apex.item( "P7_CHOICE7" ).hide();
+		  }				  
+
+}
+</script>
+				  
+				  
+				  
+		http://www.apex-blog.com/oracle-apex/dynamic-html-generated-from-plsql-tutorial-31.html		  
+				  
+				  {
+					  alert("MAX Option Reached");
+					  } else {
+					  apex.item( "P7CHOICE" ).show();
+					  }
+				 } else {
+				       
+				 }
+			}  
+       		else{
+		       
+		    }
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+
+          var newdiv = document.createElement('div');
+
+          newdiv.innerHTML = "Hello woorld";
+
+          document.getElementsByid(col-9).appendChild(newdiv);
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  <a href="javascript:apex.navigation.dialog('f?p=25620:7:655138777274::NO::P7_CUSTOMER_ID,P7_BRANCH:1,2\u0026cs=1qAb7gRDQDIjAge8A-slbHHShRPA\u0026p_dialog_cs=bxKohcLyygpfxbmffrap6IMomx-SajxqoVpdvP0MbnMFnli3yJZsoppoDSmRaXNA64aXBYvwcNlmcT4poqpn7A',
+{title:'Sample Database Application - Customer Details',height:'480',width:'660',maxWidth:'1000',modal:true,dialog:null},'t-Dialog--wizard',apex.jQuery('#customer_ir'));">Dullesw, John</a>
+
+
+
+
+
+select customer_id, 
+       cust_last_name || ', ' || cust_first_name customer_name, 
+	   CUST_STREET_ADDRESS1 || decode(CUST_STREET_ADDRESS2, null, null, ', ' || CUST_STREET_ADDRESS2) customer_address, 
+       cust_city, 
+       cust_state, 
+       cust_postal_code,
+       tags
+from demo_customers
+
+
+<script>
+function display()
+{
+if(!apex.item( "P4CHOICE" ).isEmpty()||!apex.item( "P3CHOICE" ).isEmpty()||!apex.item( "P2CHOICE" ).isEmpty()||!apex.item( "P1CHOICE" ).isEmpty() ){
+
+		 if (!apex.item( "P5CHOICE" ).isEmpty()){
+		    
+		         if(!apex.item( "P6CHOICE" ).isEmpty()){
+				      if(!apex.item( "P7CHOICE" ).isEmpty()){
+					  alert("MAX Option Reached");
+					  } else {
+					  apex.item( "P7CHOICE" ).show();
+					  }
+				 } else {
+				  apex.item( "P6CHOICE" ).show();     
+				 }
+			}  
+       		else{
+			
+		        apex.item( "P5CHOICE" ).show();
+		    }
+}else { 
+      alert("Please Filling all above choice first");
+
+      }
+
+
+}
+</script>
+
+
+
+
+<script>
+function display()
+{
+if(!apex.item( "P4CHOICE" ).isEmpty()||!apex.item( "P3CHOICE" ).isEmpty()||!apex.item( "P2CHOICE" ).isEmpty()||!apex.item( "P1CHOICE" ).isEmpty() ){
+
+		 if (!apex.item( "P5CHOICE" ).isEmpty()){
+		    
+		         if(!apex.item( "P6CHOICE" ).isEmpty()){
+				      if(!apex.item( "P7CHOICE" ).isEmpty()){
+					  alert("MAX Option Reached");
+					  } else {
+					  apex.item( "P7CHOICE" ).show();
+					  }
+				 } else {
+				  apex.item( "P6CHOICE" ).show();     
+				 }
+			}  
+       		else{
+		        apex.item( "P5CHOICE" ).show();
+		    }
+}else { 
+      alert("Please Filling all above choice first");
+
+      }
+
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

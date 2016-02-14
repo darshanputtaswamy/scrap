@@ -1,0 +1,411 @@
+
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'MODERATE','Which protocols can Oracle Net 11g use? (Choose all correct answers.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'TCP' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'UDP' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'SPX/IPX' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'SDP' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'TCP with secure sockets' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'f' ,0 ,'Named Pipes' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'g' ,0 ,'LU6.2' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'h' ,0 ,'NetBIOS/NetBEUI' ,''); 
+
+
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'MODERATE','Where is the division between the client and the server in the Oracle environment? (Choose the best answer.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Between the instance and the database' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Between the user and the user process' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Between the server process and the instance' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'Between the user process and the server process' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'f' ,0 ,'The client-server split varies depending on the stage of the execution cycle' ,''); 
+
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'EASY','Which of the following statements about listeners are correct? (Choose the best answer.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'A listener can connect you to one instance only.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'A listener can connect you to one service only.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Multiple listeners can share one network interface card.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'An instance will only accept connections from the listener specified on the local_listener parameter' ,''); 
+
+
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'MODERATE','You have decided to use Local Naming. Which files must you create on the client machine? (Choose the best answer.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'tnsnames.ora and sqlnet.ora' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'listener.ora only' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'tnsnames.ora only' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'listener.ora and sqlnet.ora' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'None—you can rely on defaults if you are using TCP and your listener is running on port 1521' ,''); 
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'MODERATE','If you stop your listener, what will happen to sessions that connected through it? (Choose the best answer.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'They will continue if you have configured failover.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'They will not be affected in any way.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'They will hang until you restart the listener' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'You cannot stop a listener if it is in use' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'The sessions will error out.' ,'');
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'MODERATE','Study this tnsnames.ora file:
+test =
+(description =
+(address_list =
+(address = (protocol = tcp)(host = serv2)(port = 1521))
+)
+(connect_data =
+(service_name = prod)
+)
+)
+prod =
+(description =
+(address_list =
+(address = (protocol = tcp)(host = serv1)(port = 1521))
+)
+(connect_data =
+(service_name = prod)
+)
+)
+dev =
+(description =
+(address_list =
+(address = (protocol = tcp)(host = serv2)(port = 1521))
+)
+(connect_data =
+(service_name = dev)
+)
+)
+Which of the following statements is correct about the connect strings test, prod, and dev? (Choose all correct answers.)');
+
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'All three are valid.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'All three can succeed only if the instances are set up for dynamic instance registration.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The test connection will fail, because the connect string doesn’t match the service name.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'There will be a port conflict on serv2, because prod and dev try to use the same port.' ,''); 
+
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'HARD','Consider this line from a listener.ora file:
+L1=(description=(address=(protocol=tcp)(host=serv1)(port=1521)))
+What will happen if you issue this connect string,
+connect scott/tiger@L1 (Choose the best answer.)');
+
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'You will be connected to the instance L1.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'You will only be connected to an instance if dynamic instance registration is working.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'You can’t tell—it depends on how the client side is configured.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'If you are logged on to the server machine, IPC will connect you to the local instance.' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'The connection will fail if the listener is not started.' ,'');
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1,'EASY' ,'Which of these memory structures is not stored in the SGA for a shared server session? (Choose the best answer.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Cursor state' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Sort space' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Stack space' ,'');
+
+
+ 
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1,'HARD' ,'Which of the following is true about dispatchers? (Choose all correct answers.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Dispatchers don’t handle the work of users’ requests; they only interface between user processes and queues.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Dispatchers share a common response queue.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Dispatchers load-balance connections between themselves.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'Listeners load-balance connections across dispatchers.' ,''); 
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'You can terminate a dispatcher, and established sessions will continue.' ,''); 
+
+
+insert into questionTable values (QUESTION_ID_SEQ.NEXTVAL , 0 ,'NET',1 ,'MODERATE','Which of the following statements about shared servers are true? (Choose the best answer.)');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'All statements in a multistatement transaction will be executed by the same server.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'If one statement updates multiple rows, the work may be shared across several servers.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The number of shared servers is fixed by the SHARED_SERVERS parameter.' ,'');
+insert into ChoiceTable values (QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'Oracle will spawn additional shared servers on demand.' ,''); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============
+BEGIN
+  FOR rec IN (SELECT EMPLOYEE.EMPID, 
+                     EMPLOYEE.ENAME, 
+                     EMPLOYEE.DESIGNATION, 
+                     EMPLOYEE.SALARY,  
+                     DEPARTMENT.DEPT_NAME 
+                FROM EMPLOYEE, 
+                     DEPARTMENT 
+               WHERE employee.departmentID = department.departmentID
+                 AND EMPLOYEE.SALARY > 3000)
+  LOOP
+    DBMS_OUTPUT.PUT_LINE ('Employee Nnumber: ' || rec.EMPID);
+    DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+    DBMS_OUTPUT.PUT_LINE ('Employee Name: ' || rec.ENAME);
+    DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+    DBMS_OUTPUT.PUT_LINE ('Employee Designation: ' || rec.DESIGNATION);
+    DBMS_OUTPUT.PUT_LINE ('----------------------------------------------------');
+    DBMS_OUTPUT.PUT_LINE ('Employee Salary: ' || rec.SALARY);
+    DBMS_OUTPUT.PUT_LINE ('----------------------------------------------------');
+    DBMS_OUTPUT.PUT_LINE ('Employee Department: ' || rec.DEPT_NAME);
+ 
+
+
+
+BEGIN
+   FOR rec IN (SELECT CHOICE, CHOICE_ID FROM choiceTable WHERE QUESTION_ID = pls_n;)
+   LOOP 
+      DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+	
+      DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+   END LOOP;
+END;	  
+
+
+SELECT TRUNC (DBMS_RANDOM.VALUE (0, 100)) FROM DUAL;
+
+
+==================================
+
+DECLARE
+  count INTEGER := 7;
+BEGIN  
+  FOR i IN 1..count LOOP
+    INSERT INTO RANDNUM
+    SELECT TRUNC (DBMS_RANDOM.VALUE (0, 100)) FROM DUAL;
+    EXCEPTION  
+	  WHEN DUP_VAL_ON_INDEX THEN
+      i := i -1;	  
+  END LOOP;
+END;
+
+
+
+DECLARE
+    i number(6);
+    cnt number(6);
+BEGIN  
+    cnt := 4;
+    i := 1 ;
+  WHILE  i < cnt
+  LOOP
+    BEGIN
+       INSERT INTO RANDNUM
+       SELECT TRUNC (DBMS_RANDOM.VALUE (0, 100)) FROM DUAL;
+       i := i + 1;
+    EXCEPTION  
+       WHEN DUP_VAL_ON_INDEX THEN
+       i := i - 1;
+    END;	  
+  END LOOP;
+END;
+
+
+
+CREATE OR REPLACE PROCEDURE Questionseries (n NUMBER)
+IS
+    i number(6);
+BEGIN  
+    i := 1 ;
+   
+  WHILE  i <= n
+  LOOP
+    BEGIN
+       INSERT INTO RANDNUM
+       SELECT TRUNC (DBMS_RANDOM.VALUE (0, 100)) FROM DUAL;
+       i := i + 1;
+    EXCEPTION  
+       WHEN DUP_VAL_ON_INDEX THEN
+       i := i - 1;
+    END;	  
+  END LOOP;
+END;
+/
+
+
+
+
+
+
+DECLARE
+   acct_type INTEGER := 7;
+
+BEGIN
+
+FOR 
+INSERT INTO RANDNUM
+SELECT TRUNC (DBMS_RANDOM.VALUE (0, 100)) FROM DUAL;
+EXCEPTION  WHEN DUP_VAL_ON_INDEX THEN 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   DECLARE 
+    pls_n pls_integer;
+    pls_question QESTB.question%type;
+    pls_choice  ANSTB.CHOICE%type;
+    pls_choiceid ANSTB.CHOICE_ID%type;
+    i number(6);
+    cnt number(6);
+BEGIN
+	cnt := 10;
+        i := 1 ;
+
+		WHILE  i < cnt
+ 		LOOP
+			 BEGIN
+ 				INSERT INTO RANDNUM
+ 				SELECT TRUNC (DBMS_RANDOM.VALUE (0, 28)) FROM DUAL;
+ 				i := i + 1;
+			 EXCEPTION  
+				WHEN DUP_VAL_ON_INDEX THEN
+				i := i - 1;
+			END;	  
+		END LOOP;
+
+		FOR	pls_n IN  (SELECT QUESTIONNO FROM RANDNUM )
+		LOOP    
+			SELECT QUESTION INTO pls_question FROM QESTB WHERE QUESTION_ID = pls_n.QUESTIONNO ;
+		        DBMS_OUTPUT.PUT_LINE(pls_question);
+			     FOR rec IN (SELECT CHOICE, CHOICE_ID FROM ANSTB WHERE QUESTION_ID = pls_n.QUESTIONNO )
+			     LOOP 
+ 			          DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+			     END LOOP;
+                        DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+		END LOOP;
+                DELETE FROM RANDNUM;
+
+END; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+DECLARE 
+    pls_n pls_integer;
+    i number(6);
+    cnt number(6);
+BEGIN
+		cnt := 10;
+        i := 1 ;
+
+		WHILE  i < cnt
+ 		LOOP
+			 BEGIN
+ 				INSERT INTO RANDNUM
+ 				SELECT TRUNC (DBMS_RANDOM.VALUE (0, 28)) FROM DUAL;
+ 				i := i + 1;
+			 EXCEPTION  
+				WHEN DUP_VAL_ON_INDEX THEN
+				i := i - 1;
+			END;	  
+		END LOOP;
+
+		FOR	pls_n IN  (SELECT QUESTIONNO FROM RANDNUM )
+		LOOP    
+			SELECT QUESTION INTO pls_question FROM questionTable WHERE QUESTION_ID = pls_n.QUESTIONNO ;
+		        DBMS_OUTPUT.PUT_LINE(pls_question);
+			     FOR rec IN (SELECT CHOICE, CHOICE_ID FROM choiceTable WHERE QUESTION_ID = pls_n.QUESTIONNO )
+			     LOOP 
+ 			          DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+			     END LOOP;
+                        DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+		END LOOP;
+                DELETE FROM RANDNUM;
+
+END; 
+
+
+CREATE OR REPLACE FUNCTION  Generator( tab IN VARCHAR2 , difficult IN VARCHAR2 )
+        [ (parameter [,parameter]) ]
+        RETURN return_datatype
+    IS | AS
+        [declaration_section
+		    variable declarations;
+		    constant declarations;
+        ]
+	BEGIN
+	    [executable_section
+		    PL/SQL execute/subprogram body
+        ]
+	[EXCEPTION]
+            [exception_section
+		    PL/SQL Exception block
+            ]
+	END [function_name];
+    /
+	
+	
+	
+CREATE OR REPLACE FUNCTION  Generator( tab IN VARCHAR2 , difficult IN VARCHAR2 , cnt IN NUMBER(2)) AS
+        pls_n pls_integer;
+		i number(6) := 0 ;
+		
+	BEGIN
+	    [executable_section
+		    PL/SQL execute/subprogram body
+        ]
+	[EXCEPTION]
+            [exception_section
+		    PL/SQL Exception block
+            ]
+	END [function_name];
+    /

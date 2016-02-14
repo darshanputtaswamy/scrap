@@ -1,0 +1,346 @@
+
+
+insert into IQB_QESTB values (IQB_IQB_QUESTION_ID_SEQ.NEXTVAL , 'GENERIC' ,1 , 1 ,'EASY' , 'Which of these languages can run within the database?');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'a' , 0 ,'C' ,NULL);
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'b' , 1 ,'Java' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'c' , 1 ,'PL/SQL','');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'd' , 1 ,'SQL','');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL , 'e' , 0 ,'Any other language, if it is linked with the OCI libraries','');
+
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'GENERIC',0 ,1 , 'EASY' , 'In a web application, on which tier does the application software run?');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'In the web browser on the client tier' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'On the middle tier' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Within a Java-enabled database' ,'');
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'SQL' ,0 ,1 , 'EASY' , 'SQL cannot do everything. What functions require another language?');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'User interface design' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Branching structures such as IF...THEN...ELSE' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Operations that affect many rows at once' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'Table creation and deletion' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'SQL',0 ,1 ,  'EASY' , 'Which of these is not a SQL command? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'MERGE' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'UPSERT' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'COMMENT' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'SAVEPOINT' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'All the above are SQL commands' ,'');
+
+
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL ,'GENERIC',  0 ,1, 'EASY' ,  'What type of relationship should be avoided when normalizing data? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'One-to-many' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'Many-to-one' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'Many-to-many' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'One-to-one' ,''); 
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL ,'GENERIC', 0 ,  1 ,  'EASY' ,    'For what data storage paradigm must data be normalized? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Hierarchical databases' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'Network databases' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Object-oriented databases' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'Relational databases' ,''); 
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL ,'Architecture', 0 , 1 ,  'EASY' ,'What statements regarding instance memory and session memory are correct? (Choose all correct
+answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'SGA memory is private memory segments; PGA memory is shared memory segments.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'Sessions can write to the PGA, not the SGA.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'The SGA is written to by all sessions; a PGA is written by one session.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'The PGA is allocated at instance startup.' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,1 ,'The SGA is allocated at instance startup.' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'EASY'  , 'How do sessions communicate with the database? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Server processes use Oracle Net to connect to the instance.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'Background processes use Oracle Net to connect to the database.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'User processes read from the database and write to the instance.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'Server processes execute SQL received from user processes.' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'MODERATE' , 'What memory structures are a required part of the SGA? (Choose all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'The database buffer cache' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0,'The Java pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The large pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'The log buffer' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'The program global area' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'f' ,1 ,'The shared pool' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'g' ,0 ,'The Streams pool' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'MODERATE' , 'Which SGA memory structure(s) cannot be resized dynamically after instance startup? (Choose
+all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'The database buffer cache' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'The Java pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The large pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'The log buffer' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'The shared pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'f' ,0 ,'The Streams pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'g' ,0 ,'All SGA structures can be resized dynamically after instance startup' ,'');
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'MODERATE' , 'Which SGA memory structure(s) cannot be resized automatically after instance startup?
+(Choose all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'The database buffer cache' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'The Java pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The large pool' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'The log buffer' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'The shared pool' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'f' ,0 ,'The Streams pool' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'g' ,0 ,'All SGA structures can be resized automatically after instance startup' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'EASY' ,'When a session changes data, where does the change get written? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'To the data block in the cache, and the redo log buffer' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'To the data block on disk, and the current online redo log file' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The session writes to the database buffer cache, and the log writer writes to the current online redo log file' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'Nothing is written until the change is committed' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'MODERATE' , 'Which of these background processes is optional? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'ARCn, the archive process' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'CKPT, the checkpoint process' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'DBWn, the database writer' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'LGWR, the log writer' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'MMON, the manageability monitor' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'EASY' , 'What happens when a user issues a COMMIT? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'The CKPT process signals a checkpoint.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'The DBWn process writes the transaction’s changed buffers to the datafiles' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'The LGWR flushes the log buffer to the online redo log.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'The ARCn process writes the change vectors to the archive redo log.' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'EASY' ,'An Oracle instance can have only one of some processes, but several of others. Which of these
+processes can occur several times? (Choose all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'The archive process' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'The checkpoint process' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'The database writer process' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'The log writer process' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,1 ,'The session server process' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'MODERATE','One segment can be spread across many datafiles. How? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'By allocating extents with blocks in multiple datafiles' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'By spreading the segment across multiple tablespaces' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'By assigning multiple datafiles to a tablespace' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'By using an Oracle block size that is larger then the operating system block size' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 ,'EASY' ,'Which statement is correct regarding the online redo log? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'There must be at least one log file group, with at least one member' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'There must be at least one log file group, with at least two members' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'There must be at least two log file groups, with at least one member each.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'There must be at least two log file groups, with at least two members each' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'Architecture',0 ,1 , 'EASY','Where is the current redo byte address, also known as the incremental checkpoint position,
+recorded? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'In the controlfile' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'In the current online log file group' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'In the header of each datafile' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'In the system global area' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1 ,'EASY','Which of these tools is not usually installed with the Oracle Universal Installer? (Choose the
+best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'The Oracle Universal Installer itself' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'SQL*Plus' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'SQL Developer' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'Oracle Enterprise Manager Grid Control' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL ,'INSTALL', 0 ,1 ,'EASY','Which tools can be used to create a database? (Choose all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'Database Configuration Assistant' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'Database Upgrade Assistant' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'SQL*Plus' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'Oracle Universal Installer' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'Oracle Enterprise Manager Database Control' ,'');
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1 ,'EASY','Oracle provides the ability to back up the entire environment, not just the Oracle Database.
+What tool can do this? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Recovery Manager' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Oracle Secure Backup' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'User-managed backups, carried out with operating system commands' ,'');
+
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1,'EASY' ,'What statement best describes the relationship between the Oracle Base and the Oracle Home?
+(Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'The Oracle Base exists inside the Oracle Home.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'The Oracle Base can contain Oracle Homes for different products.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'One Oracle Base is required for each product, but versions of the product can exist in their
+own Oracle Homes within their Oracle Base.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'The Oracle Base is created when you run the orainstRoot.sh script, and contains
+a pointer to the Oracle Home.' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1 ,'EASY','What does Optimal Flexible Architecture (OFA) describe? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'A directory structure' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'Distributed database systems' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Multitier processing architecture' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'OFA encompasses all the above' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1 ,'EASY','What environment variable must be set on Linux before running the Oracle Universal
+Installer? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'ORACLE_HOME' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'ORACLE_BASE' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'ORACLE_SID' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'DISPLAY' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1,'MODERATE' ,'If the OUI detects that a prerequisite has not been met, what can you do? (Choose the best
+answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'You must cancel the installation, fix the problem, and launch OUI again.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'A silent install will fail; an interactive install will continue.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,1 ,'Instruct the OUI to continue (at your own risk).' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'The options will depend on how far into the installation the OUI is when the problem
+is detected.' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1 ,'EASY','What type of devices can the OUI install an Oracle Home onto? (Choose all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,1 ,'Regular file systems' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Clustered file systems' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Raw devices' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'ASM disk groups' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL ,'INSTALL', 0 ,1 ,'MODERATE' ,'Which command-line switch can be used to prevent the OUI from stopping when prerequisite
+tests fail? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'–silent' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'–record' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'–responsefile' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'–ignoresysprereqs' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'INSTALL',0 ,1 ,'EASY','When does an OUI inventory get created? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Every time a new Oracle Home is created' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,0 ,'Every time a new Oracle Base is created' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Before the first run of the OUI' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,1 ,'During the first run of the OUI' ,''); 
+END
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 ,1 ,'MODERATE','Which protocols can Oracle Net 11g use? (Choose all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'TCP' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'UDP' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'SPX/IPX' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'SDP' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'TCP with secure sockets' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'f' ,0 ,'Named Pipes' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'g' ,0 ,'LU6.2' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'h' ,0 ,'NetBIOS/NetBEUI' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 ,1 ,'MODERATE','Where is the division between the client and the server in the Oracle environment? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Between the instance and the database' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Between the user and the user process' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Between the server process and the instance' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'Between the user process and the server process' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'f' ,0 ,'The client-server split varies depending on the stage of the execution cycle' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL ,'NET', 0 ,1 ,'EASY','Which of the following statements about listeners are correct? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'A listener can connect you to one instance only.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'A listener can connect you to one service only.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Multiple listeners can share one network interface card.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'An instance will only accept connections from the listener specified on the local_listener parameter' ,''); 
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 ,1 ,'MODERATE','You have decided to use Local Naming. Which files must you create on the client machine? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'tnsnames.ora and sqlnet.ora' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'listener.ora only' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'tnsnames.ora only' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'listener.ora and sqlnet.ora' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'None—you can rely on defaults if you are using TCP and your listener is running on port 1521' ,''); 
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 ,1 ,'MODERATE','If you stop your listener, what will happen to sessions that connected through it? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'They will continue if you have configured failover.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'They will not be affected in any way.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'They will hang until you restart the listener' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'You cannot stop a listener if it is in use' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'The sessions will error out.' ,'');
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 ,1 ,MODERATE,'Study this tnsnames.ora file:
+test =
+(description =
+(address_list =
+(address = (protocol = tcp)(host = serv2)(port = 1521))
+)
+(connect_data =
+(service_name = prod)
+)
+)
+prod =
+(description =
+(address_list =
+(address = (protocol = tcp)(host = serv1)(port = 1521))
+)
+(connect_data =
+(service_name = prod)
+)
+)
+dev =
+(description =
+(address_list =
+(address = (protocol = tcp)(host = serv2)(port = 1521))
+)
+(connect_data =
+(service_name = dev)
+)
+)
+Which of the following statements is correct about the connect strings test, prod, and dev? (Choose all correct answers.)');
+
+insert into IQB_IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'All three are valid.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'All three can succeed only if the instances are set up for dynamic instance registration.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The test connection will fail, because the connect string doesn’t match the service name.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'There will be a port conflict on serv2, because prod and dev try to use the same port.' ,''); 
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 , 1 ,'HARD','Consider this line from a listener.ora file:
+L1=(description=(address=(protocol=tcp)(host=serv1)(port=1521)))
+What will happen if you issue this connect string,
+connect scott/tiger@L1 (Choose the best answer.)');
+
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'You will be connected to the instance L1.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'You will only be connected to an instance if dynamic instance registration is working.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'You can’t tell—it depends on how the client side is configured.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'If you are logged on to the server machine, IPC will connect you to the local instance.' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'The connection will fail if the listener is not started.' ,'');
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 , 1,'EASY' ,'Which of these memory structures is not stored in the SGA for a shared server session? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Cursor state' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Sort space' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Stack space' ,'');
+
+
+ 
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 ,1,'HARD' ,'Which of the following is true about dispatchers? (Choose all correct answers.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'Dispatchers don’t handle the work of users’ requests; they only interface between user processes and queues.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'Dispatchers share a common response queue.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'Dispatchers load-balance connections between themselves.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'Listeners load-balance connections across dispatchers.' ,''); 
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'e' ,0 ,'You can terminate a dispatcher, and established sessions will continue.' ,''); 
+
+
+insert into IQB_QESTB values (IQB_QUESTION_ID_SEQ.NEXTVAL , 'NET',0 ,1 ,'MODERATE','Which of the following statements about shared servers are true? (Choose the best answer.)');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'a' ,0 ,'All statements in a multistatement transaction will be executed by the same server.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'b' ,1 ,'If one statement updates multiple rows, the work may be shared across several servers.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'c' ,0 ,'The number of shared servers is fixed by the SHARED_SERVERS parameter.' ,'');
+insert into IQB_ANSTB values (IQB_QUESTION_ID_SEQ.CURRVAL,  'd' ,0 ,'Oracle will spawn additional shared servers on demand.' ,''); 
+

@@ -23,3 +23,25 @@ Perforamce
 		   
 
 		   RMAN Parallel Recovery Fails With OS and I/O ERROR along with Unable To Communicate With ASM Instance Error (Doc ID 2027819.1)
+		   
+		   
+		   
+		   
+==============================================================================
+
+ASM SESSION 
+===========
+
+
+ASM META DATA INETRNAL AND TOOLS
+
+KFED
+AMDU
+DD/HEXDUMP/OD
+
+
+284646.1
+1505005.1
+85579.1
+
+

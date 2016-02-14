@@ -1,7 +1,54 @@
+=====================================================
+
+- ORACLE CERTIFIED PROFESSIONAL 
+- RAC CERTIFICATION
+
+- STORAGE INDEPTH
+- ORACLE DATABASE INDEPTH
+- ORACLE RAC INDEPTH
+- OS INDEPTH
+
+- ORACLE CERTIFIED MASTER
+
+
+HTML
+CSS
+JAVASCRIPT 
+NODE.JS 
+DOM 
+OOPS
+JAVA (indepth)
+C++ (indepth )
+PYTHON
+R
+HADOOP
+BIGDATA
+MACHINE LEARNING AND INTELLIGENCE
+
+
+
+======================================================
+ORACLE DOCUMETATIONS(3),STUDENT GUIDE(3).
+All Documents given by Shrikanth
+
+Code School
+Algorithms
+Review 10 SRs 
+       3 TOPCODER Problems
+	   C/C++/Java
+	   
+Conciousness 
+
+SOFT SKILLS
+----------------
+English(Grammer)
+Movies
+Writing
 
 =====================================================================================================================================================
 APRIL 4th
 ======================================================================================================================================================
+
 ORACLE 
 SWAP Physical memory usage 
 
@@ -34,14 +81,18 @@ yiying- analysis
 	RAC DataBase
 	==============================
 	10g RAC Reference (INTERNAL ONLY) (Doc ID 280216.1)
-	   
-	   
+	http://oracleinaction.com/dynamic-remastering/
+	RAC object remastering ( Dynamic remastering )
+	http://www.hhutzler.de/blog/a-closer-look-into-drm-dynamic-resource-management/
+	
+	
 	OS/SYSTEM
 	==========
 	FAQ: ORA-4030 [Video] [ID 399497.1]
 	Tuxedo Core Dump Analysis (Doc ID 1204143.1)
 	What Is the Difference Between a Heap Dump and a Core Dump and How to Enable Each? (Doc ID 1981375.1)
 	Generate a Core Dump from Application Crash with Segmentation Fault (Doc ID 1321500.1)
+	http://www.antapex.org/unix.txt
 	 
 	Storage
 	=========
@@ -64,9 +115,7 @@ yiying- analysis
 	http://www.brendangregg.com/linuxperf.html
 	https://www.youtube.com/watch?v=SN7Z0eCn0VY 
 	https://www.safaribooksonline.com/library/view/system-performance-tuning/059600284X/ch04.html
-	
-	Oracle11g Real Application Clusters: Best Practices - Performance Diagnostics and Tuning (INTERNAL ONLY) (Doc ID 786048.1)
-	
+	9i RAC: Best Practices - Performance Diagnostics and Tuning (INTERNAL ONLY) (Doc ID 205613.1)
 	
 	MULTITENANT DataBase
 	======================
@@ -95,23 +144,73 @@ yiying- analysis
 	BUG FIXED IN PSU 
 	=================
 	11.2.0.x Oracle Database and Networking Patches for Microsoft Platforms (Doc ID 1114533.1)
+	How to use cloning step by step (Doc ID 1299912.1)
 	
+
+
+
+
+
+====================
+
+AIX
+
+
+	http://www.unixmantra.com/2014/02/18-top-aix-performance-commands.html
+	http://www-01.ibm.com/support/docview.wss?uid=isg3T1011239
+	https://www-304.ibm.com/partnerworld/wps/servlet/ContentHandler/stg_com_pop_aix_using_perfpmr/lc=en_ALL_ZZ
+
+	http://www.ibm.com/developerworks/aix/library/au-aixoptimization-memtun1/index.html?ca=drs-
+	http://www.ibm.com/developerworks/aix/library/au-aixoptimization-memtun2/index.html?ca=drs-
+	http://www.ibm.com/developerworks/aix/library/au-aixoptimization-memtun3/index.html?ca=drs-
+
+    fcstat - Displays statistics gathered by the specified Fibre Channel device driver
+    filemon - Performance statistics for files, logical/physical volumes and virtual memory segments
+    fileplace - Displays the placement of file blocks within logical or physical volumes.
+    entstat - Displays the statistics gathered by the specified Ethernet device driver
+    iostat - Statistics for ttys, disks and cpu
+    ipcs - Status of interprocess communication facilities
+    lsps - Statistics about paging space
+    netstat - Shows network status
+    netpmon - Performance statistics for CPU usage, network device-driver I/O, socket calls & NFS
+    nfsstat - Displays information about NFS and RPC calls
+    pagesize - Displays system page size
+    ps - Display status of current processes
+    pstat - Statistics about system attributes
+    sar - System Activity Recorder
+    svmon - Captures a snapshot of the current contents of both real and virtual memory
+    traceroute -  intended for use in network testing, measurement, and management.
+    tprof - Detailed profile of CPU usage by an application
+    vmstat - Statistics about virtual memory and cpu/hard disk usage
+
+
 	
-	
-ORACLE DOCUMETATIONS(3),STUDENT GUIDE(3).
-All Documents given by Shrikanth
+PLSQL
+=========
 
-Code School
-Algorithms
-Review 10 SRs 
-       3 TOPCODER Problems
-	   C/C++/Java
-	   
-Conciousness 
+	http://www.oracle.com/technetwork/issue-archive/index-087690.html
 
-SOFT SKILLS
-----------------
-English(Grammer)
-Movies
-Writing
 
+==============
+
+BIGDATA
+
+
+http://www.makeuseof.com/tag/build-basic-web-crawler-pull-information-website/
+https://nicolas.perriault.net/code/2013/functional-javascript-for-crawling-the-web/
+http://www.netinstructions.com/how-to-make-a-simple-web-crawler-in-javascript-and-node-js/
+
+
+BIG DATA
+http://www.mastersindatascience.org/blog/7-must-read-books-for-the-budding-data-scientist/
+http://www.analyticsvidhya.com/blog/2015/10/books-big-data-hadoop-apache-spark/http://bigdata-madesimple.com/20-must-read-books-for-budding-data-scientists/
+http://www.mccalv.com/blog/wp-content/uploads/2013/08/apache-hadoop_new_margin-nouni.pdf
+http://accionlabs.com/case-study-of-selenium-data-integrating-into-big-data-repository/
+https://scotch.io/tutorials/scraping-the-web-with-node-js
+
+
+
+GOLDEN GATE
+http://gavinsoorma.com/2012/12/oracle-goldengate-11gr2-high-availability-with-oracle-11gr2-clusterware/
+
+http://onlinesequencer.net/192499

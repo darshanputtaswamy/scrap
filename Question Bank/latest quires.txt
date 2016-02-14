@@ -1,0 +1,108 @@
+DECLARE
+       ns_diff IQB_QESTB.DIFFICULTY%type;
+       ns_comp IQB_QESTB.COMPONENT_NAME%type;
+       pls_questNo IQB_QESTB.QUESTION_ID%type;
+       pls_n IQB_QESTB.QUESTION_ID%type;
+       ns_givenNum  pls_integer;
+       pls_totalQuestion pls_integer;
+       i number(6,0);
+BEGIN
+
+       ns_givenNum :=21;
+       i := 1;
+       
+       DELETE FROM IQB_FINALQESNUMTB;
+       commit;
+
+       INSERT INTO IQB_TEMPTB
+       SELECT QUESTION_ID FROM IQB_QESTB;
+       commit;
+       
+       SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+       
+       DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+       DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+       WHILE i < ns_givenNum
+       LOOP 
+           BEGIN 
+               INSERT INTO IQB_RANDNUMTB
+               SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+               i := i + 1;
+               DBMS_OUTPUT.PUT_LINE ( i );
+           EXCEPTION
+               WHEN DUP_VAL_ON_INDEX THEN
+ 	       i := i - 1;
+               DBMS_OUTPUT.PUT_LINE ( i );
+           END;	  
+       END LOOP;
+       commit;
+
+       FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+       LOOP
+
+           SELECT QID INTO pls_questNo
+           FROM IQB_TEMPTB T1 WHERE pls_n.serialnum  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );
+           INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+  
+     END LOOP;
+       commit;
+       DELETE FROM IQB_RANDNUMTB;
+       commit;
+       DELETE FROM IQB_TEMPTB;
+       commit;
+
+END;
+
+
+
+
+=========================================================================================
+
+
+!!------------------------------------------------------------------------------------------------------------------------------
+DECLARE 
+    pls_n pls_integer;
+    pls_question IQB_QESTB.question%type;
+    pls_choice  IQB_ANSTB.CHOICE%type;
+    pls_choiceid IQB_ANSTB.CHOICE_ID%type;
+    
+    
+BEGIN
+    pls_n := dbms_random.value(1,29);
+   
+    SELECT QUESTION INTO pls_question FROM IQB_QESTB WHERE QUESTION_ID = pls_n;
+
+   dbms_output.put_line
+   (pls_question);
+
+    FOR rec IN (SELECT CHOICE, CHOICE_ID FROM IQB_ANSTB WHERE QUES_ID = pls_n)
+   LOOP 
+      DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+      DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+   END LOOP;
+
+END; 
+
+!!------------------------------------------------------------------------------------------------------------------------------
+
+
+DECLARE 
+    pls_n pls_integer;
+    pls_question IQB_QESTB.question%type;
+   
+BEGIN
+
+		FOR	pls_n IN  (SELECT QUESTIONNUM FROM GLOBALQUESTIONNO )
+		LOOP    
+		      SELECT QUESTION INTO pls_question FROM IQB_QESTB WHERE QUESTION_ID = pls_n.QUESTIONNUM  ;
+		        DBMS_OUTPUT.PUT_LINE(pls_question);
+ 
+	              FOR rec IN (SELECT CHOICE, CHOICE_ID FROM IQB_ANSTB WHERE QUES_ID = pls_n.QUESTIONNUM )
+	  	      LOOP 
+ 			      DBMS_OUTPUT.PUT_LINE ( rec.CHOICE_ID || ': ' ||rec.CHOICE );
+		      END LOOP;
+                              DBMS_OUTPUT.PUT_LINE ('---------------------------------------------------');
+		END LOOP;
+                
+END; 

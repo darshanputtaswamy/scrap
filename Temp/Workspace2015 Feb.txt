@@ -34,6 +34,494 @@ SYNTAX
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ End  1-Feb-2016  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+============================================================================================================================================
+New SR  List:
+Closed SR List :
+Touched SR List :
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
+....
+
+
+
+DAY SUMMARY:
+============================================================================================================================================
+SR Number                               Description:
+============================================================================================================================================
+
+===========================================================================================================================================
+SR Number                               Description:
+============================================================================================================================================
+Key :
+
+DAY SUMMARY:
+============================================================================================================================================
+SR Number                               Description:
+============================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
++++++++++++++++++
+MODIFY SCAN LISTENERS
++++++++++++++++++
+
+1. Current scan listener configuration can be found in 
+    cat /opt/app/11.2.0/grid/network/admin/listener.ora
+
+2. New scan listener cannot be added while there are scan listeners already configured.
+
+     srvctl config scan_listener
+     SCAN Listener LISTENER_SCAN1 exists. Port: TCP:9120/TCPS:1523
+
+     srvctl add scan_listener -l myscanlistener
+     PRCS-1028 : Single Client Access Name listeners already exist
+
+	 
+3. To add a new scan listener remove the default scan listener first. When the new scan listener name is specified 
+    it will give only with the prefix of the scan listener name. There's no need to include the "SCAN", this will be added by the clusteware.
+ 
+     srvctl stop scan_listener
+
+	 srvctl remove scan_listener
+	 Remove scan listener? (y/[n]) y
+
+	
+	Adds Oracle Clusterware resources to the SCAN listeners. The number of SCAN listener resources created is the number of SCAN VIP resources.
+		Syntax and Options
+
+		Use the srvctl add scan_listener command with the following syntax:
+
+		srvctl add scan_listener [-l lsnr_name_prefix] [-s]  [-p "[TCP:]port_list[/IPC:key][/NMP:pipe_name][/TCPS:s_port] [/SDP:port]"]
+
+Example
+
+			An example of this command is:
+
+			srvctl add scan_listener -l myscanlistener -p TCP:9120/TCPS:1523
+			srvctl config scan_listener
+			SCAN Listener MYSCANLISTENER_SCAN1 exists. Port: TCP:9120/TCPS:1523
+
+4.  Listener.ora file won't be modified at this stage. 
+         Entries related to new scan listener name will be added when the scan listener is started. 
+         The old scan listener entries will still be there on the listener.ora and must be manually removed. 
+         Listener.ora files across all nodes will be updated when the scan listener is started. The COST related scan listener entries must be manually changed
+
+cat /opt/app/11.2.0/grid/network/admin/listener.ora   # before scan listener start
+...
+SECURE_REGISTER_LISTENER_SCAN1 = (IPC,TCPS)
+
+cat /opt/app/11.2.0/grid/network/admin/listener.ora   # after scan listener start
+...
+SECURE_REGISTER_MYSCANLISTENER_SCAN1 = (IPC,TCPS) <--- must be changed manually
+
+https://docs.oracle.com/cd/E11882_01/rac.112/e41960/srvctladmin.htm#CDDEFBAF
+
+==
+
++++++++++++++++++++++
+MODIFY LISTENER NAME
++++++++++++++++++++++
+
+Use srvctl to add a new listener with the name you want and remove the listener that you do not want:
+
+1. To add the new listener name on the same port as the current default listener name -s 
+option must be used. This will skip the port check if not an error will be thrown.
+
+srvctl status listener
+Listener LISTENER is enabled
+Listener LISTENER is running on node(s): xxx1,xxx2
+
+srvctl add listener -l mylistener -p 9120   # without -s results in an error
+PRCN-2061 : Failed to add listener ora.MYLISTENER.lsnr
+PRCN-2065 : Port(s) 9120 are not available on the nodes given
+PRCN-2067 : Port 9120 is not available across node(s) "xxx1-vip,xxx2-vip"
+
+2. srvctl add listener -l mylistener -s -p 9120
+
+srvctl config listener
+Name: MYLISTENER
+Network: 1, Owner: grid
+Home: <CRS home>
+End points: TCP:9120
+
+3. Before removing the default listener modify the asm configuration with the new listener. 
+   If not asm configuration will continue to use the old listener name and will report 
+   PRCA-1032: ASM Listener LISTENER Does Not Exist when srvctl config asm is run. 
+   it's important that this is done before the default listener is dropped if not the default 
+   listener need to be added and then new listener name is specified for the asm configuration. More on this is available on 1428284.1
+
+srvctl modify asm -l MYLISTENER
+srvctl config asm
+ASM home: /opt/app/11.2.0/grid
+ASM listener: MYLISTENER
+
+4. Stop the default listener and remove it from the configuration.
+
+srvctl stop listener -l listener
+srvctl remove listener -l listener
+
+5. The new listener name related entries are not added to the listener.ora file until the listener is restarted and 
+update will be done across all nodes of the cluster. 
+Similar to scan listener the old entries will still remain the listener.ora file and must be manually removed. 
+
+At the same time also edit the COST related listener entry.
+
+cat /opt/app/11.2.0/grid/network/admin/listener.ora  # before listener start
+SECURE_REGISTER_LISTENER = (IPC,TCP)
+
+srvctl start listener -l mylistener
+
+cat /opt/app/11.2.0/grid/network/admin/listener.ora  # after listener start
+SECURE_REGISTER_MYLISTENER = (IPC,TCP) <-- must be changed manually
+
+6. Listener status
+
+============================================================================================================================================
+SR Number       3-12103391421                        Description: Remove and add listener with new name in 2 node RAC environment
+============================================================================================================================================
+Key :listener Rename 
+
+DAY SUMMARY: 
+
+============================================================================================================================================
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ Begin End  1-Feb-2016 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+============================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to Migrate to a new SAN on a Windows RAC/ASM/CRS 10.2 (Doc ID 580559.1)
+
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ End  <DATE> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+============================================================================================================================================
+New SR  List:
+Closed SR List :
+Touched SR List :
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
+....
+===========================================================================================================================================
+SR Number                               Description:
+============================================================================================================================================
+Key :
+
+DAY SUMMARY:
+
+
+
+
+
+@ 4) please ask the system administrators to test the infiniband network with 
+@ rping / rds-ping and use large packet size 
+@ .
+@ http://docs.oracle.com/cd/E23824_01/html/821-1459/gjwwf.html#scrolltoc
+@ .
+@ http://linux.die.net/man/1/rping
+@ rping -s [-v] [-V] [-d] [-P] [-a address] [-p port]
+@         [-C message_count] [-S message_size]
+@ rping -c [-v] [-V] [-d] -a address [-p port]
+@         [-C message_count] [-S message_size]
+@ 		
+@ http://linux.die.net/man/1/rds-ping
+@ rds-ping [-c count] [-i interval] [-I local_addr] remote_addr 		
+@ .
+@ you can also find a small script in 
+@ "Script to check availability Infiniband network connectivity between Exadata 
+@ DB node and configured cell servers (Doc ID 1594997.1)"
+
+
+
+
+
+
+
+============================================================================================================================================
+SR Number 3-11820140221                          Description:  OAPDWQ-frequent query failures with PX Deq: Join ACK waits and ORA-12805
+============================================================================================================================================
+Key ::IPC Send timeout detected
+
+
+
+
+IPC Send timeout detected. Sender: ospid 1868 [oracle@db15 (P172)]
+Receiver: inst 2 binc 2 ospid 13893             <<<
+
+Receiver: inst 2 binc 526799489 ospid 11659     <<<
+
+An instance reports IPC send timed out when the receiver does not acknowledge messages from the sender. This typically means that the private network that is used to communicate is broken or dropping packets. It is also possible to get these messages when the receiver does not get CPU resource to acknowledge the receipt.
+
+The ospid 1868 on Instance:1 is sending message to ospid 13893 on Instance:2.
+
+You need to go on Instance:2 and check for process with ospid 13893 and  ospid 11659    These are the one's which are causing problem.
+
+Reviewing these process trace files or diag trace files will provide additional hints as to what these processes are doing.
+
+
+
+
+
+DAY SUMMARY: 
+============================================================================================================================================
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ Begin End  <DATE> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+============================================================================================================================================
+
+SYNTAX
+*********************************************************************************************************************************************
+*********************************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to turn on debugging for config.sh
+
+Modify config.pl as grid user:
+
+Change the following:
+
+# java cmd to launch
+my $wizardCmd = $JAVACMD.' -cp '.$classPath.$debugOpts.' -Doracle.installer.configWizard=true -Doracle.installer.scratchPath='.$ORACLE_HOME.$dirSep.'inventory'.$dirSep.'Scripts'.' -Xdebug '.'oracle.install.ivw.crs.driver.CRSConfigWizard '.join(' ',@ARGV);
+
+To:
+
+# java cmd to launch
+my $wizardCmd = $JAVACMD.' -cp '.$classPath.$debugOpts.' -Doracle.installer.configWizard=true -DTRACING.ENABLED=true -DTRACING.LEVEL=2 -DSRVM_TRACE_LEVEL=2 -DFULLTRACE -Doracle.installer.scratchPath='.$ORACLE_HOME.$dirSep.'inventory'.$dirSep.'Scripts'.' -Xdebug '.'oracle.install.ivw.crs.driver.CRSConfigWizard '.join(' ',@ARGV);
+
+
+Basically add the following between -Doracle.installer.configWizard=true -Doracle.installer.scratchPath
+
+-DTRACING.ENABLED=true -DTRACING.LEVEL=2 -DSRVM_TRACE_LEVEL=2 -DFULLTRACE
+
+ 
+
+[This section is not visible to customers.]
+
+
+
+
+
+
+ORA-600 [kmgs_parameter_update_timeout_1], [1565] While Accessing Spfile Managed By ASM (Doc ID 553915.1)
+Bug 6974125 : COMMUNICATION FAILURE WITH ASM INSTANCE DUE TO ORA-21561
+https://community.oracle.com/thread/735212
+
+
+
+
+
+
+
+
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ End  <DATE> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+============================================================================================================================================
+New SR  List:
+Closed SR List :
+Touched SR List :
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
+....
+===========================================================================================================================================
+SR Number                               Description:
+============================================================================================================================================
+Key :
+
+DAY SUMMARY:
+============================================================================================================================================
+SR Number                               Description:
+============================================================================================================================================
+Key :
+
+DAY SUMMARY: 
+
+
+
+
+
+
+ 326  . oraenv
+  327  which kfed
+  328  cd ddout_12102015
+  329  ls -l
+  330  file ddoutre0116r00sn02.txt
+  331  more ddoutre0116r00sn02.txt
+  332  kfed read ddoutre0116r00sn02.txt | more
+  333  kfed read ddoutre0116r00sn02.txt aun=0 blknum=1| more
+  334  kfed read ddoutre0116r00sn02.txt aun=0 blknum=2| more
+  335  kfed read ddoutre0116r00sn02.txt aun=0 blknum=3| more
+  336  kfed read ddoutre0116r00sn02.txt aun=0 blknum=4| more
+  337  kfed read ddoutre0116r00sn02.txt aun=1 blknum=0| more
+  338  kfed read ddoutre0116r00sn02.txt aun=0 blknum=1| more
+  339  kfed read ddoutre0116r00sn02.txt aun=0 blknum=2| more
+  340  kfed read ddoutre0116r00sn02.txt aun=1 blknum=0| more
+  341  kfed read ddoutre0116r00sn02.txt aun=1 blknum=2| more
+  342  kfed read ddoutre0116r00sn02.txt aun=1 blknum=3| more
+  343  kfed read ddoutre0116r00sn02.txt aun=1 blknum=4| more
+  344  kfed read ddoutre0116r00sn02.txt aun=2 blknum=4| more
+  345  kfed read ddoutre0116r00sn02.txt aun=2 blknum=3| more
+  346  kfed read ddoutre0116r00sn02.txt aun=1 blknum=254| more
+  347  hexdump -C ddoutre0116r00sn02.txt | grep ORCLDISK
+  348  ls -l /dev/asmdisk*
+  349  hexdump -C /dev/asmdisk1 | grep ORCLDISK | more
+  350  hexdump -C /dev/asmdisk1 | grep ORCLDISK
+  351  kfed read /dev/asmdisk1 | more
+  352  kfed read /dev/asmdisk2 | more
+  353  kfed read /dev/asmdisk3 | more
+  354  kfed read /dev/asmdisk4 | more
+  355  ps -ef | grep pmon
+  356  crsctl stat res -t
+  357  hexdump -C ddoutre0116r00sn02.txt | grep ORCLDISK
+  358  ls -l
+       hexdump -C ddoutre0116r00ss02.txt | grep ORCLDISK
+       hexdump -C ddoutre0137r00rn05.txt | grep ORCLDISK
+       hexdump -C ddoutre0137r00rn06.txt | grep ORCLDISK
+       hexdump -C ddoutre0137r00rn07.txt | grep ORCLDISK
+       hexdump -C ddoutre0137r00rn08.txt | grep ORCLDISK
+       hexdump -C ddoutre0137r00sn02.txt | grep ORCLDISK
+       hexdump -C ddoutre0137r00ss02.txt | grep ORCLDISK
+       hexdump -C ddoutre0116r00sn02.txt | grep ORCLDISK
+  367  dd if=ddoutre0116r00sn02.txt of=ddoutre0116r00sn02_7MB.txt bs=1048576 count=1 skip=7
+  368  ls -l ddoutre0116r00sn02_7MB.txt
+  369  dd if=ddoutre0116r00sn02_7MB.txt of=ddoutre0116r00sn02_7MB_254blk.txt bs=4096 count=2 skip=254
+  370  ls -l ddoutre0116r00sn02_7MB_254blk.txt
+  371  kfed read ddoutre0116r00sn02_7MB_254blk.txt | more
+  372  kfed read ddoutre0116r00sn02.txt | more
+  373  hexdump -C  ddoutre0116r00sn02.txt | more
+  374  kfed read ddoutre0116r00sn02.txt | more
+  375  kfed read ddoutre0116r00sn02.txt aun=0 blknum=1| more
+  376  pwd
+  377  ls -l
+  378  kfed read ddoutre0116r00sn02.txt | more
+  379  kfed read ddoutre0116r00sn02.txt blknum=1 aun=1| more
+  380  kfed read ddoutre0116r00sn02.txt blknum=1 aun=0| more
+  381  kfed read ddoutre0116r00sn02.txt blknum=2 aun=0| more
+  382  kfed read ddoutre0116r00sn02.txt blknum=2 aun=2| more
+  383  ls -l
+  384  kfed read ddoutre0116r00sn02_7MB_254blk.txt | more
+  385  kfed read ddoutre0116r00sn02_7MB_254blk.txt blknum=1| more
+  386  ls -l
+  387  kfed read ddoutre0116r00sn02.txt blknum=1 aun=0 | more
+  388  od -c ddoutre0116r00sn02.txt | head -50
+  389  hexdump -C ddoutre0116r00sn02.txt | more
+  390  clear
+
+  
+  
+  kfed read <disk>.txt ausz=4194304 aun=0 blknum=0   <<< Fails due to corruption 
+  kfed read <disk>.txt ausz=4194304 aun=0 blknum=1   <<< Successfull no corruption
+  kfed repair <disk>.txt ausz=4194304 ausz=4194304 aun=1 blknum=1022   <<< Repair the blk 0 aun 0 
+  kfed read <disk>.txt ausz=4194304 aun=0 blknum=0   <<< check and verify resolved issue
+  
+  http://x.cygwin.com/docs/ug/setup.html#setup-cygwin-x-installing
+  http://x.cygwin.com/docs/ug/using-remote-apps.html
+  
+  
+============================================================================================================================================
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+============================================================================================================================================
++++++++++++++++++++++++++++++++++++++++++++++++++ Begin End  <DATE> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+============================================================================================================================================
+
+SYNTAX
+*********************************************************************************************************************************************
+*********************************************************************************************************************************************
+
+
+
+
+  
 The lock you see "enq: TX - row lock contention" happens because one session is trying to modify uncommited data from another session. There are 4 common reasons for this particular lock wait event:
 
     update/delete of the same row
@@ -455,6 +943,16 @@ user data. A quorum failure group is not considered when determining redundancy 
 ============================================================================================================================================
 
 
+1.Cluster ware is no need to be relinked .
+2.It is necessary for rdbms to relink all the binaries .
+
+You can refer to the note below to relink rdbms
+
+How to Relink Oracle Database Software on UNIX (Doc ID 131321.1)
+
+Note: Please backup the $ORACLE_HOME binaries before performing the command "relink all"
+
+Please fell free to update the SR once you got any other concerns.
 
 
 

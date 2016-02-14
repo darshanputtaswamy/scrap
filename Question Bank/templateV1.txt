@@ -1,0 +1,1021 @@
+INSTALL-UPGRADE-MIGRATE
+
+DECLARE
+       ns_diff IQB_QESTB.DIFFICULTY%type;
+       ns_comp IQB_QESTB.COMPONENT_NAME%type;
+       pls_questNo IQB_QESTB.QUESTION_ID%type;
+
+       ns_givenNum  pls_integer;
+       pls_totalQuestion pls_integer;
+       ns_givenNumModerate   pls_integer;
+       ns_givenNumHard   pls_integer;
+       ns_givenNumEasy   pls_integer;
+       i number(6,0);
+	  
+	  
+BEGIN 
+       
+       
+       
+    
+    FOR pls_n  IN (SELECT UNIQUE (COMPONENT_NAME) as COMPETENCY FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29)
+    LOOP
+
+
+    SELECT NUMBEROFQUESTION INTO ns_givenNumHard FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND COMPONENT_NAME = pls_n.COMPETENCY AND DIFFICULTY = 'HARD' ;
+    SELECT NUMBEROFQUESTION INTO ns_givenNumEasy FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND COMPONENT_NAME = pls_n.COMPETENCY AND DIFFICULTY = 'EASY' ;
+    SELECT NUMBEROFQUESTION INTO ns_givenNumModerate FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND COMPONENT_NAME = pls_n.COMPETENCY AND DIFFICULTY = 'MODERATE' ;
+
+					BEGIN 
+                           
+	
+					  
+						        if (	ns_givenNumHard  != 0 ) then 
+									   i := 1;
+									   
+									   
+									   INSERT INTO IQB_TEMPTB
+									   SELECT QUESTION_ID FROM IQB_QESTB
+									   WHERE DIFFICULTY = 'HARD' AND COMPONENT_NAME = pls_n. ;
+									   
+									   
+									   
+									   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+									   
+									   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+									   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+											   WHILE i <= ns_givenNumHard
+											   LOOP 
+												   BEGIN 
+												        i := i + 1;
+													   INSERT INTO IQB_RANDNUMTB
+													   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+													  
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   EXCEPTION
+													   WHEN DUP_VAL_ON_INDEX THEN
+												   i := i - 1;
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   END;	  
+											   END LOOP;
+											   
+
+									   					   
+												   
+											   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+											   LOOP
+
+												   SELECT QID INTO pls_questNo
+												   FROM IQB_TEMPTB T1 WHERE ( pls_n.serialnum  )  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );                                                                             DBMS_OUTPUT.PUT_LINE ('**' ||pls_questNo || '-' || pls_n.serialnum ||'**' );
+												   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+										  
+											   END LOOP;
+											   
+									   
+									   DELETE FROM IQB_RANDNUMTB;
+									   
+									   DELETE FROM IQB_TEMPTB;
+									   
+						    END IF;  
+						   
+						   
+	
+						  
+						    if (	ns_givenNumEasy  != 0 ) then 
+									   i := 1;
+									   
+									   
+									   INSERT INTO IQB_TEMPTB
+									   SELECT QUESTION_ID FROM IQB_QESTB
+									   WHERE DIFFICULTY = 'EASY' AND COMPONENT_NAME = pls_n.COMPETENCY;
+									   
+									   
+									   
+									   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+									   
+									   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+									   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+												   WHILE i <= ns_givenNumEasy
+												   LOOP 
+													   BEGIN 
+													        i := i + 1;
+														   INSERT INTO IQB_RANDNUMTB
+														   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+														   
+														   DBMS_OUTPUT.PUT_LINE ( i );
+													   EXCEPTION
+														   WHEN DUP_VAL_ON_INDEX THEN
+													       i := i - 1;
+														   DBMS_OUTPUT.PUT_LINE ( i );
+													   END;	  
+												   END LOOP;
+									   
+
+									   
+												   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+												   LOOP
+
+													   SELECT QID INTO pls_questNo
+													   FROM IQB_TEMPTB T1 WHERE ( pls_n.serialnum  ) = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );                                                                            DBMS_OUTPUT.PUT_LINE ('**' ||pls_questNo || '-' || pls_n.serialnum ||'**' );
+													   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+											  
+												   END LOOP;
+									   
+									   DELETE FROM IQB_RANDNUMTB;
+									   
+									   DELETE FROM IQB_TEMPTB;
+									   
+
+					        END IF;
+
+					
+			
+	
+						   
+						    if (	ns_givenNumModerate  != 0 ) then 
+
+									   i := 1;						   
+										   
+									   INSERT INTO IQB_TEMPTB
+									   SELECT QUESTION_ID FROM IQB_QESTB
+									   WHERE DIFFICULTY = 'MODERATE' AND COMPONENT_NAME = pls_n.COMPETENCY;
+									   
+									   
+									   
+									   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+									   
+									   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+									   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+											   WHILE i <= ns_givenNumModerate 
+											   LOOP 
+												   BEGIN 
+												       i := i + 1;
+													   INSERT INTO IQB_RANDNUMTB
+													   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+													   
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   EXCEPTION
+													   WHEN DUP_VAL_ON_INDEX THEN
+												   i := i - 1;
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   END;	  
+											   END LOOP;
+											   
+
+											   
+															   
+											   
+											   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+											   LOOP
+
+												   SELECT QID INTO pls_questNo
+												   FROM IQB_TEMPTB T1 WHERE ( pls_n.serialnum  )  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );                                                                             DBMS_OUTPUT.PUT_LINE ('**' ||pls_questNo || '-' || pls_n.serialnum ||'**' );
+												   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+										  
+											 END LOOP;
+									   
+									   DELETE FROM IQB_RANDNUMTB;
+									   
+									   DELETE FROM IQB_TEMPTB;
+									   
+                            END IF;
+
+				END;		   
+				commit;		   
+	
+    END LOOP;
+	
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Template 
+
+
+^TemplateID
+ Competency
+ Easy
+ Hard
+ Moderate
+ Mandatory
+ 
+Template_ID 
+Template_name 
+Disription 
+Created-Date
+Exam Duration 
+QuestionpaperType  - Shuffle , , Order by Difficulty
+
+
+1.  CONCEPTS-ARCHITECTURE
+2.  INSTALL-UPGRADE-MIGRATE 
+3.  BACKUP-RECOVERY-RMAN-HA
+4.  CORE-DBA
+5.  PERFORMANCE
+6.  RAC
+7.  DG
+8.  ASM-STORAGE
+9.  OS 
+10. SQL*NET  
+11. NETWORKING
+12. SQL-PL/SQL
+13. APTITUDE
+
+
+
+CREATE TABLE IQB_TEMPLATE (
+		  TEMPLATE_ID   NUMBER(6,0)
+		, TEMPLATE_NAME VARCHAR(30) NOT NULL
+		, EXAM_DURATION NUMBER(3,0)   
+		, QUES_PAPER_TYPE  VARCHAR(30) 
+        , DESCRIPTION   VARCHAR(1000)
+		, CONSTRAINT Template_ID_pk  PRIMARY KEY (TEMPLATE_ID)
+);
+
+CREATE SEQUENCE  IQB_TEMPLATE_ID_SEQ  MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 29 NOCACHE  NOORDER  NOCYCLE
+
+
+CREATE TABLE IQB_TEMPLATE_DETAILS (
+     TEMPLATE_ID NUMBER(6,0)
+    ,COMPONENT_NAME  VARCHAR(30)
+    ,DIFFICULTY  VARCHAR(8)
+	,NUMBEROFQUESTION NUMBER(2,0)
+    ,MANDATORY   NUMBER(1,0)
+    ,CONSTRAINT Template_Detalis_pk  PRIMARY KEY (TEMPLATE_ID,COMPONENT_NAME,DIFFICULTY)
+    ,CONSTRAINT TemplateID_FK foreign key (TEMPLATE_ID) references IQB_TEMPLATE(TEMPLATE_ID)
+
+);
+
+:TEMPLATE_ID = IQB_TEMPLATE_ID_SEQ.NEXTVAL
+INSERT INTO IQB_TEMPLATE VALUES ( :TEMPLATE_ID , :TEMPLATE_NAME , :EXAM_DURATION ,'' , :DESCRIPTION );
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( :TEMPLATE_ID , :COMPONENT_NAME ,:DIFFICULTY ,:NUMBEROFQUESTION,:MANDATORY );
+
+
+
+
+
+:TEMPLATE_ID
+TEMPLATE_NAME 
+EXAM_DURATION
+DESCRIPTION
+
+
+COMPONENT_NAME  DIFFICULTY  NUMBEROFQUESTION MANDATORY
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+:TEMPLATE_ID = IQB_TEMPLATE_ID_SEQ.NEXTVAL
+BEGIN
+
+INSERT INTO IQB_TEMPLATE VALUES ( IQB_TEMPLATE_ID_SEQ.NEXTVAL , 'TEST' , 25 ,'' , 'Testing template functionality');
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'CONCEPTS-ARCHITECTURE'  ,'EASY' ,3,1 );
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'CONCEPTS-ARCHITECTURE'  ,'MODERATE' ,4,0 );
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'CONCEPTS-ARCHITECTURE'  ,'HARD' ,0,0 );
+
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL ,'SQL*NET'  ,'EASY' ,1,1 );
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'SQL*NET'  ,'MODERATE' ,4,0 );
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'SQL*NET'  ,'HARD' ,1,0 );
+
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'INSTALL-UPGRADE-MIGRATE'  ,'EASY' ,5,1 );
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'INSTALL-UPGRADE-MIGRATE'  ,'MODERATE' ,1,1 );
+INSERT INTO IQB_TEMPLATE_DETAILS VALUES ( IQB_TEMPLATE_ID_SEQ.CURRVAL,'INSTALL-UPGRADE-MIGRATE'  ,'HARD' ,0,1 );
+
+
+END;
+
+
+
+FOR pls_n  IN (SELECT UNIQUE (COMPONENT_NAME) FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29)
+LOOP
+
+
+SELECT NUMBEROFQUESTION INTO ns_givenNumHard FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND DIFFICULTY = 'HARD';
+SELECT NUMBEROFQUESTION INTO ns_givenNumEasy FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND DIFFICULTY = 'EASY';
+SELECT NUMBEROFQUESTION INTO ns_givenNumModerate FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND DIFFICULTY = 'MODERATE';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+declare
+  mgr_name varchar2(50);
+  prev_mgr_name varchar2(50);
+  eng_name varchar2(50);
+  sev1 number;
+  sev2 number;
+  sev3 number;
+  sev4 number;
+  sev1_total number;
+  sev2_total number;
+  sev3_total number;
+  sev4_total number;
+  total number;
+  first_time number :=1 ;
+  --cursor C1 is select  mgr,eng from mgr where mgr in replace(nvl(:P16_mgr,mgr),':',',') order by mgr; 
+  cursor C1 is select  mgr,eng from mgr where INSTR(:P16_mgr,mgr) > 0 or :P16_mgr is null order by mgr; 
+  
+  begin
+                  sev1 := 0;
+                  sev2:=0;
+                  sev3:=0;
+                  sev4:=0;
+  open C1;
+  loop 
+  Fetch C1 into mgr_name,eng_name;
+  exit when C1%notfound;
+  sev1 := 0;
+                  sev2:=0;
+                  sev3:=0;
+                  sev4:=0;
+  select count(*) into sev1 from assign where owner = eng_name and severity =  '1-Critical'   and assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+  select count(*) into sev2 from assign where owner = eng_name and severity =  '2-Significant' and assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+  select count(*) into sev3 from assign where owner = eng_name and severity =  '3-Standard' and assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group) ;
+  select count(*) into sev4 from assign where owner = eng_name and severity =  '4-Minimal' and assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+
+  if ((first_time = 1) or (prev_mgr_name != mgr_name))  then  
+
+             if(first_time = 0) then  /***** For Individual Records when the manager is changing*********/  
+
+                    select count(*) into sev1_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '1-Critical' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group) ;
+                    select count(*) into sev2_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '2-Significant' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group) ;
+                    select count(*) into sev3_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '3-Standard' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    select count(*) into sev4_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '4-Minimal' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    select count(*) into total from assign where owner in (select eng from mgr where mgr = prev_mgr_name ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    htp.prn('<table  cellpadding="0" cellspacing="0" width="100%" border="0" >
+              <tbody>
+             <tr>
+                  <td width="15%"> </td>    
+                  <td width="15%"></td> 
+                  <td width="15%">  </td> 
+                  <td width="15%"> </td> 
+                  <td width="15%" >    </td>
+                  <td width="15%">    </td> 
+                  <td width="15%" >  </td> 
+                  </tr>   
+                
+                 <tr>
+                 <td width="15%"><STRONG>TOTAL</STRONG></td>
+                 <td width="15%">  </td>
+                     <td width="15%">' ||'<STRONG>'||sev1_total||'</STRONG>' || '</td>
+                  <td width="15%">' ||'<STRONG>'||sev2_total||'</STRONG>' || '</td>
+                  <td width="15%">' ||'<STRONG>'||sev3_total||'</STRONG>' || '</td>
+                  <td width="15%">' ||'<STRONG>'||sev4_total||'</STRONG>' || '</td>
+                     <td width="15%">' ||'<STRONG>'||total||'</STRONG>' || '</td>
+                                       </tr>
+                                                    
+                </tbody>
+            </table>'); 
+
+             end if ;
+
+
+
+
+  prev_mgr_name := mgr_name;
+  sev1_total :=0;
+  sev2_total :=0;
+  sev3_total :=0;
+  sev4_total :=0;
+  total := 0;
+
+  htp.prn('<table cellpadding="0" cellspacing="0" width="100%" border="0">
+              <tbody>
+                <tr>
+                  <td >
+                  <tbody>
+                  <tr>
+                      <B>
+                          <BR>
+                  <td width="15%"><STRONG>Manager</STRONG></td>    
+                  <td width="15%"><STRONG>Engineer</STRONG></td> 
+                  <td width="15%"><STRONG>Severity 1</STRONG></td> 
+                  <td width="15%"><STRONG>Severity 2</STRONG></td> 
+                  <td width="15%"><STRONG>Severity 3</STRONG></td>
+                  <td width="15%"><STRONG>Severity 4</STRONG></td> 
+                  <td width="15%"><STRONG>Total</STRONG></td> 
+                          </B>
+                  </tr>   
+                
+                 <tr>
+                  <td >' ||prev_mgr_name || '</td>
+               
+                  <td >' ||eng_name || '</td>
+                  <td >' ||sev1 || '</td>
+                  <td >' ||sev2 || '</td>
+                  <td >' ||sev3 || '</td>
+                  <td >' ||sev4 || '</td>
+                  <td >' ||(sev1+sev2+sev3+sev4)|| '</td>
+                </tr>
+                                                    
+ </tbody>
+            </table>');    
+   
+  first_time := 0;
+                  sev1 := 0;
+                  sev2:=0;
+                  sev3:=0;
+                  sev4:=0;
+else 
+      htp.prn('<table  cellpadding="0" cellspacing="0" width="100%" border="0" >
+              <tbody>
+             <tr>
+                  <td width="15%"> </td>    
+                  <td width="15%"></td> 
+                  <td width="15%">  </td> 
+                  <td width="15%"> </td> 
+                  <td width="15%" >    </td>
+                  <td width="15%">    </td> 
+                  <td width="15%" >  </td> 
+                  </tr>   
+                
+                 <tr>
+                  <td width="15%">  </td>
+               
+                  <td width="15%">' ||eng_name || '</td>
+                  <td width="15%">' ||sev1 || '</td>
+                  <td width="15%">' ||sev2 || '</td>
+                  <td width="15%">' ||sev3 || '</td>
+                  <td width="15%">' ||sev4 || '</td>
+                  <td width="15%" >' ||(sev1+sev2+sev3+sev4)|| '</td>
+                </tr>
+                                                    
+ </tbody>
+            </table>');            
+                      
+   sev1 := 0;
+                  sev2:=0;
+                  sev3:=0;
+                  sev4:=0;
+                  end if;
+
+  end loop;
+                  /****For Last Manager Summary***********/
+                  select count(*) into sev1_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '1-Critical' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    select count(*) into sev2_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '2-Significant' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    select count(*) into sev3_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '3-Standard' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    select count(*) into sev4_total from assign where owner in (select eng from mgr where mgr = prev_mgr_name and severity =  '4-Minimal' ) and   assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    select count(*) into total from assign where owner in (select eng from mgr where mgr = prev_mgr_name ) and assigned_on between to_date(:P16_X,'DD-MON-YY')  and to_date(:P16_Y,'DD-MON-YY') + (1-1/24/60/60) and pla_group = nvl(:P16_product,pla_group);
+                    htp.prn('<table  cellpadding="0" cellspacing="0" width="100%" border="0" >
+              <tbody>
+             <tr>
+                  <td width="15%"> </td>    
+                  <td width="15%"></td> 
+                  <td width="15%">  </td> 
+                  <td width="15%"> </td> 
+                  <td width="15%" >    </td>
+                  <td width="15%">    </td> 
+                  <td width="15%" >  </td> 
+                  </tr>   
+                
+                 <tr> 
+                     <strong>
+                 <td width="15%"><STRONG>TOTAL</STRONG></td>
+                 <td width="15%">  </td>
+                  <td width="15%">' ||'<STRONG>'||sev1_total||'</STRONG>' || '</td>
+                  <td width="15%">' ||'<STRONG>'||sev2_total||'</STRONG>' || '</td>
+                  <td width="15%">' ||'<STRONG>'||sev3_total||'</STRONG>' || '</td>
+                  <td width="15%">' ||'<STRONG>'||sev4_total||'</STRONG>' || '</td>
+                  <td width="15%" >' ||'<STRONG>'||total||'</STRONG>'|| '</td>
+                  <BR>
+                     </strong>
+                </tr>
+                                                    
+                </tbody>
+            </table>'); 
+
+                               
+  close C1;
+  exception
+  when no_data_found then 
+                 
+                  
+  dbms_output.put_line('No data');
+    end;
+
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  
+
+DECLARE
+    l_selected APEX_APPLICATION_GLOBAL.VC_ARR2;
+    pls_availquesEasy   pls_integer;
+    pls_availquesModerate   pls_integer;
+    pls_availquesHard      pls_integer;
+    pls_comp              char(30);
+BEGIN
+  --
+  -- Convert the colon separated string of values into
+  -- a PL/SQL array 
+
+  l_selected := APEX_UTIL.STRING_TO_TABLE(:P14_COMPETENCY);
+
+  --
+  -- Loop over array to insert department numbers and sysdate
+  --
+
+    
+
+    
+
+htp.p('<Table  border="1"  style="display: block ;margin: 1em 0; font-size: 150%;font-family: monospace; "     >');
+
+  FOR i IN 1..l_selected.count 
+  LOOP
+    pls_comp := l_selected(i);
+
+	Select Count(*)  into pls_availquesEasy from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'EASY';
+
+	Select Count(*)  into pls_availquesModerate from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'MODERATE';
+
+	Select Count(*) into pls_availquesHard from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'HARD';
+
+/*
+    htp.p('<tr><td>COMPETENCY :'|| l_selected(i) ||  '</td><tr>');
+*/
+
+	htp.p('<tr><td>' || pls_comp || '</td><td> <pre>EASY :'|| pls_availquesEasy ||'</pre>MODERATE :' ||pls_availquesModerate ||'<pre>HARD:'||pls_availquesHard||'</pre></td><td>');
+
+
+
+    htp.p('  <pre> <INPUT TYPE="text" label="    EASY" NAME="F01" SIZE="5" MAXLENGTH="5" VALUE="5"></pre>
+             <pre> <INPUT TYPE="text" label="MODERATE" NAME="F01" SIZE="5" MAXLENGTH="5" VALUE="5"></pre>
+             <pre> <INPUT TYPE="text" label="    HARD" NAME="F01" SIZE="5" MAXLENGTH="5" VALUE="5"></pre>');
+    htp.p ('</td>	</tr>');
+	
+
+
+  END LOOP;
+
+htp.p('</table>');
+
+
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+DECLARE
+    l_selected APEX_APPLICATION_GLOBAL.VC_ARR2;
+    pls_availquesEasy   pls_integer;
+    pls_availquesModerate   pls_integer;
+    pls_availquesHard      pls_integer;
+    pls_comp              char(30);
+BEGIN
+  --
+  -- Convert the colon separated string of values into
+  -- a PL/SQL array 
+
+  l_selected := APEX_UTIL.STRING_TO_TABLE(:P14_COMPETENCY);
+
+  --
+  -- Loop over array to insert department numbers and sysdate
+  --
+
+    
+
+    
+
+htp.p('<Table  border="1"  style="display: block ;margin: 1em 0; font-size: 150%;font-family: monospace; "     > <tr><th> COMPETENCY </th><th>DIFFICULTY</th><th>AVAILABLE QUESTIONS</th><th> SELECTED OF QUESTIONS</th></tr>');
+
+  FOR i IN 1..l_selected.count 
+  LOOP
+    pls_comp := l_selected(i);
+
+	Select Count(*)  into pls_availquesEasy from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'EASY';
+
+	Select Count(*)  into pls_availquesModerate from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'MODERATE';
+
+	Select Count(*) into pls_availquesHard from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'HARD';
+
+/*
+    htp.p('<tr><td>COMPETENCY :'|| l_selected(i) ||  '</td><tr>');
+
+
+	htp.p('<tr><td>' || pls_comp || '</td><td> <pre>EASY :'|| pls_availquesEasy ||'</pre>MODERATE :' ||pls_availquesModerate ||'<pre>HARD:'||pls_availquesHard||'</pre></td><td>');
+*/
+    htp.p('<tr><td>' || pls_comp || '</td><td> <pre>EASY </pre><pre>MODERATE</pre><pre>HARD</pre></td><td><pre>pls_availquesEasy</pre><pre>pls_availquesModerate</pre><pre>pls_availquesHard</pre></td>')
+
+    htp.p('<td>  <pre> <INPUT TYPE="text" label="    EASY" NAME="F01" SIZE="5" MAXLENGTH="5" VALUE="5"></pre>
+             <pre> <INPUT TYPE="text" label="MODERATE" NAME="F01" SIZE="5" MAXLENGTH="5" VALUE="5"></pre>
+             <pre> <INPUT TYPE="text" label="    HARD" NAME="F01" SIZE="5" MAXLENGTH="5" VALUE="5"></pre>');
+    htp.p ('</td>	</tr>');
+	
+
+
+  END LOOP;
+
+htp.p('</table>');
+
+
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+DECLARE
+    l_selected APEX_APPLICATION_GLOBAL.VC_ARR2;
+    pls_availquesEasy   pls_integer;
+    pls_availquesModerate   pls_integer;
+    pls_availquesHard      pls_integer;
+    pls_comp              char(30);
+    j                     pls_integer;
+    k                     VARCHAR2(4 CHAR);
+    l                     VARCHAR2(4 CHAR);
+    m                    VARCHAR2(4 CHAR);
+BEGIN
+  --
+  -- Convert the colon separated string of values into
+  -- a PL/SQL array 
+
+  l_selected := APEX_UTIL.STRING_TO_TABLE(:P14_COMPETENCY);
+
+  --
+  -- Loop over array to insert department numbers and sysdate
+  --
+
+    
+
+htp.p('<Table        > <tr><th> COMPETENCY </th><th >DIFFICULTY</th><th >AVAILABLE</th><th> SELECTED</th><th>MOANDATORY</th></tr>');
+j :=0;
+
+  FOR i IN 1..l_selected.count 
+  LOOP
+    pls_comp := l_selected(i);
+
+	Select Count(*)  into pls_availquesEasy from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'EASY';
+
+	Select Count(*)  into pls_availquesModerate from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'MODERATE';
+
+	Select Count(*) into pls_availquesHard from  IQB_QESTB
+    where COMPONENT_NAME=l_selected(i)	and DIFFICULTY = 'HARD';
+
+/*
+    htp.p('<tr><td>COMPETENCY :'|| l_selected(i) ||  '</td><tr>');
+
+
+	htp.p('<tr><td>' || pls_comp || '</td><td> <pre>EASY :'|| pls_availquesEasy ||'</pre>MODERATE :' ||pls_availquesModerate ||'<pre>HARD:'||pls_availquesHard||'</pre></td><td>');
+*/
+    htp.p('<tr><td>' || pls_comp || '</td><td> <pre>EASY </pre><pre>MODERATE</pre><pre>HARD</pre></td><td><pre>'||pls_availquesEasy||'</pre><pre>'||pls_availquesModerate||'</pre><pre>'||pls_availquesHard ||'</pre></td>');
+
+     select trim(to_char(j,'00')) into k from dual;
+    
+     
+
+    htp.p('<td><pre><INPUT TYPE="text" NAME="F'||k||'" SIZE="5" MAXLENGTH="5"></pre>' ) ; 
+
+    j := j+1; 
+     select trim(to_char(j,'00')) into k from dual;
+          select TRIM(TRAILING '2' FROM k) into k from dual;
+
+    htp.p('<pre> <INPUT TYPE="text"  NAME="F'||k||'" SIZE="5" MAXLENGTH="5"></pre>'); 
+
+    j := j+1;
+     select trim(to_char(j,'00')) into k from dual;
+     
+
+    htp.p('<pre> <INPUT TYPE="text" NAME="F'||k||'" SIZE="5" MAXLENGTH="5"></pre>'  ); 
+
+  
+    htp.p ('</td><td > <div style="padding-top: 15px;"> <pre>');
+
+    j := j+1;
+     select trim(to_char(j,'00')) into k from dual;
+ 
+
+    j := j+1;
+     select trim(to_char(j,'00')) into l from dual;
+
+
+    j := j+1;
+     select trim(to_char(j,'00')) into m from dual;
+
+    
+    htp.p('<pre><input TYPE="checkbox" name="F'||k||'" value=1></pre><pre><input TYPE="checkbox" name="F'||l||'" value=1></pre><pre><input TYPE="checkbox" name="F'||m||'" value=1></pre>');
+	htp.p('</div></td></tr>');
+	  
+    j := j+1;
+     
+     
+  END LOOP;
+
+htp.p('</table>');
+
+
+END;
+
+
+
+
+https://community.oracle.com/thread/3728715?start=0&tstart=0
+
+
+
+
+
+
+
+
+
+
+DECLARE
+       ns_diff IQB_QESTB.DIFFICULTY%type;
+       ns_comp IQB_QESTB.COMPONENT_NAME%type;
+       pls_questNo IQB_QESTB.QUESTION_ID%type;
+       pls_n IQB_QESTB.QUESTION_ID%type;
+       ns_givenNum  pls_integer;
+       pls_totalQuestion pls_integer;
+       i number(6,0);
+	  
+	  
+BEGIN 
+       DELETE FROM IQB_FINALQESNUMTB;
+       commit;
+
+	
+	   ns_comp := 
+					BEGIN
+                           
+						   ns_givenNumHard := 1;						  
+										   
+						   i := 1;
+						   
+						   
+						   INSERT INTO IQB_TEMPTB
+						   SELECT QUESTION_ID FROM IQB_QESTB;
+						   WHERE DIFFICULTY = 'HARD' AND COMPONENT_NAME = ns_comp;
+						   
+						   commit;
+						   
+						   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+						   
+						   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+						   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+						   WHILE i <= ns_givenNumHard
+						   LOOP 
+							   BEGIN 
+								   INSERT INTO IQB_RANDNUMTB
+								   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+								   i := i + 1;
+								   DBMS_OUTPUT.PUT_LINE ( i );
+							   EXCEPTION
+								   WHEN DUP_VAL_ON_INDEX THEN
+							   i := i - 1;
+								   DBMS_OUTPUT.PUT_LINE ( i );
+							   END;	  
+						   END LOOP;
+						   commit;
+
+						   
+						   
+						   
+						   
+						   
+						   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+						   LOOP
+
+							   SELECT QID INTO pls_questNo
+							   FROM IQB_TEMPTB T1 WHERE pls_n.serialnum  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );
+							   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+					  
+						 END LOOP;
+						   commit;
+						   DELETE FROM IQB_RANDNUMTB;
+						   commit;
+						   DELETE FROM IQB_TEMPTB;
+						   commit;
+						   
+						   
+						   
+						   ns_givenNumEasy := 2
+						  
+						   
+						   i := 1;
+						   
+						   
+						   INSERT INTO IQB_TEMPTB
+						   SELECT QUESTION_ID FROM IQB_QESTB;
+						   WHERE DIFFICULTY = 'EASY' AND COMPONENT_NAME = ns_comp;
+						   
+						   commit;
+						   
+						   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+						   
+						   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+						   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+						   WHILE i <= ns_givenNumEasy
+						   LOOP 
+							   BEGIN 
+								   INSERT INTO IQB_RANDNUMTB
+								   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+								   i := i + 1;
+								   DBMS_OUTPUT.PUT_LINE ( i );
+							   EXCEPTION
+								   WHEN DUP_VAL_ON_INDEX THEN
+							   i := i - 1;
+								   DBMS_OUTPUT.PUT_LINE ( i );
+							   END;	  
+						   END LOOP;
+						   commit;
+
+						   
+						   
+						   
+						   
+						   
+						   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+						   LOOP
+
+							   SELECT QID INTO pls_questNo
+							   FROM IQB_TEMPTB T1 WHERE pls_n.serialnum  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );
+							   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+					  
+						 END LOOP;
+						   commit;
+						   DELETE FROM IQB_RANDNUMTB;
+						   commit;
+						   DELETE FROM IQB_TEMPTB;
+						   commit;
+
+					
+
+					
+			
+						   ns_givenNumModerate := 3
+						   
+						   
+	   
+						   i := 1;						   
+						   	   
+						   INSERT INTO IQB_TEMPTB
+						   SELECT QUESTION_ID FROM IQB_QESTB;
+						   WHERE DIFFICULTY = 'MODERATE' AND COMPONENT_NAME = ns_comp;
+						   
+						   commit;
+						   
+						   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+						   
+						   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+						   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+						   WHILE i <= ns_givenNumHard
+						   LOOP 
+							   BEGIN 
+								   INSERT INTO IQB_RANDNUMTB
+								   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+								   i := i + 1;
+								   DBMS_OUTPUT.PUT_LINE ( i );
+							   EXCEPTION
+								   WHEN DUP_VAL_ON_INDEX THEN
+							   i := i - 1;
+								   DBMS_OUTPUT.PUT_LINE ( i );
+							   END;	  
+						   END LOOP;
+						   commit;
+
+						   
+						   				   
+						   
+						   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+						   LOOP
+
+							   SELECT QID INTO pls_questNo
+							   FROM IQB_TEMPTB T1 WHERE pls_n.serialnum  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );
+							   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+					  
+						 END LOOP;
+						   commit;
+						   DELETE FROM IQB_RANDNUMTB;
+						   commit;
+						   DELETE FROM IQB_TEMPTB;
+						   commit;
+				END;		   
+						   
+						   
+END;

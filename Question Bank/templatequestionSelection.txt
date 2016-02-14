@@ -1,0 +1,186 @@
+DECLARE
+       ns_diff IQB_QESTB.DIFFICULTY%type;
+       ns_comp IQB_QESTB.COMPONENT_NAME%type;
+       pls_questNo IQB_QESTB.QUESTION_ID%type;
+
+       ns_givenNum  pls_integer;
+       pls_totalQuestion pls_integer;
+       ns_givenNumModerate   pls_integer;
+       ns_givenNumHard   pls_integer;
+       ns_givenNumEasy   pls_integer;
+       i number(6,0);
+	  
+	  
+BEGIN 
+       
+       
+       
+    
+    FOR pls_n  IN (SELECT UNIQUE (COMPONENT_NAME) as COMPETENCY FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29)
+    LOOP
+
+
+    SELECT NUMBEROFQUESTION INTO ns_givenNumHard FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND COMPONENT_NAME = pls_n.COMPETENCY AND DIFFICULTY = 'HARD' ;
+    SELECT NUMBEROFQUESTION INTO ns_givenNumEasy FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND COMPONENT_NAME = pls_n.COMPETENCY AND DIFFICULTY = 'EASY' ;
+    SELECT NUMBEROFQUESTION INTO ns_givenNumModerate FROM IQB_TEMPLATE_DETAILS WHERE TEMPLATE_ID = 29 AND COMPONENT_NAME = pls_n.COMPETENCY AND DIFFICULTY = 'MODERATE' ;
+     DBMS_OUTPUT.PUT_LINE ( '--------------------------------------------------------------------------------------');
+    DBMS_OUTPUT.PUT_LINE ( pls_n.COMPETENCY ||' >>' || ns_givenNumHard  ||' >>'  ||ns_givenNumModerate   ||' >>'  || ns_givenNumEasy );
+
+					BEGIN 
+                           
+	
+					  
+						        if (	ns_givenNumHard  != 0 ) then 
+									   i := 1;
+									   
+									   
+									   INSERT INTO IQB_TEMPTB
+									   SELECT QUESTION_ID FROM IQB_QESTB
+									   WHERE DIFFICULTY = 'HARD' AND COMPONENT_NAME = pls_n.COMPETENCY;
+									   
+									   
+									   
+									   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+									   
+									   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+									   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+											   WHILE i <= ns_givenNumHard
+											   LOOP 
+												   BEGIN 
+												        i := i + 1;
+													   INSERT INTO IQB_RANDNUMTB
+													   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+													  
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   EXCEPTION
+													   WHEN DUP_VAL_ON_INDEX THEN
+												   i := i - 1;
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   END;	  
+											   END LOOP;
+											   
+
+									   					   
+												   
+											   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+											   LOOP
+
+												   SELECT QID INTO pls_questNo
+												   FROM IQB_TEMPTB T1 WHERE ( pls_n.serialnum  )  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );                                                                             DBMS_OUTPUT.PUT_LINE ('**' ||pls_questNo || '-' || pls_n.serialnum ||'**' );
+												   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+										  
+										                                                                                                                                                                          	   END LOOP;
+											   
+									   
+									   DELETE FROM IQB_RANDNUMTB;
+									   
+									   DELETE FROM IQB_TEMPTB;
+									   
+						    END IF;  
+						   
+						    if (	ns_givenNumModerate  != 0 ) then 
+
+									   i := 1;						   
+										   
+									   INSERT INTO IQB_TEMPTB
+									   SELECT QUESTION_ID FROM IQB_QESTB
+									   WHERE DIFFICULTY = 'MODERATE' AND COMPONENT_NAME = pls_n.COMPETENCY;
+									   
+									   
+									   
+									   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+									   
+									   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+									   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+											   WHILE i <= ns_givenNumModerate 
+											   LOOP 
+												   BEGIN 
+												       i := i + 1;
+													   INSERT INTO IQB_RANDNUMTB
+													   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+													   
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   EXCEPTION
+													   WHEN DUP_VAL_ON_INDEX THEN
+												   i := i - 1;
+													   DBMS_OUTPUT.PUT_LINE ( i );
+												   END;	  
+											   END LOOP;
+											   
+
+											   
+															   
+											   
+											   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+											   LOOP
+
+												   SELECT QID INTO pls_questNo
+												   FROM IQB_TEMPTB T1 WHERE ( pls_n.serialnum  )  = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );                                                                             DBMS_OUTPUT.PUT_LINE ('**' ||pls_questNo || '-' || pls_n.serialnum ||'**' );
+												   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+										  
+											 END LOOP;
+									   
+									   DELETE FROM IQB_RANDNUMTB;
+									   
+									   DELETE FROM IQB_TEMPTB;
+									   
+                                                END IF;
+                                                           						    if (	ns_givenNumEasy  != 0 ) then 
+									   i := 1;
+									   
+									   
+									   INSERT INTO IQB_TEMPTB
+									   SELECT QUESTION_ID FROM IQB_QESTB
+									   WHERE DIFFICULTY = 'EASY' AND COMPONENT_NAME = pls_n.COMPETENCY;
+									   
+									   
+									   
+									   SELECT COUNT(*) INTO pls_totalQuestion FROM IQB_TEMPTB;
+									   
+									   DBMS_OUTPUT.PUT_LINE ( pls_totalQuestion  );
+									   DBMS_OUTPUT.PUT_LINE ( '----------------');
+
+												   WHILE i <= ns_givenNumEasy
+												   LOOP 
+													   BEGIN 
+													        i := i + 1;
+														   INSERT INTO IQB_RANDNUMTB
+														   SELECT TRUNC (DBMS_RANDOM.VALUE(0,pls_totalQuestion)) FROM DUAL;
+														   
+														   DBMS_OUTPUT.PUT_LINE ( i );
+													   EXCEPTION
+														   WHEN DUP_VAL_ON_INDEX THEN
+													       i := i - 1;
+														   DBMS_OUTPUT.PUT_LINE ( i );
+													   END;	  
+												   END LOOP;
+									   
+
+									   
+												   FOR pls_n  IN (SELECT serialnum FROM IQB_RANDNUMTB)
+												   LOOP
+
+													   SELECT QID INTO pls_questNo
+													   FROM IQB_TEMPTB T1 WHERE ( pls_n.serialnum  ) = ( SELECT COUNT(rowid) FROM IQB_TEMPTB T2 WHERE T1.rowid > T2.rowid );                                                                            DBMS_OUTPUT.PUT_LINE ('**' ||pls_questNo || '-' || pls_n.serialnum ||'**' );
+													   INSERT INTO IQB_FINALQESNUMTB VALUES (pls_questNo);
+											  
+												   END LOOP;
+									   
+									   DELETE FROM IQB_RANDNUMTB;
+									   
+									   DELETE FROM IQB_TEMPTB;
+									   
+
+					        END IF;
+	
+
+
+				END;		   
+				commit;		   
+	
+    END LOOP;
+	
+END;
+

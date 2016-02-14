@@ -1,0 +1,162 @@
+CREATE TABLE IQB_USERS 
+(
+USERNAME VARCHAR2(10),
+PASSWORD VARCHAR2 (255)
+);
+
+
+=====
+
+
+
+CREATE OR REPLACE PACKAGE iqb_app_security_pkg
+AS
+PROCEDURE add_user 
+(
+ p_username IN VARCHAR2
+,p_password IN VARCHAR2
+);
+
+PROCEDURE login
+(
+ p_uname IN VARCHAR2
+,p_password IN VARCHAR2
+,p_session_id IN VARCHAR2
+,p_flow_page IN VARCHAR2
+);
+
+FUNCTION get_hash 
+(
+ p_username IN VARCHAR2
+,p_password IN VARCHAR2
+)
+ RETURN VARCHAR2;
+
+PROCEDURE valid_user2 
+(
+ p_username IN VARCHAR2
+,p_password IN VARCHAR2
+);
+
+FUNCTION valid_user 
+(
+ p_username IN VARCHAR2
+,p_password IN VARCHAR2
+)
+ RETURN BOOLEAN;
+
+END iqb_app_security_pkg;
+
+
+
+
+=====
+
+
+
+CREATE OR REPLACE PACKAGE BODY iqb_app_security_pkg
+AS
+PROCEDURE login 
+          (
+           p_uname IN VARCHAR2
+          ,p_password IN VARCHAR2
+          ,p_session_id IN VARCHAR2
+          ,p_flow_page IN VARCHAR2
+          )
+IS
+ lv_goto_page NUMBER DEFAULT 1;
+ 
+BEGIN
+ 
+ -- This logic is a demonstration of how to redirect 
+ -- to different pages depending on who successfully 
+ -- authenticates. In my example, it simply demonstrates 
+ -- the ADMIN user going to page 1 and all other users going
+ -- to page 100. Add you own logic here to detrmin which page 
+ -- a user should be directed to post authentication.
+ 
+ IF UPPER(p_uname) = 'ADMIN'
+ THEN
+  lv_goto_page := 1;
+ ELSE
+  lv_goto_page := 1;
+ END IF;
+
+ wwv_flow_custom_auth_std.login 
+ (
+  p_uname => p_uname,
+  p_password => p_password,
+  p_session_id => p_session_id,
+  p_flow_page => p_flow_page || ':' || lv_goto_page
+  );
+
+EXCEPTION
+WHEN OTHERS
+THEN 
+ RAISE;
+END login;
+
+PROCEDURE add_user 
+(
+ p_username IN VARCHAR2
+,p_password IN VARCHAR2
+)
+AS
+BEGIN
+INSERT INTO iqb_users (username, PASSWORD)
+VALUES (UPPER (p_username),
+get_hash (TRIM (p_username), p_password));
+
+COMMIT;
+
+EXCEPTION
+WHEN OTHERS
+THEN 
+ ROLLBACK; 
+ RAISE;
+END add_user;
+
+-- Function to Perform a oneway hash of the users 
+-- passwords. This cannot be reversed. This exmaple 
+-- is a very week hash and if been used on a production 
+-- system, you may want to use a stronger hash algorithm.
+-- Read the Documentation for more info on DBMS_CRYPTO as 
+-- this is the supported package from Oracle and 
+-- DBMS_OBFUSCATION_TOOLKIT is now depricated.
+FUNCTION get_hash (p_username IN VARCHAR2, p_password IN VARCHAR2)
+RETURN VARCHAR2
+AS
+BEGIN
+RETURN DBMS_OBFUSCATION_TOOLKIT.md5 (
+input_string => UPPER (p_username) 
+                || '/' 
+                || UPPER (p_password));
+END get_hash;
+
+PROCEDURE valid_user2 (p_username IN VARCHAR2, p_password IN VARCHAR2)
+AS
+v_dummy VARCHAR2 (1);
+BEGIN
+SELECT '1'
+INTO v_dummy
+FROM iqb_users
+WHERE UPPER (username) = UPPER (p_username)
+AND PASSWORD = get_hash (p_username, p_password);
+EXCEPTION
+WHEN NO_DATA_FOUND
+THEN raise_application_error (-20000, 'Invalid username / password.');
+END valid_user2;
+
+FUNCTION valid_user (p_username IN VARCHAR2, p_password IN VARCHAR2)
+RETURN BOOLEAN
+AS
+BEGIN
+valid_user2 (UPPER (p_username), p_password);
+RETURN TRUE;
+EXCEPTION
+WHEN OTHERS
+THEN RETURN FALSE;
+END valid_user;
+
+END iqb_app_security_pkg;
+/
