@@ -143,16 +143,6 @@ sanman.krishnamurthy
 6] - gather AWR reports from all the rac instances at interval of 25 minutes.
 
 
-
-
-
-
-
-
-
-
-
-
 =========================================================================================================================================================
 ########################################################################################################################################################
 =========================================================================================================================================================
@@ -242,28 +232,6 @@ STORAGE DATA COLLECTION DNFS
 						Please follow the first method and use second method for debug/rediscovery
 						purposes.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 =========================================================================================================================================================
 ########################################################################################################################################################
 =========================================================================================================================================================
@@ -349,8 +317,28 @@ Note 1513912.1 - TFA Collector - Tool for Enhanced Diagnostic Gathering and star
 7)Provide your OSW (OSWatcher) output, for the one hour timeframe leading up to and including the problem for EACH node.
    If you did not have OSWatcher running at the time of the instance hangs, you won't be able to provide the oswatcher .dat files.
  
- OSWatcher gathers OS data such as vmstat, iostat, netstat, mpstat, in files that each hold 1 hour of data.
- If you do not have OSWatcher running, then please set it up per OS Watcher Black Box User Guide (Doc ID 301137.1).
+   OSWatcher gathers OS data such as vmstat, iostat, netstat, mpstat, in files that each hold 1 hour of data.
+   If you do not have OSWatcher running, then please set it up per OS Watcher Black Box User Guide (Doc ID 301137.1).
+ 
+
+		5 Simple Steps to configurue OSW in ( probably even less than ) 5 min
+		==================================== 
+		1] Download OSW from DOC :
+
+		2] untar the downloaded zip file
+		   #tar xvf oswbb.tar
+
+		3] get inside the archive folder of the OSBB
+		   #pwd
+		   /home/oracle/downloads/oswbb/archive
+		   
+		4] Start os watcher for 20 sec inetrval and 73 hours of retention
+		   #./startOSWbb.sh  20 72
+		   
+		5] Stop OS watcher after required files are connected
+		   ./stopOSWbb.sh
+
+ 
  We recommend configuring OSWatcher with an interval of 20 seconds and a retention of at least 2 days.
  Be sure to setup the private.net (traceroute of the private interconnects) when setting up OSWatcher.
  The OSWatcher tar file you downloaded includes an Exampleprivate.net. You can make your private.net file from the OS specific
@@ -462,12 +450,7 @@ OS DATA COLLECTION
 				
 				
 				
-				
-				
-				
-				
-				
-				
+	
 				
 				
 				
@@ -508,3 +491,100 @@ The 11g listener log in text format is located here:$ORACLE_BASE/diag/tnslsnr/<y
 upload the crsctl.out file
 
 				
+				
+$ setenv SRVM_TRACE true (or "export SRVM_TRACE=true")
+$ setenv SRVM_TRACE_LEVEL 2 (or "export SRVM_TACE_LEVEL=2")
+
+$./addNode.sh -debug -logLevel finest "CLUSTER_NEW_NODES={node3}" "CLUSTER_NEW_VIRTUAL_HOSTNAMES={node3-v}"		
+				
+
+				
+				
+
+				
+				
+============
+
+=================
+
+
+from db home oradim -ex oracle registry get OCR_LOC
+from db home oradim -ex oracle registry get OLR_LOC
+
+2]. Windows Events in txt format that covers incident timeframe:
+  Start => All Programs => Administrative Tools => Event Viewer, choose "Application",  "Save Log File As" .txt format, then repeat same steps for "System" and "Secutiry" so you have three saved .txt files
+
+  
+  
+  
+  
+  
+  
+  
+  Please collect and upload:
+
+1. Full text version of ASM alert.log from all ASM instances in the cluster not just the instance that is reporting the error.
+===========================================================================================
+2. Please connect to each ASM instance, execute the next script on your ASM instances and then provide the output files (from each node since this is a RAC configuration):
+===========================================================================================
+spool asm_acfs_<asm_instance_name>.html
+-- Version 11.2
+SET MARKUP HTML ON
+set echo on
+
+set pagesize 200
+alter session set nls_date_format='DD-MON-YYYY HH24:MI:SS';
+
+select 'THIS ASM REPORT WAS GENERATED AT: ==)> ' , sysdate " " from dual;
+select 'HOSTNAME ASSOCIATED WITH THIS ASM INSTANCE: ==)> ' , MACHINE " " from v$session where program like '%SMON%';
+select * from v$asm_diskgroup;
+SELECT * FROM V$ASM_DISK ORDER BY GROUP_NUMBER,DISK_NUMBER;
+select * from V$ASM_ACFSSNAPSHOTS;
+select * from V$ASM_ACFSVOLUMES;
+select * from V$ASM_FILESYSTEM;
+select * from V$ASM_VOLUME;
+select * from V$ASM_VOLUME_STAT;
+select * from v$version;
+show parameter asm
+show parameter cluster
+show parameter instance_type
+show parameter instance_name
+show parameter spfile
+show sga
+spool off
+exit
+===========================================================================================
+3. Please provide TFA diag collection info from all nodes.
+Note 1513912.1 - TFA Collector - Tool for Enhanced Diagnostic Gathering
+If TFA is not possible, please provide CRS diag collection instead as well as the DB alert log/traces from all nodes.
+Note 330358.1 - CRS 10gR2/ 11gR1/ 11gR2  / 12cR1 Diagnostic Collection Guide
+
+Options for collecting :
+-
+/u01/app/11.2.0/grid/tfa/bin/tfactl diagcollect -all -since 8h
+  Trim and Zip all files updated in the last 8 hours as well as chmos/osw data
+  from across the cluster and collect at the initiating node
+-
+/u01/app/11.2.0/grid/tfa/bin/tfactl diagcollect -for "Mar/2/2013 21:00:00"
+  Trim and Zip all log files updated from 09:00 on March 2 to 09:00 on March 3
+  (i.e. 12 hours before and after the time given) and collect at the initiating node
+
+
+===========================================================================================
+4. Show me the output of below commands from all nodes
+===========================================================================================
+$> asmcmd
+ASMCMD> volstat
+ASMCMD> volinfo -a
+
+$> crsctl stat res -t
+$> crsctl stat res -t -init
+
+
+# /sbin/acfsutil registry -l
+$ acfsdriverstate -orahome $GRID_HOME supported
+$ acfsdriverstate -orahome $GRID_HOME version
+$ acfsdriverstate -orahome $GRID_HOME installed
+$ acfsdriverstate -orahome $GRID_HOME loaded
+
+===========================================================================================

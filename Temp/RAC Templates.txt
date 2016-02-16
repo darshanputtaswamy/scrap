@@ -69,7 +69,7 @@ Have a nice day Ahead ………………..
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -86,7 +86,7 @@ Storage: https://community.oracle.com/community/support/oracle_database/storage_
 Mgrracpc.zoban@sbi.co.in
 
 
-
+Cluster guid  found in voting disk  does not match with the cluster guid  obtained from the GPnP profile
 
 
 
@@ -97,14 +97,33 @@ Your severity -1 SR requiring 24x7 support has been assigned to me in current sh
 
 Regards
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+In case, if you need urgent or immediate assistance during my  off-shift hours, please call the Oracle HUB and request for assistance or reassignment  of this SR.
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm 
+
+
+
+
+ldo1ifcmQ4
+
+Regards
+Darshan P
+Global Customer Support-  Storage/Scalability
+Desk Phone:+918041072121
+
+
+Please note that currently  this SR will be worked during normal business hours ,
+current 24x7 flag is disabled , you can enable 24x7 support if required.
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
 
 RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm 
-
 
 
 
@@ -125,7 +144,7 @@ Have a nice day Ahead ………………..
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -137,7 +156,7 @@ Working Effectively With Oracle Support - (Doc ID 166650.1)
 RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
-
+ 
 =============================================================
 
 
@@ -161,7 +180,7 @@ Have a nice day Ahead………………..
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -196,13 +215,12 @@ Hi <CT>,
 
 Please update the SR as soon as possible with the current status and/or requested information so we can continue working the issue.
 
-In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
 
 Have a nice day Ahead ………………..
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 
@@ -241,7 +259,7 @@ Have a nice day Ahead ………………..
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -278,17 +296,12 @@ We are placing this SR in "Auto Closure" status. We will be waiting for your res
 In case, if you need further assistance on issue reported in this SR, please feel free to update/re-open the SR and
 I will be happy  to assist you on this. For any new issues, please raise a new SR.
 
-In case, If you have any concerns/feedback on this issue, please feel free to send an email to my manager  on "shrikant.gavali@oracle.com".
-
 It was my pleasure working with you. Have a nice Day
-
-RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
-Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -307,7 +320,7 @@ In case, If you have any concerns/feedback on this issue, please feel free to se
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -337,7 +350,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 
@@ -517,7 +530,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -548,7 +561,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -574,7 +587,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -602,7 +615,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -625,7 +638,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -673,7 +686,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -714,7 +727,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
@@ -780,7 +793,7 @@ Have a nice Day
 
 Thanks & Regards,
 Darshan P
-Global Customer Support
+Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET

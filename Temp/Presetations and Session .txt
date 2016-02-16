@@ -45,3 +45,40 @@ DD/HEXDUMP/OD
 85579.1
 
 
+
+
+
+
+==========================================================================================================================
+
+
+Oracle Infrastructure as a storage 
+
+
+++ Elastic storage 
+        - object store
+		- Archive store
+		- Data and metadata stored together
+		- open stack swift 
+		- Amezon
+		
+		
+		
+++ Compute 
+
+++ NEtwork 
+
+
+
+Zookeeper
+======================================================
+		
+	
+	
+	COnfiguratiung oracle solaris zfs for an oracle database (look for )
+	implagementing hybrid columnar compression on the oracle zfs storage applience 
+	
+	dlutz entry partition alignment guidelines for unified
+	alignement partation to maximize storage performacne
+	
+	

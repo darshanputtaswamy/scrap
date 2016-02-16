@@ -54,6 +54,1847 @@ QREF: Transaction State Object **INTERNAL ONLY** (Doc ID 33373.1)
 
 
 
+SQL> select * from v$fixed_view_definition where view_name=upper('gv$enqueue_stat');
+
+VIEW_NAME
+------------------------------
+VIEW_DEFINITION
+--------------------------------------------------------------------------------
+GV$ENQUEUE_STAT
+select inst_id, ksqsttyp, sum(ksqstreq), sum(ksqstwat), sum(ksqstsgt),
+ sum(ksqstfgt), sum(ksqstwtm)    from X$KSQST group by inst_id, ksqsttyp having
+sum(ksqstreq) > 0
+
+SQL> desc X$KSQST
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ADDR                                               RAW(8)
+ INDX                                               NUMBER
+ INST_ID                                            NUMBER
+ KSQSTTYP                                           VARCHAR2(2)
+ KSQSTREQ                                           NUMBER
+ KSQSTWAT                                           NUMBER
+ KSQSTSGT                                           NUMBER
+ KSQSTFGT                                           NUMBER
+ KSQSTWTM                                           NUMBER
+ KSQSTRSN                                           VARCHAR2(64)
+ KSQSTEXPL                                          VARCHAR2(4000)
+ KSQSTEVIDX                                         NUMBER
+
+SQL> select * from v$version;
+
+BANNER
+--------------------------------------------------------------------------------
+Oracle Database 11g Enterprise Edition Release 11.2.0.2.0 - 64bit Production
+PL/SQL Release 11.2.0.2.0 - Production
+CORE    11.2.0.2.0      Production
+TNS for Linux: Version 11.2.0.2.0 - Production
+NLSRTL Version 11.2.0.2.0 - Production
+
+/* 11g中引入了大量新的enqueue类型，在这里列出 */
+
+SQL> select  KSQSTTYP,KSQSTEXPL from x$ksqst group by  KSQSTTYP,KSQSTEXPL order by KSQSTTYP;
+
+	(null)
+AB 	Lock held to ensure that ABMR process is initialized
+AB 	Lock held to ensure that only one ABMR is started in the cluster
+AD 	Synchronizes accesses to a specific ASM disk AU
+AE 	Prevent Dropping an edition in use
+AF 	This enqueue is used to serialize access to an advisor task
+AG 	Synchronizes generation use of a particular workspace
+AM 	ASM group block
+AM 	Allow one ASM password file update per cluster at a time
+AM 	Allow only one AMDU dump when block read failure
+AM 	Block ASM cache freeze
+AM 	Check id1 of call for specific purpose
+AM 	Client group use
+AM 	Prevent DB instance registration during ASM instance shutdown
+AM 	Prevent same file deletion race
+AM 	Prevents a user from being dropped if it owns any open files
+AM 	Registers DB instance to ASM client state object hash
+AM 	Reserve a background COD entry
+AM 	Reserve a rollback COD entry
+AM 	Serializes access to ASM file descriptors
+AM 	Serializes block repairs
+AM 	Start ASM cache freeze
+AM 	Synchronizes disk based allocations/deallocations
+AM 	Synchronizes disk offlines
+AO 	Synchornizes access to objects and scalar variables
+AS 	Synchronizes new service activation
+AT 	Serializes ‘alter tablespace’ operations
+AV 	Serialize inst reg and first DG use
+AV 	Serialize relocating volume extents
+AV 	Serialize taking the AVD DG enqueue
+AV 	prevent DG number collisions
+AW 	Global access synchronization to the AW$ table
+AW 	In-use generation state for a particular workspace
+AW 	Row lock synchronization for the AW$ table
+AW 	Synchronizes user accesses to a particular workspace
+AY 	Affinity Dictionary test affinity synchronization
+BB 	2PC distributed transaction branch across RAC instances
+BF 	Allocate a bloom filter in a parallel statement
+BF 	PMON bloom filter recovery
+BR 	Lock held to allow cleanup from backup mode during an RMAN proxy-copy backup
+BR 	Lock held to perform a new controlfile autobackup
+BR 	Lock held to prevent file from decreasing in physical size during RMAN backup
+BR 	Lock held to prevent multiple process to update the headers at the same time
+BR 	Lock held to request controlfile autobackups
+BR 	Lock held to serialize file header access during multi-section restore
+BR 	Lock held to serialize section access during multi-section restore
+CA 	Synchronizes various IO calibration runs
+CF 	Synchronizes accesses to the controlfile
+CI 	Coordinates cross-instance function invocations
+CL 	Synchronizes accesses to label cache for label comparison
+CL 	Synchronizes accesses to label cache when dropping a label
+CM 	indicate ASM diskgroup is mounted
+CM 	serialize access to instance enqueue
+CM 	serialize asm diskgroup dismount
+CN 	during descriptor initialization
+CN 	during registration
+CN 	during transaction commit to see concurrent registrations
+CO 	enqueue held be Master in Cleanout Optim
+CQ 	Serializes access to cleanup client query cache registrations
+CR 	Coordinates fast block range reuse ckpt
+CT 	Lock held by one instance while change tracking is enabled, to guarantee access to thread-specific resources
+CT 	Lock held during change tracking space management operations that affect just the data for one thread
+CT 	Lock held during change tracking space management operations that affect the entire change tracking file
+CT 	Lock held to ensure that change tracking data remains in existence until a reader is done with it
+CT 	Lock held to ensure that only one CTWR process is started in a single instance
+CT 	Lock held while enabling or disabling change tracking in RAC
+CT 	Lock held while enabling or disabling change tracking, to ensure that it is only enabled or disabled by one user at a time
+CU 	Recovers cursors in case of death while compiling
+CX 	Index Specific Lock on CTX index
+DB 	Synchronizes modification of database wide supplementallogging attributes
+DD 	Synchronizes local accesses to ASM disk groups
+DF 	Enqueue held by foreground or DBWR when a datafile is brought online in RAC
+DG 	Synchronizes accesses to ASM disk groups
+DL 	Lock to prevent index DDL during direct load
+DM 	Enqueue held by foreground or DBWR to syncrhonize database mount/open with other operations
+DN 	Serializes group number generations
+DO 	Represents an active disk online operation
+DO 	Synchronizes Staleness Registry creation
+DO 	Synchronizes disk onlines and their recovery
+DO 	Synchronizes startup of MARK process
+DP 	Synchronizes access to LDAP parameters
+DR 	Serializes the active distributed recovery operation
+DS 	Prevents a database suspend during LMON reconfiguration
+DT 	Serializes changing the default temporary table spaceand user creation
+DV 	Synchronizes access to lower-version Diana (PL/SQL intermediate representation)
+DW 	Serialize in memory dispenser operations
+DX 	Serializes tightly coupled distributed transaction branches
+FA 	Synchronizes accesses to open ASM files
+FB 	Ensures that only one process can format data blcoks in auto segment space managed tablespaces
+FC 	LGWR opens an ACD thread
+FC 	SMON recovers an ACD thread
+FD 	Synchronization
+FE 	Serializes flashback archive recovery
+FG 	only 1 process in the cluster may do ACD relocation in a disk group
+FG 	resolve race condition to acquire Disk Group Redo Generation Enqueue
+FL 	Enqueue used to synchronize Flashback Database and and deletion of flashback logs.
+FL 	Synchronization
+FM 	Synchronizes access to global file mapping state
+FP 	Synchronizes various File Object(FOB) operations
+FR 	begin recovery of disk group
+FR 	indicate this ACD thread is alive
+FR 	wait for lock domain detach
+FS 	Enqueue used to synchronize recovery and file operations or synchronize dictionary check
+FT 	allow LGWR to generate redo in this thread
+FT 	prevent LGWR from generating redo in this thread
+FU 	This enqueue is used to serialize the capture of the DB Feature           Usage and High Water Mark Statistics
+FX 	ARB relocates ACD extent
+HD 	Serializes accesses to ASM SGA data structures
+HP 	Synchronizes accesses to queue pages
+HQ 	Synchronizes the creation of new queue IDs
+HV 	Lock used to broker the high water mark during parallel inserts
+HW 	Lock used to broker the high water mark during parallel inserts
+IA 	
+ID 	Lock held to prevent other processes from performing controlfile transaction while NID is running
+IL 	Synchronizes accesses to internal label data structures
+IM 	Serializes block recovery for IMU txn
+IR 	Synchronizes instance recovery
+IR 	Synchronizes parallel instance recovery and shutdown immediate
+IS 	Enqueue used to synchronize instance state changes
+IT 	Synchronizes accesses to a temp object’s metadata
+JD 	Synchronizes dates between job queue coordinator and slave processes
+JI 	Lock held during materialized view operations (like refresh, alter) to prevent concurrent operations on the same materialized view
+JQ 	Lock to prevent multiple instances from running a single job
+JS 	Lock got during event notification
+JS 	Lock got when adding subscriber to event q
+JS 	Lock got when doing window open/close
+JS 	Lock got when dropping subscriber to event q
+JS 	Lock obtained when cleaning up q memory
+JS 	Lock on internal scheduler queue
+JS 	Lock to prevent job from running elsewhere
+JS 	Lock to recover jobs running on crashed RAC inst
+JS 	Scheduler evt code and AQ sync
+JS 	Scheduler non-global enqueues
+JS 	Synchronizes accesses to the job cache
+JX 	statement
+JX 	release SQL statement resources
+KD 	Determine DBRM master
+KM 	Synchronizes various Resource Manager operations
+KO 	Coordinates fast object checkpoint
+KP 	Synchronizes kupp process startup
+KQ 	Synchronization of ASM cached attributes
+KT 	Synchronizes accesses to the current Resource Manager plan
+MD 	Lock held during materialized view log DDL statements
+MH 	Lock used for recovery when setting Mail Host for AQ e-mail notifications
+MK 	changing values in enc$
+ML 	Lock used for recovery when setting Mail Port for AQ e-mail notifications
+MN 	Synchronizes updates to the LogMiner dictionary and prevents multiple instances from preparing the same LogMiner session
+MO 	Serialize MMON operations for restricted sessions
+MR 	Lock used to coordinate media recovery with other uses of datafiles
+MR 	Lock used to disallow concurrent standby role transition attempt
+MS 	Lock held during materialized view refresh to setup MV log
+MV 	Held during online datafile move operation or cleanup
+MW 	This enqueue is used to serialize the calibration of the           manageability schedules with the Maintenance Window
+MX 	Lock held to generate a response to the storage server information request when an instance is starting up
+OC 	Synchronizes write accesses to the outline cache
+OD 	Lock to prevent concurrent online DDLs
+OL 	Synchronizes accesses to a particular outline name
+OQ 	Synchronizes access to olapi history allocation
+OQ 	Synchronizes access to olapi history closing
+OQ 	Synchronizes access to olapi history flushing
+OQ 	Synchronizes access to olapi history globals
+OQ 	Synchronizes access to olapi history parameter CB
+OT 	CTX Generic Locks
+OW 	initializing the wallet context
+OW 	terminate the wallet context
+PD 	Prevents others from updating the same property
+PE 	Synchronizes system parameter updates
+PF 	Synchronizes accesses to the password file
+PG 	Synchronizes global system parameter updates
+PH 	Lock used for recovery when setting Proxy for AQ HTTP notifications
+PI 	Communicates remote Parallel Execution Server Process creation status
+PL 	Coordinates plug-in operation of transportable tablespaces
+PR 	Synchronizes process startup
+PS 	Parallel Execution Server Process reservation and synchronization
+PT 	Synchronizes access to ASM PST metadata
+PV 	Synchronizes instance shutdown_slvstart
+PV 	Synchronizes slave start_shutdown
+PW 	DBWR 0 holds enqueue indicating prewarmed buffers present in cache
+PW 	Direct Load needs to flush prewarmed buffers if DBWR 0 holds enqueue
+RB 	Serializes ASM rollback recovery operations
+RC 	Coordinates access to a result-set
+RD 	update RAC load info
+RE 	Synchronize block repair/resilvering operations
+RF 	Captures recent Fast-Start Failover Observer heartbeat information
+RF 	Ensures atomicity of log transport setup
+RF 	Ensures r/w atomicity of DG configuration metadata
+RF 	Identifies which configuration metadata file is current
+RF 	Means for detecting when database is being automatically disabled
+RF 	Records when FSFO Primary Shutdown is suspended
+RF 	Synchronizes apply instance failure detection and failover operation
+RF 	Synchronizes critical apply instance among primary instances
+RF 	Synchronizes selection of the new apply instance
+RK 	wallet master key rekey
+RL 	RAC wallet lock
+RN 	Coordinates nab computations of online logs during recovery
+RO 	Coordinates fast object reuse
+RO 	Coordinates flushing of multiple objects
+RP 	Enqueue held when resilvering is needed or when datablock is repaired from mirror
+RR 	Concurrent invocation of DBMS_WORKLOAD_* package API
+RS 	Lock held to make alert level persistent
+RS 	Lock held to prevent aging list update
+RS 	Lock held to prevent deleting file to reclaim space
+RS 	Lock held to prevent file from accessing during space reclaimation
+RS 	Lock held to prevent file from accessing while reusing circular record
+RS 	Lock held to read alert level
+RS 	Lock held to write alert level
+RT 	Thread locks held by CKPT to synchronize thread enable and disable
+RT 	Thread locks held by LGWR, DBW0, and RVWR to indicate mounted or open status
+RU 	Results of rolling migration CIC
+RU 	Serializes rolling migration operations
+RW 	Lock held by CREATE/ALTER/DROP materialized viewwhile updating materialized view flags in detail tables
+RX 	Synchronizes relocating ASM extents
+SB 	Synchronizes Logical Standby metadata operations
+SB 	Synchronizes table instantiation and EDS operations
+SE 	Synchronizes transparent session migration operations
+SF 	Lock used for recovery when setting Sender for AQ e-mail notifications
+SH 	Should seldom see this contention as this Enqueue is always  acquired in no-wait mode
+SI 	Prevents multiple streams tabel instantiations
+SJ 	Serializes cancelling task executed by slave process
+SK 	Serialize shrink of a segment
+SL 	sending lock escalate to LCK0
+SL 	sending lock req for undo to LCK0
+SL 	sending lock req to LCK0
+SO 	Synchronizes access to Shared Object (PL/SQL Shared Object Manager)
+SP 	(1) due to one-off patch
+SP 	(2) due to one-off patch
+SP 	(3) due to one-off patch
+SP 	(4) due to one-off patch
+SQ 	Lock to ensure that only one process can replenish the sequence cache
+SR 	Coordinates replication / streams operations
+SS 	Ensures that sort segments created during parallel DML operations aren’t prematurely cleaned up
+ST 	Synchronizes space management activities in dictionary-managed tablespaces
+SU 	Serializes access to SaveUndo Segment
+SW 	Coordinates the ‘alter system suspend’ operation
+TA 	Serializes operations on undo segments and undo tablespaces
+TB 	Synchronizes writes to the SQL Tuning Base Existence Cache
+TC 	Lock held to guarantee uniqueness of a tablespace checkpoint
+TC 	Lock of setup of a unqiue tablespace checkpoint in null mode
+TD 	KTF dumping time/scn mappings in SMON_SCN_TIME table
+TE 	KTF broadcasting
+TF 	Serializes dropping of a temporary file
+TH 	Serializes threshold in-memory chain access
+TK 	Lock held by MMON to prevent other MMON spawning of Autotask Slave
+TK 	Serializes spawned Autotask Slaves
+TL 	Serializes threshold log table read and update
+TM 	Synchronizes accesses to an object
+TO 	Synchronizes DDL and DML operations on a temp object
+TP 	Lock held during purge and dynamic reconfiguration of fixed tables.
+TQ 	Streams DDL on queue table
+TQ 	TM access to the queue table
+TS 	Serializes accesses to temp segments
+TT 	Serializes DDL operations on tablespaces
+TW 	Lock held by one instance to wait for transactions on all instances to finish
+TX 	Allocating an ITL entry in order to begin a transaction
+TX 	Lock held by a transaction to allow other transactions to wait for it
+TX 	Lock held on a particular row by a transaction to prevent other transactions from modifying it
+TX 	Lock held on an index during a split to prevent other operations on it
+UL 	Lock used by user applications
+US 	Lock held to perform DDL on the undo segment
+WA 	Lock used for recovery when setting Watermark for memory usage in AQ notifications
+WF 	This enqueue is used to serialize the flushing of snapshots
+WG 	acquire lobid local enqueue when deleting fso
+WG 	acquire lobid local enqueue when locking fso
+WL 	Coordinates access to redo log files and archive logs
+WL 	Serialize access to RAC-wide SGA
+WL 	Serialize access to RFS global state
+WL 	Testing redo transport access/locking
+WM 	Synchronizes new WLM Plan activation
+WP 	This enqueue handles concurrency between purging and baselines
+WR 	Coordinates access to logs by Async LNS and ARCH/FG
+XC 	Lock obtained when incrementing XDB configuration version number
+XD 	Serialize Auto Drop/Add Exadata disk operations
+XD 	Serialize OFFLINE Exadata disk operations
+XD 	Serialize ONLINE Exadata disk operations
+XH 	Lock used for recovery when setting No Proxy Domains for AQ HTTP notifications
+XL 	Keep multiple processes from faulting in the same extent chunk
+XQ 	prevent relocation during _recovery_asserts checking
+XQ 	wait for recovery before doing relocation
+XQ 	wait for relocation before doing block purification
+XR 	Lock held during database force logging mode
+XR 	Lock held during database quiesce
+XY 	Lock used for internal testing
+ZA 	lock held to add partition to std audit table
+ZF 	lock held to add partition to fga audit table
+ZG 	Coordinates file group operations
+ZH 	Synchronizes analysis and insert into compression$, prevents multiple threads analyzing the same table during a load
+ZZ 	lock held for updating global context hash tables
+
+早期metalink上提供的一个lock type list(﻿Values for the TYPE Column: System Types)
+System Type 	Description 	System Type 	Description
+BL 	Buffer hash table instance 	NA..NZ 	Library cache pin instance (A..Z = namespace)
+CF 	Control file schema global enqueue 	PF 	Password File
+CI 	Cross-instance function invocation instance 	PI, PS 	Parallel operation
+CU 	Cursor bind 	PR 	Process startup
+DF 	Data file instance 	QA..QZ 	Row cache instance (A..Z = cache)
+DL 	Direct loader parallel index create 	RT 	Redo thread global enqueue
+DM 	Mount/startup db primary/secondary instance 	SC 	System commit number instance
+DR 	Distributed recovery process 	SM 	SMON
+DX 	Distributed transaction entry 	SN 	Sequence number instance
+FS 	File set 	SQ 	Sequence number enqueue
+HW 	Space management operations on a specific segment 	SS 	Sort segment
+IN 	Instance number 	ST 	Space transaction enqueue
+IR 	Instance recovery serialization global enqueue 	SV 	Sequence number value
+IS 	Instance state 	TA 	Generic enqueue
+IV 	Library cache invalidation instance 	TS 	Temporary segment enqueue (ID2=0)
+JQ 	Job queue 	TS 	New block allocation enqueue (ID2=1)
+KK 	Thread kick 	TT 	Temporary table enqueue
+LA .. LP 	Library cache lock instance lock (A..P = namespace) 	UN 	User name
+MM 	Mount definition global enqueue 	US 	Undo segment DDL
+MR 	Media recovery 	WL 	Being-written redo log instance
+Enqueue Type 	Description
+enq: AD – allocate AU 	Synchronizes accesses to a specific OSM disk AU
+enq: AD – deallocate AU 	Synchronizes accesses to a specific OSM disk AU
+enq: AF – task serialization 	This enqueue is used to serialize access to an advisor task
+enq: AG – contention 	Synchronizes generation use of a particular workspace
+enq: AO – contention 	Synchronizes access to objects and scalar variables
+enq: AS – contention 	Synchronizes new service activation
+enq: AT – contention 	Serializes ‘alter tablespace’ operations
+enq: AW – AW$ table lock 	Global access synchronization to the AW$ table
+enq: AW – AW generation lock 	In-use generation state for a particular workspace
+enq: AW – user access for AW 	Synchronizes user accesses to a particular workspace
+enq: AW – AW state lock 	Row lock synchronization for the AW$ table
+enq: BR – file shrink 	Lock held to prevent file from decreasing in physical size during RMAN backup
+enq: BR – proxy-copy 	Lock held to allow cleanup from backup mode during an RMAN proxy-copy backup
+enq: CF – contention 	Synchronizes accesses to the controlfile
+enq: CI – contention 	Coordinates cross-instance function invocations
+enq: CL – drop label 	Synchronizes accesses to label cache when dropping a label
+enq: CL – compare labels 	Synchronizes accesses to label cache for label comparison
+enq: CM – gate 	Serialize access to instance enqueue
+enq: CM – instance 	Indicate OSM disk group is mounted
+enq: CT – global space management 	Lock held during change tracking space management operations that affect the entire change tracking file
+enq: CT – state 	Lock held while enabling or disabling change tracking, to ensure that it is only enabled or disabled by one user at a time
+enq: CT – state change gate 2 	Lock held while enabling or disabling change tracking in RAC
+enq: CT – reading 	Lock held to ensure that change tracking data remains in existence until a reader is done with it
+enq: CT – CTWR process start/stop 	Lock held to ensure that only one CTWR process is started in a single instance
+enq: CT – state change gate 1 	Lock held while enabling or disabling change tracking in RAC
+enq: CT – change stream ownership 	Lock held by one instance while change tracking is enabled, to guarantee access to thread-specific resources
+enq: CT – local space management 	Lock held during change tracking space management operations that affect just the data for one thread
+enq: CU – contention 	Recovers cursors in case of death while compiling
+enq: DB – contention 	Synchronizes modification of database wide supplemental logging attributes
+enq: DD – contention 	Synchronizes local accesses to ASM disk groups
+enq: DF – contention 	Enqueue held by foreground or DBWR when a datafile is brought online in RAC
+enq: DG – contention 	Synchronizes accesses to ASM disk groups
+enq: DL – contention 	Lock to prevent index DDL during direct load
+enq: DM – contention 	Enqueue held by foreground or DBWR to synchronize database mount/open with other operations
+enq: DN – contention 	Serializes group number generations
+enq: DP – contention 	Synchronizes access to LDAP parameters
+enq: DR – contention 	Serializes the active distributed recovery operation
+enq: DS – contention 	Prevents a database suspend during LMON reconfiguration
+enq: DT – contention 	Serializes changing the default temporary table space and user creation
+enq: DV – contention 	Synchronizes access to lower-version Diana (PL/SQL intermediate representation)
+enq: DX – contention 	Serializes tightly coupled distributed transaction branches
+enq: FA – access file 	Synchronizes accesses to open ASM files
+enq: FB – contention 	Ensures that only one process can format data blocks in auto segment space managed tablespaces
+enq: FC – open an ACD thread 	LGWR opens an ACD thread
+enq: FC – recover an ACD thread 	SMON recovers an ACD thread
+enq: FD – Marker generation 	Synchronization
+enq: FD – Flashback coordinator 	Synchronization
+enq: FD – Tablespace flashback on/off 	Synchronization
+enq: FD – Flashback on/off 	Synchronization
+enq: FG – serialize ACD relocate 	Only 1 process in the cluster may do ACD relocation in a disk group
+enq: FG – LGWR redo generation enq race 	Resolve race condition to acquire Disk Group Redo Generation Enqueue
+enq: FG – FG redo generation enq race 	Resolve race condition to acquire Disk Group Redo Generation Enqueue
+enq: FL – Flashback database log 	Synchronization
+enq: FL – Flashback db command 	Enqueue used to synchronize Flashback Database and deletion of flashback logs.
+enq: FM – contention 	Synchronizes access to global file mapping state
+enq: FR – contention 	Begin recovery of disk group
+enq: FS – contention 	Enqueue used to synchronize recovery and file operations or synchronize dictionary check
+enq: FT – allow LGWR writes 	Allow LGWR to generate redo in this thread
+enq: FT – disable LGWR writes 	Prevent LGWR from generating redo in this thread
+enq: FU – contention 	This enqueue is used to serialize the capture of the DB Feature, Usage and High Water Mark Statistics
+enq: HD – contention 	Serializes accesses to ASM SGA data structures
+enq: HP – contention 	Synchronizes accesses to queue pages
+enq: HQ – contention 	Synchronizes the creation of new queue IDs
+enq: HV – contention 	Lock used to broker the high water mark during parallel inserts
+enq: HW – contention 	Lock used to broker the high water mark during parallel inserts
+enq: IA – contention
+enq: ID – contention 	Lock held to prevent other processes from performing controlfile transaction while NID is running
+enq: IL – contention 	Synchronizes accesses to internal label data structures
+enq: IM – contention for blr 	Serializes block recovery for IMU txn
+enq: IR – contention 	Synchronizes instance recovery
+enq: IR – contention2 	Synchronizes parallel instance recovery and shutdown immediate
+enq: IS – contention 	Enqueue used to synchronize instance state changes
+enq: IT – contention 	Synchronizes accesses to a temp object’s metadata
+enq: JD – contention 	Synchronizes dates between job queue coordinator and slave processes
+enq: JI – contention 	Lock held during materialized view operations (like refresh, alter) to prevent concurrent operations on the same materialized view
+enq: JQ – contention 	Lock to prevent multiple instances from running a single job
+enq: JS – contention 	Synchronizes accesses to the job cache
+enq: JS – coord post lock 	Lock for coordinator posting
+enq: JS – global wdw lock 	Lock acquired when doing wdw ddl
+enq: JS – job chain evaluate lock 	Lock when job chain evaluated for steps to create
+enq: JS – q mem clnup lck 	Lock obtained when cleaning up q memory
+enq: JS – slave enq get lock2 	Get run info locks before slv objget
+enq: JS – slave enq get lock1 	Slave locks exec pre to sess strt
+enq: JS – running job cnt lock3 	Lock to set running job count epost
+enq: JS – running job cnt lock2 	Lock to set running job count epre
+enq: JS – running job cnt lock 	Lock to get running job count
+enq: JS – coord rcv lock 	Lock when coord receives msg
+enq: JS – queue lock 	Lock on internal scheduler queue
+enq: JS – job run lock – synchronize 	Lock to prevent job from running elsewhere
+enq: JS – job recov lock 	Lock to recover jobs running on crashed RAC inst
+enq: KK – context 	Lock held by open redo thread, used by other instances to force a log switch
+enq: KM – contention 	Synchronizes various Resource Manager operations
+enq: KP – contention 	Synchronizes kupp process startup
+enq: KT – contention 	Synchronizes accesses to the current Resource Manager plan
+enq: MD – contention 	Lock held during materialized view log DDL statements
+enq: MH – contention 	Lock used for recovery when setting Mail Host for AQ e-mail notifications
+enq: ML – contention 	Lock used for recovery when setting Mail Port for AQ e-mail notifications
+enq: MN – contention 	Synchronizes updates to the LogMiner dictionary and prevents multiple instances from preparing the same LogMiner session
+enq: MR – contention 	Lock used to coordinate media recovery with other uses of datafiles
+enq: MS – contention 	Lock held during materialized view refresh to setup MV log
+enq: MW – contention 	This enqueue is used to serialize the calibration of the manageability schedules with the Maintenance Window
+enq: OC – contention 	Synchronizes write accesses to the outline cache
+enq: OL – contention 	Synchronizes accesses to a particular outline name
+enq: OQ – xsoqhiAlloc 	Synchronizes access to olapi history allocation
+enq: OQ – xsoqhiClose 	Synchronizes access to olapi history closing
+enq: OQ – xsoqhistrecb 	Synchronizes access to olapi history globals
+enq: OQ – xsoqhiFlush 	Synchronizes access to olapi history flushing
+enq: OQ – xsoq*histrecb 	Synchronizes access to olapi history parameter CB
+enq: PD – contention 	Prevents others from updating the same property
+enq: PE – contention 	Synchronizes system parameter updates
+enq: PF – contention 	Synchronizes accesses to the password file
+enq: PG – contention 	Synchronizes global system parameter updates
+enq: PH – contention 	Lock used for recovery when setting Proxy for AQ HTTP notifications
+enq: PI – contention 	Communicates remote Parallel Execution Server Process creation status
+enq: PL – contention 	Coordinates plug-in operation of transportable tablespaces
+enq: PR – contention 	Synchronizes process startup
+enq: PS – contention 	Parallel Execution Server Process reservation and synchronization
+enq: PT – contention 	Synchronizes access to ASM PST metadata
+enq: PV – syncstart 	Synchronizes slave start shutdown
+enq: PV – syncshut 	Synchronizes instance shutdown_slvstart
+enq: PW – perwarm status in dbw0 	DBWR 0 holds enqueue indicating prewarmed buffers present in cache
+enq: PW – flush prewarm buffers 	Direct Load needs to flush pre-warmed buffers if DBWR 0 holds enqueue
+enq: RB – contention 	Serializes OSM rollback recovery operations
+enq: RF – synch: per-SGA Broker metadata 	Ensures r/w atomicity of DG configuration metadata per unique SGA
+enq: RF – synchronization: critical ai 	Synchronizes critical apply instance among primary instances
+enq: RF – new AI 	Synchronizes selection of the new apply instance
+enq: RF – synchronization: chief 	Anoints 1 instance’s DMON as chief to other instances’ DMONs
+enq: RF – synchronization: HC master 	Anoints 1 instance’s DMON as health check master
+enq: RF – synchronization: aifo master 	Synchronizes apply instance failure detection and fail over operation
+enq: RF – atomicity 	Ensures atomicity of log transport setup
+enq: RN – contention 	Coordinates nab computations of online logs during recovery
+enq: RO – contention 	Coordinates flushing of multiple objects
+enq: RO – fast object reuse 	Coordinates fast object reuse
+enq: RP – contention 	Enqueue held when resilvering is needed or when data block is repaired from mirror
+enq: RS – file delete 	Lock held to prevent file from accessing during space reclamation
+enq: RS – persist alert level 	Lock held to make alert level persistent
+enq: RS – write alert level 	Lock held to write alert level
+enq: RS – read alert level 	Lock held to read alert level
+enq: RS – prevent aging list update 	Lock held to prevent aging list update
+enq: RS – record reuse 	Lock held to prevent file from accessing while reusing circular record
+enq: RS – prevent file delete 	Lock held to prevent deleting file to reclaim space
+enq: RT – contention 	Thread locks held by LGWR, DBW0, and RVWR to indicate mounted or open status
+enq: SB – contention 	Synchronizes Logical Standby metadata operations
+enq: SF – contention 	Lock used for recovery when setting Sender for AQ e-mail notifications
+enq: SH – contention 	Should seldom see this contention as this Enqueue is always acquired in no-wait mode
+enq: SI – contention 	Prevents multiple streams table instantiations
+enq: SK – contention 	Serialize shrink of a segment
+enq: SQ – contention 	Lock to ensure that only one process can replenish the sequence cache
+enq: SR – contention 	Coordinates replication / streams operations
+enq: SS – contention 	Ensures that sort segments created during parallel DML operations aren’t prematurely cleaned up
+enq: ST – contention 	Synchronizes space management activities in dictionary-managed tablespaces
+enq: SU – contention 	Serializes access to SaveUndo Segment
+enq: SW – contention 	Coordinates the ‘alter system suspend’ operation
+enq: TA – contention 	Serializes operations on undo segments and undo tablespaces
+enq: TB – SQL Tuning Base Cache Update 	Synchronizes writes to the SQL Tuning Base Existence Cache
+enq: TB – SQL Tuning Base Cache Load 	Synchronizes writes to the SQL Tuning Base Existence Cache
+enq: TC – contention 	Lock held to guarantee uniqueness of a tablespace checkpoint
+enq: TC – contention2 	Lock of setup of a unique tablespace checkpoint in null mode
+enq: TD – KTF dump entries 	KTF dumping time/scn mappings in SMON_SCN_TIME table
+enq: TE – KTF broadcast 	KTF broadcasting
+enq: TF – contention 	Serializes dropping of a temporary file
+enq: TL – contention 	Serializes threshold log table read and update
+enq: TM – contention 	Synchronizes accesses to an object
+enq: TO – contention 	Synchronizes DDL and DML operations on a temp object
+enq: TQ – TM contention 	TM access to the queue table
+enq: TQ – DDL contention 	TM access to the queue table
+enq: TQ – INI contention 	TM access to the queue table
+enq: TS – contention 	Serializes accesses to temp segments
+enq: TT – contention 	Serializes DDL operations on tablespaces
+enq: TW – contention 	Lock held by one instance to wait for transactions on all instances to finish
+enq: TX – contention 	Lock held by a transaction to allow other transactions to wait for it
+enq: TX – row lock contention 	Lock held on a particular row by a transaction to prevent other transactions from modifying it
+enq: TX – allocate ITL entry 	Allocating an ITL entry in order to begin a transaction
+enq: TX – index contention 	Lock held on an index during a split to prevent other operations on it
+enq: UL – contention 	Lock used by user applications
+enq: US – contention 	Lock held to perform DDL on the undo segment
+enq: WA – contention 	Lock used for recovery when setting Watermark for memory usage in AQ notifications
+enq: WF – contention 	This enqueue is used to serialize the flushing of snapshots
+enq: WL – contention 	Coordinates access to redo log files and archive logs
+enq: WP – contention 	This enqueue handles concurrency between purging and baselines
+enq: XH – contention 	Lock used for recovery when setting No Proxy Domains for AQ HTTP notifications
+enq: XR – quiesce database 	Lock held during database quiesce
+enq: XR – database force logging 	Lock held during database force logging mode
+enq: XY – contention 	Lock used for internal testing
+Filed Under: Oracle, Oracle Lock锁机制 Tagged With: ENQUEUE, Oracle Lock锁机制
+RAC Deadlock For Example
+2009/06/21 by Maclean Liu 暂无评论
+
+Single resource deadlock: blocking enqueue which blocks itself, f 0
+
+Single resource deadlock: blocking enqueue which blocks itself, f 0
+Granted global enqueue 0xd8578490
+----------enqueue 0xd8578490------------------------
+lock version     : 1
+Owner inst       : 2
+grant_level      : KJUSERCW
+req_level        : KJUSERPW
+bast_level       : KJUSERNL
+notify_func      : 0x4fe4b6e
+resp             : 0xd9c7ad50
+procp            : 0xd9971780
+pid              : 0
+proc version     : 0
+oprocp           : (nil)
+opid             : 0
+group lock owner : (nil)
+xid              : 0000-0000-00000000
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     :
+Convert options  : KJUSERGETVALUE
+History          : 0xd7d8d7da
+Msg_Seq          : 0x60005
+res_seq          : 2
+valblk           : 0x00000000000000000000000000000000 .
+DUMP LOCAL BLOCKER/HOLDER: block level 4 res [0x1451c][0x0],[TM][ext 0x0,0x0]
+----------resource 0xd9c7ad50----------------------
+resname       : [0x1451c][0x0],[TM][ext 0x0,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 112
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd cached
+grant_bits    : KJUSERCW
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 0         0         2         0         0         0
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x00000000000000000000000000000000 .
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9c7ad50
+On Scan_q?    : N
+Total accesses: 150
+Imm.  accesses: 143
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+GRANTED_Q :
+lp 0xd876ab70 gl KJUSERCW rp 0xd9c7ad50 [0x1451c][0x0],[TM][ext 0x0,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 1993 xid 2B000-0001-000000B5 bast 0 rseq 1 mseq 0 history 0x49a51495
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd8578490 gl KJUSERCW rl KJUSERPW rp 0xd9c7ad50 [0x1451c][0x0],[TM][ext 0x0,0x0]
+  master 1 owner 2  bast 1 rseq 2 mseq 0x60005 history 0xd7d8d7da
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd876ab70------------------------
+lock version     : 2071
+Owner inst       : 1
+grant_level      : KJUSERCW
+req_level        : KJUSERPW
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9c7ad50
+procp            : 0xd9979b08
+pid              : 1993
+proc version     : 81
+oprocp           : (nil)
+opid             : 1993
+group lock owner : 0xda7233c0
+possible pid     : 1993
+xid              : 2B000-0001-000000B5
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : CONVERTING
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0x49a51495
+Msg_Seq          : 0x0
+res_seq          : 1
+valblk           : 0x00000000000000000000000000000000 .
+user session for deadlock lock 0xd876ab70
+  sid: 416 ser: 217 audsid: 2301258 user: 95/SPOT
+    flags: (0x10041) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 1993
+    image: oracle@rh2.oracle.com (J000)
+  client details:
+    O/S info: user: oracle, term: UNKNOWN, ospid: 1993
+    machine: rh2.oracle.com program: oracle@rh2.oracle.com (J000)
+    application name: DBMS_SCHEDULER, hash value=2478762354
+    action name: QUEST_PPCM_JOB_PM_1, hash value=3637730750
+  current SQL:
+  DELETE FROM QUEST_PPCM_SNAPSHOT WHERE SNAPSHOT_TYPE = :B2 AND INSTANCE_ID > 0
+  AND SNAPSHOT_TIMESTAMP < TRUNC (SYSDATE) - :B1  
+
+----------enqueue 0xd8578490------------------------
+lock version     : 1
+Owner inst       : 2
+grant_level      : KJUSERCW
+req_level        : KJUSERPW
+bast_level       : KJUSERNL
+notify_func      : 0x4fe4b6e
+resp             : 0xd9c7ad50
+procp            : 0xd9971780
+pid              : 0
+proc version     : 0
+oprocp           : (nil)
+opid             : 0
+group lock owner : (nil)
+xid              : 0000-0000-00000000
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     :
+Convert options  : KJUSERGETVALUE
+History          : 0xd7d8d7da
+Msg_Seq          : 0x60005
+res_seq          : 2
+valblk           : 0x03000000000000000100000000000000 . 
+
+Requesting global enqueue 0xd876ab70 
+
+----------enqueue 0xd876ab70------------------------
+lock version     : 2071
+Owner inst       : 1
+grant_level      : KJUSERCW
+req_level        : KJUSERPW
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9c7ad50
+procp            : 0xd9979b08
+pid              : 1993
+proc version     : 81
+oprocp           : (nil)
+opid             : 1993
+group lock owner : 0xda7233c0
+possible pid     : 1993
+xid              : 2B000-0001-000000B5
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : CONVERTING
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0x49a51495
+Msg_Seq          : 0x0
+res_seq          : 1
+valblk           : 0x00000000000000000000000000000000 . u
+ser session for deadlock lock 0xd876ab70
+sid: 416 ser: 217 audsid: 2301258 user: 95/SPOT
+flags: (0x10041) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+flags2: (0x40008) -/-
+pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 1993
+image: oracle@rh2.oracle.com (J000)
+client details:     O/S info: user: oracle, term: UNKNOWN, ospid: 1993
+machine: rh2.oracle.com program: oracle@rh2.oracle.com (J000)
+application name: DBMS_SCHEDULER, hash value=2478762354
+action name: QUEST_PPCM_JOB_PM_1, hash value=3637730750
+current SQL:
+DELETE FROM QUEST_PPCM_SNAPSHOT WHERE SNAPSHOT_TYPE = :B2 AND INSTANCE_ID > 0 AND SNAPSHOT_TIMESTAMP < TRUNC (SYSDATE) - :B1
+----------resource 0xd9c7ad50----------------------
+resname       : [0x1451c][0x0],[TM][ext 0x0,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 112
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd cached
+grant_bits    : KJUSERCW
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 0         0         2         0         0         0
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x00000000000000000000000000000000 .
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9c7ad50
+On Scan_q?    : N
+Total accesses: 150
+Imm.  accesses: 143
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+GRANTED_Q :
+lp 0xd876ab70 gl KJUSERCW rp 0xd9c7ad50 [0x1451c][0x0],[TM][ext 0x0,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 1993 xid 2B000-0001-000000B5 bast 0 rseq 1 mseq 0 history 0x49a51495
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd8578490 gl KJUSERCW rl KJUSERPW rp 0xd9c7ad50 [0x1451c][0x0],[TM][ext 0x0,0x0]
+  master 1 owner 2  bast 1 rseq 2 mseq 0x60005 history 0xd7d8d7da
+  convert opt KJUSERGETVALUE
+-------------------------------------------------------------------------------
+Trace Bucket Dump Begin: default bucket for process 43 (osid: 1993, J000)
+TIME(*=approx):SEQ:COMPONENT:FILE@LINE:FUNCTION:SECT/DUMP: [EVENT#:PID:SID] DATA
+
+TM DEADLOCK IN RAC:
+
+* End DRM for pkey remastering request(s) (locally requested)
+ENQUEUE DUMP REQUEST: from 2 spnum 12 on [0x1475a][0x0],[TM][ext 0x0,0x0] for reason 3 mtype 0
+
+*** 2011-06-21 21:57:42.212
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0x1475a][0x0],[TM][ext 0x0,0x0]
+----------resource 0xd9e62b48----------------------
+resname       : [0x1475a][0x0],[TM][ext 0x0,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 46
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd cached
+grant_bits    : KJUSERNL KJUSEREX
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         1
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x00000000000000000000000000000000 .
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9e62b48
+On Scan_q?    : N
+Total accesses: 30
+Imm.  accesses: 25
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+GRANTED_Q :
+lp 0xd87530a8 gl KJUSEREX rp 0xd9e62b48 [0x1475a][0x0],[TM][ext 0x0,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 26255 xid 2B000-0001-00000576 bast 0 rseq 3 mseq 0 history 0x9a514495
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd85b60e0 gl KJUSERNL rl KJUSEREX rp 0xd9e62b48 [0x1475a][0x0],[TM][ext 0x0,0x0]
+  master 1 owner 2  bast 0 rseq 12 mseq 0x1 history 0x97ad
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd87530a8------------------------
+lock version     : 10199
+Owner inst       : 1
+grant_level      : KJUSEREX
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62b48
+procp            : 0xd99750b0
+pid              : 26255
+proc version     : 229
+oprocp           : (nil)
+opid             : 26255
+group lock owner : 0xda7233c0
+possible pid     : 26255
+xid              : 2B000-0001-00000576
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0x9a514495
+Msg_Seq          : 0x0
+res_seq          : 3
+valblk           : 0x00000000000000000000000000000000 .
+user session for deadlock lock 0xd87530a8
+  sid: 416 ser: 1053 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26255
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26254
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  lock table lock2 in exclusive mode
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26255] on resource TM-0001475A-00000000
+
+*** 2011-06-21 21:57:42.215
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+----------enqueue 0xd85b60e0------------------------
+lock version     : 1
+Owner inst       : 2
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62b48
+procp            : 0xd9971780
+pid              : 0
+proc version     : 0
+oprocp           : (nil)
+opid             : 0
+group lock owner : (nil)
+xid              : 0000-0000-00000000
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     :  KJUSERNO_XID
+Convert options  : KJUSERGETVALUE
+History          : 0x97ad
+Msg_Seq          : 0x1
+res_seq          : 12
+valblk           : 0xe0720660ff7f000020700660ff7f0000 .r` p`
+Global blockers dump start:---------------------------------
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0x1485a][0x0],[TM][ext 0x0,0x0]
+----------resource 0xd9c5a7c8----------------------
+resname       : [0x1485a][0x0],[TM][ext 0x0,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 46
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd cached
+grant_bits    : KJUSERNL KJUSEREX
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         1
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x000000000a0000000a00000001000000 .
+access_inst   : 2
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9c5a7c8
+On Scan_q?    : N
+Total accesses: 29
+Imm.  accesses: 20
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  00 00 00 00 0a 00 00 00 0a 00 00 00 01 00 00 00
+GRANTED_Q :
+lp 0xd85b5f20 gl KJUSEREX rp 0xd9c5a7c8 [0x1485a][0x0],[TM][ext 0x0,0x0]
+  master 1 owner 2  bast 0 rseq 15 mseq 0x2 history 0x977d8d
+  open opt  KJUSERNO_XID
+CONVERT_Q:
+lp 0xd8757ff8 gl KJUSERNL rl KJUSEREX rp 0xd9c5a7c8 [0x1485a][0x0],[TM][ext 0x0,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 26255 xid 2B000-0001-00000576 bast 0 rseq 2 mseq 0 history 0xda51449a
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd85b5f20------------------------
+lock version     : 1
+Owner inst       : 2
+grant_level      : KJUSEREX
+req_level        : KJUSEREX
+bast_level       : KJUSEREX
+notify_func      : (nil)
+resp             : 0xd9c5a7c8
+procp            : 0xd9971780
+pid              : 0
+proc version     : 0
+oprocp           : (nil)
+opid             : 0
+group lock owner : (nil)
+xid              : 0000-0000-00000000
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     :  KJUSERNO_XID
+Convert options  : KJUSERGETVALUE
+History          : 0x977d8d
+Msg_Seq          : 0x2
+res_seq          : 15
+valblk           : 0x00000000000000000000000000000000 .
+----------enqueue 0xd8757ff8------------------------
+lock version     : 10261
+Owner inst       : 1
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9c5a7c8
+procp            : 0xd99750b0
+pid              : 26255
+proc version     : 229
+oprocp           : (nil)
+opid             : 26255
+group lock owner : 0xda7233c0
+possible pid     : 26255
+xid              : 2B000-0001-00000576
+dd_time          : 10.0 secs
+dd_count         : 1
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : Y
+lock_state       : OPENING CONVERTING
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0xda51449a
+Msg_Seq          : 0x0
+res_seq          : 2
+valblk           : 0x00000000000000000000000000000000 .
+user session for deadlock lock 0xd8757ff8
+  sid: 416 ser: 1053 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26255
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26254
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  lock table lock2 in exclusive mode
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26255] on resource TM-0001485A-00000000
+
+*** 2011-06-21 21:57:42.219
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0x1475a][0x0],[TM][ext 0x0,0x0]
+----------resource 0xd9e62b48----------------------
+resname       : [0x1475a][0x0],[TM][ext 0x0,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 46
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd cached
+grant_bits    : KJUSERNL KJUSEREX
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         1
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x7c5b5c0900000000806a0660ff7f0000 |[\j`
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9e62b48
+On Scan_q?    : N
+Total accesses: 32
+Imm.  accesses: 26
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  7c 5b 5c 09 00 00 00 00 80 6a 06 60 ff 7f 00 00
+GRANTED_Q :
+lp 0xd87530a8 gl KJUSEREX rp 0xd9e62b48 [0x1475a][0x0],[TM][ext 0x0,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 26255 xid 2B000-0001-00000576 bast 0 rseq 3 mseq 0 history 0x9a514495
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd85b60e0 gl KJUSERNL rl KJUSEREX rp 0xd9e62b48 [0x1475a][0x0],[TM][ext 0x0,0x0]
+  master 1 owner 2  bast 0 rseq 12 mseq 0x1 history 0x97ad
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd87530a8------------------------
+lock version     : 10199
+Owner inst       : 1
+grant_level      : KJUSEREX
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62b48
+procp            : 0xd99750b0
+pid              : 26255
+proc version     : 229
+oprocp           : (nil)
+opid             : 26255
+group lock owner : 0xda7233c0
+possible pid     : 26255
+xid              : 2B000-0001-00000576
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0x9a514495
+Msg_Seq          : 0x0
+res_seq          : 3
+valblk           : 0x00000000ff7f000031000502ff7f0000 .1
+user session for deadlock lock 0xd87530a8
+  sid: 416 ser: 1053 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26255
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26254
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  lock table lock2 in exclusive mode
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26255] on resource TM-0001475A-00000000
+
+*** 2011-06-21 21:57:42.220
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+----------enqueue 0xd85b60e0------------------------
+lock version     : 1
+Owner inst       : 2
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62b48
+procp            : 0xd9971780
+pid              : 0
+proc version     : 0
+oprocp           : (nil)
+opid             : 0
+group lock owner : (nil)
+xid              : 0000-0000-00000000
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     :  KJUSERNO_XID
+Convert options  : KJUSERGETVALUE
+History          : 0x97ad
+Msg_Seq          : 0x1
+res_seq          : 12
+valblk           : 0x406f0660ff7f0000806c0660ff7f0000 @o`l`
+Global blockers dump end:-----------------------------------
+Global Wait-For-Graph(WFG) at ddTS[0.1] :
+BLOCKED 0xd8757ff8 5 wq 2 cvtops x1 TM 0x1485a.0x0(ext 0x0,0x0)[2B000-0001-00000576] inst 1
+BLOCKER 0xd87520d0 5 wq 1 cvtops x1 TM 0x1485a.0x0(ext 0x0,0x0)[22000-0002-000010C6] inst 2
+BLOCKED 0xd8766338 5 wq 2 cvtops x1 TM 0x1475a.0x0(ext 0x0,0x0)[22000-0002-000010C6] inst 2
+BLOCKER 0xd87530a8 5 wq 1 cvtops x1 TM 0x1475a.0x0(ext 0x0,0x0)[2B000-0001-00000576] inst 1
+
+TX DEADLOCK in RAC:
+
+ENQUEUE DUMP REQUEST: from 2 spnum 12 on [0x10001][0x7b3],[TX][ext 0x2,0x0] for reason 3 mtype 0
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0x10001][0x7b3],[TX][ext 0x2,0x0]
+----------resource 0xd9c5a6a0----------------------
+resname       : [0x10001][0x7b3],[TX][ext 0x2,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 8
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd
+grant_bits    : KJUSERNL KJUSEREX
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         1
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x00000000000000000000000000000000 .
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9c5a6a0
+On Scan_q?    : N
+Total accesses: 54
+Imm.  accesses: 44
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+GRANTED_Q :
+lp 0xd85b62a0 gl KJUSEREX rp 0xd9c5a6a0 [0x10001][0x7b3],[TX][ext 0x2,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 26287 xid 2B000-0001-00000578 bast 0 rseq 8 mseq 0 history 0x95
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd85b6460 gl KJUSERNL rl KJUSEREX rp 0xd9c5a6a0 [0x10001][0x7b3],[TX][ext 0x2,0x0]
+  master 1 owner 2  bast 0 rseq 22 mseq 0x1 history 0x97ad
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd85b62a0------------------------
+lock version     : 1
+Owner inst       : 1
+grant_level      : KJUSEREX
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9c5a6a0
+procp            : 0xd996b090
+pid              : 22148
+proc version     : 0
+oprocp           : (nil)
+opid             : 22148
+group lock owner : 0xda7233c0
+possible pid     : 26287
+xid              : 2B000-0001-00000578
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERNOQUEUE KJUSERNODEADLOCKWAIT
+History          : 0x95
+Msg_Seq          : 0x0
+res_seq          : 8
+valblk           : 0x00000000000000000000000000000000 .
+user session for deadlock lock 0xd85b62a0
+  sid: 416 ser: 1055 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26287
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26286
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  update lock1 set t1=t1+10 where t1=2
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26287] on resource TX-00010001-000007B3
+
+*** 2011-06-21 22:08:18.048
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+----------enqueue 0xd85b6460------------------------
+lock version     : 1
+Owner inst       : 2
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9c5a6a0
+procp            : 0xd9971780
+pid              : 0
+proc version     : 0
+oprocp           : (nil)
+opid             : 0
+group lock owner : (nil)
+xid              : 0000-0000-00000000
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     :  KJUSERNO_XID
+Convert options  : KJUSERGETVALUE
+History          : 0x97ad
+Msg_Seq          : 0x1
+res_seq          : 22
+valblk           : 0xe0720660ff7f000020700660ff7f0000 .r` p`
+Global blockers dump start:---------------------------------
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0xb0000][0xc8],[TX][ext 0x5,0x0]
+----------resource 0xd9e626a8----------------------
+resname       : [0xb0000][0xc8],[TX][ext 0x5,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 2
+master_inst   : 2
+hv idx        : 28
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd
+Held mode     : KJUSERNL
+Cvt mode      : KJUSEREX
+Next Cvt mode : KJUSERNL
+msg_seq       : 0x1
+res_seq       : 2
+grant_bits    : KJUSERNL
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         0
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x000000000a0000000a00000001000000 .
+access_inst   : 2
+vbreq_state   : 0
+state         : x8
+resp          : 0xd9e626a8
+On Scan_q?    : N
+Total accesses: 24
+Imm.  accesses: 15
+Granted_locks : 0
+Cvting_locks  : 1
+value_block:  00 00 00 00 0a 00 00 00 0a 00 00 00 01 00 00 00
+GRANTED_Q :
+CONVERT_Q:
+lp 0xd8757ff8 gl KJUSERNL rl KJUSEREX rp 0xd9e626a8 [0xb0000][0xc8],[TX][ext 0x5,0x0]
+  master 2 gl owner 0xda7233c0 possible pid 26287 xid 2B000-0001-00000578 bast 0 rseq 2 mseq 0 history 0x495149da
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd8757ff8------------------------
+lock version     : 11019
+Owner inst       : 1
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e626a8
+procp            : 0xd99750b0
+pid              : 26287
+proc version     : 230
+oprocp           : (nil)
+opid             : 26287
+group lock owner : 0xda7233c0
+possible pid     : 26287
+xid              : 2B000-0001-00000578
+dd_time          : 10.0 secs
+dd_count         : 1
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : Y
+lock_state       : OPENING CONVERTING
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0x495149da
+Msg_Seq          : 0x0
+res_seq          : 2
+valblk           : 0x00000000000000000000000000000000 .
+user session for deadlock lock 0xd8757ff8
+  sid: 416 ser: 1055 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26287
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26286
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  update lock1 set t1=t1+10 where t1=2
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26287] on resource TX-000B0000-000000C8
+
+*** 2011-06-21 22:08:18.051
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0x10001][0x7b3],[TX][ext 0x2,0x0]
+----------resource 0xd9c5a6a0----------------------
+resname       : [0x10001][0x7b3],[TX][ext 0x2,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 8
+hv last r.inc : 56
+current inc   : 56
+hv status     : 0
+hv master     : 0
+open options  : dd
+grant_bits    : KJUSERNL KJUSEREX
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         1
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x7c5b5c0900000000806a0660ff7f0000 |[\j`
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9c5a6a0
+On Scan_q?    : N
+Total accesses: 56
+Imm.  accesses: 45
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  7c 5b 5c 09 00 00 00 00 80 6a 06 60 ff 7f 00 00
+GRANTED_Q :
+lp 0xd85b62a0 gl KJUSEREX rp 0xd9c5a6a0 [0x10001][0x7b3],[TX][ext 0x2,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 26287 xid 2B000-0001-00000578 bast 0 rseq 8 mseq 0 history 0x95
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd85b6460 gl KJUSERNL rl KJUSEREX rp 0xd9c5a6a0 [0x10001][0x7b3],[TX][ext 0x2,0x0]
+  master 1 owner 2  bast 0 rseq 22 mseq 0x1 history 0x97ad
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd85b62a0------------------------
+lock version     : 1
+Owner inst       : 1
+grant_level      : KJUSEREX
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9c5a6a0
+procp            : 0xd996b090
+pid              : 22148
+proc version     : 0
+oprocp           : (nil)
+opid             : 22148
+group lock owner : 0xda7233c0
+possible pid     : 26287
+xid              : 2B000-0001-00000578
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERNOQUEUE KJUSERNODEADLOCKWAIT
+History          : 0x95
+Msg_Seq          : 0x0
+res_seq          : 8
+valblk           : 0x00000000ff7f000031000502ff7f0000 .1
+user session for deadlock lock 0xd85b62a0
+  sid: 416 ser: 1055 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26287
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26286
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  update lock1 set t1=t1+10 where t1=2
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26287] on resource TX-00010001-000007B3
+
+*** 2011-06-21 22:08:18.053
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+----------enqueue 0xd85b6460------------------------
+lock version     : 1
+Owner inst       : 2
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9c5a6a0
+procp            : 0xd9971780
+pid              : 0
+proc version     : 0
+oprocp           : (nil)
+opid             : 0
+group lock owner : (nil)
+xid              : 0000-0000-00000000
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     :  KJUSERNO_XID
+Convert options  : KJUSERGETVALUE
+History          : 0x97ad
+Msg_Seq          : 0x1
+res_seq          : 22
+valblk           : 0x406f0660ff7f0000806c0660ff7f0000 @o`l`
+Global blockers dump end:-----------------------------------
+Global Wait-For-Graph(WFG) at ddTS[0.6] :
+BLOCKED 0xd8757ff8 5 wq 2 cvtops x1 TX 0xb0000.0xc8(ext 0x5,0x0)[2B000-0001-00000578] inst 1
+BLOCKER 0xd8561ee0 5 wq 1 cvtops x28 TX 0xb0000.0xc8(ext 0x5,0x0)[22000-0002-000010C6] inst 2
+BLOCKED 0xd8766338 5 wq 2 cvtops x1 TX 0x10001.0x7b3(ext 0x2,0x0)[22000-0002-000010C6] inst 2
+BLOCKER 0xd85b62a0 5 wq 1 cvtops x28 TX 0x10001.0x7b3(ext 0x2,0x0)[2B000-0001-00000578] inst 1 
+
+*** 2011-06-21 22:08:19.059
+* Cancel deadlock victim lockp 0xd8757ff8
+
+TX DEADLOCK LOCAL only:
+
+*** 2011-06-21 22:27:00.022
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0x70015][0x81e],[TX][ext 0x2,0x0]
+----------resource 0xd9e62330----------------------
+resname       : [0x70015][0x81e],[TX][ext 0x2,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 7
+hv last r.inc : 42
+current inc   : 56
+hv status     : 0
+hv master     : 1
+open options  : dd
+grant_bits    : KJUSERNL KJUSEREX
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         1
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x506b0660ff7f00006d6cf50400000000 Pk`ml
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9e62330
+On Scan_q?    : N
+Total accesses: 23
+Imm.  accesses: 15
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  50 6b 06 60 ff 7f 00 00 6d 6c f5 04 00 00 00 00
+GRANTED_Q :
+lp 0xd8767a10 gl KJUSEREX rp 0xd9e62330 [0x70015][0x81e],[TX][ext 0x2,0x0]
+  master 1 gl owner 0xda2cff40 possible pid 26847 xid 2E000-0001-00000347 bast 0 rseq 1 mseq 0 history 0x14951495
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd876a630 gl KJUSERNL rl KJUSEREX rp 0xd9e62330 [0x70015][0x81e],[TX][ext 0x2,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 26843 xid 2B000-0001-0000057A bast 0 rseq 1 mseq 0 history 0x1495149a
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd8767a10------------------------
+lock version     : 8523
+Owner inst       : 1
+grant_level      : KJUSEREX
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62330
+procp            : 0xd99750b0
+pid              : 26843
+proc version     : 231
+oprocp           : (nil)
+opid             : 26843
+group lock owner : 0xda2cff40
+possible pid     : 26847
+xid              : 2E000-0001-00000347
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERNOQUEUE KJUSERNODEADLOCKWAIT
+History          : 0x14951495
+Msg_Seq          : 0x0
+res_seq          : 1
+valblk           : 0x00000000000000000000000000000000 .
+user session for deadlock lock 0xd8767a10
+  sid: 16 ser: 851 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 46 O/S info: user: oracle, term: UNKNOWN, ospid: 26847
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26846
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+   update lock1 set t1=t1+10 where t1=11
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[46.26847] on resource TX-00070015-0000081E
+
+*** 2011-06-21 22:27:00.024
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+----------enqueue 0xd876a630------------------------
+lock version     : 9399
+Owner inst       : 1
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62330
+procp            : 0xd99750b0
+pid              : 26843
+proc version     : 231
+oprocp           : (nil)
+opid             : 26843
+group lock owner : 0xda7233c0
+possible pid     : 26843
+xid              : 2B000-0001-0000057A
+dd_time          : 10.0 secs
+dd_count         : 1
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : Y
+lock_state       : OPENING CONVERTING
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0x1495149a
+Msg_Seq          : 0x0
+res_seq          : 1
+valblk           : 0xa06e0660ff7f0000e06b0660ff7f0000 .n`k`
+user session for deadlock lock 0xd876a630
+  sid: 416 ser: 1057 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26843
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/4, ospid: 26842
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  update lock1 set t1=t1+10 where t1=12
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26843] on resource TX-00070015-0000081E
+
+*** 2011-06-21 22:27:00.025
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+DUMP LOCAL BLOCKER/HOLDER: block level 5 res [0x40008][0x7d9],[TX][ext 0x2,0x0]
+----------resource 0xd9e62208----------------------
+resname       : [0x40008][0x7d9],[TX][ext 0x2,0x0]
+hash mask     : x3
+Local inst    : 1
+dir_inst      : 1
+master_inst   : 1
+hv idx        : 53
+hv last r.inc : 42
+current inc   : 56
+hv status     : 0
+hv master     : 1
+open options  : dd
+grant_bits    : KJUSERNL KJUSEREX
+grant mode    : KJUSERNL  KJUSERCR  KJUSERCW  KJUSERPR  KJUSERPW  KJUSEREX
+count         : 1         0         0         0         0         1
+val_state     : KJUSERVS_NOVALUE
+valblk        : 0x7c5b5c0900000000e0690660ff7f0000 |[\i`
+access_inst   : 1
+vbreq_state   : 0
+state         : x0
+resp          : 0xd9e62208
+On Scan_q?    : N
+Total accesses: 92
+Imm.  accesses: 82
+Granted_locks : 1
+Cvting_locks  : 1
+value_block:  7c 5b 5c 09 00 00 00 00 e0 69 06 60 ff 7f 00 00
+GRANTED_Q :
+lp 0xd876a7f0 gl KJUSEREX rp 0xd9e62208 [0x40008][0x7d9],[TX][ext 0x2,0x0]
+  master 1 gl owner 0xda7233c0 possible pid 26843 xid 2B000-0001-0000057A bast 0 rseq 6 mseq 0 history 0x14951495
+  open opt KJUSERDEADLOCK
+CONVERT_Q:
+lp 0xd876ab70 gl KJUSERNL rl KJUSEREX rp 0xd9e62208 [0x40008][0x7d9],[TX][ext 0x2,0x0]
+  master 1 gl owner 0xda2cff40 possible pid 26847 xid 2E000-0001-00000347 bast 0 rseq 6 mseq 0 history 0x1495149a
+  convert opt KJUSERGETVALUE
+----------enqueue 0xd876a7f0------------------------
+lock version     : 6107
+Owner inst       : 1
+grant_level      : KJUSEREX
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62208
+procp            : 0xd9978428
+pid              : 26847
+proc version     : 238
+oprocp           : (nil)
+opid             : 26847
+group lock owner : 0xda7233c0
+possible pid     : 26843
+xid              : 2B000-0001-0000057A
+dd_time          : 0.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : N
+lock_state       : GRANTED
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERNOQUEUE KJUSERNODEADLOCKWAIT
+History          : 0x14951495
+Msg_Seq          : 0x0
+res_seq          : 6
+valblk           : 0x00000000ff7f000031000502ff7f0000 .1
+user session for deadlock lock 0xd876a7f0
+  sid: 416 ser: 1057 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 43 O/S info: user: oracle, term: UNKNOWN, ospid: 26843
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/4, ospid: 26842
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+  update lock1 set t1=t1+10 where t1=12
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[43.26843] on resource TX-00040008-000007D9
+
+*** 2011-06-21 22:27:00.029
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+----------enqueue 0xd876ab70------------------------
+lock version     : 3827
+Owner inst       : 1
+grant_level      : KJUSERNL
+req_level        : KJUSEREX
+bast_level       : KJUSERNL
+notify_func      : (nil)
+resp             : 0xd9e62208
+procp            : 0xd9978428
+pid              : 26847
+proc version     : 238
+oprocp           : (nil)
+opid             : 26847
+group lock owner : 0xda2cff40
+possible pid     : 26847
+xid              : 2E000-0001-00000347
+dd_time          : 5.0 secs
+dd_count         : 0
+timeout          : 0.0 secs
+On_timer_q?      : N
+On_dd_q?         : Y
+lock_state       : OPENING CONVERTING
+ast_flag         : 0x0
+Open Options     : KJUSERDEADLOCK
+Convert options  : KJUSERGETVALUE
+History          : 0x1495149a
+Msg_Seq          : 0x0
+res_seq          : 6
+valblk           : 0xa06e0660ff7f0000e06b0660ff7f0000 .n`k`
+user session for deadlock lock 0xd876ab70
+  sid: 16 ser: 851 audsid: 4294967295 user: 0/SYS
+    flags: (0x41) USR/- flags_idl: (0x1) BSY/-/-/-/-/-
+    flags2: (0x40008) -/-
+  pid: 46 O/S info: user: oracle, term: UNKNOWN, ospid: 26847
+    image: oracle@rh2.oracle.com (TNS V1-V3)
+  client details:
+    O/S info: user: oracle, term: pts/3, ospid: 26846
+    machine: rh2.oracle.com program: sqlplus@rh2.oracle.com (TNS V1-V3)
+    application name: sqlplus@rh2.oracle.com (TNS V1-V3), hash value=3660119738
+  current SQL:
+   update lock1 set t1=t1+10 where t1=11
+DUMP LOCAL BLOCKER: initiate state dump for DEADLOCK
+  possible owner[46.26847] on resource TX-00040008-000007D9
+
+*** 2011-06-21 22:27:00.031
+Submitting asynchronized dump request [28]. summary=[ges process stack dump (kjdglblkrdm1)].
+Global blockers dump end:-----------------------------------
+Global Wait-For-Graph(WFG) at ddTS[0.db] :
+BLOCKED 0xd876a630 5 wq 2 cvtops x1 TX 0x70015.0x81e(ext 0x2,0x0)[2B000-0001-0000057A] inst 1
+BLOCKER 0xd8767a10 5 wq 1 cvtops x28 TX 0x70015.0x81e(ext 0x2,0x0)[2E000-0001-00000347] inst 1
+BLOCKED 0xd876ab70 5 wq 2 cvtops x1 TX 0x40008.0x7d9(ext 0x2,0x0)[2E000-0001-00000347] inst 1
+BLOCKER 0xd876a7f0 5 wq 1 cvtops x28 TX 0x40008.0x7d9(ext 0x2,0x0)[2B000-0001-0000057A] inst 1
+
+Summary Of  Bugs Which Could Cause Deadlock In RAC Environment
+
+Applies to:
+
+Oracle Server - Enterprise Edition - Version: 9.2.0.4 to 11.1
+ Information in this document applies to any platform.
+Purpose
+
+The purpose of this Note is to explain various bugs filed specifically
+for the Dead lock errors in a RAC environment  against specific Oracle
+database versions (This Note covers bugs reported versions  above  9.2.0.4),
+and explain the symptoms of each bug, workarounds if any and  references the patch
+availability at the time this article was written.
+Scope
+
+This article is a consolidated effort to summarisze top bugs reported
+specifically for the Dead lock  error in RAC environment 
+(This Note  covers bugs reported versions above 9.2.0.4) which have been fixed.
+It  is directed towards Oracle Support Analysts and Oracle Customers to have
+an overview of various bugs logged for the same error .
+Summary Of Bugs Which Could Cause  Deadlock In RAC Environment
+
+Bugs Fixed in Version 9.2.0.5 
+
+Note 2941738.8 Bug 2941738   SMON processes may deadlock in RAC
+Note 2902030.8 Bug 2902030   Deadlocks in RAC not logged in alert log
+
+Bugs Fixed in Version 9.2.0.6 10.1.0.4 10.2.0.1
+
+Note 3268802.8 Bug 3268802 Additional diagnostics for deadlock in RAC environment
+Note.3646162.8 Bug 3646162 False deadlock (ORA-60) in a RAC environment / TM lock mode change
+Note.3627263.8 Bug 3627263 DEADLOCK OPS STARTUP Deadlock / hang during RAC instance startup
+
+
+
+
+Bugs Fixed in Version 9.2.0.7 10.2.0.1 
+
+Note.3992847.8 Bug 3992847 Deadlocks are not detected in rac when one node rebooted more recently than the rest
+ Note 3641819.8 Bug 3641819  Undetected deadlock possible in RAC
+ Note 3777178.8 Bug 3777178   TA / US enqueue deadlock during transaction recovery in RAC
+ Note 4220161.8 Bug 4220161 OPS Deadlock between SMON processes on different instances
+
+
+Bug Fixed in Version  9.2.0.8 10.2.0.1
+
+Note 4371923.8 Bug 4371923 SMON may deadlock on TX enqueue waits for updates to COL_USAGE$ in RAC
+
+Bug Fixed in  Version 10.2.0.2
+
+ Note 4579381.8 Bug 4579381  Deadlock on DC_USERS in RAC (ORA-4020) 
+
+
+Bug Fixed in Version 10.2.0.3
+
+Note 5012368.8 Bug 5012368 Undetected deadlock in RAC 
+ Note 4913415.8 Bug 4913415 Global deadlock not reported in RAC 
+
+
+Bug Fixed in Version 10.2.0.4
+
+ Note 5470095.8 Bug 5470095  Self deadlock should provide more targeted diagnostics
+ Note 5454831.8 Bug 5454831  deadlock possible on working set latches
+ Note 5334733.8 Bug 5334733  Deadlock resolution can be slow in RAC 
+ Note 4441119.8 Bug 4441119 Not enough information dumped when RAC detects a deadlock 
+ Note 5883112.8 Bug 5883112 False deadlock in RAC
+
+Bug Fixed in Version 10.2.0.5
+
+Note 6145177.8 Bug 6145177 Single resource deadlock with a zero DID
+ For summary of bugs which could cause deadlock in single instance see Note 554616.1
+
+Filed Under: Oracle, Oracle Lock锁机制, Oracle RAC Tagged With: block, deadlock, ENQUEUE, RAC
+Know Oracle Lock Mode
+2008/06/22 by Maclean Liu 暂无评论
+
+Value   Name(s)                    Table method (TM lock)
+    0   No lock                    n/a
+
+    1   Null lock (NL)             Used during some parallel DML operations (e.g. update) by
+                                   the pX slaves while the QC is holding an exclusive lock.
+
+    2   Sub-share (SS)             Until 9.2.0.5/6 "select for update"
+        Row-share (RS)             Since 9.2.0.1/2 used at opposite end of RI during DML
+                                   Lock table in row share mode
+                                   Lock table in share update mode
+
+    3   Sub-exclusive(SX)          Update (also "select for update" from 9.2.0.5/6)
+        Row-exclusive(RX)          Lock table in row exclusive mode
+                                   Since 11.1 used at opposite end of RI during DML
+
+    4   Share (S)                  Lock table in share mode
+                                   Can appear during parallel DML with id2 = 1, in the PX slave sessions
+                                   Common symptom of "foreign key locking" (missing index) problem
+
+    5   share sub exclusive (SSX)  Lock table in share row exclusive mode
+        share row exclusive (SRX)  Less common symptom of "foreign key locking" but likely to be more
+                                   frequent if the FK constraint is defined with "on delete cascade."
+
+    6   Exclusive (X)              Lock table in exclusive mode
+
+Summary of Locks Obtained by DML Statements
+SQL Statement 	Row Locks 	Table Lock Mode 	RS 	RX 	S 	SRX 	X
+SELECT … FROM table... 	— 	none 	Y 	Y 	Y 	Y 	Y
+INSERT INTO table … 	Yes 	SX 	Y 	Y 	N 	N 	N
+UPDATE table … 	Yes 	SX 	Y* 	Y* 	N 	N 	N
+MERGE INTO table … 	Yes 	SX 	Y 	Y 	N 	N 	N
+DELETE FROM table … 	Yes 	SX 	Y* 	Y* 	N 	N 	N
+SELECT … FROM table FOR UPDATE OF … 	Yes 	SX 	Y* 	Y* 	N 	N 	N
+LOCK TABLE table IN … 	— 						
+ROW SHARE MODE 		SS 	Y 	Y 	Y 	Y 	N
+ROW EXCLUSIVE MODE 		SX 	Y 	Y 	N 	N 	N
+SHARE MODE 		S 	Y 	N 	Y 	N 	N
+SHARE ROW EXCLUSIVE MODE 		SSX 	Y 	N 	N 	N 	N
+EXCLUSIVE MODE 		X 	N 	N 	N 	N 	N
+* Yes, if no conflicting row locks are held by another transaction. Otherwise, waits occur.
+
+ 
+mode 1: 	NL 		Null 				N
+mode 2: 	SS 	RS 	Row-S 	Row Share(d) 	SubShare 	Intended Share (IS) 	L
+mode 3: 	SX 	RX 	Row-X 	Row Exclusive 	SubExclusive 	Intended Exclusive (IX) 	R
+mode 4: 	S 		Share 				S
+mode 5: 	SSX 	SRX 	S/Row-X 	Share(d) Row Exclusive 	Share-SubExclusive 		C
+mode 6: 	X 		Exclusive 				X
+
+﻿
+compatible ? 	SS,RS 	SX,RX 	S 	SSX,SRX 	X
+SS,RS 	yes 	yes 	yes 	yes 	no
+SX,RX 	yes 	yes 	no 	no 	no
+S 	yes 	no 	yes 	no 	no
+SSX, SRX 	yes 	no 	no 	no 	no
+X 	no 	no 	no 	no 	no
+
+GES (global enqueue resources) enqueues having different values for the lock mode:
+
+#define KJUSERNL 0          /* no permissions */    (Null)
+#define KJUSERCR 1          /* concurrent read */   (Row-S (SS))
+#define KJUSERCW 2          /* concurrent write */  (Row-X (SX))
+#define KJUSERPR 3          /* protected read */    (Share)
+#define KJUSERPW 4          /* protected write */   (S/Row-X (SSX))
+#define KJUSEREX 5          /* exclusive access */  (Exclusive)
+
+Global Wait-For-Graph(WFG) at ddTS[0.db] :
+BLOCKED 0xd876a630 5 wq 2 cvtops x1 TX 0x70015.0x81e(ext 0x2,0x0)[2B000-0001-0000057A] inst 1
+BLOCKER 0xd8767a10 5 wq 1 cvtops x28 TX 0x70015.0x81e(ext 0x2,0x0)[2E000-0001-00000347] inst 1
+BLOCKED 0xd876ab70 5 wq 2 cvtops x1 TX 0x40008.0x7d9(ext 0x2,0x0)[2E000-0001-00000347] inst 1
+BLOCKER 0xd876a7f0 5 wq 1 cvtops x28 TX 0x40008.0x7d9(ext 0x2,0x0)[2B000-0001-0000057A] inst 1
+
+5 means KJUSEREX ,cross instance "TX mode 6" locks
+
 
 
 
