@@ -85,7 +85,8 @@ yiying- analysis
 	RAC object remastering ( Dynamic remastering )
 	http://www.hhutzler.de/blog/a-closer-look-into-drm-dynamic-resource-management/
 	
-	
+		CSS (Cluster Synchronization Services) Internals (INTERNAL ONLY) (Doc ID 305689.1)
+		
 	OS/SYSTEM
 	==========
 	FAQ: ORA-4030 [Video] [ID 399497.1]
