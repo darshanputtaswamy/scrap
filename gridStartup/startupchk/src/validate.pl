@@ -340,7 +340,7 @@ $diffresult = `diff $INPUTDIR/confignodelist $INPUTDIR/invnodelist`;
     foreach $host ( @nodenames){
     chop $host;
     
-    $result=`$SOURCEDIR/test_node_reachability.sh $host $INPUTDIR/tempnode.out`;
+    $result=`$SOURCEDIR/test_node_reachability.sh $host $INPUTDIR/tempnode.out $PINGLOGFIL`;
     print "$host"."\t";
 	if ($result == 0){
 	 print color("green"),"\t\t Reachable and Pinging !!!",color("reset");			} 

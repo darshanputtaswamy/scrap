@@ -2,7 +2,8 @@
 
   #Calling Format: test_node_reachability ["hostname"]  
   nodename=$1;
-  log=$2;
+  tempfile=$2;
+  logfile=$3
   el_node_ping=0
   platform=`uname -s`
   tnr_note=""
@@ -36,14 +37,14 @@
   #ping -c 1 $nodename >/dev/null 2>&1
   if [ $? -eq "0" ]; then 
     el_node_ping=1;
-    echo "V|REACHED|HOSTNAME|$nodetype|$nodename" >> $log
+    echo "V|REACHED|HOSTNAME|$nodetype|$nodename" >> $tempfile
 
   else
   
     tnr_log=`$PING -c 1 $PING_W_FLAG $nodename 2>&1 | tr -d '\r'`
     tnr_log=`echo -e "$tnr_log \n ${host_type} ${nodename} is not reachable so its being skipped from checking best practicing."`
     tnr_note="Node is not reachable"
-     echo "I|SKIPPED|HOSTNAME|$nodetype|$nodename" >> $log
+     echo "I|SKIPPED|HOSTNAME|$nodetype|$nodename" >> $tempfile
   fi
 
 
@@ -52,7 +53,7 @@
     test_node_reachability  "$nodename" "$tuser" "" "$host_type"
     if [[ "$host_type" = 'Infiniband switch'  && $el_node_ping -eq "1" ]]; then switchname=$nodename; fi
   else
-    if [ -e $LOGFIL ]; then echo "$tnr_log" >> logfile; fi
+    if [ -e $LOGFIL ]; then echo "$tnr_log" >> $logfile ; fi
   fi
 
   
