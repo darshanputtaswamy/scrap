@@ -2,9 +2,24 @@
 use Switch;
 use Term::ANSIColor;
 
+
 sub validate(){
 
 $OS=`/bin/uname | tr -d '\n' |tr -d '\r'`;
+
+
+
+###########################################################################################
+#  Get inventory and oratab location from the system 
+#
+###########################################################################################
+
+
+#
+#
+#
+
+
 if ( $OS eq 'Linux' ){
 
 
@@ -122,12 +137,14 @@ elsif ($OS eq  'AIX')  {
 
 
                                 }
-else  { print " $OS ERROR: Unknown Operating System"; exit (1);
+else  { print "$OS ERROR: Unknown Operating System"; exit (1);
 
                                 }
 
 
     $ORA_HOME_TMP = `cat  $ORATAB |grep  "+ASM"|grep -v "^#"|cut -d: -f2 | tr -d '\n' | tr -d '\r'`;
+
+	
     $ORA_CENINV_TMP = $ORAINV."/ContentsXML/inventory.xml";
 
 
@@ -150,11 +167,10 @@ else  { print " $OS ERROR: Unknown Operating System"; exit (1);
 
 
 
-
         if (-f $ORA_CENINV_SET ) {
         print "\nCentral Inventory  is set to $ORA_CENINV_SET \n ";
         }       else{
-        print "\n Central Inventory does not exists in $ORA_CENINV_SET .. exiting "; exit(1);
+        print "\n Central Inventory does not exists in $ORA_CENINV_SET .. exiting ";
         }
 
         if (-d $ORA_HOME_SET ) {
@@ -166,20 +182,37 @@ else  { print " $OS ERROR: Unknown Operating System"; exit (1);
 
 
 
-    $GICONFIGPARAMSFILE=$ORA_HOME_SET."/crs/install/crsconfig_params";
+$PARAMSHOME=$ORA_HOME_SET;
+
+print "\nOracle Home :   $PARAMSHOME ";
+`stat $PARAMSHOME`;
+if ($? == 0){
+`echo "V|ORACLE_HOME|$PARAMSHOME" >> $MASTERFIL `;
+$PARAMVERSION=`cat $PARAMSHOME/inventory/ContentsXML/comps.xml | grep 'COMP NAME="oracle.crs"' | cut -d' ' -f3 | cut -d= -f2|tr -d '\n' | tr -d '\r'`;
+print "\nClusterware version :   $PARAMVERSION ";
+`echo "V|ORACLE_VERSION|$PARAMVERSION" >> $MASTERFIL `;
+} else{
+`echo "I|ORACLE_HOME|$PARAMSHOME" >> $MASTERFIL `
+}
 
 
-        if ( -e $GICONFIGPARAMSFILE ){
+
+$GICONFIGPARAMSFILE=$ORA_HOME_SET."/crs/install/crsconfig_params";
+
+
+if ( -e $GICONFIGPARAMSFILE ){
 #       print "\n $GICONFIGPARAMSFILE config params exists ..." ;
-        } else {
-        print "\n $GICONFIGPARAMSFILE config params does not exists or is not accessible  "; 
-        }
+`echo "V|ORACLE_CRSCONFIGPARAMS|$GICONFIGPARAMSFILE" >> $MASTERFIL `;
+} else {
+print "\n $GICONFIGPARAMSFILE config params does not exists or is not accessible  "; 
+}
 
-        print "\n\n using $GICONFIGPARAMSFILE ...";
+print "\n\n using $GICONFIGPARAMSFILE ...";
 
 
 
 $PARAMSBASE=`cat $GICONFIGPARAMSFILE  | grep -o  'ORACLE_BASE=.*' | cut -f2- -d '='|tr -d '\n' | tr -d '\r'`;
+
 print "\n\nOracle Base :  $PARAMSBASE ";
 `stat $PARAMSBASE`;
 if ($? == 0){
@@ -191,20 +224,12 @@ if ($? == 0){
 
 
 
-$PARAMSHOME=`cat $GICONFIGPARAMSFILE | grep -o  'ORACLE_HOME=.*' | cut -f2- -d '='|tr -d '\n' | tr -d '\r'`;
-print "\nOracle Home :   $PARAMSHOME ";
-`stat $PARAMSHOME`;
-if ($? == 0)
-{
-`echo "V|ORACLE_HOME|$PARAMSHOME" >> $MASTERFIL `;
-} else
-{
-`echo "I|ORACLE_HOME|$PARAMSHOME" >> $MASTERFIL `
-}
+
 
 
 #===================================================================================================================
 $ORACLEOWNER=`cat $GICONFIGPARAMSFILE  | grep -o  'ORACLE_OWNER=.*' | cut -f2- -d '='|tr -d '\n' | tr -d '\r'`;
+
 print "\n\nOracle Software Owner \t:$ORACLEOWNER ";
 
 `id $ORACLEOWNER`;
@@ -226,11 +251,9 @@ print "\n\nOracle DBA Group     \t:$DBAGROUP ";
 if ($? == 0 ){
 print color("green"),"\t\t Exists !!!",color("reset");
 `echo "V|DBAGROUP|$DBAGROUP" >> $MASTERFIL `;
-
 } else {
 print color("red"),"\t\t Does not Exists !!!",color("reset");
 `echo "I|DBAGROUP|$DBAGROUP" >> $MASTERFIL `;
-
 }
 
 
@@ -245,11 +268,9 @@ print "\n\nOracle ASM Group     \t:$ASMGROUP ";
 if ($? == 0 ){
 print color("green"),"\t\t Exists !!!",color("reset");
 `echo "V|ASMGROUP|$ASMGROUP" >> $MASTERFIL `;
-
 } else {
 print color("red"),"\t\t Does not Exists !!!",color("reset");
 `echo "I|ASMGROUP|$ASMGROUP" >> $MASTERFIL `;
-
 }
 
 
@@ -260,60 +281,98 @@ print "\n\nList Of Nodes in Cluster :  $NODELIST \n\n";
 
 $empty=1;
 $i=1;
-`rm -f .nodelist `;
+`rm -f $INPUTDIR/confignodelist `;
 while ( $i == 1 || $empty == 1){
- $NODE=`cat /u01/app/12.1.0/grid/crs/install/crsconfig_params  |grep -o  'NODELIST=.*' | cut -f2- -d '=' | cut -d',' -f$i | tr -d '\n' | tr -d '\r'` ;
+ $NODE=`cat $GICONFIGPARAMSFILE  |grep -o  'NODELIST=.*' | cut -f2- -d '=' | cut -d',' -f$i | tr -d '\n' | tr -d '\r'` ;
 if (  $NODE eq '' ){  $empty=0; }
-else    {  `echo $NODE >> .nodelist` }
-$i=$i + 1;
+else    {  `echo $NODE >> $INPUTDIR/confignodelist`;$i=$i + 1;}
 }
 
 
 
-$exresult = `cat /u01/app/oraInventory/ContentsXML/inventory.xml | grep "NODE NAME" | sort | uniq | sed 's/[\"\<\/\>]//g'  | cut -d= -f2 > .invnode.txt`;
+$exresult = `cat $ORA_CENINV_SET | grep "NODE NAME" | sort | uniq | sed 's/[\"\<\/\>]//g'  | cut -d= -f2 > $INPUTDIR/invnodelist`;
 
 #if ($? ==0)    {
 #print "no issues ";
 #} else {
 #print "wrong in previous expression";
 #}
+#`chmod 666 $INPUTDIR/confignodelist $INPUTDIR/invnodelist`;
 
-$diffresult = `diff .nodelist .invnode.txt`;
+$diffresult = `diff $INPUTDIR/confignodelist $INPUTDIR/invnodelist`;
 
 
-        if ( $? == 0 && $diffresult eq '' )
+  if ( $? == 0 && $diffresult eq '' ) {
+		print "Clusternodes in Inventory matches crsconfig_params \n\n" ;
 
-        { print "Clusternodes in Inventory matches crsconfig_params \n\n" ;
-        } else {
-
+        } 
+		
+  else {
          print color("red"), "\nClusternodes in Inventory DO NOT matches crsconfig_params ",color("reset");
          print "\n Node List in Central Inventory" ;
          print "\n================================\n";
-
-         open(DATA, "<.invnode.txt") or die "Couldn't open file file.txt, $!";
-         while(<DATA>){
-           print "$_";
-          }
+         open(DATA, "<$INPUTDIR/invnodelist") or die "Couldn't open file file.txt, $!";
+			 while(<DATA>){
+			   print "$_";
+			}
 
         print "\n Node List in crsconfig_params" ;
-         print "\n================================\n";
+        print "\n================================\n";
+        open(DATA, "<$INPUTDIR/confignodelist") or die "Couldn't open file file.txt, $!";
+			 while(<DATA>){
+			   print "$_";
+			 }		  
+   }
 
-         open(DATA, "<.nodelist") or die "Couldn't open file file.txt, $!";
-         while(<DATA>){
-           print "$_";
-          }
+   
+     print "Using node from central inventory ";
 
-      }
+	
+#print "is it null $INPUTDIR";
+  #  open (FILE1, "<$INPUTDIR.'/.invnode.txt'") or die "Couldn't open file $INPUTDIR/.invnode.txt, $!";
+       open(DATA, "$INPUTDIR/invnodelist") or die "Couldn't open file file.txt, $!";
 
+    @nodenames = (<DATA>);  #each line of the file into an array
+    close DATA || die $!;
+  
+    `rm -rf $INPUTDIR/tempnode.out`; 
 
+    foreach $host ( @nodenames){
+    chop $host;
+    
+    $result=`$SOURCEDIR/test_node_reachability.sh $host $INPUTDIR/tempnode.out`;
+    print "$host"."\t";
+	if ($result == 0){
+	 print color("green"),"\t\t Reachable and Pinging !!!",color("reset");			} 
+	else{
+	print color("red"),"\t\t Not reachable Hence Skipped !!!",color("red");
+	}	
+	
+   }
+    
+    `cat $INPUTDIR/tempnode.out >> $MASTERFIL`;
+
+         
+	`cat $INPUTDIR/invnodelist| grep -v $localhost >> $HOSTLIST`;
+		
+		
+				
+			  
 #===================================================================================================================
 }
-(  $HOSTLIST,  $MASTERFIL) = @ARGV;
-print  $HOSTLIST."\n";
-print $MASTERFIL."\n";
 
+($SOURCEDIR,$OUTPUTDIR,$INPUTDIR) = @ARGV;
+$MASTERFIL=$INPUTDIR."/raccheck_env.out";
+$HOSTLIST=$INPUTDIR."/o_host_list.out";
+$PINGLOGFIL=$OUTPUTDIR."/log/pingtest.log";
+
+
+print $HOSTLIST."\n";
+print $MASTERFIL."\n";
+print $SOURCEDIR."\n"'
 
 print "\n-------------------------------------\n";
 print "\nValidating the server environmnet  \n ";
+
 validate();
 
