@@ -1,0 +1,13 @@
+
+
+cat crsconfig_params | grep -o  'ORACLE_OWNER=.*' | cut -f2- -d '='
+
+cat crsconfig_params | grep -o  'ORA_DBA_GROUP=.*' | cut -f2- -d '='
+
+cat crsconfig_params | grep -o  'ORA_ASM_GROUP=.*' | cut -f2- -d '='
+
+cat crsconfig_params | grep -o  'ORACLE_HOME=.*' | cut -f2- -d '='
+
+cat crsconfig_params | grep -o  'ORACLE_BASE=.*' | cut -f2- -d '='
+
+cat crsconfig_params | grep -o  'NODELIST=.*' | cut -f2- -d '='

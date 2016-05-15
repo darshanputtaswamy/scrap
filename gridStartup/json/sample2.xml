@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<WELLKNOWNISSUE>
+<CASES vesrion="Independent" platform="Independent" >
+  
+	<FAILEDPROCESS name="OHASD">
+	<ERROR id="1">
+	           <CONTENT log="ohasd" Clause="and">utopen:7:failed to open any OCR file/disk, errno=2, os err string=No such file or directory</CONTENT>
+			   <CONTENT log="ohasd" Clause="and">Error: PROCL-26: Error while accessing the physical storage Operating System error</CONTENT>
+			   <CONTENT log="ohasd" Clause="and">OHASD exiting; Could not init OLR</CONTENT>
+			   <RECOMMENDATION>Restore a good backup of OLR with "ocrconfig -local -restore ocr_backup_name".By default, 
+			                   OLR will be backed up to $GRID_HOME/cdata/$HOST/backup_$TIME_STAMP.olr once installation is complete.</RECOMMENDATION>
+	</ERROR>
+	<ERROR id="2">
+			   <CONTENT log="ohasd" Clause="and">clsclisten: Permission denied for (ADDRESS=(PROTOCOL=ipc)(KEY=procr_local_conn_0_PROL)) </CONTENT>
+			   <CONTENT log="ohasd" Clause="and">th_listen: CLSCLISTEN failed clsc_ret= 3, addr= [(ADDRESS=(PROTOCOL=ipc)(KEY=procr_local_conn_0_PROL))]		   </CONTENT>
+			   <RECOMMENDATION>In Grid Infrastructure cluster environment, ohasd related socket files should be owned by root, 
+			                   but in Oracle Restart environment, they should be owned by grid user, refer to "Network Socket File Location, 
+							   Ownership and Permission" section for example output.
+			   </RECOMMENDATION>
+	</ERROR>
+
+	</FAILEDPROCESS>
+	
+	<FAILEDPROCESS name="OHASD AGENTS">
+	<ERROR id="3">
+			   <CONTENT log="ohasd" Clause="and">Failed to start the agent process </CONTENT>
+			   
+			   <CONTENT log="ohasd" Clause="suband">	
+			   <SUBCONTENT log="ohasd" Clause="or">/bin/orarootagent</SUBCONTENT>
+			   <SUBCONTENT log="ohasd" Clause="or">/bin/cssdagent</SUBCONTENT>
+			   <SUBCONTENT log="ohasd" Clause="or">/bin/orarootagent</SUBCONTENT>
+			   </CONTENT>
+			   <CONTENT log="ohasd" Clause="and">Failed to start the agent process </CONTENT>
+			   <RECOMMENDATION>	1. Common causes of agent failure are that the log file or log directory for the agents don't have proper ownership or permission.
+								Refer to below section "Log File Location, Ownership and Permission" for general reference.
+								One example is "rootcrs.pl -patch/postpatch" wasn't executed while patching manually resulting in agent start failure
+			   </RECOMMENDATION>
+	</ERROR>
+	<ERROR id="4">
+			   <CONTENT log="ohasd" Clause="and">CRS-5828:Could not start agent</CONTENT>
+			    <CONTENT log="ohasd" Clause="suband">	
+			   <SUBCONTENT log="ohasd" Clause="or">/bin/orarootagent</SUBCONTENT>
+			   <SUBCONTENT log="ohasd" Clause="or">/bin/cssdagent</SUBCONTENT>
+			   <SUBCONTENT log="ohasd" Clause="or">/bin/orarootagent</SUBCONTENT>
+			   </CONTENT>
+			   <CONTENT log="ohasd" Clause="and"> Failed to start the agent </CONTENT>
+			   <CONTENT log="ohasd" Clause="and">no exe permission</CONTENT>
+			   <RECOMMENDATION>The solution is to compare agent binary with a "good" node, and restore a good copy.
+                               Agent may fail to start due to bug 11834289 with error "CRS-5802: Unable to start the agent process", 
+							   refer to Doc  1050908.1 Section "OHASD does not start"  #10 for details.
+			   </RECOMMENDATION>
+	</ERROR>
+	</FAILEDPROCESS>
+	<FAILEDPROCESS name="OCSSD">
+	<ERROR id="5">
+	           <CONTENT log="OCSSD" Clause="and">clssnmvDiskVerify: Successful discovery of 0 disks</CONTENT>
+			   <CONTENT log="OCSSD" Clause="and">clssnmvFindInitialConfigs: No voting files found</CONTENT>
+			   <RECOMMENDATION>2. Voting Disk is accessible
+                               cssd.bin discover voting disk with setting from GPnP profile, 
+							   if not enough voting disks can be identified, ocssd.bin will abort itself.
+			   </RECOMMENDATION>
+	</ERROR>
+	<ERROR id="6">
+			   <CONTENT log="OCSSD" Clause="and">has a disk HB, but no network HB, DHB has rcfg</CONTENT>
+			   <RECOMMENDATION>If there's connectivity issue on private network (including multicast is off).
+			   To validate network, please refer to note 1054902.1
+               Please also check if the network interface name is matching the gpnp profile definition ("gpnptool get") for cluster_interconnect
+ 			   if CSSD could not start after a network change.
+			   </RECOMMENDATION>
+	</ERROR>
+	<ERROR id="7">
+			   <CONTENT log="OCSSD" Clause="and" >clssscExit: CSSD signal 11 in thread skgxnmon</CONTENT>   
+			   <RECOMMENDATION>vendor clusterware is not fully up</RECOMMENDATION>
+	</ERROR>
+	</FAILEDPROCESS>
+	<FAILEDPROCESS name="GPNPD">
+	<ERROR id="8">
+	           <CONTENT log="gpnp" Clause="and">Result:(48)CLSGPNP_COMM_ERR. Failed to connect to call url</CONTENT>
+			   <RECOMMENDATION>Check Name Resolution ; please make sure current node is able to ping other node, and no firewall between them.</RECOMMENDATION>
+	</ERROR>
+	</FAILEDPROCESS>
+	
+</CASES>
+
+
+<CASES version="12cR1" platform="Independent">
+
+</CASES>
+<CASES version="12cR1" platfrom="AIX">
+
+</CASES>
+<CASES version="12cR1" platfrom="LINUX">
+
+</CASES>
+<CASES version="12cR1" platfrom="SOLARIS">
+
+</CASES>
+<CASES version="11gR2" platfrom="Independent">
+
+</CASES>
+<CASES version="11gR2" platfrom="AIX">
+
+</CASES>
+<CASES version="11gR2" platfrom="LINUX">
+
+</CASES>
+<CASES version="11gR2" platfrom="SOLARIS">
+
+</CASES>
+<CASES version="11gR1" platfrom="Independent">
+
+</CASES>
+<CASES version="11gR1" platfrom="AIX">
+
+</CASES>
+<CASES version="11gR1" platfrom="LINUX">
+
+</CASES>
+<CASES version="11gR1" platfrom="SOLARIS">
+
+</CASES>
+</WELLKNOWNISSUE>
