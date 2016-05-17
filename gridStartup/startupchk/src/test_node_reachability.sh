@@ -55,11 +55,4 @@
   else
     if [ -e $LOGFIL ]; then echo "$tnr_log" >> $logfile ; fi
   fi
-
-  
-  
-  if [[ $el_node_ping -eq "1" ]]; then 
-  return 0;
-  else 
-  return 1;
   

@@ -2,6 +2,56 @@
 use Switch;
 use Term::ANSIColor;
 
+sub test_node_reachability ()
+{
+  #Calling Format: test_node_reachability ["hostname"]  
+  $nodenames=@_;
+  
+  $el_node_ping=0;
+  $platform=`uname -s`;
+  $tnr_note="";
+
+  $PING_W_FLAG="";
+  if ( $platform eq "Linux" ){
+    $PING="/bin/ping";
+    $PING_W_FLAG="-w 5";
+  } else{
+    $PING="/usr/sbin/ping";
+  }
+
+ #First Validation: Pingable or not
+ #-------------------------------------------------------
+ 
+ 
+ foreach $node (@nodenames){
+  $el_node_ping=0;
+  if ( $platform eq "SunOS" ){
+      `$PING -s $node 5 5 >/dev/null 2>&1`;
+  } else if ( $platform eq "HP-UX" {
+      `$PING $node -n 5 -m 5 >/dev/null 2>&1`;
+  }else{
+      `$PING -c 1 $PING_W_FLAG $node >/dev/null 2>&1`;
+  }
+  
+  if ( $? -eq "0" ){
+    $el_node_ping=1; 
+	
+  }else{
+    $tnr_log=`$PING -c 1 $PING_W_FLAG $node 2>&1 | tr -d '\r'`;
+    $tnr_log=`echo -e "$tnr_log \n $host_type $node is not reachable so its being skipped from checking best practicing."`;
+    $tnr_note="Node is not reachable";
+	
+	if ( -e $PINGLOGFIL ) `echo "$tnr_log" >> $PINGLOGFIL` ; 
+	print "$tnr_log";
+	
+	}
+	
+	
+	
+	
+}
+
+}
 
 sub validate(){
 
@@ -290,14 +340,13 @@ else    {  `echo $NODE >> $INPUTDIR/confignodelist`;$i=$i + 1;}
 
 
 
-`cat $ORA_CENINV_SET | grep "NODE NAME" | sort | uniq | sed 's/[\"\<\/\>]//g'  | cut -d= -f2 > $INPUTDIR/invnodelist`;
+$exresult = `cat $ORA_CENINV_SET | grep "NODE NAME" | sort | uniq | sed 's/[\"\<\/\>]//g'  | cut -d= -f2 > $INPUTDIR/invnodelist`;
 
 #if ($? ==0)    {
 #print "no issues ";
 #} else {
 #print "wrong in previous expression";
 #}
-#`chmod 666 $INPUTDIR/confignodelist $INPUTDIR/invnodelist`;
 
 $diffresult = `diff $INPUTDIR/confignodelist $INPUTDIR/invnodelist`;
 
@@ -311,65 +360,45 @@ $diffresult = `diff $INPUTDIR/confignodelist $INPUTDIR/invnodelist`;
          print color("red"), "\nClusternodes in Inventory DO NOT matches crsconfig_params ",color("reset");
          print "\n Node List in Central Inventory" ;
          print "\n================================\n";
-         open(DATA, "<$INPUTDIR/invnodelist") or die "Couldn't open file file.txt, $!";
+         open(DATA, "<$INPUTDIR/.invnode.txt") or die "Couldn't open file file.txt, $!";
 			 while(<DATA>){
 			   print "$_";
 			}
 
         print "\n Node List in crsconfig_params" ;
-        print "\n================================\n";
-        open(DATA, "<$INPUTDIR/confignodelist") or die "Couldn't open file file.txt, $!";
+        print "\n================================\n"
+        open(DATA, "<$INPUTDIR/.nodelist") or die "Couldn't open file file.txt, $!";
 			 while(<DATA>){
 			   print "$_";
 			 }		  
    }
-
    
-     print "Using node from central inventory ";
+     $localhost=`hostname|cut -d"." -f1`  ; 
 
-	
-#print "is it null $INPUTDIR";
-  #  open (FILE1, "<$INPUTDIR.'/.invnode.txt'") or die "Couldn't open file $INPUTDIR/.invnode.txt, $!";
-       open(DATA, "$INPUTDIR/invnodelist") or die "Couldn't open file file.txt, $!";
-
-    @nodenames = (<DATA>);  #each line of the file into an array
-    close DATA || die $!;
-  
-    `rm -rf $INPUTDIR/tempnode.out`; 
-
-    foreach $host ( @nodenames){
-    chop $host;
-    
-    `$SOURCEDIR/test_node_reachability.sh $host $INPUTDIR/tempnode.out $PINGLOGFIL`;
-    
-     print "\n$host"."\t";
-
-     `cat $INPUTDIR/tempnode.out | grep "HOSTNAME" | grep $host | grep REACHED`;
-	if ($? == 0){
-	 print color("green"),"\t\t Reachable and Pinging !!!\n",color("reset");			} 
-	else{
-	print color("red"),"\t\t Not reachable Hence Skipped !!!\n",color("reset");
-	}	
-	
-   }
-    
-    `cat $INPUTDIR/tempnode.out >> $MASTERFIL`;
-
+    open (FILE1, "<$INPUTDIR/.invnode.txt") || die $!;
+    my @nodes = (<FILE1>);  #each line of the file into an array
+    close FILE1 || die $!;
+   
+    test_node_reachability (@nodes);
+     
+	 `cat .invnode.txt | grep -v $localhost >> $HOSTLIST`;
+	    print "Using node from central inventory ";
 		
-					
+		
+		
+		
 			  
 #===================================================================================================================
 }
 
-($SOURCEDIR,$OUTPUTDIR,$INPUTDIR) = @ARGV;
+($OUTPUTDIR $INPUTDIR) = @ARGV;
 $MASTERFIL=$INPUTDIR."/raccheck_env.out";
 $HOSTLIST=$INPUTDIR."/o_host_list.out";
-$PINGLOGFIL=$OUTPUTDIR."/log/pingtest.log";
-
+$PINGLOGFIL=$OUTPUTDIR."/log/pingtest.log"
 
 print $HOSTLIST."\n";
 print $MASTERFIL."\n";
-print $SOURCEDIR."\n";
+
 
 print "\n-------------------------------------\n";
 print "\nValidating the server environmnet  \n ";

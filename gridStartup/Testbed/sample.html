@@ -150,22 +150,21 @@ width: 86% ;
 <center><table border=0 width=100%><tr><td class="td_title" align="center">
  <h1>Oracle RAC Assessment Report<br><br>
 </td></tr></table></center>
-<H2>Cluster Summary</H2>
-<table border=1 summary="Cluster Summary" role="presentation">
-<tr><td class="td_column">Cluster Name</td><td> </td></tr>
-
-<tr><td class=td_column>OS/Kernel Version</td><td> HP-UX ITANIUM   1131  B.11.31</td></tr>
-<tr><td class="td_column">CRS Home - Version</td><td>/oracrs/oracle/11.2.0/grid - </td></tr>
-<tr><td class="td_column">DB Home - Version - Names</td><td></td></tr>
-<tr><td class="td_column">Number of nodes</td><td>1</td></tr>
-<tr><td class="td_column">&nbsp;&nbsp;&nbsp;Database Servers</td><td><a href="javascript:ShowHideRegion('dbservers_summary');">1</a><div id="dbservers_summary" style="DISPLAY: none"><br>&nbsp;&nbsp;t24dbho3<a href="javascript:ShowHideRegion('dbservers_summary');"> ..Hide</a></div></td></tr>
-<tr><td class="td_column">orachk Version</td><td>12.1.0.2.6_20160207</td></tr>
-<tr><td class="td_column">Collection</td><td>orachk_t24dbho3_042716_094132.zip</td></tr>
-<tr><td class="td_column">Duration</td><td>12 seconds</td></tr>
-<tr><td class="td_column">Executed by</td><td>ora11</td></tr>
-<tr><td class="td_column">Arguments</td><td>-a</td></tr>
-<tr><td class="td_column">Collection Date</td><td>27-Apr-2016 09:42:11</td></tr>
+<H2>Cluster Node Validation Summary</H2>
+<table border=1 summary=Cluster Summary role=presentation>
+<tr><td class=td_column>Collection Date</td><td></td></tr>
+<tr><td class=td_column>CRS Home</td><td>/u01/app/12.1.0/grid</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Version</td><td></td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS crsconfigparams</td><td>/u01/app/12.1.0/grid/crs/install/crsconfig_params</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Base</td><td>/u01/app/oracle</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Software Owner</td><td>oracle</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Software owner's group</td><td>oinstall</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>ASM Disk owner's group</td><td>oinstall</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>Number of nodes</td><td>2</td></tr>
+<tr><td class=td_column>LOCALHOST</td><td>host01</td><td style=background-color:green>REACHED</td></tr>
+<tr><td class=td_column>REMOTEHOST</td><td>host02</td><td style=background-color:#00FFFF>SKIPPED</td></tr>
 </table>
+
 
 
 <tbody><tr><td align="left">System Health Score is derived using following formula.<ul>
