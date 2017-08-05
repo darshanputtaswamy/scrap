@@ -1,0 +1,53 @@
+You can find the log of this install session at:
+ /u01/app/oraInventory/logs/cloneActions2017-06-14_06-55-04PM.log
+..................................................   5% Done.
+..................................................   10% Done.
+..................................................   15% Done.
+..................................................   20% Done.
+..................................................   25% Done.
+..................................................   30% Done.
+..................................................   35% Done.
+..................................................   40% Done.
+..................................................   45% Done.
+..................................................   50% Done.
+..................................................   55% Done.
+..................................................   60% Done.
+..................................................   65% Done.
+..................................................   70% Done.
+..................................................   75% Done.
+..................................................   80% Done.
+..................................................   85% Done.
+..........
+Copy files in progress.
+
+Copy files successful.
+
+Link binaries in progress.
+
+Link binaries successful.
+
+Setup files in progress.
+
+Setup files successful.
+
+Setup Inventory in progress.
+
+Setup Inventory successful.
+
+Finish Setup successful.
+The cloning of OraDb12102_home1 was successful.
+Please check '/u01/app/oraInventory/logs/cloneActions2017-06-14_06-55-04PM.log' for more details.
+
+Setup Oracle Base in progress.
+
+Setup Oracle Base successful.
+..................................................   95% Done.
+
+As a root user, execute the following script(s):
+	1. /u01/app/oracle/product/12.1.0.2/dbhome_1/root.sh
+
+Execute /u01/app/oracle/product/12.1.0.2/dbhome_1/root.sh on the following nodes: 
+[odie2]
+
+
+..................................................   100% Done.

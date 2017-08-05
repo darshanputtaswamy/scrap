@@ -1,0 +1,47 @@
+database_running
+2|+DATA/_MGMTDB/FD9AC0F7C36E4438E043B6A9E80A24D5/DATAFILE/system.394.909074445
+4|+DATA/_MGMTDB/FD9AC0F7C36E4438E043B6A9E80A24D5/DATAFILE/sysaux.395.909074447
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+ORACLE instance started.
+Total System Global Area  788529152 bytes
+Fixed Size		    2929352 bytes
+Variable Size		  314576184 bytes
+Database Buffers	  465567744 bytes
+Redo Buffers		    5455872 bytes
+Database mounted.
+Database opened.
+	 1 oracle@odie1 (PMON)																	 49437
+	 2 oracle@odie1 (VKTM)																	 24948
+	 3 oracle@odie1 (MMAN)																	  3453
+	 4 oracle@odie1 (DIAG)																	 57917
+	 5 oracle@odie1 (VKRM)																	 37468
+	 6 oracle@odie1 (DBW0)																	 48408
+	 7 oracle@odie1 (LG00)																	 23811
+	 8 oracle@odie1 (LG01)																	 30638
+	 9 oracle@odie1 (PXMN)																	 23848
+	10 oracle@odie1 (ASMB)																	 38738
+	11 oracle@odie1 (MMNL)																	 22233
+	12 oracle@odie1 (MARK)																	 52051
+	14 oracle@odie1 (OCF0)																	 10631
+	15 oracle@odie1 (O000)																	 57355
+	16 oracle@odie1 (O001)																	 48580
+	17 oracle@odie1 (SMCO)																	 23561
+	18 oracle@odie1 (W001)																	 39661
+       237 sqlplus@odie1 (TNS V1-V3)																 10398 SYS
+       238 oracle@odie1 (PSP0)																	 26469
+       239 oracle@odie1 (GEN0)																	 23871
+       240 oracle@odie1 (LGWR)																	 22108
+       241 oracle@odie1 (DBRM)																	 27228
+       242 oracle@odie1 (DIA0)																	 57534
+       243 oracle@odie1 (CKPT)																	  6996
+       244 oracle@odie1 (SMON)																	 54476
+       245 oracle@odie1 (LREG)																	  1702
+       246 oracle@odie1 (RBAL)																	  6703
+       247 oracle@odie1 (MMON)																	    96
+       250 oracle@odie1 (TMON)																	 56626
+       251 oracle@odie1 (TT00)																	 46772
+       252 oracle@odie1 (W000)																	 30276
+       255 oracle@odie1 (CJQ0)																	 41773
+AL16UTF16

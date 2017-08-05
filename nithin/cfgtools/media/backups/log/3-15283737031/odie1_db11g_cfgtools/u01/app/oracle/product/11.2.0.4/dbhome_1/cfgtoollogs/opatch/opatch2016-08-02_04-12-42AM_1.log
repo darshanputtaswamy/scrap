@@ -1,0 +1,28 @@
+[Aug 2, 2016 4:12:42 AM]     PREREQ session
+[Aug 2, 2016 4:12:42 AM]     OPatch invoked as follows: 'prereq CheckConflictAgainstOH -ph /tmp/oakpatch/db/11.2.0.4.0/22502456/22646198/22502456 -oh /u01/app/oracle/product/11.2.0.4/dbhome_1 -invPtrLoc /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc '
+[Aug 2, 2016 4:12:42 AM]     Could not get central inventory using NGOUI; oracle.sysman.nextgen.utils.NextGenInventoryUtil
+[Aug 2, 2016 4:12:42 AM]     OUI-67077:
+                             Oracle Home       : /u01/app/oracle/product/11.2.0.4/dbhome_1
+                             Central Inventory : /u01/app/oraInventory
+                                from           : /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc
+                             OPatch version    : 11.2.0.3.12
+                             OUI version       : 11.2.0.4.0
+                             OUI location      : /u01/app/oracle/product/11.2.0.4/dbhome_1/oui
+                             Log file location : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2016-08-02_04-12-42AM_1.log
+[Aug 2, 2016 4:12:42 AM]     Patch history file: /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Aug 2, 2016 4:12:42 AM]     Invoking prereq "checkconflictagainstoh"
+[Aug 2, 2016 4:12:42 AM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/22502456/22646198/22502456/README.html" in the patch directory.
+[Aug 2, 2016 4:12:42 AM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/22502456/22646198/22502456/README.txt" in the patch directory.
+[Aug 2, 2016 4:12:42 AM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/22502456/22646198/22502456/patchmd.xml" in the patch directory.
+[Aug 2, 2016 4:12:43 AM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 7 (MB)
+[Aug 2, 2016 4:12:43 AM]     [OPSR-MEMORY-2] : before loading cooked one off : 12 (MB)
+[Aug 2, 2016 4:12:43 AM]     [OPSR-MEMORY-3] : after loading rawOneOffList and before loading minipatch list in cooked one off : 8 (MB)
+[Aug 2, 2016 4:12:43 AM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 8 (MB)
+[Aug 2, 2016 4:12:43 AM]     checkConflictAgainstOHWithDetail start -> Tue Aug 02 04:12:43 UTC 2016
+[Aug 2, 2016 4:12:43 AM]     Tue Aug 02 04:12:43 UTC 2016
+[Aug 2, 2016 4:12:44 AM]     Adapter can go list: 22502456
+[Aug 2, 2016 4:12:44 AM]     Adapter not need list:
+[Aug 2, 2016 4:12:44 AM]     Adapter auto-rollback list:
+[Aug 2, 2016 4:12:44 AM]     checkConflictAgainstOHWithDetail end -> Tue Aug 02 04:12:44 UTC 2016
+[Aug 2, 2016 4:12:44 AM]     Prereq "checkConflictAgainstOH" passed.
+[Aug 2, 2016 4:12:44 AM]     Finishing PrereqSession at Tue Aug 02 04:12:44 UTC 2016

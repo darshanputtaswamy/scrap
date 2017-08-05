@@ -1,3 +1,4 @@
+Qwertorcl
 
 ==================================================================================================================================
 DATA COLLECTION   INDEX 
@@ -160,41 +161,43 @@ STORAGE DATA COLLECTION ASM
 
 				ASM alert logs
 
-				1. Please execute the next commands and show me the output (from each RAC node)
-				==================================================================
-				$> cat /etc/*release
-				$> uname -a
-				$> rpm -qa |grep oracleasm
-				$> df -ha
-				$> ls -l /dev/oracleasm/disks
-				==================================================================
+1. Please execute the next commands and show me the output (from each RAC node)
+==================================================================
+$> cat /etc/*release
+$> uname -a
+$> rpm -qa |grep oracleasm
+$> df -ha
+$> ls -l /dev/oracleasm/disks
+==================================================================
 
-				2. Check the discovery path from each node::
-				==================================================================
+2. Check the discovery path from each node::
+==================================================================
 
-				$> /etc/init.d/oracleasm status
-				$> /usr/sbin/oracleasm-discover
-				$> /usr/sbin/oracleasm-discover 'ORCL:*'
-				==================================================================
+$> /etc/init.d/oracleasm status
+$> /usr/sbin/oracleasm-discover
+$> /usr/sbin/oracleasm-discover 'ORCL:*'
+==================================================================
 
-				3. Please check if the ASMLIB devices can be accessed from each RAC node
-				==================================================================
-				$> /etc/init.d/oracleasm scandisks
-				$> /etc/init.d/oracleasm listdisks
-				$> /etc/init.d/oracleasm querydisk -p <each disk from previous output>
-				==================================================================
+3. Please check if the ASMLIB devices can be accessed from each RAC node
+==================================================================
+$> /etc/init.d/oracleasm scandisks
+$> /etc/init.d/oracleasm listdisks
+$> /etc/init.d/oracleasm querydisk -p <each disk from previous output>
+$> /etc/init.d/oracleasm querydisk -d <each disk from previous output>
 
-				4. Upload the next files from each RAC node:
+==================================================================
 
-				=)> /var/log/messages
-				=)> /etc/sysconfig/oracleasm
+4. Upload the next files from each RAC node:
 
-				5. Please show me the partition table from each node:
-				==================================================================
-				$> cat /proc/partitions
-				==================================================================
+=)> /var/log/messages
+=)> /etc/sysconfig/oracleasm
 
-				Thank you
+5. Please show me the partition table from each node:
+==================================================================
+$> cat /proc/partitions
+==================================================================
+
+Thank you
 
 
 
@@ -232,6 +235,7 @@ STORAGE DATA COLLECTION DNFS
 						Please follow the first method and use second method for debug/rediscovery
 						purposes.
 
+						
 =========================================================================================================================================================
 ########################################################################################################################################################
 =========================================================================================================================================================
@@ -279,21 +283,22 @@ The crs log files using TFA:
 PLease upload the following information
 Please upload diagcollection logs / TFA logs from all the nodes.
 
-1) $GI_HOME/tfa/bin/tfactl diagcollect -from <date/time> -to <date/time>
+1) $GI_HOME/bin/tfactl diagcollect -from <date/time> -to <date/time>
 where <date/time> is in "MMM/dd/yyyy hh:mm:ss" format; for example, "Jul/1/2014 21:00:00"
 Specify the "from time" to be 4 hours before and the "to time" to be 4 hours after the time of error.
 The TFA Collector will extract and collect the trace and log information written between the "from time" and "to time" from files.
 
-Issue "$GI_HOME/tfa/bin/tfactl diagcollect -h" to get the help page for tfactl command.
+Issue "$GI_HOME/bin/tfactl diagcollect -h" to get the help page for tfactl command.
+
 
 Upload all files that TFA collector creates to SR.
+Note 1513912.1 - TFA Collector - Tool for Enhanced Diagnostic Gathering and start TFA
+
+
 
 CRS 10gR2/ 11gR1/ 11gR2 Diagnostic Collection Guide [Document 330358.1]
 * For 11gR2
         o Execute <GRID_HOME>/bin/diagcollection.sh as Root user
-
-Note 1513912.1 - TFA Collector - Tool for Enhanced Diagnostic Gathering and start TFA
-
 
 2) Upload AWR reports from all instances of the problem database to SR.
       The time period for AWR report should not be greater than 1 hour and preferably 30 minutes during the time of performance problem.
@@ -304,7 +309,7 @@ Note 1513912.1 - TFA Collector - Tool for Enhanced Diagnostic Gathering and star
      ASH report can cover shorter time period like 10 minutes, so upload multiple ASH reports covering 10 minutes just prior to the hang and just after the hang.
 
 
-4) Upload ADM reports from all instances of the problem database to SR.
+4) Upload ADDM reports from all instances of the problem database to SR.
 
 
 5) Set your environment to the GI home.
@@ -428,7 +433,7 @@ OS DATA COLLECTION
 				++++++++++++++++++++++++++++++++++
 				ASMCMD TRACE
 				
-				$ strace -aeft -o /tmp/asmcmd.log asmcmd
+				$ strace -aefT -o /tmp/asmcmd.log asmcmd
 				ASMCMD> -- run the command
 
 
@@ -440,12 +445,54 @@ OS DATA COLLECTION
 				
 				
 				
+	
+==============================
+DATABASE LOGS AND ASM LOGS
+===============================
+1]  Provide instance alert_{$ORACLE_SID}.log From ALL THE NODES  
+
+2]  Provide instance alert_+ASM<n>.log From ALL THE NODES  
+
+3]  Other modified traces from  ALL Problem Database instance of ALL the nodes
+
+   - lmon, lmd*, lms*, ckpt, lgwr, lck*, dia*, lmhb(11g only), and all others traces that are modified around incident time.
+ A quick way to identify all traces and tar them up is to use incident time with the following example:
+
+  $ grep "2010-09-02 03" *.trc | awk -F: '{print $1}' | sort -u |xargs tar cvf trace.`hostname`.`date +%Y%m%d%H%M%S`.tar
+  $ gzip trace*.tar
+
+   For 11g+, execute the command in ${ORACLE_BASE}/diag/rdbms/$DBNAME/${ORACLE_SID}/trace to identify the list of files
+
+4]   Other modified traces from  ALL Problem Database instance of ALL the nodes
+
+   - lmon, lmd*, lms*, ckpt, lgwr, lck*, dia*, lmhb(11g only), and all others traces that are modified around incident time.
+ A quick way to identify all traces and tar them up is to use incident time with the following example:
+
+  $ grep "2010-09-02 03" *.trc | awk -F: '{print $1}' | sort -u |xargs tar cvf trace.`hostname`.`date +%Y%m%d%H%M%S`.tar
+  $ gzip trace*.tar
+
+   For 11g+, execute the command in ${ORACLE_BASE}/diag/asm/+asm<>/+ASM<>/trace to identify the list of files
+
+   
+5] Incident files/packages in alert.log at time of the incident
+ 
+       <ORACLE_BASE>/rdbms/<DBNAME>/<DBINSTANCE>/incident/*
+	    ${ORACLE_BASE}/diag/asm/+asm<>/+ASM<>/incident/*
+
+6] OSwatcher logs Covering the issue time .			
+
+7] Clusterware logs 
+      CRS 10gR2/ 11gR1/ 11gR2 Diagnostic Collection Guide [Document 330358.1]
+* For 11gR2
+        o Execute <GRID_HOME>/bin/diagcollection.sh as Root user
+
 				
 				
+			
 				
-				
-				
-				
+		SQL> ALTER SYSTEM START ROLLING PATCH;
+
+		
 				
 				
 				
@@ -497,12 +544,6 @@ $ setenv SRVM_TRACE_LEVEL 2 (or "export SRVM_TACE_LEVEL=2")
 
 $./addNode.sh -debug -logLevel finest "CLUSTER_NEW_NODES={node3}" "CLUSTER_NEW_VIRTUAL_HOSTNAMES={node3-v}"		
 				
-
-				
-				
-
-				
-				
 ============
 
 =================
@@ -514,7 +555,25 @@ from db home oradim -ex oracle registry get OLR_LOC
 2]. Windows Events in txt format that covers incident timeframe:
   Start => All Programs => Administrative Tools => Event Viewer, choose "Application",  "Save Log File As" .txt format, then repeat same steps for "System" and "Secutiry" so you have three saved .txt files
 
-  
+) Please provide me with the settings for the following registry keys from -all- nodes:  
+
+\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems\
+\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment\
+
+- open regedit and navigate to each of the above paths in turn.
+- right click and select "Export"
+
+- enter "File Name" and select "text" as "Save as Type". Do NOT save it as a .reg file! Do NOT upload .reg files to this SR! Upload only text exports to this SR.
+Repeat above for all of the above registry keys.
+
+
+
+2) Please provide the output of "tasklist" from all nodes
+
+3) Please upload the Application and System Event logs from *ALL* nodes.
+Note:  The Event Logs should be saved as TEXT files.  To do this, right click on the appropriate log in Event Viewer and choose 'Save Log File As'
+In the 'Save as type'  box, choose TEXT. Simply specifying a file suffix of TEXT or TXT will not save the files in TEXT format.
+You must ensure that you choose the correct TYPE in the "Save as Type" box. 
   
   
   
@@ -588,3 +647,173 @@ $ acfsdriverstate -orahome $GRID_HOME installed
 $ acfsdriverstate -orahome $GRID_HOME loaded
 
 ===========================================================================================
+
+truss -eaf -p -o /tmp/rootupgrade.truss <NEW_GI_HOME>/rootupgrade.sh
+truss -eaf -p -o /tmp/ohasd.truss 
+
+script /tmp/rootupgrade
+bash -x   <NEW_GI_HOME>/rootupgrade.sh
+sqlplus / as sysasm
+ 
+
+
+while true; do pid=$(pgrep 'gipcd.bin' | head -1); if [[ -n "$pid" ]]; then strace  -s 2000 -o /tmp/gipcstarce.log -vvtf -p "$pid"; break; fi; done &
+
+
+while true; do pid=$(pgrep 'oraagent.bin' | head -1); if [[ -n "$pid" ]]; then strace  -s 2000 -o /tmp/ohasdoraagentstarce.log -vvtf -p "$pid"; break; fi; done &
+
+
+while true; do pid=$(pgrep 'ocssd.bin' | head -1); if [[ -n "$pid" ]]; then truss -eaf -p -o /tmp/ohasdstace.log "$pid"; break; fi; done
+while true; do pid=$(pgrep 'oraagent.bin' | head -1); if [[ -n "$pid" ]]; then truss -eaf -p -o /tmp/ohasdoraagentstace.log "$pid"; break; fi; done
+
+while true; do pid=$(ps -ef |grep -v grep | grep 'ohasd.bin' | awk '{print $2}'); if [[ -n "$pid" ]]; then truss -eaf -o /tmp/ohasdstace.log -p "$pid"; break; fi; done
+while true; do pid=$(ps -ef |grep -v grep | grep 'oraagent.bin' | awk '{print $2}'); if [[ -n "$pid" ]]; then truss -eaf -o /tmp/ohasdoraagentstace.log -p "$pid"; break; fi; done
+
+
+
+ ps -ef | grep ocssd.bin | head -1 | awk '{print $2}'
+ 
+while true; do pid=$( ps -ef | grep 'ocssd.bin' | head -1 | awk '{print $2}'); if [[ -n "$pid" ]]; then truss -eaf -o /tmp/ocssdtruss -p "$pid"; break; fi; done
+
+
+Please upload the InstallActions.* files  (log, err, out) from your latest install attempt.
+Logs can be found in <ORACLE_HOME>/cfgtoollogs/oui
+
+<ORACLE_HOME>/cfgtoollogs/oui/InstallActions<timestamp>.log
+<ORACLE_HOME>/cfgtoollogs/oui/oraInstall<timestamp>.out
+<ORACLE_HOME>/cfgtoollogs/oui/oraInstall<timestamp>.err
+
+
+<GI_HOME>/bin/kfod op=patchlvl
+<GI_HOME>/bin/kfod op=patches
+<GI_HOME>/cfgtoollogs/opatchauto/<patch>/
+<GI_HOME>/cfgtoollogs/opatch/ and
+<DB_HOME>/cfgtoollogs/opatch/
+
+
+truss -eafo /tmp/start_truss.out crsctl start crs
+truss -rall -wall -eafo /tmp/startup 
+truss -eafo /tmp/sqltruss sqlplus / as sysdba 
+
+truss -eafo /tmp/ocrconfig.out  
+
+
+pargs -e 8091
+
+
+
+
+-------------------------------------
+Bug 11866171 - Linux: Enable Crashdump when rebooting the machine (Doc ID 11866171.8)
+
+This bug fix is to enable OS crash dumps during the clusterware reboots on Linux platforms. 
+ 
+Once the patch is applied, please run the following commands as root user to turn on the crash dump:
+ 
+ crsctl modify type ora.cssd.type -attr "ATTRIBUTE=REBOOT_OPTS, TYPE=string, DEFAULT_VALUE=,FLAGS=CONFIG" -init
+ crsctl modify type ora.cssdmonitor.type -attr "ATTRIBUTE=REBOOT_OPTS, TYPE=string, DEFAULT_VALUE=,FLAGS=CONFIG" -init
+ crsctl modify res ora.cssd -attr "REBOOT_OPTS=CRASHDUMP" -init
+ crsctl modify res ora.cssdmonitor -attr "REBOOT_OPTS=CRASHDUMP" -init
+ 
+To disable the crash dump, as root user:
+ crsctl modify res ora.cssd -attr "REBOOT_OPTS=" -init
+ crsctl modify res ora.cssdmonitor -attr "REBOOT_OPTS=" -init
+ 
+Note that this needs to be done on all nodes, also ensure OS kdump works fine:
+ 
+note 452067.1 - How to Configure "kdump" on Oracle Linux 5 
+note 1507025.1 - How to Configure "kdump" on Oracle Linux 6 
+ 
+For AIX, use:
+ 
+note 17208793.8 - Producing an AIX system crash dumps on clusterware initiated reboots
+
+--------------------------------------------------------------------
+
+
+
+	Location of runInstaller(OUI) log/trace (Doc ID 1629698.1)
+
+
+
+Additional tracing produced in the OUI log file can be accomplished using:
+
+./runInstaller -logLevel detailed /-J-DTRACING.ENABLED=true -J-DTRACING.LEVEL=2/
+
+Run as below
+
+script /tmp/oui_tracing.txt
+
+./runInstaller -logLevel detailed /-J-DTRACING.ENABLED=true -J-DTRACING.LEVEL=2/
+exit
+
+
+Please Upload
+
+1. /tmp/oui_tracing.txt,<<Central_inv_logs>>/logs,DBCA log folder
+2. mount option of NFS4
+
+
+Refer How to trace OUI (Doc ID 269837.1).
+
+
+
+
+
+Please upload the output of the following:
+$ opatch prereq CheckComponents -ph $PBASE/<PATCHNUMBER>  -oh <GRID_HOME> 
+
+$ opatch prereq CheckApplicable -ph $PBASE/<PATCHNUMBER>  -oh <GRID_HOME> 
+
+$ opatch prereq CheckConflictAgainstOH -ph $PBASE/<PATCHNUMBER>  -oh <GRID_HOME> 
+
+$ opatch prereq CheckComponents -ph $PBASE/<PATCHNUMBER>  -oh <GRID_HOME>
+
+$ opatch prereq CheckApplicable -ph $PBASE/<PATCHNUMBER>  -oh <GRID_HOME>
+
+$ opatch prereq CheckConflictAgainstOH -ph $PBASE/<PATCHNUMBER>  -oh <GRID_HOME>
+
+-----------------------------------------------------------------------------------------
+
+
+
+ocrdump -local -stdout | grep -A3 SYSTEM.css | grep GROUP
+
+truss -rall -wall  -eafo /tmp/runinstaller.out  ./runInstaller -debug -J-DTRACING.ENABLED=true -J-DTRACING.LEVEL=2 -J-DSRVM_TRACE_LEVEL=2 -J-DFULLTRACE
+
+lfsdiag.sql collection
+
+
+
+
+
+
+
+
+
+
+
+
+bash-4.2# cat  prostack.sh 
+#!/bin/sh 
+ 
+if [ $# -ne 1 ] 
+then 
+   echo "Usage procstack  <processid>, Enter OCSSD process id"; 
+   exit; 
+fi 
+ 
+a=1 
+rm -rf CSSD_$1.stacktrace.txt 
+rm -rf CSSD_$1.stacktracerr.txt 
+ 
+while [ $a -le 10000 ] 
+do 
+   echo "Iteration = $a" >> CSSD_$1.stacktrace.txt 
+   DATE=`date` 
+   echo "Time stamp - $DATE" >> CSSD_$1.stacktrace.txt 
+   echo "PROCESS STACK OF CSSD threads :-" >> CSSD_$1.stacktrace.txt 
+   procstack $1 >> CSSD_$1.stacktrace 2> CSSD_$1.stacktracerr.txt 
+   a=`expr $a + 1` 
+  sleep 5; 
+done 

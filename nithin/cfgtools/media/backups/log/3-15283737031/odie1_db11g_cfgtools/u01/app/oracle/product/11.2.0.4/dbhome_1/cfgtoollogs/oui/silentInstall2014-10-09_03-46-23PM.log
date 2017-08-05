@@ -1,0 +1,10 @@
+WARNING: 10/9/14 3:47:46 PM CDT: silentInstall2014-10-09_03-46-23PM.log
+WARNING: 10/9/14 3:47:46 PM CDT: 
+The following configuration scripts need to be executed as the "root" user in each new cluster node. Each script in the list below is followed by a list of nodes.
+/u01/app/oracle/product/11.2.0.4/dbhome_1/root.sh #On nodes odie1
+To execute the configuration scripts:
+    1. Open a terminal window
+    2. Log in as "root"
+    3. Run the scripts in each cluster node
+    
+10/9/14 3:47:46 PM CDT: The cloning of OraDb11204_home1 was successful.

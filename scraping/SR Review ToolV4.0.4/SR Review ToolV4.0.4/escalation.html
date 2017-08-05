@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Escalation Detailed Report</title>
+	<meta http-equiv="cache-control" content="no-cache, no-store">
+	<meta http-equiv='expires' content='0'>
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<script src="jquery.js"></script>
+	<script src="escsrReport.js?version=11334"></script>
+
+	 <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+	 <script type="text/javascript" src="jquery-1.3.2.js" ></script>
+        <script type="text/javascript" src="jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+    <script type="text/javascript" src="adler32cs.js"></script>
+    <script type="text/javascript" src="FileSaver.js"></script>
+    <script type="text/javascript" src="BlobBuilder.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+	<script type="text/javascript" src="vv.js"></script>
+	<script type="text/javascript" src="jquery.TableCSVExport.js"></script>
+
+    <script type="text/javascript" src="js/basic.js"></script>
+	<script type="text/javascript" src="html2canvas.js"></script>
+	<script type="text/javascript" src="jspdf.debug.js"></script>
+	<link rel="stylesheet" href="escReport.css"></link>
+	<script type="text/javascript">
+   </script>
+
+
+</head>
+<body id='target'>
+<table>
+<b>&nbsp;&nbsp;Note 1: Tool provides accurate information for Open SR's & SR's with Manager Request and Level 1 Escalation SR(s).</b>
+<b><br>Note 2: Occasionally you may see blank values on the right division / Undefined value for "Escalated After # Days" Field. This is because Escalation Review process is terminated in-between , as the scroll-position was interpreted wrongly from audit pop-up. //Please review it manually//</b>
+</table>
+<!--<table class="topbord" cellspacing="0" width="100%">
+<thead>
+<tr>
+<th class="topbordthval">Escalation Review process is terminated in-between , as the scroll-position was interpreted wrongly from audit pop up because of Field:SR Description Modifications in audit pop-up//Please review it manually// Also close this report & Respective SR window before doing another Review</th>
+</tr>
+</thead>
+</table>-->
+
+<table class="ebdetailsheader bordered" id = "ebdetailsheader" cellspacing="0" width="100%">
+<thead>
+<tr class="ebdetailsheaderrow1">
+<th class="title" id="titlepdf"></th>
+<th class="priority" id="pioritypdf"></th>
+<th class="thaccount" id="accountpdf"></th>
+<th class="CAGE" id="compsubpdf"></th>
+</tr>
+</thead>
+</table>
+ <div style="float: left; width: 49%;">
+			
+			<table class="ebdetails bordered" id = "ebdetails" width="99%" cellspacing="0">
+			<thead>
+				<tr><th>General Information</th></tr>
+			</thead>
+			<tbody>
+				
+				<tr class="esc_trproductline">
+				<td>Product Line</td>
+				<td class="esc_tdproductline"></td>
+				</tr>
+				<tr class="esc_trproduct">
+				<td>Product</td>
+				<td class="esc_tdproduct"></td>
+				</tr>
+				
+				<tr class="esc_trcreated">
+				<td>SR: Created On</td>
+				<td class="esc_tdcreated"></td>
+				</tr>
+							
+				
+				<tr class="esc_trhighsev">
+				<td>Highest Severity</td>
+				<td class="esc_tdhighsev"></td>
+				</tr>
+				
+				
+				<tr class="trcurstatus">
+				<td>SR: Current Status /Sub-Status</td>
+				<td class="tdcurstatus"></td>
+				</tr>
+				
+					
+				<tr class="esc_tr247">
+				<td>24/7 Flag Set Anytime?</td>
+				<td class="esc_td247"></td>
+				</tr>
+				
+				<tr class="esc_tricq">
+				<td>IC /Q?</td>
+				<td class="esc_tdicq"></td>
+				</tr>
+				
+				
+				
+				
+				<!--<tr class="trescstatus">
+				<td>SR: Ever Escalated?</td>
+				<td class="tdescstatus"></td>
+				</tr>
+					<tr class="trseveritychange">
+				<td>Severity got changed after Escalation / Manager Request?</td>
+				<td class="tdseveritychange"></td>
+				</tr>-->
+			
+				
+				
+				
+				
+				
+				
+				
+			</tbody>
+			</table>
+			
+	<table class="esc_01_ebdetails bordered" width="99%" cellspacing="0">
+			<thead>
+				<tr><th>Escalation Levels</th></tr>
+			</thead>
+			<tbody>
+			<tr class="esc_trescafter">
+				<td> Escalated After # Days</td>
+				<td class="esc_tdescafter"></td>
+				</tr>
+			
+			
+			
+				<tr class="esc_trownerval">
+				<td>Current Escalation Owner</td>
+				<td class="esc_tdownerval"></td>
+				</tr>
+				<tr class="esc_trescalationlevel">
+				<td>Current Escalation Level:</td>
+				<td class="esc_tdescalationlevel"></td>
+				</tr>
+				<tr class="esc_trcreateddate">
+				<td>Create Date: </td>
+				<td class="esc_tdcreateddate"></td>
+				</tr>
+				<tr class="esc_new_trescby">
+				<td>Escalated by: </td>
+				<td class="esc_new_tdescby"></td>
+				</tr>
+				<tr class="esc_new_trstatus">
+				<td>Status: </td>
+				<td class="esc_new_tdstatus"></td>
+				</tr>
+				
+				<tr class="esc_new_trresolution">
+				<td>Resolution:</td>
+				<td class="esc_new_tdresolution"></td>
+				</tr>
+				<tr class="esc_new_trcategory">
+				<td>Category:</td>
+				<td class="esc_new_tdcategory"></td>
+				</tr>
+					<tr class="esc_new_trduedata">
+				<td>Due Date </td>
+				<td class="esc_new_tdduedata"></td>
+				</tr>
+					<tr class="esc_new_trcomplan">
+				<td>Esc.Comm Plan: </td>
+				<td class="esc_new_tdcomplan"></td>
+				</tr>
+					<tr class="esc_new_trapplan">
+				<td>Esc.Action Plans </td>
+				<td class="esc_new_tdapplan"></td>
+				</tr>
+				</tbody>
+			</table>		
+			
+			
+			<table class="ESC_NEW_commescbefore bordered" cellspacing="0" width="48%">
+		<thead>
+			<tr>
+				<th>Before Escalation</th>
+			</tr>
+			</thead>
+		<tbody>
+			<tr class="esc_new_trbsevchanges">
+				<td>Any Severity Changes?</td>
+				<td class="esc_new_tdbsevchanges"></td>
+			</tr>
+			<tr class="esc_new_trbnrdmissed">
+				<td>NRD Missed</td>
+				<td class="esc_new_tdbnrdmissed"></td>
+			</tr>
+			<tr class="esc_new_trbtransfers">
+				<td># of Transfers </td>
+				<td class="esc_new_tdbtransfers"></td>
+			</tr>
+			<tr class="esc_new_trbcowners">
+				<td># Number of Owners </td>
+				<td class="esc_new_tdbcowners"></td>
+			</tr>
+			
+			<tr class="esc_new_trbbugs">
+				<td># Bugs Created from SR? </td>
+				<td class="esc_new_tdbbugs"></td>
+			</tr>
+			
+		<!--		<tr class="trbbugs">
+				<td># Bugs Classification? </td>
+				<td class="tdbbugs"></td>
+			</tr>-->
+			
+			
+			<tr class="esc_new_trbchat">
+				<td>Chat</td>
+				<td class="esc_new_tdbchat"></td>
+			</tr>
+				<tr class="esc_new_trbcob">
+				<td>Call Out Bounds</td>
+				<td class="esc_new_tdbcob"></td>
+			</tr>
+				<tr class="esc_new_trbcib">
+				<td>Call In Bounds</td>
+				<td class="esc_new_tdbcib"></td>
+			</tr>
+		<!--		<tr class="trbconf">
+				<td>Web Conferences</td>
+				<td class="tdbconf"></td>
+			</tr>-->
+			
+			
+			
+		</tbody>
+		</table>
+		<table class="esc_new_commescafter bordered" cellspacing="0" width="50%">
+			<thead>
+			<tr>
+				<th>After Escalation</th>
+			</tr>
+			</thead>
+			<tbody>
+	<tr class="esc_new_trasevchanges">
+				<td>Any Severity Changes?</td>
+				<td class="esc_new_tdasevchanges"></td>
+			</tr>
+			<tr class="esc_new_tranrdmissed">
+				<td>NRD Missed</td>
+				<td class="esc_new_tdanrdmissed"></td>
+			</tr>
+			<tr class="esc_new_tratransfers">
+				<td># of Transfers </td>
+				<td class="esc_new_tdatransfers"></td>
+			</tr>
+			<tr class="esc_new_tracowners">
+				<td># Number of Owners </td>
+				<td class="esc_new_tdacowners"></td>
+			</tr>
+			<tr class="esc_new_trabugs">
+				<td># Bugs Created from SR? </td>
+				<td class="esc_new_tdabugs"></td>
+			</tr>
+			<!--	<tr class="esc_new_trbbugs">
+				<td># Bugs Classification? </td>
+				<td class="esc_new_tdbbugs"></td>
+			</tr>-->
+			<tr class="esc_new_trachat">
+				<td>Chat</td>
+				<td class="esc_new_tdachat"></td>
+			</tr>
+				<tr class="esc_new_tracob">
+				<td>Call Out Bounds</td>
+				<td class="esc_new_tdacob"></td>
+			</tr>
+				<tr class="esc_new_tracib">
+				<td>Call In Bounds</td>
+				<td class="esc_new_tdacib"></td>
+			</tr>
+			<!--	<tr class="esc_new_traconf">
+				<td>Web Conferences</td>
+				<td class="esc_new_tdaconf"></td>
+			</tr>-->
+			
+		</tbody>
+		</table>			
+	
+	
+				
+		</div>
+		
+		
+<div style="float: left; width: 51%;">
+
+<table class="new_chs_ebdetails bordered" width="99%" cellspacing="0">
+			<thead>
+				<tr><th>Escalation Details</th></tr>
+			</thead>
+			<tbody class = "chs_tbdy" >
+				<!--<tr class="esc_new_escalationlvl">
+				<td> Escalation Level</td>
+				<td class="tdaccount"></td>
+				</tr>
+				<tr class="traccount">
+				<td> Es</td>
+				<td class="tdaccount"></td>
+				</tr>
+				<tr class="trseverity">
+				<td> Create Date</td>
+				<td class="tdseverity"></td>
+				</tr>
+				<tr class="trcreated">
+				<td>Activity Status</td>
+				<td class="tdcreated"></td>
+				</tr>-->
+				
+			</tbody>
+			</table>	
+
+	
+		
+	<table class="escalation_mgr_details bordered" width="99%" cellspacing="0">
+			<thead>
+				<tr><th>Manager Request / Escalations</th></tr>
+			</thead>
+			<tbody class = "tbody_escalation_mgr_details">
+				<!--<tr class="traccount">
+				<td> Number of Manager Request</td>
+				<td class="tdaccount"></td>
+				</tr>
+				<tr class="traccount">
+				<td> Owner</td>
+				<td class="tdaccount"></td>
+				</tr>
+				<tr class="trseverity">
+				<td> Create Date</td>
+				<td class="tdseverity"></td>
+				</tr>
+				<tr class="trcreated">
+				<td>Activity Status</td>
+				<td class="tdcreated"></td>
+				</tr>-->
+				
+			</tbody>
+			</table>	
+	
+</div>
+
+
+<div style="float: left; width: 100%;">
+<table class="chs1 bordered" cellspacing="0" width="100%">
+<thead>
+<tr class="lastrow">
+<th class="123">
+  <div style="width:100%">
+	
+	<button onclick="sample_chs()" id="cmd" style="
+    color: white;
+    background-color: royalblue;
+    border-bottom-color: royalblue;
+    border-left-color: royalblue;
+    border-top-color: royalblue;
+    border-right-color: royalblue;">Save to PDF</button>
+	
+		<button onclick="csv_chs()" id="csvcmd" style="
+    color: white;
+    background-color: royalblue;
+    border-bottom-color: royalblue;
+    border-left-color: royalblue;
+    border-top-color: royalblue;
+    border-right-color: royalblue;">Export to CSV</button>
+
+		<button onclick="testurl()" id="urlid" style="
+    color: white;
+    background-color: royalblue;
+    border-bottom-color: royalblue;
+    border-left-color: royalblue;
+    border-top-color: royalblue;
+    border-right-color: royalblue;">Submit Feedback</button>
+
+	
+	<!--<a href="help.doc" target="_blank" style="float: right;
+    color: white;
+    background-color: royalblue;
+    border-bottom-color: royalblue;
+    border-left-color: royalblue;
+    border-top-color: royalblue;
+    border-right-color: royalblue;
+	font-family: Arial, Helvetica, sans-serif;
+	">&nbsp;&nbsp;&nbsp;Help&nbsp;&nbsp;&nbsp;</a>-->
+</div>
+</div>
+</body>
+</html>

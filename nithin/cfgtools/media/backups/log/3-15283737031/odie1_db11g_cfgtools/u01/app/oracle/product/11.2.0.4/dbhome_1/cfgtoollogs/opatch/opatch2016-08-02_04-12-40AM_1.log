@@ -1,0 +1,19 @@
+[Aug 2, 2016 4:12:40 AM]     PREREQ session
+[Aug 2, 2016 4:12:40 AM]     OPatch invoked as follows: 'prereq CheckComponents -ph /tmp/oakpatch/db/11.2.0.4.0/22502456/22646198/22502549/custom/server/22502549 -oh /u01/app/oracle/product/11.2.0.4/dbhome_1 -invPtrLoc /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc '
+[Aug 2, 2016 4:12:40 AM]     Could not get central inventory using NGOUI; oracle.sysman.nextgen.utils.NextGenInventoryUtil
+[Aug 2, 2016 4:12:40 AM]     OUI-67077:
+                             Oracle Home       : /u01/app/oracle/product/11.2.0.4/dbhome_1
+                             Central Inventory : /u01/app/oraInventory
+                                from           : /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc
+                             OPatch version    : 11.2.0.3.12
+                             OUI version       : 11.2.0.4.0
+                             OUI location      : /u01/app/oracle/product/11.2.0.4/dbhome_1/oui
+                             Log file location : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2016-08-02_04-12-40AM_1.log
+[Aug 2, 2016 4:12:40 AM]     Patch history file: /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Aug 2, 2016 4:12:40 AM]     Invoking prereq "checkcomponents"
+[Aug 2, 2016 4:12:41 AM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 16 (MB)
+[Aug 2, 2016 4:12:41 AM]     [OPSR-MEMORY-2] : before loading cooked one off : 8 (MB)
+[Aug 2, 2016 4:12:41 AM]     [OPSR-MEMORY-3] : after loading rawOneOffList and before loading minipatch list in cooked one off : 8 (MB)
+[Aug 2, 2016 4:12:41 AM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 8 (MB)
+[Aug 2, 2016 4:12:41 AM]     Prereq "checkComponents" for patch 22502549 passed.
+[Aug 2, 2016 4:12:41 AM]     Finishing PrereqSession at Tue Aug 02 04:12:41 UTC 2016

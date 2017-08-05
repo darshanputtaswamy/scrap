@@ -1,0 +1,557 @@
+
+SQL*Plus: Release 12.1.0.2.0 Production on Tue Aug 2 00:33:45 2016
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> Connected.
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = ODIE_C Id = 3 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = ODIE_C Id = 3 ====
+
+SQL>   2  
+CATCONSECTION
+-----------------------------------
+==== CATCON EXEC IN CONTAINERS ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/sqlpatch_bootstrap.sql #/u01/app/grid/cfgt
+oollogs/sqlpatch/sqlpatch_27868_2016_08_02_00_33_45# #FALSE# Container:ODIE_C Id
+:3 16-08-02 12:33:48 Proc:1 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/sqlpatch_bootstrap.sql #/u01/app/grid/cfgt
+oollogs/sqlpatch/sqlpatch_27868_2016_08_02_00_33_45# #FALSE# Container:ODIE_C Id
+:3 16-08-02 12:33:48 Proc:1 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> 
+Session altered.
+
+old   1: SELECT '&logfiledir' || '/bootstrap_' ||
+new   1: SELECT '/u01/app/grid/cfgtoollogs/sqlpatch/sqlpatch_27868_2016_08_02_00_33_45' || '/bootstrap_' ||
+
+BOOTSTRAP_LOGFILE
+--------------------------------------------------------------------------------
+/u01/app/grid/cfgtoollogs/sqlpatch/sqlpatch_27868_2016_08_02_00_33_45/bootstrap_
+_MGMTDB_ODIE_C.log
+
+
+Starting bootstrap on 02-AUG-16 12.33.48.831736 AM +00:00
+
+
+PL/SQL procedure successfully completed.
+
+old  25:   IF &full_bootstrap THEN
+new  25:   IF FALSE THEN
+
+PL/SQL procedure successfully completed.
+
+
+SSS
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+(Re)creating dbms_qopatch package
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+
+Package created.
+
+
+Session altered.
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+(Re)creating dbms_sqlpatch package
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+
+Package created.
+
+No errors.
+
+Synonym created.
+
+
+Grant succeeded.
+
+
+Session altered.
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+
+Session altered.
+
+Finished bootstrap on 02-AUG-16 12.33.49.398875 AM +00:00
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/sqlpatch_bootstrap.sql #/u01/app/grid/cfgt
+oollogs/sqlpatch/sqlpatch_27868_2016_08_02_00_33_45# #FALSE# Container:ODIE_C Id
+:3 16-08-02 12:33:49 Proc:1 ====
+
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/sqlpatch_bootstrap.sql #/u01/app/grid/cfgt
+oollogs/sqlpatch/sqlpatch_27868_2016_08_02_00_33_45# #FALSE# Container:ODIE_C Id
+:3 16-08-02 12:33:49 Proc:1 ====
+
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = ODIE_C Id = 3 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = ODIE_C Id = 3 ====
+
+SQL>   2  
+CATCONSECTION
+-----------------------------------
+==== CATCON EXEC IN CONTAINERS ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== BEGIN dbms_sqlpatch.session_initialize(#/u01/app/12.1.0.2/grid#, FALSE, FAL
+SE) ; END; Container:ODIE_C Id:3 16-08-02 12:34:39 Proc:1 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== BEGIN dbms_sqlpatch.session_initialize(#/u01/app/12.1.0.2/grid#, FALSE, FAL
+SE) ; END; Container:ODIE_C Id:3 16-08-02 12:34:39 Proc:1 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+PL/SQL procedure successfully completed.
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== BEGIN dbms_sqlpatch.session_initialize(#/u01/app/12.1.0.2/grid#, FALSE, FAL
+SE) ; END; Container:ODIE_C Id:3 16-08-02 12:34:39 Proc:1 ====
+
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== BEGIN dbms_sqlpatch.session_initialize(#/u01/app/12.1.0.2/grid#, FALSE, FAL
+SE) ; END; Container:ODIE_C Id:3 16-08-02 12:34:39 Proc:1 ====
+
+
+SQL>   2  
+CATCONSECTION
+-----------------------------------
+==== CATCON EXEC IN CONTAINERS ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/21948354/19553095/21948354_apply.sql ##Dat
+abase Patch Set Update : 12.1.0.2.160119 (21948354)## #/u01/app/grid/cfgtoollogs
+/sqlpatch/21948354/19553095/# #NB# #PSU# Container:ODIE_C Id:3 16-08-02 12:34:39
+ Proc:1 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/21948354/19553095/21948354_apply.sql ##Dat
+abase Patch Set Update : 12.1.0.2.160119 (21948354)## #/u01/app/grid/cfgtoollogs
+/sqlpatch/21948354/19553095/# #NB# #PSU# Container:ODIE_C Id:3 16-08-02 12:34:39
+ Proc:1 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> old   1: SELECT '&logfiledir' || '21948354_apply_' ||
+new   1: SELECT '/u01/app/grid/cfgtoollogs/sqlpatch/21948354/19553095/' || '21948354_apply_' ||
+
+SQLPATCH_LOGFILE
+--------------------------------------------------------------------------------
+/u01/app/grid/cfgtoollogs/sqlpatch/21948354/19553095/21948354_apply__MGMTDB_ODIE
+_C_2016Aug02_00_34_39.log
+
+
+Starting apply for patch 21948354/19553095 on 02-AUG-16 12.34.39.817858 AM +00:0
+0
+
+
+old   4:				    p_flags	    => '&flags',
+new   4:				    p_flags	    => 'NB',
+old   5:				    p_description   => '&description',
+new   5:				    p_description   => 'Database Patch Set Update : 12.1.0.2.160119 (21948354)',
+old   7:				    p_logfile	    => '&full_logfile',
+new   7:				    p_logfile	    => '/u01/app/grid/cfgtoollogs/sqlpatch/21948354/19553095/21948354_apply__MGMTDB_ODIE_C_2016Aug02_00_34_39.log',
+old   8:				    p_bundle_series => '&bundle_series');
+new   8:				    p_bundle_series => 'PSU');
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+Calling rdbms/admin/bug20876308_apply.sql on 02-AUG-16 12.34.40.363072 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling olap/admin/xoqclnup.sql on 02-AUG-16 12.34.40.434690 AM +00:00
+
+IGNORABLE ERRORS: ORA-01432 ORA-00942 ORA-02289
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/fix_apply_20766944.sql on 02-AUG-16 12.34.40.440342 AM +00:0
+0
+
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/fix_apply_20766944.sql
+
+
+Session altered.
+
+
+Session altered.
+
+
+View created.
+
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/prvtpckl.plb on 02-AUG-16 12.34.40.711749 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/bug19532017_upgrade.sql on 02-AUG-16 12.34.40.780459 AM +00:
+00
+
+
+IGNORABLE ERRORS: ORA-00955
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/dbmsilm.sql on 02-AUG-16 12.34.40.822366 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/dbmsilm.sql
+
+
+Session altered.
+
+
+Package created.
+
+No errors.
+
+Synonym created.
+
+
+Grant succeeded.
+
+
+Library created.
+
+No errors.
+
+Package created.
+
+
+Synonym created.
+
+
+Grant succeeded.
+
+No errors.
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/prvtlmd.plb on 02-AUG-16 12.34.41.067084 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/prvtpexei.plb on 02-AUG-16 12.34.41.073034 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/prvtilm.plb on 02-AUG-16 12.34.41.078543 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/prvtilm.plb
+
+
+Session altered.
+
+
+Package created.
+
+No errors.
+
+Package created.
+
+
+Package body created.
+
+No errors.
+
+Package body created.
+
+No errors.
+
+Package body created.
+
+
+Package body created.
+
+No errors.
+
+Package body created.
+
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/prvtqopi.plb on 02-AUG-16 12.34.41.341663 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/prvtqopi.plb
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/utluppkg.sql on 02-AUG-16 12.34.41.470662 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/utluppkg.sql
+
+
+Package created.
+
+
+Package body created.
+
+
+Session altered.
+
+Calling olap/admin/bug20558005.sql on 02-AUG-16 12.34.41.955620 AM +00:00
+
+IGNORABLE ERRORS: ORA-04043
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/bug19587324.sql on 02-AUG-16 12.34.42.012675 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/bug18909599.sql on 02-AUG-16 12.34.42.020377 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+PL/SQL procedure successfully completed.
+
+Finished apply for patch 21948354/19553095 on02-AUG-16 12.34.42.074540 AM +00:00
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/21948354/19553095/21948354_apply.sql ##Dat
+abase Patch Set Update : 12.1.0.2.160119 (21948354)## #/u01/app/grid/cfgtoollogs
+/sqlpatch/21948354/19553095/# #NB# #PSU# Container:ODIE_C Id:3 16-08-02 12:34:42
+ Proc:1 ====
+
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/sqlpatch/21948354/19553095/21948354_apply.sql ##Dat
+abase Patch Set Update : 12.1.0.2.160119 (21948354)## #/u01/app/grid/cfgtoollogs
+/sqlpatch/21948354/19553095/# #NB# #PSU# Container:ODIE_C Id:3 16-08-02 12:34:42
+ Proc:1 ====
+
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL> ========== PROCESS ENDED ==========
+SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Automatic Storage Management and Advanced Analytics options

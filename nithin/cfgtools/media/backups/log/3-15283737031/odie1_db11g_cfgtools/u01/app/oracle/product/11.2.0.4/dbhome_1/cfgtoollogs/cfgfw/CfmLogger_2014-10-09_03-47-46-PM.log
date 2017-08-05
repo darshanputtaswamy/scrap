@@ -1,0 +1,23 @@
+WARNING: Validation of XML schema is disabled because AggregateDescriptions.xsd could not be found
+INFO: Creating new CFM connection
+INFO: Creating a new logger for oracle.server
+INFO: Unmarshalling /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/ContentsXML/ConfigXML/oracle.server.11_2_0_4_0.xml
+INFO: Creating a new logger for oracle.assistants.netca.client
+INFO: Unmarshalling /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/ContentsXML/ConfigXML/oracle.assistants.netca.client.11_2_0_4_0.xml
+INFO: Creating a new logger for oracle.assistants.server
+INFO: Unmarshalling /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/ContentsXML/ConfigXML/oracle.assistants.server.11_2_0_4_0.xml
+INFO: Creating a new logger for OuiConfigVariables
+INFO: Unmarshalling /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/ContentsXML/ConfigXML/OuiConfigVariables.1_0_0_0_0.xml
+INFO: Creating a new logger for oracle.sysman.ccr
+INFO: Unmarshalling /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/ContentsXML/ConfigXML/oracle.sysman.ccr.10_3_8_1_0.xml
+INFO: Creating a new logger for oracle.sysman.console.db
+INFO: Unmarshalling /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/ContentsXML/ConfigXML/oracle.sysman.console.db.11_2_0_4_0.xml
+INFO: Aggregate Description oracle.server:11.2.0.4.0:common successfully loaded
+INFO: Aggregate Description oracle.assistants.netca.client:11.2.0.4.0:common successfully loaded
+INFO: Aggregate Description oracle.assistants.server:11.2.0.4.0:common successfully loaded
+INFO: Aggregate Description OuiConfigVariables:1.0.0.0.0:common successfully loaded
+INFO: Aggregate Description oracle.sysman.ccr:10.3.8.1.0:common successfully loaded
+INFO: Aggregate Description oracle.sysman.console.db:11.2.0.4.0:common successfully loaded
+INFO: Successfully returning from CfmFactory.connect()
+INFO: Cfm.save() was called
+INFO: Cfm.save(): 6 aggregate instances saved

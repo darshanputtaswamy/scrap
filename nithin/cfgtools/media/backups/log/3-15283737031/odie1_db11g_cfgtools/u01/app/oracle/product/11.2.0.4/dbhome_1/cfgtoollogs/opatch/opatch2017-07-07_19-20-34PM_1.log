@@ -1,0 +1,1357 @@
+[Jul 7, 2017 7:20:35 PM]     OUI exists, the oraclehome is OUI based.
+[Jul 7, 2017 7:20:35 PM]     OUI exists, the oraclehome is OUI based.
+[Jul 7, 2017 7:20:35 PM]     OPatch invoked as follows: 'lsinventory -detail -retry 0 -oh /u01/app/oracle/product/11.2.0.4/dbhome_1 -invPtrLoc /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc '
+[Jul 7, 2017 7:20:35 PM]     OUI-67077:
+                             Oracle Home       : /u01/app/oracle/product/11.2.0.4/dbhome_1
+                             Central Inventory : /u01/app/oraInventory
+                                from           : /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc
+                             OPatch version    : 11.2.0.3.15
+                             OUI version       : 11.2.0.4.0
+                             OUI location      : /u01/app/oracle/product/11.2.0.4/dbhome_1/oui
+                             Log file location : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2017-07-07_19-20-34PM_1.log
+[Jul 7, 2017 7:20:35 PM]     Patch history file: /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Jul 7, 2017 7:20:35 PM]     Starting LsInventorySession at Fri Jul 07 19:20:35 UTC 2017
+[Jul 7, 2017 7:20:35 PM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 54 (MB)
+[Jul 7, 2017 7:20:35 PM]     [OPSR-MEMORY-2] : after loading rawOneOffList54 (MB)
+[Jul 7, 2017 7:20:35 PM]     Lsinventory Output file location : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/lsinv/lsinventory2017-07-07_19-20-34PM.txt
+[Jul 7, 2017 7:20:35 PM]     --------------------------------------------------------------------------------
+[Jul 7, 2017 7:20:35 PM]     [OPSR-MEMORY-3] : before loading cooked one off : 54 (MB)
+[Jul 7, 2017 7:20:36 PM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 88 (MB)
+[Jul 7, 2017 7:20:36 PM]     Local Machine Information::
+                             Hostname: odie1.ship.iodp.tamu.edu
+                             ARU platform id: 226
+                             ARU platform description:: Linux x86-64
+[Jul 7, 2017 7:20:36 PM]     Installed Top-level Products (1):
+[Jul 7, 2017 7:20:36 PM]     Oracle Database 11g                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     There are 1 products installed in this Oracle Home.
+[Jul 7, 2017 7:20:36 PM]     Installed Products (136):
+[Jul 7, 2017 7:20:36 PM]     Agent Required Support Files                                         10.2.0.4.5
+[Jul 7, 2017 7:20:36 PM]     Assistant Common Files                                               11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Bali Share                                                           1.1.18.0.0
+[Jul 7, 2017 7:20:36 PM]     Buildtools Common Files                                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Character Set Migration Utility                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Cluster Verification Utility Common Files                            11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Database Configuration and Upgrade Assistants                        11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Database SQL Scripts                                                 11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Database Workspace Manager                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Deinstallation Tool                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Enterprise Edition Options                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Agent                                             10.2.0.4.5
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Agent Core Files                                  10.2.0.4.5
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Common Core Files                                 10.2.0.4.5
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Common Files                                      10.2.0.4.5
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Database Plugin -- Agent Support                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Database Plugin -- Repository Support             11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Grid Control Core Files                           10.2.0.4.5
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager plugin Common Files                               11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Enterprise Manager Repository Core Files                             10.2.0.4.5
+[Jul 7, 2017 7:20:36 PM]     Exadata Storage Server                                               11.2.0.1.0
+[Jul 7, 2017 7:20:36 PM]     Expat libraries                                                       2.0.1.0.1
+[Jul 7, 2017 7:20:36 PM]     Generic Connectivity Common Files                                    11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     HAS Common Files                                                     11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     HAS Files for DB                                                     11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Installation Common Files                                            11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Installation Plugin Files                                            11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Installer SDK Component                                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     JAccelerator (COMPANION)                                             11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Java Development Kit                                                1.5.0.51.10
+[Jul 7, 2017 7:20:36 PM]     LDAP Required Support Files                                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     OLAP SQL Scripts                                                     11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle 11g Warehouse Builder Required Files                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Advanced Security                                             11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Application Express                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Call Interface (OCI)                                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Clusterware RDBMS Files                                       11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Code Editor                                                   1.2.1.0.0I
+[Jul 7, 2017 7:20:36 PM]     Oracle Configuration Manager                                         10.3.8.1.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Configuration Manager Client                                  10.3.2.1.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Configuration Manager Deconfiguration                         10.3.1.0.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Containers for Java                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Core Required Support Files                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Data Mining RDBMS Files                                       11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database 11g                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database 11g                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database 11g Multimedia Files                                 11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database Deconfiguration                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database Gateway for ODBC                                     11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database User Interface                                       2.2.13.0.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database Utilities                                            11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database Vault J2EE Application                               11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Database Vault option                                         11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle DBCA Deconfiguration                                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Display Fonts                                                  9.0.2.0.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Enterprise Manager Console DB                                 11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Extended Windowing Toolkit                                    3.4.47.0.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Globalization Support                                         11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Globalization Support                                         11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Help For Java                                                  4.2.9.0.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Help for the  Web                                             2.0.14.0.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Ice Browser                                                    5.2.3.6.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Internet Directory Client                                     11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Java Client                                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle JDBC Server Support Package                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle JDBC/OCI Instant Client                                       11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle JDBC/THIN Interfaces                                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle JFC Extended Windowing Toolkit                                4.2.36.0.0
+[Jul 7, 2017 7:20:36 PM]     Oracle JVM                                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Label Security                                                11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle LDAP administration                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Locale Builder                                                11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Message Gateway Common Files                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Multimedia                                                    11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Multimedia Annotator                                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Multimedia Client Option                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Multimedia Java Advanced Imaging                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Multimedia Locator                                            11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Multimedia Locator RDBMS Files                                11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Net                                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Net Listener                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Net Required Support Files                                    11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Net Services                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Netca Client                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Notification Service                                          11.2.0.3.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Notification Service (eONS)                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle ODBC Driver                                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle ODBC Driverfor Instant Client                                 11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle OLAP                                                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle OLAP API                                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle OLAP RDBMS Files                                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle One-Off Patch Installer                                       11.2.0.3.4
+[Jul 7, 2017 7:20:36 PM]     Oracle Partitioning                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Programmer                                                    11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Quality of Service Management (Client)                        11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle RAC Deconfiguration                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle RAC Required Support Files-HAS                                11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Real Application Testing                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Recovery Manager                                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Security Developer Tools                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Spatial                                                       11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle SQL Developer                                                 11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Starter Database                                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Text                                                          11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Text Required Support Files                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle UIX                                                           2.2.24.6.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Universal Connection Pool                                     11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Universal Installer                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle USM Deconfiguration                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle Wallet Manager                                                11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle XML Development Kit                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Oracle XML Query                                                     11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Parser Generator Required Support Files                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Perl Interpreter                                                     5.10.0.0.2
+[Jul 7, 2017 7:20:36 PM]     Perl Modules                                                         5.10.0.0.1
+[Jul 7, 2017 7:20:36 PM]     PL/SQL                                                               11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     PL/SQL Embedded Gateway                                              11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Platform Required Support Files                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Precompiler Common Files                                             11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Precompiler Required Support Files                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Provisioning Advisor Framework                                       10.2.0.4.3
+[Jul 7, 2017 7:20:36 PM]     RDBMS Required Support Files                                         11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     RDBMS Required Support Files for Instant Client                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     RDBMS Required Support Files Runtime                                 11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     regexp                                                                2.1.9.0.0
+[Jul 7, 2017 7:20:36 PM]     Required Support Files                                               11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Sample Schema Data                                                   11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     Secure Socket Layer                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     SQL*Plus                                                             11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     SQL*Plus Files for Instant Client                                    11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     SQL*Plus Required Support Files                                      11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     SQLJ Runtime                                                         11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     SSL Required Support Files for InstantClient                         11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     XDK Required Support Files                                           11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     XML Parser for Java                                                  11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     XML Parser for Oracle JVM                                            11.2.0.4.0
+[Jul 7, 2017 7:20:36 PM]     There are 136 products installed in this Oracle Home.
+[Jul 7, 2017 7:20:36 PM]     Interim patches (3) :
+[Jul 7, 2017 7:20:36 PM]     Patch  24006111     : applied on Thu Jul 06 09:16:08 UTC 2017
+                             Unique Patch ID:  20508568
+                             Patch description:  "Database Patch Set Update : 11.2.0.4.161018 (24006111)"
+                                Created on 26 Aug 2016, 05:54:48 hrs PST8PDT
+                             Sub-patch  23054359; "Database Patch Set Update : 11.2.0.4.160719 (23054359)"
+                             Sub-patch  22502456; "Database Patch Set Update : 11.2.0.4.160419 (22502456)"
+                             Sub-patch  21948347; "Database Patch Set Update : 11.2.0.4.160119 (21948347)"
+                             Sub-patch  21352635; "Database Patch Set Update : 11.2.0.4.8 (21352635)"
+                             Sub-patch  20760982; "Database Patch Set Update : 11.2.0.4.7 (20760982)"
+                             Sub-patch  20299013; "Database Patch Set Update : 11.2.0.4.6 (20299013)"
+                             Sub-patch  19769489; "Database Patch Set Update : 11.2.0.4.5 (19769489)"
+                             Sub-patch  19121551; "Database Patch Set Update : 11.2.0.4.4 (19121551)"
+                             Sub-patch  18522509; "Database Patch Set Update : 11.2.0.4.3 (18522509)"
+                             Sub-patch  18031668; "Database Patch Set Update : 11.2.0.4.2 (18031668)"
+                             Sub-patch  17478514; "Database Patch Set Update : 11.2.0.4.1 (17478514)"
+                                Bugs fixed:
+                                  17184721, 21538558, 16091637, 18092127, 17381384, 15979965, 18441944
+                                  13837378, 16314254, 16731148, 17835048, 13558557, 17201159, 17853498
+                                  17246576, 18356166, 18440047, 18681862, 16875449, 19788842, 17296856
+                                  21330264, 14010183, 17648596, 17551063, 17025461, 17267114, 22507210
+                                  17912217, 17889583, 18202441, 17040764, 16524926, 17478145, 19358317
+                                  22148226, 18747196, 18641419, 17036973, 17811789, 14285317, 16542886
+                                  18009564, 16618694, 8322815, 16692232, 18247991, 22507234, 17570240
+                                  17848897, 17441661, 14034426, 17465741, 16596890, 17437634, 20506706
+                                  21343897, 21453153, 18339044, 22321741, 17951233, 18430495, 21787056
+                                  22380919, 20506715, 17811429, 19721304, 18230522, 19554106, 19458377
+                                  6599380, 17612828, 22092979, 22321756, 17040527, 17811438, 18641461
+                                  14657740, 13364795, 21387964, 17346671, 17588480, 18235390, 17889549
+                                  19309466, 16472716, 20596234, 18331850, 18641451, 17344412, 21179898
+                                  17546761, 18203835, 18964939, 18203838, 18203837, 17313525, 22195457
+                                  18139690, 22296366, 14106803, 16837842, 17842825, 22657942, 21352646
+                                  20657441, 16360112, 22195441, 17389192, 14565184, 17205719, 14354737
+                                  22195448, 14764829, 13944971, 16571443, 21868720, 17186905, 17080436
+                                  18673342, 17027426, 19972569, 19972568, 19972566, 17282229, 19972564
+                                  16870214, 19615136, 17390431, 18762750, 16613964, 18098207, 17957017
+                                  18471685, 19730508, 21538485, 18264060, 17323222, 17754782, 17600719
+                                  18317531, 17852463, 17596908, 17655634, 20074391, 16228604, 19972570
+                                  18996843, 19854503, 16042673, 17835627, 20334344, 18000422, 20861693
+                                  17393683, 17551709, 20506699, 19006849, 18456514, 18277454, 17258090
+                                  17174582, 17242746, 16399083, 17824637, 17762296, 17397545, 16450169
+                                  12364061, 20067212, 18856999, 19211724, 19463893, 21343775, 19463897
+                                  17853456, 18673304, 20004021, 21668627, 16194160, 17477958, 16538760
+                                  12982566, 20296213, 18293054, 17610798, 19699191, 18135678, 17311728
+                                  16785708, 10136473, 17786518, 18315328, 18334586, 12747740, 19032867
+                                  18096714, 17390160, 17232014, 16422541, 18673325, 18155762, 14015842
+                                  19827973, 22683225, 17726838, 18554871, 23177648, 18051556, 20803583
+                                  18282562, 17922254, 15990359, 21972320, 16855292, 16668584, 21343838
+                                  20299015, 17446237, 18093615, 17694209, 17288409, 17274537, 13955826
+                                  16934803, 17634921, 17501491, 16315398, 22683212, 17006183, 13829543
+                                  18191164, 17655240, 19393542, 18384391, 21538567, 16198143, 21847223
+                                  17892268, 20142975, 19584068, 17165204, 18508861, 21756699, 16901385
+                                  18554763, 18189036, 17443671, 17385178, 17936109, 14829250, 20925795
+                                  17478514, 16850630, 13951456, 16595641, 15861775, 14054676, 16912439
+                                  17299889, 17297939, 18619917, 16833527, 17798953, 17816865, 18607546
+                                  17571306, 21286665, 17341326, 17851160, 20558005, 17586955, 19049453
+                                  21051840, 17587063, 16956380, 18328509, 14133975, 18061914, 21051833
+                                  18522509, 18765602, 18199537, 17332800, 13609098, 18384537, 22502493
+                                  14338435, 17945983, 21067387, 16392068, 17752995, 21051862, 17237521
+                                  16863422, 18244962, 19544839, 24433711, 17156148, 18973907, 17877323
+                                  17449815, 18180390, 17088068, 17037130, 20004087, 19466309, 11733603
+                                  18084625, 21051858, 18674024, 21051852, 18091059, 16306373, 18306996
+                                  19915271, 18193833, 17787259, 20631274, 16344544, 14692762, 18614015
+                                  17346091, 18228645, 17721717, 18436307, 11883252, 21756677, 17891943
+                                  22353199, 16384983, 19121551, 12816846, 17982555, 17761775, 22243719
+                                  17265217, 17071721, 16721594, 21756661, 18262334, 15913355, 17891946
+                                  17672719, 17602269, 17239687, 17042658, 17238511, 17811456, 17284817
+                                  17752121, 17394950, 16579084, 17011832, 22195465, 14602788, 18325460
+                                  24476265, 24476274, 12611721, 16903536, 17006570, 16043574, 18783224
+                                  16494615, 21526048, 19197175, 16069901, 17811447, 17308789, 22195477
+                                  17865671, 19013183, 17343514, 18316692, 17325413, 16180763, 17348614
+                                  14368995, 21983325, 17393915, 16285691, 20331945, 17883081, 24316947
+                                  17705023, 17614227, 22195485, 14084247, 13645875, 16777840, 19727057
+                                  14852021, 18744139, 18674047, 17716305, 18482502, 19289642, 17622427
+                                  22195492, 14458214, 18723434, 17767676, 19258504, 17786278, 17082983
+                                  21351877, 13498382, 18331812, 16065166, 18031668, 22893153, 16943711
+                                  21517440, 17649265, 13866822, 18094246, 24528741, 14245531, 17783588
+                                  17082359, 20448824, 18280813, 23330119, 16268425, 17302277, 18018515
+                                  17215560, 19271443, 17016369, 20777150, 23330124, 20441797, 19769489
+                                  17545847, 18260550, 13853126, 23536835, 17227277, 9756271, 18868646
+                                  17614134, 17546973, 19680952, 18704244, 18828868, 18273830, 17050888
+                                  17360606, 16992075, 17375354, 12905058, 18362222, 17571039, 17468141
+                                  18436647, 17235750, 21168487, 16220077, 16929165
+                                Files Touched:
+                                  ins_sqlplus.mk --> ORACLE_HOME/sqlplus/lib/genplusso
+                                  /afifmt.o --> ORACLE_HOME/lib/libsqlplus.a
+                                  /afitkn.o --> ORACLE_HOME/lib/libsqlplus.a
+                                  /afivar.o --> ORACLE_HOME/lib/libsqlplus.a
+                                  sp2us.msg --> ORACLE_HOME/sqlplus/mesg/sp2us.msg
+                                  sp2us.msb --> ORACLE_HOME/sqlplus/mesg/sp2us.msb
+                                  /qcs2.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  ins_net_client.mk --> ORACLE_HOME/network/lib/client_sharedlib
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/liborasdksh
+                                  /qcis.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kxs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /aud.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kza.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzax.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qkadrv.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qksce.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kspt.o --> ORACLE_HOME/lib/libserver11.a
+                                  bundledata_PSU.xml --> ORACLE_HOME/rdbms/admin/bundledata_PSU.xml
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/irenamedg
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/client_sharedlib
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/ioracle
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.161018/catpsu.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.161018/catpsu_rollback.sql
+                                  bug20876312_apply.sql --> ORACLE_HOME/rdbms/admin/bug20876312_apply.sql
+                                  bug20876312_rollback.sql --> ORACLE_HOME/rdbms/admin/bug20876312_rollback.sql
+                                  sqlsessend.sql --> ORACLE_HOME/rdbms/admin/sqlsessend.sql
+                                  sqlsessstart.sql --> ORACLE_HOME/rdbms/admin/sqlsessstart.sql
+                                  /_database/_xdb/_acls/_deletePage.class --> ORACLE_HOME/sysman/jlib/emdb_emjsp.jar
+                                  /atb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /atbo.o --> ORACLE_HOME/lib/libserver11.a
+                                  /aud.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ctc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /cvw.o --> ORACLE_HOME/lib/libserver11.a
+                                  /dbkifw.o --> ORACLE_HOME/lib/libserver11.a
+                                  /delexe.o --> ORACLE_HOME/lib/libserver11.a
+                                  /dgl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /dgls.o --> ORACLE_HOME/lib/libserver11.a
+                                  /dmqx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /expcmo.o --> ORACLE_HOME/lib/libserver11.a
+                                  /fplibtest.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /gra.o --> ORACLE_HOME/lib/libserver11.a
+                                  /insexe.o --> ORACLE_HOME/lib/libserver11.a
+                                  /jox.o --> ORACLE_HOME/rdbms/lib/libknlopt.a
+                                  /jscr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /jskr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /k2m.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /k2u.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /k2v.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kaf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kaf4.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /kaf4_PERF.o --> ORACLE_HOME/rdbms/lib/libperfsrv11.a
+                                  /kcb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcbl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcbr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcbt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcbz.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcfis.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcrfr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcvfdb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kcvs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdbl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdblc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdil.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdlf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdlw.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kds.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdu.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kdx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kewm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kewr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfdp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfds.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kff.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfg.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfgp.o --> ORACLE_HOME/lib/libasmclnt11.a
+                                  /kfgp.o --> ORACLE_HOME/lib/libasmclntsh11.a
+                                  /kfiof.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfnp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfsp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kfvsd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kgbt.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgfdp.o --> ORACLE_HOME/lib/libasmclnt11.a
+                                  /kgfdp.o --> ORACLE_HOME/lib/libasmclntsh11.a
+                                  /kgfdputl.o --> ORACLE_HOME/lib/libasmclnt11.a
+                                  /kgfdputl.o --> ORACLE_HOME/lib/libasmclntsh11.a
+                                  /kgfm.o --> ORACLE_HOME/lib/libasmclnt11.a
+                                  /kgfm.o --> ORACLE_HOME/lib/libasmclntsh11.a
+                                  /kggpnp.o --> ORACLE_HOME/lib/libasmclntsh11.a
+                                  /kggpnp.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgh.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgl.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgl2.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgl4.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgls.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgnfs.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kgsk.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kguu.o --> ORACLE_HOME/lib/libclient11.a
+                                  /kgx.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kjb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjbdom.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjbl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjbm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjbr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjcc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjcs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjct.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjctc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjcts.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjdd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjdr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjdx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjfc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjfm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjfs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjfz.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjg.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kji.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kju.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kjx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkae.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkdc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkdl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkdo.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkj.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkpam.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkpap.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkpob.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkpod.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kks.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kks1.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kksc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkscs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkss.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kkxwtp.o --> ORACLE_HOME/rdbms/lib/libknlopt.a
+                                  /kkzl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kll.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /knac.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knahc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knahf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knahs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knal.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knalc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knalf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knali.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knalkc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knalkd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knals.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knalse.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knalsp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knanr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knas.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knasc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knasp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knasx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knclp.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /kngo.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kni.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knip.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knipc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knipx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlcf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlci.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlcn.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlcsv.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlcsx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knld.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlda.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlogc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlq.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knlu.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knoggcap.o --> ORACLE_HOME/lib/libclient11.a
+                                  /knst.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kntg.o --> ORACLE_HOME/lib/libserver11.a
+                                  /knxo.o --> ORACLE_HOME/lib/libclient11.a
+                                  /kokl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kopt.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /kos.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /kpccap.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /kpoal8.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kpolob.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kpospf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kpuza.o --> ORACLE_HOME/lib/libclient11.a
+                                  /kql.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kqld.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kqlf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kqlm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kqr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krbb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krbd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krbi.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krbo.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krmb.o --> ORACLE_HOME/rdbms/lib/libdbtools11.a
+                                  /krmc.o --> ORACLE_HOME/rdbms/lib/libdbtools11.a
+                                  /krmk3.o --> ORACLE_HOME/rdbms/lib/libdbtools11.a
+                                  /krmk4.o --> ORACLE_HOME/rdbms/lib/libdbtools11.a
+                                  /krmk5.o --> ORACLE_HOME/rdbms/lib/libdbtools11.a
+                                  /krmr2.o --> ORACLE_HOME/rdbms/lib/libdbtools11.a
+                                  /krmz.o --> ORACLE_HOME/rdbms/lib/libdbtools11.a
+                                  /krr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krse.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krsf.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krsh.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krsk.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krsm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krst.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krsv.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krsw.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvg.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvrd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvrda.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvu.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvxb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /krvxr.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksfd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksfdss.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksfq.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksfv.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksk.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kspt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ksu.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktel.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktfa.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktfb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktrv.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktsg.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /ktsk.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktsp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktsplb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktspsrch.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /ktu.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kwqbm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kwqic.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kwqmn.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kwqp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kwra.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kxdam.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kxdrs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kxfx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kxib.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kxs.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzax.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzctx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzekm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzp.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzradm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzradma.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzradmape.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzrt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzu.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvaud.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvdve.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvdvld.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvdvre.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvfac.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvndv.o --> ORACLE_HOME/rdbms/lib/libknlopt.a
+                                  /kzvpsd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvradm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvrc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvsdmlv.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvtrc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /kzvutil.o --> ORACLE_HOME/lib/libserver11.a
+                                  /lpx2.o --> ORACLE_HOME/lib/libxml11.a
+                                  /lpxfsm.o --> ORACLE_HOME/lib/libxml11.a
+                                  /lpxfsmbuf.o --> ORACLE_HOME/lib/libxml11.a
+                                  /lpxm.o --> ORACLE_HOME/lib/libxml11.a
+                                  /lpxpr.o --> ORACLE_HOME/lib/libxml11.a
+                                  /lpxstp.o --> ORACLE_HOME/lib/libxml11.a
+                                  /ltx.o --> ORACLE_HOME/lib/libxml11.a
+                                  /ltxc1.o --> ORACLE_HOME/lib/libxml11.a
+                                  /ltxc4.o --> ORACLE_HOME/lib/libxml11.a
+                                  /ltxvm.o --> ORACLE_HOME/lib/libxml11.a
+                                  /ltxvm1.o --> ORACLE_HOME/lib/libxml11.a
+                                  /ltxvm6.o --> ORACLE_HOME/lib/libxml11.a
+                                  /msqima.o --> ORACLE_HOME/lib/libserver11.a
+                                  /msqimb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /nmeetm.o --> ORACLE_HOME/sysman/lib/libnmee.a
+                                  /nmehlenv.o --> ORACLE_HOME/sysman/lib/libnmehl.a
+                                  /nmetgctl.o --> ORACLE_HOME/sysman/lib/libnmectl.a
+                                  /opiall.o --> ORACLE_HOME/lib/libserver11.a
+                                  /opiosq.o --> ORACLE_HOME/lib/libserver11.a
+                                  /opipls.o --> ORACLE_HOME/lib/libserver11.a
+                                  /opivsn.o --> ORACLE_HOME/lib/libserver11.a
+                                  /oracle/sysman/db/adm/util/BeanUtils.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/db/adm/xdb/XDBACLController.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/db/adm/xdb/XDBACLSearchController.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/db/rac/cluster/RacClusterSitemapController.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/db/rsc/inst/DBMsg.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/db/rsc/inst/DBMsgID.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emSDK/svlt/EMServlet.class --> ORACLE_HOME/sysman/jlib/emCORE.jar
+                                  /oracle/sysman/emo/adm/DBObjectSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/baseline/BaselineSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/ChainRulesSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/ChainSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/ChainStepsSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/ClassSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/Job.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/JobSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/ProgramSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/ScheduleSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/WindowGroupSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/adm/instance/scheduler/WindowSQLGenerator.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/xdb/XDBConstants.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /oracle/sysman/emo/xdb/acls/XDBACLCommandHandler.class --> ORACLE_HOME/sysman/jlib/emDB.jar
+                                  /osslib.o --> ORACLE_HOME/lib/libcell11.a
+                                  /pbj.o --> ORACLE_HOME/lib/libpls11.a
+                                  /pbj_pic.o --> ORACLE_HOME/lib/libpls11_pic.a
+                                  /pen.o --> ORACLE_HOME/lib/libpls11.a
+                                  /pen_pic.o --> ORACLE_HOME/lib/libpls11_pic.a
+                                  /pesld.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /pevmexe.o --> ORACLE_HOME/lib/libpls11.a
+                                  /pevmexe_pic.o --> ORACLE_HOME/lib/libpls11_pic.a
+                                  /phn.o --> ORACLE_HOME/lib/libpls11.a
+                                  /phn_pic.o --> ORACLE_HOME/lib/libpls11_pic.a
+                                  /pkv.o --> ORACLE_HOME/lib/libpls11.a
+                                  /pkv_pic.o --> ORACLE_HOME/lib/libpls11_pic.a
+                                  /prsc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /psdicd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /psdpgi.o --> ORACLE_HOME/lib/libserver11.a
+                                  /psi.o --> ORACLE_HOME/lib/libpls11.a
+                                  /psi_pic.o --> ORACLE_HOME/lib/libpls11_pic.a
+                                  /qcd.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qcdo.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qci.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qcis.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qcs.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qcs2.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qcso.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qct.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qcto.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qees.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qerdl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qerel.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qerfx.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qerltc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qermd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qermt.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qerup.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qerus.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesel.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesld.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesltc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesma.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesmboim.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesmm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qespc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qesso.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qkadrv.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qkagby.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qkajoi.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qksqb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qksvc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qkswc.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qmixo.o --> ORACLE_HOME/lib/libserver11.a
+                                  /qmx0.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qmxd.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qmxx.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /qsmmix.o --> ORACLE_HOME/lib/libserver11.a
+                                  /rfrdb.o --> ORACLE_HOME/lib/libserver11.a
+                                  /rfrld.o --> ORACLE_HOME/lib/libserver11.a
+                                  /rfrpd.o --> ORACLE_HOME/lib/libserver11.a
+                                  /rnm.o --> ORACLE_HOME/lib/libserver11.a
+                                  /sagecache.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /sagedata.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /sageindex.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /sagetxn.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /skgfr.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /skgp.o --> ORACLE_HOME/lib/libgeneric11.a
+                                  /sosstcp.o --> ORACLE_HOME/lib/libcell11.a
+                                  /ssl_rec_read_readrecord.o --> ORACLE_HOME/lib/libnnz11.a
+                                  /ttcx2y.o --> ORACLE_HOME/lib/libcommon11.a
+                                  /updexe.o --> ORACLE_HOME/lib/libserver11.a
+                                  /upsexe.o --> ORACLE_HOME/lib/libserver11.a
+                                  /xct.o --> ORACLE_HOME/lib/libserver11.a
+                                  /xdk.o --> ORACLE_HOME/lib/libxml11.a
+                                  /xpl.o --> ORACLE_HOME/lib/libserver11.a
+                                  /xscommon.o --> ORACLE_HOME/lib/libserver11.a
+                                  /xscop.o --> ORACLE_HOME/lib/libserver11.a
+                                  /xsdbmsaw.o --> ORACLE_HOME/lib/liboraolap11.a
+                                  /xsfisop.o --> ORACLE_HOME/lib/liboraolap11.a
+                                  /xsfvec.o --> ORACLE_HOME/lib/liboraolap11.a
+                                  /xsiosec.o --> ORACLE_HOME/lib/liboraolap11.a
+                                  /xti0.o --> ORACLE_HOME/lib/libxml11.a
+                                  /xty.o --> ORACLE_HOME/lib/libserver11.a
+                                  AgentStatus.pm --> ORACLE_HOME/bin/AgentStatus.pm
+                                  DBConsole.pm.template --> ORACLE_HOME/bin/DBConsole.pm.template
+                                  EmKeyCmds.pm --> ORACLE_HOME/bin/EmKeyCmds.pm
+                                  EmctlCommon.pm.template --> ORACLE_HOME/bin/EmctlCommon.pm.template
+                                  LaunchEMagent.pm --> ORACLE_HOME/bin/LaunchEMagent.pm
+                                  LaunchEMdbconsole.pm --> ORACLE_HOME/bin/LaunchEMdbconsole.pm
+                                  SecureDBConsoleCmds.pm --> ORACLE_HOME/bin/SecureDBConsoleCmds.pm
+                                  asmcmdambr.pm --> ORACLE_HOME/lib/asmcmdambr.pm
+                                  asmcmdanlz.pm --> ORACLE_HOME/lib/asmcmdanlz.pm
+                                  asmcmdbase.pm --> ORACLE_HOME/lib/asmcmdbase.pm
+                                  asmcmddisk.pm --> ORACLE_HOME/lib/asmcmddisk.pm
+                                  asmcmdshare.pm --> ORACLE_HOME/lib/asmcmdshare.pm
+                                  asmcmdsys.pm --> ORACLE_HOME/lib/asmcmdsys.pm
+                                  asmcmdug.pm --> ORACLE_HOME/lib/asmcmdug.pm
+                                  asmcmdvol.pm --> ORACLE_HOME/lib/asmcmdvol.pm
+                                  bug16595641.sql --> ORACLE_HOME/patch/scripts/bug16595641.sql
+                                  bug17088068.sql --> ORACLE_HOME/patch/scripts/bug17088068.sql
+                                  bug17381384.sql --> ORACLE_HOME/patch/scripts/bug17381384.sql
+                                  bug19289642.sql --> ORACLE_HOME/patch/scripts/bug19289642.sql
+                                  bug19289642.sql --> ORACLE_HOME/rdbms/admin/bug19289642.sql
+                                  bug20558005.sql --> ORACLE_HOME/rdbms/admin/bug20558005.sql
+                                  bug20596234.sql --> ORACLE_HOME/rdbms/admin/bug20596234.sql
+                                  bug20876312_apply.sql --> ORACLE_HOME/rdbms/admin/bug20876312_apply.sql
+                                  bug20876312_rollback.sql --> ORACLE_HOME/rdbms/admin/bug20876312_rollback.sql
+                                  bug22380919.sql --> ORACLE_HOME/patch/scripts/bug22380919.sql
+                                  bundledata_PSU.xml --> ORACLE_HOME/rdbms/admin/bundledata_PSU.xml
+                                  c1102000.sql --> ORACLE_HOME/rdbms/admin/c1102000.sql
+                                  catbundle.sql --> ORACLE_HOME/rdbms/admin/catbundle.sql
+                                  catexp.sql --> ORACLE_HOME/rdbms/admin/catexp.sql
+                                  catfga.sql --> ORACLE_HOME/rdbms/admin/catfga.sql
+                                  catlmnr.sql --> ORACLE_HOME/rdbms/admin/catlmnr.sql
+                                  catlsby.sql --> ORACLE_HOME/rdbms/admin/catlsby.sql
+                                  catmacc.sql --> ORACLE_HOME/rdbms/admin/catmacc.sql
+                                  catmacd.sql --> ORACLE_HOME/rdbms/admin/catmacd.sql
+                                  catmacg.sql --> ORACLE_HOME/rdbms/admin/catmacg.sql
+                                  catmacp.sql --> ORACLE_HOME/rdbms/admin/catmacp.sql
+                                  catmacpatch.sql --> ORACLE_HOME/rdbms/admin/catmacpatch.sql
+                                  catmacpatch_rb.sql --> ORACLE_HOME/rdbms/admin/catmacpatch_rb.sql
+                                  catmact.sql --> ORACLE_HOME/rdbms/admin/catmact.sql
+                                  catmd10i.sql --> ORACLE_HOME/md/admin/catmd10i.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.1/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.160119/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.160419/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.160719/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.2/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.3/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.4/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.5/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.6/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.7/catpsu.sql
+                                  catpsu.sql --> ORACLE_HOME/psu/11.2.0.4.8/catpsu.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.1/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.160119/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.160419/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.160719/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.2/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.3/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.4/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.5/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.6/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.7/catpsu_rollback.sql
+                                  catpsu_rollback.sql --> ORACLE_HOME/psu/11.2.0.4.8/catpsu_rollback.sql
+                                  catschv.sql --> ORACLE_HOME/rdbms/admin/catschv.sql
+                                  dbmsaw.sql --> ORACLE_HOME/rdbms/admin/dbmsaw.sql
+                                  dbmsjdev.sql --> ORACLE_HOME/rdbms/admin/dbmsjdev.sql
+                                  diaus.msb --> ORACLE_HOME/rdbms/mesg/diaus.msb
+                                  diaus.msg --> ORACLE_HOME/rdbms/mesg/diaus.msg
+                                  diskmon.bin --> ORACLE_HOME/bin/diskmon.bin
+                                  diskmon.o --> ORACLE_HOME/rdbms/lib/diskmon.o
+                                  dropjdev.sql --> ORACLE_HOME/rdbms/admin/dropjdev.sql
+                                  dropqsma.sql --> ORACLE_HOME/rdbms/admin/dropqsma.sql
+                                  dtools.bsq --> ORACLE_HOME/rdbms/admin/dtools.bsq
+                                  dvmacfnc.plb --> ORACLE_HOME/rdbms/admin/dvmacfnc.plb
+                                  emd.properties.template --> ORACLE_HOME/sysman/config/emd.properties.template
+                                  ins_emagent.mk --> ORACLE_HOME/sysman/lib/e2eme
+                                  ins_emagent.mk --> ORACLE_HOME/sysman/lib/iemtgtctl
+                                  ins_emagent.mk --> ORACLE_HOME/sysman/lib/ins_emagent.mk
+                                  ins_emagent.mk --> ORACLE_HOME/sysman/lib/libnmemso
+                                  ins_net_client.mk --> ORACLE_HOME/network/lib/client_sharedlib
+                                  ins_plsql.mk --> ORACLE_HOME/plsql/lib/iwrap
+                                  ins_precomp.mk --> ORACLE_HOME/precomp/lib/proc
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/client_sharedlib
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/iamdu
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/iextjob
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/iextjobo
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/ikfed
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/ikfod
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/ikgmgr
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/ins_rdbms.mk
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/ioracle
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/iorion
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/irenamedg
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/irman
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/jox_refresh_knlopt ioracle
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/liborasdkbase
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/liborasdksh
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/patchset_opt_all jox_refresh_knlopt ioracle
+                                  jox.o --> ORACLE_HOME/rdbms/lib/jox.o
+                                  kkxwtp.o --> ORACLE_HOME/rdbms/lib/kkxwtp.o
+                                  kspasv2.var --> ORACLE_HOME/rdbms/admin/kspasv2.var
+                                  kspasv31.var --> ORACLE_HOME/rdbms/admin/kspasv31.var
+                                  kspauv14.var --> ORACLE_HOME/rdbms/admin/kspauv14.var
+                                  kutabcon.xsl --> ORACLE_HOME/rdbms/xml/xsl/kutabcon.xsl
+                                  kzvidv.o --> ORACLE_HOME/rdbms/lib/kzvidv.o
+                                  kzvndv.o --> ORACLE_HOME/rdbms/lib/kzvndv.o
+                                  libasmclntsh11.so --> ORACLE_HOME/lib/libasmclntsh11.so
+                                  libcell11.so --> ORACLE_HOME/lib/libcell11.so
+                                  libnnz11.so --> ORACLE_HOME/lib/libnnz11.so
+                                  lxinst --> ORACLE_HOME/bin/lxinst
+                                  ocixstream.h --> ORACLE_HOME/rdbms/public/ocixstream.h
+                                  orachk.zip --> ORACLE_HOME/suptools/orachk/release/orachk.zip
+                                  oraus.msb --> ORACLE_HOME/rdbms/mesg/oraus.msb
+                                  oraus.msg --> ORACLE_HOME/rdbms/mesg/oraus.msg
+                                  ordim.jar --> ORACLE_HOME/ord/jlib/ordim.jar
+                                  ordimimg.jar --> ORACLE_HOME/ord/jlib/ordimimg.jar
+                                  orion.o --> ORACLE_HOME/rdbms/lib/orion.o
+                                  owmadmb.plb --> ORACLE_HOME/rdbms/admin/owmadmb.plb
+                                  owmadms.plb --> ORACLE_HOME/rdbms/admin/owmadms.plb
+                                  owmltb.plb --> ORACLE_HOME/rdbms/admin/owmltb.plb
+                                  prvtadv.plb --> ORACLE_HOME/rdbms/admin/prvtadv.plb
+                                  prvtaw.plb --> ORACLE_HOME/rdbms/admin/prvtaw.plb
+                                  prvtawrs.plb --> ORACLE_HOME/rdbms/admin/prvtawrs.plb
+                                  prvtblin.plb --> ORACLE_HOME/rdbms/admin/prvtblin.plb
+                                  prvtbsdp.plb --> ORACLE_HOME/rdbms/admin/prvtbsdp.plb
+                                  prvtbsmt.plb --> ORACLE_HOME/rdbms/admin/prvtbsmt.plb
+                                  prvtbstr.plb --> ORACLE_HOME/rdbms/admin/prvtbstr.plb
+                                  prvtdadv.plb --> ORACLE_HOME/rdbms/admin/prvtdadv.plb
+                                  prvthsdp.plb --> ORACLE_HOME/rdbms/admin/prvthsdp.plb
+                                  prvthsmt.plb --> ORACLE_HOME/rdbms/admin/prvthsmt.plb
+                                  prvthstr.plb --> ORACLE_HOME/rdbms/admin/prvthstr.plb
+                                  prvtlmcb.plb --> ORACLE_HOME/rdbms/admin/prvtlmcb.plb
+                                  prvtlmd.plb --> ORACLE_HOME/rdbms/admin/prvtlmd.plb
+                                  prvtmacp.plb --> ORACLE_HOME/rdbms/admin/prvtmacp.plb
+                                  prvtpckl.plb --> ORACLE_HOME/rdbms/admin/prvtpckl.plb
+                                  prvtredacta.plb --> ORACLE_HOME/rdbms/admin/prvtredacta.plb
+                                  prvtutil.plb --> ORACLE_HOME/rdbms/admin/prvtutil.plb
+                                  recover.bsq --> ORACLE_HOME/rdbms/admin/recover.bsq
+                                  schema --> ORACLE_HOME/bin/schema
+                                  sdodbmig.sql --> ORACLE_HOME/md/admin/sdodbmig.sql
+                                  sdopatch.sql --> ORACLE_HOME/md/admin/sdopatch.sql
+                                  sjsex.o --> ORACLE_HOME/rdbms/lib/sjsex.o
+                                  spawrio.sql --> ORACLE_HOME/rdbms/admin/spawrio.sql
+                                  utlu112i.sql --> ORACLE_HOME/rdbms/admin/utlu112i.sql
+                                  utlu112x.sql --> ORACLE_HOME/rdbms/admin/utlu112x.sql
+                                  xml --> ORACLE_HOME/bin/xml
+                                  xmlcg --> ORACLE_HOME/bin/xmlcg
+                                  xmldiff --> ORACLE_HOME/bin/xmldiff
+                                  xmlpatch --> ORACLE_HOME/bin/xmlpatch
+                                  xsl --> ORACLE_HOME/bin/xsl
+                                  xsnoolap.o --> ORACLE_HOME/rdbms/lib/xsnoolap.o
+                                  xsyeolap.o --> ORACLE_HOME/rdbms/lib/xsyeolap.o
+                                  xvm --> ORACLE_HOME/bin/xvm
+                                Patch Location in Inventory:
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/24006111
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/23054359
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/22502456
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/21948347
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/21352635
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/20760982
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/20299013
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/19769489
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/19121551
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/18522509
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/18031668
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/17478514
+                                Patch Location in Storage area:
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/24006111_Aug_26_2016_05_54_48
+[Jul 7, 2017 7:20:36 PM]     Patch  23054319     : applied on Thu Jul 06 09:15:42 UTC 2017
+                             Unique Patch ID:  20209287
+                             Patch description:  "OCW Patch Set Update : 11.2.0.4.160719 (23054319)"
+                                Created on 15 Jul 2016, 14:38:02 hrs PST8PDT
+                                Bugs fixed:
+                                  18328800, 19270660, 18691572, 18508710, 20038451, 21251192, 22162062
+                                  20365005, 21232394, 17387214, 17750548, 17617807, 14497275, 20219458
+                                  17733927, 18180541, 23757020, 18962892, 17292250, 17378618, 16759171
+                                  20110156, 17843489, 17065496, 13991403, 21694632, 17273020, 22762046
+                                  17155238, 18261183, 18053580, 20012766, 21245437, 20218012, 17013634
+                                  17886392, 20995001, 17039197, 16317771, 17947785, 10052729, 20340620
+                                  22353346, 16237657, 20317221, 18199185, 15917869, 18399991, 20186278
+                                  18024089, 17374271, 16849642, 20246071, 20746251, 14270845, 20552947
+                                  18414137, 18882642, 17001914, 17927970, 14378120, 16346413, 15986647
+                                  18068871, 21222147, 16206997, 18143836, 21982225, 19168690, 18343490
+                                  20235511, 21875360, 16613232, 19276791, 17722664, 20440643, 12928658
+                                  18226143, 18520351, 16249829, 18952577, 17172091, 18229842, 16076412
+                                  18265482, 20676340, 17818075, 20091753, 18231837, 14373486, 17483479
+                                  20136892, 20551654, 18120545, 18729166, 13843841, 17405302, 21225209
+                                  18709496, 18330979, 18744838, 14525998, 18187697, 17087371, 20531190
+                                  20598625, 14385860, 18348155, 19479503, 12928592, 17516024, 18370031
+                                  17764053, 19272663, 17551223, 14671408, 18272135, 14207615, 21255373
+                                  17500165, 18875012, 14769643, 19558324, 18464784, 18848125, 19241857
+                                  17955615, 14851828, 14693336, 20315294, 16284825, 17352230, 20014326
+                                  17238586, 17089344, 17405605, 17531342, 21327402, 19398098, 17159489
+                                  17640316, 13823394, 16543190, 22024217, 17983675, 20795241, 17481314
+                                  18346135, 17598201, 16281493, 15986311, 17208793, 19601468, 18999857
+                                  18700935, 14076173, 18428146, 17435488, 18352845, 18352846, 20408163
+                                  17592037, 19616601, 17387779, 17391726, 14777968, 15851860, 16206882
+                                  20141091, 15832129, 17305100, 20175174, 21113068, 19885321, 16901346
+                                  17985714, 18536826, 17780903, 18752378, 18946768, 16876500, 16875342
+                                  17769597, 19955755, 16429265, 18336452, 17273003, 17209968, 16988311
+                                  19319357, 20094984, 17046460, 17059927, 18053631, 16867761, 18774591
+                                  21442094, 20235486, 19359787, 15869775, 17447588, 19642566, 21152052
+                                  16798862, 15920201, 2015
+                                Files Touched:
+                                  cluvfyrac.sh --> ORACLE_HOME/bin/cluvfyrac.sh
+                                  crsdiag.pl --> ORACLE_HOME/bin/crsdiag.pl
+                                  gnsd --> ORACLE_HOME/bin/gnsd
+                                  lsnodes --> ORACLE_HOME/bin/lsnodes
+                                  racgwrap --> ORACLE_HOME/bin/racgwrap
+                                  racgwrap.sbs --> ORACLE_HOME/bin/racgwrap.sbs
+                                  srvconfig --> ORACLE_HOME/bin/srvconfig
+                                  rootofs.sh --> ORACLE_HOME/crs/install/rootofs.sh
+                                  s_crsconfig_defs --> ORACLE_HOME/crs/install/s_crsconfig_defs
+                                  env_has.mk --> ORACLE_HOME/crs/lib/env_has.mk
+                                  crsar.msb --> ORACLE_HOME/crs/mesg/crsar.msb
+                                  crscs.msb --> ORACLE_HOME/crs/mesg/crscs.msb
+                                  crsd.msb --> ORACLE_HOME/crs/mesg/crsd.msb
+                                  crsdk.msb --> ORACLE_HOME/crs/mesg/crsdk.msb
+                                  crse.msb --> ORACLE_HOME/crs/mesg/crse.msb
+                                  crsel.msb --> ORACLE_HOME/crs/mesg/crsel.msb
+                                  crsf.msb --> ORACLE_HOME/crs/mesg/crsf.msb
+                                  crshu.msb --> ORACLE_HOME/crs/mesg/crshu.msb
+                                  crsi.msb --> ORACLE_HOME/crs/mesg/crsi.msb
+                                  crsiw.msb --> ORACLE_HOME/crs/mesg/crsiw.msb
+                                  crsja.msb --> ORACLE_HOME/crs/mesg/crsja.msb
+                                  crsko.msb --> ORACLE_HOME/crs/mesg/crsko.msb
+                                  crsn.msb --> ORACLE_HOME/crs/mesg/crsn.msb
+                                  crsnl.msb --> ORACLE_HOME/crs/mesg/crsnl.msb
+                                  crspl.msb --> ORACLE_HOME/crs/mesg/crspl.msb
+                                  crspt.msb --> ORACLE_HOME/crs/mesg/crspt.msb
+                                  crsptb.msb --> ORACLE_HOME/crs/mesg/crsptb.msb
+                                  crsro.msb --> ORACLE_HOME/crs/mesg/crsro.msb
+                                  crsru.msb --> ORACLE_HOME/crs/mesg/crsru.msb
+                                  crss.msb --> ORACLE_HOME/crs/mesg/crss.msb
+                                  crssf.msb --> ORACLE_HOME/crs/mesg/crssf.msb
+                                  crssk.msb --> ORACLE_HOME/crs/mesg/crssk.msb
+                                  crsth.msb --> ORACLE_HOME/crs/mesg/crsth.msb
+                                  crstr.msb --> ORACLE_HOME/crs/mesg/crstr.msb
+                                  crsus.msb --> ORACLE_HOME/crs/mesg/crsus.msb
+                                  crsus.msg --> ORACLE_HOME/crs/mesg/crsus.msg
+                                  crszhs.msb --> ORACLE_HOME/crs/mesg/crszhs.msb
+                                  crszht.msb --> ORACLE_HOME/crs/mesg/crszht.msb
+                                  clsrwrap.sbs --> ORACLE_HOME/crs/sbs/clsrwrap.sbs
+                                  diagcollection.sh.sbs --> ORACLE_HOME/crs/sbs/diagcollection.sh.sbs
+                                  localconfig.sbs --> ORACLE_HOME/crs/sbs/localconfig.sbs
+                                  srvctl.sbs --> ORACLE_HOME/crs/sbs/srvctl.sbs
+                                  clssar.msb --> ORACLE_HOME/css/mesg/clssar.msb
+                                  clsscs.msb --> ORACLE_HOME/css/mesg/clsscs.msb
+                                  clssd.msb --> ORACLE_HOME/css/mesg/clssd.msb
+                                  clssdk.msb --> ORACLE_HOME/css/mesg/clssdk.msb
+                                  clsse.msb --> ORACLE_HOME/css/mesg/clsse.msb
+                                  clssel.msb --> ORACLE_HOME/css/mesg/clssel.msb
+                                  clssf.msb --> ORACLE_HOME/css/mesg/clssf.msb
+                                  clsshu.msb --> ORACLE_HOME/css/mesg/clsshu.msb
+                                  clssi.msb --> ORACLE_HOME/css/mesg/clssi.msb
+                                  clssiw.msb --> ORACLE_HOME/css/mesg/clssiw.msb
+                                  clssja.msb --> ORACLE_HOME/css/mesg/clssja.msb
+                                  clssko.msb --> ORACLE_HOME/css/mesg/clssko.msb
+                                  clssn.msb --> ORACLE_HOME/css/mesg/clssn.msb
+                                  clssnl.msb --> ORACLE_HOME/css/mesg/clssnl.msb
+                                  clsspl.msb --> ORACLE_HOME/css/mesg/clsspl.msb
+                                  clsspt.msb --> ORACLE_HOME/css/mesg/clsspt.msb
+                                  clssptb.msb --> ORACLE_HOME/css/mesg/clssptb.msb
+                                  clssro.msb --> ORACLE_HOME/css/mesg/clssro.msb
+                                  clssru.msb --> ORACLE_HOME/css/mesg/clssru.msb
+                                  clsss.msb --> ORACLE_HOME/css/mesg/clsss.msb
+                                  clsssf.msb --> ORACLE_HOME/css/mesg/clsssf.msb
+                                  clsssk.msb --> ORACLE_HOME/css/mesg/clsssk.msb
+                                  clssth.msb --> ORACLE_HOME/css/mesg/clssth.msb
+                                  clsstr.msb --> ORACLE_HOME/css/mesg/clsstr.msb
+                                  clssus.msb --> ORACLE_HOME/css/mesg/clssus.msb
+                                  clssus.msg --> ORACLE_HOME/css/mesg/clssus.msg
+                                  clsszhs.msb --> ORACLE_HOME/css/mesg/clsszhs.msb
+                                  clsszht.msb --> ORACLE_HOME/css/mesg/clsszht.msb
+                                  clsdar.msb --> ORACLE_HOME/has/mesg/clsdar.msb
+                                  clsdcs.msb --> ORACLE_HOME/has/mesg/clsdcs.msb
+                                  clsdd.msb --> ORACLE_HOME/has/mesg/clsdd.msb
+                                  clsddk.msb --> ORACLE_HOME/has/mesg/clsddk.msb
+                                  clsde.msb --> ORACLE_HOME/has/mesg/clsde.msb
+                                  clsdel.msb --> ORACLE_HOME/has/mesg/clsdel.msb
+                                  clsdf.msb --> ORACLE_HOME/has/mesg/clsdf.msb
+                                  clsdhu.msb --> ORACLE_HOME/has/mesg/clsdhu.msb
+                                  clsdi.msb --> ORACLE_HOME/has/mesg/clsdi.msb
+                                  clsdiw.msb --> ORACLE_HOME/has/mesg/clsdiw.msb
+                                  clsdja.msb --> ORACLE_HOME/has/mesg/clsdja.msb
+                                  clsdko.msb --> ORACLE_HOME/has/mesg/clsdko.msb
+                                  clsdn.msb --> ORACLE_HOME/has/mesg/clsdn.msb
+                                  clsdnl.msb --> ORACLE_HOME/has/mesg/clsdnl.msb
+                                  clsdpl.msb --> ORACLE_HOME/has/mesg/clsdpl.msb
+                                  clsdpt.msb --> ORACLE_HOME/has/mesg/clsdpt.msb
+                                  clsdptb.msb --> ORACLE_HOME/has/mesg/clsdptb.msb
+                                  clsdro.msb --> ORACLE_HOME/has/mesg/clsdro.msb
+                                  clsdru.msb --> ORACLE_HOME/has/mesg/clsdru.msb
+                                  clsds.msb --> ORACLE_HOME/has/mesg/clsds.msb
+                                  clsdsf.msb --> ORACLE_HOME/has/mesg/clsdsf.msb
+                                  clsdsk.msb --> ORACLE_HOME/has/mesg/clsdsk.msb
+                                  clsdth.msb --> ORACLE_HOME/has/mesg/clsdth.msb
+                                  clsdtr.msb --> ORACLE_HOME/has/mesg/clsdtr.msb
+                                  clsdus.msb --> ORACLE_HOME/has/mesg/clsdus.msb
+                                  clsdus.msg --> ORACLE_HOME/has/mesg/clsdus.msg
+                                  clsdzhs.msb --> ORACLE_HOME/has/mesg/clsdzhs.msb
+                                  clsdzht.msb --> ORACLE_HOME/has/mesg/clsdzht.msb
+                                  clsgnar.msb --> ORACLE_HOME/has/mesg/clsgnar.msb
+                                  clsgnca.msb --> ORACLE_HOME/has/mesg/clsgnca.msb
+                                  clsgncs.msb --> ORACLE_HOME/has/mesg/clsgncs.msb
+                                  clsgnd.msb --> ORACLE_HOME/has/mesg/clsgnd.msb
+                                  clsgndk.msb --> ORACLE_HOME/has/mesg/clsgndk.msb
+                                  clsgne.msb --> ORACLE_HOME/has/mesg/clsgne.msb
+                                  clsgnel.msb --> ORACLE_HOME/has/mesg/clsgnel.msb
+                                  clsgnesa.msb --> ORACLE_HOME/has/mesg/clsgnesa.msb
+                                  clsgnf.msb --> ORACLE_HOME/has/mesg/clsgnf.msb
+                                  clsgnhu.msb --> ORACLE_HOME/has/mesg/clsgnhu.msb
+                                  clsgni.msb --> ORACLE_HOME/has/mesg/clsgni.msb
+                                  clsgniw.msb --> ORACLE_HOME/has/mesg/clsgniw.msb
+                                  clsgnja.msb --> ORACLE_HOME/has/mesg/clsgnja.msb
+                                  clsgnko.msb --> ORACLE_HOME/has/mesg/clsgnko.msb
+                                  clsgnn.msb --> ORACLE_HOME/has/mesg/clsgnn.msb
+                                  clsgnnl.msb --> ORACLE_HOME/has/mesg/clsgnnl.msb
+                                  clsgnpl.msb --> ORACLE_HOME/has/mesg/clsgnpl.msb
+                                  clsgnpt.msb --> ORACLE_HOME/has/mesg/clsgnpt.msb
+                                  clsgnptb.msb --> ORACLE_HOME/has/mesg/clsgnptb.msb
+                                  clsgnro.msb --> ORACLE_HOME/has/mesg/clsgnro.msb
+                                  clsgnru.msb --> ORACLE_HOME/has/mesg/clsgnru.msb
+                                  clsgns.msb --> ORACLE_HOME/has/mesg/clsgns.msb
+                                  clsgnsf.msb --> ORACLE_HOME/has/mesg/clsgnsf.msb
+                                  clsgnsk.msb --> ORACLE_HOME/has/mesg/clsgnsk.msb
+                                  clsgnth.msb --> ORACLE_HOME/has/mesg/clsgnth.msb
+                                  clsgntr.msb --> ORACLE_HOME/has/mesg/clsgntr.msb
+                                  clsgnus.msb --> ORACLE_HOME/has/mesg/clsgnus.msb
+                                  clsgnus.msg --> ORACLE_HOME/has/mesg/clsgnus.msg
+                                  clsgnzhs.msb --> ORACLE_HOME/has/mesg/clsgnzhs.msb
+                                  clsgnzht.msb --> ORACLE_HOME/has/mesg/clsgnzht.msb
+                                  clstar.msb --> ORACLE_HOME/has/mesg/clstar.msb
+                                  clstcs.msb --> ORACLE_HOME/has/mesg/clstcs.msb
+                                  clstd.msb --> ORACLE_HOME/has/mesg/clstd.msb
+                                  clstdk.msb --> ORACLE_HOME/has/mesg/clstdk.msb
+                                  clste.msb --> ORACLE_HOME/has/mesg/clste.msb
+                                  clstel.msb --> ORACLE_HOME/has/mesg/clstel.msb
+                                  clstf.msb --> ORACLE_HOME/has/mesg/clstf.msb
+                                  clsthu.msb --> ORACLE_HOME/has/mesg/clsthu.msb
+                                  clsti.msb --> ORACLE_HOME/has/mesg/clsti.msb
+                                  clstiw.msb --> ORACLE_HOME/has/mesg/clstiw.msb
+                                  clstja.msb --> ORACLE_HOME/has/mesg/clstja.msb
+                                  clstko.msb --> ORACLE_HOME/has/mesg/clstko.msb
+                                  clstn.msb --> ORACLE_HOME/has/mesg/clstn.msb
+                                  clstnl.msb --> ORACLE_HOME/has/mesg/clstnl.msb
+                                  clstpl.msb --> ORACLE_HOME/has/mesg/clstpl.msb
+                                  clstpt.msb --> ORACLE_HOME/has/mesg/clstpt.msb
+                                  clstptb.msb --> ORACLE_HOME/has/mesg/clstptb.msb
+                                  clstro.msb --> ORACLE_HOME/has/mesg/clstro.msb
+                                  clstru.msb --> ORACLE_HOME/has/mesg/clstru.msb
+                                  clsts.msb --> ORACLE_HOME/has/mesg/clsts.msb
+                                  clstsf.msb --> ORACLE_HOME/has/mesg/clstsf.msb
+                                  clstsk.msb --> ORACLE_HOME/has/mesg/clstsk.msb
+                                  clstth.msb --> ORACLE_HOME/has/mesg/clstth.msb
+                                  clsttr.msb --> ORACLE_HOME/has/mesg/clsttr.msb
+                                  clstus.msb --> ORACLE_HOME/has/mesg/clstus.msb
+                                  clstus.msg --> ORACLE_HOME/has/mesg/clstus.msg
+                                  clstzhs.msb --> ORACLE_HOME/has/mesg/clstzhs.msb
+                                  clstzht.msb --> ORACLE_HOME/has/mesg/clstzht.msb
+                                  clsuar.msb --> ORACLE_HOME/has/mesg/clsuar.msb
+                                  clsuca.msb --> ORACLE_HOME/has/mesg/clsuca.msb
+                                  clsucs.msb --> ORACLE_HOME/has/mesg/clsucs.msb
+                                  clsud.msb --> ORACLE_HOME/has/mesg/clsud.msb
+                                  clsudk.msb --> ORACLE_HOME/has/mesg/clsudk.msb
+                                  clsue.msb --> ORACLE_HOME/has/mesg/clsue.msb
+                                  clsuel.msb --> ORACLE_HOME/has/mesg/clsuel.msb
+                                  clsuf.msb --> ORACLE_HOME/has/mesg/clsuf.msb
+                                  clsuhu.msb --> ORACLE_HOME/has/mesg/clsuhu.msb
+                                  clsui.msb --> ORACLE_HOME/has/mesg/clsui.msb
+                                  clsuiw.msb --> ORACLE_HOME/has/mesg/clsuiw.msb
+                                  clsuja.msb --> ORACLE_HOME/has/mesg/clsuja.msb
+                                  clsuko.msb --> ORACLE_HOME/has/mesg/clsuko.msb
+                                  clsun.msb --> ORACLE_HOME/has/mesg/clsun.msb
+                                  clsunl.msb --> ORACLE_HOME/has/mesg/clsunl.msb
+                                  clsupl.msb --> ORACLE_HOME/has/mesg/clsupl.msb
+                                  clsupt.msb --> ORACLE_HOME/has/mesg/clsupt.msb
+                                  clsuptb.msb --> ORACLE_HOME/has/mesg/clsuptb.msb
+                                  clsuro.msb --> ORACLE_HOME/has/mesg/clsuro.msb
+                                  clsuru.msb --> ORACLE_HOME/has/mesg/clsuru.msb
+                                  clsus.msb --> ORACLE_HOME/has/mesg/clsus.msb
+                                  clsusf.msb --> ORACLE_HOME/has/mesg/clsusf.msb
+                                  clsusk.msb --> ORACLE_HOME/has/mesg/clsusk.msb
+                                  clsuth.msb --> ORACLE_HOME/has/mesg/clsuth.msb
+                                  clsutr.msb --> ORACLE_HOME/has/mesg/clsutr.msb
+                                  clsuus.msb --> ORACLE_HOME/has/mesg/clsuus.msb
+                                  clsuus.msg --> ORACLE_HOME/has/mesg/clsuus.msg
+                                  clsuzhs.msb --> ORACLE_HOME/has/mesg/clsuzhs.msb
+                                  clsuzht.msb --> ORACLE_HOME/has/mesg/clsuzht.msb
+                                  clswar.msb --> ORACLE_HOME/has/mesg/clswar.msb
+                                  clswcs.msb --> ORACLE_HOME/has/mesg/clswcs.msb
+                                  clswd.msb --> ORACLE_HOME/has/mesg/clswd.msb
+                                  clswdk.msb --> ORACLE_HOME/has/mesg/clswdk.msb
+                                  clswe.msb --> ORACLE_HOME/has/mesg/clswe.msb
+                                  clswel.msb --> ORACLE_HOME/has/mesg/clswel.msb
+                                  clswf.msb --> ORACLE_HOME/has/mesg/clswf.msb
+                                  clswhu.msb --> ORACLE_HOME/has/mesg/clswhu.msb
+                                  clswi.msb --> ORACLE_HOME/has/mesg/clswi.msb
+                                  clswiw.msb --> ORACLE_HOME/has/mesg/clswiw.msb
+                                  clswja.msb --> ORACLE_HOME/has/mesg/clswja.msb
+                                  clswko.msb --> ORACLE_HOME/has/mesg/clswko.msb
+                                  clswn.msb --> ORACLE_HOME/has/mesg/clswn.msb
+                                  clswnl.msb --> ORACLE_HOME/has/mesg/clswnl.msb
+                                  clswpl.msb --> ORACLE_HOME/has/mesg/clswpl.msb
+                                  clswpt.msb --> ORACLE_HOME/has/mesg/clswpt.msb
+                                  clswptb.msb --> ORACLE_HOME/has/mesg/clswptb.msb
+                                  clswro.msb --> ORACLE_HOME/has/mesg/clswro.msb
+                                  clswru.msb --> ORACLE_HOME/has/mesg/clswru.msb
+                                  clsws.msb --> ORACLE_HOME/has/mesg/clsws.msb
+                                  clswsf.msb --> ORACLE_HOME/has/mesg/clswsf.msb
+                                  clswsk.msb --> ORACLE_HOME/has/mesg/clswsk.msb
+                                  clswth.msb --> ORACLE_HOME/has/mesg/clswth.msb
+                                  clswtr.msb --> ORACLE_HOME/has/mesg/clswtr.msb
+                                  clswus.msb --> ORACLE_HOME/has/mesg/clswus.msb
+                                  clswus.msg --> ORACLE_HOME/has/mesg/clswus.msg
+                                  clswzhs.msb --> ORACLE_HOME/has/mesg/clswzhs.msb
+                                  clswzht.msb --> ORACLE_HOME/has/mesg/clswzht.msb
+                                  gipcar.msb --> ORACLE_HOME/has/mesg/gipcar.msb
+                                  gipcca.msb --> ORACLE_HOME/has/mesg/gipcca.msb
+                                  gipccs.msb --> ORACLE_HOME/has/mesg/gipccs.msb
+                                  gipcd.msb --> ORACLE_HOME/has/mesg/gipcd.msb
+                                  gipcdk.msb --> ORACLE_HOME/has/mesg/gipcdk.msb
+                                  gipce.msb --> ORACLE_HOME/has/mesg/gipce.msb
+                                  gipcel.msb --> ORACLE_HOME/has/mesg/gipcel.msb
+                                  gipcf.msb --> ORACLE_HOME/has/mesg/gipcf.msb
+                                  gipchu.msb --> ORACLE_HOME/has/mesg/gipchu.msb
+                                  gipci.msb --> ORACLE_HOME/has/mesg/gipci.msb
+                                  gipciw.msb --> ORACLE_HOME/has/mesg/gipciw.msb
+                                  gipcja.msb --> ORACLE_HOME/has/mesg/gipcja.msb
+                                  gipcko.msb --> ORACLE_HOME/has/mesg/gipcko.msb
+                                  gipcn.msb --> ORACLE_HOME/has/mesg/gipcn.msb
+                                  gipcnl.msb --> ORACLE_HOME/has/mesg/gipcnl.msb
+                                  gipcpl.msb --> ORACLE_HOME/has/mesg/gipcpl.msb
+                                  gipcpt.msb --> ORACLE_HOME/has/mesg/gipcpt.msb
+                                  gipcptb.msb --> ORACLE_HOME/has/mesg/gipcptb.msb
+                                  gipcro.msb --> ORACLE_HOME/has/mesg/gipcro.msb
+                                  gipcru.msb --> ORACLE_HOME/has/mesg/gipcru.msb
+                                  gipcs.msb --> ORACLE_HOME/has/mesg/gipcs.msb
+                                  gipcsf.msb --> ORACLE_HOME/has/mesg/gipcsf.msb
+                                  gipcsk.msb --> ORACLE_HOME/has/mesg/gipcsk.msb
+                                  gipcth.msb --> ORACLE_HOME/has/mesg/gipcth.msb
+                                  gipctr.msb --> ORACLE_HOME/has/mesg/gipctr.msb
+                                  gipcus.msb --> ORACLE_HOME/has/mesg/gipcus.msb
+                                  gipcus.msg --> ORACLE_HOME/has/mesg/gipcus.msg
+                                  gipczhs.msb --> ORACLE_HOME/has/mesg/gipczhs.msb
+                                  gipczht.msb --> ORACLE_HOME/has/mesg/gipczht.msb
+                                  rdear.msb --> ORACLE_HOME/has/mesg/rdear.msb
+                                  rdeca.msb --> ORACLE_HOME/has/mesg/rdeca.msb
+                                  rdecs.msb --> ORACLE_HOME/has/mesg/rdecs.msb
+                                  rded.msb --> ORACLE_HOME/has/mesg/rded.msb
+                                  rdedk.msb --> ORACLE_HOME/has/mesg/rdedk.msb
+                                  rdee.msb --> ORACLE_HOME/has/mesg/rdee.msb
+                                  rdeel.msb --> ORACLE_HOME/has/mesg/rdeel.msb
+                                  rdef.msb --> ORACLE_HOME/has/mesg/rdef.msb
+                                  rdehu.msb --> ORACLE_HOME/has/mesg/rdehu.msb
+                                  rdei.msb --> ORACLE_HOME/has/mesg/rdei.msb
+                                  rdeiw.msb --> ORACLE_HOME/has/mesg/rdeiw.msb
+                                  rdeja.msb --> ORACLE_HOME/has/mesg/rdeja.msb
+                                  rdeko.msb --> ORACLE_HOME/has/mesg/rdeko.msb
+                                  rden.msb --> ORACLE_HOME/has/mesg/rden.msb
+                                  rdenl.msb --> ORACLE_HOME/has/mesg/rdenl.msb
+                                  rdepl.msb --> ORACLE_HOME/has/mesg/rdepl.msb
+                                  rdept.msb --> ORACLE_HOME/has/mesg/rdept.msb
+                                  rdeptb.msb --> ORACLE_HOME/has/mesg/rdeptb.msb
+                                  rdero.msb --> ORACLE_HOME/has/mesg/rdero.msb
+                                  rderu.msb --> ORACLE_HOME/has/mesg/rderu.msb
+                                  rdes.msb --> ORACLE_HOME/has/mesg/rdes.msb
+                                  rdesf.msb --> ORACLE_HOME/has/mesg/rdesf.msb
+                                  rdesk.msb --> ORACLE_HOME/has/mesg/rdesk.msb
+                                  rdeth.msb --> ORACLE_HOME/has/mesg/rdeth.msb
+                                  rdetr.msb --> ORACLE_HOME/has/mesg/rdetr.msb
+                                  rdeus.msb --> ORACLE_HOME/has/mesg/rdeus.msb
+                                  rdeus.msg --> ORACLE_HOME/has/mesg/rdeus.msg
+                                  rdezhs.msb --> ORACLE_HOME/has/mesg/rdezhs.msb
+                                  rdezht.msb --> ORACLE_HOME/has/mesg/rdezht.msb
+                                  consoleapps.jar --> ORACLE_HOME/jlib/consoleapps.jar
+                                  gns.jar --> ORACLE_HOME/jlib/gns.jar
+                                  rd.jar --> ORACLE_HOME/jlib/rd.jar
+                                  rdtool.jar --> ORACLE_HOME/jlib/rdtool.jar
+                                  srvm.jar --> ORACLE_HOME/jlib/srvm.jar
+                                  srvmasm.jar --> ORACLE_HOME/jlib/srvmasm.jar
+                                  srvmhas.jar --> ORACLE_HOME/jlib/srvmhas.jar
+                                  supercluster-common.jar --> ORACLE_HOME/jlib/supercluster-common.jar
+                                  supercluster.jar --> ORACLE_HOME/jlib/supercluster.jar
+                                  libagfw11.so --> ORACLE_HOME/lib/libagfw11.so
+                                  libclsr11.a --> ORACLE_HOME/lib/libclsr11.a
+                                  libclsra11.so --> ORACLE_HOME/lib/libclsra11.so
+                                  libdbcfg11.so --> ORACLE_HOME/lib/libdbcfg11.so
+                                  libeons.so --> ORACLE_HOME/lib/libeons.so
+                                  libgns11.so --> ORACLE_HOME/lib/libgns11.so
+                                  libgnsjni11.so --> ORACLE_HOME/lib/libgnsjni11.so
+                                  libhasgen11.so --> ORACLE_HOME/lib/libhasgen11.so
+                                  libocr11.so --> ORACLE_HOME/lib/libocr11.so
+                                  libocrb11.so --> ORACLE_HOME/lib/libocrb11.so
+                                  libocrutl11.so --> ORACLE_HOME/lib/libocrutl11.so
+                                  liboevm.a --> ORACLE_HOME/lib/liboevm.a
+                                  librdjni11.so --> ORACLE_HOME/lib/librdjni11.so
+                                  libsrvmhas11.so --> ORACLE_HOME/lib/libsrvmhas11.so
+                                  libsrvmocr11.so --> ORACLE_HOME/lib/libsrvmocr11.so
+                                  libuini11.so --> ORACLE_HOME/lib/libuini11.so
+                                  libsrvm11.so --> ORACLE_HOME/oui/lib/libsrvm11.so
+                                  ins_has.mk --> ORACLE_HOME/racg/lib/ins_has.mk
+                                  s0clsrdmai.o --> ORACLE_HOME/racg/lib/s0clsrdmai.o
+                                  s0clsreut.o --> ORACLE_HOME/racg/lib/s0clsreut.o
+                                  s0clsrmain.o --> ORACLE_HOME/racg/lib/s0clsrmain.o
+                                  s0clsrmdb.o --> ORACLE_HOME/racg/lib/s0clsrmdb.o
+                                  clsrar.msb --> ORACLE_HOME/racg/mesg/clsrar.msb
+                                  clsrcs.msb --> ORACLE_HOME/racg/mesg/clsrcs.msb
+                                  clsrd.msb --> ORACLE_HOME/racg/mesg/clsrd.msb
+                                  clsrdk.msb --> ORACLE_HOME/racg/mesg/clsrdk.msb
+                                  clsre.msb --> ORACLE_HOME/racg/mesg/clsre.msb
+                                  clsrel.msb --> ORACLE_HOME/racg/mesg/clsrel.msb
+                                  clsrf.msb --> ORACLE_HOME/racg/mesg/clsrf.msb
+                                  clsrhu.msb --> ORACLE_HOME/racg/mesg/clsrhu.msb
+                                  clsri.msb --> ORACLE_HOME/racg/mesg/clsri.msb
+                                  clsriw.msb --> ORACLE_HOME/racg/mesg/clsriw.msb
+                                  clsrja.msb --> ORACLE_HOME/racg/mesg/clsrja.msb
+                                  clsrko.msb --> ORACLE_HOME/racg/mesg/clsrko.msb
+                                  clsrn.msb --> ORACLE_HOME/racg/mesg/clsrn.msb
+                                  clsrnl.msb --> ORACLE_HOME/racg/mesg/clsrnl.msb
+                                  clsrpl.msb --> ORACLE_HOME/racg/mesg/clsrpl.msb
+                                  clsrpt.msb --> ORACLE_HOME/racg/mesg/clsrpt.msb
+                                  clsrptb.msb --> ORACLE_HOME/racg/mesg/clsrptb.msb
+                                  clsrro.msb --> ORACLE_HOME/racg/mesg/clsrro.msb
+                                  clsrru.msb --> ORACLE_HOME/racg/mesg/clsrru.msb
+                                  clsrs.msb --> ORACLE_HOME/racg/mesg/clsrs.msb
+                                  clsrsf.msb --> ORACLE_HOME/racg/mesg/clsrsf.msb
+                                  clsrsk.msb --> ORACLE_HOME/racg/mesg/clsrsk.msb
+                                  clsrth.msb --> ORACLE_HOME/racg/mesg/clsrth.msb
+                                  clsrtr.msb --> ORACLE_HOME/racg/mesg/clsrtr.msb
+                                  clsrus.msb --> ORACLE_HOME/racg/mesg/clsrus.msb
+                                  clsrus.msg --> ORACLE_HOME/racg/mesg/clsrus.msg
+                                  clsrzhs.msb --> ORACLE_HOME/racg/mesg/clsrzhs.msb
+                                  clsrzht.msb --> ORACLE_HOME/racg/mesg/clsrzht.msb
+                                  clustdb.sql --> ORACLE_HOME/srvm/admin/clustdb.sql
+                                  init.ora --> ORACLE_HOME/srvm/admin/init.ora
+                                  ocrlog.ini --> ORACLE_HOME/srvm/admin/ocrlog.ini
+                                  srvctl.jar --> ORACLE_HOME/srvm/jlib/srvctl.jar
+                                  env_srvm.mk --> ORACLE_HOME/srvm/lib/env_srvm.mk
+                                  ins_srvm.mk --> ORACLE_HOME/srvm/lib/ins_srvm.mk
+                                  libdbcfg11.a --> ORACLE_HOME/srvm/lib/libdbcfg11.a
+                                  libocr11.a --> ORACLE_HOME/srvm/lib/libocr11.a
+                                  libocrb11.a --> ORACLE_HOME/srvm/lib/libocrb11.a
+                                  libocrutl11.a --> ORACLE_HOME/srvm/lib/libocrutl11.a
+                                  libsrvm11.a --> ORACLE_HOME/srvm/lib/libsrvm11.a
+                                  libsrvmhas11.a --> ORACLE_HOME/srvm/lib/libsrvmhas11.a
+                                  libsrvmocr11.a --> ORACLE_HOME/srvm/lib/libsrvmocr11.a
+                                  libuini11.a --> ORACLE_HOME/srvm/lib/libuini11.a
+                                  pradmgrp.o --> ORACLE_HOME/srvm/lib/pradmgrp.o
+                                  prgcrshm.o --> ORACLE_HOME/srvm/lib/prgcrshm.o
+                                  prifcg.o --> ORACLE_HOME/srvm/lib/prifcg.o
+                                  prifcmn.o --> ORACLE_HOME/srvm/lib/prifcmn.o
+                                  prifutl.o --> ORACLE_HOME/srvm/lib/prifutl.o
+                                  prraw.o --> ORACLE_HOME/srvm/lib/prraw.o
+                                  sprdbgrp.o --> ORACLE_HOME/srvm/lib/sprdbgrp.o
+                                  sprgcrshm.o --> ORACLE_HOME/srvm/lib/sprgcrshm.o
+                                  sprifcg.o --> ORACLE_HOME/srvm/lib/sprifcg.o
+                                  sprraw.o --> ORACLE_HOME/srvm/lib/sprraw.o
+                                  prcaus.msg --> ORACLE_HOME/srvm/mesg/prcaus.msg
+                                  prccus.msg --> ORACLE_HOME/srvm/mesg/prccus.msg
+                                  prcdus.msg --> ORACLE_HOME/srvm/mesg/prcdus.msg
+                                  prcfus.msg --> ORACLE_HOME/srvm/mesg/prcfus.msg
+                                  prchus.msg --> ORACLE_HOME/srvm/mesg/prchus.msg
+                                  prcius.msg --> ORACLE_HOME/srvm/mesg/prcius.msg
+                                  prcnus.msg --> ORACLE_HOME/srvm/mesg/prcnus.msg
+                                  prcqus.msg --> ORACLE_HOME/srvm/mesg/prcqus.msg
+                                  prcrus.msg --> ORACLE_HOME/srvm/mesg/prcrus.msg
+                                  prcsus.msg --> ORACLE_HOME/srvm/mesg/prcsus.msg
+                                  prctus.msg --> ORACLE_HOME/srvm/mesg/prctus.msg
+                                  prcwus.msg --> ORACLE_HOME/srvm/mesg/prcwus.msg
+                                  prifd.msb --> ORACLE_HOME/srvm/mesg/prifd.msb
+                                  prife.msb --> ORACLE_HOME/srvm/mesg/prife.msb
+                                  priff.msb --> ORACLE_HOME/srvm/mesg/priff.msb
+                                  prifi.msb --> ORACLE_HOME/srvm/mesg/prifi.msb
+                                  prifja.msb --> ORACLE_HOME/srvm/mesg/prifja.msb
+                                  prifko.msb --> ORACLE_HOME/srvm/mesg/prifko.msb
+                                  prifptb.msb --> ORACLE_HOME/srvm/mesg/prifptb.msb
+                                  prifus.msb --> ORACLE_HOME/srvm/mesg/prifus.msb
+                                  prifus.msg --> ORACLE_HOME/srvm/mesg/prifus.msg
+                                  prifzhs.msb --> ORACLE_HOME/srvm/mesg/prifzhs.msb
+                                  prifzht.msb --> ORACLE_HOME/srvm/mesg/prifzht.msb
+                                  prkaus.msg --> ORACLE_HOME/srvm/mesg/prkaus.msg
+                                  prkcus.msg --> ORACLE_HOME/srvm/mesg/prkcus.msg
+                                  prkdus.msg --> ORACLE_HOME/srvm/mesg/prkdus.msg
+                                  prkeus.msg --> ORACLE_HOME/srvm/mesg/prkeus.msg
+                                  prkhus.msg --> ORACLE_HOME/srvm/mesg/prkhus.msg
+                                  prknus.msg --> ORACLE_HOME/srvm/mesg/prknus.msg
+                                  prkous.msg --> ORACLE_HOME/srvm/mesg/prkous.msg
+                                  prkpus.msg --> ORACLE_HOME/srvm/mesg/prkpus.msg
+                                  prkrus.msg --> ORACLE_HOME/srvm/mesg/prkrus.msg
+                                  prksus.msg --> ORACLE_HOME/srvm/mesg/prksus.msg
+                                  prkuus.msg --> ORACLE_HOME/srvm/mesg/prkuus.msg
+                                  procd.msb --> ORACLE_HOME/srvm/mesg/procd.msb
+                                  proce.msb --> ORACLE_HOME/srvm/mesg/proce.msb
+                                  procf.msb --> ORACLE_HOME/srvm/mesg/procf.msb
+                                  proci.msb --> ORACLE_HOME/srvm/mesg/proci.msb
+                                  procja.msb --> ORACLE_HOME/srvm/mesg/procja.msb
+                                  procko.msb --> ORACLE_HOME/srvm/mesg/procko.msb
+                                  procld.msb --> ORACLE_HOME/srvm/mesg/procld.msb
+                                  procle.msb --> ORACLE_HOME/srvm/mesg/procle.msb
+                                  proclf.msb --> ORACLE_HOME/srvm/mesg/proclf.msb
+                                  procli.msb --> ORACLE_HOME/srvm/mesg/procli.msb
+                                  proclja.msb --> ORACLE_HOME/srvm/mesg/proclja.msb
+                                  proclko.msb --> ORACLE_HOME/srvm/mesg/proclko.msb
+                                  proclptb.msb --> ORACLE_HOME/srvm/mesg/proclptb.msb
+                                  proclus.msb --> ORACLE_HOME/srvm/mesg/proclus.msb
+                                  proclus.msg --> ORACLE_HOME/srvm/mesg/proclus.msg
+                                  proclzhs.msb --> ORACLE_HOME/srvm/mesg/proclzhs.msb
+                                  proclzht.msb --> ORACLE_HOME/srvm/mesg/proclzht.msb
+                                  procptb.msb --> ORACLE_HOME/srvm/mesg/procptb.msb
+                                  procus.msb --> ORACLE_HOME/srvm/mesg/procus.msb
+                                  procus.msg --> ORACLE_HOME/srvm/mesg/procus.msg
+                                  proczhs.msb --> ORACLE_HOME/srvm/mesg/proczhs.msb
+                                  proczht.msb --> ORACLE_HOME/srvm/mesg/proczht.msb
+                                  prveus.msg --> ORACLE_HOME/srvm/mesg/prveus.msg
+                                  prvfus.msg --> ORACLE_HOME/srvm/mesg/prvfus.msg
+                                  prvgus.msg --> ORACLE_HOME/srvm/mesg/prvgus.msg
+                                  prvpus.msg --> ORACLE_HOME/srvm/mesg/prvpus.msg
+                                  sclcus.msg --> ORACLE_HOME/srvm/mesg/sclcus.msg
+                                  sclsus.msg --> ORACLE_HOME/srvm/mesg/sclsus.msg
+                                  srvm.jar --> ORACLE_HOME/oui/jlib/srvm.jar
+                                  srvmasm.jar --> ORACLE_HOME/oui/jlib/srvmasm.jar
+                                  libsrvm11.so --> ORACLE_HOME/oui/lib/linux/libsrvm11.so
+                                  ins_srvm.mk --> ORACLE_HOME/srvm/lib/install_srvm
+                                  ins_has.mk --> ORACLE_HOME/racg/lib/install
+                                Patch Location in Inventory:
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/23054319
+                                Patch Location in Storage area:
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/23054319_Jul_15_2016_14_38_02
+[Jul 7, 2017 7:20:36 PM]     Patch  21068539     : applied on Thu Apr 14 19:19:30 UTC 2016
+                             Unique Patch ID:  18999114
+                             Patch description:  "OJVM PATCH SET UPDATE 11.2.0.4.4"
+                                Created on 2 Jun 2015, 12:11:40 hrs PST8PDT
+                                Bugs fixed:
+                                  19058059, 18933818, 17201047, 19007266, 19554117, 14774730, 17285560
+                                  19153980, 18166577, 18458318, 19374518, 19006757, 17056813, 19909862
+                                  19223010, 19895326, 20408829, 19852360, 21047766, 19231857
+                                Files Touched:
+                                  jox.o --> ORACLE_HOME/javavm/admin/jox.o
+                                  classes.bin --> ORACLE_HOME/javavm/admin/classes.bin
+                                  libjavavm11.a --> ORACLE_HOME/lib/libjavavm11.a
+                                  jce.jar --> ORACLE_HOME/javavm/lib/jce.jar
+                                  sunjce_provider.jar --> ORACLE_HOME/javavm/lib/sunjce_provider.jar
+                                  java.security --> ORACLE_HOME/javavm/lib/security/java.security
+                                  cacerts --> ORACLE_HOME/javavm/lib/security/cacerts
+                                  initdbj.sql --> ORACLE_HOME/javavm/install/initdbj.sql
+                                  initsqlj.sql --> ORACLE_HOME/javavm/install/initsqlj.sql
+                                  jvmrm.sql --> ORACLE_HOME/javavm/install/jvmrm.sql
+                                  jvmsec5.sql --> ORACLE_HOME/javavm/install/jvmsec5.sql
+                                  initdbj.sql --> ORACLE_HOME/rdbms/admin/initdbj.sql
+                                  initsqlj.sql --> ORACLE_HOME/rdbms/admin/initsqlj.sql
+                                  jvmpsu.sql --> ORACLE_HOME/javavm/install/jvmpsu.sql
+                                  jvmpsui.sql --> ORACLE_HOME/javavm/install/jvmpsui.sql
+                                  jvmpsupdi.sql --> ORACLE_HOME/javavm/install/jvmpsupdi.sql
+                                  jvmpsupdii.sql --> ORACLE_HOME/javavm/install/jvmpsupdii.sql
+                                  jvmpsupi.sql --> ORACLE_HOME/javavm/install/jvmpsupi.sql
+                                  jvmpsupii.sql --> ORACLE_HOME/javavm/install/jvmpsupii.sql
+                                  ins_rdbms.mk --> ORACLE_HOME/rdbms/lib/jox_refresh_knlopt ioracle
+                                  postinstall.sql --> ORACLE_HOME/sqlpatch/21068539/postinstall.sql
+                                  postdeinstall.sql --> ORACLE_HOME/sqlpatch/21068539/postdeinstall.sql
+                                  prereqcheck.sql --> ORACLE_HOME/sqlpatch/21068539/prereqcheck.sql
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc5_g.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc5_g.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc5_g.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc5_g.jar
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms.jar
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms_g.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms_g.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms_g.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc5dms_g.jar
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc6_g.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc6_g.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc6_g.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc6_g.jar
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms.jar
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms_g.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms_g.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms_g.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc6dms_g.jar
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc5.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc5.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc5.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc5.jar
+                                  /oracle/jdbc/OracleDatabaseMetaData.class --> ORACLE_HOME/jdbc/lib/ojdbc6.jar
+                                  /oracle/jdbc/driver/OracleSql$1.class --> ORACLE_HOME/jdbc/lib/ojdbc6.jar
+                                  /oracle/jdbc/driver/OracleSql$ParseMode.class --> ORACLE_HOME/jdbc/lib/ojdbc6.jar
+                                  /oracle/jdbc/driver/OracleSql.class --> ORACLE_HOME/jdbc/lib/ojdbc6.jar
+                                Patch Location in Inventory:
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/inventory/oneoffs/21068539
+                                Patch Location in Storage area:
+                                  /u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21068539_Jun_2_2015_12_11_40
+[Jul 7, 2017 7:20:37 PM]     Rac system comprising of multiple nodes
+[Jul 7, 2017 7:20:37 PM]     Local node = odie1
+                               Remote node = odie2
+[Jul 7, 2017 7:20:37 PM]     --------------------------------------------------------------------------------
+[Jul 7, 2017 7:20:37 PM]     Finishing LsInventorySession at Fri Jul 07 19:20:37 UTC 2017

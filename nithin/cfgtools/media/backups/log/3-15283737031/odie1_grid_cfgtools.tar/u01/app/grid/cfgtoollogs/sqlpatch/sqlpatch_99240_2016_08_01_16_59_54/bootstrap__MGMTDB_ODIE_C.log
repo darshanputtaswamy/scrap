@@ -1,0 +1,76 @@
+Starting bootstrap on 01-AUG-16 05.00.08.916274 PM +00:00
+
+
+PL/SQL procedure successfully completed.
+
+old  25:   IF &full_bootstrap THEN
+new  25:   IF FALSE THEN
+changing bundle_data to CLOB
+recreating constraint
+recreating view
+
+PL/SQL procedure successfully completed.
+
+
+SSS
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+(Re)creating dbms_qopatch package
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+
+Package created.
+
+
+Session altered.
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+(Re)creating dbms_sqlpatch package
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+
+Package created.
+
+No errors.
+
+Synonym created.
+
+
+Grant succeeded.
+
+
+Session altered.
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+
+Session altered.
+
+Finished bootstrap on 01-AUG-16 05.00.13.959928 PM +00:00
+

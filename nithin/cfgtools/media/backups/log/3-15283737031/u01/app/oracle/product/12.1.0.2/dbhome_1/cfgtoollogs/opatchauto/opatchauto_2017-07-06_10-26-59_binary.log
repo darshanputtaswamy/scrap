@@ -1,0 +1,85 @@
+2017-07-06 10:26:59,341 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+===============START of Binary Session================
+
+2017-07-06 10:26:59,343 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Oracle Home : /u01/app/oracle/product/12.1.0.2/dbhome_1
+2017-07-06 10:26:59,345 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+OPatchAuto binary patching Tool
+Copyright (c)2014, Oracle Corporation. All rights reserved.
+
+OPatchauto Version : 13.9.1.0.0
+Running from       : /u01/app/oracle/product/12.1.0.2/dbhome_1
+
+2017-07-06 10:26:59,345 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Java Home : /u01/app/oracle/product/12.1.0.2/dbhome_1/OPatch/jre
+2017-07-06 10:26:59,345 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Command-line Arguments : [apply, /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825, -oh, /u01/app/oracle/product/12.1.0.2/dbhome_1, -target_type, oracle_database, -binary, -invPtrLoc, /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc, -persistresult, /u01/app/oracle/product/12.1.0.2/dbhome_1/OPatch/auto/dbsessioninfo/sessionresult_odie2SHIPTEST.ser, -analyzedresult, /u01/app/oracle/product/12.1.0.2/dbhome_1/OPatch/auto/dbsessioninfo/sessionresult_analyze_odie2_SHIPTEST.ser]
+2017-07-06 10:26:59,346 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Target type : oracle_database
+2017-07-06 10:26:59,521 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+There is a composite patch in /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:26:59,592 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Patch selected: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825
+
+2017-07-06 10:27:00,672 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+
+Session Options:
+Analyze     : false
+Inventory   : /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc
+StopOnPrereqFailure : true
+StopOnPatchFailure  : true
+IsFileBusyPatchingMode  : false
+IsOhInstance Running   : false
+Force conflict   : false
+
+2017-07-06 10:27:00,680 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Analyze session result created from file :: /u01/app/oracle/product/12.1.0.2/dbhome_1/OPatch/auto/dbsessioninfo/sessionresult_analyze_odie2_SHIPTEST.ser
+2017-07-06 10:27:00,680 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Started patching operations ...
+2017-07-06 10:27:00,680 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:27:00,911 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Detected a composite Patch inside the patch at: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082/24732082
+Subpatches : [19769480, 20299023, 20831110, 21359755, 21948354, 22291127, 23054246, 24006101]
+2017-07-06 10:27:01,318 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Applying /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082 ...
+2017-07-06 10:28:27,469 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Patch /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082 applied.
+2017-07-06 10:28:27,470 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633
+2017-07-06 10:28:27,531 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Applying /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633 ...
+2017-07-06 10:28:58,296 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Patch /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633 applied.
+2017-07-06 10:28:58,297 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+... Patching operations Completed.
+2017-07-06 10:28:58,297 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Backing up the SystemPatch metadata ...
+2017-07-06 10:28:58,297 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Backing up SystemPatch bundle.xml from "/tmp/oakpatch/db/12.1.0.2.0/24732082/24917825" to "/u01/app/oracle/product/12.1.0.2/dbhome_1/.opatchauto_storage/system_patches/24917825"
+2017-07-06 10:28:58,298 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Successfully backed up the bundle.xml
+2017-07-06 10:28:58,298 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+
+
+==Following patches were SKIPPED:
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/21436941
+Reason: This patch is not applicable to this specified target type - "oracle_database"
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828643
+Reason: This patch is not applicable to this specified target type - "oracle_database"
+
+
+==Following patches were SUCCESSFULLY applied:
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+Log: /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-27-00AM_1.log
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633
+Log: /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-27-00AM_1.log
+
+2017-07-06 10:28:58,300 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+
+opatchauto SUCCEEDED.
+

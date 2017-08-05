@@ -1,0 +1,728 @@
+[main] [ 2014-10-09 16:02:38.122 CDT ] [UsmcaCmdLineParser.discoverRAC:245]  Cluster Existence Check
+[main] [ 2014-10-09 16:02:38.148 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:38.148 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:38.152 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:38.166 CDT ] [OCR.loadLibrary:320]  Going to load the ocr library
+[main] [ 2014-10-09 16:02:38.167 CDT ] [Library.load:188]  library.load
+[main] [ 2014-10-09 16:02:38.168 CDT ] [sPlatform.isHybrid:66]  osName=Linux osArch=amd64 JVM=64 rc=false
+[main] [ 2014-10-09 16:02:38.168 CDT ] [sPlatform.isHybrid:66]  osName=Linux osArch=amd64 JVM=64 rc=false
+[main] [ 2014-10-09 16:02:38.168 CDT ] [Library.load:264]  Loading  library /u01/app/11.2.0.4/grid/lib/libsrvmocr11.so
+[main] [ 2014-10-09 16:02:38.176 CDT ] [OCR.loadLibrary:322]  loaded ocr libraries
+[main] [ 2014-10-09 16:02:38.176 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:38.178 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:38.179 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:38.183 CDT ] [HASContext.<init>:121]  moduleInit = 7
+[main] [ 2014-10-09 16:02:38.183 CDT ] [Library.load:188]  library.load
+[main] [ 2014-10-09 16:02:38.183 CDT ] [sPlatform.isHybrid:66]  osName=Linux osArch=amd64 JVM=64 rc=false
+[main] [ 2014-10-09 16:02:38.184 CDT ] [sPlatform.isHybrid:66]  osName=Linux osArch=amd64 JVM=64 rc=false
+[main] [ 2014-10-09 16:02:38.184 CDT ] [Library.load:264]  Loading  library /u01/app/11.2.0.4/grid/lib/libsrvmhas11.so
+[main] [ 2014-10-09 16:02:38.187 CDT ] [Util.<init>:95]  Util Instance created.
+[main] [ 2014-10-09 16:02:38.196 CDT ] [ClusterAlias.<init>:89]  ClusterAlias Instance created.
+[main] [ 2014-10-09 16:02:38.219 CDT ] [UsmcaCmdLineParser.discoverRAC:249]  cluster existence:true
+[main] [ 2014-10-09 16:02:38.225 CDT ] [OracleHome.getNodeNames:327]  inside getNodeNames, inventory loc null
+[main] [ 2014-10-09 16:02:38.405 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:38.410 CDT ] [OracleHome.isClusterInstalled:309]  bClusterInstalled=true
+[main] [ 2014-10-09 16:02:38.411 CDT ] [UsmcaCmdLineParser.discoverRAC:263]  Cluster flag true
+[main] [ 2014-10-09 16:02:38.412 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.cli.UsmcaCmdLineParser Method : validateForCreateVolumes()
+[main] [ 2014-10-09 16:02:38.414 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.cli.UsmcaCmdLineParser Method : validateForCreateVolumes()
+[main] [ 2014-10-09 16:02:38.415 CDT ] [Usmca.discoverRAC:336]  Trying to check cluster existence
+[main] [ 2014-10-09 16:02:38.415 CDT ] [Usmca.discoverRAC:342]  cluster existence:true
+[main] [ 2014-10-09 16:02:38.415 CDT ] [OracleHome.getNodeNames:327]  inside getNodeNames, inventory loc null
+[main] [ 2014-10-09 16:02:38.419 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:38.419 CDT ] [OracleHome.isClusterInstalled:309]  bClusterInstalled=true
+[main] [ 2014-10-09 16:02:38.420 CDT ] [Usmca.discoverRAC:355]  Cluster flag true
+[main] [ 2014-10-09 16:02:38.582 CDT ] [UsmcaModelRac.initialize:107]  Inside RAC model init
+[main] [ 2014-10-09 16:02:38.582 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: null
+[main] [ 2014-10-09 16:02:38.585 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:38.586 CDT ] [OracleHome.getVersion:911]  Homeinfo /u01/app/11.2.0.4/grid,1
+[main] [ 2014-10-09 16:02:38.896 CDT ] [OracleHome.getVersion:939]  OracleHome.server.getVersion Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:38.896 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:38.896 CDT ] [UsmcaLogger.logInfo:143]  Software Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:38.903 CDT ] [OsUtilsBase.getBaseFromOrabase:651]  oraBaseUtility /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:38.903 CDT ] [OsUtilsBase.getBaseFromOrabase:660]  cmds: /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:38.903 CDT ] [OsUtilsBase.getBaseFromOrabase:664]  envs:  ORACLE_HOME=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:38.921 CDT ] [OsUtilsBase.getBaseFromOrabase:669]  baseLocation from orabase 
+/u01/app/grid
+[main] [ 2014-10-09 16:02:38.921 CDT ] [OsUtilsBase.getBaseFromOrabase:694]   orabaseLocation= /u01/app/grid
+[main] [ 2014-10-09 16:02:38.952 CDT ] [NetworkUtils.checkListenerStatus:495]  Checking default listener status 
+[main] [ 2014-10-09 16:02:38.953 CDT ] [NetworkUtils.checkListenerStatus:500]  Checking listener status: LISTENER
+[main] [ 2014-10-09 16:02:38.983 CDT ] [NetworkUtils.checkListenerStatus:506]  lsnrct status output 
+
+LSNRCTL for Linux: Version 11.2.0.4.0 - Production on 09-OCT-2014 16:02:38
+
+Copyright (c) 1991, 2013, Oracle.  All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=IPC)(KEY=LISTENER)))
+STATUS of the LISTENER
+------------------------
+Alias                     LISTENER
+Version                   TNSLSNR for Linux: Version 11.2.0.4.0 - Production
+Start Date                09-OCT-2014 15:40:44
+Uptime                    0 days 0 hr. 21 min. 56 sec
+Trace Level               off
+Security                  ON: Local OS Authentication
+SNMP                      OFF
+Listener Parameter File   /u01/app/11.2.0.4/grid/network/admin/listener.ora
+Listener Log File         /u01/app/grid/diag/tnslsnr/odie1/listener/alert/log.xml
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=LISTENER)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=165.91.150.32)(PORT=1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=165.91.150.37)(PORT=1521)))
+Services Summary...
+Service "+ASM" has 1 instance(s).
+  Instance "+ASM1", status READY, has 1 handler(s) for this service...
+Service "orcl" has 1 instance(s).
+  Instance "orcl", status READY, has 1 handler(s) for this service...
+Service "orclXDB" has 1 instance(s).
+  Instance "orcl", status READY, has 1 handler(s) for this service...
+The command completed successfully
+[main] [ 2014-10-09 16:02:38.984 CDT ] [NetworkUtils.checkListenerStatus:525]  returning listenerLISTENER
+[main] [ 2014-10-09 16:02:38.984 CDT ] [NetworkUtils.getOneLocalListenerProtocolAddress:3085]  lsnr LISTENER
+[main] [ 2014-10-09 16:02:39.000 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:39.000 CDT ] [HAUtils.<init>:241]  oui location /u01/app/oraInventory/ContentsXML
+[main] [ 2014-10-09 16:02:39.001 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:39.001 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.001 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:39.002 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:39.002 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:39.002 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:39.004 CDT ] [ClusterUtil.<init>:72]  ClusterUtil Instance created
+[main] [ 2014-10-09 16:02:39.004 CDT ] [ClusterUtil.<init>:75]  ClusterUtil m_bSKGXN=true
+[main] [ 2014-10-09 16:02:39.004 CDT ] [HAUtils.isCRSInstalled:594]  enter isCRSInstalled() m_ouiLoc /u01/app/oraInventory/ContentsXML
+[main] [ 2014-10-09 16:02:39.008 CDT ] [InstallGroupImpl.<init>:114]  OUI_LOC_PROPERTY = oracle.installer.oui_loc
+[main] [ 2014-10-09 16:02:39.012 CDT ] [InstallGroupImpl.<init>:148]  nodelist vector is not null
+[main] [ 2014-10-09 16:02:39.013 CDT ] [InstallGroupImpl.<init>:149]  size of nodelist vector = 2
+[main] [ 2014-10-09 16:02:39.013 CDT ] [InstallGroupImpl.<init>:155]  nodename[0]=odie1
+[main] [ 2014-10-09 16:02:39.014 CDT ] [InstallGroupImpl.<init>:155]  nodename[1]=odie2
+[main] [ 2014-10-09 16:02:39.014 CDT ] [InstallGroupImpl.<init>:184]  Home location = /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.014 CDT ] [InstallGroupImpl.<init>:188]  Home name = OraGrid11gR4
+[main] [ 2014-10-09 16:02:39.015 CDT ] [InstallGroupImpl.<init>:196]  local node + odie1
+[main] [ 2014-10-09 16:02:39.015 CDT ] [HAUtils.getCurrentOracleHome:368]  Oracle home from system property: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.017 CDT ] [GETCRSHOMEUtil.<init>:90]  Toolname: getcrshome   ---    Tool location: /u01/app/11.2.0.4/grid/srvm/adminTool dependencies: [Ljava.lang.String;@739e8329
+[main] [ 2014-10-09 16:02:39.017 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.018 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/srvm/admin/getcrshome 
+[main] [ 2014-10-09 16:02:39.022 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[Thread-10] [ 2014-10-09 16:02:39.022 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-9] [ 2014-10-09 16:02:39.022 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-9] [ 2014-10-09 16:02:39.029 CDT ] [StreamReader.run:65]  OUTPUT>/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.029 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.029 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.030 CDT ] [RuntimeExec.runCommand:164]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.030 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.030 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.031 CDT ] [HAUtils.getConfiguredGridHome:785]  Configured Grid Infrastructure home: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.031 CDT ] [HAUtils.getCurrentOracleHome:368]  Oracle home from system property: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.031 CDT ] [GETCRSHOMEUtil.<init>:90]  Toolname: getcrshome   ---    Tool location: /u01/app/11.2.0.4/grid/srvm/adminTool dependencies: [Ljava.lang.String;@739e8329
+[main] [ 2014-10-09 16:02:39.032 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.032 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/srvm/admin/getcrshome 
+[Thread-12] [ 2014-10-09 16:02:39.035 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:39.035 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[Thread-11] [ 2014-10-09 16:02:39.035 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[Thread-11] [ 2014-10-09 16:02:39.043 CDT ] [StreamReader.run:65]  OUTPUT>/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.043 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.044 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.044 CDT ] [RuntimeExec.runCommand:164]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.044 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.044 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.045 CDT ] [HAUtils.getConfiguredGridHome:785]  Configured Grid Infrastructure home: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.045 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:39.045 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.046 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:39.064 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.065 CDT ] [UnixSystem.isCRSConfigured:2597]  configFile=/etc/oracle/ocr.loc
+[main] [ 2014-10-09 16:02:39.066 CDT ] [Utils.getPropertyValue:302]  propName=ocrconfig_loc propValue=+DATA
+[main] [ 2014-10-09 16:02:39.067 CDT ] [UnixSystem.isCRSConfigured:2604]  ocrconfig_loc=+DATA
+[main] [ 2014-10-09 16:02:39.067 CDT ] [Utils.getPropertyValue:302]  propName=local_only propValue=FALSE
+[main] [ 2014-10-09 16:02:39.067 CDT ] [HAUtils.getCurrentOracleHome:368]  Oracle home from system property: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.067 CDT ] [GETCRSHOMEUtil.<init>:90]  Toolname: getcrshome   ---    Tool location: /u01/app/11.2.0.4/grid/srvm/adminTool dependencies: [Ljava.lang.String;@739e8329
+[main] [ 2014-10-09 16:02:39.068 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.068 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/srvm/admin/getcrshome 
+[main] [ 2014-10-09 16:02:39.072 CDT ] [StreamReader.run:61]  runCommand: Waiting for the process
+[Thread-13] [ 2014-10-09 16:02:39.072 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-14] [ 2014-10-09 16:02:39.072 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-13] [ 2014-10-09 16:02:39.081 CDT ] [StreamReader.run:65]  OUTPUT>/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.081 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.081 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.081 CDT ] [RuntimeExec.runCommand:164]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.082 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.082 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.082 CDT ] [HAUtils.getConfiguredGridHome:785]  Configured Grid Infrastructure home: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.087 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against11
+[main] [ 2014-10-09 16:02:39.087 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.087 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against11
+[main] [ 2014-10-09 16:02:39.088 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.088 CDT ] [Version.isPre112:427]  version to be checked 11.2.0.4.0 minor version to check against2
+[main] [ 2014-10-09 16:02:39.088 CDT ] [Version.isPre112:438]  isPre112 : Returning FALSE for minor version check
+[main] [ 2014-10-09 16:02:39.088 CDT ] [CRSCTLUtil.checkCRSRunning:409]  Checking if CRS is running for post 11 release
+[main] [ 2014-10-09 16:02:39.089 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.089 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/bin/crsctl 
+[main] [ 2014-10-09 16:02:39.089 CDT ] [RuntimeExec.runCommand:77]  check 
+[main] [ 2014-10-09 16:02:39.089 CDT ] [RuntimeExec.runCommand:77]  cluster 
+[main] [ 2014-10-09 16:02:39.093 CDT ] [StreamReader.run:61]  runCommand: Waiting for the process
+[Thread-15] [ 2014-10-09 16:02:39.093 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-16] [ 2014-10-09 16:02:39.093 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-15] [ 2014-10-09 16:02:39.153 CDT ] [StreamReader.run:65]  OUTPUT>CRS-4537: Cluster Ready Services is online
+[Thread-15] [ 2014-10-09 16:02:39.153 CDT ] [StreamReader.run:65]  OUTPUT>CRS-4529: Cluster Synchronization Services is online
+[Thread-15] [ 2014-10-09 16:02:39.153 CDT ] [StreamReader.run:65]  OUTPUT>CRS-4533: Event Manager is online
+[main] [ 2014-10-09 16:02:39.255 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.256 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.256 CDT ] [RuntimeExec.runCommand:164]  CRS-4537: Cluster Ready Services is online
+[main] [ 2014-10-09 16:02:39.256 CDT ] [RuntimeExec.runCommand:164]  CRS-4529: Cluster Synchronization Services is online
+[main] [ 2014-10-09 16:02:39.256 CDT ] [RuntimeExec.runCommand:164]  CRS-4533: Event Manager is online
+[main] [ 2014-10-09 16:02:39.256 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.257 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.275 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:39.275 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.275 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:39.276 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:39.276 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:39.276 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:39.283 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:39.284 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.284 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:39.284 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:39.284 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:39.285 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:39.343 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.LISTENER.lsnr, type: 1, registered: true
+[main] [ 2014-10-09 16:02:39.361 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.LISTENER.lsnr, type: 1, registered: true
+[main] [ 2014-10-09 16:02:39.362 CDT ] [CRSNative.getStat:1447]  About to call crs stat: name: ora.LISTENER.lsnr, type: 1, node: null
+[main] [ 2014-10-09 16:02:39.362 CDT ] [CRSNative.getStat:1449]  looking for following attributes:
+[main] [ 2014-10-09 16:02:39.362 CDT ] [CRSNative.getStat:1451]  		'TYPE'
+[main] [ 2014-10-09 16:02:39.383 CDT ] [CRSNative.getStat:1464]  crs found 1 attributes
+[main] [ 2014-10-09 16:02:39.383 CDT ] [CRSNative.getStat:1474]  	Name: 'TYPE'; Value: 'ora.listener.type'
+[main] [ 2014-10-09 16:02:39.383 CDT ] [NodeAppsFactoryImpl.getListener:1140]  Resource type is ora.listener.type
+[main] [ 2014-10-09 16:02:39.384 CDT ] [CRSNative.getStat:1447]  About to call crs stat: name: ora.LISTENER.lsnr, type: 1, node: null
+[main] [ 2014-10-09 16:02:39.384 CDT ] [CRSNative.getStat:1449]  looking for following attributes:
+[main] [ 2014-10-09 16:02:39.384 CDT ] [CRSNative.getStat:1451]  		'ENDPOINTS'
+[main] [ 2014-10-09 16:02:39.404 CDT ] [CRSNative.getStat:1464]  crs found 1 attributes
+[main] [ 2014-10-09 16:02:39.404 CDT ] [CRSNative.getStat:1474]  	Name: 'ENDPOINTS'; Value: 'TCP:1521'
+[main] [ 2014-10-09 16:02:39.405 CDT ] [EndpointsImpl.<init>:276]  Get listener endpoints from TCP:1521
+[main] [ 2014-10-09 16:02:39.406 CDT ] [EndpointsImpl.<init>:302]  Token count is 1
+[main] [ 2014-10-09 16:02:39.406 CDT ] [EndpointsImpl.<init>:324]  LsnrProtocol type = TCP, values = 1521
+[main] [ 2014-10-09 16:02:39.407 CDT ] [EndpointsImpl$LsnrProtocol.addPortValue:86]  Calling parseInt to check 1521
+[main] [ 2014-10-09 16:02:39.408 CDT ] [EndpointsImpl$LsnrProtocol.addPortValue:97]  Get port number 1521
+[main] [ 2014-10-09 16:02:39.408 CDT ] [NetworkUtils.getOneLocalListenerProtocolAddress:3113]  lsnr endpoints TCP:1521
+[main] [ 2014-10-09 16:02:39.408 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:646]  enter getOneLocalListenerProtocolAddress()
+[main] [ 2014-10-09 16:02:39.408 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:647]  host odie1.ship.iodp.tamu.edu
+[main] [ 2014-10-09 16:02:39.409 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:658]  endPt TCP:1521
+[main] [ 2014-10-09 16:02:39.409 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:664]  protocol TCP
+[main] [ 2014-10-09 16:02:39.409 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:671]  ports 1521
+[main] [ 2014-10-09 16:02:39.409 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:678]  port 1521
+[main] [ 2014-10-09 16:02:39.414 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:710]  (ADDRESS=(PROTOCOL=TCP)(HOST=odie1.ship.iodp.tamu.edu)(PORT=1521))
+[main] [ 2014-10-09 16:02:39.414 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:711]  port 1521
+[main] [ 2014-10-09 16:02:39.415 CDT ] [HAListenerUtils.getOneLocalListenerProtocolAddress:712]  protocol TCP
+[main] [ 2014-10-09 16:02:39.415 CDT ] [NetworkUtils.getOneLocalListenerProtocolAddress:3116]  addr (ADDRESS=(PROTOCOL=TCP)(HOST=odie1.ship.iodp.tamu.edu)(PORT=1521))
+[main] [ 2014-10-09 16:02:39.415 CDT ] [UsmcaLogger.logInfo:143]  ignoreprereqsfalse
+[main] [ 2014-10-09 16:02:39.417 CDT ] [OsUtilsBase.getBaseFromOrabase:651]  oraBaseUtility /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:39.417 CDT ] [OsUtilsBase.getBaseFromOrabase:660]  cmds: /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:39.417 CDT ] [OsUtilsBase.getBaseFromOrabase:664]  envs:  ORACLE_HOME=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.434 CDT ] [OsUtilsBase.getBaseFromOrabase:669]  baseLocation from orabase 
+/u01/app/grid
+[main] [ 2014-10-09 16:02:39.435 CDT ] [OsUtilsBase.getBaseFromOrabase:694]   orabaseLocation= /u01/app/grid
+[main] [ 2014-10-09 16:02:39.437 CDT ] [UsmcaLogger.logInfo:143]  ACFS driver state script exists true
+[main] [ 2014-10-09 16:02:39.437 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.util.UsmcaUtil Method : executeCommand
+[main] [ 2014-10-09 16:02:39.437 CDT ] [UsmcaLogger.logInfo:143]  Command: /u01/app/11.2.0.4/grid/bin/acfsdriverstate loaded
+[main] [ 2014-10-09 16:02:39.520 CDT ] [UsmcaLogger.logInfo:143]  ACFS-9203: true
+
+[main] [ 2014-10-09 16:02:39.521 CDT ] [UsmcaLogger.logInfo:143]  ACFS driver state status code 0
+[main] [ 2014-10-09 16:02:39.521 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.model.UsmcaModelRac Method : loadandSetSecEncrInit
+[main] [ 2014-10-09 16:02:39.521 CDT ] [UsmcaLogger.logInfo:143]  Security command
+[main] [ 2014-10-09 16:02:39.522 CDT ] [UsmcaLogger.logArrayInfo:194]  /sbin/acfsutil sec info -i 
+[main] [ 2014-10-09 16:02:39.543 CDT ] [UsmcaLogger.logInfo:143]  Security command exit code 1
+[main] [ 2014-10-09 16:02:39.543 CDT ] [UsmcaLogger.logInfo:143]  Encryption command
+[main] [ 2014-10-09 16:02:39.543 CDT ] [UsmcaLogger.logArrayInfo:194]  /sbin/acfsutil encr info -i 
+[main] [ 2014-10-09 16:02:39.564 CDT ] [UsmcaLogger.logInfo:143]  Encryption command exit code 1
+[main] [ 2014-10-09 16:02:39.564 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.model.UsmcaModelRac Method : loadandSetSecEncrInit
+[main] [ 2014-10-09 16:02:39.571 CDT ] [UsmcaModelRac.initialize:115]  Inside RAC model init
+[main] [ 2014-10-09 16:02:39.572 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:39.572 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.572 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:39.573 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:39.573 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:39.573 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:39.577 CDT ] [GetActiveNodes.create:220]  Going into GetActiveNodes constructor...
+[main] [ 2014-10-09 16:02:39.577 CDT ] [ClusterUtil.<init>:72]  ClusterUtil Instance created
+[main] [ 2014-10-09 16:02:39.577 CDT ] [ClusterUtil.<init>:75]  ClusterUtil m_bSKGXN=true
+[main] [ 2014-10-09 16:02:39.591 CDT ] [GetActiveNodes.<init>:192]  Inside GetActiveNodes :odie1
+[main] [ 2014-10-09 16:02:39.593 CDT ] [GetActiveNodes.<init>:204]  Started clusterware daemon thread
+[GetActiveNodesThread] [ 2014-10-09 16:02:39.593 CDT ] [Semaphore.acquire:109]  SyncBufferFull:Acquire called by thread GetActiveNodesThread m_count=0
+[main] [ 2014-10-09 16:02:39.593 CDT ] [GetActiveNodes.create:222]  Out of GetActiveNodes constructor.
+[main] [ 2014-10-09 16:02:39.593 CDT ] [GetActiveNodes.create:226]  Returning an existing instance of GetActiveNodes
+[main] [ 2014-10-09 16:02:39.595 CDT ] [ClusterUtils.areSharedPaths:556]  1. path=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.595 CDT ] [ClusterUtils.areSharedPaths:577]  2. path=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.595 CDT ] [ClusterUtils.areSharedPaths:582]  hashKey = [odie1, odie2]/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.596 CDT ] [GetActiveNodes.create:226]  Returning an existing instance of GetActiveNodes
+[main] [ 2014-10-09 16:02:39.596 CDT ] [Cluster.verifyNodeList:1148]  clusterNodes[0]=odie1
+[main] [ 2014-10-09 16:02:39.596 CDT ] [Cluster.verifyNodeList:1148]  clusterNodes[1]=odie2
+[main] [ 2014-10-09 16:02:39.596 CDT ] [Cluster.verifyNodeList:1153]  nodeList[0]=odie1
+[main] [ 2014-10-09 16:02:39.597 CDT ] [Cluster.verifyNodeList:1153]  nodeList[1]=odie2
+[main] [ 2014-10-09 16:02:39.597 CDT ] [GetActiveNodes.create:226]  Returning an existing instance of GetActiveNodes
+[main] [ 2014-10-09 16:02:39.597 CDT ] [Cluster.isSharedPath:1072]  NodeList=[odie1, odie2]
+[main] [ 2014-10-09 16:02:39.598 CDT ] [Cluster.isSharedPath:1108]  pathName=/u01/app/11.2.0.4/grid/ dirPath = /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.598 CDT ] [UnixSystem.isSharedPath:1592]  dirPath=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.603 CDT ] [UnixSystem.isSharedPath:1597]  UnixSystem.isShared: pathName=/u01/app/11.2.0.4/grid tempFile=CFSFileName1412888559603
+[main] [ 2014-10-09 16:02:39.603 CDT ] [UnixSystem.isSharedPath:1602]  UnixSystem.isShared: dirPathName is /u01/app/11.2.0.4/grid/CFSFileName1412888559603
+[main] [ 2014-10-09 16:02:39.604 CDT ] [UnixSystem.isSharedPath:1606]  UnixSystem.isShared: removing file /u01/app/11.2.0.4/grid/CFSFileName1412888559603on  odie2
+[main] [ 2014-10-09 16:02:39.604 CDT ] [Utils.getLocalHost:481]  Hostname retrieved: odie1.ship.iodp.tamu.edu, returned: odie1
+[main] [ 2014-10-09 16:02:39.605 CDT ] [UnixSystem.checkRemoteExecutionSetup:2185]  checkRemoteExecutionSetup:: Checking user equivalence using Secured Shell '/usr/bin/ssh'
+[main] [ 2014-10-09 16:02:39.605 CDT ] [UnixSystem.checkRemoteExecutionSetup:2187]  checkRemoteExecutionSetup:: Running Unix command: /usr/bin/ssh -o FallBackToRsh=no  -o PasswordAuthentication=no  -o StrictHostKeyChecking=yes  -o NumberOfPasswordPrompts=0 odie2 /bin/true
+[main] [ 2014-10-09 16:02:39.605 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.605 CDT ] [RuntimeExec.runCommand:77]  /usr/bin/ssh 
+[main] [ 2014-10-09 16:02:39.606 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.606 CDT ] [RuntimeExec.runCommand:77]  FallBackToRsh=no 
+[main] [ 2014-10-09 16:02:39.606 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.606 CDT ] [RuntimeExec.runCommand:77]  PasswordAuthentication=no 
+[main] [ 2014-10-09 16:02:39.607 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.607 CDT ] [RuntimeExec.runCommand:77]  StrictHostKeyChecking=yes 
+[main] [ 2014-10-09 16:02:39.607 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.607 CDT ] [RuntimeExec.runCommand:77]  NumberOfPasswordPrompts=0 
+[main] [ 2014-10-09 16:02:39.607 CDT ] [RuntimeExec.runCommand:77]  odie2 
+[main] [ 2014-10-09 16:02:39.608 CDT ] [RuntimeExec.runCommand:77]  /bin/true 
+[main] [ 2014-10-09 16:02:39.611 CDT ] [StreamReader.run:61]  runCommand: Waiting for the process
+[Thread-26] [ 2014-10-09 16:02:39.611 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-25] [ 2014-10-09 16:02:39.611 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:39.733 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.733 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.734 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.734 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.734 CDT ] [UnixSystem.checkRemoteExecutionSetup:2293]  Using Remote Shell Command: '/usr/bin/ssh -o FallBackToRsh=no  -o PasswordAuthentication=no  -o StrictHostKeyChecking=yes  -o NumberOfPasswordPrompts=0 '
+[main] [ 2014-10-09 16:02:39.734 CDT ] [UnixSystem.checkRemoteExecutionSetup:2294]  Using Remote Copy Command: '/usr/bin/scp'
+[main] [ 2014-10-09 16:02:39.735 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.735 CDT ] [RuntimeExec.runCommand:77]  /usr/bin/ssh 
+[main] [ 2014-10-09 16:02:39.735 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.735 CDT ] [RuntimeExec.runCommand:77]  FallBackToRsh=no 
+[main] [ 2014-10-09 16:02:39.736 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.736 CDT ] [RuntimeExec.runCommand:77]  PasswordAuthentication=no 
+[main] [ 2014-10-09 16:02:39.736 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.736 CDT ] [RuntimeExec.runCommand:77]  StrictHostKeyChecking=yes 
+[main] [ 2014-10-09 16:02:39.736 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.737 CDT ] [RuntimeExec.runCommand:77]  NumberOfPasswordPrompts=0 
+[main] [ 2014-10-09 16:02:39.737 CDT ] [RuntimeExec.runCommand:77]  odie2 
+[main] [ 2014-10-09 16:02:39.737 CDT ] [RuntimeExec.runCommand:77]  -n 
+[main] [ 2014-10-09 16:02:39.737 CDT ] [RuntimeExec.runCommand:77]  /bin/rm 
+[main] [ 2014-10-09 16:02:39.737 CDT ] [RuntimeExec.runCommand:77]  -f 
+[main] [ 2014-10-09 16:02:39.738 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/CFSFileName1412888559603 
+[Thread-27] [ 2014-10-09 16:02:39.742 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[Thread-28] [ 2014-10-09 16:02:39.742 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:39.742 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[main] [ 2014-10-09 16:02:39.838 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.838 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.838 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.838 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.839 CDT ] [NativeSystem.isCmdScv:502]  isCmdScv: cmd=[/usr/bin/ssh -o FallBackToRsh=no -o PasswordAuthentication=no -o StrictHostKeyChecking=yes -o NumberOfPasswordPrompts=0 odie2 -n /bin/rm -f /u01/app/11.2.0.4/grid/CFSFileName1412888559603]
+[main] [ 2014-10-09 16:02:39.839 CDT ] [NativeSystem.isCmdScv:552]  isCmdScv: /usr/bin/ssh is present.
+[main] [ 2014-10-09 16:02:39.839 CDT ] [NativeSystem.isCmdScv:554]  isCmdScv: /usr/bin/ssh is a file.
+[main] [ 2014-10-09 16:02:39.840 CDT ] [NativeSystem.isCmdScv:571]  isCmdScv: returned true
+[main] [ 2014-10-09 16:02:39.840 CDT ] [NativeSystem.rununixcmd:1152]  NativeSystem.rununixcmd: RetString 1| :successful
+[main] [ 2014-10-09 16:02:39.840 CDT ] [UnixSystem.isSharedPath:1606]  UnixSystem.isShared: removing file /u01/app/11.2.0.4/grid/CFSFileName1412888559603on  odie1
+[main] [ 2014-10-09 16:02:39.840 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.841 CDT ] [RuntimeExec.runCommand:77]  /bin/rm 
+[main] [ 2014-10-09 16:02:39.841 CDT ] [RuntimeExec.runCommand:77]  -f 
+[main] [ 2014-10-09 16:02:39.841 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/CFSFileName1412888559603 
+[Thread-30] [ 2014-10-09 16:02:39.845 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-29] [ 2014-10-09 16:02:39.845 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:39.845 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[main] [ 2014-10-09 16:02:39.846 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.847 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.847 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.848 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.848 CDT ] [NativeSystem.isCmdScv:502]  isCmdScv: cmd=[/bin/rm -f /u01/app/11.2.0.4/grid/CFSFileName1412888559603]
+[main] [ 2014-10-09 16:02:39.849 CDT ] [NativeSystem.isCmdScv:571]  isCmdScv: returned false
+[main] [ 2014-10-09 16:02:39.849 CDT ] [NativeSystem.rununixcmd:1152]  NativeSystem.rununixcmd: RetString 1| :successful
+[main] [ 2014-10-09 16:02:39.849 CDT ] [UnixSystem.isSharedPath:1611]  UnixSystem.isShared: creating file /u01/app/11.2.0.4/grid/CFSFileName1412888559603
+[main] [ 2014-10-09 16:02:39.850 CDT ] [UnixSystem.isSharedPath:1620]  Failed to create the test CFS file at /u01/app/11.2.0.4/grid/CFSFileName1412888559603
+[main] [ 2014-10-09 16:02:39.855 CDT ] [ClusterUtils.areSharedPaths:602]  oracle.ops.mgmt.nativesystem.UnixSystem.isSharedPath(UnixSystem.java:1624)
+oracle.ops.mgmt.cluster.Cluster.isSharedPath(Cluster.java:1110)
+oracle.ops.mgmt.cluster.Cluster.isSharedPath(Cluster.java:1037)
+oracle.sysman.assistants.util.ClusterUtils.areSharedPaths(ClusterUtils.java:589)
+oracle.sysman.assistants.util.ClusterUtils.isShared(ClusterUtils.java:500)
+oracle.sysman.assistants.util.ClusterUtils.isShared(ClusterUtils.java:456)
+oracle.sysman.assistants.util.attributes.CommonOPSAttributes.updateShared(CommonOPSAttributes.java:886)
+oracle.sysman.assistants.util.attributes.CommonOPSAttributes.setNodeNames(CommonOPSAttributes.java:237)
+oracle.sysman.assistants.usmca.model.UsmcaModelRac.initialize(UsmcaModelRac.java:142)
+oracle.sysman.assistants.usmca.model.UsmcaModel.<init>(UsmcaModel.java:144)
+oracle.sysman.assistants.usmca.model.UsmcaModelRac.<init>(UsmcaModelRac.java:89)
+oracle.sysman.assistants.usmca.Usmca.getModel(Usmca.java:326)
+oracle.sysman.assistants.usmca.Usmca.execute(Usmca.java:153)
+oracle.sysman.assistants.usmca.Usmca.main(Usmca.java:369)
+[main] [ 2014-10-09 16:02:39.856 CDT ] [UsmcaModelRac.initialize:150]  Remote Node odie2
+[main] [ 2014-10-09 16:02:39.856 CDT ] [UsmcaLogger.logInfo:143]  Driver State after RAC check true
+[main] [ 2014-10-09 16:02:39.857 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.model.UsmcaModelRac Method : performOperation
+[main] [ 2014-10-09 16:02:39.857 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.model.UsmcaModelRac Method : performOperation
+[main] [ 2014-10-09 16:02:39.889 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : initialize
+[main] [ 2014-10-09 16:02:39.892 CDT ] [HASContext.getCRSHome:579]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.892 CDT ] [Util.getCRSHome:604]  getCRSHome: ret=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:39.892 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:39.893 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:39.893 CDT ] [ClusterInfo.<init>:241]  m_olsnodesPath=/u01/app/11.2.0.4/grid/bin/olsnodes
+[main] [ 2014-10-09 16:02:39.893 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.893 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/bin/olsnodes 
+[main] [ 2014-10-09 16:02:39.894 CDT ] [RuntimeExec.runCommand:77]  -n 
+[Thread-31] [ 2014-10-09 16:02:39.898 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[Thread-32] [ 2014-10-09 16:02:39.898 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:39.898 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[Thread-31] [ 2014-10-09 16:02:39.926 CDT ] [StreamReader.run:65]  OUTPUT>odie1	1
+[Thread-31] [ 2014-10-09 16:02:39.927 CDT ] [StreamReader.run:65]  OUTPUT>odie2	2
+[main] [ 2014-10-09 16:02:39.930 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:39.930 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:39.931 CDT ] [RuntimeExec.runCommand:164]  odie1	1
+[main] [ 2014-10-09 16:02:39.931 CDT ] [RuntimeExec.runCommand:164]  odie2	2
+[main] [ 2014-10-09 16:02:39.931 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:39.931 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:39.931 CDT ] [ClusterInfo.getClusterNodeMap:992]  Number of nodes=2
+[main] [ 2014-10-09 16:02:39.932 CDT ] [ClusterInfo.getClusterNodeMap:1004]  i=0 nodeName=odie1 nodeNum=1
+[main] [ 2014-10-09 16:02:39.932 CDT ] [ClusterInfo.getClusterNodeMap:1004]  i=1 nodeName=odie2 nodeNum=2
+[main] [ 2014-10-09 16:02:39.933 CDT ] [USMInstanceRac.getInstanceNumbers:429]  firstNodeNum=1
+[main] [ 2014-10-09 16:02:39.933 CDT ] [USMInstanceRac.getInstanceNumbers:452]  node=odie1 nodeNum=1
+[main] [ 2014-10-09 16:02:39.933 CDT ] [USMInstanceRac.getInstanceNumbers:467]  nodeNames[0]=odie1 instance number=1
+[main] [ 2014-10-09 16:02:39.934 CDT ] [USMInstanceRac.getInstanceNumbers:452]  node=odie2 nodeNum=2
+[main] [ 2014-10-09 16:02:39.934 CDT ] [USMInstanceRac.getInstanceNumbers:467]  nodeNames[1]=odie2 instance number=2
+[main] [ 2014-10-09 16:02:39.934 CDT ] [USMInstanceRac.setTemporaryInstances:352]  node:odie1 instance:+ASM1
+[main] [ 2014-10-09 16:02:39.934 CDT ] [USMInstanceRac.setTemporaryInstances:352]  node:odie2 instance:+ASM2
+[main] [ 2014-10-09 16:02:39.934 CDT ] [ClusterUtils.areSharedPaths:556]  1. path=/u01/app/11.2.0.4/grid/assistants
+[main] [ 2014-10-09 16:02:39.935 CDT ] [ClusterUtils.areSharedPaths:577]  2. path=/u01/app/11.2.0.4/grid/assistants
+[main] [ 2014-10-09 16:02:39.935 CDT ] [ClusterUtils.areSharedPaths:582]  hashKey = [odie1, odie2]/u01/app/11.2.0.4/grid/assistants
+[main] [ 2014-10-09 16:02:39.935 CDT ] [GetActiveNodes.create:226]  Returning an existing instance of GetActiveNodes
+[main] [ 2014-10-09 16:02:39.935 CDT ] [Cluster.verifyNodeList:1148]  clusterNodes[0]=odie1
+[main] [ 2014-10-09 16:02:39.935 CDT ] [Cluster.verifyNodeList:1148]  clusterNodes[1]=odie2
+[main] [ 2014-10-09 16:02:39.936 CDT ] [Cluster.verifyNodeList:1153]  nodeList[0]=odie1
+[main] [ 2014-10-09 16:02:39.936 CDT ] [Cluster.verifyNodeList:1153]  nodeList[1]=odie2
+[main] [ 2014-10-09 16:02:39.936 CDT ] [GetActiveNodes.create:226]  Returning an existing instance of GetActiveNodes
+[main] [ 2014-10-09 16:02:39.936 CDT ] [Cluster.isSharedPath:1072]  NodeList=[odie1, odie2]
+[main] [ 2014-10-09 16:02:39.937 CDT ] [Cluster.isSharedPath:1108]  pathName=/u01/app/11.2.0.4/grid/assistants/ dirPath = /u01/app/11.2.0.4/grid/assistants
+[main] [ 2014-10-09 16:02:39.937 CDT ] [UnixSystem.isSharedPath:1592]  dirPath=/u01/app/11.2.0.4/grid/assistants
+[main] [ 2014-10-09 16:02:39.937 CDT ] [UnixSystem.isSharedPath:1597]  UnixSystem.isShared: pathName=/u01/app/11.2.0.4/grid/assistants tempFile=CFSFileName14128885599377649267731970677678.tmp
+[main] [ 2014-10-09 16:02:39.937 CDT ] [UnixSystem.isSharedPath:1602]  UnixSystem.isShared: dirPathName is /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp
+[main] [ 2014-10-09 16:02:39.938 CDT ] [UnixSystem.isSharedPath:1606]  UnixSystem.isShared: removing file /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmpon  odie2
+[main] [ 2014-10-09 16:02:39.938 CDT ] [Utils.getLocalHost:481]  Hostname retrieved: odie1.ship.iodp.tamu.edu, returned: odie1
+[main] [ 2014-10-09 16:02:39.938 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:39.939 CDT ] [RuntimeExec.runCommand:77]  /usr/bin/ssh 
+[main] [ 2014-10-09 16:02:39.939 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.939 CDT ] [RuntimeExec.runCommand:77]  FallBackToRsh=no 
+[main] [ 2014-10-09 16:02:39.939 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.939 CDT ] [RuntimeExec.runCommand:77]  PasswordAuthentication=no 
+[main] [ 2014-10-09 16:02:39.940 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.940 CDT ] [RuntimeExec.runCommand:77]  StrictHostKeyChecking=yes 
+[main] [ 2014-10-09 16:02:39.940 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:39.940 CDT ] [RuntimeExec.runCommand:77]  NumberOfPasswordPrompts=0 
+[main] [ 2014-10-09 16:02:39.941 CDT ] [RuntimeExec.runCommand:77]  odie2 
+[main] [ 2014-10-09 16:02:39.941 CDT ] [RuntimeExec.runCommand:77]  -n 
+[main] [ 2014-10-09 16:02:39.941 CDT ] [RuntimeExec.runCommand:77]  /bin/rm 
+[main] [ 2014-10-09 16:02:39.941 CDT ] [RuntimeExec.runCommand:77]  -f 
+[main] [ 2014-10-09 16:02:39.941 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp 
+[Thread-34] [ 2014-10-09 16:02:39.946 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-33] [ 2014-10-09 16:02:39.946 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:39.946 CDT ] [StreamReader.run:61]  runCommand: Waiting for the process
+[main] [ 2014-10-09 16:02:40.041 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:40.041 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:40.041 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:40.042 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:40.042 CDT ] [NativeSystem.isCmdScv:502]  isCmdScv: cmd=[/usr/bin/ssh -o FallBackToRsh=no -o PasswordAuthentication=no -o StrictHostKeyChecking=yes -o NumberOfPasswordPrompts=0 odie2 -n /bin/rm -f /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp]
+[main] [ 2014-10-09 16:02:40.042 CDT ] [NativeSystem.isCmdScv:552]  isCmdScv: /usr/bin/ssh is present.
+[main] [ 2014-10-09 16:02:40.042 CDT ] [NativeSystem.isCmdScv:554]  isCmdScv: /usr/bin/ssh is a file.
+[main] [ 2014-10-09 16:02:40.043 CDT ] [NativeSystem.isCmdScv:571]  isCmdScv: returned true
+[main] [ 2014-10-09 16:02:40.043 CDT ] [NativeSystem.rununixcmd:1152]  NativeSystem.rununixcmd: RetString 1| :successful
+[main] [ 2014-10-09 16:02:40.043 CDT ] [UnixSystem.isSharedPath:1606]  UnixSystem.isShared: removing file /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmpon  odie1
+[main] [ 2014-10-09 16:02:40.043 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:40.044 CDT ] [RuntimeExec.runCommand:77]  /bin/rm 
+[main] [ 2014-10-09 16:02:40.044 CDT ] [RuntimeExec.runCommand:77]  -f 
+[main] [ 2014-10-09 16:02:40.044 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp 
+[main] [ 2014-10-09 16:02:40.047 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[Thread-35] [ 2014-10-09 16:02:40.047 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[Thread-36] [ 2014-10-09 16:02:40.047 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:40.049 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:40.050 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:40.050 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:40.050 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:40.050 CDT ] [NativeSystem.isCmdScv:502]  isCmdScv: cmd=[/bin/rm -f /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp]
+[main] [ 2014-10-09 16:02:40.051 CDT ] [NativeSystem.isCmdScv:571]  isCmdScv: returned false
+[main] [ 2014-10-09 16:02:40.051 CDT ] [NativeSystem.rununixcmd:1152]  NativeSystem.rununixcmd: RetString 1| :successful
+[main] [ 2014-10-09 16:02:40.051 CDT ] [UnixSystem.isSharedPath:1611]  UnixSystem.isShared: creating file /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp
+[main] [ 2014-10-09 16:02:40.052 CDT ] [UnixSystem.testCFSFile:1706]  The unix command is /usr/bin/ssh -o FallBackToRsh=no  -o PasswordAuthentication=no  -o StrictHostKeyChecking=yes  -o NumberOfPasswordPrompts=0  odie2 -n /bin/sh -c "/bin/ls /u01/app/11.2.0.4/grid/assistants > /dev/null 2>&1  && /bin/cat /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp"
+[main] [ 2014-10-09 16:02:40.052 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:40.052 CDT ] [RuntimeExec.runCommand:77]  /usr/bin/ssh 
+[main] [ 2014-10-09 16:02:40.052 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:40.053 CDT ] [RuntimeExec.runCommand:77]  FallBackToRsh=no 
+[main] [ 2014-10-09 16:02:40.053 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:40.053 CDT ] [RuntimeExec.runCommand:77]  PasswordAuthentication=no 
+[main] [ 2014-10-09 16:02:40.053 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:40.053 CDT ] [RuntimeExec.runCommand:77]  StrictHostKeyChecking=yes 
+[main] [ 2014-10-09 16:02:40.054 CDT ] [RuntimeExec.runCommand:77]  -o 
+[main] [ 2014-10-09 16:02:40.054 CDT ] [RuntimeExec.runCommand:77]  NumberOfPasswordPrompts=0 
+[main] [ 2014-10-09 16:02:40.054 CDT ] [RuntimeExec.runCommand:77]  odie2 
+[main] [ 2014-10-09 16:02:40.054 CDT ] [RuntimeExec.runCommand:77]  -n 
+[main] [ 2014-10-09 16:02:40.054 CDT ] [RuntimeExec.runCommand:77]  /bin/sh 
+[main] [ 2014-10-09 16:02:40.055 CDT ] [RuntimeExec.runCommand:77]  -c 
+[main] [ 2014-10-09 16:02:40.055 CDT ] [RuntimeExec.runCommand:77]  "/bin/ls 
+[main] [ 2014-10-09 16:02:40.055 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/assistants 
+[main] [ 2014-10-09 16:02:40.055 CDT ] [RuntimeExec.runCommand:77]  > 
+[main] [ 2014-10-09 16:02:40.056 CDT ] [RuntimeExec.runCommand:77]  /dev/null 
+[main] [ 2014-10-09 16:02:40.056 CDT ] [RuntimeExec.runCommand:77]  2>&1 
+[main] [ 2014-10-09 16:02:40.056 CDT ] [RuntimeExec.runCommand:77]  && 
+[main] [ 2014-10-09 16:02:40.056 CDT ] [RuntimeExec.runCommand:77]  /bin/cat 
+[main] [ 2014-10-09 16:02:40.056 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp" 
+[main] [ 2014-10-09 16:02:40.061 CDT ] [StreamReader.run:61]  runCommand: Waiting for the process
+[Thread-37] [ 2014-10-09 16:02:40.061 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-38] [ 2014-10-09 16:02:40.061 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-38] [ 2014-10-09 16:02:40.196 CDT ] [StreamReader.run:65]  ERROR>/bin/cat: /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp: No such file or directory
+[main] [ 2014-10-09 16:02:40.196 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 1
+[main] [ 2014-10-09 16:02:40.196 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:40.196 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:40.197 CDT ] [RuntimeExec.runCommand:173]  /bin/cat: /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp: No such file or directory
+[main] [ 2014-10-09 16:02:40.197 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:40.197 CDT ] [UnixSystem.testCFSFile:1718]  Command output is empty
+[main] [ 2014-10-09 16:02:40.197 CDT ] [UnixSystem.testCFSFile:1719]  ERROR: /bin/cat: /u01/app/11.2.0.4/grid/assistants/CFSFileName14128885599377649267731970677678.tmp: No such file or directory from node odie2
+[main] [ 2014-10-09 16:02:40.206 CDT ] [ClusterUtils.areSharedPaths:591]  Got shared=false from SRVM call
+[main] [ 2014-10-09 16:02:40.206 CDT ] [USMInstanceRac.initialize:322]  m_bShared = false
+[main] [ 2014-10-09 16:02:40.211 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : discoverASMInstance
+[main] [ 2014-10-09 16:02:40.212 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : checkASMResource
+[main] [ 2014-10-09 16:02:40.217 CDT ] [Util.<init>:95]  Util Instance created.
+[main] [ 2014-10-09 16:02:40.217 CDT ] [HASContext.getCRSHome:579]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.217 CDT ] [Util.getCRSHome:604]  getCRSHome: ret=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.220 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:40.221 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:40.221 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:40.221 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:40.221 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:40.221 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:40.241 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.asm, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.262 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.asm, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.262 CDT ] [UsmcaLogger.logInfo:143]  ASM Exists? true
+[main] [ 2014-10-09 16:02:40.262 CDT ] [UsmcaLogger.logInfo:143]  ASM resource present, Proceed further discovery.
+[main] [ 2014-10-09 16:02:40.266 CDT ] [ASMUtils.checkASMExistence:594]   entering method checkASMExistence
+[main] [ 2014-10-09 16:02:40.269 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:40.269 CDT ] [HAUtils.<init>:241]  oui location /u01/app/oraInventory/ContentsXML
+[main] [ 2014-10-09 16:02:40.269 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:40.269 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:40.270 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:40.270 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:40.270 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:40.270 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:40.270 CDT ] [ClusterUtil.<init>:72]  ClusterUtil Instance created
+[main] [ 2014-10-09 16:02:40.271 CDT ] [ClusterUtil.<init>:75]  ClusterUtil m_bSKGXN=true
+[main] [ 2014-10-09 16:02:40.271 CDT ] [HAUtils.getCurrentOracleHome:368]  Oracle home from system property: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.271 CDT ] [GETCRSHOMEUtil.<init>:90]  Toolname: getcrshome   ---    Tool location: /u01/app/11.2.0.4/grid/srvm/adminTool dependencies: [Ljava.lang.String;@739e8329
+[main] [ 2014-10-09 16:02:40.271 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:40.272 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/srvm/admin/getcrshome 
+[Thread-40] [ 2014-10-09 16:02:40.275 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:40.275 CDT ] [StreamReader.run:61]  runCommand: Waiting for the process
+[Thread-39] [ 2014-10-09 16:02:40.275 CDT ] [StreamReader.run:61]  In StreamReader.run 
+[Thread-39] [ 2014-10-09 16:02:40.284 CDT ] [StreamReader.run:65]  OUTPUT>/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.284 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:40.284 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:40.284 CDT ] [RuntimeExec.runCommand:164]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.285 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:40.285 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:40.285 CDT ] [HAUtils.getConfiguredGridHome:785]  Configured Grid Infrastructure home: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.285 CDT ] [HAUtils.getCurrentOracleHome:368]  Oracle home from system property: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.286 CDT ] [GETCRSHOMEUtil.<init>:90]  Toolname: getcrshome   ---    Tool location: /u01/app/11.2.0.4/grid/srvm/adminTool dependencies: [Ljava.lang.String;@739e8329
+[main] [ 2014-10-09 16:02:40.286 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:40.286 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/srvm/admin/getcrshome 
+[Thread-42] [ 2014-10-09 16:02:40.289 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[Thread-41] [ 2014-10-09 16:02:40.289 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:40.289 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[Thread-41] [ 2014-10-09 16:02:40.300 CDT ] [StreamReader.run:65]  OUTPUT>/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.300 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:40.301 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:40.301 CDT ] [RuntimeExec.runCommand:164]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.301 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:40.301 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:40.301 CDT ] [HAUtils.getConfiguredGridHome:785]  Configured Grid Infrastructure home: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.302 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:40.302 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:40.302 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:40.302 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:40.303 CDT ] [UnixSystem.isCRSConfigured:2597]  configFile=/etc/oracle/ocr.loc
+[main] [ 2014-10-09 16:02:40.303 CDT ] [Utils.getPropertyValue:302]  propName=ocrconfig_loc propValue=+DATA
+[main] [ 2014-10-09 16:02:40.303 CDT ] [UnixSystem.isCRSConfigured:2604]  ocrconfig_loc=+DATA
+[main] [ 2014-10-09 16:02:40.304 CDT ] [Utils.getPropertyValue:302]  propName=local_only propValue=FALSE
+[main] [ 2014-10-09 16:02:40.304 CDT ] [HAUtils.getCurrentOracleHome:368]  Oracle home from system property: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.305 CDT ] [GETCRSHOMEUtil.<init>:90]  Toolname: getcrshome   ---    Tool location: /u01/app/11.2.0.4/grid/srvm/adminTool dependencies: [Ljava.lang.String;@739e8329
+[main] [ 2014-10-09 16:02:40.305 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:40.305 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/srvm/admin/getcrshome 
+[Thread-44] [ 2014-10-09 16:02:40.308 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[Thread-43] [ 2014-10-09 16:02:40.308 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:40.308 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[Thread-43] [ 2014-10-09 16:02:40.316 CDT ] [StreamReader.run:65]  OUTPUT>/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.317 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:40.317 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:40.317 CDT ] [RuntimeExec.runCommand:164]  /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.317 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:40.318 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:40.318 CDT ] [HAUtils.getConfiguredGridHome:785]  Configured Grid Infrastructure home: /u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:40.318 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against11
+[main] [ 2014-10-09 16:02:40.318 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:40.319 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against11
+[main] [ 2014-10-09 16:02:40.319 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:40.319 CDT ] [Version.isPre112:427]  version to be checked 11.2.0.4.0 minor version to check against2
+[main] [ 2014-10-09 16:02:40.319 CDT ] [Version.isPre112:438]  isPre112 : Returning FALSE for minor version check
+[main] [ 2014-10-09 16:02:40.319 CDT ] [CRSCTLUtil.checkCRSRunning:409]  Checking if CRS is running for post 11 release
+[main] [ 2014-10-09 16:02:40.320 CDT ] [RuntimeExec.runCommand:75]  Calling Runtime.exec() with the command 
+[main] [ 2014-10-09 16:02:40.320 CDT ] [RuntimeExec.runCommand:77]  /u01/app/11.2.0.4/grid/bin/crsctl 
+[main] [ 2014-10-09 16:02:40.320 CDT ] [RuntimeExec.runCommand:77]  check 
+[main] [ 2014-10-09 16:02:40.320 CDT ] [RuntimeExec.runCommand:77]  cluster 
+[Thread-46] [ 2014-10-09 16:02:40.323 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[Thread-45] [ 2014-10-09 16:02:40.323 CDT ] [RuntimeExec.runCommand:142]  In StreamReader.run 
+[main] [ 2014-10-09 16:02:40.323 CDT ] [RuntimeExec.runCommand:142]  runCommand: Waiting for the process
+[Thread-45] [ 2014-10-09 16:02:40.392 CDT ] [StreamReader.run:65]  OUTPUT>CRS-4537: Cluster Ready Services is online
+[Thread-45] [ 2014-10-09 16:02:40.392 CDT ] [StreamReader.run:65]  OUTPUT>CRS-4529: Cluster Synchronization Services is online
+[Thread-45] [ 2014-10-09 16:02:40.392 CDT ] [StreamReader.run:65]  OUTPUT>CRS-4533: Event Manager is online
+[main] [ 2014-10-09 16:02:40.494 CDT ] [RuntimeExec.runCommand:144]  runCommand: process returns 0
+[main] [ 2014-10-09 16:02:40.494 CDT ] [RuntimeExec.runCommand:161]  RunTimeExec: output>
+[main] [ 2014-10-09 16:02:40.494 CDT ] [RuntimeExec.runCommand:164]  CRS-4537: Cluster Ready Services is online
+[main] [ 2014-10-09 16:02:40.495 CDT ] [RuntimeExec.runCommand:164]  CRS-4529: Cluster Synchronization Services is online
+[main] [ 2014-10-09 16:02:40.495 CDT ] [RuntimeExec.runCommand:164]  CRS-4533: Event Manager is online
+[main] [ 2014-10-09 16:02:40.495 CDT ] [RuntimeExec.runCommand:170]  RunTimeExec: error>
+[main] [ 2014-10-09 16:02:40.495 CDT ] [RuntimeExec.runCommand:192]  Returning from RunTimeExec.runCommand
+[main] [ 2014-10-09 16:02:40.515 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.asm, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.536 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.asm, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.544 CDT ] [CRSNative.internalQueryResources:1577]  About to doQueryResources: eType resource, nodeName null, filter (TYPE == ora.diskgroup.type)
+[main] [ 2014-10-09 16:02:40.568 CDT ] [CRSNative.internalQueryResources:1585]  found 3 resources
+[main] [ 2014-10-09 16:02:40.569 CDT ] [CRSNative.internalQueryResources:1587]  	ora.DATA.dg
+[main] [ 2014-10-09 16:02:40.569 CDT ] [CRSNative.internalQueryResources:1587]  	ora.RECO.dg
+[main] [ 2014-10-09 16:02:40.569 CDT ] [CRSNative.internalQueryResources:1587]  	ora.REDO.dg
+[main] [ 2014-10-09 16:02:40.570 CDT ] [DiskGroupImpl.<init>:108]  name = ora.DATA.dg, display name = DATA
+[main] [ 2014-10-09 16:02:40.589 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.DATA.dg, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.589 CDT ] [DiskGroupImpl.<init>:108]  name = ora.RECO.dg, display name = RECO
+[main] [ 2014-10-09 16:02:40.610 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.RECO.dg, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.611 CDT ] [DiskGroupImpl.<init>:108]  name = ora.REDO.dg, display name = REDO
+[main] [ 2014-10-09 16:02:40.632 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.REDO.dg, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.633 CDT ] [UsmcaLogger.logInfo:143]  ASM present true
+[main] [ 2014-10-09 16:02:40.633 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : discoverRACASM
+[main] [ 2014-10-09 16:02:40.634 CDT ] [KfodUtil.kfodOutput:232]  /u01/app/11.2.0.4/grid/bin/kfod
+[main] [ 2014-10-09 16:02:40.634 CDT ] [KfodUtil.kfodOutput:232]  nohdr=TRUE
+[main] [ 2014-10-09 16:02:40.634 CDT ] [KfodUtil.kfodOutput:232]  OP=INSTS
+[main] [ 2014-10-09 16:02:40.635 CDT ] [KfodUtil.kfodOutput:232]  status=true
+[main] [ 2014-10-09 16:02:40.635 CDT ] [KfodUtil.kfodOutput:232]  hostlist=odie1,odie2
+[main] [ 2014-10-09 16:02:40.705 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.asm, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.725 CDT ] [CRSNative.isEntityRegistered:737]  entity: ora.asm, type: 1, registered: true
+[main] [ 2014-10-09 16:02:40.749 CDT ] [CRSNativeResult.addRIAttr:139]  addRIAttr: name 'ora.asm odie1 1', 'LAST_SERVER':'odie1'
+[main] [ 2014-10-09 16:02:40.750 CDT ] [CRSNativeResult.addRIAttr:139]  addRIAttr: name 'ora.asm odie1 1', 'USR_ORA_INST_NAME':'+ASM1'
+[main] [ 2014-10-09 16:02:40.750 CDT ] [CRSNativeResult.addRIAttr:139]  addRIAttr: name 'ora.asm odie2 1', 'LAST_SERVER':'odie2'
+[main] [ 2014-10-09 16:02:40.750 CDT ] [CRSNativeResult.addRIAttr:139]  addRIAttr: name 'ora.asm odie2 1', 'USR_ORA_INST_NAME':'+ASM2'
+[main] [ 2014-10-09 16:02:40.751 CDT ] [CRSNative.searchEntities:1010]  found 2 entities
+[main] [ 2014-10-09 16:02:40.753 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:40.753 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:40.753 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:40.754 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:40.754 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:40.754 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:40.754 CDT ] [GetActiveNodes.create:226]  Returning an existing instance of GetActiveNodes
+[main] [ 2014-10-09 16:02:40.755 CDT ] [UsmcaLogger.logInfo:143]  Local ASM Instance+ASM1
+[main] [ 2014-10-09 16:02:40.755 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : discoverRACASM
+[main] [ 2014-10-09 16:02:40.755 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : findOSAuthentication
+[main] [ 2014-10-09 16:02:40.755 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : createSQLEngine
+[main] [ 2014-10-09 16:02:40.759 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: null
+[main] [ 2014-10-09 16:02:40.762 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:40.762 CDT ] [OracleHome.getVersion:911]  Homeinfo /u01/app/11.2.0.4/grid,1
+[main] [ 2014-10-09 16:02:40.890 CDT ] [OracleHome.getVersion:939]  OracleHome.server.getVersion Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:40.891 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:40.891 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:40.891 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:40.893 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:40.893 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:40.893 CDT ] [SQLPlusEngine.getCmmdParams:222]  m_home 11.2.0.4.0
+[main] [ 2014-10-09 16:02:40.894 CDT ] [SQLPlusEngine.getCmmdParams:223]  version > 112 true
+[main] [ 2014-10-09 16:02:40.894 CDT ] [OsUtilsBase.getBaseFromOrabase:651]  oraBaseUtility /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:40.894 CDT ] [OsUtilsBase.getBaseFromOrabase:660]  cmds: /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:40.894 CDT ] [OsUtilsBase.getBaseFromOrabase:664]  envs:  ORACLE_HOME=/u01/app/11.2.0.4/grid
+[Finalizer] [ 2014-10-09 16:02:40.910 CDT ] [Util.finalize:126]  Util: finalized called for oracle.ops.mgmt.has.Util@3b5e234c
+[Finalizer] [ 2014-10-09 16:02:40.910 CDT ] [ClusterUtil.finalize:102]  ClusterUtil: finalized called for oracle.ops.mgmt.has.ClusterUtil@215f7107
+[main] [ 2014-10-09 16:02:40.913 CDT ] [OsUtilsBase.getBaseFromOrabase:669]  baseLocation from orabase 
+/u01/app/grid
+[main] [ 2014-10-09 16:02:40.913 CDT ] [OsUtilsBase.getBaseFromOrabase:694]   orabaseLocation= /u01/app/grid
+[main] [ 2014-10-09 16:02:40.914 CDT ] [SQLEngine.getEnvParams:555]  Default NLS_LANG: AMERICAN_AMERICA.AL32UTF8
+[main] [ 2014-10-09 16:02:40.914 CDT ] [SQLEngine.getEnvParams:565]  NLS_LANG: AMERICAN_AMERICA.AL32UTF8
+[main] [ 2014-10-09 16:02:40.915 CDT ] [SQLEngine.initialize:325]  Execing SQLPLUS/SVRMGR process...
+[main] [ 2014-10-09 16:02:40.919 CDT ] [SQLEngine.initialize:362]  m_bReaderStarted: false
+[main] [ 2014-10-09 16:02:40.919 CDT ] [SQLEngine.initialize:366]  Starting Reader Thread... 
+[main] [ 2014-10-09 16:02:40.948 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : createSQLEngine
+[main] [ 2014-10-09 16:02:40.949 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: null
+[main] [ 2014-10-09 16:02:40.951 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:40.952 CDT ] [OracleHome.getVersion:911]  Homeinfo /u01/app/11.2.0.4/grid,1
+[main] [ 2014-10-09 16:02:41.051 CDT ] [OracleHome.getVersion:939]  OracleHome.server.getVersion Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.051 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.096 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : findOSAuthentication
+[main] [ 2014-10-09 16:02:41.096 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : checkAndStartupInstance
+[main] [ 2014-10-09 16:02:41.096 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : createSQLEngine
+[main] [ 2014-10-09 16:02:41.096 CDT ] [SQLEngine.done:2189]  Done called
+[main] [ 2014-10-09 16:02:41.097 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: null
+[main] [ 2014-10-09 16:02:41.099 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:41.099 CDT ] [OracleHome.getVersion:911]  Homeinfo /u01/app/11.2.0.4/grid,1
+[main] [ 2014-10-09 16:02:41.175 CDT ] [OracleHome.getVersion:939]  OracleHome.server.getVersion Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.175 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.175 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.176 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.176 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.176 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.176 CDT ] [SQLPlusEngine.getCmmdParams:222]  m_home 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.176 CDT ] [SQLPlusEngine.getCmmdParams:223]  version > 112 true
+[main] [ 2014-10-09 16:02:41.177 CDT ] [OsUtilsBase.getBaseFromOrabase:651]  oraBaseUtility /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:41.177 CDT ] [OsUtilsBase.getBaseFromOrabase:660]  cmds: /u01/app/11.2.0.4/grid/bin/orabase
+[main] [ 2014-10-09 16:02:41.177 CDT ] [OsUtilsBase.getBaseFromOrabase:664]  envs:  ORACLE_HOME=/u01/app/11.2.0.4/grid
+[main] [ 2014-10-09 16:02:41.196 CDT ] [OsUtilsBase.getBaseFromOrabase:669]  baseLocation from orabase 
+/u01/app/grid
+[main] [ 2014-10-09 16:02:41.196 CDT ] [OsUtilsBase.getBaseFromOrabase:694]   orabaseLocation= /u01/app/grid
+[main] [ 2014-10-09 16:02:41.197 CDT ] [SQLEngine.getEnvParams:555]  Default NLS_LANG: AMERICAN_AMERICA.AL32UTF8
+[main] [ 2014-10-09 16:02:41.197 CDT ] [SQLEngine.getEnvParams:565]  NLS_LANG: AMERICAN_AMERICA.AL32UTF8
+[main] [ 2014-10-09 16:02:41.198 CDT ] [SQLEngine.initialize:325]  Execing SQLPLUS/SVRMGR process...
+[main] [ 2014-10-09 16:02:41.201 CDT ] [SQLEngine.initialize:362]  m_bReaderStarted: false
+[main] [ 2014-10-09 16:02:41.202 CDT ] [SQLEngine.initialize:366]  Starting Reader Thread... 
+[main] [ 2014-10-09 16:02:41.232 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : createSQLEngine
+[main] [ 2014-10-09 16:02:41.232 CDT ] [OracleHome.getVersion:892]  OracleHome.getVersion called.  Current Version: null
+[main] [ 2014-10-09 16:02:41.234 CDT ] [InventoryUtil.getOUIInvSession:347]  setting OUI READ level to ACCESSLEVEL_READ_LOCKLESS
+[main] [ 2014-10-09 16:02:41.235 CDT ] [OracleHome.getVersion:911]  Homeinfo /u01/app/11.2.0.4/grid,1
+[main] [ 2014-10-09 16:02:41.308 CDT ] [OracleHome.getVersion:939]  OracleHome.server.getVersion Version: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.308 CDT ] [OracleHome.getVersion:960]  Current Version From Inventory: 11.2.0.4.0
+[main] [ 2014-10-09 16:02:41.308 CDT ] [UsmcaLogger.logInfo:143]  Role SYSASM
+[main] [ 2014-10-09 16:02:41.308 CDT ] [UsmcaLogger.logInfo:143]  OS Auth true
+[main] [ 2014-10-09 16:02:41.430 CDT ] [InitParamAttributes.loadDBParams:4510]  loadDBParams: sid=+ASM1 paramSid=null
+[main] [ 2014-10-09 16:02:41.445 CDT ] [InitParamAttributes.loadDBParams:4563]  Checking if SPFILE is used
+[main] [ 2014-10-09 16:02:41.472 CDT ] [InitParamAttributes.loadDBParams:4574]  spParams = [Ljava.lang.String;@e4865ce
+[main] [ 2014-10-09 16:02:41.508 CDT ] [ASMParameters.loadASMParameters:469]  useSPFile=true
+[main] [ 2014-10-09 16:02:41.508 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : checkAndStartupInstance
+[main] [ 2014-10-09 16:02:41.508 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : updateInstances
+[main] [ 2014-10-09 16:02:41.509 CDT ] [KfodUtil.kfodOutput:232]  /u01/app/11.2.0.4/grid/bin/kfod
+[main] [ 2014-10-09 16:02:41.509 CDT ] [KfodUtil.kfodOutput:232]  nohdr=TRUE
+[main] [ 2014-10-09 16:02:41.509 CDT ] [KfodUtil.kfodOutput:232]  OP=INSTS
+[main] [ 2014-10-09 16:02:41.509 CDT ] [KfodUtil.kfodOutput:232]  status=true
+[main] [ 2014-10-09 16:02:41.509 CDT ] [KfodUtil.kfodOutput:232]  hostlist=odie1,odie2
+[main] [ 2014-10-09 16:02:41.556 CDT ] [UsmcaLogger.logInfo:143]  Node odie1
+[main] [ 2014-10-09 16:02:41.556 CDT ] [UsmcaLogger.logInfo:143]  +ASM1
+[main] [ 2014-10-09 16:02:41.557 CDT ] [UsmcaLogger.logInfo:143]  UP
+[main] [ 2014-10-09 16:02:41.557 CDT ] [UsmcaLogger.logInfo:143]  Node odie2
+[main] [ 2014-10-09 16:02:41.557 CDT ] [UsmcaLogger.logInfo:143]  +ASM2
+[main] [ 2014-10-09 16:02:41.557 CDT ] [UsmcaLogger.logInfo:143]  UP
+[main] [ 2014-10-09 16:02:41.558 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : updateInstances
+[main] [ 2014-10-09 16:02:41.558 CDT ] [UsmcaLogger.logInfo:143]  is ASM latest true
+[main] [ 2014-10-09 16:02:41.558 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : discoverASMInstance
+[main] [ 2014-10-09 16:02:41.558 CDT ] [USMInstanceRac.initialize:333]  Reinitializing clustdbUtils...
+[main] [ 2014-10-09 16:02:41.565 CDT ] [ClusterDatabaseUtils.<init>:263]  RACHA = true
+[main] [ 2014-10-09 16:02:41.566 CDT ] [Version.isPre:583]  version to be checked 11.2.0.4.0 major version to check against10
+[main] [ 2014-10-09 16:02:41.566 CDT ] [Version.isPre:594]  isPre.java: Returning FALSE
+[main] [ 2014-10-09 16:02:41.566 CDT ] [OCR.loadLibrary:312]  
+ Inside constructor of OCR
+[main] [ 2014-10-09 16:02:41.566 CDT ] [OCR.isCluster:952]  Calling OCRNative for isCluster()
+[main] [ 2014-10-09 16:02:41.566 CDT ] [OCR.isCluster:956]  OCR Result status = true
+[main] [ 2014-10-09 16:02:41.567 CDT ] [OCR.isCluster:968]  Bolean result = true
+[main] [ 2014-10-09 16:02:41.567 CDT ] [GetActiveNodes.create:226]  Returning an existing instance of GetActiveNodes
+[main] [ 2014-10-09 16:02:41.567 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMInstanceRac Method : initialize
+[main] [ 2014-10-09 16:02:41.571 CDT ] [UsmcaLogger.logEntry:115]  Entering oracle.sysman.assistants.usmca.backend.USMVolumeManagerRac Method : createVolumes
+[main] [ 2014-10-09 16:02:41.571 CDT ] [SQLEngine.doSQLSubstitution:2414]  The substituted sql statement:=select count(*) from v$asm_volume vol, v$asm_diskgroup dg where vol.volume_name=upper('acfsvol') and dg.name=upper('RECO') and vol.group_number=dg.group_number
+[main] [ 2014-10-09 16:02:41.813 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMDiskGroupManagerRac Method : initialize:rac
+[main] [ 2014-10-09 16:02:41.813 CDT ] [SQLEngine.doSQLSubstitution:2414]  The substituted sql statement:=select count(*) from v$ASM_DISKGROUP where name=upper('RECO')
+[main] [ 2014-10-09 16:02:41.852 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMDiskGroupManagerRac Method : initialize:rac
+[main] [ 2014-10-09 16:02:41.852 CDT ] [SQLEngine.doSQLSubstitution:2414]  The substituted sql statement:=select state from v$asm_diskgroup where name=upper('RECO')
+[main] [ 2014-10-09 16:02:41.890 CDT ] [UsmcaLogger.logInfo:143]  SQLALTER DISKGROUP RECO ADD VOLUME acfsvol SIZE 52428800K
+[main] [ 2014-10-09 16:02:49.312 CDT ] [UsmcaLogger.logInfo:143]  Volume acfsvol created successfully.
+[main] [ 2014-10-09 16:02:49.312 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.backend.USMVolumeManagerRac Method : createVolumes
+[main] [ 2014-10-09 16:02:49.312 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.model.UsmcaModelRac Method : performOperation
+[main] [ 2014-10-09 16:02:49.312 CDT ] [UsmcaLogger.logExit:124]  Exiting oracle.sysman.assistants.usmca.model.UsmcaModelRac Method : performOperation

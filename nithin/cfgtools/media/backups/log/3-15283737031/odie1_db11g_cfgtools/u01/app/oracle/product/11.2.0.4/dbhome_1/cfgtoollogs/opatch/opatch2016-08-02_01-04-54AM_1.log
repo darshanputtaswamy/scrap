@@ -1,0 +1,535 @@
+[Aug 2, 2016 1:04:54 AM]     OPatch invoked as follows: 'apply -oh /u01/app/oracle/product/11.2.0.4/dbhome_1 -local /tmp/oakpatch/db/11.2.0.4.0/21948347/22191577/21948347 -silent -ocmrf /opt/oracle/oak/pkgrepos/System/12.1.2.6.0/conf/default-ocm.rsp -invPtrLoc /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc '
+[Aug 2, 2016 1:04:54 AM]     Could not get central inventory using NGOUI; oracle.sysman.nextgen.utils.NextGenInventoryUtil
+[Aug 2, 2016 1:04:54 AM]     OUI-67077:
+                             Oracle Home       : /u01/app/oracle/product/11.2.0.4/dbhome_1
+                             Central Inventory : /u01/app/oraInventory
+                                from           : /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc
+                             OPatch version    : 11.2.0.3.12
+                             OUI version       : 11.2.0.4.0
+                             OUI location      : /u01/app/oracle/product/11.2.0.4/dbhome_1/oui
+                             Log file location : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2016-08-02_01-04-54AM_1.log
+[Aug 2, 2016 1:04:54 AM]     Patch history file: /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Aug 2, 2016 1:04:57 AM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 7 (MB)
+[Aug 2, 2016 1:04:57 AM]     [OPSR-MEMORY-2] : before loading cooked one off : 12 (MB)
+[Aug 2, 2016 1:04:57 AM]     [OPSR-MEMORY-3] : after loading rawOneOffList and before loading minipatch list in cooked one off : 10 (MB)
+[Aug 2, 2016 1:04:57 AM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 10 (MB)
+[Aug 2, 2016 1:04:57 AM]     Verifying environment and performing prerequisite checks...
+[Aug 2, 2016 1:04:57 AM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/21948347/22191577/21948347/README.html" in the patch directory.
+[Aug 2, 2016 1:04:57 AM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/21948347/22191577/21948347/README.txt" in the patch directory.
+[Aug 2, 2016 1:04:57 AM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/21948347/22191577/21948347/patchmd.xml" in the patch directory.
+[Aug 2, 2016 1:04:57 AM]     Stack Description: java.util.NoSuchElementException
+[Aug 2, 2016 1:04:57 AM]     StackTrace: java.util.StringTokenizer.nextToken(StringTokenizer.java:332)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1368)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetIdenticalPatch(CompositePatchObject.java:1294)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:419)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:57 AM]     Stack Description: java.text.ParseException: Unparseable date: "1"
+[Aug 2, 2016 1:04:57 AM]     StackTrace: java.text.DateFormat.parse(DateFormat.java:335)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1404)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetIdenticalPatch(CompositePatchObject.java:1294)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:419)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:57 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:57 AM]     Checking conflict among patches...
+[Aug 2, 2016 1:04:57 AM]     checkConflictAmongPatchesWithDetail start -> Tue Aug 02 01:04:57 UTC 2016
+[Aug 2, 2016 1:04:57 AM]     Tue Aug 02 01:04:57 UTC 2016
+[Aug 2, 2016 1:04:58 AM]     Adapter can go list: 17478514 18031668 18522509 19121551 19769489 20299013 20760982 21352635 21948347
+[Aug 2, 2016 1:04:58 AM]     Adapter not need list:
+[Aug 2, 2016 1:04:58 AM]     Adapter auto-rollback list:
+[Aug 2, 2016 1:04:58 AM]     checkConflictAmongPatchesWithDetail end -> Tue Aug 02 01:04:58 UTC 2016
+[Aug 2, 2016 1:04:58 AM]     Intra-Conflict check PASSED
+[Aug 2, 2016 1:04:58 AM]     Checking if Oracle Home has components required by patches...
+[Aug 2, 2016 1:04:58 AM]     Check if patch "17478514"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Check if patch "18031668"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Check if patch "18522509"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Check if patch "19121551"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Check if patch "19769489"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Opt. comp. not in OH inventory: oracle.sysman.agent, 11.2.0.4.0
+[Aug 2, 2016 1:04:58 AM]     [ oracle.sysman.agent, 11.2.0.4.0 ]
+[Aug 2, 2016 1:04:58 AM]     Check if patch "20299013"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Check if patch "20760982"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Check if patch "21352635"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Check if patch "21948347"  is a no-op patch.
+[Aug 2, 2016 1:04:58 AM]     Opt. comp. not in OH inventory: oracle.tfa, 11.2.0.4.0
+[Aug 2, 2016 1:04:58 AM]     [ oracle.tfa, 11.2.0.4.0 ]
+[Aug 2, 2016 1:04:58 AM]     CheckMissingComp: hash doesn't match, re-build FVs
+[Aug 2, 2016 1:04:58 AM]     Checking conflicts against Oracle Home...
+[Aug 2, 2016 1:04:58 AM]     checkConflictAgainstOHWithDetail start -> Tue Aug 02 01:04:58 UTC 2016
+[Aug 2, 2016 1:04:58 AM]     Tue Aug 02 01:04:58 UTC 2016
+[Aug 2, 2016 1:04:59 AM]     Adapter can go list: 21948347
+[Aug 2, 2016 1:04:59 AM]     Adapter not need list:
+[Aug 2, 2016 1:04:59 AM]     Adapter auto-rollback list:
+[Aug 2, 2016 1:04:59 AM]     checkConflictAgainstOHWithDetail end -> Tue Aug 02 01:04:59 UTC 2016
+[Aug 2, 2016 1:04:59 AM]     Stack Description: java.util.NoSuchElementException
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.util.StringTokenizer.nextToken(StringTokenizer.java:332)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1368)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetIdenticalPatch(CompositePatchObject.java:1294)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:59 AM]     Stack Description: java.text.ParseException: Unparseable date: "1"
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.text.DateFormat.parse(DateFormat.java:335)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1404)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetIdenticalPatch(CompositePatchObject.java:1294)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:59 AM]     Stack Description: java.util.NoSuchElementException
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.util.StringTokenizer.nextToken(StringTokenizer.java:332)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1368)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetIdenticalPatch(CompositePatchObject.java:1294)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.napplyhelper.CheckDuplicate.check(CheckDuplicate.java:97)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:590)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:59 AM]     Stack Description: java.text.ParseException: Unparseable date: "1"
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.text.DateFormat.parse(DateFormat.java:335)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1404)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetIdenticalPatch(CompositePatchObject.java:1294)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.napplyhelper.CheckDuplicate.check(CheckDuplicate.java:97)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:590)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:59 AM]     Stack Description: java.util.NoSuchElementException
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.util.StringTokenizer.nextToken(StringTokenizer.java:332)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1368)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetNonIdenticalPatch(CompositePatchObject.java:1198)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.napplyhelper.CheckDuplicate.check(CheckDuplicate.java:103)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:590)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:59 AM]     Stack Description: java.text.ParseException: Unparseable date: "1"
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.text.DateFormat.parse(DateFormat.java:335)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.compareDate(CompositePatchObject.java:1404)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.CompositePatchObject.GetNonIdenticalPatch(CompositePatchObject.java:1198)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.napplyhelper.CheckDuplicate.check(CheckDuplicate.java:103)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:590)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1089)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: java.lang.reflect.Method.invoke(Method.java:592)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[Aug 2, 2016 1:04:59 AM]     StackTrace: oracle.opatch.OPatch.main(OPatch.java:634)
+[Aug 2, 2016 1:04:59 AM]     Running prerequisite checks...
+[Aug 2, 2016 1:04:59 AM]     Space Needed : 91.772MB
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 17478514
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 18031668
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 18522509
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 19121551
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 19769489
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 20299013
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 20760982
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 21352635
+[Aug 2, 2016 1:04:59 AM]     Prereq checkPatchApplicableOnCurrentPlatform Passed for patch : 21948347
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/oracle at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/oracle at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/amdu at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/amdu at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/kfed at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/kfed at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/kfod at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/kfod at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/renamedg at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/renamedg at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/orion at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/orion at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/rman at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/rman at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libclntsh.so.11.1 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libclntsh.so.11.1 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/liborasdk.so.11.1 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/liborasdk.so.11.1 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/proc at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/proc at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/liborasdkbase.so.11.1 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/liborasdkbase.so.11.1 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/wrap at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/wrap at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/e2eme at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/e2eme at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/extjob at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/extjob at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/extjobo at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/extjobo at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/kgmgr at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/kgmgr at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/emtgtctl2 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/bin/emtgtctl2 at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Start fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libnmemso.so at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     Finish fuser command /sbin/fuser /u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libnmemso.so at Tue Aug 02 01:05:00 UTC 2016
+[Aug 2, 2016 1:05:00 AM]     OPatch continues with these patches:   21948347
+[Aug 2, 2016 1:05:00 AM]     Do you want to proceed? [y|n]
+[Aug 2, 2016 1:05:03 AM]     Y (auto-answered by -silent)
+[Aug 2, 2016 1:05:03 AM]     User Responded with: Y
+[Aug 2, 2016 1:05:03 AM]     All checks passed.
+[Aug 2, 2016 1:05:03 AM]     Need to look only in the OUI based Oracle Home to configure OCM
+[Aug 2, 2016 1:05:03 AM]     Current working directory is : /u01/app/oracle/product/11.2.0.4/dbhome_1/OPatch
+[Aug 2, 2016 1:05:03 AM]     platform specific OPatch with ocm.zip has been used
+[Aug 2, 2016 1:05:03 AM]     The ocm location is /u01/app/oracle/product/11.2.0.4/dbhome_1/OPatch/ocm/ocm.zip
+[Aug 2, 2016 1:05:03 AM]     ***************************************************************************
+                             Oracle Configuration Manager (OCM) is included with this release of OPatch.
+                             ***************************************************************************
+[Aug 2, 2016 1:05:03 AM]     The Oracle Configuration Manager is installed previously in "/u01/app/oracle/product/11.2.0.4/dbhome_1".
+[Aug 2, 2016 1:05:03 AM]     Removing previously installed Oracle Configuration Manager from "/u01/app/oracle/product/11.2.0.4/dbhome_1"...
+[Aug 2, 2016 1:05:03 AM]     Uninstalling Oracle Configuration Manager...
+[Aug 2, 2016 1:05:03 AM]     Command to invoke for removing OCM is : rm -rf /u01/app/oracle/product/11.2.0.4/dbhome_1/ccr
+[Aug 2, 2016 1:05:03 AM]     OPatch will now install the Oracle Configuration Manager in "/u01/app/oracle/product/11.2.0.4/dbhome_1" .
+[Aug 2, 2016 1:05:03 AM]     OCM zip file to be installed is:"/u01/app/oracle/product/11.2.0.4/dbhome_1/OPatch/ocm/ocm.zip"
+[Aug 2, 2016 1:05:04 AM]     OPatch has successfully installed  Oracle Configuration Manager in "/u01/app/oracle/product/11.2.0.4/dbhome_1".
+                             Please refer log file for details.
+[Aug 2, 2016 1:05:04 AM]     OPatch will now configure the Oracle Configuration Manager in "/u01/app/oracle/product/11.2.0.4/dbhome_1" .
+[Aug 2, 2016 1:05:04 AM]     Invoking "/bin/sh /u01/app/oracle/product/11.2.0.4/dbhome_1/ccr/bin/setupCCR -R /opt/oracle/oak/pkgrepos/System/12.1.2.6.0/conf/default-ocm.rsp -S OPatch -V 11.2.0.3.12" under "/u01/app/oracle/product/11.2.0.4/dbhome_1/ccr/bin"
+[Aug 2, 2016 1:05:04 AM]     Oracle Configuration Manager has been installed but not configured. OCM enables
+                             Oracle to provide superior, proactive support for our customers. Oracle
+                             strongly recommends customers configure OCM. To complete the configuration of
+                             OCM, refer to the OCM Installation and Administration Guide
+                             (http://www.oracle.com/technology/documentation/ocm.html).
+[Aug 2, 2016 1:05:04 AM]     OPatch failed to configure Oracle Configuration Manager in "/u01/app/oracle/product/11.2.0.4/dbhome_1". Please refer log file
+                             for details.
+[Aug 2, 2016 1:05:04 AM]     *******************************************************************************************
+                             Oracle Configuration Manager is installed but not configured.  OCM enables Oracle to
+                             provide superior, proactive support for our customers. Oracle strongly recommends customers
+                             configure OCM. To complete the configuration of OCM, refer to the OCM Installation and
+                             Administration Guide (http://www.oracle.com/technology/documentation/ocm.html).
+                             *******************************************************************************************
+[Aug 2, 2016 1:05:04 AM]     OPatch failed to configure Oracle Configuration Manager in "/u01/app/oracle/product/11.2.0.4/dbhome_1". Please refer log file
+                             for details.
+[Aug 2, 2016 1:05:04 AM]     *******************************************************************************************
+                             Oracle Configuration Manager is installed but not configured.  OCM enables Oracle to
+                             provide superior, proactive support for our customers. Oracle strongly recommends customers
+                             configure OCM. To complete the configuration of OCM, refer to the OCM Installation and
+                             Administration Guide (http://www.oracle.com/technology/documentation/ocm.html).
+                             *******************************************************************************************
+[Aug 2, 2016 1:05:04 AM]     You selected -local option, hence OPatch will patch the local system only.
+[Aug 2, 2016 1:05:04 AM]     Please shutdown Oracle instances running out of this ORACLE_HOME on the local system.
+                             (Oracle Home = '/u01/app/oracle/product/11.2.0.4/dbhome_1')
+[Aug 2, 2016 1:05:04 AM]     Is the local system ready for patching? [y|n]
+[Aug 2, 2016 1:05:07 AM]     Y (auto-answered by -silent)
+[Aug 2, 2016 1:05:07 AM]     User Responded with: Y
+[Aug 2, 2016 1:05:07 AM]     Backing up files...
+[Aug 2, 2016 1:05:07 AM]     OUI-67117:Backing up files affected by the patch 'NApply' for restore. This might take a while...
+[Aug 2, 2016 1:05:08 AM]     Applying patch 21948347...
+[Aug 2, 2016 1:05:11 AM]     Starting Apply Session at Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:11 AM]     OUI-67086:ApplySession applying interim patch '21948347' to OH '/u01/app/oracle/product/11.2.0.4/dbhome_1'
+[Aug 2, 2016 1:05:11 AM]     Applying sub-patch '21948347' to OH '/u01/app/oracle/product/11.2.0.4/dbhome_1'
+[Aug 2, 2016 1:05:11 AM]     Starting to apply patch to local system at Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:11 AM]     OPatch detected ARU_ID/Platform_ID as 226
+[Aug 2, 2016 1:05:11 AM]     ApplySession: Optional component(s) [ oracle.tfa, 11.2.0.4.0 ]  not present in the Oracle Home or a higher version is found.
+[Aug 2, 2016 1:05:11 AM]     Start saving patch at Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:11 AM]     Finish saving patch at Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:11 AM]     Start backing up system for restore at Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:11 AM]     Finish backing up system for restore at Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:11 AM]     Start backing up system for rollback at Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:11 AM]     OUI-67161:Backing up files affected by the patch '21948347' for rollback. This might take a while...
+[Aug 2, 2016 1:05:11 AM]     Going to backup for rollback Jar Action(s) in a consolidated mode.
+[Aug 2, 2016 1:05:11 AM]     Jar Path -> /u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/jlib/emCORE.jar
+[Aug 2, 2016 1:05:11 AM]     --- Clubbed Actions for this Jar Path to backup for rollback NOW ->
+[Aug 2, 2016 1:05:11 AM]     /oracle/sysman/emSDK/svlt/EMServlet.class
+[Aug 2, 2016 1:05:11 AM]     Backup For Rollback starts for the clubbed jars at --> Tue Aug 02 01:05:11 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Backup For Rollback ends for the clubbed jars at ---> Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Finish backing up system for rollback at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Start modifying the system at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Patching component oracle.sysman.agent, 10.2.0.4.5...
+[Aug 2, 2016 1:05:12 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/lib/libnmectl.a"  with "sysman/lib/libnmectl.a/nmetgctl.o"
+[Aug 2, 2016 1:05:12 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/lib/libnmee.a"  with "sysman/lib/libnmee.a/nmeetm.o"
+[Aug 2, 2016 1:05:12 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/lib/libnmehl.a"  with "sysman/lib/libnmehl.a/nmehlenv.o"
+[Aug 2, 2016 1:05:12 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:12 AM]     Start Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:12 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/config/emd.properties.template"
+[Aug 2, 2016 1:05:12 AM]     Finish Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Patching component oracle.ovm, 11.2.0.4.0...
+[Aug 2, 2016 1:05:12 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:12 AM]     Start Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:12 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/rdbms/admin/owmadmb.plb"
+[Aug 2, 2016 1:05:12 AM]     Finish Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Patching component oracle.xdk, 11.2.0.4.0...
+[Aug 2, 2016 1:05:12 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:12 AM]     Start Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:12 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/xmlpatch"
+[Aug 2, 2016 1:05:12 AM]     Finish Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:12 AM]     Start Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:12 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/xmldiff"
+[Aug 2, 2016 1:05:12 AM]     Finish Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:12 AM]     Start Copy Action at Tue Aug 02 01:05:12 UTC 2016
+[Aug 2, 2016 1:05:12 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:12 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/xsl"
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:13 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/xmlcg"
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:13 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/xvm"
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Patching component oracle.rdbms, 11.2.0.4.0...
+[Aug 2, 2016 1:05:13 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libserver11.a"  with "lib/libserver11.a/kpoal8.o"
+[Aug 2, 2016 1:05:13 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libserver11.a"  with "lib/libserver11.a/opiall.o"
+[Aug 2, 2016 1:05:13 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libserver11.a"  with "lib/libserver11.a/opiosq.o"
+[Aug 2, 2016 1:05:13 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libserver11.a"  with "lib/libserver11.a/aud.o"
+[Aug 2, 2016 1:05:13 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libserver11.a"  with "lib/libserver11.a/ksfv.o"
+[Aug 2, 2016 1:05:13 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:13 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/rdbms/admin/bundledata_PSU.xml"
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     OUI-67124:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/psu/11.2.0.4.160119/catpsu.sql"
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     OUI-67124:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/psu/11.2.0.4.160119/catpsu_rollback.sql"
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Patching component oracle.nlsrtl.rsf, 11.2.0.4.0...
+[Aug 2, 2016 1:05:13 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:13 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/lxinst"
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Patching component oracle.xdk.parser.java, 11.2.0.4.0...
+[Aug 2, 2016 1:05:13 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:13 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/xml"
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Copy Action does not have file version.
+[Aug 2, 2016 1:05:13 AM]     Start Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Do copy for this action ? --> true
+[Aug 2, 2016 1:05:13 AM]     OUI-67047:Copying file to "/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/schema"
+[Aug 2, 2016 1:05:13 AM]     Finish Copy Action at Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:13 AM]     Patching component oracle.sysman.console.db, 11.2.0.4.0...
+[Aug 2, 2016 1:05:13 AM]     OUI-67048:Updating jar file "/u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/jlib/emCORE.jar" with "/sysman/jlib/emCORE.jar/oracle/sysman/emSDK/svlt/EMServlet.class"
+[Aug 2, 2016 1:05:13 AM]     Going to patch Jar Action(s) in a consolidated mode.
+[Aug 2, 2016 1:05:13 AM]     Jar Path -> /u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/jlib/emCORE.jar
+[Aug 2, 2016 1:05:13 AM]     --- Clubbed Actions for this Jar Path to patch NOW ->
+[Aug 2, 2016 1:05:13 AM]     /oracle/sysman/emSDK/svlt/EMServlet.class
+[Aug 2, 2016 1:05:13 AM]     Apply starts for the clubbed jars at --> Tue Aug 02 01:05:13 UTC 2016
+[Aug 2, 2016 1:05:19 AM]     Apply ends for the clubbed jars at --> Tue Aug 02 01:05:19 UTC 2016
+[Aug 2, 2016 1:05:19 AM]     Patching component oracle.xdk.rsf, 11.2.0.4.0...
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/lpx2.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/lpxpr.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/lpxstp.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/xdk.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/xti0.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/ltx.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/ltxc1.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/ltxc4.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/ltxvm.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/ltxvm1.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libxml11.a"  with "lib/libxml11.a/ltxvm6.o"
+[Aug 2, 2016 1:05:19 AM]     Patching component oracle.rdbms.rsf, 11.2.0.4.0...
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libgeneric11.a"  with "lib/libgeneric11.a/qmxd.o"
+[Aug 2, 2016 1:05:19 AM]     OUI-67049:Updating archive file "/u01/app/oracle/product/11.2.0.4/dbhome_1/lib/libgeneric11.a"  with "lib/libgeneric11.a/qmxx.o"
+[Aug 2, 2016 1:05:19 AM]     Patching component oracle.sysman.oms.core, 10.2.0.4.5...
+[Aug 2, 2016 1:05:19 AM]     OUI-67048:Updating jar file "/u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/jlib/emCORE.jar" with "/sysman/jlib/emCORE.jar/oracle/sysman/emSDK/svlt/EMServlet.class"
+[Aug 2, 2016 1:05:19 AM]     Going to patch Jar Action(s) in a consolidated mode.
+[Aug 2, 2016 1:05:19 AM]     Jar Path -> /u01/app/oracle/product/11.2.0.4/dbhome_1/sysman/jlib/emCORE.jar
+[Aug 2, 2016 1:05:19 AM]     --- Clubbed Actions for this Jar Path to patch NOW ->
+[Aug 2, 2016 1:05:19 AM]     /oracle/sysman/emSDK/svlt/EMServlet.class
+[Aug 2, 2016 1:05:19 AM]     Apply starts for the clubbed jars at --> Tue Aug 02 01:05:19 UTC 2016
+[Aug 2, 2016 1:05:24 AM]     Apply ends for the clubbed jars at --> Tue Aug 02 01:05:24 UTC 2016
+[Aug 2, 2016 1:05:24 AM]     Finish modifying the system at Tue Aug 02 01:05:24 UTC 2016
+[Aug 2, 2016 1:05:24 AM]     OUI-67085:ApplySession adding interim patch '21948347' to inventory
+[Aug 2, 2016 1:05:24 AM]     Start saving patch to inventory at Tue Aug 02 01:05:24 UTC 2016
+[Aug 2, 2016 1:05:24 AM]     Finish saving patch to inventory at Tue Aug 02 01:05:24 UTC 2016
+[Aug 2, 2016 1:05:24 AM]     ApplySession: Skip patch verification.
+[Aug 2, 2016 1:05:24 AM]     Finish applying patch to local system at Tue Aug 02 01:05:24 UTC 2016
+[Aug 2, 2016 1:05:25 AM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 72 (MB)
+[Aug 2, 2016 1:05:25 AM]     [OPSR-MEMORY-2] : before loading cooked one off : 76 (MB)
+[Aug 2, 2016 1:05:25 AM]     [OPSR-MEMORY-3] : after loading rawOneOffList and before loading minipatch list in cooked one off : 30 (MB)
+[Aug 2, 2016 1:05:25 AM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 30 (MB)
+[Aug 2, 2016 1:05:25 AM]     OUI-67050:Running make for target iemtgtctl
+[Aug 2, 2016 1:05:25 AM]     Start invoking 'make' at Tue Aug 02 01:05:25 UTC 2016Tue Aug 02 01:05:25 UTC 2016
+[Aug 2, 2016 1:05:25 AM]     Finish invoking 'make' at Tue Aug 02 01:05:25 UTC 2016
+[Aug 2, 2016 1:05:25 AM]     OUI-67050:Running make for target e2eme
+[Aug 2, 2016 1:05:25 AM]     Start invoking 'make' at Tue Aug 02 01:05:25 UTC 2016Tue Aug 02 01:05:25 UTC 2016
+[Aug 2, 2016 1:05:26 AM]     Finish invoking 'make' at Tue Aug 02 01:05:26 UTC 2016
+[Aug 2, 2016 1:05:26 AM]     OUI-67050:Running make for target libnmemso
+[Aug 2, 2016 1:05:26 AM]     Start invoking 'make' at Tue Aug 02 01:05:26 UTC 2016Tue Aug 02 01:05:26 UTC 2016
+[Aug 2, 2016 1:05:26 AM]     Finish invoking 'make' at Tue Aug 02 01:05:26 UTC 2016
+[Aug 2, 2016 1:05:26 AM]     OUI-67050:Running make for target client_sharedlib
+[Aug 2, 2016 1:05:26 AM]     Start invoking 'make' at Tue Aug 02 01:05:26 UTC 2016Tue Aug 02 01:05:26 UTC 2016
+[Aug 2, 2016 1:05:28 AM]     Finish invoking 'make' at Tue Aug 02 01:05:28 UTC 2016
+[Aug 2, 2016 1:05:28 AM]     OUI-67050:Running make for target iamdu
+[Aug 2, 2016 1:05:28 AM]     Start invoking 'make' at Tue Aug 02 01:05:28 UTC 2016Tue Aug 02 01:05:28 UTC 2016
+[Aug 2, 2016 1:05:28 AM]     Finish invoking 'make' at Tue Aug 02 01:05:28 UTC 2016
+[Aug 2, 2016 1:05:28 AM]     OUI-67050:Running make for target ikfod
+[Aug 2, 2016 1:05:28 AM]     Start invoking 'make' at Tue Aug 02 01:05:28 UTC 2016Tue Aug 02 01:05:28 UTC 2016
+[Aug 2, 2016 1:05:29 AM]     Finish invoking 'make' at Tue Aug 02 01:05:29 UTC 2016
+[Aug 2, 2016 1:05:30 AM]     OUI-67050:Running make for target irenamedg
+[Aug 2, 2016 1:05:30 AM]     Start invoking 'make' at Tue Aug 02 01:05:30 UTC 2016Tue Aug 02 01:05:30 UTC 2016
+[Aug 2, 2016 1:05:30 AM]     Finish invoking 'make' at Tue Aug 02 01:05:30 UTC 2016
+[Aug 2, 2016 1:05:30 AM]     OUI-67050:Running make for target ikfed
+[Aug 2, 2016 1:05:30 AM]     Start invoking 'make' at Tue Aug 02 01:05:30 UTC 2016Tue Aug 02 01:05:30 UTC 2016
+[Aug 2, 2016 1:05:30 AM]     Finish invoking 'make' at Tue Aug 02 01:05:30 UTC 2016
+[Aug 2, 2016 1:05:30 AM]     OUI-67050:Running make for target ioracle
+[Aug 2, 2016 1:05:30 AM]     Start invoking 'make' at Tue Aug 02 01:05:30 UTC 2016Tue Aug 02 01:05:30 UTC 2016
+[Aug 2, 2016 1:05:38 AM]     Finish invoking 'make' at Tue Aug 02 01:05:38 UTC 2016
+[Aug 2, 2016 1:05:38 AM]     OUI-67050:Running make for target client_sharedlib
+[Aug 2, 2016 1:05:38 AM]     Start invoking 'make' at Tue Aug 02 01:05:38 UTC 2016Tue Aug 02 01:05:38 UTC 2016
+[Aug 2, 2016 1:05:42 AM]     Finish invoking 'make' at Tue Aug 02 01:05:42 UTC 2016
+[Aug 2, 2016 1:05:42 AM]     OUI-67050:Running make for target liborasdksh
+[Aug 2, 2016 1:05:42 AM]     Start invoking 'make' at Tue Aug 02 01:05:42 UTC 2016Tue Aug 02 01:05:42 UTC 2016
+[Aug 2, 2016 1:05:44 AM]     Finish invoking 'make' at Tue Aug 02 01:05:44 UTC 2016
+[Aug 2, 2016 1:05:44 AM]     OUI-67050:Running make for target liborasdkbase
+[Aug 2, 2016 1:05:44 AM]     Start invoking 'make' at Tue Aug 02 01:05:44 UTC 2016Tue Aug 02 01:05:44 UTC 2016
+[Aug 2, 2016 1:05:44 AM]     Finish invoking 'make' at Tue Aug 02 01:05:44 UTC 2016
+[Aug 2, 2016 1:05:44 AM]     OUI-67179:
+                             The local system has been patched and can be restarted.
+[Aug 2, 2016 1:05:44 AM]     OPatch will clean up 'restore.sh,make.txt' files and 'scratch,backup' directories.
+                             You will be still able to rollback patches after this cleanup.
+                             Do you want to proceed? [y|n]
+[Aug 2, 2016 1:05:47 AM]     Y (auto-answered by -silent)
+[Aug 2, 2016 1:05:47 AM]     User Responded with: Y
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/lib"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/lib/libxml11.a"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/lib/libgeneric11.a"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/lib/libserver11.a"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/lib"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/psu"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/psu/11.2.0.4.160119"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/psu/11.2.0.4.160119"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/psu"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/lib"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/lib/libnmee.a"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/lib/libnmehl.a"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/lib/libnmectl.a"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/lib"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/config"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/config/emd.properties.template"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/config"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/jlib"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/jlib/emCORE.jar"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman/jlib"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/sysman"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/rdbms"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/rdbms/admin"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/rdbms/admin/owmadmb.plb"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/rdbms/admin/bundledata_PSU.xml"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/rdbms/admin"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/rdbms"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin/xsl"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin/xmlcg"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin/xml"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin/schema"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin/xvm"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin/lxinst"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/bin"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/inventory"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/inventory/ContentsXML"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/inventory/ContentsXML/comps.xml"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/inventory/ContentsXML"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup/inventory"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/backup"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/rac"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/rac/mode.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/rac/copy_files.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/rac/make_cmds.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/rac/remote_cmds.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/rac/copy_dirs.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/rac"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/restore.sh"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/NApply/2016-08-02_01-04-54AM/make.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/backup"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/backup"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/mode.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/copy_files.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/make_cmds.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/remote_cmds.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/copy_dirs_21948347.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/remote_cmds_21948347.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/copy_files_21948347.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac/copy_dirs.txt"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/rac"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/xti0.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/qmxd.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/xdk.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/ltxc1.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/ksfv.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/nmehlenv.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/kpoal8.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/lpxstp.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/qmxx.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/ltx.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/nmeetm.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/ltxc4.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/aud.o"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/patched"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/patched/sysman"
+[Aug 2, 2016 1:05:47 AM]     Deleting the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/patched/sysman/jlib"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/patched/sysman/jlib/emCORE.jar"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/patched/sysman/jlib"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/patched/sysman"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/patched"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/ltxvm1.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/ltxvm.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/opiall.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/nmetgctl.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/lpxpr.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/ltxvm6.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/opiosq.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the file "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch/lpx2.o"
+[Aug 2, 2016 1:05:47 AM]     Deleted the directory "/u01/app/oracle/product/11.2.0.4/dbhome_1/.patch_storage/21948347_Dec_14_2015_03_31_48/scratch"
+[Aug 2, 2016 1:05:47 AM]     UtilSession: Backup area for restore has been cleaned up. For a complete list of files/directories
+                             deleted, Please refer log file.
+[Aug 2, 2016 1:05:47 AM]     Composite patch 21948347 successfully applied.
+[Aug 2, 2016 1:05:47 AM]     UtilSession: N-Apply done.
+[Aug 2, 2016 1:05:47 AM]     Finishing UtilSession at Tue Aug 02 01:05:47 UTC 2016
+[Aug 2, 2016 1:05:47 AM]     Log file location: /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2016-08-02_01-04-54AM_1.log

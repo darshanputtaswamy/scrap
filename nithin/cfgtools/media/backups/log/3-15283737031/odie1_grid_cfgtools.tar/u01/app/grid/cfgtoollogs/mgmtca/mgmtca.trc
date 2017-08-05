@@ -1,0 +1,36 @@
+[main] [ 2016-04-13 16:45:37.826 UTC ] [Mgmtca.main:235]  Running mgmtca
+[main] [ 2016-04-13 16:45:38.374 UTC ] [Mgmtca.isMgmtdbOnCurrentNode:608]  Management DB is running on odie1. Local node is odie1
+[main] [ 2016-04-13 16:45:38.377 UTC ] [Mgmtca.execute:510]  Adding internal user1 
+[main] [ 2016-04-13 16:45:38.389 UTC ] [Mgmtca.execute:512]  Adding internal user2 
+[main] [ 2016-04-13 16:45:38.413 UTC ] [MgmtWallet.createWallet:54]  Wallet created
+[main] [ 2016-04-13 16:45:38.534 UTC ] [Mgmtca.execute:524]  MGMTDB Wallet created
+[main] [ 2016-04-13 16:45:38.535 UTC ] [Mgmtca.execute:525]  Adding user/passwd to MGMTDB Wallet
+[main] [ 2016-04-13 16:45:38.668 UTC ] [MgmtWallet.terminate:122]  Wallet closed
+[main] [ 2016-04-13 16:45:38.668 UTC ] [Mgmtjdbc.connect:84]  Connection String=jdbc:oracle:oci:@(DESCRIPTION=(ADDRESS=(PROTOCOL=beq)(PROGRAM=/u01/app/12.1.0.2/grid/bin/oracle)(ARGV0=oracle-MGMTDB)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')(ENVS='ORACLE_HOME=/u01/app/12.1.0.2/grid,ORACLE_SID=-MGMTDB')))
+[main] [ 2016-04-13 16:45:38.883 UTC ] [Mgmtjdbc.connect:90]  Connection Established
+[main] [ 2016-04-13 16:45:39.058 UTC ] [Mgmtca.execute:551]  Unlocking user and setting password for pdb: odie_c
+[main] [ 2016-04-13 16:45:39.109 UTC ] [Mgmtjdbc.alterContainer:218]  Changed container to odie_c
+[main] [ 2016-04-13 16:45:39.109 UTC ] [Mgmtjdbc.alterUserInfo:143]  Unlocking user CHM
+[main] [ 2016-04-13 16:45:39.179 UTC ] [Mgmtjdbc.alterUserInfo:143]  Unlocking user PCMRADMIN
+[main] [ 2017-07-06 06:35:43.674 UTC ] [Mgmtca.main:235]  Running mgmtca
+[main] [ 2017-07-06 06:35:44.279 UTC ] [Mgmtca.isMgmtdbOnCurrentNode:608]  Management DB is running on odie1. Local node is odie1
+[main] [ 2017-07-06 06:35:44.530 UTC ] [MgmtWallet.createWallet:54]  Wallet created
+[main] [ 2017-07-06 06:35:44.535 UTC ] [Mgmtca.execute:524]  MGMTDB Wallet created
+[main] [ 2017-07-06 06:35:44.535 UTC ] [Mgmtca.execute:525]  Adding user/passwd to MGMTDB Wallet
+[main] [ 2017-07-06 06:35:44.619 UTC ] [MgmtWallet.terminate:122]  Wallet closed
+[main] [ 2017-07-06 06:35:44.619 UTC ] [Mgmtjdbc.connect:84]  Connection String=jdbc:oracle:oci:@(DESCRIPTION=(ADDRESS=(PROTOCOL=beq)(PROGRAM=/u01/app/12.1.0.2/grid/bin/oracle)(ARGV0=oracle-MGMTDB)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')(ENVS='ORACLE_HOME=/u01/app/12.1.0.2/grid,ORACLE_SID=-MGMTDB')))
+[main] [ 2017-07-06 06:35:44.914 UTC ] [Mgmtjdbc.connect:90]  Connection Established
+[main] [ 2017-07-06 06:35:45.069 UTC ] [Mgmtca.execute:551]  Unlocking user and setting password for pdb: odie_c
+[main] [ 2017-07-06 06:35:45.132 UTC ] [Mgmtjdbc.alterContainer:218]  Changed container to odie_c
+[main] [ 2017-07-06 06:35:45.132 UTC ] [Mgmtjdbc.alterUserInfo:143]  Unlocking user PCMRADMIN
+[main] [ 2017-07-06 06:35:48.703 UTC ] [Mgmtca.main:235]  Running mgmtca
+[main] [ 2017-07-06 06:35:49.278 UTC ] [Mgmtca.isMgmtdbOnCurrentNode:608]  Management DB is running on odie1. Local node is odie1
+[main] [ 2017-07-06 06:35:49.321 UTC ] [MgmtWallet.createWallet:54]  Wallet created
+[main] [ 2017-07-06 06:35:49.326 UTC ] [Mgmtca.execute:524]  MGMTDB Wallet created
+[main] [ 2017-07-06 06:35:49.326 UTC ] [Mgmtca.execute:525]  Adding user/passwd to MGMTDB Wallet
+[main] [ 2017-07-06 06:35:49.416 UTC ] [MgmtWallet.terminate:122]  Wallet closed
+[main] [ 2017-07-06 06:35:49.416 UTC ] [Mgmtjdbc.connect:84]  Connection String=jdbc:oracle:oci:@(DESCRIPTION=(ADDRESS=(PROTOCOL=beq)(PROGRAM=/u01/app/12.1.0.2/grid/bin/oracle)(ARGV0=oracle-MGMTDB)(ARGS='(DESCRIPTION=(LOCAL=YES)(ADDRESS=(PROTOCOL=beq)))')(ENVS='ORACLE_HOME=/u01/app/12.1.0.2/grid,ORACLE_SID=-MGMTDB')))
+[main] [ 2017-07-06 06:35:49.617 UTC ] [Mgmtjdbc.connect:90]  Connection Established
+[main] [ 2017-07-06 06:35:49.766 UTC ] [Mgmtca.execute:551]  Unlocking user and setting password for pdb: odie_c
+[main] [ 2017-07-06 06:35:49.805 UTC ] [Mgmtjdbc.alterContainer:218]  Changed container to odie_c
+[main] [ 2017-07-06 06:35:49.805 UTC ] [Mgmtjdbc.alterUserInfo:143]  Unlocking user CHM

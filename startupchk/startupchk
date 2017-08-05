@@ -1,0 +1,805 @@
+#!/bin/env bash
+
+CYAN="\033[1;36;40m"
+NORM="\033[0m"
+BOLD="\033[1m"
+GREEN="\033[1;32;40m"
+ORANGE="\033[33;40m"
+RED="\033[1;31;40m"
+BLUE="\033[1;34;40m"
+
+
+###########################################################################################################################################
+# usage  
+#
+#:  	Print usage of this script 
+###########################################################################################################################################
+
+
+usage()
+{
+cat << EOF
+usage: ${program_name} options
+
+This script checks and validates various subsystem underlining you cluster environment.
+
+
+OPTIONS:
+   -help                Show this message
+   -debug               Run ${program_name} in debug mode. Debug log will be generated.
+   -config              Run ${program_name} to check for posible startup failure due to cluster configuration.
+   -disk                Run ${program_name} to check for posible startup failure due to cluster Storage setup.
+   -net                 Run ${program_name} to check for posible startup failure due to cluster Network setup.
+   -knownbug            Run ${program_name} to check for posible startup failure due to known Startup bugs.
+   -fs                  Run ${program_name} to check for posible startup failure due to cluster filesystem setup.
+EOF
+
+}
+
+
+
+
+###########################################################################################################################################
+# check_wrkdir  
+#
+#:  	Check if the directory as read write permission . 
+###########################################################################################################################################
+
+
+function check_wrkdir ()
+{
+  touch ${WRKDIR}/$$.touched >/dev/null 2>&1
+  if [ $? -ne "0" ] ; then
+    # $WRKDIR is not writable
+    echo;
+    echo -e "${RED}${WRKDIR} is not writable. Please set the STARTUPCHECK_OUTPUT and run again.";
+    echo -e "${NORM}"
+    echo "ex: export STARTUPCHECK_OUTPUT=<writable directory> "
+    echo;
+    echo;
+    exit 1;
+  fi
+  rm -f ${WRKDIR}/$$.touched >/dev/null 2>&1
+}
+
+
+
+###########################################################################################################################################
+# validates_clusterware  
+#
+#:  	Validation is first level of discovery ,this Function  Calls the validate.pl script from location $SCRIPTPATH/src/validate.pl 
+#  Sets executable permission to all the files in this the folder    $SCRIPTPATH/src/
+#  Once validation is successful , It would sumarize the the validation report to a html document 
+#  If vaildation fails its exists . 
+#  
+#  $SCRIPTPATH/src/validate.pl   would create a file $INPUTDIR/raccheck_env.out this is the master file which is further used by other checks.
+#  Most of this function is to created the html information post execution of  vailidation.pl
+###########################################################################################################################################
+
+
+validates_clusterware(){
+
+perl_exe=$(which perl|sed 's/\r//')
+
+chmod +x $SOURCE/validate.pl 
+chmod +x $SOURCE/test_node_reachability.sh
+
+$perl_exe  $SOURCE/validate.pl "$SOURCE" "$OUTPUTDIR" "$INPUTDIR"
+
+### If this file does not exist then faildation failed 
+
+if  [ ! -e $INPUTDIR/raccheck_env.out ]
+ then 
+ echo "Clusterware Node Validation Failed Please Engage Oracle Support to get Assiatnce"
+ else 
+ echo "Clusterware Node Validation Passed !!! ";
+ 
+fi
+
+
+
+
+#### Generate the html report for validation using the master file 
+
+echo "<H2 align="center">Cluster Node Validation Summary</H2>"   >> $HTMLFILES/head.part.html
+echo "<table border=1 summary="Cluster Summary" role="presentation" style="width:750px" align="center">" >> $HTMLFILES/head.part.html
+
+
+echo "<tr><td class="td_column">Collection Date</td><td>$timestamphtml</td></tr>" >> $HTMLFILES/head.part.html
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_HOME"| cut -d\| -f3)
+is_valid=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_HOME"| cut -d\| -f1)
+
+if [[ -n $is_valid && $is_valid == "V" ]] ; then echo "<tr><td class=td_column>CRS Home</td><td>$VALUE</td><td style="background-color:green">valid</td></tr>" >> $HTMLFILES/head.part.html
+else echo "<tr><td class=td_column>CRS Home </td><td>$VALUE</td><td style="background-color:#00FFFF">invalid</td></tr>"    >> $HTMLFILES/head.part.html
+fi
+
+unset VALUE
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_VERSION"| cut -d\| -f3)
+is_valid=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_VERSION"| cut -d\| -f1)
+if [[ -n $is_valid && $is_valid == "V" ]] ; then echo "<tr><td class=td_column>CRS Version</td><td>$VALUE</td><td style="background-color:green">valid</td></tr>"    >> $HTMLFILES/head.part.html
+else echo "<tr><td class=td_column>CRS Version </td><td>$VALUE</td><td style="background-color:#00FFFF">invalid</td></tr>"   >> $HTMLFILES/head.part.html
+fi
+
+
+
+unset VALUE
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_CRSCONFIGPARAMS"| cut -d\| -f3)
+is_valid=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_CRSCONFIGPARAMS"| cut -d\| -f1)
+if [[  -n $is_valid && $is_valid == "V" ]] ; then echo "<tr><td class=td_column>CRS crsconfigparams</td><td>$VALUE</td><td style="background-color:green">valid</td></tr>"  >> $HTMLFILES/head.part.html
+else echo "<tr><td class=td_column>CRS Crsconfigparams </td><td>$VALUE</td><td style="background-color:#00FFFF">invalid</td></tr>"  >> $HTMLFILES/head.part.html
+fi
+unset VALUE
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_BASE"| cut -d\| -f3)
+is_valid=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLE_BASE"| cut -d\| -f1)
+if [[ -n $is_valid && $is_valid == "V" ]] ; then echo "<tr><td class=td_column>CRS Base</td><td>$VALUE</td><td style="background-color:green">valid</td></tr>"  >> $HTMLFILES/head.part.html
+else echo "<tr><td class=td_column>CRS crsconfigparams</td><td>$VALUE</td><td style="background-color:#00FFFF">invalid</td></tr>"  >> $HTMLFILES/head.part.html
+fi
+
+unset VALUE
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLEOWNER"| cut -d\| -f3)
+is_valid=$(cat $INPUTDIR/raccheck_env.out | grep "ORACLEOWNER"| cut -d\| -f1)
+if [[ -n $is_valid && $is_valid == "V" ]] ; then echo "<tr><td class=td_column>CRS Software Owner</td><td>$VALUE</td><td style="background-color:green">valid</td></tr>"  >> $HTMLFILES/head.part.html
+else echo "<tr><td class=td_column>CRS Software Owner</td><td>$VALUE</td><td style="background-color:#00FFFF">invalid</td></tr>"  >> $HTMLFILES/head.part.html
+fi
+
+unset VALUE
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "DBAGROUP"| cut -d\| -f3)
+is_valid=$(cat $INPUTDIR/raccheck_env.out | grep "DBAGROUP"| cut -d\| -f1)
+if [[ -n $is_valid && $is_valid == "V" ]] ; then echo "<tr><td class=td_column>CRS Software owner's group</td><td>$VALUE</td><td style="background-color:green">valid</td></tr>"  >> $HTMLFILES/head.part.html
+else echo "<tr><td class=td_column>CRS Software owner's group</td><td>$VALUE</td><td style="background-color:#00FFFF">invalid</td></tr>"  >> $HTMLFILES/head.part.html
+fi
+
+unset VALUE
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "DBAGROUP"| cut -d\| -f3)
+is_valid=$(cat $INPUTDIR/raccheck_env.out | grep "DBAGROUP"| cut -d\| -f1)
+if [[ -n $is_valid && $is_valid == "V" ]] ; then echo "<tr><td class=td_column>ASM Disk owner's group</td><td>$VALUE</td><td style="background-color:green">valid</td></tr>"  >> $HTMLFILES/head.part.html
+else echo "<tr><td class=td_column>ASM Disk owner's group</td><td>$VALUE</td><td style="background-color:#00FFFF">invalid</td></tr>"  >> $HTMLFILES/head.part.html
+fi
+
+unset VALUE
+
+VALUE=$(cat $INPUTDIR/raccheck_env.out | grep "HOSTNAME"| wc -l)
+echo "<tr><td class="td_column">Number of nodes</td><td>$VALUE</td></tr>"  >> $HTMLFILES/head.part.html
+
+
+
+cat  "$INPUTDIR/raccheck_env.out" | while read line
+do
+#echo $line
+is_valid=$(echo  $line | grep "HOSTNAME"| cut -d\| -f1)
+is_local=$(echo $line | grep "HOSTNAME"| cut -d\| -f4)
+is_local=$( echo $is_local |sed -r 's/\<./\U&/g')
+is_reached=$(echo $line | grep "HOSTNAME"| cut -d\| -f2)
+node_name=$(echo $line | grep "HOSTNAME"| cut -d\| -f5)
+
+if [[ ! -z $is_valid ]] ; then
+#echo $is_valid
+#echo $is_local
+#echo $is_reached
+#echo $node_name
+     if [ $is_valid == "V" ] ; then echo "<tr><td class=td_column >&nbsp;&nbsp;&nbsp;$is_local</td><td>$node_name</td><td style="background-color:green">$is_reached</td></tr>"  >> $HTMLFILES/head.part.html
+         else echo "<tr><td class=td_column>&nbsp;&nbsp;&nbsp;$is_local</td><td>$node_name</td><td style="background-color:#00FFFF">$is_reached</td></tr>"  >> $HTMLFILES/head.part.html
+fi
+fi
+done
+
+
+
+
+##### 
+
+#    yet to had other vaildationS . 
+#
+
+#######
+
+echo "</table>" >>$HTMLFILES/head.part.html
+echo "<br>" >>$HTMLFILES/head.part.html
+echo "<hr WIDTH="60%" NOSHADE><br>" >>$HTMLFILES/head.part.html
+
+
+
+
+if  [  ! -e $INPUTDIR/raccheck_env.out ]
+ then 
+ 
+             ##############################################################
+			 # if the master file does not exists then exit the function  
+			 ##############################################################
+			 mv $HTMLFILES/head.part.html $HTMLFILES/head.html
+			 cat $HTMLFILES/head.html >> $WRKDIR/${program_name}_${timestamp}.html
+			 echo "Clusterware Node Validation Failed  !!! ";
+			 echo -e ""
+			 echo -e "" 
+			 echo -e ""
+			 echo -e "Output File is Written to $WRKDIR/${program_name}_${timestamp}.html"
+			 echo -e ""
+			 echo -e ""
+			 exit 1; 
+ else 
+
+
+			echo "<h2  align="center">Grid Startup Assessment Report</h2>"  >>$HTMLFILES/head.part.html
+
+			echo "            <a name="ASSESSMENT_Summary"></a>" >>$HTMLFILES/head.part.html
+			echo "             <h2 align="center">Summary</h2>" >>$HTMLFILES/head.part.html
+
+			echo "<table id="passedtbl_compute" border="1" style="width:850px" align="center">" >>$HTMLFILES/head.part.html
+
+			echo "<tbody><tr><th scope="col" name="checkid" style="DISPLAY:none">Check Id</th>" >> $HTMLFILES/head.part.html
+			echo "       <th  scope="col">Status</th>" >>$HTMLFILES/head.part.html
+			echo "       <th  scope="col">Type</th>" >>$HTMLFILES/head.part.html
+			echo "       <th  scope="col">Message</th>" >>$HTMLFILES/head.part.html
+			echo "       <th  scope="col">Status On</th>" >>$HTMLFILES/head.part.html
+			echo "       <th  scope="col">Details</th></tr>" >>$HTMLFILES/head.part.html 
+ 
+fi
+			 
+			 
+}
+
+
+
+
+###########################################################################################################################################
+# initialize_htmlhead  
+#
+#:  	This Function is used to initailize html header and metadata info for this run.
+###########################################################################################################################################
+
+initialize_htmlhead(){
+
+
+cp  $SOURCE/html/head.part.html  $HTMLFILES/head.part.html
+
+echo "<title>Oracle CLusterware Startup Assessment Report</title>"   >> $HTMLFILES/head.part.html
+echo "<meta name="FILE Name" content=FILE_NAME = CLUSTERWARE STARTUP ASSESSMENT REPORT>"   >> $HTMLFILES/head.part.html
+echo "<meta name="FILE DATE" content=FILE_DATE = {timestamphtml}>" >> $HTMLFILES/head.part.html
+echo "</head><body>" >> $HTMLFILES/head.part.html
+
+echo "<center><table border=0 width=100%><tr><td class="td_title" align="center">"   >> $HTMLFILES/head.part.html  
+echo " <h1>Oracle CLusterware Startup Assessment Report<br><br>"  >> $HTMLFILES/head.part.html
+echo "</td></tr></table></center>"    >> $HTMLFILES/head.part.html
+
+}
+
+
+
+###########################################################################################################################################
+# initialize  
+#
+#:  	This Function is used to initailize the running evironment , 
+#   Check if Bash is installed , Check if perl is installed , If debugs is enabled re-run the shell script with -x option .
+#   create  Input directory , output directory and its sub directories 
+#   initailize html header for this run .
+###########################################################################################################################################
+
+initialize ()
+{
+
+
+  #### Export the debug flag to environment 
+  export SCRIPT_DEBUG="$STARTUPCHK_DEBUG"
+  WRKDIR=$SCRIPTPATH
+
+  
+  ### If bash is not found then exit 
+  bash_found=$(which bash >/dev/null 2>&1;echo $?)
+
+  if [ $bash_found -ne 0 ]
+  then
+    echo -e "\n${RED}${program_name} requires the BASH shell. Please install bash and try again.${NORM}\n"
+    exit 1;
+  fi
+ 
+  
+  ### If perl  is not found then exit 
+  perl_found=$(which perl >/dev/null 2>&1;echo $?)
+
+  if [ $perl_found -ne 0 ]
+  then
+    echo -e "\n${RED}${program_name} requires the Perl to be installed . Please install perl or set the PATH vaarible and try again.${NORM}\n"
+    exit 1;
+  fi
+
+  #### If debug flag is enabled , then run the main script again by removing debug flag 
+  if [[ ! -z $SCRIPT_DEBUG ]]
+  then
+     
+   set -x
+   export  PS4='$(date "+ $LINENO: + ")'
+   debugFileName=$(echo ${program_name}_debug_${timestamp}.log)
+    oldargs=${cur_arg}
+    rm_arg=$(echo "-debug")
+    argnew=$(echo $oldargs | sed 's/'"$rm_arg"'//')
+    
+		 
+          if [[ -n $STARTUPCHECK_OUTPUT ]]; then
+                debugFileName=${STARTUPCHECK_OUTPUT}/${debugFileName}
+	      fi
+
+      ${SCRIPTPATH}/${program_name} $argnew 2>&1 |tee $debugFileName
+
+    set +x
+      echo -e ""
+      echo -e ""
+      echo -e "Debug output file is $debugFileName";
+      echo -e ""
+      echo -e ""
+  
+      exit 0
+	  
+	  
+  fi
+
+
+ 
+  #following check is to have output directory created at some diffrent local other than where we run check from.
+  if [ -z $STARTUPCHECK_OUTPUT ]; then WRKDIR=$WRKDIR; else WRKDIR=$STARTUPCHECK_OUTPUT; fi;
+ 
+  ## check if working directory as write permission .
+  check_wrkdir
+
+  
+  #### Profile.dat is an index file used to select the required checks for each subsystem
+  PROFILE=$SCRIPTPATH/src/profile.dat
+  
+  #### Any source script commonly used will be in this location 
+  SOURCE=$SCRIPTPATH/src
+
+  
+  ##### Input directory created for this run , this directory is used for passing any information among the script called by this main function 
+  INPUTDIR=${WRKDIR}/.input_${timestamp}
+  mkdir $INPUTDIR
+
+  
+  ##### Output directory created for this run , all log files and html files are present in this location .
+  OUTPUTDIR_VAR=$program_name
+  OUTPUTDIR=$WRKDIR/${OUTPUTDIR_VAR}_${timestamp}
+  mkdir $OUTPUTDIR
+
+  
+  ##### Watchdog  script for this run .   
+  WATCHDOG=$INPUTDIR/watchdog.sh
+  
+  ###### List of hosts in cluster discovered in this run 
+  HOSTLIST=$INPUTDIR/o_host_list.out
+  
+  
+  #######  Master file which is contains the validation information from cluster 
+  MASTERFIL=$INPUTDIR/raccheck_env.out
+  RTEMPDIR=$INPUTDIR
+
+  
+  ###### Output html directory.
+  HTMLFILES=$OUTPUTDIR/html
+  mkdir $HTMLFILES
+  
+  ###### Output Logfile directory 
+  LOGFILE=$OUTPUTDIR/log
+  mkdir $LOGFILE
+  
+  
+  #####  Summary  html from all scripts
+  SREPFIL=$OUTPUTDIR/html/${program_name}_summary.rep
+  
+  
+  ###### Watchdog process  log file. 
+  WATCHLOG=$OUTPUTDIR/log/watchdog.log
+ 
+  ###### Initialize   html header .
+  initialize_htmlhead
+ 
+}
+
+
+
+
+
+
+
+
+
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+###################################################################################################
+#Main program starts from here 
+
+
+###################################################################################################
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+if [[ -n $SCRIPT_DEBUG && $SCRIPT_DEBUG -eq "1"  ]]; then set -x; fi
+
+
+### Note timeStamp when this script was started 
+
+timestamphtml=$(date '+%Y-%m-%d %H:%M:%S')
+timestamp=$(date '+%Y%m%d_%H%M%S')
+
+
+### Name of the program 
+program_name=$(echo $(basename $0)|sed 's/[\.\/]//g')
+
+### Path from where it is running 
+V_PWD=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
+
+SCRIPTPATH=$V_PWD
+
+
+#### Initialize all sub check to zero 
+
+STARTUPCHK_CONFIG=0
+STARTUPCHK_DISK=0
+STARTUPCHK_NET=0
+STARTUPCHK_KNOWNBUG=0
+STARTUPCHK_FS=0
+
+#### By default do all checks 
+all_check=1
+
+
+
+
+#### Current srguments passed for  script 
+cur_arg="$@"
+
+
+
+#### For each argument Check if you need to do only specific check , if So skip all others 
+
+
+for arg in "$@"
+do
+  
+
+  case $arg in
+  "-config")
+    STARTUPCHK_CONFIG=1
+#    echo "using config option"
+    read_p2r="$arg"
+    all_check=0;
+    ;;
+  "-debug")
+    STARTUPCHK_DEBUG=1
+#    echo "using debug option"
+    read_p2r="$arg"
+    ;;
+  "-disk")
+    STARTUPCHK_DISK=1
+#    echo "using disk option"
+        all_check=0;
+    read_p2r="$arg"
+    ;;
+  "-net")
+    STARTUPCHK_NET=1
+#    echo "using net option"
+        all_check=0;
+    read_p2r="$arg"
+    ;;
+  "-knownbug")
+    STARTUPCHK_KNOWNBUG=1
+#    echo "using net option"
+        all_check=0;
+    read_p2r="$arg"
+    ;;
+  "-help"|"-h")
+    usage
+        exit 1
+    ;;
+   "-fs")
+   STARTUPCHK_FS=1
+   all_check=0;
+   read_p2r="$arg"
+    ;;
+  "")
+    read_p2r="none"
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+  esac
+done
+
+
+####### If no Arguments is passed then do all the checks 
+
+if [[  $all_check -eq 1 ]]
+then
+                STARTUPCHK_CONFIG=1
+                STARTUPCHK_DISK=1
+                STARTUPCHK_NET=1
+                STARTUPCHK_KNOWNBUG=1
+                STARTUPCHK_FS=1
+fi
+
+
+
+#### If Debugs options is passed print which all check is been done , 
+#### just for my reference and intintal debuging 
+
+if [[ $STARTUPCHK_DEBUG -eq 1 ]]
+then
+echo "CONIFG $STARTUPCHK_CONFIG"
+echo "DISK $STARTUPCHK_DISK"
+echo "NET $STARTUPCHK_NET"
+echo "KNOWNBUGS $STARTUPCHK_KNOWNBUG"
+echo "FS $STARTUPCHK_FS"
+fi
+
+
+
+### Initialize the evironment to run this script 
+### Refer to this function for more details on directory structure 
+
+
+initialize
+
+
+#: <<'end_long_comment'
+############################################################################################################################################
+# Start WatchDog Timers
+
+#:	  Spawn a script which would run in  parallel , check all the other child processes spawn by this main script and 
+#   kill them if there are running for more than 60 seconds.
+#   The New Script will be running from $WATCHDOG and all its loging will be in $WATCHLOG 
+#  
+#############################################################################################################################################
+
+if [[ ! -f $WATCHDOG  ]] ; then touch $WATCHDOG ;  fi
+if [[ ! -f $WATCHLOG  ]] ; then touch $WATCHLOG ;  fi
+
+  RAT_TIMEOUT=1000
+  watchdog_wakeup=60
+  wakeup_count=1
+
+
+  echo -e "RAT_TIMEOUT=$RAT_TIMEOUT watchdog_wakeup=$watchdog_wakeup ">>$WATCHLOG
+
+  echo "#!/bin/env bash" > $WATCHDOG
+  echo "watchdog_wakeup=$watchdog_wakeup">>$WATCHDOG
+  echo "wakeup_count=1">>$WATCHDOG
+  echo "ppid=$$">>$WATCHDOG
+  echo "mypid=\$\$">>$WATCHDOG
+
+  echo "function killtree() {" >> $WATCHDOG #http://stackoverflow.com/questions/392022/best-way-to-kill-all-child-processes
+  echo "  local _pid=\$1" >> $WATCHDOG
+  echo "  local _sig=\${6-TERM}" >> $WATCHDOG
+  echo "  kill -stop \${_pid}" >> $WATCHDOG
+  echo "  for _child in \$(ps -ef |awk '\$3 == '\${_pid}' {print \$2}'); do " >> $WATCHDOG
+  echo "    killtree \${_child} \${_sig}" >> $WATCHDOG
+  echo "  done" >>$WATCHDOG
+  echo "  kill -\${_sig} \${_pid}" >> $WATCHDOG
+  echo "}" >> $WATCHDOG
+
+
+  echo "echo \"\`date '+%a %b %d %H:%M:%S %Y'\` started watcher\" >$WATCHLOG">>$WATCHDOG
+
+  echo "while [ 1 ]">>$WATCHDOG
+  echo "do">>$WATCHDOG
+
+  ps -o pid >/dev/null 2>&1
+
+  ps_o_ret=$?
+
+  if [[ -n "$ps_o_ret" && $ps_o_ret -eq 0 ]] ; then
+    echo "  lpid=\$(ps -o pid -p \$ppid|grep -v PID)">>$WATCHDOG
+  else
+    echo "  lpid=\$(ps -f -p  \$ppid|grep -v PID | awk '{print \$2}')">>$WATCHDOG
+  fi
+  echo "  if [ -z \$lpid ]">>$WATCHDOG
+  echo "  then">>$WATCHDOG
+
+
+  echo "      for inputrmfile in \$(ls $INPUTDIR/* >/dev/null 2>&1|grep -v watchdog.sh)">>$WATCHDOG
+  echo "      do">>$WATCHDOG
+  echo "        rm -f \$inputrmfile >/dev/null 2>&1">>$WATCHDOG
+  echo "      done">>$WATCHDOG
+  echo "      exit 0">>$WATCHDOG
+  echo "  else">>$WATCHDOG
+
+  echo "     if [ -n \"\$opid\" ]">>$WATCHDOG
+  echo "     then">>$WATCHDOG
+
+  echo "     if [ \`echo \$opid|wc -w\` -gt 1 ];then opid=\$(echo \$opid|awk '{print \$1}');fi">>$WATCHDOG
+
+
+  if [[ -n "$ps_o_ret" && $ps_o_ret -eq 0 ]] ; then
+    echo "         spid=\$(ps -o pid -p \$opid|grep -v PID |sed 's/^ *\(.*\) *$/\1/')">>$WATCHDOG
+  else
+    echo "         spid=\$(ps -f -p \$opid|grep -v PID |  awk '{print \$2}' | sed 's/^ *\(.*\) *$/\1/')">>$WATCHDOG
+  fi
+  echo "         if [[ -n \"\$spid\" && \"\$spid\" -eq \"\$opid\" && \`grep -wc \"\$spid\" $RTEMPDIR/nowatch.pid 2>/dev/null\` -eq 0 ]] && [[ -n \"\$spid\" && \"\$spid\" -eq \"\$opid\" && \`grep -wc \"\$spid\" $TMPDIR/.initdaemon.pid 2>/dev/null\` -eq 0 ]] ">>$WATCHDOG
+  echo "         then">>$WATCHDOG
+
+  echo "             echo \"\`date '+%a %b %d %H:%M:%S %Y'\` candidate pid opid=\$opid still found as spid=\$spid\">>$WATCHLOG">>$WATCHDOG
+  echo "             for cpid in \$(ps -ef |awk '\$3 == '\${spid}' {print \$2}') ">>$WATCHDOG
+  echo "             do">>$WATCHDOG
+
+  echo "               if [[ \`grep -wc \"\$cpid\" $RTEMPDIR/nowatch.pid 2>/dev/null\` -eq 0 ]] && [[ \`grep -wc \"\$cpid\" $TMPDIR/.initdaemon.pid 2>/dev/null\` -eq 0 ]]">>$WATCHDOG
+  echo "               then">>$WATCHDOG
+
+  echo "                  if [ \"$(/bin/uname -s)\" = \"Linux\" ]">>$WATCHDOG
+  echo "                  then">>$WATCHDOG
+  echo "                      scmd=\$(ps -o command -p \$opid |grep -v COMMAND)">>$WATCHDOG
+  echo "                      ccmd=\$(ps -o command -p \$cpid |grep -v COMMAND)">>$WATCHDOG
+  echo "                  fi">>$WATCHDOG
+  echo "                  echo \"\`date '+%a %b %d %H:%M:%S %Y'\` Stuck child pid \$cpid  of parent \$spid\">>$WATCHLOG">>$WATCHDOG
+  echo "                  echo \"\`date '+%a %b %d %H:%M:%S %Y'\` Stuck child command is \$ccmd\">>$WATCHLOG">>$WATCHDOG
+  echo "                  killtree \$cpid 9 >>$WATCHLOG 2>&1">>$WATCHDOG
+  echo "               fi">>$WATCHDOG
+  echo "             done">>$WATCHDOG
+  echo "             echo \"\`date '+%a %b %d %H:%M:%S %Y'\` killing stuck command \$scmd . Operating system process ID \$opid \">>$WATCHLOG">>$WATCHDOG
+  echo "             kill -9 \$spid >>$WATCHLOG 2>&1">>$WATCHDOG
+  echo "         fi">>$WATCHDOG
+  echo "     fi">>$WATCHDOG
+  echo "  fi">>$WATCHDOG
+  echo "  if [ -e $WATCHLOG ];then  echo \"\`date '+%a %b %d %H:%M:%S %Y'\` running watcher \$wakeup_count \" >>$WATCHLOG;fi">>$WATCHDOG
+  echo "  wakeup_count=\`expr \$wakeup_count + 1\`">>$WATCHDOG
+
+   echo "  opid_long=\"\";opid=\"\";for oop in \$(ps -ef|grep -v \${mypid}|grep -v sleep |grep -v compute| awk '\$3 == '\${ppid}' { print \$2 }'); do if [[ \`grep -wc \"\$oop\" $RTEMPDIR/nowatch.pid 2>/dev/null\` -eq "0" ]] && [[ \`grep -wc \"\$oop\" $TMPDIR/.initdaemon.pid 2>/dev/null\` -eq "0" ]]; then opid=\"\$opid \$oop\"; if [ -z \"\$opid_long\" ] ; then opid_long=\$oop; fi; fi; done">>$WATCHDOG
+  echo "                  if [ \"$(/bin/uname -s)\" = \"Linux\" ]">>$WATCHDOG
+  echo "                  then">>$WATCHDOG
+  echo "  if [ -n \"\$opid\" ]; then ocomm_name=\$( ps -p \$opid_long -o command 2>/dev/null|grep -vi command|awk -F/ '{print \$NF}');fi">>$WATCHDOG
+  echo "                  else">>$WATCHDOG
+  echo "  if [ -n \"\$opid\" ]; then ocomm_name=\$( ps -ef |awk '\$2 == '\${opid_long}' {print \$0}');fi">>$WATCHDOG
+  echo "                  fi">>$WATCHDOG
+
+  echo "  if [ -e $WATCHLOG ]; then echo \"\`date '+%a %b %d %H:%M:%S %Y'\` candidate child pid for killing is \$opid - \$ocomm_name \" >>$WATCHLOG;fi">>$WATCHDOG
+
+  echo " if [ -e $WATCHLOG ]; then echo \"\`date '+%a %b %d %H:%M:%S %Y'\` watcher sleeping for \$watchdog_wakeup seconds \" >>$WATCHLOG;fi">>$WATCHDOG
+  echo "      sleep \$watchdog_wakeup">>$WATCHDOG
+  echo "done">>$WATCHDOG
+
+
+  
+#### Started the Watch dog script 
+chmod a+x $WATCHDOG
+$WATCHDOG &
+
+
+#### Make note of its PID , Kill it before exiting this script from now on 
+####
+watchdog_pid=$!
+
+
+###########################################################################################################################################
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+###########################################################################################################################################
+##   
+###
+
+###########################################################################################################################################
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+
+###########################################################################################################################################
+# Validate the cluster environment 
+#
+#: 		You need to Validate the broken environment before begining any check 
+#   Refer to  function validates_clusterware and perl script ./src/validation.pl for more details on validaton
+# 
+###########################################################################################################################################
+
+
+validates_clusterware
+
+
+###########################################################################################################################################
+# Configuration Checks 
+#
+#: 		Once Validation is successful. Perform the configuration check 
+#   script number for each configuration check is found in $PROFILE  path $SCRIPTPATH/src/profile.dat 
+#   Each script is called with 4 arguments 
+#	SCRIPT_LOG=$1                   ###$OUTPUTDIR/log/ Directory  . << all script's logs  if any ,  can be found in this Directory 
+#	SCRIPT_HTML=$2                  ###$OUTPUTDIR/html/ Directory  . << all partial html reports of these script can be found in this Directory
+#	SCRIPT_TEMP=$3                  ###$OUTPUTDIR/html/${program_name}_summary.rep     <<< Each script will summaries its result into this File
+#	SCRIPT_INPUT=$4                 ###${WRKDIR}/.input_${timestamp}/    <<<<   and input which need to be passed to the script will be in this Directory.
+###########################################################################################################################################
+
+    echo -e "\n\tPerforming Configuration Checks\n"
+	echo -e "\t\t\t"
+
+if [[ $STARTUPCHK_CONFIG -eq 1 ]]; then
+
+####   Extract each of the script number and script name from profile.dat file 
+
+cat $PROFILE  |  awk -F'|' '$3=="V" && $1=="config"' | while read line
+do
+script_num=$(echo $line | awk -F'|' '$3=="V" {print $2}')
+script_name=$(echo $line | awk -F'|' '$3=="V" {print $4}')
+
+
+####   Set script location to the folder $SOURCE/config/"$script
+
+
+script=$(echo $script_num | sed 's/$/\.sh/')
+scriptLocation="$SOURCE/config/"$script
+
+
+#SCRIPT_LOG=$1                   ###SCRIPT_LOG Directory location . 
+#SCRIPT_HTML=$2                  ###SCRIPT_HTML Directory Location .
+#SCRIPT_TEMP=$3                  ###SCRIPT_Summary File
+#SCRIPT_INPUT=$4                 ###SCRIPT_INPUT Directory Location
+
+
+
+
+#### Execute each script from this location 
+
+chmod 770 $scriptLocation
+output=$($scriptLocation "$LOGFILE" "$HTMLFILES" "$SREPFIL" "$INPUTDIR")
+echo "check $output"
+echo -e "\n\n"
+
+done
+
+fi
+
+######################################################################################################################################
+######################################################################################################################################
+
+
+
+
+####  SAME LINE OF TOUGH IS FOLLOWED TO OTHER CHECKS 
+
+
+######################################################################################################################################
+#####################################################
+
+
+
+
+
+###########################################################################################################################################
+# Summarise and merge the result in to single file 
+#
+
+#########################################################################################
+#########################################################################################
+
+
+echo "</tbody></table><br><br><hr>" >>$SREPFIL
+
+mv $HTMLFILES/head.part.html $HTMLFILES/head.html
+
+cat $HTMLFILES/head.html $SREPFIL $HTMLFILES/*.part.html >> $WRKDIR/${program_name}_${timestamp}.html
+
+echo -e ""
+echo -e "" 
+echo -e ""
+echo -e "Output File is Written to $WRKDIR/${program_name}_${timestamp}.html"
+echo -e ""
+echo -e ""
+
+#################################################################################################
+# Kill Watchdog process 
+#
+kill -9 $watchdog_pid  
+
+
+
+exit 0 
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+###################################################################################################
+#Main program Ends here 
+
+
+###################################################################################################
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#end_long_comment

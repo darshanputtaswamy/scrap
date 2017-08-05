@@ -1,0 +1,854 @@
+function SelectAllChildern1(a){
+
+a.children('li').each(function(){
+    if($(this).hasClass('a-TreeView-node--leaf') == false){
+	          
+			  $(this).children('div .a-TreeView-row').addClass("is-selected");
+ 			  $(this).children('div .a-TreeView-content').addClass("is-selected");
+			  $(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+			  
+		   $(this).children('ul').each(function(){
+		    //console.log($(this).children('ul'));
+		   SelectAllChildern1($(this));  	
+		   
+		});
+	}else if ($(this).hasClass('a-TreeView-node--leaf')==true ){
+	 	$(this).children('div .a-TreeView-row').addClass("is-selected");
+	 	$(this).children('div .a-TreeView-content').addClass("is-selected");
+	  	$(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+       //console.log($(this));
+    }
+
+})
+
+}
+
+
+$.each( $v('P5_EVENT_ATTENDEE_DISPLAY').split(':'), function (index,obj){
+   var obj2= obj;
+   if (obj2 !== ''){
+      if (apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").attr("aria-selected") == "false"){
+      apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").trigger($.Event("click", { ctrlKey: true }));
+	  }
+   }
+})
+
+
+
+
+
+apex.jQuery("#Catalog-tree").treeView("option", "selectionChange", function(e){
+  
+  console.log("Selection changed, value of selected node is " + apex.jQuery(this).treeView("getSelectedNodes")); 
+  
+
+  SelectAllChildern1(apex.jQuery(this).treeView("getSelection").parent().children('ul'));
+ 
+
+  
+});
+
+$("#Catalog-tree").treeView("option","multiple", "true");
+
+	  
+	  
+
+$.each( $v('P5_EVENT_ATTENDEE_DISPLAY').split(':'), function (index,obj){
+   var obj2= obj;
+   if (obj2 !== ''){
+      if (apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").attr("aria-selected") == "false"){
+      apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").trigger($.Event("click", { ctrlKey: true }));
+	  }
+   }
+})
+
+
+$('#Catalog-tree').on( 'click','span.a-TreeView-label', function() {
+   console.log($(this).text());
+});
+
+
+  $("span[role='treeitem']").click(function() {
+    console.log(("span[role='treeitem']").index(this))'
+  });
+     
+   selectIngredient($(this)); 
+  
+$.each( $v('P10_NEW').split(':'), function (index,obj){
+   var obj2= obj;
+   if ( !== ''){
+         selectIngredient(obj2);
+	  }
+   }
+})
+
+
+
+
+var ASEID []
+
+$.each( $v('P10_NEW').split(':'), function (index,obj){
+   var obj2= obj;
+	   if ( !== ''){
+	   
+			   if (apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").attr("aria-selected") == "false"){
+					apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-row").addClass("is-selected");
+					apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").addClass("is-selected");
+					apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "true");
+					selectIngredient(obj2);
+					ASEID.push(obj2); 
+				  }
+		   
+	   }
+})
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+
+UnSelect an Tree - Item
+
+apex.jQuery("#Catalog-tree").treeView("getSelection").parent().children('div .a-TreeView-row').removeClass("is-selected");
+apex.jQuery("#Catalog-tree").treeView("getSelection").parent().children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "false");
+apex.jQuery("#Catalog-tree").treeView("getSelection").parent().children('div .a-TreeView-content').removeClass("is-selected");
+
+apex.jQuery("#Catalog-tree").treeView("getSelection").parent().children('div .a-TreeView-row').addClass("is-selected");
+apex.jQuery("#Catalog-tree").treeView("getSelection").parent().children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+apex.jQuery("#Catalog-tree").treeView("getSelection").parent().children('div .a-TreeView-content').addClass("is-selected");
+
+
+------------------------------------------------------------------------------------------
+
+
+function traverselist(a){
+
+a.children('li').each(function(){
+    if($(this).hasClass('is-expandable') == true){
+        console.log($(this).parent().children('div .a-TreeView-row'));
+		traverselist($(this).children('ul'));
+    }else if ($(this).hasClass('a-TreeView-node--leaf') ==true ){
+        console.log($(this));
+    }
+
+})
+
+}
+
+
+var temp1= apex.jQuery("#Catalog-tree").treeView("getSelection").parent().children('ul');
+
+
+
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+
+
+var a = apex.jQuery.Event("KeyDown", { keyCode: 17}); 
+var a = jQuery.Event("click");
+e.ctrlKey = true;
+
+var b = apex.jQuery.Event(); 
+
+
+Select all previously selected member on page load 
+
+
+apex.jQuery('span[role="treeitem"]:contains("SAM.GEORGE@ORACLE.COM")');
+
+$.each( $v('P5_EVENT_ATTENDEE_DISPLAY').split(':'), function (index,obj){
+   var obj2= obj;
+   if (obj2 !== ''){
+      apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").click();
+   }
+})
+	  
+	  
+	  
+	  
+apex.jQuery('span[role="treeitem"]:contains("SHIJU")').attr("aria-selected").trigger($.Event("click", { ctrlKey: true }))
+
+
+.event.trigger({ type : 'keypress', which : character.charCodeAt(0) });
+
+http://odyniec.net/articles/multiple-select-fields/
+
+http://stackoverflow.com/questions/9377046/jquery-trigger-ctrl-click
+It works as oneliner: $('#id').trigger($.Event("click", { ctrlKey: true }));
+
+
+
+-----------------------------------------------------
+
+select case when connect_by_isleaf = 1 then 0 when level = 1 then 1 else -1 end as status,
+       level,
+       EMP_ID as title,
+       NULL  as icon,
+       EMP_ID as value,
+       EMP_ID as tooltip,
+       NULL  as link
+from TT_EMPLOYEE
+start with MANAGER_ID= 'SCOTT.JESSE@ORACLE.COM'
+CONNECT BY  MANAGER_ID = PRIOR EMP_ID 
+order siblings by EMP_ID
+
+
+Catalog-tree
+P5_NEW
+apex.jQuery("#Catalog-tree").treeView("option","multiple", "true");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+function removeNodeFromTree(selected){
+
+if (apex.jQuery("span[role='treeitem']:contains('+selected+')").attr("aria-selected") == "true")){
+	 	apex.jQuery("span[role='treeitem']:contains('+selected+')").parent().parent().children('div .a-TreeView-row').removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('+selected+')").parent().parent().children('div .a-TreeView-content').removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('+selected+')").parent().parent().children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "false");
+	}
+}
+
+apex.jQuery("span[role='treeitem']:contains('"+obj2+"')")
+
+
+function newSelection(select) {
+    var value = select;
+    var $ul = $('#ulNewSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append('<li id="liselected" onclick="removeNodeFromTree('+ value +'),$(this).remove();">' +
+      '<input type="hidden" name="ingredients[]" value="' + 
+      value + '" /> ' + value + '</li>');
+  } else {
+	$ul.find("input[value='" + value + "']").click();
+  }
+  
+}
+
+
+
+
+-----------------------------------------------------------
+function selectemployee(select) {
+    var value = select;
+    var $ul = $('#ulselected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0)
+    $ul.append('<li id="liselected" onclick="$(this).remove();">' +
+      '<input type="hidden" name="ingredients[]" value="' + 
+      value + '" /> ' + value + '</li>');
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+function removeNodeFromTree(selected){
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+
+    }
+}
+
+function newSelection(select) {
+    var value = select;
+    var $ul = $('#ulNewSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removeNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='newSelection[]' value='" +
+      value+"' />"+value+ "</li>");
+  }else {
+     $ul.find("input[value='" + value + "']").click();
+    }
+  
+}
+
+
+-----------
+
+
+function previousSelected(select) {
+    var value = select;
+    var $ul = $('#ulpreviousSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removePreviousSelectedNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='previousSelectedArray[]' value='" +
+      value+"' />"+value+ "</li>");
+  }
+  
+}
+
+function removePreviousSelectedNodeFromTree(selected){
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+		ASEID.pop(selected);
+    }
+}
+
+var ASEID = [];
+
+$.each( $v('P10_NEW').split(':'), function (index,obj){
+   var obj2= obj;
+	   if ( !== ''){
+			   if (apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").attr("aria-selected") == "false"){
+					apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-row").addClass("is-selected");
+					apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").addClass("is-selected");
+					apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "true");
+					previousSelected(obj2);
+					ASEID.push(obj2); 
+				  }		   
+	   }
+})
+
+
+apex.jQuery("#Catalog-tree").treeView("option", "selectionChange", function(e){
+   
+  SelectAllChildern1(apex.jQuery(this).treeView("getSelection").parent().children('ul'));
+  
+  ASEID.forEach(function(){
+  
+  
+  })
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+apex.jQuery("#Catalog-tree").treeView("option","multiple", "true");
+
+apex.jQuery("#Catalog-tree").treeView("option", "selectionChange", function(e){
+  
+//  console.log("Selection changed, value of selected node is " + apex.jQuery(this).treeView("getSelectedNodes")); 
+  SelectAllChildern1(apex.jQuery(this).treeView("getSelection").parent().children('ul'));
+
+  ASEID.forEach(function(obj2){
+    if(apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").attr("aria-selected") == "false"){
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-row").addClass("is-selected");
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").addClass("is-selected");
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "true");
+    }
+
+    });
+  
+  
+});
+
+apex.jQuery('#Catalog-tree').on( 'click','span.a-TreeView-label', function() {
+   newSelection($(this).text());
+});
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+var ASEID = [];
+
+function removeNodeFromTree(selected){
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+    }
+}
+
+function newSelection(select) {
+    var value = select;
+    var $ul = $('#ulNewSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removeNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='ingredients[]' value='" +
+      value+"' />"+value+ "</li>");
+  }else {
+     $ul.find("input[value='" + value + "']").click();
+    }
+  
+}
+
+
+function previousSelected(select) {
+    var value = select;
+    var $ul = $('#ulpreviousSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removePreviousSelectedNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='previousSelectedArray[]' value='" +
+      value+"' />"+value+ "</li>");
+  }
+  
+}
+
+function removePreviousSelectedNodeFromTree(selected){
+
+ASEID.pop(selected);
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+		
+    }
+}
+
+
+
+function SelectAllChildern1(a){
+
+a.children('li').each(function(){
+    if($(this).hasClass('a-TreeView-node--leaf') == false){
+	          
+			  $(this).children('div .a-TreeView-row').addClass("is-selected");
+ 			  $(this).children('div .a-TreeView-content').addClass("is-selected");
+			  $(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+			  
+		   $(this).children('ul').each(function(){
+		    //console.log($(this).children('ul'));
+		   SelectAllChildern1($(this));  	
+		   
+		});
+	}else if ($(this).hasClass('a-TreeView-node--leaf')==true ){
+	 	$(this).children('div .a-TreeView-row').addClass("is-selected");
+	 	$(this).children('div .a-TreeView-content').addClass("is-selected");
+	  	$(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+       //console.log($(this));
+    }
+
+})
+
+};
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+var ASEID = [];
+
+function removeNodeFromTree(selected){
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+    }
+}
+
+function newSelection(select) {
+    var value = select;
+    var $ul = $('#ulNewSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removeNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='ingredients[]' value='" +
+      value+"' />"+value+ "</li>");
+  }else {
+     $ul.find("input[value='" + value + "']").click();
+    }
+  
+}
+
+
+function previousSelected(select) {
+    var value = select;
+    var $ul = $('#ulpreviousSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removePreviousSelectedNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='previousSelectedArray[]' value='" +
+      value+"' />"+value+ "</li>");
+  }
+  
+}
+
+function removePreviousSelectedNodeFromTree(selected){
+
+var index = ASEID.indexOf(selected);
+if (index > -1) {
+    ASEID.splice(index, 1);
+}
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+		
+    }
+}
+
+
+
+function SelectAllChildern1(a){
+
+a.children('li').each(function(){
+    if($(this).hasClass('a-TreeView-node--leaf') == false){
+	          
+			  $(this).children('div .a-TreeView-row').addClass("is-selected");
+ 			  $(this).children('div .a-TreeView-content').addClass("is-selected");
+			  $(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+			  
+		   $(this).children('ul').each(function(){
+		    //console.log($(this).children('ul'));
+		   SelectAllChildern1($(this));  	
+		   
+		});
+	}else if ($(this).hasClass('a-TreeView-node--leaf')==true ){
+	 	$(this).children('div .a-TreeView-row').addClass("is-selected");
+	 	$(this).children('div .a-TreeView-content').addClass("is-selected");
+	  	$(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+       //console.log($(this));
+    }
+
+})
+
+};
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+apex.jQuery("#Catalog-tree").treeView("option","multiple", "true");
+
+apex.jQuery("#Catalog-tree").treeView("option", "selectionChange", function(e){
+  
+//  console.log("Selection changed, value of selected node is " + apex.jQuery(this).treeView("getSelectedNodes")); 
+  SelectAllChildern1(apex.jQuery(this).treeView("getSelection").parent().children('ul'));
+
+  ASEID.forEach(function(obj2){
+    if(apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").attr("aria-selected") == "false"){
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-row").addClass("is-selected");
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").addClass("is-selected");
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "true");
+    }
+
+    });
+  
+  
+});
+
+apex.jQuery('#Catalog-tree').on( 'click','span.a-TreeView-label', function() {
+   newSelection($(this).text());
+});
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+=========================================================================================================================
+
+
+
+
+Global Declaration 
+===========================================================================================================================================================================
+var ASEID = [];
+var nonLeafState = [];
+
+function removeNodeFromTree(selected){
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+    }
+}
+
+function newSelection(select) {
+    var value = select;
+    var $ul = $('#ulNewSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removeNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='ingredients[]' value='" +
+      value+"' />"+value+ "</li>");
+  }else {
+     $ul.find("input[value='" + value + "']").click();
+    }
+  
+}
+
+
+function previousSelected(select) {
+    var value = select;
+    var $ul = $('#ulpreviousSelected');
+   
+  if ($ul.find("input[value='" + value + "']").length == 0){
+    $ul.append("<li id='liselected' onclick=removePreviousSelectedNodeFromTree('"+value+"');$(this).remove();>" +
+     "<input type='hidden' name='previousSelectedArray[]' value='" +
+      value+"' />"+value+ "</li>");
+  }
+  
+}
+
+function removePreviousSelectedNodeFromTree(selected){
+
+var index = ASEID.indexOf(selected);
+if (index > -1) {
+    ASEID.splice(index, 1);
+}
+
+if (apex.jQuery("span[role='treeitem']:contains('"+selected+"')").attr("aria-selected") == "true"){
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+	 	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+	  	apex.jQuery("span[role='treeitem']:contains('"+selected+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+		
+    }
+}
+
+
+
+function toggleNodeSelectioninUl2(selected){
+   var index = ASEID.indexOf(selected);
+	if (index > -1) {
+     // donothing 
+	 console.log("already Selcted in Database");
+	} else {
+	   
+       newSelection(selected);
+      }
+}
+	
+
+	
+function removeAllChildrenRecursive(a){
+
+a.children('li').each(function(){
+    if($(this).hasClass('a-TreeView-node--leaf') == false){
+	          
+			  if ($(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected") == "true" ){
+			   $(this).children('div .a-TreeView-row').removeClass("is-selected");
+ 			   $(this).children('div .a-TreeView-content').removeClass("is-selected");
+			   $(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "false");
+			  }
+			 
+		   $(this).children('ul').each(function(){
+		    //console.log($(this).children('ul'));
+		   selectAllChildrenRecursive($(this));  			   
+		});
+	}else if ($(this).hasClass('a-TreeView-node--leaf')==true ){
+
+			 if ($(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected") == "true" ){
+			   $(this).children('div .a-TreeView-content').children('span[role="treeitem"]').trigger($.Event("click", { ctrlKey: true }));
+			  }
+	
+       //console.log($(this));
+    }
+
+})
+
+}
+
+
+function selectAllChildrenRecursive(a){
+
+a.children('li').each(function(){
+    if($(this).hasClass('a-TreeView-node--leaf') == false){
+	          
+			  if ($(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected") == "false" ){
+			   $(this).children('div .a-TreeView-row').addClass("is-selected");
+ 			   $(this).children('div .a-TreeView-content').addClass("is-selected");
+			   $(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected", "true");
+			  }
+			 
+		   $(this).children('ul').each(function(){
+		    //console.log($(this).children('ul'));
+		   selectAllChildrenRecursive($(this));  			   
+		});
+	}else if ($(this).hasClass('a-TreeView-node--leaf')==true ){
+
+			 if ($(this).children('div .a-TreeView-content').children('span[role="treeitem"]').attr("aria-selected") == "false" ){
+			   $(this).children('div .a-TreeView-content').children('span[role="treeitem"]').trigger($.Event("click", { ctrlKey: true }));
+			  }
+	
+       //console.log($(this));
+    }
+
+})
+
+}
+
+	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Execute when page loads 
+============================
+
+apex.jQuery("#Catalog-tree").treeView("option","multiple", "true");
+
+apex.jQuery("#Catalog-tree").treeView("option", "selectionChange", function(e){
+
+   ASEID.forEach(function(obj2){
+   if(apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").attr("aria-selected") == "false"){
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-row").addClass("is-selected");
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").addClass("is-selected");
+   apex.jQuery("span[role='treeitem']:contains('"+obj2+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "true");
+    }
+
+    });
+  
+  
+});
+
+apex.jQuery('#Catalog-tree').on( 'click','span.a-TreeView-label', function() {
+
+
+   var Node = $(this).text();
+   
+   var index = ASEID.indexOf(Node);
+	
+	
+   if (index > -1) {
+     // do Nothing 
+	 console.log("already Selcted in Database");
+	 
+	} else {
+	
+	   if (apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().hasClass('a-TreeView-node--leaf') == true){
+	   
+	    toggleNodeSelectioninUl2(Node);
+	   
+	   }else {
+	   
+	   
+	    //Toggle Each childern if they are present 
+		var present = nonLeafState.indexOf(Node);
+		
+		if (present > -1 ){
+		
+		   // Remove all childern under this 
+			removeAllChildrenRecursive(apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children('ul'));
+			nonLeafState.splice(present, 1);
+		
+		} else {
+		
+		
+			// add all childern under this 
+			selectAllChildrenRecursive(apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children('ul'));
+			nonLeafState.push(Node);
+			
+			
+		}
+		
+			   if (apex.jQuery("span[role='treeitem']:contains('"+Node+"')").attr("aria-selected") == "true"){
+			   
+				apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children("div .a-TreeView-row").removeClass("is-selected");
+				apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children("div .a-TreeView-content").removeClass("is-selected");
+				apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "false");
+				
+			   } else {
+				  apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children("div .a-TreeView-row").addClass("is-selected");
+				  apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children("div .a-TreeView-content").addClass("is-selected");
+				  apex.jQuery("span[role='treeitem']:contains('"+Node+"')").parent().parent().children("div .a-TreeView-content").children("span[role='treeitem']").attr("aria-selected", "true");
+			   
+			  }
+	   
+	 }
+	
+}	
+     
+ });

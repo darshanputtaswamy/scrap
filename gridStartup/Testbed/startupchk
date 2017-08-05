@@ -53,25 +53,16 @@ function check_wrkdir ()
   rm -f ${WRKDIR}/$$.touched >/dev/null 2>&1
 }
 
+
 initialize ()
 {
 
-  export SCRIPT_DEBUG="$STARTUPCHK_DEBUG"
+  
+  V_PWD=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
+  SCRIPTPATH=$V_PWD
+  WRKDIR=$SCRIPTPATH
 
-  if [[ ! -z $SCRIPT_DEBUG ]]
-  then
-    SCRIPT_DEBUG_FLG="set -x";
-    set -x
-    PS4='$(date "+ $LINENO: + ")'
-         debugFileName=$(echo ${program_name}_debug_${timestamp}.log)
-
-          if [[ -n $STARTUPCHECK_OUTPUT ]]; then
-                debugFileName=${STARTUPCHECK_OUTPUT}/${debugFileName}
-      fi
-
-  fi
-
-        bash_found=$(which bash >/dev/null 2>&1;echo $?)
+  bash_found=$(which bash >/dev/null 2>&1;echo $?)
 
   if [ $bash_found -ne 0 ]
   then
@@ -79,10 +70,33 @@ initialize ()
     exit 1;
   fi
 
-  V_PWD=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
-  SCRIPTPATH=$V_PWD
-  WRKDIR=$SCRIPTPATH
+  
+  if [[ ! -z $SCRIPT_DEBUG ]]
+  then
+    set -x
+	 PS4='$(date "+ $LINENO: + ")'
+	  
+    debugFileName=$(echo ${program_name}_debug_${timestamp}.log)	 
+     if [[ -n $STARTUPCHECK_OUTPUT ]]; then
+                debugFileName=${STARTUPCHECK_OUTPUT}/${debugFileName}
+	fi
+	  
+      ${RPDIR}/${program_name} $@ 2>&1| tee $debugFileName
 
+      set +x
+      echo -e ""
+      echo -e ""
+      echo -e "Debug output file is $debugFileName";
+      echo -e ""
+      echo -e ""
+  
+      exit 0
+	  
+	  
+  fi
+
+
+  
 
   #following check is to have output directory created at some diffrent local other than where we run check from.
   if [ -z $STARTUPCHECK_OUTPUT ]; then WRKDIR=$WRKDIR; else WRKDIR=$STARTUPCHECK_OUTPUT; fi;
@@ -138,8 +152,13 @@ do
     ;;
   "-debug")
     STARTUPCHK_DEBUG=1
-#    echo "using debug option"
     read_p2r="$arg"
+	export SCRIPT_DEBUG="$STARTUPCHK_DEBUG"
+    argnew=$(echo $@ | sed 's/'"$read_p2r"'//')
+	PDIR=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
+    ${PDIR}/${program_name} "$argnew"
+    exit 0
+	
     ;;
   "-disk")
     STARTUPCHK_DISK=1

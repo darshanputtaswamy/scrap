@@ -1,0 +1,23 @@
+
+Parsing command line arguments:
+    Parameter "orahome" = /u01/app/11.2.0.4/grid
+    Parameter "orahnam" = OraGrid11gR4
+    Parameter "instype" = typical
+    Parameter "inscomp" = client,oraclient,javavm,server
+    Parameter "insprtcl" = tcp
+    Parameter "cfg" = local
+    Parameter "authadp" = NO_VALUE
+    Parameter "responsefile" = /u01/app/11.2.0.4/grid/network/install/netca_typ.rsp
+    Parameter "lisport" = 1521
+    Parameter "silent" = true
+Done parsing command line arguments.
+Oracle Net Services Configuration:
+Profile configuration complete.
+Profile configuration complete.
+Listener is using the port provided in the command line:1521
+odie1...
+odie2...
+Oracle Net Listener Startup:
+    Listener started successfully.
+Listener configuration complete.
+Oracle Net Services configuration successful. The exit code is 0

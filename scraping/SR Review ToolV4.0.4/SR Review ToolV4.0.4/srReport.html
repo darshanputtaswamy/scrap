@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SR Report</title>
+	<meta http-equiv="cache-control" content="no-cache, no-store">
+	<meta http-equiv='expires' content='0'>
+	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+	<script src="jquery.js"></script>
+	<script src="srReport.js?version=11334"></script>
+
+	 <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="jspdf.js"></script>
+    <script type="text/javascript" src="adler32cs.js"></script>
+    <script type="text/javascript" src="FileSaver.js"></script>
+    <script type="text/javascript" src="BlobBuilder.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+	<script type="text/javascript" src="vv.js"></script>
+    <script type="text/javascript" src="js/basic.js"></script>
+	<script type="text/javascript" src="html2canvas.js"></script>
+	<script type="text/javascript" src="jspdf.debug.js"></script>
+	<script type="text/javascript" src="showindex.js"></script>
+	<link rel="stylesheet" href="srReport.css"></link>
+	<script type="text/javascript">
+   </script>
+
+
+</head>
+<body id=target>
+<table class="topbord" cellspacing="0" width="100%">
+<thead>
+<tr>
+<th>Review for this SR is not done accurately the scrollposition is interpreted wrongly from the audit pop up //Please review it manually//</th>
+</tr>
+</thead>
+</table>
+<table class="chs1 bordered" cellspacing="0" width="100%">
+<thead>
+<tr class="row1">
+<th class="title" id="titlepdf"></th>
+<th class="priority" id="pioritypdf"></th>
+<th class="account" id="accountpdf"></th>
+<th class="comp-sub" id="compsubpdf"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row2" width="100%">
+<td class="srage"></td>
+<td class="custdays"></td>
+<td class="supdays"></td>
+<td class="devdays"></td>
+</tr></tbody>
+</table>
+<div style="float: left; width: 41%;">
+		<table class="srAgeData bordered" id="srAgeData" cellspacing="0" width="99%">
+			<thead>
+				<tr class ="srginfo"><th>General Information</th>
+				<td></td>
+				</tr>
+				
+			</thead>
+			<tbody>
+				<tr></tr>
+				<tr class="trsrstatsubstat">
+					<td>Current SR Status/Sub-Status</td>
+					<td class="tdsrstatsubstat" id="tdsrstatsubstatpdf"></td>
+				</tr>
+				
+				<tr class="trcown">
+					<td>SR Owner</td>
+					<td class="tdcown" id="tdcownpdf"></td>
+				</tr>
+				
+				<tr class="trcemail">
+					<td>Customer Email</td>
+					<td class="tdcemail"></td>
+				</tr>
+				
+		</tbody>
+		</table>
+
+
+	<table class="srAgeData1 bordered" id="supstat" cellspacing="0" width="49%">
+	<tbody>
+				<tr class="trtopacc_val">
+					<td>Account Classification</td>
+					<td class="tdtopacc_val" id="tdtopaccvalpdf"></td>
+				</tr>
+				<tr class="trcomp">
+					<td>Component</td>
+					<td class="tdcomp" id="tdcomp"></td>
+				</tr>
+				<tr class="trsubcomp">
+					<td>Sub-Component</td>
+					<td class="tdsubcomp"></td>
+				</tr>
+				<tr class="trprisevva_val">
+					<td>Any Severity Changes ?</td>
+					<td class = "tdprisevva_val"></td>
+				</tr>
+				<tr class="r6">
+					<td>NRD Missed</td>
+					<td class="nrd_data_count" id="nrdcountpdf"></td>
+				</tr>
+					<tr class="r7">
+					<td>How NRD's Set?</td>
+					<td class="nrd_data_set_count"></td>
+				</tr>
+				<tr class="trcowners">
+					<td>No.of owners</td>
+					<td class="tdcowners"></td>
+				</tr>
+				<tr class="trtransfers">
+					<td>#Transfers</td>
+					<td class="tdtransfers"></td>
+				</tr>
+				
+				</tbody>
+				</table>
+				<table class="srAgeData2 bordered" cellspacing="0" width="49%">
+				<tbody>	
+				<tr class="irdmet">
+					<td>IRD</td>
+					<td class="thirdmet"></td>
+				</tr>				
+				<tr class="trcollabsrs">
+					<td>Any Collab SRs?</td>
+					<td class="tdcollabsrs"></td>
+				</tr>
+				<tr class="trbugs">
+					<td>Any Bugs?</td>
+					<td class="tdbugs"></td>
+				</tr>
+				<tr class="tratt">
+					<td>Any Attachments ?</td>
+					<td class="tdatt">Yes</td>
+				</tr>
+					<tr class="trkm">
+					<td>Any KM ?</td>
+					<td class="tdkm"></td>
+				</tr>
+				<tr class="trrc">
+					<td>Root Cause</td>
+					<td class="tdrc"></td>
+				</tr>
+				<tr class="trreason">
+					<td>Reason</td>
+					<td class="tdreason"></td>
+				</tr>
+				<tr class="trknow">
+					<td>Known Issue</td>
+					<td class="tdknow"></td>
+				</tr>
+				
+				</tbody>
+				</table>
+		<table class="communicationtbl bordered" id="comtab" width="99%" cellspacing="0">
+		<thead>
+		<tr class = "srcomtr">
+			<th>Communication</th>
+			<td></td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr class= "trcommtotupdcust">
+			<td>Total Updates From Customer</td>
+			<td class = "tdcommtotupdcust"></td>
+		</tr>
+		<tr class="trcommtotupdeng">
+			<td>Number of Action Plans Posted by Engineer</td>
+			<td class="tdcommtotupdeng"></td>
+		</tr>
+		<tr class="trcommtocib">
+			<td>Call-In Bounds</td>
+			<td class="tdcommtocib"></td>
+		</tr>
+			<tr class="trcommtocob">
+			<td>Call-Outbounds</td>
+			<td class="tdcommtocob" id = "tdcommtocob"></td>
+		</tr>
+		<tr class="trcommtochat">
+			<td>Chat Instantiation</td>
+			<td class="tdcommtochat"></td>
+		</tr>
+		<tr class="trcommtowebconf">
+			<td>Web Conferences</td>
+			<td class="tdcommtowebconf"></td>
+		</tr>
+	</tbody>
+	</table>			
+</div>
+<div style="float: left; width: 20%;">
+			
+		<table class="odm" id="odm" cellspacing="0" width="99%">
+			
+			<thead><tr class="odmtr">
+				<th >ODM Details</th>
+				<td> </td>
+			</tr></thead>
+		<tbody>
+			<tr class="tric">
+				<td>IC</td>
+				<td class="tdic"></td>
+			</tr>
+			<tr class="triv">
+				<td>IV</td>
+				<td class="tdiv"></td>
+			</tr>
+			<tr class="trcd">
+				<td>CD</td>
+				<td class="tdcd"></td>
+			</tr>
+			<tr class="trcj">
+				<td>CJ</td>
+				<td class="tdcj"></td>
+			</tr>
+			<tr class="trps">
+				<td>PS</td>
+				<td class="tdps"></td>
+			</tr>
+			<tr class="trpsj">
+				<td>PSJ</td>
+				<td class="tdpsj"></td>
+			</tr>
+			<tr class="trsap">
+				<td>SAP</td>
+				<td class="tdsap"></td>
+			</tr>
+			<tr class="trodmq">
+				<td>Question</td>
+				<td class="tdodmq"></td>
+			</tr>
+			<tr class="trodmans">
+				<td>Answer</td>
+				<td class="tdodmans"></td>
+			</tr>
+				<tr class="trodmdc">
+				<td>Data Collection</td>
+				<td class="tdodmdc"></td>
+			</tr>
+				
+					</tbody>
+<table class="warsigtbl bordered" id="warsig" width="99%" cellspacing="0">
+	<thead>
+		<tr class="warsigtr">
+			<th>Warning Signals</th>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="trwarsigasap">
+			<td>ASAP</td>
+			<td class="tdwarsigasap"></td>
+		</tr>
+		<tr class="trwarsigbc">
+			<td>Business Critical</td>
+			<td class="tdwarsigbc"></td>
+		</tr>
+		<tr class="trwarsigcri">
+			<td>CRITICAL</td>
+			<td class="tdwarsigcri"></td>
+		</tr>
+		<tr class="trwarsiggl">
+			<td>Go-Live</td>
+			<td class="tdwarsiggl"></td>
+		</tr>
+		<tr class="trwarsigaup">
+			<td>Any Update?</td>
+			<td class="tdwarsigaup"></td>
+		</tr>
+		<tr class="trwarsigucp">
+			<td>Update me the current progress</td>
+			<td class="tdwarsigucp"></td>
+		</tr>
+			<tr class="trwarsiganynews">
+			<td>Any News?</td>
+			<td class="tdwarsiganynews"></td>
+		</tr>
+		
+		
+		
+		</tbody>
+</table>
+		</table>
+</div>
+  <div style="float: left; width: 39%;">
+			<table class="ATSTATUS bordered" id="ATSTATUS" cellspacing="0" width="100%">
+			<thead>
+			<tr>
+				<th class="thatstatus"></th>
+			</tr>
+			<tr class ="trproductclass">
+			<th class="productth"></th>
+			</tr>
+			</thead>
+			<table class="ebdetails bordered" width="100%" cellspacing="0">
+			<thead>
+				<tr class = "trebdetails">
+				<th class="thebdetails"></th>
+				<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="trescowner">
+				<td>Escalation Owner</td>
+				<td class="tdescowner"></td>
+				</tr>
+				<tr class="trescafter">
+				<td>Escalated After</td>
+				<td class="tdescafter"></td>
+				</tr>
+				<tr class="tresclevel">
+				<td>Escalation Level</td>
+				<td class="tdesclevel"></td>
+				</tr>
+				<tr class="trcamval">
+				<td>CAM Engaged?</td>
+				<td class="tdcamval"></td>
+				</tr>
+			</tbody>
+			</table>
+	<table class="commescbefore bordered" cellspacing="0" width="50%">
+		<thead>
+			<tr class="trescbefore">
+				<th>Before Escalation</th>
+				<td></td>
+			</tr>
+			</thead>
+		<tbody>
+			<tr class="trcommescbeforecob">
+				<td>Call-Out Bounds</td>
+				<td class="tdcommescbeforecob"></td>
+			</tr>
+			<tr class="trcommescbeforecib">
+				<td>Call-In bounds</td>
+				<td class="tdcommescbeforecib"></td>
+			</tr>
+			<tr class="trcommescbeforechat">
+				<td>Chat</td>
+				<td class="tdcommescbeforechat"></td>
+			</tr>
+		</tbody>
+		</table>
+		<table class="commescafter bordered" cellspacing="0" width="48%">
+			<thead>
+			<tr class="trescaftermain">
+				<th>After Escalation</th>
+				<td></td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr class="trcommescafterob">
+				<td>Call-Out Bounds</td>
+				<td class="tdcommescafterob"></td>
+			</tr>
+			<tr class="trcommescafterib">
+				<td>Call-In Outbounds</td>
+				<td class="tdcommescafterib"></td>
+			</tr>
+			<tr class="trcommescafterchat">
+				<td>Chat</td>
+				<td class="tdcommescafterchat"></td>
+			</tr>
+		</tbody>
+		</table>
+		<table class="srdaysbreakup bordered" id="srdaysbreakup" cellspacing="0" width="100%">
+	<thead>
+		<tr class = "trdaysbreakup">
+			<th>Days Breakup(Days)</th>
+			<td></td>
+		</tr>
+	</thead>
+	<table class="supstattbl bordered" id="supstat" cellspacing="0" width="49%">
+	<tbody>
+		<tr class="trwipdays">
+			<td>Working In Progress</td>
+			<td class="tdwipdays"></td>
+		</tr>
+		<tr class="trairdays">
+			<td>Awaiting Int. Response</td>
+			<td class="tdairdays"></td>
+		</tr>
+		<tr class="trrvwdays">
+			<td>Review Update</td>
+			<td class="tdrvwdays"></td>
+		</tr>
+		<tr class="trdevdays">
+			<td>Development Working</td>
+			<td class="tddevdays"></td>
+		</tr>
+		<tr class="trrddays">
+			<td>Review Defect</td>
+			<td class="tdrddays"></td>
+		</tr>
+	</tbody>
+	</table>
+<table class="cusstattbl bordered" id="cusstat" cellspacing="0" width="49%">
+	<tbody>
+		<tr class="trcustwork">
+			<td>Customer Working</td>
+			<td class="tdcustwork"></td>
+		</tr>
+		<tr class="trsoloff">
+			<td>Solution Offered</td>
+			<td class="tdsoloff"></td>
+		</tr>
+		<tr class="trautoclo">
+			<td>Auto Close</td>
+			<td class="tdautoclo"></td>
+		</tr>
+		<tr class="trcliint">
+			<td>Close Initiated</td>
+			<td class="tdcliint"></td>
+		</tr>
+		<tr class="trcloreq">
+			<td>Close Requested</td>
+			<td class="tdcloreq"></td>
+		</tr>
+	</tbody>
+	</table>
+</table>	
+
+<table class="possignals bordered" id="possignals" cellspacing="0" width="100%">
+	<thead>
+		<tr class = "trdaysbreakup">
+			<th>Other Signals</th>
+		</tr>
+	</thead>
+	<table class="posigtbl1 bordered" id="posigtbl1" cellspacing="0" width="49%">
+		<tbody>
+			<tr class="trvgg">
+				<td>Very good / Glad</td>
+				<td class="tdvgg"></td>
+			</tr>
+			<tr class="trew">
+				<td>Excellent / Wonderful</td>
+				<td class="tdew"></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="posigtbl2 bordered" id="posigtbl2" cellspacing="0" width="49%">
+		<tbody>	
+			<tr class="trexp">
+				<td>Expertise</td>
+				<td class="tdexp"></td>
+			</tr>	
+			<tr class="trqresp">
+				<td>Quick response</td>
+				<td class="tdqresp"></td>
+			</tr>
+
+	</tbody>
+	</table>
+</table>		
+
+	
+</div>
+<div style="width: 41%;">
+
+</div>
+
+<div style="float: left; width: 20%;">
+
+</div>
+
+<div style="float: left; width: 39%;">
+	
+
+</div>
+<table class="chs1 bordered" cellspacing="0" width="100%">
+<thead>
+<tr class="lastrow">
+<th class="123">
+  <div style="width:100%">
+	
+	<button onclick="sample_chs()" id="cmd" style="
+    color: white;
+    background-color: royalblue;
+    border-bottom-color: royalblue;
+    border-left-color: royalblue;
+    border-top-color: royalblue;
+    border-right-color: royalblue;">Save to PDF</button>
+	
+		
+
+		<button onclick="testurl()" id="urlid" style="
+    color: white;
+    background-color: royalblue;
+    border-bottom-color: royalblue;
+    border-left-color: royalblue;
+    border-top-color: royalblue;
+    border-right-color: royalblue;">Submit Feedback</button>
+
+	
+	<a href="help.doc" target="_blank" style="float: right;
+    color: white;
+    background-color: blue;
+    border-bottom-color: blue;
+    border-left-color: blue;
+    border-top-color: blue;
+    border-right-color: blue;
+	font-family: Arial, Helvetica, sans-serif;
+	">&nbsp;&nbsp;&nbsp;Help&nbsp;&nbsp;&nbsp;</a>
+
+</div>
+</th>
+
+</tr>
+</thead>
+</table>
+<tbody>
+
+</body>
+</html>

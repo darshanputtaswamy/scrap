@@ -1,0 +1,25 @@
+.................................................................................................... 100% Done.
+
+
+
+Installation in progress (Thursday, October 9, 2014 3:46:53 PM CDT)
+..............................................................................                                                  78% Done.
+Install successful
+
+Linking in progress (Thursday, October 9, 2014 3:46:57 PM CDT)
+Link successful
+
+Setup in progress (Thursday, October 9, 2014 3:47:24 PM CDT)
+Setup successful
+
+End of install phases.(Thursday, October 9, 2014 3:47:46 PM CDT)
+WARNING:
+The following configuration scripts need to be executed as the "root" user in each new cluster node. Each script in the list below is followed by a list of nodes.
+/u01/app/oracle/product/11.2.0.4/dbhome_1/root.sh #On nodes odie1
+To execute the configuration scripts:
+    1. Open a terminal window
+    2. Log in as "root"
+    3. Run the scripts in each cluster node
+    
+The cloning of OraDb11204_home1 was successful.
+Please check '/u01/app/oraInventory/logs/cloneActions2014-10-09_03-46-23PM.log' for more details.

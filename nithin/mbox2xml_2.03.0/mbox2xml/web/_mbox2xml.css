@@ -1,0 +1,383 @@
+
+/** elitversion = 0377 **/
+
+/** GENERAL ELEMENTS **/
+
+body {
+    margin: 0;
+    padding: 0 5px;
+}
+
+body, p, h1, h2, h3, h4, h5, td, th {
+    font-weight: normal;
+    font-family: tahoma, arial;
+}
+
+div {
+    padding: 0px;
+}
+
+h1 {
+    font-size: 50px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 20px;
+    padding: 0;
+    margin: 10px 0;
+}
+
+h3{
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+
+h4 {
+    font-size: 12px;
+    margin: 0px;
+}
+
+h5 {
+    font-size: 10px;
+    margin: 0px;
+    color: #BBBBBB;
+}
+
+p {
+    font-size: 12px;
+    margin: 0px;
+    padding: 2px 5px 5px 5px;
+}
+
+p.error {
+    color: #DF2646;
+    padding: 0;
+}
+
+pre {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none;
+    color: #4F6A99;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #4F6A99;
+}
+
+.elm_highlight {
+    background-color: #FFFFAA !important;
+}
+
+img {
+    display: block;
+    border: none;
+}
+
+
+/** END GENERAL ELEMENTS **/
+
+
+/** HEADER ELEMENTS **/
+
+#pageheader {
+    position: relative;
+}
+
+#headerbackground {
+    z-index: -1;
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+div#logoheader{
+    border-bottom: 1px solid black;
+    padding: 12px 0 0 0;
+    height: 58px;
+    overflow: hidden;
+}
+
+#logo {
+    float: right;
+    display: block;
+}
+
+h2#nav {
+    width: 230px;
+    float: right;
+    text-align: right;
+}
+
+h2#nav a {
+    margin-left: 5px;
+}
+
+#stretch {
+    font-size: 16px;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+
+/** END HEADER ELEMENTS **/
+
+/** MESSAGE ELEMENTS **/
+
+div.message {
+    margin: 20px 0;
+    border: 1px solid #AAA;
+}
+
+div.boxheader {
+    text-align: right;
+    padding: 0px;
+    background-color: #DDD;
+}
+
+div.boxheader a {
+    font-weight: bold;
+}
+
+div.info tr.even th{
+    background-color: #EEE;
+}
+
+div.info tr th{
+    background-color: transparent;
+}
+
+.msgsubject h2{
+    margin: 0;
+    padding: 5px;
+}
+
+.msgdate {
+    width: 150px;
+    float: right;
+    text-align: right;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.msgdate p {
+    margin: 0px;
+    padding: 0;
+}
+
+.msgaddresses {
+    font-size: 12px;
+    padding: 0 5px 5px 5px;
+}
+
+/** END MESSAGE ELEMENTS **/
+
+table {
+    border-collapse: collapse;
+}
+
+table.wide {
+    width: 100%;
+}
+
+td, th {
+    padding: 3px 5px 3px 5px;
+    font-size: 12px;
+    border-right: 1px solid white;
+    vertical-align: top;
+}
+
+th {
+    text-align: left;
+    background: #DDD;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+/** Col types **/
+
+.intcol {
+    text-align: center;
+}
+
+.floatcol {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.iconcol {
+    text-align: center;
+    width: 16px;
+}
+
+.datecol {
+    white-space: nowrap;
+}
+
+.mboxname {
+    white-space: nowrap;
+}
+
+.mboxes {
+    font-size: 10px;
+}
+
+/** end col types **/
+
+
+td.flag{
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+td.last, th.last {
+    border: none;
+}
+
+tr.even{
+    background-color: #EEEEEE;
+}
+
+tbody tr:hover {
+    background-color: #DDE3EE;
+}
+
+div#main {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    width: 760px;
+}
+
+.button {
+    color: #4F6A99;
+    cursor: pointer;
+}
+
+.fold {
+    /*font-weight: bold;*/
+}
+
+.foldbox {
+    height: 16px;
+    overflow: hidden;
+}
+
+.foldbox:hover {
+    height: auto;
+    overflow: hidden;
+}
+
+h5.footer {
+    margin-top: 5px;
+}
+
+td.button{
+    cursor: pointer;
+    color: #4F6A99;}
+
+td.datecolumn {
+    white-space: nowrap;}
+
+td.addresscolumn {
+    white-space: nowrap;}
+
+
+div.index{
+    margin: 10px;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+p.msgnumber {
+    width: 100px;
+    float: left;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 5px;
+}
+
+div.messagetext {
+    padding: 10px;
+    background-color: #EAEEF4;
+    max-height: 200px;
+    overflow: auto;
+    border-top: 1px solid #DDD;
+}
+
+div.messageheader {
+    font-size: 12px;
+    background-color: #DDD;
+    padding: 3px 5px 3px 5px;
+    /*font-weight: bold;*/
+    height: 15px;
+}
+
+div.boxfooter {
+    font-size: 12px;
+    background-color: #DDD;
+    padding: 3px 5px 3px 5px;
+    font-weight: bold;
+}
+
+div.rawheader {
+    height: 20px;
+    overflow: hidden;
+}
+
+div.rawheader .messageheader {
+    color: #4F6A99;
+    cursor: pointer;
+}
+
+div.rawheader:hover {
+    height: auto;
+    overflow: auto;
+}
+
+/** filter field **/
+
+.filter_holder {
+    height: 21px;
+    width: 160px;
+    overflow: hidden;
+    padding-left: 24px;
+    background-repeat: no-repeat;
+    background-position: 0px 1px;
+    float: right;
+    margin: 10px 0;
+}
+
+.filter_holder input {
+    width: 130px;
+    border: none;
+    background: #EEEEEE;
+}
+
+.filterclearbutton {
+    float: right;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: top right;
+    margin-top: 1px;
+}
+
+/** end filter field **/

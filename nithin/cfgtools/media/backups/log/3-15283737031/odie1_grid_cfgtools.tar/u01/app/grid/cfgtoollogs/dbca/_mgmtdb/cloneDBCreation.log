@@ -1,0 +1,20 @@
+ORACLE instance shut down.
+ORACLE instance started.
+Total System Global Area  788529152 bytes
+Fixed Size		    2929352 bytes
+Variable Size		  314576184 bytes
+Database Buffers	  465567744 bytes
+Redo Buffers		    5455872 bytes
++DATA/_MGMTDB/CONTROLFILE/current.389.909074407
+ORA-01109: database not open
+
+
+Database dismounted.
+ORACLE instance shut down.
+ORACLE instance started.
+Total System Global Area  788529152 bytes
+Fixed Size		    2929352 bytes
+Variable Size		  314576184 bytes
+Database Buffers	  465567744 bytes
+Redo Buffers		    5455872 bytes
++DATA/_MGMTDB/CONTROLFILE/current.389.909074435

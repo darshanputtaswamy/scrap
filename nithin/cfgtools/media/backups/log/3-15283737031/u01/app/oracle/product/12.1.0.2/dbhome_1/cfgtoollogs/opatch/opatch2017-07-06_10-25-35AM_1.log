@@ -1,0 +1,26 @@
+[Jul 6, 2017 10:25:35 AM] [INFO]    PREREQ session
+[Jul 6, 2017 10:25:35 AM] [INFO]    OPatch invoked as follows: 'prereq CheckConflictAgainstOH -ph /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633 -oh /u01/app/oracle/product/12.1.0.2/dbhome_1 -invPtrLoc /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc '
+[Jul 6, 2017 10:25:35 AM] [INFO]    Oracle Home       : /u01/app/oracle/product/12.1.0.2/dbhome_1
+                                    Central Inventory : /u01/app/oraInventory
+                                       from           : /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc
+                                    OPatch version    : 12.2.0.1.8
+                                    OUI version       : 12.1.0.2.0
+                                    OUI location      : /u01/app/oracle/product/12.1.0.2/dbhome_1/oui
+                                    Log file location : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatch/opatch2017-07-06_10-25-35AM_1.log
+[Jul 6, 2017 10:25:35 AM] [INFO]    Patch history file: /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Jul 6, 2017 10:25:35 AM] [INFO]    Invoking prereq "checkconflictagainstoh"
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-TIME] Loading raw inventory
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-MEMORY] Loaded all components from inventory. Heap memory in use: 92 (MB)
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-MEMORY] Loaded all one offs from inventory. Heap memory in use: 92 (MB)
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-TIME] Raw inventory loaded successfully
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-TIME] Loading cooked inventory
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-MEMORY] : Loading cooked one offs. Heap memory used 92 (MB)
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-MEMORY] : Loaded cooked oneoffs. Heap memory used : 112 (MB)
+[Jul 6, 2017 10:25:36 AM] [INFO]    [OPSR-TIME] Cooked inventory loaded successfully
+[Jul 6, 2017 10:25:37 AM] [INFO]    Running prereq checkConflictAgainstOHWithDetail
+[Jul 6, 2017 10:25:37 AM] [INFO]    Following patches can be applied:  24828633
+[Jul 6, 2017 10:25:37 AM] [INFO]    Following patches are not required:
+[Jul 6, 2017 10:25:37 AM] [INFO]    Following patches are auto rollbackable:
+[Jul 6, 2017 10:25:37 AM] [INFO]    Finished checking prereq checkConflictAgainstOHWithDetail
+[Jul 6, 2017 10:25:37 AM] [INFO]    Prereq "checkConflictAgainstOH" passed.
+[Jul 6, 2017 10:25:37 AM] [INFO]    Finishing PrereqSession at Thu Jul 06 10:25:37 UTC 2017

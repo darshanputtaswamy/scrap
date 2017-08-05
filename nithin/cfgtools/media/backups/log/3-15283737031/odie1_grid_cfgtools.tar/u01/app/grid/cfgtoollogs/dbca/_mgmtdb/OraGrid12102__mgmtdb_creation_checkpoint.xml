@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2014, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<CHECKPOINTS>
+   <CHECKPOINT LEVEL="MAJOR" NAME="db__mgmtdb" DESC="db creation checkpoint" STATE="SUCCESS">
+      <PROPERTY_LIST>
+         <PROPERTY NAME="command" TYPE="STRING" VAL=" -silent -createDatabase -createAsContainerDatabase true -templateName MGMTSeed_Database.dbc -sid -MGMTDB -gdbName _mgmtdb -storageType ASM -diskGroupName data -datafileJarLocation /u01/app/12.1.0.2/grid/assistants/dbca/templates -characterset AL32UTF8 -autoGeneratePasswords -skipUserTemplateCheck -oui_internal"/>
+      </PROPERTY_LIST>
+   </CHECKPOINT>
+</CHECKPOINTS>

@@ -1,0 +1,425 @@
+SQL> exec sys.dbms_registry.set_session_namespace('SERVER')
+
+PL/SQL procedure successfully completed.
+
+SQL> PROMPT Calling jvmpsu.sql to initialize Java...
+Calling jvmpsu.sql to initialize Java...
+SQL> @?/javavm/install/jvmpsu.sql
+SQL> Rem
+SQL> Rem $Header: javavm/install/jvmpsu.sql /st_javavm_11.2.0.4.0dbpsu/4 2014/11/02 20:19:06 nneeluru Exp $
+SQL> Rem
+SQL> Rem jvmpsu.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, 2014, Oracle and/or its affiliates.
+SQL> Rem All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      jvmpsu.sql - JAVAVM Patch Set Update script
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      Script to be run during post-install and post-deinstall in a PSU.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem      To be run as SYS
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    nneeluru    10/29/14 - Move all the stuff to jvmpsui.sql
+SQL> Rem    nneeluru    10/07/14 - Re-open to fix insert statement
+SQL> Rem    nneeluru    10/04/14 - Backport nneeluru_bug-19699946 from main
+SQL> Rem    nneeluru    08/16/13 - JAVAVM post-install script for PSU
+SQL> Rem    nneeluru    08/16/13 - Created
+SQL> Rem
+SQL> Rem    BEGIN SQL_FILE_METADATA
+SQL> Rem    SQL_SOURCE_FILE: javavm/install/jvmpsu.sql
+SQL> Rem    SQL_SHIPPED_FILE: javavm/install/jvmpsu.sql
+SQL> Rem    SQL_PHASE: post-install for a PSU
+SQL> Rem    SQL_STARTUP_MODE: NORMAL
+SQL> Rem    SQL_IGNORABLE_ERRORS: NONE
+SQL> Rem    SQL_CALLING_FILE: catbundle.sql
+SQL> Rem    END SQL_FILE_METADATA
+SQL> 
+SQL> SET ECHO ON
+SQL> SET FEEDBACK 1
+SQL> SET NUMWIDTH 10
+SQL> SET LINESIZE 80
+SQL> SET TRIMSPOOL ON
+SQL> SET TAB OFF
+SQL> SET PAGESIZE 100
+SQL> 
+SQL> variable jvmscript varchar2(50);
+SQL> column :jvmscript new_value jvm_script noprint;
+SQL> 
+SQL> declare
+  2    stat varchar2(30);
+  3  begin
+  4    :jvmscript := '?/javavm/install/jvmempty.sql';
+  5    select status into stat from dba_registry where comp_id = 'JAVAVM';
+  6    if stat != 'REMOVED' then
+  7      :jvmscript := '?/javavm/install/jvmpsui.sql';
+  8    end if;
+  9  exception when no_data_found then null;
+ 10  end;
+ 11  /
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> select :jvmscript from dual;
+
+
+
+
+1 row selected.
+
+SQL> 
+SQL> @@&jvm_script
+SQL> -- an intentionally empty script
+SQL> 
+SQL> PROMPT Skipping Oracle Database Vault because it is not installed or versions mismatch...
+Skipping Oracle Database Vault because it is not installed or versions mismatch...
+SQL> PROMPT Skipping OLAP Analytic Workspace because it is not installed or versions mismatch...
+Skipping OLAP Analytic Workspace because it is not installed or versions mismatch...
+SQL> PROMPT Processing Oracle Database Packages and Types...
+Processing Oracle Database Packages and Types...
+SQL> ALTER SESSION SET current_schema = sys;
+
+Session altered.
+
+SQL> @?/rdbms/admin/bug20876312_apply.sql
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/bug20876312_apply.sql /st_rdbms_11.2.0.4.0dbpsu/3 2016/08/09 03:54:32 dsirmuka Exp $
+SQL> Rem
+SQL> Rem bug20876312_apply.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2015, 2016, Oracle and/or its affiliates.
+SQL> Rem All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      bug20876312_apply.sql - <one-line expansion of the name>
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      <short description of component this file declares/defines>
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem      <other useful comments, qualifications, etc.>
+SQL> Rem
+SQL> Rem    BEGIN SQL_FILE_METADATA
+SQL> Rem    SQL_SOURCE_FILE: rdbms/admin/bug20876312_apply.sql
+SQL> Rem    SQL_SHIPPED_FILE:
+SQL> Rem    SQL_PHASE:
+SQL> Rem    SQL_STARTUP_MODE: NORMAL
+SQL> Rem    SQL_IGNORABLE_ERRORS: NONE
+SQL> Rem    SQL_CALLING_FILE:
+SQL> Rem    END SQL_FILE_METADATA
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    ratakuma    04/17/15 - Created
+SQL> Rem
+SQL> 
+SQL> SET ECHO ON
+SQL> SET FEEDBACK 1
+SQL> SET NUMWIDTH 10
+SQL> SET LINESIZE 80
+SQL> SET TRIMSPOOL ON
+SQL> SET TAB OFF
+SQL> SET PAGESIZE 100
+SQL> 
+SQL> create or replace view USER_AUDIT_POLICIES (OBJECT_NAME, POLICY_OWNER,
+  2                            POLICY_NAME, POLICY_TEXT, POLICY_COLUMN, PF_SCHEMA,
+  3                            PF_PACKAGE, PF_FUNCTION, ENABLED,
+  4                            SEL, INS, UPD, DEL, AUDIT_TRAIL,
+  5                            POLICY_COLUMN_OPTIONS)
+  6  as
+  7  SELECT OBJECT_NAME, POLICY_OWNER, POLICY_NAME, POLICY_TEXT,  POLICY_COLUMN,
+  8         PF_SCHEMA, PF_PACKAGE, PF_FUNCTION, ENABLED,
+  9         SEL, INS, UPD, DEL, AUDIT_TRAIL, POLICY_COLUMN_OPTIONS
+ 10  FROM DBA_AUDIT_POLICIES
+ 11  WHERE OBJECT_SCHEMA = SYS_CONTEXT('USERENV','CURRENT_USER')
+ 12  /
+
+View created.
+
+SQL> 
+SQL> create or replace view USER_AUDIT_POLICY_COLUMNS(OBJECT_SCHEMA, OBJECT_NAME,
+  2                          POLICY_NAME, POLICY_COLUMN)
+  3  as
+  4  select OBJECT_SCHEMA, OBJECT_NAME,
+  5         POLICY_NAME, POLICY_COLUMN
+  6  from DBA_AUDIT_POLICY_COLUMNS
+  7  WHERE OBJECT_SCHEMA = SYS_CONTEXT('USERENV','CURRENT_USER')
+  8  /
+
+View created.
+
+SQL> 
+SQL> CREATE OR REPLACE VIEW user_scheduler_job_log
+  2    ( LOG_ID, LOG_DATE, OWNER, JOB_NAME, JOB_SUBNAME, JOB_CLASS, OPERATION, STATUS,
+  3      USER_NAME, CLIENT_ID, GLOBAL_UID, CREDENTIAL_OWNER, CREDENTIAL_NAME,
+  4      DESTINATION_OWNER, DESTINATION, ADDITIONAL_INFO)
+  5    AS
+  6    (SELECT
+  7       LOG_ID, LOG_DATE, OWNER,
+  8       DECODE(instr(e.NAME,'"'),0, e.NAME,substr(e.NAME,1,instr(e.NAME,'"')-1)),
+  9       DECODE(instr(e.NAME,'"'),0,NULL,substr(e.NAME,instr(e.NAME,'"')+1)),
+ 10       co.NAME, OPERATION,e.STATUS, USER_NAME, CLIENT_ID, GUID,
+ 11       decode(e.credential, NULL, NULL,
+ 12          substr(e.credential, 1, instr(e.credential, '"')-1)),
+ 13       decode(e.credential, NULL, NULL,
+ 14          substr(e.credential, instr(e.credential, '"')+1,
+ 15             length(e.credential) - instr(e.credential, '"'))),
+ 16       decode(bitand(e.flags, 1), 0, NULL,
+ 17          substr(e.destination, 1, instr(e.destination, '"')-1)),
+ 18       decode(bitand(e.flags, 1), 0, e.destination,
+ 19          substr(e.destination, instr(e.destination, '"')+1,
+ 20             length(e.destination) - instr(e.destination, '"'))),
+ 21       ADDITIONAL_INFO
+ 22    FROM scheduler$_event_log e, obj$ co
+ 23    WHERE e.type# = 66 and e.dbid is null and e.class_id = co.obj#(+)
+ 24    AND owner = SYS_CONTEXT('USERENV','CURRENT_USER'))
+ 25  /
+
+View created.
+
+SQL> 
+SQL> CREATE OR REPLACE VIEW user_scheduler_job_run_details
+  2    ( LOG_ID, LOG_DATE, OWNER, JOB_NAME, JOB_SUBNAME, STATUS, ERROR#, REQ_START_DATE,
+  3      ACTUAL_START_DATE, RUN_DURATION, INSTANCE_ID, SESSION_ID, SLAVE_PID,
+  4      CPU_USED, CREDENTIAL_OWNER, CREDENTIAL_NAME, DESTINATION_OWNER,
+  5      DESTINATION, ADDITIONAL_INFO)
+  6    AS
+  7    (SELECT
+  8       j.LOG_ID, j.LOG_DATE, e.OWNER,
+  9       DECODE(instr(e.NAME,'"'),0, e.NAME,substr(e.NAME,1,instr(e.NAME,'"')-1)),
+ 10       DECODE(instr(e.NAME,'"'),0,NULL,substr(e.NAME,instr(e.NAME,'"')+1)),
+ 11       e.STATUS, j.ERROR#, j.REQ_START_DATE, j.START_DATE, j.RUN_DURATION,
+ 12       j.INSTANCE_ID, j.SESSION_ID, j.SLAVE_PID, j.CPU_USED,
+ 13       decode(e.credential, NULL, NULL,
+ 14          substr(e.credential, 1, instr(e.credential, '"')-1)),
+ 15       decode(e.credential, NULL, NULL,
+ 16          substr(e.credential, instr(e.credential, '"')+1,
+ 17             length(e.credential) - instr(e.credential, '"'))),
+ 18       decode(bitand(e.flags, 1), 0, NULL,
+ 19          substr(e.destination, 1, instr(e.destination, '"')-1)),
+ 20       decode(bitand(e.flags, 1), 0, e.destination,
+ 21          substr(e.destination, instr(e.destination, '"')+1,
+ 22             length(e.destination) - instr(e.destination, '"'))),
+ 23       j.ADDITIONAL_INFO
+ 24     FROM scheduler$_job_run_details j, scheduler$_event_log e
+ 25     WHERE j.log_id = e.log_id
+ 26     AND e.dbid is null
+ 27     AND e.type# = 66
+ 28     AND e.owner = SYS_CONTEXT('USERENV','CURRENT_USER'))
+ 29  /
+
+View created.
+
+SQL> 
+SQL> CREATE OR REPLACE VIEW all_scheduler_job_log
+  2    ( LOG_ID, LOG_DATE, OWNER, JOB_NAME, JOB_SUBNAME, JOB_CLASS, OPERATION, STATUS,
+  3      USER_NAME, CLIENT_ID, GLOBAL_UID, CREDENTIAL_OWNER, CREDENTIAL_NAME,
+  4      DESTINATION_OWNER, DESTINATION, ADDITIONAL_INFO)
+  5    AS
+  6    (SELECT
+  7       e.LOG_ID, e.LOG_DATE, e.OWNER,
+  8       DECODE(instr(e.NAME,'"'),0, e.NAME,substr(e.NAME,1,instr(e.NAME,'"')-1)),
+  9       DECODE(instr(e.NAME,'"'),0,NULL,substr(e.NAME,instr(e.NAME,'"')+1)),
+ 10       co.NAME, OPERATION, e.STATUS, e.USER_NAME, e.CLIENT_ID, e.GUID,
+ 11       decode(e.credential, NULL, NULL,
+ 12          substr(e.credential, 1, instr(e.credential, '"')-1)),
+ 13       decode(e.credential, NULL, NULL,
+ 14          substr(e.credential, instr(e.credential, '"')+1,
+ 15             length(e.credential) - instr(e.credential, '"'))),
+ 16       decode(bitand(e.flags, 1), 0, NULL,
+ 17          substr(e.destination, 1, instr(e.destination, '"')-1)),
+ 18       decode(bitand(e.flags, 1), 0, e.destination,
+ 19          substr(e.destination, instr(e.destination, '"')+1,
+ 20             length(e.destination) - instr(e.destination, '"'))),
+ 21       e.ADDITIONAL_INFO
+ 22     FROM scheduler$_event_log e, obj$ co
+ 23     WHERE e.type# = 66 and e.dbid is null and e.class_id = co.obj#(+)
+ 24     AND ( e.owner = SYS_CONTEXT('USERENV','CURRENT_USER')
+ 25           or  /* user has object privileges */
+ 26              ( select jo.obj# from obj$ jo, user$ ju where
+ 27                DECODE(instr(e.NAME,'"'),0, e.NAME,substr(e.NAME,1,instr(e.NAME,'"')-1)) = jo.name
+ 28                  and e.owner = ju.name and jo.owner# = ju.user#
+ 29                  and jo.subname is null and jo.type# = 66
+ 30              ) in
+ 31              ( select oa.obj#
+ 32                  from sys.objauth$ oa
+ 33                  where grantee# in ( select kzsrorol from x$kzsro )
+ 34              )
+ 35           or /* user has system privileges */
+ 36              (exists ( select null from v$enabledprivs
+ 37                         where priv_number = -265 /* CREATE ANY JOB */
+ 38                     )
+ 39               and e.owner!='SYS')
+ 40          )
+ 41    )
+ 42  /
+
+View created.
+
+SQL> 
+SQL> CREATE OR REPLACE VIEW all_scheduler_job_run_details
+  2    ( LOG_ID, LOG_DATE, OWNER, JOB_NAME, JOB_SUBNAME, STATUS, ERROR#, REQ_START_DATE,
+  3      ACTUAL_START_DATE, RUN_DURATION, INSTANCE_ID, SESSION_ID, SLAVE_PID,
+  4      CPU_USED, CREDENTIAL_OWNER, CREDENTIAL_NAME, DESTINATION_OWNER,
+  5      DESTINATION, ADDITIONAL_INFO)
+  6    AS
+  7    (SELECT
+  8       j.LOG_ID, j.LOG_DATE, e.OWNER,
+  9       DECODE(instr(e.NAME,'"'),0, e.NAME,substr(e.NAME,1,instr(e.NAME,'"')-1)),
+ 10       DECODE(instr(e.NAME,'"'),0,NULL,substr(e.NAME,instr(e.NAME,'"')+1)),
+ 11       e.STATUS, j.ERROR#, j.REQ_START_DATE, j.START_DATE, j.RUN_DURATION,
+ 12       j.INSTANCE_ID, j.SESSION_ID, j.SLAVE_PID, j.CPU_USED,
+ 13       decode(e.credential, NULL, NULL,
+ 14          substr(e.credential, 1, instr(e.credential, '"')-1)),
+ 15       decode(e.credential, NULL, NULL,
+ 16          substr(e.credential, instr(e.credential, '"')+1,
+ 17             length(e.credential) - instr(e.credential, '"'))),
+ 18       decode(bitand(e.flags, 1), 0, NULL,
+ 19          substr(e.destination, 1, instr(e.destination, '"')-1)),
+ 20       decode(bitand(e.flags, 1), 0, e.destination,
+ 21          substr(e.destination, instr(e.destination, '"')+1,
+ 22             length(e.destination) - instr(e.destination, '"'))),
+ 23       j.ADDITIONAL_INFO
+ 24     FROM scheduler$_job_run_details j, scheduler$_event_log e
+ 25     WHERE j.log_id = e.log_id
+ 26     AND e.type# = 66 and e.dbid is null
+ 27     AND ( e.owner = SYS_CONTEXT('USERENV','CURRENT_USER')
+ 28           or  /* user has object privileges */
+ 29              ( select jo.obj# from obj$ jo, user$ ju where
+ 30                  DECODE(instr(e.NAME,'"'),0, e.NAME,substr(e.NAME,1,instr(e.NAME,'"')-1)) = jo.name
+ 31                  and e.owner = ju.name and jo.owner# = ju.user#
+ 32                  and jo.subname is null and jo.type# = 66
+ 33              ) in
+ 34              ( select oa.obj#
+ 35                  from sys.objauth$ oa
+ 36                  where grantee# in ( select kzsrorol from x$kzsro )
+ 37              )
+ 38           or /* user has system privileges */
+ 39              (exists ( select null from v$enabledprivs
+ 40                         where priv_number = -265 /* CREATE ANY JOB */
+ 41                     )
+ 42               and e.owner!='SYS')
+ 43          )
+ 44    )
+ 45  /
+
+View created.
+
+SQL> 
+SQL> 
+SQL> alter view USER_AUDIT_POLICIES compile;
+
+View altered.
+
+SQL> alter view USER_AUDIT_POLICY_COLUMNS compile;
+
+View altered.
+
+SQL> alter view user_scheduler_job_log compile;
+
+View altered.
+
+SQL> alter view user_scheduler_job_run_details compile;
+
+View altered.
+
+SQL> alter view all_scheduler_job_log compile;
+
+View altered.
+
+SQL> alter view all_scheduler_job_run_details compile;
+
+View altered.
+
+SQL> 
+SQL> @?/patch/scripts/bug22380919.sql
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/bug22380919.sql /st_rdbms_11.2.0.4.0dbpsu/2 2016/05/26 21:07:35 mjangir Exp $
+SQL> Rem
+SQL> Rem bug22380919.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2016, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      bug22380919.sql - <one-line expansion of the name>
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      <short description of component this file declares/defines>
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem      <other useful comments, qualifications, etc.>
+SQL> Rem
+SQL> Rem    BEGIN SQL_FILE_METADATA
+SQL> Rem    SQL_SOURCE_FILE: rdbms/admin/bug22380919.sql
+SQL> Rem    SQL_SHIPPED_FILE: rdbms/admin/bug22380919.sql
+SQL> Rem    SQL_PHASE:
+SQL> Rem    SQL_STARTUP_MODE: NORMAL
+SQL> Rem    SQL_IGNORABLE_ERRORS: NONE
+SQL> Rem    SQL_CALLING_FILE:
+SQL> Rem    END SQL_FILE_METADATA
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    mjangir     05/12/16 - Backport mjangir_bug-22380919 from main
+SQL> Rem    mjangir     05/12/16 - Created
+SQL> Rem
+SQL> 
+SQL> SET ECHO ON
+SQL> SET FEEDBACK 1
+SQL> SET NUMWIDTH 10
+SQL> SET LINESIZE 80
+SQL> SET TRIMSPOOL ON
+SQL> SET TAB OFF
+SQL> SET PAGESIZE 100
+SQL> 
+SQL> 
+SQL> REM
+SQL> REM revoke inc tables grants from system as incremental export is
+SQL> REM obsolete feature
+SQL> REM
+SQL> 
+SQL> revoke all on incexp from system
+  2  /
+
+Revoke succeeded.
+
+SQL> revoke all on incvid from system
+  2  /
+
+Revoke succeeded.
+
+SQL> revoke all on incfil from system
+  2  /
+
+Revoke succeeded.
+
+SQL> 
+SQL> PROMPT Skipping Spatial because it is not installed or versions mismatch...
+Skipping Spatial because it is not installed or versions mismatch...
+SQL> ALTER SESSION SET current_schema = SYS;
+
+Session altered.
+
+SQL> PROMPT Updating registry...
+Updating registry...
+SQL> INSERT INTO registry$history
+  2    (action_time, action,
+  3     namespace, version, id,
+  4     bundle_series, comments)
+  5  VALUES
+  6    (SYSTIMESTAMP, 'APPLY',
+  7     SYS_CONTEXT('REGISTRY$CTX','NAMESPACE'),
+  8     '11.2.0.4',
+  9     161018,
+ 10     'PSU',
+ 11     'PSU 11.2.0.4.161018');
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SPOOL off

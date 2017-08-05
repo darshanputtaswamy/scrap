@@ -1,7 +1,7 @@
 =====================================================
 
-- ORACLE CERTIFIED PROFESSIONAL 
-- RAC CERTIFICATION
+- ORACLE CERTIFIED PROFESSIONAL   [Done]
+- RAC CERTIFICATION               
 
 - STORAGE INDEPTH
 - ORACLE DATABASE INDEPTH
@@ -18,13 +18,13 @@ NODE.JS
 DOM 
 OOPS
 JAVA (indepth)
-C++ (indepth )
+C++ (indepth )       http://c.learncodethehardway.org/book/introduction.html
 PYTHON
 R
 HADOOP
 BIGDATA
 MACHINE LEARNING AND INTELLIGENCE
-
+WEBGL    http://webglfundamentals.org/webgl/lessons/webgl-fundamentals.html
 
 
 ======================================================
@@ -76,7 +76,7 @@ yiying- analysis
 	SYSDBA and SYSOPER Privileges in Oracle (Doc ID 50507.1)
 	UNIX: Checklist for Resolving Connect AS SYSDBA Issues (Doc ID 69642.1)
 	Master Note: Overview of Database Startup and Shutdown (Doc ID 1505155.1)
-	
+	EXAMPLE OF "TNSNAMES.ORA" FILE FOR IPC (Doc ID 1036071.6)
 	
 	RAC DataBase
 	==============================
@@ -86,7 +86,9 @@ yiying- analysis
 	http://www.hhutzler.de/blog/a-closer-look-into-drm-dynamic-resource-management/
 	
 		CSS (Cluster Synchronization Services) Internals (INTERNAL ONLY) (Doc ID 305689.1)
-		
+	Troubleshooting ORA-29740 in a RAC Environment (Doc ID 219361.1)
+
+	
 	OS/SYSTEM
 	==========
 	FAQ: ORA-4030 [Video] [ID 399497.1]
@@ -94,6 +96,7 @@ yiying- analysis
 	What Is the Difference Between a Heap Dump and a Core Dump and How to Enable Each? (Doc ID 1981375.1)
 	Generate a Core Dump from Application Crash with Segmentation Fault (Doc ID 1321500.1)
 	http://www.antapex.org/unix.txt
+	https://www.exploit-db.com/papers/13136/
 	 
 	Storage
 	=========
@@ -102,7 +105,7 @@ yiying- analysis
 	- Concepts
 	http://www.cubrid.org/blog/dev-platform/how-ssd-changing-software-architecture/
 	http://journal.iis.sinica.edu.tw/paper/1/110517-4.pdf?cd=69E4DA0F006F476C5
-
+    http://www.slideshare.net/alexgorbachev/benchmarking-oracle-io-performance-with-orion-by-alex-gorbachev
 	
 	Performance
 	===========
@@ -136,6 +139,8 @@ yiying- analysis
 	Troubleshooting Database Hang Issues (Doc ID 1378583.1)
 	ASM tools used by Support : KFOD, KFED, AMDU (Doc ID 1485597.1)
 	KFED.PL for diagnosing - ORA-15063 ORA-15042 ORA-15020 ORA-15033 (Doc ID 1346190.1)
+	TECH: Getting a Stack Trace from a CORE file on Unix (Doc ID 1812.1)
+	
 	
 	Work Continuation
 	====================
@@ -183,14 +188,15 @@ AIX
     traceroute -  intended for use in network testing, measurement, and management.
     tprof - Detailed profile of CPU usage by an application
     vmstat - Statistics about virtual memory and cpu/hard disk usage
-
+	
+    https://www.ibm.com/support/knowledgecenter/ssw_aix_71/com.ibm.aix.performance/netw_opt.htm
 
 	
 PLSQL
 =========
 
 	http://www.oracle.com/technetwork/issue-archive/index-087690.html
-
+    https://www.google.com.sg/#q=scraping+through+id+javascript
 
 ==============
 
@@ -207,11 +213,50 @@ http://www.mastersindatascience.org/blog/7-must-read-books-for-the-budding-data-
 http://www.analyticsvidhya.com/blog/2015/10/books-big-data-hadoop-apache-spark/http://bigdata-madesimple.com/20-must-read-books-for-budding-data-scientists/
 http://www.mccalv.com/blog/wp-content/uploads/2013/08/apache-hadoop_new_margin-nouni.pdf
 http://accionlabs.com/case-study-of-selenium-data-integrating-into-big-data-repository/
-https://scotch.io/tutorials/scraping-the-web-with-node-js
 
+http://blog.miguelgrinberg.com/post/easy-web-scraping-with-nodejs
+
+NODE JS
+https://scotch.io/tutorials/scraping-the-web-with-node-js
+http://code.tutsplus.com/tutorials/how-to-scrape-web-pages-with-nodejs-and-jquery--net-22478
+http://www.paulirish.com/2010/10-things-i-learned-from-the-jquery-source/
+https://www.npmjs.com/package/request
 
 
 GOLDEN GATE
 http://gavinsoorma.com/2012/12/oracle-goldengate-11gr2-high-availability-with-oracle-11gr2-clusterware/
-
 http://onlinesequencer.net/192499
+
+
+
+XML PERL
+---------
+http://interoperating.info/courses/perl4data/node/26
+http://bites.goodeggs.com/posts/selenium-webdriver-nodejs-tutorial/
+
+JAVASCRIPT AND ORACLE IO
+-------------------------
+https://jsao.io/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THREE JS
+==========
+https://bocoup.com/blog/learning-three-js-with-real-world-challenges-that-have-already-been-solved
+http://raathigesh.com/Audio-Visualization-with-Web-Audio-and-ThreeJS/
+http://aseemk.com/talks/neo4j-with-nodejs#/
+http://stackoverflow.com/questions/21893401/big-data-visualization-using-search-show-context-and-expand-on-demand-concep
+https://nicolewhite.github.io/2014/07/24/visualize-subset-neo4j-alchemy.html
+https://www.youtube.com/watch?v=R4H2B4HIJzo
+https://github.com/noduslabs/infranodus

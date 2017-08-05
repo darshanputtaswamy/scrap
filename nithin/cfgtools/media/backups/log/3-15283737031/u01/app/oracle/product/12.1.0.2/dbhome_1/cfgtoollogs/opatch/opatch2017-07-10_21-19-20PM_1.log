@@ -1,0 +1,24 @@
+[Jul 10, 2017 9:19:20 PM] [INFO]    OPatch invoked as follows: 'lsinventory -xml /u01/app/oracle/product/12.1.0.2/dbhome_1/QOpatch/xml_file.xml -retry 0 -invPtrLoc /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc '
+[Jul 10, 2017 9:19:20 PM] [INFO]    Oracle Home       : /u01/app/oracle/product/12.1.0.2/dbhome_1
+                                    Central Inventory : /u01/app/oraInventory
+                                       from           : /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc
+                                    OPatch version    : 12.2.0.1.8
+                                    OUI version       : 12.1.0.2.0
+                                    OUI location      : /u01/app/oracle/product/12.1.0.2/dbhome_1/oui
+                                    Log file location : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatch/opatch2017-07-10_21-19-20PM_1.log
+[Jul 10, 2017 9:19:20 PM] [INFO]    Patch history file: /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Jul 10, 2017 9:19:20 PM] [INFO]    Starting LsInventorySession at Mon Jul 10 21:19:20 UTC 2017
+[Jul 10, 2017 9:19:20 PM] [INFO]    [OPSR-TIME] Loading raw inventory
+[Jul 10, 2017 9:19:21 PM] [INFO]    [OPSR-MEMORY] Loaded all components from inventory. Heap memory in use: 71 (MB)
+[Jul 10, 2017 9:19:21 PM] [INFO]    [OPSR-MEMORY] Loaded all one offs from inventory. Heap memory in use: 71 (MB)
+[Jul 10, 2017 9:19:21 PM] [INFO]    [OPSR-TIME] Raw inventory loaded successfully
+[Jul 10, 2017 9:19:21 PM] [INFO]    Lsinventory Output file location : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatch/lsinv/lsinventory2017-07-10_21-19-20PM.txt
+[Jul 10, 2017 9:19:21 PM] [INFO]    --------------------------------------------------------------------------------
+[Jul 10, 2017 9:19:21 PM] [INFO]    [OPSR-TIME] Loading cooked inventory
+[Jul 10, 2017 9:19:21 PM] [INFO]    [OPSR-MEMORY] : Loading cooked one offs. Heap memory used 71 (MB)
+[Jul 10, 2017 9:19:21 PM] [INFO]    [OPSR-MEMORY] : Loaded cooked oneoffs. Heap memory used : 112 (MB)
+[Jul 10, 2017 9:19:21 PM] [INFO]    [OPSR-TIME] Cooked inventory loaded successfully
+
+
+Generated xml file /u01/app/oracle/product/12.1.0.2/dbhome_1/QOpatch/xml_file.xml from Oracle Home inventory shown above.
+[Jul 10, 2017 9:19:22 PM] [INFO]    Finishing LsInventorySession at Mon Jul 10 21:19:22 UTC 2017

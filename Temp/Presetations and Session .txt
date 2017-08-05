@@ -49,6 +49,66 @@ DD/HEXDUMP/OD
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+Database, RMAN, EM and Network Configuration
+		Configure server-side network, Configure client-side network
+		Create and Manage encrypted tablespaces
+		Create and Manage a tablespace that uses NFS mounted file system file
+		Set up ADR file based repository, Perform cold database backup
+		Manage user accounts and use case sensitive passwords, Use OPatch to install a patch
+		Install and configure EM Agent, Create Base Recovery Catalog, Configure RMAN
+		Perform multisection backup of a datafile
+		Create an Archival Backup
+
+
+Data Guard
+		Create Physical Standby Database with real-time apply
+		Configure the data guard environment to reduce overheads of fast incremental backups on the primary database
+		Configure the Observer
+		Switchover and switch back
+		Convert the standby to a snapshot standby
+		Configure archivelog deletion policy for the dataguard configuration
+
+
+Data and Data Warehouse Management
+		Troubleshoot fast materialized views to fast refresh and query rewrite
+		Add a tablespace by using Transportable Tablespace Feature of Data Pump Import (cross platform transportable tablespace)
+		Configure a schema to support a star transformation query
+		Configure and use parallel execution for queries
+		Use and access SecureFile LOBS
+		Create partitioned tables (includes reference and interval partitioning)
+		Configure Flashback Data Archive
+		Use Oracle Streams to capture and propagate changes in a table
+
+
+
+Performance Management
+		Set up and configure Resource Manager to control active sessions, number of I/Os, execution time..etc
+		Use Result Cache, Use multi column statistics
+		Gather statistics on a specific table without invalidating cursors
+		Use partitioned indexes
+		Use SQL Tuning Advisor, Use SQL Access Advisor
+		Configure baseline templates
+		Use SQL Plan Management feature
+		Replay a captured workload
+
+
+
+
+
+
+
 ==========================================================================================================================
 
 
@@ -82,3 +142,31 @@ Zookeeper
 	alignement partation to maximize storage performacne
 	
 	
+	
+	
+	
+	=============================================================
+	
+	
+	
+	HPV1 
+	
+	
+	Engineered system 
+	     - Exadata 
+		 - ODA (2 node RAC )
+		 - SuperCluster 
+		 - ZDLRA
+		 - 
+		 
+		 
+		 
+		 
+======================================================================
+
+
+418714.1
+1478924.1
+
+
+

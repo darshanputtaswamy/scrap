@@ -1,0 +1,15 @@
+[Jul 6, 2017 9:15:26 AM]     OUI exists, the oraclehome is OUI based.
+[Jul 6, 2017 9:15:26 AM]     OUI exists, the oraclehome is OUI based.
+[Jul 6, 2017 9:15:26 AM]     OPatch invoked as follows: 'lspatches -invPtrLoc /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc '
+[Jul 6, 2017 9:15:26 AM]     OUI-67737:Oracle Home            : /u01/app/oracle/product/11.2.0.4/dbhome_1
+                             OPatch version         : 11.2.0.3.15
+                             Log file location      : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2017-07-06_09-15-26AM_1.log
+[Jul 6, 2017 9:15:26 AM]     Starting LsPatchesSession at Thu Jul 06 09:15:26 UTC 2017
+[Jul 6, 2017 9:15:27 AM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 54 (MB)
+[Jul 6, 2017 9:15:27 AM]     [OPSR-MEMORY-2] : after loading rawOneOffList54 (MB)
+[Jul 6, 2017 9:15:27 AM]     [OPSR-MEMORY-3] : before loading cooked one off : 54 (MB)
+[Jul 6, 2017 9:15:27 AM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 81 (MB)
+[Jul 6, 2017 9:15:27 AM]     22502456;Database Patch Set Update : 11.2.0.4.160419 (22502456)
+[Jul 6, 2017 9:15:27 AM]     22502549;OCW Patch Set Update : 11.2.0.4.160419 (22502549)
+[Jul 6, 2017 9:15:27 AM]     21068539;OJVM PATCH SET UPDATE 11.2.0.4.4
+[Jul 6, 2017 9:15:27 AM]     Finishing LsPatchesSession at Thu Jul 06 09:15:27 UTC 2017

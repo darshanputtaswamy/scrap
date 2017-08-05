@@ -1,0 +1,125 @@
+2017-07-06 10:26:28,756 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+===============START of Binary Session================
+
+2017-07-06 10:26:28,758 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Oracle Home : /u01/app/oracle/product/12.1.0.2/dbhome_1
+2017-07-06 10:26:28,760 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+OPatchAuto binary patching Tool
+Copyright (c)2014, Oracle Corporation. All rights reserved.
+
+OPatchauto Version : 13.9.1.0.0
+Running from       : /u01/app/oracle/product/12.1.0.2/dbhome_1
+
+2017-07-06 10:26:28,760 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Java Home : /u01/app/oracle/product/12.1.0.2/dbhome_1/OPatch/jre
+2017-07-06 10:26:28,760 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Command-line Arguments : [apply, /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825, -oh, /u01/app/oracle/product/12.1.0.2/dbhome_1, -target_type, oracle_database, -binary, -invPtrLoc, /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc, -persistresult, /u01/app/oracle/product/12.1.0.2/dbhome_1/OPatch/auto/dbsessioninfo/sessionresult_analyze_odie2_SHIPTEST.ser, -analyze, -online]
+2017-07-06 10:26:28,760 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Target type : oracle_database
+2017-07-06 10:26:28,930 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+There is a composite patch in /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:26:28,997 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Patch selected: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825
+
+2017-07-06 10:26:29,976 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+
+Session Options:
+Analyze     : true
+Inventory   : /u01/app/oracle/product/12.1.0.2/dbhome_1/oraInst.loc
+StopOnPrereqFailure : true
+StopOnPatchFailure  : true
+IsFileBusyPatchingMode  : false
+IsOhInstance Running   : true
+Force conflict   : false
+
+2017-07-06 10:26:29,990 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+There is a composite patch in /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:26:30,009 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+This patch is detected to be a System Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825
+2017-07-06 10:26:30,020 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+There is a composite patch in /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:26:30,052 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+There is a composite patch in /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:26:30,071 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Starting Patch Analysis ... 
+2017-07-06 10:26:30,071 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:26:30,278 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Detected a composite Patch inside the patch at: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082/24732082
+Subpatches : [19769480, 20299023, 20831110, 21359755, 21948354, 22291127, 23054246, 24006101]
+2017-07-06 10:26:30,682 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633
+2017-07-06 10:26:30,751 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Analysing this list of patches : 
+[/tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082, /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633] ...
+2017-07-06 10:26:51,808 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Analysis completed.
+2017-07-06 10:26:51,808 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+2017-07-06 10:26:51,891 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Detected a composite Patch inside the patch at: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082/24732082
+Subpatches : [19769480, 20299023, 20831110, 21359755, 21948354, 22291127, 23054246, 24006101]
+2017-07-06 10:26:51,972 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Analyzing prereq results of /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082 :
+CheckSystemSpace :- [ Prerequisite Status: PASSED]
+CheckAutoRollbackPrereqs :- [ Prerequisite Status: PASSED]
+CheckConflictAgainstOracleHome :- [ Prerequisite Status: PASSED]
+CheckPatchingModel :- [ Prerequisite Status: PASSED]
+CheckForIdenticalPatchesInOracleHome :- [ Prerequisite Status: PASSED]
+CheckSystemCommandsAvailable :- [ Prerequisite Status: PASSED]
+CheckPatchApplyDependents :- [ Prerequisite Status: PASSED]
+CheckFusionAppsCompatible :- [ Prerequisite Status: PASSED]
+CheckConflictAmongPatches :- [ Prerequisite Status: PASSED]
+CheckPatchsetUpdateComponents :- [ Prerequisite Status: PASSED]
+CheckPatchsetUpdateCompatible :- [ Prerequisite Status: PASSED]
+CheckPatchRollbackDependents :- [ Prerequisite Status: PASSED]
+CheckMinimumOPatchVersion :- [ Prerequisite Status: PASSED]
+
+2017-07-06 10:26:51,972 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633
+2017-07-06 10:26:51,992 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633
+2017-07-06 10:26:52,009 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Invoking getPatchesNoSymbolResolve() on /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633
+2017-07-06 10:26:52,029 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+Analyzing prereq results of /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633 :
+CheckSystemSpace :- [ Prerequisite Status: PASSED]
+CheckAutoRollbackPrereqs :- [ Prerequisite Status: PASSED]
+CheckConflictAgainstOracleHome :- [ Prerequisite Status: PASSED]
+CheckPatchingModel :- [ Prerequisite Status: PASSED]
+CheckForIdenticalPatchesInOracleHome :- [ Prerequisite Status: PASSED]
+CheckSystemCommandsAvailable :- [ Prerequisite Status: PASSED]
+CheckPatchApplyDependents :- [ Prerequisite Status: PASSED]
+CheckFusionAppsCompatible :- [ Prerequisite Status: PASSED]
+CheckConflictAmongPatches :- [ Prerequisite Status: PASSED]
+CheckPatchsetUpdateComponents :- [ Prerequisite Status: PASSED]
+CheckPatchsetUpdateCompatible :- [ Prerequisite Status: PASSED]
+CheckPatchRollbackDependents :- [ Prerequisite Status: PASSED]
+CheckMinimumOPatchVersion :- [ Prerequisite Status: PASSED]
+
+2017-07-06 10:26:52,033 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+
+
+==Following patches were SKIPPED:
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/21436941
+Reason: This patch is not applicable to this specified target type - "oracle_database"
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828643
+Reason: This patch is not applicable to this specified target type - "oracle_database"
+
+
+==Following patches were SUCCESSFULLY analyzed to be applied:
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24732082
+Log: /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-26-29AM_1.log
+
+Patch: /tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/24828633
+Log: /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-26-29AM_1.log
+
+2017-07-06 10:26:52,033 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+... Patch Analysis Completed.
+2017-07-06 10:26:52,040 INFO  [1] oracle.opatchauto.core.binary.OACLogger - 
+
+opatchauto SUCCEEDED.
+

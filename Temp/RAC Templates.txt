@@ -83,17 +83,13 @@ RAC: https://community.oracle.com/community/support/oracle_database/database_-_r
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
 
 
-Mgrracpc.zoban@sbi.co.in
-
-
-Cluster guid  found in voting disk  does not match with the cluster guid  obtained from the GPnP profile
-
+Mgrracpc.zoban@sbi.co.in 
 
 
 
 Hi Team -
 
-Your severity -1 SR requiring 24x7 support has been assigned to me in current shift for progress, reviewing...
+Your severity -1 SR requiring 24x7 support has been assigned to me in the current shift for progress, reviewing...
 
 Regards
 Darshan P
@@ -101,30 +97,33 @@ Global Customer Support-  Storage/Scalability
 Desk Phone:+918041072121
 
 Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+In case, if you need urgent or immediate assistance during my off-shift hours, please call the Oracle HUB and request for assistance or reassignment of this SR.
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm 
+
+
+
+The SR was inactive for more than 8 hours , Hence it was automatically set as  Non24x7 SR.
+Once SR becomes Non24x7. (Note : In case of Critical requirement )  It will not route to an available engineer during my off-shift hours.
+
+The SR would be worked only during normal business hours of my shift . 
+If my Working Hours [ Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET  ]  do not match yours , Please request for a reassignment to your preferred Timezone
+
+
+ The Support numbers for each country are listed on the following  website http://www.oracle.com/support/contact.html
+
+Regards
+Darshan P
+Global Customer Support-  Storage/Scalability
+Desk Phone:+918041072121
+
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+
 In case, if you need urgent or immediate assistance during my  off-shift hours, please call the Oracle HUB and request for assistance or reassignment  of this SR.
-
 RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
 Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm 
-
-
-
-
-ldo1ifcmQ4
-
-Regards
-Darshan P
-Global Customer Support-  Storage/Scalability
-Desk Phone:+918041072121
-
-
-Please note that currently  this SR will be worked during normal business hours ,
-current 24x7 flag is disabled , you can enable 24x7 support if required.
-
-Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
-
-RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
-Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm 
-
 
 
 ==============================================================
@@ -163,7 +162,7 @@ Storage: https://community.oracle.com/community/support/oracle_database/storage_
 4.    Reminder-1 for an update / feedback
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
+RAJNISH.PRIYADARSHI@ORACLE.COM
 UPDATE-1
 =======
 
@@ -546,15 +545,9 @@ Working Effectively With Oracle Support - (Doc ID 166650.1)
 
 I am seeking help internally on this issue, please standby. 
 
-
-
 I have sent an email to our internal help group, and awaiting for their feedback.
 
-
-
 Will update you as soon as I have an useful information to share with you.
-
-
 
 
 Have a nice Day

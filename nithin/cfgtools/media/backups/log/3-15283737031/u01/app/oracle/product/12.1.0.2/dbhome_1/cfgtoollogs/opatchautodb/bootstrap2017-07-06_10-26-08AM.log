@@ -1,0 +1,27 @@
+2017-07-06 10:26:09,019 INFO  [1] com.oracle.glcm.patch.auto.db.product.inventory.ClusterInformationLoader - crsType: CRS
+2017-07-06 10:26:09,151 INFO  [1] com.oracle.glcm.patch.auto.db.product.inventory.ClusterInformationLoader - running: true
+2017-07-06 10:26:09,152 INFO  [1] com.oracle.glcm.patch.auto.db.product.inventory.ClusterInformationLoader - running: true
+2017-07-06 10:26:09,152 INFO  [1] com.oracle.glcm.patch.auto.db.util.SystemInfoGenerator - indexOfRemote: -1
+2017-07-06 10:26:09,153 INFO  [1] com.oracle.glcm.patch.auto.db.util.SystemInfoGenerator - currentUser: root
+2017-07-06 10:26:09,153 INFO  [1] com.oracle.glcm.patch.auto.db.util.SystemInfoGenerator - operationType: 1
+2017-07-06 10:26:09,153 INFO  [1] com.oracle.glcm.patch.auto.db.util.SystemInfoGenerator - isActionSession: 0
+2017-07-06 10:26:09,153 INFO  [1] com.oracle.glcm.patch.auto.db.product.inventory.ClusterInformationLoader - running: true
+2017-07-06 10:26:09,218 INFO  [1] com.oracle.glcm.patch.auto.db.util.SystemInfoGenerator - shellCmd: /u01/app/oracle/product/12.1.0.2/dbhome_1/OPatch/auto/database/bin/bootstrapping.sh
+2017-07-06 10:26:09,996 INFO  [1] com.oracle.glcm.patch.auto.db.util.SystemInfoGenerator - Script execution output :: Jul 06, 2017 10:26:09 AM com.oracle.glcm.patch.auto.db.utils.PatchPathReader searchBundleXML
+INFO: Bundle xml file location::/tmp/oakpatch/db/12.1.0.2.0/24732082/24917825/bundle.xml
+Jul 06, 2017 10:26:09 AM com.oracle.glcm.patch.auto.db.utils.PatchPlatformValidator findPatchARUID
+INFO: Patch Aru id:226
+Jul 06, 2017 10:26:09 AM com.oracle.glcm.patch.auto.db.utils.PatchPlatformValidator findPlatformARUID
+INFO: Platform Aru id:226
+Jul 06, 2017 10:26:09 AM com.oracle.glcm.patch.auto.db.utils.PatchVersionReader startBootStrapping
+INFO: Crsversion:12.1.0.2.0
+Jul 06, 2017 10:26:09 AM com.oracle.glcm.patch.auto.db.utils.PatchVersionReader checkBootstrapLibInPatch
+INFO: Patch unique version is greater than min bootstrap patch version
+Jul 06, 2017 10:26:09 AM oracle.dbsysmodel.driver.sdk.productdriver.OUIDriver checkOracleBase
+INFO: ORACLE_BASE for /u01/app/12.1.0.2/grid is /u01/app/grid
+Jul 06, 2017 10:26:09 AM com.oracle.glcm.patch.auto.db.utils.PatchVersionReader findOraclebaseLocation
+INFO: Oracle base location:/u01/app/grid
+
+2017-07-06 10:26:09,997 INFO  [1] com.oracle.glcm.patch.auto.db.util.SystemInfoGenerator - Script execution result output :: 
+ boot strap copying crsconfig_params
+

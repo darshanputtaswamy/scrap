@@ -1,0 +1,267 @@
+Starting apply for patch 21948354/19553095 on 02-AUG-16 12.34.39.817858 AM +00:0
+0
+
+
+old   4:                                    p_flags         => '&flags',
+new   4:                                    p_flags         => 'NB',
+old   5:                                    p_description   => '&description',
+new   5:                                    p_description   => 'Database Patch Set Update : 12.1.0.2.160119 (21948354)',
+old   7:                                    p_logfile       => '&full_logfile',
+new   7:                                    p_logfile       => '/u01/app/grid/cfgtoollogs/sqlpatch/21948354/19553095/21948354_apply__MGMTDB_ODIE_C_2016Aug02_00_34_39.log',
+old   8:                                    p_bundle_series => '&bundle_series');
+new   8:                                    p_bundle_series => 'PSU');
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+Calling rdbms/admin/bug20876308_apply.sql on 02-AUG-16 12.34.40.363072 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling olap/admin/xoqclnup.sql on 02-AUG-16 12.34.40.434690 AM +00:00
+
+IGNORABLE ERRORS: ORA-01432 ORA-00942 ORA-02289
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/fix_apply_20766944.sql on 02-AUG-16 12.34.40.440342 AM +00:0
+0
+
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/fix_apply_20766944.sql
+
+
+Session altered.
+
+
+Session altered.
+
+
+View created.
+
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/prvtpckl.plb on 02-AUG-16 12.34.40.711749 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/bug19532017_upgrade.sql on 02-AUG-16 12.34.40.780459 AM +00:
+00
+
+
+IGNORABLE ERRORS: ORA-00955
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/dbmsilm.sql on 02-AUG-16 12.34.40.822366 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/dbmsilm.sql
+
+
+Session altered.
+
+
+Package created.
+
+No errors.
+
+Synonym created.
+
+
+Grant succeeded.
+
+
+Library created.
+
+No errors.
+
+Package created.
+
+
+Synonym created.
+
+
+Grant succeeded.
+
+No errors.
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/prvtlmd.plb on 02-AUG-16 12.34.41.067084 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/prvtpexei.plb on 02-AUG-16 12.34.41.073034 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/prvtilm.plb on 02-AUG-16 12.34.41.078543 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/prvtilm.plb
+
+
+Session altered.
+
+
+Package created.
+
+No errors.
+
+Package created.
+
+
+Package body created.
+
+No errors.
+
+Package body created.
+
+No errors.
+
+Package body created.
+
+
+Package body created.
+
+No errors.
+
+Package body created.
+
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/prvtqopi.plb on 02-AUG-16 12.34.41.341663 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/prvtqopi.plb
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+
+Session altered.
+
+Calling rdbms/admin/utluppkg.sql on 02-AUG-16 12.34.41.470662 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/utluppkg.sql
+
+
+Package created.
+
+
+Package body created.
+
+
+Session altered.
+
+Calling olap/admin/bug20558005.sql on 02-AUG-16 12.34.41.955620 AM +00:00
+
+IGNORABLE ERRORS: ORA-04043
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/bug19587324.sql on 02-AUG-16 12.34.42.012675 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+Session altered.
+
+Calling rdbms/admin/bug18909599.sql on 02-AUG-16 12.34.42.020377 AM +00:00
+
+IGNORABLE ERRORS: NONE
+
+INSTALL_FILE
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+
+PL/SQL procedure successfully completed.
+
+Finished apply for patch 21948354/19553095 on02-AUG-16 12.34.42.074540 AM +00:00
+

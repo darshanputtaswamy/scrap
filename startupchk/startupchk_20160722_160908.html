@@ -1,0 +1,266 @@
+<html>
+<style type="text/css">
+body {font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+    font-size: 14px;
+    background:white;
+}
+h1 {color:black;}
+h2 {color:black; background:white}
+h3 {color:black; background:white}
+a {color: #000000;}
+p {font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+    font-size: 14px;
+}
+.a_bgw {
+  color: #000000;
+  background:white;
+}
+
+.scrollc{
+        display:block;
+        border: 0px;
+        padding:5px;
+        margin-top:5px;
+        width:1500px;
+        height:450px;
+        overflow-y:hidden;
+        }
+
+.scrolle{
+        display:block;
+        border: 0px;
+        padding:5px;
+        margin-top:5px;
+        width:1500px;
+        height:100%;
+        overflow-y:hidden;
+        }
+table {
+    color: #000000;
+    font-weight: bold;
+    border-spacing: 0;
+    outline: medium none;
+font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+font-size: 14px;
+table-layout:fixed;
+}
+
+
+th {
+ background: #F2F5F7;
+    border: 1px solid grey;
+    font-size: 14px;
+    font-weight: bold;
+}
+td {
+
+ background: #F2F5F7;
+    border: 1px solid grey;
+    font-weight: normal;
+    padding: 5;
+}
+
+.status_FAIL
+{
+    font-weight: bold;
+    color: #c70303;
+}
+.status_WARNING
+{
+    font-weight: bold;
+    color: #b05c1c;
+}
+.status_INFO
+{
+    font-weight: bold;
+    color: blue;
+}
+.status_PASS
+{
+    font-weight: bold;
+    color: #006600;
+}
+
+.td_output {
+  color: #000000;
+ background: white;
+    border: 1px solid grey;
+font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+font-size: 14px;
+    font-weight: normal;
+    padding: 1;
+}
+.td_column {
+ background: #F2F5F7;
+    border: 1px solid grey;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.td_title {
+
+ background: #F2F5F7;
+    border: 0px solid grey;
+    font-weight: normal;
+    padding: 5;
+}
+
+pre {
+ overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ /* width: 99%; */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.shs_bar {
+width: 500px ;
+height: 20px ;
+float: left ;
+border: 1px solid #444444;
+background-color: white ;
+}
+
+.shs_barfill {
+height: 20px ;
+float: left ;
+background-color: #FF9933 ;
+width: 86% ;
+}
+
+.more_less_style {
+  font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+</style><title>Oracle CLusterware Startup Assessment Report</title>
+<meta name=FILE Name content=FILE_NAME = CLUSTERWARE STARTUP ASSESSMENT REPORT>
+<meta name=FILE DATE content=FILE_DATE = {timestamphtml}>
+</head><body>
+<center><table border=0 width=100%><tr><td class=td_title align=center>
+ <h1>Oracle CLusterware Startup Assessment Report<br><br>
+</td></tr></table></center>
+<H2 align=center>Cluster Node Validation Summary</H2>
+<table border=1 summary=Cluster Summary role=presentation style=width:750px align=center>
+<tr><td class=td_column>Collection Date</td><td>2016-07-22 16:09:08</td></tr>
+<tr><td class=td_column>CRS Home</td><td>/u01/app/12.1.0/grid</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Version</td><td>12.1.0.1.0</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS crsconfigparams</td><td>/u01/app/12.1.0/grid/crs/install/crsconfig_params</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Base</td><td>/u01/app/oracle</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Software Owner</td><td>oracle</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>CRS Software owner's group</td><td>oinstall</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>ASM Disk owner's group</td><td>oinstall</td><td style=background-color:green>valid</td></tr>
+<tr><td class=td_column>Number of nodes</td><td>2</td></tr>
+<tr><td class=td_column >&nbsp;&nbsp;&nbsp;LOCALHOST</td><td>host01</td><td style=background-color:green>REACHED</td></tr>
+<tr><td class=td_column >&nbsp;&nbsp;&nbsp;REMOTEHOST</td><td>host02</td><td style=background-color:green>REACHED</td></tr>
+</table>
+<br>
+<hr WIDTH=60% NOSHADE><br>
+<h2  align=center>Grid Startup Assessment Report</h2>
+            <a name=ASSESSMENT_Summary></a>
+             <h2 align=center>Summary</h2>
+<table id=passedtbl_compute border=1 style=width:850px align=center>
+<tbody><tr><th scope=col name=checkid style=DISPLAY:none>Check Id</th>
+       <th  scope=col>Status</th>
+       <th  scope=col>Type</th>
+       <th  scope=col>Message</th>
+       <th  scope=col>Status On</th>
+       <th  scope=col>Details</th></tr>
+<tr class=check-result><td class=check-id name='checkid' style='DISPLAY: none'>7ca444a1f147034b602efebd86c53f14</td><td class=check-result style=background-color:blue >WARNING</td><td class=check-name>CONFIG</td><td class=check-message scope=row> CRS Autoconifg Check </td><td class=check-status-on>host01</td><td class=check-view-link><a href=#7ca444a1f147034b602efebd86c53f14_details>View</a></td></tr>
+<tr class=check-result><td class=check-id name='checkid' style='DISPLAY: none'>010f256633c8bcf7f4212d516b517391</td><td class=check-result style=background-color:green >PASS</td><td class=check-name>CONFIG</td><td class=check-message scope=row> Check if init  process as spawned  init.ohasd </td><td class=check-status-on>host01</td><td class=check-view-link><a href=#010f256633c8bcf7f4212d516b517391_details>View</a></td></tr>
+<tr class=check-result><td class=check-id name='checkid' style='DISPLAY:none'>b1e0ac093941296e780f9c09fd5f175f</td><td class=check-result style=background-color:green >PASS</td><td class=check-name>CONFIG</td><td class=check-message scope=row> Check if runlevel 3 or 5 as reached </td><td class=check-status-on>host01</td><td class=check-view-link><a href=#b1e0ac093941296e780f9c09fd5f175f_details>View</a></td></tr>
+</tbody></table><br><br><hr>
+<br>
+<br>
+<br>
+<a name="010f256633c8bcf7f4212d516b517391_details"></a>
+<a href="#ASSESSMENT_Summary" class="a_bgw">Top</a>
+<br>
+<h3>Check if init  process as spawned  init.ohasd</h3>
+<table>
+<tbody><tr><td style="background-color:red">PASS</td><td>Configuration</td></tr>
+<tr><td>Requirement</td><td>
+<pre>
+
+init process at the OS level should have spawned init.ohasd
+
+If this is not running , ohasd process  does not starts . init.ohasd is 
+
+very essential for cluster stack to come up  </pre></td></tr>
+<tr><td>Expected</td><td class="check-name">Runing</td></tr><tr>
+</tr><tr><td>host01</td><td>Spawned and Running</td> </tr>
+</tbody></table>
+<br><br><table><tbody>
+<tr><td style = "border: 2px solid red;border-radius: 5px;"><pre> 
+
+ps -ef | grep init.ohasd | grep -v grep
+root      2637     1  0 Jul02 ?        00:00:00 /bin/sh /etc/init.d/init.ohasd run 
+
+init  process as spawned init.ohasd
+</pre>
+</td></tr>
+</tbody></table>
+</body>
+</html>
+<br>
+<br>
+<br>
+<br>
+<a name="7ca444a1f147034b602efebd86c53f14_details"></a>
+<a href="#ASSESSMENT_Summary" class="a_bgw">Top</a>
+<br>
+<h3>CRS Autoconifg Check</h3>
+<table>
+<tbody><tr><td>WARNING</td><td>Configuration</td></tr>
+<tr><td>Requirement</td><td>
+<pre>
+
+CRS Autoconifg must be enabled for the clusterstack
+
+to start automatically  the below file should have "enabled"
+
+"/etc/oracle/scls_scr/host01/oracle/ohasdstr" for
+
+ClusterStack woud not start automatically  </pre></td></tr>
+<tr><td>Expected</td><td class="check-name">enable</td></tr><tr>
+</tr><tr><td>host01</td><td>DISABLED</td> </tr>
+</tbody></table>
+<br><br><br><table><tbody>
+<tr><td style="border: 2px solid red;border-radius: 5px;"><pre>
+
+cat /etc/oracle/scls_scr/host01/root/ohastr
+disable 
+</pre>
+</td></tr>
+</tbody></table>
+<br>
+<br>
+<br>
+<br>
+<a name="b1e0ac093941296e780f9c09fd5f175f_details"></a>
+<a href="#ASSESSMENT_Summary" class="a_bgw">Top</a>
+<br>
+<h3>Check if runlevel 3 or 5 as reached</h3>
+<table>
+<tbody><tr> <td style="background-color:red">PASS</td><td>Configuration</td></tr>
+<tr><td scope="row">Requirement</td><td>
+<pre>
+
+No rc scripts should be running for a clusterware to come up,
+
+ensure run level 3 or 5 is reached before starting the clusterstack
+</pre></td></tr>
+<tr><td class="check-name">Expected</td><td>REACHED</td></tr><tr>
+</tr><tr><td>host01</td><td>REACHED</td> </tr>
+</tbody></table>
+<br><br><br><table><tbody>
+<tr><td style="border: 2px solid red;border-radius: 5px;"><pre>
+Check OS runlevel 
+ps -ef | grep /etc/rc | grep -v grep 
+</pre>
+</td></tr>
+</tbody></table>
+<br>

@@ -1,0 +1,30 @@
+[Aug 1, 2016 5:33:27 PM]     PREREQ session
+[Aug 1, 2016 5:33:27 PM]     OPatch invoked as follows: 'prereq CheckComponents -ph /tmp/oakpatch/db/11.2.0.4.0/21352635/21523375/21352635 -oh /u01/app/oracle/product/11.2.0.4/dbhome_1 -invPtrLoc /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc '
+[Aug 1, 2016 5:33:27 PM]     Could not get central inventory using NGOUI; oracle.sysman.nextgen.utils.NextGenInventoryUtil
+[Aug 1, 2016 5:33:27 PM]     OUI-67077:
+                             Oracle Home       : /u01/app/oracle/product/11.2.0.4/dbhome_1
+                             Central Inventory : /u01/app/oraInventory
+                                from           : /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc
+                             OPatch version    : 11.2.0.3.12
+                             OUI version       : 11.2.0.4.0
+                             OUI location      : /u01/app/oracle/product/11.2.0.4/dbhome_1/oui
+                             Log file location : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2016-08-01_17-33-27PM_1.log
+[Aug 1, 2016 5:33:27 PM]     Patch history file: /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Aug 1, 2016 5:33:27 PM]     Invoking prereq "checkcomponents"
+[Aug 1, 2016 5:33:27 PM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/21352635/21523375/21352635/README.html" in the patch directory.
+[Aug 1, 2016 5:33:27 PM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/21352635/21523375/21352635/README.txt" in the patch directory.
+[Aug 1, 2016 5:33:27 PM]     Ignoring file "/tmp/oakpatch/db/11.2.0.4.0/21352635/21523375/21352635/patchmd.xml" in the patch directory.
+[Aug 1, 2016 5:33:28 PM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 10 (MB)
+[Aug 1, 2016 5:33:28 PM]     [OPSR-MEMORY-2] : before loading cooked one off : 15 (MB)
+[Aug 1, 2016 5:33:28 PM]     [OPSR-MEMORY-3] : after loading rawOneOffList and before loading minipatch list in cooked one off : 21 (MB)
+[Aug 1, 2016 5:33:28 PM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 21 (MB)
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 17478514 passed.
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 18031668 passed.
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 18522509 passed.
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 19121551 passed.
+[Aug 1, 2016 5:33:28 PM]     Patch 19769489: Optional component(s) missing : [ oracle.sysman.agent, 11.2.0.4.0 ]
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 19769489 passed.
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 20299013 passed.
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 20760982 passed.
+[Aug 1, 2016 5:33:28 PM]     Prereq "checkComponents" for patch 21352635 passed.
+[Aug 1, 2016 5:33:28 PM]     Finishing PrereqSession at Mon Aug 01 17:33:28 UTC 2016

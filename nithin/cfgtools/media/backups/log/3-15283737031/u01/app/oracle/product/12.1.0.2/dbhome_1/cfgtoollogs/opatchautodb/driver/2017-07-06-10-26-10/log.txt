@@ -1,0 +1,82 @@
+Jul 06, 2017 10:26:10 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver constructConfigGraphForSepecifiedHomes
+FINER: ENTRY
+Jul 06, 2017 10:26:10 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isStackRunning
+INFO: crsType: CRS
+Jul 06, 2017 10:26:10 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isStackRunning
+INFO: running: true
+Jul 06, 2017 10:26:11 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isExadata
+INFO: Checking for Exadata. Looking for /opt/oracle.cellos/ORACLE_CELL_OS_IS_SETUP file.
+Jul 06, 2017 10:26:11 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isExadata
+INFO: This is not an Exadata environment
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/11.2.0.4/grid
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/product/11.2.0.4/dbhome_1
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/core/12.1.0.4.0
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/sbin
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/plugins/oracle.sysman.xa.discovery.plugin_12.1.0.6.0
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/plugins/oracle.sysman.db.discovery.plugin_12.1.0.6.0
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/plugins/oracle.sysman.emas.discovery.plugin_12.1.0.6.0
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/plugins/oracle.sysman.oh.discovery.plugin_12.1.0.4.0
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/plugins/oracle.sysman.oh.agent.plugin_12.1.0.4.0
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/agent/plugins/oracle.sysman.db.agent.plugin_12.1.0.6.0
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/12.1.0.2/grid
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getLocalInfo
+CONFIG: Found local home at /u01/app/oracle/product/12.1.0.2/dbhome_1
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver getCrsVersion
+FINER: ENTRY
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeNodes
+FINER: ENTRY
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeNodes
+FINER: RETURN
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver makeDBHomes
+FINE: Home=/u01/app/oracle/product/12.1.0.2/dbhome_1
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver isShared
+FINE: Checking whether Oracle Home "/u01/app/oracle/product/12.1.0.2/dbhome_1" is shared or not.
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isStackRunning
+INFO: crsType: CRS
+Jul 06, 2017 10:26:13 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isStackRunning
+INFO: running: true
+Jul 06, 2017 10:26:18 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver isShared
+CONFIG: shared: false
+Jul 06, 2017 10:26:18 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver makeDBHomes
+FINE: Home=/u01/app/oracle/product/12.1.0.2/dbhome_1
+Jul 06, 2017 10:26:18 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeDBs
+INFO: dbList.size: 5
+Jul 06, 2017 10:26:18 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isAdminManagedDB
+INFO: isAdminManaged: true
+Jul 06, 2017 10:26:19 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isAdminManagedDB
+INFO: isAdminManaged: true
+Jul 06, 2017 10:26:19 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver isAdminManagedDB
+INFO: isAdminManaged: true
+Jul 06, 2017 10:26:19 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeDBs
+INFO: isAdminPolicyDBMixedSetup: false
+Jul 06, 2017 10:26:21 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeSIDBInstances
+INFO: There are 1 SI database instances running for database: JANUSJR
+Jul 06, 2017 10:26:21 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeSIDBInstances
+INFO: the instance JANUSJR : JANUSJR runs on hub node that belongs to server pools 
+Jul 06, 2017 10:26:23 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeSIDBInstances
+INFO: There are 1 SI database instances running for database: LIMSJR
+Jul 06, 2017 10:26:23 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeSIDBInstances
+INFO: the instance LIMSJR : LIMSJR runs on hub node that belongs to server pools 
+Jul 06, 2017 10:26:25 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeSIDBInstances
+INFO: There are 1 SI database instances running for database: SHIPTEST
+Jul 06, 2017 10:26:25 AM com.oracle.glcm.patch.auto.db.product.driver.crs.CrsProductDriver makeSIDBInstances
+INFO: the instance SHIPTEST : SHIPTEST runs on hub node that belongs to server pools 
+Jul 06, 2017 10:26:25 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getHomeType
+INFO: homeType:  sidb
+Jul 06, 2017 10:26:25 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver setHomeIds
+FINE: Hometype of:83dd1226-2da8-41eb-af73-795a0a035005 set to sidb
+Jul 06, 2017 10:26:25 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver getHomeType
+INFO: homeType:  sidb
+Jul 06, 2017 10:26:25 AM com.oracle.glcm.patch.auto.db.product.driver.crs.AbstractCrsProductDriver setHomeIds
+FINE: Hometype of:6ec42d7c-b392-4883-8362-f060da4a9849 set to sidb

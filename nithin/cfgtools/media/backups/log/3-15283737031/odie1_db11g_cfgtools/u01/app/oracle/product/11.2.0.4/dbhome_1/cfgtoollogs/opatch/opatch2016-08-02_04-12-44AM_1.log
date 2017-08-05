@@ -1,0 +1,25 @@
+[Aug 2, 2016 4:12:44 AM]     PREREQ session
+[Aug 2, 2016 4:12:44 AM]     OPatch invoked as follows: 'prereq CheckConflictAgainstOH -ph /tmp/oakpatch/db/11.2.0.4.0/22502456/22646198/22502549/custom/server/22502549 -oh /u01/app/oracle/product/11.2.0.4/dbhome_1 -invPtrLoc /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc '
+[Aug 2, 2016 4:12:44 AM]     Could not get central inventory using NGOUI; oracle.sysman.nextgen.utils.NextGenInventoryUtil
+[Aug 2, 2016 4:12:44 AM]     OUI-67077:
+                             Oracle Home       : /u01/app/oracle/product/11.2.0.4/dbhome_1
+                             Central Inventory : /u01/app/oraInventory
+                                from           : /u01/app/oracle/product/11.2.0.4/dbhome_1/oraInst.loc
+                             OPatch version    : 11.2.0.3.12
+                             OUI version       : 11.2.0.4.0
+                             OUI location      : /u01/app/oracle/product/11.2.0.4/dbhome_1/oui
+                             Log file location : /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch2016-08-02_04-12-44AM_1.log
+[Aug 2, 2016 4:12:44 AM]     Patch history file: /u01/app/oracle/product/11.2.0.4/dbhome_1/cfgtoollogs/opatch/opatch_history.txt
+[Aug 2, 2016 4:12:44 AM]     Invoking prereq "checkconflictagainstoh"
+[Aug 2, 2016 4:12:45 AM]     [OPSR-MEMORY-1] : after installInventory.getAllCompsVect() call : 4 (MB)
+[Aug 2, 2016 4:12:45 AM]     [OPSR-MEMORY-2] : before loading cooked one off : 9 (MB)
+[Aug 2, 2016 4:12:45 AM]     [OPSR-MEMORY-3] : after loading rawOneOffList and before loading minipatch list in cooked one off : 9 (MB)
+[Aug 2, 2016 4:12:45 AM]     [OPSR-MEMORY-4] : after filling cookedOneOffs and when inventory is loaded.. : 9 (MB)
+[Aug 2, 2016 4:12:45 AM]     checkConflictAgainstOHWithDetail start -> Tue Aug 02 04:12:45 UTC 2016
+[Aug 2, 2016 4:12:45 AM]     Tue Aug 02 04:12:45 UTC 2016
+[Aug 2, 2016 4:12:46 AM]     Adapter can go list: 22502549
+[Aug 2, 2016 4:12:46 AM]     Adapter not need list:
+[Aug 2, 2016 4:12:46 AM]     Adapter auto-rollback list: 21948348
+[Aug 2, 2016 4:12:46 AM]     checkConflictAgainstOHWithDetail end -> Tue Aug 02 04:12:46 UTC 2016
+[Aug 2, 2016 4:12:46 AM]     Prereq "checkConflictAgainstOH" passed.
+[Aug 2, 2016 4:12:46 AM]     Finishing PrereqSession at Tue Aug 02 04:12:46 UTC 2016

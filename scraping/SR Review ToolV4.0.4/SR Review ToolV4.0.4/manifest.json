@@ -1,0 +1,34 @@
+{
+    "name": "SR Review Extension",
+    "version": "4.0.4",
+    "manifest_version": 3,
+	"description" : "This Extension only works on http://support.us.oracle.com, user can view report for a particular SR. Developed by subhash.challagulla@oracle.com",
+    "icons": { "16": "icon-16.png", "48": "icon-32.png", "128": "icon-64.png" },
+    "omnibox": { "keyword" : "sample" },
+    "browser_action": {
+        "default_icon": { "19": "icon-16.png", "38": "icon-32.png" },
+        "default_title": "Review SR:",
+        "default_popup": "popup1.html"
+    },
+    "background": {
+        "scripts": ["background.js","jquery.js","srReport.js","escsrReport.js","srReport.css","jquery-1.7.1.min.js","jquery-ui-1.8.17.custom.min.js","jspdf.js","adler32cs.js","FileSaver.js","BlobBuilder.js","jspdf.plugin.addimage.js","jspdf.plugin.standard_fonts_metrics.js","jspdf.plugin.split_text_to_size.js","jspdf.plugin.from_html.js","basic.js","vv.js","showindex.js","jquery.TableCSVExport.js"],
+        "persistent": false
+    },
+    "chrome_url_overrides" : {
+        
+    },
+
+ "permissions": [
+          "tabs"
+        ],
+
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["jquery.js","content.js","esccontent.js","jquery-1.7.1.min.js","jquery-ui-1.8.17.custom.min.js","jspdf.js","adler32cs.js","FileSaver.js","BlobBuilder.js","jspdf.plugin.addimage.js","jspdf.plugin.standard_fonts_metrics.js","jspdf.plugin.split_text_to_size.js","jspdf.plugin.from_html.js","basic.js","vv.js","showindex.js","jquery.TableCSVExport.js"]
+		//"css": ["main.css"]
+    }],
+
+    "devtools_page": "devtools.html"
+
+  
+}

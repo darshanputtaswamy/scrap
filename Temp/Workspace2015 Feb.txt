@@ -25,12 +25,910 @@ DAY SUMMARY:
 +++++++++++++++++++++++++++++++++++++++++++++++++ Begin End  <DATE> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ============================================================================================================================================
 
+
+java -jar D:\software\osw\oswbba.jar -i  D:\root\home\Workspace\SRFolder\3-12775852413\OSWatcher_data_2016JUN05-06\OSWatcher_data_2016JUN05-06\osw_amerusahdcora01.16.06.05\analyze.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The objective of ASMLIB is to provide a more efficient mechanism for managing disks and input/output (I/O) processing of ASM storage. The ASMLIB API provides a set of interdependent functions that need to be implemented in a layered fashion. These functions are dependent on the back-end storage implementing the associated functions. From an implementation perspective, these functions are grouped into three collections of functions:
+
+=)> Device discovery
+
+=)> I/O processing
+
+=)> Performance and reliability
+
+======================================================
+
+Device Discovery:
+
+Device discovery identifies and names the storage devices that are operated on by higher-level functions. This function does not require any operating system code and can be implemented as a standalone library invoked and dynamically loaded by the Oracle database. The discovery function makes the characteristics of the disk available to ASM. Disks discovered through ASMLIB do not need to be available through normal operating system interfaces. For example, storage vendors may provide a more efficient method of discovering and locating disks that their own interface driver manages.
+
+The device discovery function takes a discovery string as input from the user and then performs a disk discovery. The output from this procedure is a set of all qualified disks. In a Real Application Clusters (RAC) environment, the discover procedure executes the discovery function in the node in which the procedure was issued. The implementer of ASMLIB generally dictates the syntax of the discovery string. The syntax could be something similar to glob on Unix or it could be more customized to the ASMLIB implementation. When implementing the discovery function, a storage or OS vendor enables the ASM administrator to specify storage devices used by ASM with attributes specific to their particular storage architecture. For example, an Oracle storage partner, such as EMC or Hewlett-Packard, could provide an ASMLIB with a discovery function enabling the ASM administrator to specify disks for database use that reside in a particular storage cabinet. The ASM administrator specifies the vendor cabinet and disks using the vendor’s nomenclature rather than generic operating system names. The benefit is a tighter integration between the database and the storage hardware.
+
+Disk Management and Discovery:
+
+ASMLIB automatically takes the ASM disk name from the name that the ASMLIB administrative tool provides. This simplifies adding disks and correlating OS names with ASM names; also, because disks are prenamed, it eliminates erroneous disk management activities. The user can manually change the name by using the NAME clause while issuing a CREATE DISKGROUP or ADD DISK statement. The default discovery string for ASM is NULL, so with ASMLIB in place, all disks are automatically discovered if NULL is kept as the discovery string. Because the user does not even need to modify the ASM_DISKSTRING, this makes disk discovery much more straightforward.
+
+The ASMLIB permissions are persistent across reboot and in the event of major/ minor number changes, ASMLIB will continue to find its labeled disks. In RAC environments, the disk identification and discovery process is similar to that of a single-instance environment. Once the disks are labeled on one node, the other clustered nodes simply use the default disk discovery string, and discovery is seamless.
+======================================================
+
+I/O Processing:
+
+The current standard I/O model imposes OS central processing unit (CPU) overhead partly because of mode and context switches. The deployment of ASMLIB reduces the number of state transitions from kernel-to-user mode by employing a more efficient I/O scheduling and call processing mechanism. A single call to ASMLIB can submit and reap multiple I/Os. This dramatically reduces the number of calls to the operating system when performing I/O. Additionally, all the processes in an instance can use one I/O handle to access the same disk. This eliminates multiple open calls and multiple file descriptors.
+
+I/O processing functions provide an optimized asynchronous interface for scheduling I/O operations and managing I/O operation completion events. These functions, in effect, extend the operating system interface. Consequently, the I/O processing functions must be implemented as a device driver within the operating system kernel.
+Future developments by Oracle storage partners, in storage array firmware may allow the transport of database-related metadata to back-end storage devices, which will then be capable of new database-related intelligence.
+
+Reduced Overhead:
+
+ASMLIB provides the capability for a process (RBAL) to perform a global open/close on the disks that are being dropped or closed. Every file and device currently open on the system has an open file descriptor, and the system has a finite number (defined at the system level) of these file descriptors. ASMLIB reduces the number of open file descriptors on the system, thus making it less likely that the system will run out of global file descriptors. Also, the open and close operations are reduced, ensuring orderly cleanup of file descriptors when storage configurations change. A side benefit of this capability is that the database starts up faster. Without ASMLIB, file descriptors often cannot be cleaned up for dropped disks until ASM instances are shut down. This is because idle database foreground processes, which have open file descriptors, never get around to closing file descriptors.
+
+Performance and Reliability:
+
+The highest-layer functions are the performance and reliability functions, which depend on the existence of the I/O processing functions. The performance and reliability functions use the I/O processing control structures for passing metadata between the Oracle database and the back-end storage devices. They enable additional intelligence on the part of back-end storage. This additional intelligence is achieved when metadata transfer is passed through the ASMLIB API.
+====================================================== 
+
+
+
+
+
+
+
+
+
+from Srini s to All Participants:
+bash-4.2$ ls -alrt /dev/db*
+crw-r--r--    1 oracle   dba          18, 14 Jul  8 09:30 /dev/db008
+crw-r--r--    1 oracle   dba          18,  9 Jul  8 09:30 /dev/db007
+crw-r--r--    1 oracle   dba          18, 16 Jul  8 09:30 /dev/db006
+crw-r--r--    1 oracle   dba          18, 15 Jul  8 09:30 /dev/db005
+crw-r--r--    1 oracle   dba          18,  6 Jul  8 09:30 /dev/db004
+crw-r--r--    1 oracle   dba          18, 10 Jul  8 09:30 /dev/db003
+crw-r--r--    1 oracle   dba          18, 13 Jul  8 09:30 /dev/db002
+crw-r--r--    1 oracle   dba          18,  8 Jul  8 09:30 /dev/db001
+
+from Srini s to All Participants:
+bash-4.2$ ls -alrt /dev/vot*
+crw-r--r--    1 oracle   dba          18,  5 Jul  8 09:30 /dev/voting03
+crw-r--r--    1 oracle   dba          18,  3 Jul  8 09:30 /dev/voting02
+crw-r--r--    1 oracle   dba          18,  7 Jul  8 09:30 /dev/voting01
+
+from Srini s to All Participants:
+bash-4.2$ ls -alrt /dev/red*
+crw-r--r--    1 oracle   dba          18, 11 Jul  8 09:30 /dev/redo02
+crw-r--r--    1 oracle   dba          18,  2 Jul  8 09:30 /dev/redo01
+
+from Srini s to All Participants:
+bash-4.2$ ls -alrt /dev/tem*
+crw-r--r--    1 oracle   dba          18, 17 Jul  8 09:30 /dev/temp01
+
+
+kfod asm_diskstring='/dev/vot*' disks=all 
+kfod asm_diskstring='/dev/red*' disks=all 
+kfod asm_diskstring='/dev/db*' disks=all 
+kfod asm_diskstring='/dev/tem*' disks=all 
+
+
+bash-4.2$ kfod asm_diskstring='/dev/red*' disks=all
+--------------------------------------------------------------------------------
+ Disk          Size Path                                     User     Group
+================================================================================
+   1:      20480 Mb /dev/redo01                              oracle   dba
+   2:      20480 Mb /dev/redo02                              oracle   dba
+KFOD-00301: Unable to contact Cluster Synchronization Services (CSS). Return code 2 from kgxgncin.
+bash-4.2$ kfod asm_diskstring='/dev/db*' disks=all
+--------------------------------------------------------------------------------
+ Disk          Size Path                                     User     Group
+================================================================================
+   1:     103424 Mb /dev/db001                               oracle   dba
+   2:     103424 Mb /dev/db002                               oracle   dba
+   3:     103424 Mb /dev/db003                               oracle   dba
+   4:     103424 Mb /dev/db004                               oracle   dba
+   5:     103424 Mb /dev/db005                               oracle   dba
+   6:     103424 Mb /dev/db006                               oracle   dba
+   7:     103424 Mb /dev/db007                               oracle   dba
+   8:     103424 Mb /dev/db008                               oracle   dba
+KFOD-00301: Unable to contact Cluster Synchronization Services (CSS). Return code 2 from kgxgncin.
+bash-4.2$ kfod asm_diskstring='/dev/tem*' disks=all
+--------------------------------------------------------------------------------
+ Disk          Size Path                                     User     Group
+================================================================================
+   1:     103424 Mb /dev/temp01                              oracle   dba
+KFOD-00301: Unable to contact Cluster Synchronization Services (CSS). Return code 2 from kgxgncin.
+bash-4.2$ kfod asm_diskstring='/dev/vot*' disks=all
+--------------------------------------------------------------------------------
+ Disk          Size Path                                     User     Group
+================================================================================
+   1:       2048 Mb /dev/voting01                            oracle   dba
+   2:       2048 Mb /dev/voting02                            oracle   dba
+   3:       2048 Mb /dev/voting03                            oracle   dba
+KFOD-00301: Unable to contact Cluster Synchronization Services (CSS). Return code 2 from kgxgncin.
+Error: failed to open a wallet at WRL: 'file:/gpnp/hostname/wallets/peer/'. Make sure it is a valid WRL (valid type, path, etc.). Cannot open wallet with given credenti
+alter system set asm_diskstring='/dev/vot*','/dev/redo*','/dev/db*','/dev/temp*' scope=spfile; 
+
+
+alter system set asm_diskstring='/dev/vot*'
+ gpnptool sign -p=./profile.xml.new.us -w=file:$ORACLE_HOME/gpnp//seskacnpdpdb01/wallets/peer/ -o=./profile.xml.new
+gpnptool edit -asm_dis='/dev/voting*' -p=profile.xml.new.us -o=profile.xml.new.us -ovr
+
+gpnptool sign -p=./profile.xml.new.us -w=file:$ORACLE_HOME/gpnp/seskacnpdpdb02/wallets/peer/ -o=./profile.xml.new
+'/dev/voting*,/dev/redo*,/dev/db*,/dev/temp*'
+
+gpnptool edit -asm_dis='/dev/voting*,/dev/redo*,/dev/db*,/dev/temp*' -p=profile.xml.new.us -o=profile.xml.new.us -ovr
+
+How To Change Grid Infrastructure asm_diskstring After Messed It And Reboot The Cluster? (Doc ID 1337938.1)
+
+
+
+
+
+
+
+
+http://www.usn-it.de/index.php/2011/07/12/oracle-grid-infrastructure-how-to-recover-from-a-messed-up-asmcssd-diskstring/
+
+
+
+Disk is listed at OS level with correct permission and is accessible.
+
+kfred read /dev/asm-disk06
+
+kfbh.type:                            0 ; 0x002: KFBTYP_INVALID                <<< !! HERE 
+....
+7F5B21444400 00000000 00000000 00000000 00000000  [................]
+        Repeat 223 times
+KFED-00322: Invalid content encountered during block traversal: [kfbtTraverseBlock][Invalid OSM block type][][0]
+
+
+kfed read of 1 or more block in a missing disk shows above and is overwhelmly convenient conclude the disk is corrupted, but we should not overlook the possibility.
+
+
+
+Step 1:  Irrespective of the platform  customer is in , Take a first 50 MB dd dump of the corrupted disk 
+
+         
+         dd if=/dev/asmdisks/ASM06p1 of=/tmp/asmdisks/ASM06p1.txt bs=1M count=50
+		 
+
+Step 2 : Check whether the problem disk are indeed an ASM Disk using hexdump or od .
+
+
+		hexdump -C ASM08p1.txt  | grep ORCLDISK
+		dd if=ASM08p1.txt bs=4k|od -t xz|grep ORCLDISK.
+		
+		
+		1st occurance of kfdhdb.driver.provstr i,e ORCLDISK comes at 32 byte , and the next would be in the backup block ,kfdhdb.driver.provstr is over reference point , 
+		below I have shared the offset of kfdhdb.driver.provstr for various AU size .
+
+        =====================================================================================
+		A valid ASM Disk with BOTH Header and backup Block intact would show below results  ( AU size of the disk is 1 MB )
+		
+        [grid@samrac2 peer]$ hexdump -C ASM08p1.txt  | grep ORCLDISK
+		00000020  4f 52 43 4c 44 49 53 4b  44 41 54 41 00 00 00 00  |ORCLDISK........|  << Header's kfdhdb.driver.provstr   
+		001fe020  4f 52 43 4c 44 49 53 4b  44 41 54 41 00 00 00 00  |ORCLDISK........|  << Backup Block kfdhdb.driver.provstr 
+
+        =====================================================================================
+
+         		 
+	
+		Each asm block is of 4KB (irrespective of the AU size of the disk)
+		
+        So For a 1 MB AU there will be total 256 (1048576/4096=256) blocks numbering 0 to 255.
+
+
+		Allocation unit size   |Block Number on AU 1|  kfdhdb.driver.provstr offset  | kfdhdb.driver.provstr offset in backup block | 
+		
+														(32 byte ) 					 (2088992 bytes = 1MB+ 254*4KB +32 )
+		           1  MB            254  				 hex  00000020 				  hex 001fe020  
+														 octal 0000040				  octal 7760040
+		                           
+		
+		           4  MB 			1022	 			(32 byte )					 (8380448 bytes = 4MB+ 1022*4KB+32)
+														 hex  00000020 				  hex 007fe020
+														 octal 0000040				  octal 37760040
+							
+							
+				   8 MB             2046 				(32 byte )					 (16769056 bytes = 8MB+ 2046*4KB+32)
+														 hex  00000020 			 	  hex  00ffe020
+														 octal 0000040	              octal 77760040
+
+				   
+				   16 MB          	4094				(32 byte )					( 33546272 bytes = 16MB+ 4094*4KB+32)
+														 hex  00000020 				  hex 01ffe020
+												    	 octal 0000040				  octal 177760040
+														 
+														 
+
+		
+		
+		
+Step 3 : Calculate the misalignment of the disk header 
+
+
+        Case 1 :  Header is missing and only backup block seems to be availble and offset is correct 
+		[oracle@cehaovmsp101 ASM06-07]$ hexdump -C ASM07p1.txt | grep  ORCLDISK
+		001fe020  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|   <<  kfdhdb.driver.provstr  ( )
+		[oracle@cehaovmsp101 ASM06-07]$
+
+		
+		Case 2 : Header is missing and only backup block seems to be availble but partation shifted inside	
+		
+		[oracle@cehaovmsp101 ASM06-07]$ hexdump -C ASM06p1.txt | grep  ORCLDISK
+		00105e20  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|   <<  kfdhdb.driver.provstr  (  )
+	
+	     Misalignment : 001fe020 - 00105e20 = F8200  = 1016320  bytes inside 
+	
+		Case 3 : Header and backup block both are availble but partation shifted outside 
+        oracle@cehaovmsp101 ASM06-07]$ hexdump -C ASM09p1.txt | grep  ORCLDISK
+		00000220  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|
+		001fe220  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|   <<  kfdhdb.driver.provstr  ( )
+		
+		Misalignment : 00000220 - 00000020 = 200 = 512 bytes outside 
+		
+		
+        Case 4 : If ORCLDISK  was not found in first 50 MB , check entire disk,  Or check if the luns are mapped corrected at the OS level 
+		
+		
+			
+
+		
+		
+		
+		
+		
+Step 4. Check if the blocks are intact.
+
+
+        Case 2 :  dd if=ASM06p1.txt of=ASM06p1.txt_skip3584   bs=512 skip=7
+		
+        oracle@cehaovmsp101 ASM06-07]$ dd if=ASM06p1.txt of=ASM06p1.txt_skip3584   bs=512 skip=7
+		102393+0 records in
+		102393+0 records out
+		52425216 bytes (52 MB) copied, 0.260755 s, 201 MB/s
+		[oracle@cehaovmsp101 ASM06-07]$ kfed read ASM06p1.txt_skip3584 aun=0 blkn=0
+		kfbh.endian:                          1 ; 0x000: 0x01
+		kfbh.hard:                          130 ; 0x001: 0x82
+		kfbh.type:                            3 ; 0x002: KFBTYP_ALLOCTBL
+		kfbh.datfmt:                          2 ; 0x003: 0x02
+		kfbh.block.blk:                     251 ; 0x004: blk=251
+		kfbh.block.obj:              2147483650 ; 0x008: disk=2
+		kfbh.check:                  2184293629 ; 0x00c: 0x8231acfd
+		kfbh.fcn.base:                  1547745 ; 0x010: 0x00179de1
+		kfbh.fcn.wrap:                        0 ; 0x014: 0x00000000
+		kfbh.spare1:                          0 ; 0x018: 0x00000000
+		kfbh.spare2:                          0 ; 0x01c: 0x00000000
+		kfdatb.aunum:                    111552 ; 0x000: 0x0001b3c0
+        
+		
+		
+		Case 3 :  dd if=ASM06p1.txt of=ASM09p1.txt_skip512   bs=512 skip=1
+		
+		102393+0 records in
+		102393+0 records out
+		52425216 bytes (52 MB) copied, 0.260755 s, 201 MB/s
+		[oracle@cehaovmsp101 ASM06-07]$ kfed read ASM09p1.txt_skip512  aun=0 blkn=0
+        kfbh.endian:                          1 ; 0x000: 0x01
+		kfbh.hard:                          130 ; 0x001: 0x82
+		kfbh.type:                            1 ; 0x002: KFBTYP_DISKHEAD
+		kfbh.datfmt:                          1 ; 0x003: 0x01
+		kfbh.block.blk:                     254 ; 0x004: blk=2
+		kfbh.block.obj:              2147483650 ; 0x008: disk=3
+		kfbh.check:                  1516277106 ; 0x00c: 0x5a608d72
+		kfbh.fcn.base:                  1547745 ; 0x010: 0x00179de1
+		kfbh.fcn.wrap:                        0 ; 0x014: 0x00000000
+		kfbh.spare1:                          0 ; 0x018: 0x00000000
+		kfbh.spare2:                          0 ; 0x01c: 0x00000000
+		kfdhdb.driver.provstr:         ORCLDISK ; 0x000: length=8
+
+
+
+
+         If all the blocks are intact after a skipping calculated amount bytes , it proved that the partition was shifted x bytes inside/outside depending on case . 
+         Please engage the OS vendor to point the partition at right location , so that 1st occurance of ORCLDISK comes at 32 byte (0000040 in octa / 00000020 in hex)
+		 
+		 If the block are not intact its a curroption recreate the diskgroup .
+
+		
+		
+	
+
+
+
+My test machine 
+
+00000020  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|
+001fe020  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|
+
+kfdhdb.secsize:                     512 ; 0x0b8: 0x0200
+kfdhdb.blksize:                    4096 ; 0x0ba: 0x1000
+kfdhdb.ausize:                  1048576 ; 0x0bc: 0x00100000      <<< !!HERE 
+
+
+
+On your server 
+
+[oracle@cehaovmsp101 ASM06-07]$ hexdump -C ASM06p1.txt | grep ORCLDISK
+00105e20  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|  <<< offset of the backup block is reduces by 1016320 bytes
+
+kfdhdb.secsize:                     512 ; 0x0b8: 0x0200
+kfdhdb.blksize:                    4096 ; 0x0ba: 0x1000
+kfdhdb.ausize:                  1048576 ; 0x0bc: 0x00100000
+
+
+001fe020 - 00105e20 = F8200 (1016320)10  bytes are errased from the begining of the disk header 
+
+
+
+[oracle@cehaovmsp101 ASM06-07]$ dd if=ASM06p1.txt of=ASM06p1.txt_skip992KB512B   bs=512 skip=2095
+100305+0 records in
+100305+0 records out
+51356160 bytes (51 MB) copied, 0.843557 s, 60.9 MB/s
+[oracle@cehaovmsp101 ASM06-07]$ hexdump -C ASM06p1.txt_skip992KB512B | grep ORCLDISK
+00000020  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|                       <<< backup block is intact 
+
+[oracle@cehaovmsp101 ASM06-07]$ kfed read ASM06p1.txt_skip992KB512B
+kfbh.endian:                          1 ; 0x000: 0x01
+kfbh.hard:                          130 ; 0x001: 0x82
+kfbh.type:                            1 ; 0x002: KFBTYP_DISKHEAD
+kfbh.datfmt:                          1 ; 0x003: 0x01
+kfbh.block.blk:                     254 ; 0x004: blk=254
+kfbh.block.obj:              2147483650 ; 0x008: disk=2
+kfbh.check:                  1516277106 ; 0x00c: 0x5a608d72
+kfbh.fcn.base:                  1547745 ; 0x010: 0x00179de1
+kfbh.fcn.wrap:                        0 ; 0x014: 0x00000000
+kfbh.spare1:                          0 ; 0x018: 0x00000000
+kfbh.spare2:                          0 ; 0x01c: 0x00000000
+kfdhdb.driver.provstr:         ORCLDISK ; 0x000: length=8
+kfdhdb.driver.reserved[0]:            0 ; 0x008: 0x00000000
+kfdhdb.driver.reserved[1]:            0 ; 0x00c: 0x00000000
+kfdhdb.driver.reserved[2]:            0 ; 0x010: 0x00000000
+kfdhdb.driver.reserved[3]:            0 ; 0x014: 0x00000000
+kfdhdb.driver.reserved[4]:            0 ; 0x018: 0x00000000
+kfdhdb.driver.reserved[5]:            0 ; 0x01c: 0x00000000
+kfdhdb.compat:                186646528 ; 0x020: 0x0b200000
+kfdhdb.dsknum:                        2 ; 0x024: 0x0002
+kfdhdb.grptyp:                        1 ; 0x026: KFDGTP_EXTERNAL
+kfdhdb.hdrsts:                        3 ; 0x027: KFDHDR_MEMBER
+kfdhdb.dskname:             DATA01_0002 ; 0x028: length=11
+kfdhdb.grpname:                  DATA01 ; 0x048: length=6
+kfdhdb.fgname:              DATA01_0002 ; 0x068: length=11
+kfdhdb.capname:                         ; 0x088: length=0
+kfdhdb.crestmp.hi:             33034410 ; 0x0a8: HOUR=0xa DAYS=0x5 MNTH=0x4 YEAR=0x7e0
+kfdhdb.crestmp.lo:           2471000064 ; 0x0ac: USEC=0x0 MSEC=0x21e SECS=0x34 MINS=0x24
+kfdhdb.mntstmp.hi:             33034410 ; 0x0b0: HOUR=0xa DAYS=0x5 MNTH=0x4 YEAR=0x7e0
+kfdhdb.mntstmp.lo:           2471004160 ; 0x0b4: USEC=0x0 MSEC=0x222 SECS=0x34 MINS=0x24
+kfdhdb.secsize:                     512 ; 0x0b8: 0x0200
+kfdhdb.blksize:                    4096 ; 0x0ba: 0x1000
+
+
+
+
+
+
+
+
+
+
+
+
+
+ception in thread "main" java.lang.NoClassDefFoundError: oracle/ops/verification/client/CluvfyDriver
+Caused by: java.lang.ClassNotFoundException: oracle.ops.verification.client.CluvfyDriver
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+Could not find the main class: oracle.ops.verification.client.CluvfyDriver.  Program will exit.
+
+
+ApplySession::apply failed: Archive not applied /epic/patch/22738641/22291127/21948354/files/lib/libserver12.a/kjbr.o to /u02/app/12.1.0.2/grid/lib/libserver12.a... ''
+                             Archive not applied /epic/patch/22738641/22291127/21948354/files/lib/libgeneric12.a/dbgrfd.o to /u02/app/12.1.0.2/grid/lib/libgeneric12.a... ''
+
+							 
+							 
+							 [May 24, 2016 11:16:42 PM]   OUI-67049:Updating archive file "/u02/app/12.1.0.2/grid/lib/libserver12.a"  with "lib/libserver12.a/qmxtk.o"
+[May 24, 2016 11:16:42 PM]   Stack Description: java.lang.RuntimeException: /usr/bin/ar: /u02/app/12.1.0.2/grid/lib/libserver12.a: File in wrong format
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ArchiveAction.runOneCommand(ArchiveAction.java:630)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ArchiveAction.runArCommand(ArchiveAction.java:605)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ArchiveAction.apply(ArchiveAction.java:1713)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.modifySystem(ApplySession.java:1171)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.apply(ApplySession.java:913)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.processLocal(ApplySession.java:4336)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.process(ApplySession.java:5367)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.process(ApplySession.java:5214)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.OPatchACL.processApply(OPatchACL.java:308)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:1145)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1088)
+[May 24, 2016 11:16:42 PM]   StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[May 24, 2016 11:16:42 PM]   StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[May 24, 2016 11:16:42 PM]   StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[May 24, 2016 11:16:42 PM]   StackTrace: java.lang.reflect.Method.invoke(Method.java:597)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.OPatch.main(OPatch.java:626)
+[May 24, 2016 11:16:42 PM]   OUI-67049:Updating archive file "/u02/app/12.1.0.2/grid/rdbms/lib/libdsga12.a"  with "rdbms/lib/libdsga12.a/kqf4.o"
+[May 24, 2016 11:16:42 PM]   Copy Action does not have file version.
+
+
+
+
+[May 24, 2016 11:16:42 PM]   OUI-67049:Updating archive file "/u02/app/12.1.0.2/grid/lib/libgeneric12.a"  with "lib/libgeneric12.a/qmxx.o"
+[May 24, 2016 11:16:42 PM]   Stack Description: java.lang.RuntimeException: /usr/bin/ar: /u02/app/12.1.0.2/grid/lib/libgeneric12.a: Malformed archive
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ArchiveAction.runOneCommand(ArchiveAction.java:630)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ArchiveAction.runArCommand(ArchiveAction.java:605)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ArchiveAction.apply(ArchiveAction.java:1713)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.modifySystem(ApplySession.java:1171)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.apply(ApplySession.java:913)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.processLocal(ApplySession.java:4336)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.process(ApplySession.java:5367)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.ApplySession.process(ApplySession.java:5214)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.OPatchACL.processApply(OPatchACL.java:308)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.opatchutil.NApply.process(NApply.java:1145)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.opatchutil.OUSession.napply(OUSession.java:1088)
+[May 24, 2016 11:16:42 PM]   StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[May 24, 2016 11:16:42 PM]   StackTrace: sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+[May 24, 2016 11:16:42 PM]   StackTrace: sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+[May 24, 2016 11:16:42 PM]   StackTrace: java.lang.reflect.Method.invoke(Method.java:597)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.UtilSession.process(UtilSession.java:317)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.OPatchSession.main(OPatchSession.java:2580)
+[May 24, 2016 11:16:42 PM]   StackTrace: oracle.opatch.OPatch.main(OPatch.java:626)
+[May 24, 2016 11:16:42 PM]   OUI-67049:Updating archive file "/u02/app/12.1.0.2/grid/lib/libcommon12.
+
+
+[root@yeb bin]# ./kfod op=patchlvl
+-------------------
+Current Patch level
+===================
+2528224568
+[root@yeb bin]#  ./kfod op=patches
+---------------
+List of Patches
+===============
+19769480
+20299023
+20831110
+21359755
+21359758 <<<< !HERE 
+21359761 <<<< !HERE 
+21436941
+
+Grid Infrastructure Patch(es): 21436941 22291127 22502518 22502555
+DB Patch(es): 22291127 22502555 22674709
+
+root@nug bin]# ./kfod op=patchlvl
+-------------------
+Current Patch level
+===================
+3892811207
+[root@nug bin]# ./kfod op=patches
+---------------
+List of Patches
+===============
+19769480
+20299023
+20831110
+21359755
+21436941
+21948354    <<<< !HERE 
+22291127    <<<< !HERE 
+
+
+
+
+Patch 22738641 as following patchs  COMBO OF OJVM COMPONENT 12.1.0.2.160419 DBPSU + GIPSU 12.1.0.2.160419 (APR2016)
+
+22291127	DATABASE PATCH SET UPDATE 12.1.0.2.160419	(Oracle Database)
+22502518	ACFS PATCH SET UPDATE 12.1.0.2.160419	(Oracle Database)
+22502555	OCW PATCH SET UPDATE 12.1.0.2.160419	(Oracle Database)
+21436941	DBWLM PATCH SET UPDATE 12.1.0.2.5	(Oracle Database)
+22674709	OJVM PATCH SET UPDATE 12.1.0.2.160419	(Oracle Java Technology)
+/epic/patch/22738641 -oh /u02/app/12.1.0.2/grid -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+
+opatch apply -oh /u02/app/12.1.0.2/grid -local /epic/patch/22738641/22291127 -silent  -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /u02/app/12.1.0.2/grid -local /epic/patch/22738641/22502555  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /u02/app/12.1.0.2/grid -local /epic/patch/22738641/21436941  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /u02/app/12.1.0.2/grid -local /epic/patch/22738641/22502518  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /u02/app/12.1.0.2/grid -local /epic/patch/22738641/22674709  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+
+DB Patch(es): 22291127 22502555 22674709
+/epic/patch/22738641/22291127/custom/scripts/prepatch.sh -dbhome <DBHOME>
+/epic/patch/22738641/22502555/custom/scripts/prepatch.sh -dbhome <DBHOME>
+/epic/patch/22738641/22674709/custom/scripts/prepatch.sh -dbhome <DBHOME>
+
+
+
+opatch apply -oh /export/app/oracle/product/12.1.0/dbhome2 -local /epic/patch/newpatch/22738641/22291127/ -silent  -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /export/app/oracle/product/12.1.0/dbhome2 -local /epic/patch/newpatch/22738641/22502555/  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /export/app/oracle/product/12.1.0/dbhome2 -local /epic/patch/newpatch/22738641/22674709/  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+
+
+
+/epic/patch/newpatch/22738641/22502555/custom/scripts/postpatch.sh -dbhome /export/app/oracle/product/12.1.0/dbhome2
+
+
+40
+80
+81
+65
+80
+85
+86
+
+-----
+73%
+
+
+77
+60
+46
+50
+35
+70
+-------
+56%
+
+as a root user 
+#GRID_HOME/install/rootcrs.pl -unlock
+
+
+as oracle user
+opatch apply -oh <GI_HOME> -local <PATCH_LOCATION>/22738641/22291127 -silent  -ocmrf /export/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh <GI_HOME> -local <PATCH_LOCATION>/22738641/22502555  -silent -ocmrf /export/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh <GI_HOME> -local <PATCH_LOCATION>/22738641/21436941  -silent -ocmrf /export/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh <GI_HOME> -local <PATCH_LOCATION>/22738641/22502518  -silent -ocmrf /export/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+
+
+as oracle user
+$/epic/patch/22738641/22502555/custom/scripts/prepatch.sh -dbhome <DBHOME>
+
+opatch apply -oh /export/app/oracle/product/12.1.0/dbhome2 -local /epic/patch/newpatch/22738641/22291127/ -silent  -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /export/app/oracle/product/12.1.0/dbhome2 -local /epic/patch/newpatch/22738641/22502555/  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+opatch apply -oh /export/app/oracle/product/12.1.0/dbhome2 -local /epic/patch/newpatch/22738641/22674709/  -silent -ocmrf /u02/app/12.1.0.2/grid/OPatch/ocm/bin/ocm.rsp
+
+/epic/patch/22738641/22502555/custom/scripts/postpatch.sh -dbhome <DBHOME>
+
+
+++ As the root user complete the patching  
+$GRID_HOME/rdbms/install/rootadd_rdbms.sh
+$GRID_HOME/crs/install/rootcrs.pl -postpatch
+
+
+
+
+
+[oracle@cehaovmsp101 asm]$  hexdump -C data1.dump |  grep ORCLDISK
+001f6220  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|
+^C
+
+
+[oracle@cehaovmsp101 asm]$ dd if=data1.dump of=data1.dump2au bs=4096 skip=256 count=256
+256+0 records in
+256+0 records out
+1048576 bytes (1.0 MB) copied, 0.00125513 s, 835 MB/s
+
+
+[oracle@cehaovmsp101 asm]$  hexdump -C  data1.dump2au |  grep ORCLDISK
+000f6220  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|
+
+
+[oracle@cehaovmsp101 asm]$ dd if=data1.dump2au of=data1.dump2au.246blk bs=4096 skip=246 count=1
+1+0 records in
+1+0 records out
+4096 bytes (4.1 kB) copied, 3.7737e-05 s, 109 MB/s
+
+
+[oracle@cehaovmsp101 asm]$  hexdump -C data1.dump2au.246blk |  grep ORCLDISK
+00000220  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|
+
+[oracle@cehaovmsp101 asm]$ dd if=data1.dump2au.246blk of=data1.dump2au.246blk.512byte bs=512 skip=1
+7+0 records in
+7+0 records out
+3584 bytes (3.6 kB) copied, 6.649e-05 s, 53.9 MB/s
+
+
+[oracle@cehaovmsp101 asm]$  hexdump -C data1.dump2au.246blk.512byte |  grep ORCLDISK
+00000020  4f 52 43 4c 44 49 53 4b  00 00 00 00 00 00 00 00  |ORCLDISK........|
+
+[oracle@cehaovmsp101 asm]$ kfed read data1.dump2au.246blk.512byte
+kfbh.endian:                          0 ; 0x000: 0x00
+kfbh.hard:                            0 ; 0x001: 0x00
+kfbh.type:                            0 ; 0x002: KFBTYP_INVALID
+kfbh.datfmt:                          0 ; 0x003: 0x00
+kfbh.block.blk:                       0 ; 0x004: blk=0
+kfbh.block.obj:                       0 ; 0x008: file=0
+kfbh.check:                           0 ; 0x00c: 0x00000000
+kfbh.fcn.base:                        0 ; 0x010: 0x00000000
+kfbh.fcn.wrap:                        0 ; 0x014: 0x00000000
+kfbh.spare1:                          0 ; 0x018: 0x00000000
+kfbh.spare2:                          0 ; 0x01c: 0x00000000
+7F9718635400 00000000 00000000 00000000 00000000  [................]
+  Repeat 255 times
+KFED-00322: Invalid content encountered during block traversal: [kfbtTraverseBlock][Invalid OSM block type][][0]
+
+
+
+== Node alertslim-crms-db11.log ==
+[ctssd(7096)]CRS-2409:The clock on host slim-crms-db11 is not synchronous with the mean cluster time. No action has been taken as the Cluster Time Synchronization Service is running in observer mode.
+2016-05-21 04:40:03.774:  [ctssd(7096)]CRS-2409:The clock on host slim-crms-db11 is not synchronous with the mean cluster time. No action has been taken as the Cluster Time Synchronization Service is running in observer mode.
+2016-05-21 05:05:06.222:  [cssd(6700)]CRS-1612:Network communication with node slim-crms-db12 (2) missing for 50% of timeout interval.  Removal of this node from cluster in 14.328 seconds
+2016-05-21 05:05:13.144:  [cssd(6700)]CRS-1611:Network communication with node slim-crms-db12 (2) missing for 75% of timeout interval.  Removal of this node from cluster in 7.406 seconds
+2016-05-21 05:05:18.144:  [cssd(6700)]CRS-1610:Network communication with node slim-crms-db12 (2) missing for 90% of timeout interval.  Removal of this node from cluster in 2.406 seconds
+2016-05-21 05:05:22.175:  [cssd(3740)]CRS-1632:Node slim-crms-db12 is being removed from the cluster in cluster incarnation 354313682
+2016-05-21 05:05:22.206:  [cssd(10872)]CRS-1601:CSSD Reconfiguration complete. Active nodes are slim-crms-db11 .
+2016-05-21 05:05:22.222:  [crsd(6520)]CRS-5504:Node down event reported for node 'slim-crms-db12'.
+2016-05-21 05:05:22.581:  [ctssd(6172)]CRS-2407:The new Cluster Time Synchronization Service reference node is host slim-crms-db11.
+
+
+== Node alertslim-crms-db12.log ==
+2016-05-15 11:59:12.383:  [C:\app\grid\12.1.0\bin\oraagent.exe(13004)]CRS-5818:Aborted command 'check' for resource 'ora.LISTENER_SCAN2.lsnr'. Details at (:CRSAGF00113:) {0:17:2} in C:\app\grid\12.1.0\log\slim-crms-db12\agent\crsd\oraagent_system\oraagent_system.log.
+2016-05-21 05:16:57.541:  [ohasd(1264)]CRS-0714:Oracle Clusterware Release 12.1.0.1.0 - Production Copyright 1996, 2010 Oracle. All rights reserved.
+2016-05-21 05:16:58.652:  [ohasd(1264)]CRS-2112:The OLR service started on node slim-crms-db12.
+2016-05-21 05:16:59.849:  [ohasd(1264)]CRS-1301:Oracle High Availability Service started on node slim-crms-db12.
+2016-05-21 05:16:59.849:  [ohasd(2332)]CRS-8017:location: C:\app\grid\12.1.0\log\slim-crms-db12\lastgasp has 2 reboot advisory log files, 0 were announced and 0 errors occurred
+2016-05-21 05:17:03.500:  [C:\app\grid\12.1.0/bin/oraagent.exe(924)]CRS-5011:Check of resource "ora.asm" failed: details at "(:CLSN00006:)" in "C:\app\grid\12.1.0\log\slim-crms-db12\agent\ohasd\oraagent_system\oraagent_system.log"
+2016-05-21 05:17:12.341:  [gpnpd(1216)]CRS-2328:GPNPD started on node slim-crms-db12. 
+2016-05-21 05:17:43.187:  [cssd(4972)]CRS-1713:CSSD daemon is started in hub mode
+2016-05-21 05:18:09.693:  [cssd(4972)]CRS-1707:Lease acquisition for node slim-crms-db12 number 2 completed
+2016-05-21 05:18:15.883:  [cssd(4972)]CRS-1621:The IPMI configuration data for this node stored in the Oracle registry is incomplete; details at (:CSSNK00002:) in C:\app\grid\12.1.0\log\slim-crms-db12\cssd\ocssd.log
+2016-05-21 05:18:15.883:  [cssd(4972)]CRS-1617:The information required to do node kill for node slim-crms-db12 is incomplete; details at (:CSSNM00004:) in C:\app\grid\12.1.0\log\slim-crms-db12\cssd\ocssd.log
+2016-05-21 05:18:16.357:  [cssd(4972)]CRS-1605:CSSD voting file is online: \\.\ORCLDISK_OCR_VOTE2; details in C:\app\grid\12.1.0\log\slim-crms-db12\cssd\ocssd.log.
+2016-05-21 05:18:16.832:  [cssd(4972)]CRS-1605:CSSD voting file is online: \\.\ORCLDISK_OCR_VOTE3; details in C:\app\grid\12.1.0\log\slim-crms-db12\cssd\ocssd.log.
+2016-05-21 05:18:17.291:  [cssd(4972)]CRS-1605:CSSD voting file is online: \\.\ORCLDISK_OCR_VOTE1; details in C:\app\grid\12.1.0\log\slim-crms-db12\cssd\ocssd.log.
+
+
+
+crsdata_20160521_1345\app\grid\12.1.0\log\slim-crms-db12\cssd\ocssd.log
+
+2016-05-21 05:04:44.410: [    CSSD][5632]clssgmcpDataUpdtCmpl: Status 0 mbr data updt memberID 10:2:2 from clientID 2:25:4
+2016-05-21 05:04:44.598: [    CSSD][16500]clssnmSendingThread: sending status msg to all nodes
+2016-05-21 05:04:44.598: [    CSSD][16500]clssnmSendingThread: sent 4 status msgs to all nodes
+2016-05-21 05:04:46.426: [    CSSD][15496]clssgmMbrDataUpdt: Processing member data change type 1, size 4 for group HB+ASM, memberID 10:2:2
+2016-05-21 05:04:46.426: [    CSSD][15496]clssgmMbrDataUpdt: Sending member data change to GMP for group HB+ASM, memberID 10:2:2
+2016-05-21 05:04:46.426: [    CSSD][7400]clssgmpcMemberDataUpdt: grockName HB+ASM memberID 10:2:2, datatype 1 datasize 4
+2016-05-21 05:04:46.426: [    CSSD][5632]clssgmcpDataUpdtCmpl: Status 0 mbr data updt memberID 10:2:2 from clientID 2:25:4
+2016-05-21 05:04:46.567: [    CSSD][15496]clssgmMbrDataUpdt: Processing member data change type 1, size 401 for group GR+HI_GCR, memberID 7:2:0
+2016-05-21 05:04:46.567: [    CSSD][15496]clssgmMbrDataUpdt: Sending member data change to GMP for group GR+HI_GCR, memberID 7:2:0
+2016-05-21 05:04:46.582: [    CSSD][7400]clssgmpcMemberDataUpdt: grockName GR+HI_GCR memberID 7:2:0, datatype 1 datasize 401
+2016-05-21 05:04:46.582: [    CSSD][5632]clssgmcpDataUpdtCmpl: Status 0 mbr data updt memberID 7:2:0 from clientID 2:24:2
+2016-05-21 05:04:48.520: [    CSSD][15496]clssgmMbrDataUpdt: Processing member data change type 1, size 4 for group HB+ASM, memberID 10:2:2
+2016-05-21 05:04:48.520: [    CSSD][15496]clssgmMbrDataUpdt: Sending member data change to GMP for group HB+ASM, memberID 10:2:2
+2016-05-21 05:04:48.520: [    CSSD][7400]clssgmpcMemberDataUpdt: grockName HB+ASM memberID 10:2:2, datatype 1 datasize 4
+2016-05-21 05:04:48.520: [    CSSD][5632]clssgmcpDataUpdtCmpl: Status 0 mbr data updt memberID 10:2:2 from clientID 2:25:4
+2016-05-21 05:04:48.598: [    CSSD][16500]clssnmSendingThread: sending status msg to all nodes
+2016-05-21 05:04:48.598: [    CSSD][16500]clssnmSendingThread: sent 4 status msgs to all nodes
+2016-05-21 05:17:42.238: [    CSSD][4972](TLM) Starting CSS daemon, version 12.1.0.1.0 with uniqueness value 1463779062
+2016-05-21 05:17:42.238: [    CSSD][4972]clsu_load_ENV_levels: Module = CSSD, LogLevel = 2, TraceLevel = 0
+2016-05-21 05:17:42.238: [    CSSD][4972]clsu_load_ENV_levels: Module = GIPCNM, LogLevel = 2, TraceLevel = 0
+
+
+###  crsdata_20160521_1406\app\grid\12.1.0\log\slim-crms-db11\cssd\ocssd.log
+2016-05-21 05:05:05.644: [    CSSD][7164]clssgmpcMemberDataUpdt: grockName HB+ASM memberID 10:2:1, datatype 1 datasize 4
+2016-05-21 05:05:05.644: [    CSSD][6164]clssgmcpDataUpdtCmpl: Status 0 mbr data updt memberID 10:2:1 from clientID 1:25:4
+2016-05-21 05:05:06.222: [    CSSD][6700]clssnmPollingThread: node slim-crms-db12 (2) at 50% heartbeat fatal, removal in 14.328 seconds
+2016-05-21 05:05:06.222: [    CSSD][6700]clssnmPollingThread: node slim-crms-db12 (2) is impending reconfig, flag 2491406, misstime 15672
+2016-05-21 05:05:06.222: [    CSSD][6700]clssnmPollingThread: local diskTimeout set to 27000 ms, remote disk timeout set to 27000, impending reconfig status(1)
+2016-05-21 05:05:06.222: [    CSSD][6668]clssnmvDHBValidateNCopy: node 2, slim-crms-db12, has a disk HB, but no network HB, DHB has rcfg 354313682, wrtcnt, 27247789, LATS 534625703, lastSeqNo 27247581, uniqueness 1461729624, timestamp 1463778290/664608125
+2016-05-21 05:05:06.222: [    CSSD][6688]clssnmvDHBValidateNCopy: node 2, slim-crms-db12, has a disk HB, but no network HB, DHB has rcfg 354313682, wrtcnt, 27247791, LATS 534625703, lastSeqNo 27247577, uniqueness 1461729624, timestamp 1463778290/664609000
+2016-05-21 05:05:06.253: [    CSSD][5948]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778306/534625734
+2016-05-21 05:05:06.409: [    CSSD][4284]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778306/534625890
+2016-05-21 05:05:06.722: [    CSSD][6684]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778306/534626203
+2016-05-21 05:05:06.753: [    CSSD][5948]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778306/534626234
+2016-05-21 05:05:06.909: [    CSSD][4284]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778306/534626390
+2016-05-21 05:05:07.222: [    CSSD][6684]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778307/534626703
+2016-05-21 05:05:07.222: [    CSSD][4284]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778307/534626703
+2016-05-21 05:05:07.222: [    CSSD][5948]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778307/534626703
+....
+2016-05-21 05:05:09.737: [    CSSD][6684]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778309/534629218
+2016-05-21 05:05:09.737: [    CSSD][4284]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778309/534629218
+2016-05-21 05:05:09.737: [    CSSD][5948]clssnmvDiskPing: Writing with status 0x3, timestamp 1463778309/534629218
+
+
+
+FileName   ###alert_EWH1_part.log
+------------
+
+
+Wed May 18 01:07:43 2016 Index ETDW.I_TDWNETWORKEVENTS_CUSTKEY or some [sub]partitions of the index have been marked unusable
+                        Index ETDW.I_TDWNETWORKEVENTS_MSISDN or some [sub]partitions of the index have been marked unusable
+Wed May 18 01:07:53 2016 Index ETDW.I_TDWNETWORKEVENTS_MSISDN or some [sub]partitions of the index have been marked unusable
+Wed May 18 01:20:30 2016 ***********************************************************************
+Fatal NI connect error 12170.
+
+ VERSION INFORMATION:
+TNS for IBM/AIX RISC System/6000: Version 11.2.0.2.0 - Production
+TCP/IP NT Protocol Adapter for IBM/AIX RISC System/6000: Version 11.2.0.2.0 - Production
+Oracle Bequeath NT Protocol Adapter for IBM/AIX RISC System/6000: Version 11.2.0.2.0 - Production
+ Time: 18-MAY-2016 01:28:45
+ Tracing not turned on.
+ Tns error struct:
+ns main err code: 12535
+
+TNS-12535: TNS:operation timed out
+ns secondary err code: 12560
+nt main err code: 505
+
+TNS-00505: Operation timed out
+nt secondary err code: 78
+nt OS err code: 0
+ Client address: (ADDRESS=(PROTOCOL=tcp)(HOST=10.162.16.114)(PORT=57613))
+Wed May 18 01:31:03 2016 Running KSFV I/O slave I601 os pid=44367898
+Wed May 18 01:31:10 2016 Running KSFV I/O slave I701 os pid=52691252
+Wed May 18 01:31:17 2016 Running KSFV I/O slave I801 os pid=63832258
+Wed May 18 01:31:23 2016 Running KSFV I/O slave I901 os pid=46989336
+Wed May 18 01:31:30 2016 Running KSFV I/O slave Ia01 os pid=24248386
+Wed May 18 01:31:36 2016 Running KSFV I/O slave Ib01 os pid=32178480
+Wed May 18 01:31:47 2016 ALTER SYSTEM ARCHIVE LOG
+Wed May 18 01:31:49 2016 Thread 1 advanced to log sequence 737384 (LGWR switch)
+ Current log# 54 seq# 737384 mem# 0: +EWH_FDATA/ewh9/onlinelog/group_54.332.885160203
+ Current log# 54 seq# 737384 mem# 1: +EWH_FRA/ewh9/onlinelog/group_54.387.885160229
+Wed May 18 01:32:19 2016 Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_2_seq_376340.496.912073341
+Wed May 18 01:33:26 2016 Archived Log entry 1309034 added for thread 1 sequence 737383 ID 0x1e203fd0 dest 1:
+Wed May 18 01:33:32 2016 ALTER SYSTEM ARCHIVE LOG
+Wed May 18 01:33:33 2016 Thread 1 advanced to log sequence 737385 (LGWR switch)
+Archived Log entry 1309035 added for thread 1 sequence 737384 ID 0x1e203fd0 dest 1:
+Wed May 18 01:39:13 2016 ***********************************************************************
+Fatal NI connect error 12170.
+ VERSION INFORMATION:
+TNS for IBM/AIX RISC System/6000: Version 11.2.0.2.0 - Production
+TCP/IP NT Protocol Adapter for IBM/AIX RISC System/6000: Version 11.2.0.2.0 - Production
+Oracle Bequeath NT Protocol Adapter for IBM/AIX RISC System/6000: Version 11.2.0.2.0 - Production
+ Time: 18-MAY-2016 01:39:13
+ Tracing not turned on.
+ Tns error struct:
+ns main err code: 12535
+TNS-12535: TNS:operation timed out
+ns secondary err code: 12560
+nt main err code: 505
+TNS-00505: Operation timed out
+nt secondary err code: 78
+nt OS err code: 0
+ Client address: (ADDRESS=(PROTOCOL=tcp)(HOST=10.162.16.114)(PORT=57575))
+Wed May 18 01:43:55 2016 ***********************************************************************
+Fatal NI connect error 12170.
+Wed May 18 01:52:29 2016 Suspending MMON action 'metrics monitoring' for 82800 seconds
+Wed May 18 01:55:43 2016 DIAG (ospid: 64487760) has not called a wait for 23 secs.
+Wed May 18 02:01:43 2016 DIAG (ospid: 64487760) has not called a wait for 24 secs.
+Wed May 18 02:02:38 2016 IPC Send timeout detected. Receiver ospid 50331968 [oracle@dwhprdd1 (LCK0)]
+Wed May 18 02:02:38 2016 Errors in file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH1/trace/EWH1_lck0_50331968.trc:
+Wed May 18 02:09:19 2016 System State dumped to trace file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH1/trace/EWH1_diag_64487760.trc
+Wed May 18 02:11:43 2016 IPC Send timeout detected. Receiver ospid 50331968 [oracle@dwhprdd1 (LCK0)]
+Wed May 18 02:11:43 2016 Errors in file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH1/trace/EWH1_lck0_50331968.trc:
+Wed May 18 02:11:59 2016 System State dumped to trace file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH1/trace/EWH1_diag_64487760.trc
+Wed May 18 02:14:57 2016 System State dumped to trace file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH1/trace/EWH1_diag_64487760.trc
+Wed May 18 02:18:54 2016 Shutting down instance (abort)
+
+
+FileName ###alert_EWH2_part.log
+-------------------------
+
+
+Tue May 17 22:18:13 2016  Thread 2 advanced to log sequence 376437 (LGWR switch)
+                                             Current log# 28 seq# 376437 mem# 0: +EWH_DATA/ewh9/onlinelog/group_28.731.829083399
+                                             Current log# 28 seq# 376437 mem# 1: +EWH_FRA/ewh9/onlinelog/group_28.721.829083559
+Tue May 17 22:19:52 2016   Archived Log entry 1309001 added for thread 2 sequence 376436 ID 0x1e203fd0 dest 1:
+Tue May 17 22:24:53 2016  Errors in file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH2/trace/EWH2_p007_11862202.trc:
+                                            ORA-00060: deadlock zistený poèas èakania na prostriedok
+                                            ORA-10387: parallel query server interrupt (normal)
+Tue May 17 22:24:55 2016 Dumping diagnostic data in directory=[cdmp_20160517222455], requested by (instance=2, osid=11862202 (P007)), summary=[abnormal process termination].
+Tue May 17 22:28:51 2016   PMON failed to delete process, see PMON trace file
+Tue May 17 22:36:19 2016  Thread 2 advanced to log sequence 376438 (LGWR switch)
+                                            Current log# 60 seq# 376438 mem# 0: +EWH_FDATA/ewh9/onlinelog/group_60.290.884952933
+                                            Current log# 60 seq# 376438 mem# 1: +EWH_FRA/ewh9/onlinelog/group_60.862.884952995
+Tue May 17 22:36:21 2016  Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_1_seq_737260.293.912066061
+                                             Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_1_seq_737261.887.912066885
+Tue May 17 22:37:45 2016  Archived Log entry 1309002 added for thread 2 sequence 376437 ID 0x1e203fd0 dest 1:
+Tue May 17 22:41:24 2016  Errors in file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH2/trace/EWH2_p011_45285714.trc:
+                                            ORA-00060: deadlock zistený poèas èakania na prostriedok
+                                            ORA-10387: parallel query server interrupt (normal)
+Tue May 17 22:41:26 2016 Dumping diagnostic data in directory=[cdmp_20160517224126], requested by (instance=2, osid=45285714 (P011)), summary=[abnormal process termination].
+
+Wed May 18 00:58:25 2016  Archived Log entry 1309028 added for thread 2 sequence 376454 ID 0x1e203fd0 dest 1:
+Wed May 18 01:03:41 2016  Thread 2 advanced to log sequence 376456 (LGWR switch)
+ Current log# 29 seq# 376456 mem# 0: +EWH_FDATA/ewh9/onlinelog/group_29.330.886247835
+ Current log# 29 seq# 376456 mem# 1: +EWH_FRA/ewh9/onlinelog/group_29.393.886247899
+Wed May 18 01:05:29 2016  Archived Log entry 1309029 added for thread 2 sequence 376455 ID 0x1e203fd0 dest 1:
+Wed May 18 01:09:56 2016  Thread 2 advanced to log sequence 376457 (LGWR switch)
+ Current log# 22 seq# 376457 mem# 0: +EWH_DATA/ewh9/onlinelog/group_22.665.829062115
+ Current log# 22 seq# 376457 mem# 1: +EWH_FRA/ewh9/onlinelog/group_22.519.829062267
+Wed May 18 01:09:57 2016 Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_2_seq_376337.505.912072757
+Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_1_seq_737273.373.912072795
+Wed May 18 01:11:04 2016 Archived Log entry 1309031 added for thread 2 sequence 376456 ID 0x1e203fd0 dest 1:
+Wed May 18 01:21:44 2016 Thread 2 advanced to log sequence 376458 (LGWR switch)
+ Current log# 24 seq# 376458 mem# 0: +EWH_DATA/ewh9/onlinelog/group_24.680.829062701
+ Current log# 24 seq# 376458 mem# 1: +EWH_FRA/ewh9/onlinelog/group_24.790.829062905
+Wed May 18 01:21:45 2016 Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_1_seq_737274.448.912072925
+Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_2_seq_376338.541.912072927
+Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_2_seq_376339.855.912073123
+Wed May 18 01:21:54 2016 Index ETDW.I_TDWCUSTOMERHISTORY_ENDDATE or some [sub]partitions of the index have been marked unusable
+Index ETDW.I_TDWCUSTOMERHISTORY_FLAG_BM or some [sub]partitions of the index have been marked unusable
+Index ETDW.I_TDWCUSTOMERHISTORY_STARTDATE or some [sub]partitions of the index have been marked unusable
+Wed May 18 01:23:42 2016 Archived Log entry 1309032 added for thread 2 sequence 376457 ID 0x1e203fd0 dest 1:
+Wed May 18 01:31:48 2016 Thread 2 advanced to log sequence 376459 (LGWR switch)
+ Current log# 61 seq# 376459 mem# 0: +EWH_FDATA/ewh9/onlinelog/group_61.282.885160141
+ Current log# 61 seq# 376459 mem# 1: +EWH_FRA/ewh9/onlinelog/group_61.622.885160167
+Wed May 18 01:33:01 2016 Archived Log entry 1309033 added for thread 2 sequence 376458 ID 0x1e203fd0 dest 1:
+Wed May 18 01:33:33 2016 Thread 2 advanced to log sequence 376460 (LGWR switch)
+ Current log# 63 seq# 376460 mem# 0: +EWH_FDATA/ewh9/onlinelog/group_63.327.886250503
+ Current log# 63 seq# 376460 mem# 1: +EWH_FRA/ewh9/onlinelog/group_63.710.886250591
+Wed May 18 01:33:52 2016 Archived Log entry 1309036 added for thread 2 sequence 376459 ID 0x1e203fd0 dest 1:
+Wed May 18 01:39:33 2016 Thread 2 advanced to log sequence 376461 (LGWR switch)
+Current log# 27 seq# 376461 mem# 0: +EWH_DATA/ewh9/onlinelog/group_27.1013.829063725
+Current log# 27 seq# 376461 mem# 1: +EWH_FRA/ewh9/onlinelog/group_27.815.829063931
+Wed May 18 01:39:34 2016 Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_1_seq_737275.415.912073407
+Deleted Oracle managed file +EWH_FRA/ewh9/archivelog/2016_05_17/thread_2_seq_376341.805.912073649
+Wed May 18 01:40:41 2016 Archived Log entry 1309037 added for thread 2 sequence 376460 ID 0x1e203fd0 dest 1:
+Wed May 18 02:00:59 2016 IPC Send timeout detected. Sender: ospid 36110804 [oracle@dwhprdd2 (LCK0)]
+Receiver: inst 1 binc 10 ospid 50331968
+Wed May 18 02:09:19 2016 System State dumped to trace file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH2/trace/EWH2_diag_30081308.trc
+Wed May 18 02:11:04 2016 IPC Send timeout detected. Sender: ospid 36110804 [oracle@dwhprdd2 (LCK0)]
+Receiver: inst 1 binc 10 ospid 50331968
+Wed May 18 02:11:59 2016 System State dumped to trace file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH2/trace/EWH2_diag_30081308.trc
+Wed May 18 02:14:42 2016 Suspending MMON action 'undo usage' for 82800 seconds
+Wed May 18 02:14:57 2016 System State dumped to trace file /dwhprdd_orabase/product/db/orabase/diag/rdbms/ewh9/EWH2/trace/EWH2_diag_30081308.trc
+Wed May 18 02:18:58 2016 Reconfiguration started (old inc 14, new inc 16)
+List of instances: 2 (myinst: 2)
+Global Resource Directory frozen
+* dead instance detected - domain 0 invalid = TRUE
+Communication channels reestablished
+Master broadcasted resource hash value bitmaps
+Non-local Process blocks cleaned out
+Wed May 18 02:18:59 2016
+Wed May 18 02:18:59 2016 LMS 1: 1 GCS shadows cancelled, 0 closed, 0 Xw survived
+LMS 3: 1 GCS shadows cancelled, 0 closed, 0 Xw survived
+alter system set local_listener='(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=10.170.22.75)(PORT=1521)))' scope=both
+
+
+
 SYNTAX
 *********************************************************************************************************************************************
 *********************************************************************************************************************************************
 
 
 
+ORAchk Errors out with "Use of uninitialized value in concatenation"
+
+Product Version :  12.1.0.2.6
+Platform : HP-UX Itanium , 11.31
+
+[t24dbho3,ora11,T24011,/oracrs/oracle/11.2.0/grid/bin]>bash -version
+GNU bash, version 4.3.42(1)-release (ia64-hp-hpux11.31)
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+
+[t24dbho4,ora11,T24012,/TMDB/ORAchk]>./orachk
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 468.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 476.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 476.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 476.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 476.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 477.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 477.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 479.
+Use of uninitialized value in concatenation (.) or string at /TMDB/ORAchk/.cgrep/mineocr.pm line 479. 
+
+
+orachk debug output attached . 
+
+please assist in resolving this 
 
 
 
@@ -46,16 +944,8 @@ SYNTAX
 
 
 
-
-
-
-
-
-
-
-
-
-
+ Cannot connect to socket (ADDRESS=(PROTOCOL=IPC)(KEY=OHASD_UI_SOCKET))  IOException : clscconnect to (ADDRESS=(PROTOCOL=IPC)(KEY=OHASD_UI_SOCKET)) failed with ret 9
+(File: caa_Socket.cpp, line: 341
 
 
 
@@ -85,6 +975,183 @@ SR Number                               Description:
 ============================================================================================================================================
 Key :
 
+
+
+
+
+
+
+
+
+
+
+Hi Mahesh,
+
+==================================
+DATA and FRA diskgroup Migration
+==================================
+Ref : Exact Steps to Migrate ASM Diskgroups to Another SAN/Disk-Array/DAS/Etc without Downtime (When ASMLIB Devices Are Involved) (Doc ID 1918350.1)
+Ref : Exact Steps To Migrate ASM Diskgroups To Another SAN/Disk-Array/DAS/etc Without Downtime. (Doc ID 837308.1)
+
+
+====================================
+OCR and Votedisk Migration
+======================================
+
+
+PHASE 1 ::: PREPARE THE DISK  :::
+
+
+For OCR or voting disk addition or replacement, new disks need to be prepared.
+1. Size  Please refer to Clusteware/Gird Infrastructure installation guide for different platform for the disk requirement and preparation.
+
+2. Permissions
+
+For OCR device:
+chown root:oinstall <OCR device>
+chmod 640 <OCR device>
+
+For Voting device:
+chown <crs/grid>:oinstall <Voting device>
+chmod 644 <Voting device>
+
+For ASM disks used for OCR/Voting disk:
+chown griduser:asmadmin <asm disks>
+chmod 660 <asm disks>
+
+
+==
+
+PHASE 2 ::: MIGRATE OCR AND VOTEFILES TO DISKGOUP CREATED FROM NEW SAN :::
+
+### OCR MIGRATION ###
+
+
+11.2:   To replace or move the location of an OCR device
+
+Note. 1. An ocrmirror must be in place before trying to replace the OCR device.
+        The ocrconfig will fail with PROT-16, if there is no ocrmirror exists.
+
+     2. If an OCR device is replaced with a device of a different size,
+        the size of the new device will not be reflected until the clusterware is restarted.
+
+     3. You must be logged in as the root user, because root owns the OCR files. "ocrconfig -replace"
+    command can only be issued when CRS is running, otherwise "PROT-1: Failed to initialize ocrconfig" will occur.
+
+     4. Please ensure CRS is running on ALL cluster nodes during this operation, otherwise the change will not reflect
+    in the CRS down node, CRS will have problem to startup from this down node. "ocrconfig -repair" option will be required to fix the ocr.loc file on the CRS down node.
+
+     5. For 11.2+ with OCR on ASM diskgroup, due to unpublished Bug 8604794   [https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=8604794] - FAIL TO CHANGE OCR LOCATION TO DG WITH 'OCRCONFIG -REPAIR -REPLACE',
+     "ocrconfig -repair" to change OCR location to different ASM diskgroup does not work currently.
+ Workaround is to manually edit /etc/oracle/ocr.loc or /var/opt/oracle/ocr.loc or Windows registry HYKEY_LOCAL_MACHINE\SOFTWARE\Oracle\ocr,  point to desired diskgroup.
+
+     6. If there is any issue with OLR, please refer to How to restore OLR in 11.2 Grid Infrastructure Note 1193643.1.
+
+
+
+11.2:
+
+The command is same for replace either OCR or OCRMIRRORs (at least 2 OCR exist for replace command to work):
+
+SYNTAX : # ocrconfig -replace <current filename> -replacement <new filename>
+
+
+Example :
+
+1. Make sure there is a recent copy of the OCR file before making any changes:
+
+  # ocrconfig -showbackup
+
+2. To see whether OCR is healthy, run an ocrcheck, which should return with like below.
+
+              # ocrcheck
+
+
+3. Do the migration of OCR to the new diskgroup +CRS
+
+  # ocrconfig -replace +OCRVOTE -replacement +CRS
+                   
+Or
+
+  # ocrconfig -add +OCRVOTE
+  # ocrconfig -delete +CRS
+
+           4. VErify the Changes
+
+ # ocrcheck
+ 
+
+
+### VOTEFILE MIGRATION  ####
+
+
+From 11.2, votedisk can be stored on either ASM diskgroup or cluster file systems.
+
+
+Note  : 1. The following commands can only be executed when Grid Infrastructure is running. As grid user:
+
+     
+ 
+To move voting disk on ASM from one diskgroup to another diskgroup due to redundancy change or disk location change Use below syntax
+
+SYNTAX  : $ crsctl replace votedisk <+diskgroup>|<vdisk>
+
+
+Example here is moving from external redundancy +OCRVOTE diskgroup to normal redundancy +CRS diskgroup
+
+1. create new diskgroup +CRS as desired
+
+2. $ crsctl query css votedisk
+##  STATE    File Universal Id                File Name Disk group
+--  -----    -----------------                --------- ---------
+1. ONLINE   5e391d339a594fc7bf11f726f9375095 (ORCL:ASMDG02) [+OCRVOTE]
+Located 1 voting disk(s).
+
+3. $ crsctl replace votedisk +CRS
+Successful addition of voting disk 941236c324454fc0bfe182bd6ebbcbff.
+Successful addition of voting disk 07d2464674ac4fabbf27f3132d8448b0.
+Successful addition of voting disk 9761ccf221524f66bff0766ad5721239.
+Successful deletion of voting disk 5e391d339a594fc7bf11f726f9375095.
+Successfully replaced voting disk group with +CRS.
+CRS-4266: Voting file(s) successfully replaced
+
+4. $ crsctl query css votedisk
+##  STATE    File Universal Id                File Name Disk group
+--  -----    -----------------                --------- ---------
+1. ONLINE   941236c324454fc0bfe182bd6ebbcbff (ORCL:CRSD1) [CRS]
+2. ONLINE   07d2464674ac4fabbf27f3132d8448b0 (ORCL:CRSD2) [CRS]
+3. ONLINE   9761ccf221524f66bff0766ad5721239 (ORCL:CRSD3) [CRS]
+Located 3 voting disk(s).
+
+
+
+==
+PHASE 3 ::: DROP THE OLD DISKGROUP :::
+
+
+DROP The old diskgroup which as OCR and Votefiles
+
+Ref: OCR / Vote disk Maintenance Operations: (ADD/REMOVE/REPLACE/MOVE) (Doc ID 428681.1)
+
+
+
+Please review this let me know if you need further clarification on the same . I would be glad to clarify those
+
+Regards
+Darshan P
+Global Customer Support-  Storage/Scalability
+Desk Phone:+918041072121
+
+Working Hours : Mon-Fri 7:00am-3:30pm IST | 1:30am-10:00am GMT | 9:30pm-6:00am ET
+In case, if you need urgent or immediate assistance during my  off-shift hours, please call the Oracle HUB and request for assistance or reassignment  of this SR.
+
+RAC: https://community.oracle.com/community/support/oracle_database/database_-_rac_scalability
+Storage: https://community.oracle.com/community/support/oracle_database/storage_management_asm_acfs_dnfs_odm
+
+
+
+
+
 DAY SUMMARY:
 ============================================================================================================================================
 SR Number                               Description:
@@ -96,6 +1163,95 @@ SR Number                               Description:
 
 
 
+
+\\Delete The CLusterware home On node 1
+
+
+
+Ensure that Grid_home correctly specifies the full directory path for the Oracle Clusterware home on each node, 
+where Grid_home is the location of the installed Oracle Clusterware software.
+
+1] Run the following command as either root or the user that installed Oracle Clusterware to determine whether 
+the node you want to delete is active and whether it is pinned:
+
+$ olsnodes -s -t
+
+2] If the node is pinned, then run the crsctl unpin css command. Otherwise, proceed to the next step.
+
+3] Disable the Oracle Clusterware applications and daemons running on the node. 
+   Run the rootcrs.pl script as root from the Grid_home/crs/install directory on the node to be deleted, as follows:
+
+# ./rootcrs.pl -deconfig -force
+
+
+4] From any node that you are not deleting, run the following command from the Grid_home/bin directory as root to delete the node from the cluster:
+
+# crsctl delete node -n node_to_be_deleted
+
+
+5] On the node you want to delete, run the following command as the user that installed Oracle Clusterware 
+from the Grid_home/oui/bin directory where node_to_be_deleted is the name of the node that you are deleting:
+
+$ ./runInstaller -updateNodeList ORACLE_HOME=Grid_home "CLUSTER_NODES={node_to_be_deleted}" CRS=TRUE -silent -local
+
+
+6] For a local home, deinstall the Oracle Clusterware home from the node that you want to delete, as follows, 
+   by running the following command, where Grid_home is the path defined for the Oracle Clusterware home:
+
+    $ Grid_home/deinstall/deinstall –local
+
+    Caution:
+    If you do not specify the -local flag, then the command removes the Grid Infrastructure home from every node in the cluster.
+
+7] On any node other than the node you are deleting, run the following command from the Grid_home/oui/bin directory where 
+remaining_nodes_list is a comma-delimited list of the nodes that are going to remain part of your cluster:
+
+$ ./runInstaller -updateNodeList ORACLE_HOME=Grid_home "CLUSTER_NODES={remaining_nodes_list}" CRS=TRUE -silent
+
+
+8] Run the following CVU command to verify that the specified nodes have been successfully deleted from the cluster:
+
+$ cluvfy stage -post nodedel -n node_list [-verbose]
+
+
+-----------------------------------
+
+
+Once the delete is done , Please add it back using below steps 
+
+
+To add a node:
+
+
+1]  Verify the integrity of the cluster and node3:
+
+    $ cluvfy stage -pre nodeadd -n node3 [-fixup [-fixupdir fixup_dir]] [-verbose]
+
+    You can specify the -fixup option and a directory into which CVU prints instructions to fix the cluster or node if the verification fails.
+
+    To extend the Grid Infrastructure home to the node3, navigate to the Grid_home/oui/bin directory on node1 and run the addNode.sh script as the user that installed Oracle Clusterware using the following syntax, where node3 is the name of the node that you are adding and node3-vip is the VIP name for the node:
+
+2]  If you are not using GNS, run the following command:
+
+    $ ./addNode.sh "CLUSTER_NEW_NODES={node3}" "CLUSTER_NEW_VIRTUAL_HOSTNAMES={node3-vip}"
+
+  
+3]  Run the Grid_home/root.sh script on the node3 as root and run the subsequent script, as instructed.
+
+    Run the following CVU command as the user that installed Oracle Clusterware to check cluster integrity. This command verifies that any number of specified nodes has been successfully added to the cluster at the network, shared storage, and clusterware levels:
+
+    $ cluvfy stage -post nodeadd -n node3 [-verbose]
+
+    See Also:
+    "cluvfy stage [-pre | -post] nodeadd" for more information about this CVU command
+
+	\\
+	
+	
+	
+	
+	
+	
 
 
 
@@ -239,6 +1395,140 @@ DAY SUMMARY:
 
 
 
+A. Preparation
+
+    + Begin with a full Operating System level backup 
+	
+    + If your database(s) still up and running stop them (e.g. srvctl stop database -d <database name>)
+	
+    + Save the <RDBMS_HOME>/database/<init file> of your databases and note the existing ORACLE_HOME and ORACLE_BASE locations for 
+         GI and RDBMS homes (Note that not using same locations upon   reinstall will require some minor additional steps)
+		 
+    + Connect to ASM and dismount the diskgroup(s) (e.g.  alter diskgroup <disk group name> dismount force;)
+	
+    + Stage the GI and RDBMS software (in case removed after the original install)
+
+NOTE: It is crucial that you have a backup of your databases as failure of the procedure might cause data loss.
+
+
+
+B. 	Deconfig exitsing GI home
+			
+				1) If you are using an ACFS filesystem, then dismount all the mounted ACFS filesystems first (as root user):
+
+				Example:
+
+
+				2) Connect as grid user and stop the OHAS stack:
+
+						$> <GI Oracle Home>/bin/crsctl stop has
+
+
+				3) Connect as root user and remove the OHAS configuration
+
+
+						# <GI Oracle Home>/crs/install/roothas.pl -deconfig -force -verbose
+
+
+
+				Example:
+				[root@asmgrid ~]# . oraenv
+				ORACLE_SID = [+ASM] ? +ASM
+				The Oracle base remains unchanged with value /u01/app/grid
+
+				[root@asmgrid ~]# echo $ORACLE_HOME
+				/u01/app/grid/product/11.2.0/grid
+
+				[root@asmgrid ~]# $ORACLE_HOME/crs/install/roothas.pl -deconfig -force  -verbose
+				Using configuration parameter file: /u01/app/grid/product/11.2.0/grid/crs/install/crsconfig_params
+				CRS-4639: Could not contact Oracle High Availability Services
+				CRS-4000: Command Stop failed, or completed with errors.
+				CRS-4639: Could not contact Oracle High Availability Services
+				CRS-4000: Command Delete failed, or completed with errors.
+				CRS-4544: Unable to connect to OHAS
+				CRS-4000: Command Stop failed, or completed with errors.
+				ACFS-9200: Supported
+				Successfully deconfigured Oracle Restart stack
+
+
+
+
+
+
+
+
+
+ C. Deinstall the Oracle Restart (GI home)
+
+    open a command prompt and run the <GI_HOME>/deinstall/deinstall
+    when asked: "Specify all Oracle Restart enabled listeners that are to be de-configured [LISTENER]:  hit ENTER to confirm
+    when asked: "If you want to retain the existing diskgroups or if any of the information detected is incorrect, you can modify by entering 'y'. Do you  want to modify aboveinformation (y|n) [n]:"   type "y" and hit ENTER to confirm
+    when asked: "Specify the ASM Diagnostic Destination [<diagnostic dest>]:" hit ENTER to confirm
+    when asked: "Specify the diskstring []:" hit ENTER to confirm
+    when asked: "Specify the diskgroups that are managed by this ASM instance [<disk groups>]:" hit ENTER to confirm 
+    wrong answer to the next step will drop your disk groups, be sure to answer "n" before you hit ENTER when asked: "De-configuring ASM will drop the diskgroups at cleanup time. Do you want deconfig tool to drop the diskgroups y|n [y]:"
+    a summary will be displayed, when asked: "Do you want to continue (y - yes, n - no)? [n]:"   type  "y" and hit ENTER to confirm
+    after some time you will see similar message like you see in the block below.
+
+    Run the following command as the root user or the administrator on node "hostname".
+
+
+    Press Enter after you finish running the above commands"
+    open a new terminal switch to root and copy/paste the command in and hit ENTER
+    when completed return back to the first Terminal and hit ENTER
+	
+    after deinstallation completed check for the sub-folders for home folders not removed and if these exist, remove them manually
+
+    Ref : https://docs.oracle.com/database/121/LADBI/remove_oracle_sw.htm#LADBI7824
+
+	
+
+ D. Reinstall Oracle Restart (GI home)
+
+    start OUI from the staged Grid Infrastructure software location
+    select Installation Option "Configure Oracle Grid Infrastructure for a Standalone Server"
+    select desired language
+    at step 'Create ASM Disk Group', stamp a new disk (logical drive on top of an extended partition) as ASM disk with Prefix e.g. 
+	          TEMP. Create a disk group with e.g. name TEMP, redundancy EXTERNAL with the new stamped disk.
+    specify the ASM password
+    specify the locations for Oracle Base and Oracle Home
+    complete the installation
+
+	
+	
+C.  Run the ASMCA and mount all the database diskgroups
+
+    Unix: <GRID_HOME>/bin/asmca
+    Windows: <GRID_HOME>\bin\asmca
+
+
+    "crsctl stat res -t" command should show all the diskgroups with TARGET and STATE of ONLINE
+
+    Note:  Simply mounting the diskgroups (and/or restoring the OCR backup (see next step) will cause the diskgroup resources to be added to the OCR
+
+	
+	
+D. Now, connect as oracle OS user and add the "database service" resource into the SIHA/OHAS/Restart stack, 
+
+       very important, you must use the "srvctl" command located at the "<RDBMS 11.2 Database Oracle Home>/bin" (do NOT use the one located at the Grid Infrastructure Oracle Home), as follow:
+
+
+		srvctl add database -d <database_name> -o <oracle_home> -a "asm diskgroup list"
+		srvctl add instance -d <database_name> -i <inst_name> 
+		srvctl add service -d <db_unique_name> -s <service_name>  
+
+		srvctl start database -d <database name>
+		srvctl start service -d <database name> -s <service name>
+
+		srvctl status service -d <database name> -s <service name>
+		srvctl status database -d <database name>
+
+
+
+
+        [grid@asmgrid dbs]$ crsctl stop has
+
+		[grid@asmgrid dbs]$ crsctl start has
 
 
 
@@ -251,7 +1541,135 @@ DAY SUMMARY:
 
 
 
+1. Take backup of the following things
 
+
+  a.  Check if you can get the backup of the OCR , usually these will be stored in the location.
+ 
+    <GRID_HOME>/cdata/`hostname`/backup_*.ocr
+    
+    
+  b.  DATABASE ALERT LOGS for all the instances in these nodes
+  
+  Upload this to SR and save this for future 
+  
+  
+  
+  
+2. Check if all the grid and oracle processes are down If they are not already down, kill off EVM, CRS, and CSS processes or reboot the node: 
+
+      ps -ef | egrep "PID|ohasd|oraagent|mdnsd|gpnpd|orarootagent|cssdagent|cssdmonitor|crsd|css|gipc|ctssd" 
+   ps -ef | egrep "d.bin|pmon"
+   
+   
+   
+3.  Remove All the rc scripts used by the oracle and the complete ORACLE Software from the below locations
+
+  rm /etc/rc.d/rc6.d/K15ohasd
+  rm /etc/rc.d/rc1.d/K15ohasd
+  rm /etc/rc.d/rc2.d/K15ohasd
+  rm /etc/rc.d/rc3.d/S96ohasd
+  rm /etc/rc.d/rc3.d/K15ohasd
+  rm /etc/rc.d/rc4.d/K15ohasd
+  rm /etc/rc.d/init.d/ohasd
+  rm /etc/rc.d/init.d/init.ohasd
+  rm /etc/rc.d/rc0.d/K15ohasd
+  rm /etc/rc.d/rc5.d/S96ohasd
+  rm -rf /u01/app/oraInventory/*
+  rm -rf <GIRD_HOME>/*
+  rm -rf <GRID_BASE>/*
+  rm -rf <DB_HOME>/* 
+  rm -rf /etc/oracle/* 
+  rm /etc/oraInst.loc 
+  rm /etc/oratab 
+  rm /var/tmp/.oracle/*
+
+6. Remove the ocr.loc Usually the ocr.loc can be found at /etc/oracle
+        
+   rm /etc/oracle 
+   
+
+   <DO THE SAME ON BOTH THE NODES>
+   
+   
+7.Identify which all the OCR and VOTE DISK  used by the cluster ware  
+ 
+   **** ENSURE THAT THESE DISKS DO NOT CONTAIN ANY DATA USED BY THE RDBMS  ****
+   Clean out the OCR and Voting Files with dd commands. Example:
+    
+  dd if=/dev/zero of=<disk location > bs=1M count=256
+  dd if=/dev/zero of=<disk location > bs=1M count=256        << please let us know  If not sure of which disk is used in  CRS VOTE DISKGROUP LET US KNOW BEFORE DELETING  
+
+  
+8. The /tmp/CVU* dir should be cleaned also to avoid the cluvfy misreporting.
+
+
+9. It is good practice to reboot the node before starting the next install.
+
+
+10. To re-install CRS, follow the steps in the Oracle Clusterware Installation manual.
+    
+ Dowload the GRID and RDBMS Binaries from the OTN .
+ 
+ 
+ 
+ 
+11. Stamp the disk which are to be used by the ASM OCR-VOTE file DISKGROUP using ASMLIB 
+ 
+ 
+ a] ensure asmlib is intact on BOTH the nodes
+    /etc/init.d/oracleasm configure
+    
+ b] Stamp the disks which are to be used in OCR and VOTE diskgroup
+    Once the kernel module is loaded, stamp (or label) the partitions created earlier as ASM disks
+    
+    On any one of the nodes please do the below 
+    
+    /etc/init.d/oracleasm createdisk OCRVOTE1 /dev/<disk name>
+    /etc/init.d/oracleasm createdisk OCRVOTE2 /dev/<disk name>
+    /etc/init.d/oracleasm createdisk OCRVOTE3 /dev/<disk name>
+ 
+ c] On all the nodes please do the beklow 
+     /etc/init.d/oracleasm scandisks
+ 
+ 
+12.  Once this is done ensure all the disks will be visibale to the ASM .
+
+     . Check the discovery path from each node::
+     $> /etc/init.d/oracleasm status
+    $> /usr/sbin/oracleasm-discover
+    $> /usr/sbin/oracleasm-discover 'ORCL:*'
+
+
+    
+    
+
+13. Install the Grid infrastructure on BOTH the nodes
+
+        - when OUI asks for the disk in the OCR-VOTE diskgroup creation time 
+   use the disks which are recently stamped in the above steps
+   
+   
+14. Run the root.sh on all the nodes and ensure the Grid is Up and running on all the nodes
+
+
+
+16 .Connect to the ASM instance and check if the old ASM disks are already visible to the ASM instance 
+
+
+    select * from v$asm_diskgroup;
+ select * from v$asm_disks;
+
+
+
+15. Now for the RDBMS restoration . 
+           
+ Install the RAC RDBMS Software using the binaries which are downloaded from the OTN
+ follow the steps in the Oracle RAC Installation manual.
+ 
+ 
+16. Now try to start the Database with pfile with the modified parameters in the 
+    with the parameter to the step up the pfile make use of the backuped Database Alertlogs 
 
 
 
@@ -497,6 +1915,15 @@ DAY SUMMARY:
   389  hexdump -C ddoutre0116r00sn02.txt | more
   390  clear
 
+  2056736
+  
+  1048576  << !! Actual  256
+  
+  
+  1008160  << !! existing 246.136
+    
+  40416  39.46875
+  1024  
   
   
   kfed read <disk>.txt ausz=4194304 aun=0 blknum=0   <<< Fails due to corruption 

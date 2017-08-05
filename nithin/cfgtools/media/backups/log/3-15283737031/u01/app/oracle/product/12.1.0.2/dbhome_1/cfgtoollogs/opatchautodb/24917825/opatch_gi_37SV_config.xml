@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_45" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="dbmodel.db_crs.CRSCluster">
+    <void property="HAS">
+     <object class="java.util.ArrayList"/>
+    </void>
+    <void property="HWtype">
+     <string>NON-EXADATA</string>
+    </void>
+    <void property="clusterName">
+     <string></string>
+    </void>
+    <void property="dbRAC">
+     <object class="java.util.ArrayList"/>
+    </void>
+    <void property="dbSI">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="dbmodel.db_crs.SIDatabase" id="SIDatabase0">
+        <void property="PDB">
+         <object class="java.util.ArrayList"/>
+        </void>
+        <void property="databaseName">
+         <string>JANUSJR</string>
+        </void>
+        <void property="description">
+         <string>A dbmodel.db_crs.SIDatabase</string>
+        </void>
+        <void property="displayName">
+         <string>janusjr</string>
+        </void>
+        <void property="host">
+         <object class="dbmodel.common.Host" id="Host0">
+          <void property="description">
+           <string>A dbmodel.common.Host</string>
+          </void>
+          <void property="displayName">
+           <string>odie1</string>
+          </void>
+          <void property="hostName">
+           <string>odie1</string>
+          </void>
+          <void property="id">
+           <string>ID_d18dfbb0-71cc-4593-b59f-c90a89faf8b2</string>
+          </void>
+          <void property="name">
+           <string>odie1</string>
+          </void>
+          <void property="nodeName">
+           <string>odie1</string>
+          </void>
+          <void property="platform">
+           <string>linux</string>
+          </void>
+          <void property="type">
+           <string>dbmodel.common.Host</string>
+          </void>
+         </object>
+        </void>
+        <void property="id">
+         <string>ID_f2e435fa-087a-4efd-bb2e-f3c65cb7d125</string>
+        </void>
+        <void property="instanceName">
+         <string>JANUSJR</string>
+        </void>
+        <void property="name">
+         <string>janusjr</string>
+        </void>
+        <void property="platform">
+         <string>linux</string>
+        </void>
+        <void property="runs_from">
+         <object class="dbmodel.common.OracleHome" id="OracleHome0">
+          <void property="ARUId">
+           <string>226</string>
+          </void>
+          <void property="centralInvPtr">
+           <string>/u01/app/oraInventory</string>
+          </void>
+          <void property="description">
+           <string>Database Home</string>
+          </void>
+          <void property="displayName">
+           <string>OraDb12102_home1</string>
+          </void>
+          <void property="homeGuid">
+           <string>1616592936#.#794771263</string>
+          </void>
+          <void property="homeName">
+           <string>OraDb12102_home1</string>
+          </void>
+          <void property="homeType">
+           <string>sidb</string>
+          </void>
+          <void property="hosts">
+           <object class="java.util.ArrayList">
+            <void method="add">
+             <object idref="Host0"/>
+            </void>
+           </object>
+          </void>
+          <void property="id">
+           <string>6ec42d7c-b392-4883-8362-f060da4a9849</string>
+          </void>
+          <void property="installedSWComponents">
+           <object class="java.util.ArrayList">
+            <void method="add">
+             <object idref="SIDatabase0"/>
+            </void>
+            <void method="add">
+             <object class="dbmodel.db_crs.SIDatabase" id="SIDatabase1">
+              <void property="PDB">
+               <object class="java.util.ArrayList"/>
+              </void>
+              <void property="databaseName">
+               <string>LIMSJR</string>
+              </void>
+              <void property="description">
+               <string>A dbmodel.db_crs.SIDatabase</string>
+              </void>
+              <void property="displayName">
+               <string>limsjr</string>
+              </void>
+              <void property="host">
+               <object idref="Host0"/>
+              </void>
+              <void property="id">
+               <string>ID_f6284d3c-b0c7-4c9e-926e-05c8392b41a2</string>
+              </void>
+              <void property="instanceName">
+               <string>LIMSJR</string>
+              </void>
+              <void property="name">
+               <string>limsjr</string>
+              </void>
+              <void property="platform">
+               <string>linux</string>
+              </void>
+              <void property="runs_from">
+               <object idref="OracleHome0"/>
+              </void>
+              <void property="type">
+               <string>dbmodel.db_crs.SIDatabase</string>
+              </void>
+              <void property="version">
+               <string>12.1.0.2.0</string>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
+          <void property="name">
+           <string>OraDb12102_home1</string>
+          </void>
+          <void property="oracleBaseLocation">
+           <string>/u01/app/oracle</string>
+          </void>
+          <void property="owner">
+           <string>oracle</string>
+          </void>
+          <void property="path">
+           <string>/u01/app/oracle/product/12.1.0.2/dbhome_1</string>
+          </void>
+          <void property="platform">
+           <string>Linux x86-64</string>
+          </void>
+          <void property="topLevelOUI">
+           <object class="java.util.ArrayList" id="ArrayList0">
+            <void method="add">
+             <object class="dbmodel.common.OUIComponent" id="OUIComponent0">
+              <void property="description">
+               <string>oracle.server</string>
+              </void>
+              <void property="displayName">
+               <string>oracle.server</string>
+              </void>
+              <void property="id">
+               <string>3cf28441-f4c3-4c83-9cac-756df0c6f2c1</string>
+              </void>
+              <void property="name">
+               <string>oracle.server</string>
+              </void>
+              <void property="type">
+               <string>dbmodel.common.OUIComponent</string>
+              </void>
+              <void property="version">
+               <string>12.1.0.2.0</string>
+              </void>
+             </object>
+            </void>
+           </object>
+          </void>
+          <void property="type">
+           <string>dbmodel.common.OracleHome</string>
+          </void>
+          <void property="versionOPatch">
+           <string>12.2.0.1.8</string>
+          </void>
+         </object>
+        </void>
+        <void property="type">
+         <string>dbmodel.db_crs.SIDatabase</string>
+        </void>
+        <void property="version">
+         <string>12.1.0.2.0</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object idref="SIDatabase1"/>
+      </void>
+      <void method="add">
+       <object class="dbmodel.db_crs.SIDatabase" id="SIDatabase2">
+        <void property="PDB">
+         <object class="java.util.ArrayList"/>
+        </void>
+        <void property="databaseName">
+         <string>SHIPTEST</string>
+        </void>
+        <void property="description">
+         <string>A dbmodel.db_crs.SIDatabase</string>
+        </void>
+        <void property="displayName">
+         <string>shiptest</string>
+        </void>
+        <void property="host">
+         <object class="dbmodel.common.Host" id="Host1">
+          <void property="description">
+           <string>A dbmodel.common.Host</string>
+          </void>
+          <void property="displayName">
+           <string>odie2</string>
+          </void>
+          <void property="hostName">
+           <string>odie2</string>
+          </void>
+          <void property="id">
+           <string>ID_ab841570-0482-42ae-8fec-3fcff2329db2</string>
+          </void>
+          <void property="name">
+           <string>odie2</string>
+          </void>
+          <void property="nodeName">
+           <string>odie2</string>
+          </void>
+          <void property="platform">
+           <string>linux</string>
+          </void>
+          <void property="type">
+           <string>dbmodel.common.Host</string>
+          </void>
+         </object>
+        </void>
+        <void property="id">
+         <string>ID_18e622f9-56e3-42d7-8fb8-2682f9c2fde3</string>
+        </void>
+        <void property="instanceName">
+         <string>SHIPTEST</string>
+        </void>
+        <void property="name">
+         <string>shiptest</string>
+        </void>
+        <void property="platform">
+         <string>linux</string>
+        </void>
+        <void property="runs_from">
+         <object class="dbmodel.common.OracleHome" id="OracleHome1">
+          <void property="ARUId">
+           <string>226</string>
+          </void>
+          <void property="centralInvPtr">
+           <string>/u01/app/oraInventory</string>
+          </void>
+          <void property="description">
+           <string>Database Home</string>
+          </void>
+          <void property="displayName">
+           <string>OraDb12102_home1</string>
+          </void>
+          <void property="homeGuid">
+           <string>1616592936#.#794771263</string>
+          </void>
+          <void property="homeName">
+           <string>OraDb12102_home1</string>
+          </void>
+          <void property="homeType">
+           <string>sidb</string>
+          </void>
+          <void property="hosts">
+           <object class="java.util.ArrayList">
+            <void method="add">
+             <object idref="Host1"/>
+            </void>
+           </object>
+          </void>
+          <void property="id">
+           <string>83dd1226-2da8-41eb-af73-795a0a035005</string>
+          </void>
+          <void property="installedSWComponents">
+           <object class="java.util.ArrayList">
+            <void method="add">
+             <object idref="SIDatabase2"/>
+            </void>
+           </object>
+          </void>
+          <void property="name">
+           <string>OraDb12102_home1</string>
+          </void>
+          <void property="oracleBaseLocation">
+           <string>/u01/app/oracle</string>
+          </void>
+          <void property="owner">
+           <string>oracle</string>
+          </void>
+          <void property="path">
+           <string>/u01/app/oracle/product/12.1.0.2/dbhome_1</string>
+          </void>
+          <void property="platform">
+           <string>Linux x86-64</string>
+          </void>
+          <void property="topLevelOUI">
+           <object idref="ArrayList0"/>
+          </void>
+          <void property="type">
+           <string>dbmodel.common.OracleHome</string>
+          </void>
+          <void property="versionOPatch">
+           <string>12.2.0.1.8</string>
+          </void>
+         </object>
+        </void>
+        <void property="type">
+         <string>dbmodel.db_crs.SIDatabase</string>
+        </void>
+        <void property="version">
+         <string>12.1.0.2.0</string>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="description">
+     <string>A dbmodel.db_crs.CRSCluster</string>
+    </void>
+    <void property="displayName">
+     <string></string>
+    </void>
+    <void property="id">
+     <string>ID_475beb55-dd61-4b76-9ea8-58def7f7e654</string>
+    </void>
+    <void property="name">
+     <string></string>
+    </void>
+    <void property="nodes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object idref="Host0"/>
+      </void>
+      <void method="add">
+       <object idref="Host1"/>
+      </void>
+     </object>
+    </void>
+    <void property="platform">
+     <string>linux</string>
+    </void>
+    <void property="type">
+     <string>dbmodel.db_crs.CRSCluster</string>
+    </void>
+    <void property="version">
+     <string>12.1.0.2.0</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object idref="Host0"/>
+  </void>
+  <void method="add">
+   <object idref="Host1"/>
+  </void>
+  <void method="add">
+   <object idref="OracleHome1"/>
+  </void>
+  <void method="add">
+   <object idref="OracleHome0"/>
+  </void>
+  <void method="add">
+   <object idref="SIDatabase0"/>
+  </void>
+  <void method="add">
+   <object idref="SIDatabase1"/>
+  </void>
+  <void method="add">
+   <object idref="SIDatabase2"/>
+  </void>
+  <void method="add">
+   <object idref="OUIComponent0"/>
+  </void>
+  <void method="add">
+   <object idref="OUIComponent0"/>
+  </void>
+ </object>
+</java>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_mbox2xml.xsl"?>
+<m2x>
+  <name>HELP RAC ISSUE LOCAL Folder</name>
+  <created>
+    <date>20170719</date>
+    <time>15:01</time>
+    <version>2.03.0</version>
+  </created>
+  <m2xpage>
+    <number>1</number>
+    <messagecount>33</messagecount>
+    <firstid>0</firstid>
+    <lastid>32</lastid>
+    <firstdate>20160825004218</firstdate>
+    <lastdate>20160825233016</lastdate>
+    <filename>messages_0001.xml</filename>
+    <mboxes>
+      <name>HELP RAC ISSUE LOCAL Folder</name>
+      <name>HELP ASM ISSUE Local folder</name>
+    </mboxes>
+    <attachments>0</attachments>
+    <attbytes>0</attbytes>
+  </m2xpage>
+  <mboxes>
+    <name>HELP RAC ISSUE LOCAL Folder</name>
+    <name>HELP ASM ISSUE Local folder</name>
+  </mboxes>
+</m2x>

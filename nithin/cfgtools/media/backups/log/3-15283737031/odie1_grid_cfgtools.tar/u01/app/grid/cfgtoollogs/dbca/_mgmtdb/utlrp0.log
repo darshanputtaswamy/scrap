@@ -1,0 +1,308 @@
+
+SQL*Plus: Release 12.1.0.2.0 Production on Wed Apr 13 16:42:01 2016
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> Connected.
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = CDB$ROOT Id = 1 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = CDB$ROOT Id = 1 ====
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+CATCONSECTION
+--------------------------
+==== CATCON EXEC ROOT ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:CDB$ROOT Id:1 16-04
+-13 04:42:01 Proc:0 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:CDB$ROOT Id:1 16-04
+-13 04:42:01 Proc:0 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> 
+TIMESTAMP
+--------------------------------------------------------------------------------
+COMP_TIMESTAMP UTLRP_BGN  2016-04-13 16:42:01
+
+DOC>   The following PL/SQL block invokes UTL_RECOMP to recompile invalid
+DOC>   objects in the database. Recompilation time is proportional to the
+DOC>   number of invalid objects in the database, so this command may take
+DOC>   a long time to execute on a database with a large number of invalid
+DOC>   objects.
+DOC>
+DOC>   Use the following queries to track recompilation progress:
+DOC>
+DOC>   1. Query returning the number of invalid objects remaining. This
+DOC>	  number should decrease with time.
+DOC>	     SELECT COUNT(*) FROM obj$ WHERE status IN (4, 5, 6);
+DOC>
+DOC>   2. Query returning the number of objects compiled so far. This number
+DOC>	  should increase with time.
+DOC>	     SELECT COUNT(*) FROM UTL_RECOMP_COMPILED;
+DOC>
+DOC>   This script automatically chooses serial or parallel recompilation
+DOC>   based on the number of CPUs available (parameter cpu_count) multiplied
+DOC>   by the number of threads per CPU (parameter parallel_threads_per_cpu).
+DOC>   On RAC, this number is added across all RAC nodes.
+DOC>
+DOC>   UTL_RECOMP uses DBMS_SCHEDULER to create jobs for parallel
+DOC>   recompilation. Jobs are created without instance affinity so that they
+DOC>   can migrate across RAC nodes. Use the following queries to verify
+DOC>   whether UTL_RECOMP jobs are being created and run correctly:
+DOC>
+DOC>   1. Query showing jobs created by UTL_RECOMP
+DOC>	     SELECT job_name FROM dba_scheduler_jobs
+DOC>		WHERE job_name like 'UTL_RECOMP_SLAVE_%';
+DOC>
+DOC>   2. Query showing UTL_RECOMP jobs that are running
+DOC>	     SELECT job_name FROM dba_scheduler_running_jobs
+DOC>		WHERE job_name like 'UTL_RECOMP_SLAVE_%';
+DOC>#
+
+PL/SQL procedure successfully completed.
+
+
+TIMESTAMP
+--------------------------------------------------------------------------------
+COMP_TIMESTAMP UTLRP_END  2016-04-13 16:42:13
+
+DOC> The following query reports the number of objects that have compiled
+DOC> with errors.
+DOC>
+DOC> If the number is higher than expected, please examine the error
+DOC> messages reported with each object (using SHOW ERRORS) to see if they
+DOC> point to system misconfiguration or resource constraints that must be
+DOC> fixed before attempting to recompile these objects.
+DOC>#
+
+OBJECTS WITH ERRORS
+-------------------
+		  0
+
+DOC> The following query reports the number of errors caught during
+DOC> recompilation. If this number is non-zero, please query the error
+DOC> messages in the table UTL_RECOMP_ERRORS to see if any of these errors
+DOC> are due to misconfiguration or resource constraints that must be
+DOC> fixed before objects can compile successfully.
+DOC>#
+
+ERRORS DURING RECOMPILATION
+---------------------------
+			  0
+
+
+Function created.
+
+
+PL/SQL procedure successfully completed.
+
+
+Function dropped.
+
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:CDB$ROOT Id:1 16-04
+-13 04:42:24 Proc:0 ====
+
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:CDB$ROOT Id:1 16-04
+-13 04:42:24 Proc:0 ====
+
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = PDB$SEED Id = 2 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = PDB$SEED Id = 2 ====
+
+SQL>   2  
+CATCONSECTION
+-----------------------------------
+==== CATCON EXEC IN CONTAINERS ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:PDB$SEED Id:2 16-04
+-13 04:42:24 Proc:0 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:PDB$SEED Id:2 16-04
+-13 04:42:24 Proc:0 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> 
+TIMESTAMP
+--------------------------------------------------------------------------------
+COMP_TIMESTAMP UTLRP_BGN  2016-04-13 16:42:24
+
+DOC>   The following PL/SQL block invokes UTL_RECOMP to recompile invalid
+DOC>   objects in the database. Recompilation time is proportional to the
+DOC>   number of invalid objects in the database, so this command may take
+DOC>   a long time to execute on a database with a large number of invalid
+DOC>   objects.
+DOC>
+DOC>   Use the following queries to track recompilation progress:
+DOC>
+DOC>   1. Query returning the number of invalid objects remaining. This
+DOC>	  number should decrease with time.
+DOC>	     SELECT COUNT(*) FROM obj$ WHERE status IN (4, 5, 6);
+DOC>
+DOC>   2. Query returning the number of objects compiled so far. This number
+DOC>	  should increase with time.
+DOC>	     SELECT COUNT(*) FROM UTL_RECOMP_COMPILED;
+DOC>
+DOC>   This script automatically chooses serial or parallel recompilation
+DOC>   based on the number of CPUs available (parameter cpu_count) multiplied
+DOC>   by the number of threads per CPU (parameter parallel_threads_per_cpu).
+DOC>   On RAC, this number is added across all RAC nodes.
+DOC>
+DOC>   UTL_RECOMP uses DBMS_SCHEDULER to create jobs for parallel
+DOC>   recompilation. Jobs are created without instance affinity so that they
+DOC>   can migrate across RAC nodes. Use the following queries to verify
+DOC>   whether UTL_RECOMP jobs are being created and run correctly:
+DOC>
+DOC>   1. Query showing jobs created by UTL_RECOMP
+DOC>	     SELECT job_name FROM dba_scheduler_jobs
+DOC>		WHERE job_name like 'UTL_RECOMP_SLAVE_%';
+DOC>
+DOC>   2. Query showing UTL_RECOMP jobs that are running
+DOC>	     SELECT job_name FROM dba_scheduler_running_jobs
+DOC>		WHERE job_name like 'UTL_RECOMP_SLAVE_%';
+DOC>#
+
+PL/SQL procedure successfully completed.
+
+
+TIMESTAMP
+--------------------------------------------------------------------------------
+COMP_TIMESTAMP UTLRP_END  2016-04-13 16:42:44
+
+DOC> The following query reports the number of objects that have compiled
+DOC> with errors.
+DOC>
+DOC> If the number is higher than expected, please examine the error
+DOC> messages reported with each object (using SHOW ERRORS) to see if they
+DOC> point to system misconfiguration or resource constraints that must be
+DOC> fixed before attempting to recompile these objects.
+DOC>#
+
+OBJECTS WITH ERRORS
+-------------------
+		  0
+
+DOC> The following query reports the number of errors caught during
+DOC> recompilation. If this number is non-zero, please query the error
+DOC> messages in the table UTL_RECOMP_ERRORS to see if any of these errors
+DOC> are due to misconfiguration or resource constraints that must be
+DOC> fixed before objects can compile successfully.
+DOC>#
+
+ERRORS DURING RECOMPILATION
+---------------------------
+			  0
+
+
+Function created.
+
+
+PL/SQL procedure successfully completed.
+
+
+Function dropped.
+
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:PDB$SEED Id:2 16-04
+-13 04:42:58 Proc:0 ====
+
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/utlrp.sql Container:PDB$SEED Id:2 16-04
+-13 04:42:58 Proc:0 ====
+
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL> ========== PROCESS ENDED ==========
+SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Automatic Storage Management and Advanced Analytics options

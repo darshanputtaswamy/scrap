@@ -1,0 +1,40 @@
+
+Date & Time : Thu Jul 06 10:26:30 UTC 2017
+Oracle Home : /u01/app/oracle/product/12.1.0.2/dbhome_1
+OPatch Ver. : 12.2.0.1.8
+Current Dir : /tmp/op/db/12.1.0.2.0
+Command     : napply -phBaseFile /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/SDKWork.txt -local -report 
+Log File    : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-26-29AM_1.log
+
+
+Date & Time : Thu Jul 06 10:27:01 UTC 2017
+Oracle Home : /u01/app/oracle/product/12.1.0.2/dbhome_1
+OPatch Ver. : 12.2.0.1.8
+Current Dir : /tmp/op/db/12.1.0.2.0
+Command     : napply -phBaseFile /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/SDKWork.txt -local -report 
+Log File    : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-27-00AM_1.log
+
+
+Date & Time : Thu Jul 06 10:27:17 UTC 2017
+Oracle Home : /u01/app/oracle/product/12.1.0.2/dbhome_1
+OPatch Ver. : 12.2.0.1.8
+Current Dir : /tmp/op/db/12.1.0.2.0
+Command     : napply -phBaseFile /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/SDKWork.txt -local 
+Log File    : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-27-00AM_1.log
+
+
+Date & Time : Thu Jul 06 10:28:27 UTC 2017
+Oracle Home : /u01/app/oracle/product/12.1.0.2/dbhome_1
+OPatch Ver. : 12.2.0.1.8
+Current Dir : /tmp/op/db/12.1.0.2.0
+Command     : napply -phBaseFile /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/SDKWork.txt -local -report 
+Log File    : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-27-00AM_1.log
+
+
+Date & Time : Thu Jul 06 10:28:41 UTC 2017
+Oracle Home : /u01/app/oracle/product/12.1.0.2/dbhome_1
+OPatch Ver. : 12.2.0.1.8
+Current Dir : /tmp/op/db/12.1.0.2.0
+Command     : napply -phBaseFile /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/SDKWork.txt -local 
+Log File    : /u01/app/oracle/product/12.1.0.2/dbhome_1/cfgtoollogs/opatchauto/core/opatch/opatch2017-07-06_10-27-00AM_1.log
+

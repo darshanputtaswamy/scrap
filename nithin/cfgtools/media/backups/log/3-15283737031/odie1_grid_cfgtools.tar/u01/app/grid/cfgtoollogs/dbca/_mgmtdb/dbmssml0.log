@@ -1,0 +1,148 @@
+
+SQL*Plus: Release 12.1.0.2.0 Production on Wed Apr 13 16:41:52 2016
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> Connected.
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = CDB$ROOT Id = 1 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = CDB$ROOT Id = 1 ====
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+CATCONSECTION
+--------------------------
+==== CATCON EXEC ROOT ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:CDB$ROOT Id:1 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:CDB$ROOT Id:1 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> 
+Library created.
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:CDB$ROOT Id:1 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:CDB$ROOT Id:1 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = PDB$SEED Id = 2 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = PDB$SEED Id = 2 ====
+
+SQL>   2  
+CATCONSECTION
+-----------------------------------
+==== CATCON EXEC IN CONTAINERS ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:PDB$SEED Id:2 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:PDB$SEED Id:2 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> 
+Library created.
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:PDB$SEED Id:2 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/dbmssml.sql Container:PDB$SEED Id:2 16-
+04-13 04:41:52 Proc:0 ====
+
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL> ========== PROCESS ENDED ==========
+SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Automatic Storage Management and Advanced Analytics options

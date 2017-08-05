@@ -1,0 +1,73 @@
+Starting bootstrap on 02-AUG-16 12.33.45.723686 AM +00:00
+
+
+PL/SQL procedure successfully completed.
+
+old  25:   IF &full_bootstrap THEN
+new  25:   IF FALSE THEN
+
+PL/SQL procedure successfully completed.
+
+
+SSS
+--------------------------------------------------------------------------------
+?/rdbms/admin/nothing.sql
+
+(Re)creating dbms_qopatch package
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+
+Package created.
+
+
+Session altered.
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+(Re)creating dbms_sqlpatch package
+
+PL/SQL procedure successfully completed.
+
+
+Session altered.
+
+
+Package created.
+
+No errors.
+
+Synonym created.
+
+
+Grant succeeded.
+
+
+Session altered.
+
+
+Session altered.
+
+
+Package body created.
+
+No errors.
+
+Session altered.
+
+
+Session altered.
+
+Finished bootstrap on 02-AUG-16 12.33.46.499912 AM +00:00
+

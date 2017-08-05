@@ -1,0 +1,609 @@
+
+SQL*Plus: Release 12.1.0.2.0 Production on Wed Apr 13 16:41:57 2016
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> Connected.
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = CDB$ROOT Id = 1 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = CDB$ROOT Id = 1 ====
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+CATCONSECTION
+--------------------------
+==== CATCON EXEC ROOT ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:CDB$ROOT I
+d:1 16-04-13 04:41:57 Proc:0 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:CDB$ROOT I
+d:1 16-04-13 04:41:57 Proc:0 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> 
+Session altered.
+
+
+
+
+
+This script is now deprecated.	Use datapatch to install any
+necessary SQL patches and bundles into the database.
+
+For more details refer to MOS Note 1609718.1.
+
+Function created.
+
+
+PL/SQL procedure successfully completed.
+
+
+SCRIPTFILE
+--------------------------------------------------------------------------------
+?/javavm/install/jvmpsu.sql
+
+SQL> SET FEEDBACK 1
+SQL> SET NUMWIDTH 10
+SQL> SET LINESIZE 80
+SQL> SET TRIMSPOOL ON
+SQL> SET TAB OFF
+SQL> SET PAGESIZE 100
+SQL> 
+SQL> -- If Java is installed, do CJS, etc.
+SQL> 
+SQL> BEGIN
+  2    IF dbms_registry.is_valid('JAVAVM', dbms_registry.release_version) = 1 THEN
+  3  
+  4      initjvmaux.drop_sros();
+  5  
+  6      EXECUTE IMMEDIATE 'create or replace java system';
+  7  
+  8      update dependency$
+  9        set p_timestamp=(select stime from obj$ where obj#=p_obj#)
+ 10        where (select stime from obj$ where obj#=p_obj#)!=p_timestamp and
+ 11              (select type# from obj$ where obj#=p_obj#)=29  and
+ 12              (select owner# from obj$ where obj#=p_obj#)=0;
+ 13  
+ 14  --  Sanity check: the query below should not raise any error.
+ 15  
+ 16      EXECUTE IMMEDIATE
+ 17        'select dbms_java.longname(''java/lang/System'') from dual';
+ 18  
+ 19   END IF;
+ 20  END;
+ 21  /
+    initjvmaux.drop_sros();
+    *
+ERROR at line 4:
+ORA-06550: line 4, column 5:
+PLS-00201: identifier 'INITJVMAUX.DROP_SROS' must be declared
+ORA-06550: line 4, column 5:
+PL/SQL: Statement ignored
+
+
+SQL> 
+SQL> commit;
+
+Commit complete.
+
+SQL> 
+SQL> 
+SQL> DROP FUNCTION file_exists;
+
+Function dropped.
+
+SQL> 
+SQL> @?/rdbms/admin/sqlsessend.sql
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/sqlsessend.sql /main/1 2013/03/13 13:08:33 surman Exp $
+SQL> Rem
+SQL> Rem sqlsessend.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      sqlsessend.sql - SQL session end
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      Any commands which should be run at the end of all oracle
+SQL> Rem      supplied scripts.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem      See sqlsessstart.sql for the corresponding start script.
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    surman      03/08/13 - 16462837: Common start and end scripts
+SQL> Rem    surman      03/08/13 - Created
+SQL> Rem
+SQL> 
+SQL> alter session set "_ORACLE_SCRIPT" = false;
+
+Session altered.
+
+SQL> 
+SQL> 
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:CDB$ROOT I
+d:1 16-04-13 04:41:58 Proc:0 ====
+
+
+1 row selected.
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:CDB$ROOT I
+d:1 16-04-13 04:41:58 Proc:0 ====
+
+
+1 row selected.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL> SQL>   2  
+Session altered.
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = PDB$SEED Id = 2 ====
+
+SQL> 
+NOW_CONNECTED_TO
+--------------------------------------------------------------------------------
+==== Current Container = PDB$SEED Id = 2 ====
+
+SQL>   2  
+CATCONSECTION
+-----------------------------------
+==== CATCON EXEC IN CONTAINERS ====
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:PDB$SEED I
+d:2 16-04-13 04:41:58 Proc:0 ====
+
+
+SQL> 
+BEGIN_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:PDB$SEED I
+d:2 16-04-13 04:41:58 Proc:0 ====
+
+
+SQL>   2  
+Session altered.
+
+SQL>   2  
+Session altered.
+
+SQL> SQL> Rem
+SQL> Rem $Header: rdbms/admin/catbundleapply.sql /main/2 2013/08/13 10:30:38 surman Exp $
+SQL> Rem
+SQL> Rem catbundleapply.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem	 catbundleapply.sql - <one-line expansion of the name>
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem	 <short description of component this file declares/defines>
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem	 <other useful comments, qualifications, etc.>
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    surman	08/06/13 - 17005047: Wrappers for catbundle
+SQL> Rem    surman	03/19/13 - 16094163: Creation
+SQL> Rem    surman	03/19/13 - Created
+SQL> Rem
+SQL> Rem    BEGIN SQL_FILE_METADATA
+SQL> Rem    SQL_SOURCE_FILE: rdbms/admin/catbundleapply.sql
+SQL> Rem    SQL_SHIPPED_FILE: rdbms/admin/catbundleapply.sql
+SQL> Rem    SQL_PHASE: NONE
+SQL> Rem    SQL_STARTUP_MODE: NORMAL
+SQL> Rem    SQL_IGNORABLE_ERRORS: NONE
+SQL> Rem    SQL_CALLING_FILE: NONE
+SQL> Rem    END SQL_FILE_METADATA
+SQL> 
+SQL> @@?/rdbms/admin/sqlsessstart.sql
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/sqlsessstart.sql /main/1 2013/03/13 13:08:33 surman Exp $
+SQL> Rem
+SQL> Rem sqlsessstart.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem	 sqlsessstart.sql - SQL session start
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem	 Any commands which should be run at the start of all oracle
+SQL> Rem	 supplied scripts.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem	 See sqlsessend.sql for the corresponding end script.
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    surman	03/08/13 - 16462837: Common start and end scripts
+SQL> Rem    surman	03/08/13 - Created
+SQL> Rem
+SQL> 
+SQL> alter session set "_ORACLE_SCRIPT" = true;
+
+Session altered.
+
+SQL> 
+SQL> Rem Determine proper bundle series
+SQL> 
+SQL> COLUMN bnd_series NEW_VALUE bundle_series NOPRINT;
+SQL> 
+SQL> SELECT (CASE WHEN sys.dbms_registry.num_of_exadata_cells() > 0 THEN
+  2  		    'EXA'
+  3  		  ELSE
+  4  		    'PSU'
+  5  		  END) AS bnd_series
+  6    FROM dual;
+
+
+
+
+SQL> 
+SQL> Rem And call catbundle to apply it
+SQL> 
+SQL> @@catbundle.sql &bundle_series apply
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/catbundle.sql /st_rdbms_12.1.0.2.0dbpsu/2 2014/12/07 21:49:28 surman Exp $
+SQL> Rem
+SQL> Rem catbundle.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2008, 2014, Oracle and/or its affiliates.
+SQL> Rem All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem	 catbundle.sql - Patch bundle installation script
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem	 This script is now deprecated.  Use datapatch to install any
+SQL> Rem	 necessary SQL patches and bundles into the database.
+SQL> Rem
+SQL> Rem	 For more details refer to MOS Note 1609718.1.
+SQL> Rem
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    surman	12/06/14 - Backport surman_bug-20074391 from
+SQL> Rem			   st_rdbms_11.2.0.4.0dbpsu
+SQL> Rem    surman	10/04/14 - Backport surman_ojvm_fixes_12.1.0.2dbpsu from
+SQL> Rem			   st_rdbms_12.1.0.2.0dbpsu
+SQL> Rem    surman	10/03/14 - 19727057: Always call jvmpsu.sql if it exists
+SQL> Rem    surman	06/05/14 - Backport surman_bug-17277459 from main
+SQL> Rem    surman	05/26/14 - 17277459: Deprecate catbundle.sql
+SQL> Rem    surman	08/29/13 - 17360958: Add con_name to logfile name
+SQL> Rem    surman	08/22/13 - 17343514: Remove java
+SQL> Rem    talliu	06/28/13 - Add CDB view for DBA view
+SQL> Rem    surman	06/21/13 - 13866822: Call apply after rollback
+SQL> Rem    surman	10/19/11 - 13114257: More checks for Java
+SQL> Rem    surman	07/18/11 - 12766056: Always create CatbundleCreateDir
+SQL> Rem    surman	05/31/11 - 11937509: Create log directory in java
+SQL> Rem    surman	05/17/11 - 10413872: Filename priority
+SQL> Rem    surman	05/16/11 - 10413872: Bundledata version
+SQL> Rem    surman	07/27/10 - 9938689: Create log directory using ORACLE_BASE
+SQL> Rem    surman	05/08/09 - 8498426: Set namespace
+SQL> Rem    surman	03/30/09 - 8358067: Specify nls_language
+SQL> Rem    surman	03/04/09 - 7710405: Correct INSTR platform checks
+SQL> Rem    rvadraha	09/03/13 - 7658224: Check mount points using _kolfuseslf
+SQL> Rem    surman	09/10/08 - 7391049: Invalid dba_registry_history synonym
+SQL> Rem    surman	06/13/08 - Use proper action in registry update
+SQL> Rem    surman	06/10/08 - Change logging behavior
+SQL> Rem    surman	06/09/08 - Still more comments
+SQL> Rem    surman	06/06/08 - Determine directory names in catbundle
+SQL> Rem    surman	06/05/08 - Generate rollback script at apply time
+SQL> Rem    surman	06/05/08 - Remove bundle_script and spool commands
+SQL> Rem    surman	05/28/08 - More comments
+SQL> Rem    surman	05/21/08 - Generic bundle names
+SQL> Rem    surman	05/20/08 - Change to catbundle from catbp
+SQL> Rem    surman	05/20/08 - Support rollback
+SQL> Rem    surman	05/19/08 - catcpu.sql replacement project
+SQL> Rem    surman	05/19/08 - Created
+SQL> Rem
+SQL> 
+SQL> SET SERVEROUTPUT ON size unlimited
+SQL> 
+SQL> PROMPT This script is now deprecated.  Use datapatch to install any
+This script is now deprecated.	Use datapatch to install any
+SQL> PROMPT necessary SQL patches and bundles into the database.
+necessary SQL patches and bundles into the database.
+SQL> PROMPT
+
+SQL> PROMPT For more details refer to MOS Note 1609718.1.
+For more details refer to MOS Note 1609718.1.
+SQL> 
+SQL> REM 19727057: Except for this hackish fix to always run the OJVM fixes
+SQL> REM when this script is called by DBCA.  Sigh.
+SQL> 
+SQL> -- Returns TRUE if the specified file exists.
+SQL> -- If there are any errors encountered while opening the directory and file
+SQL> -- (using utl_file) then false is returned.
+SQL> -- Note that only one session should call this at a time because the directory
+SQL> -- is not session specific.
+SQL> -- Added for bug 19727057.
+SQL> CREATE OR REPLACE FUNCTION file_exists(dirname IN VARCHAR2, filename IN VARCHAR2)
+  2  	RETURN BOOLEAN IS
+  3  PRAGMA AUTONOMOUS_TRANSACTION;	-- executes DDL
+  4  
+  5    fp UTL_FILE.FILE_TYPE;
+  6  
+  7  BEGIN
+  8    -- Try to create directory object
+  9    BEGIN
+ 10  	 EXECUTE IMMEDIATE
+ 11  	   'CREATE OR REPLACE DIRECTORY catbundle_testdir AS ' ||
+ 12  	    dbms_assert.enquote_literal(dirname);
+ 13    EXCEPTION
+ 14  	 WHEN OTHERS THEN
+ 15  	   -- We want to just quit here since the directory object can't be created
+ 16  	   RETURN FALSE;
+ 17    END;
+ 18  
+ 19    -- Attempt to open the file and	close it.
+ 20    fp := UTL_FILE.FOPEN('CATBUNDLE_TESTDIR', filename, 'r');
+ 21    UTL_FILE.FCLOSE(fp);
+ 22  
+ 23    EXECUTE IMMEDIATE 'DROP DIRECTORY catbundle_testdir';
+ 24  
+ 25    -- If we get here we're good
+ 26    RETURN TRUE;
+ 27  EXCEPTION
+ 28    WHEN OTHERS THEN
+ 29  	 -- Try to drop the directory first
+ 30  	 BEGIN
+ 31  	   EXECUTE IMMEDIATE 'DROP DIRECTORY catbundle_testdir';
+ 32  	 EXCEPTION
+ 33  	   WHEN OTHERS THEN null;
+ 34  	 END;
+ 35  
+ 36  	 -- And return FALSE.  We don't care what the error was.
+ 37  	 RETURN FALSE;
+ 38  END file_exists;
+ 39  /
+
+Function created.
+
+SQL> 
+SQL> VARIABLE scriptFile VARCHAR2(500);
+SQL> 
+SQL> DECLARE
+  2    platform v$database.platform_name%TYPE;
+  3    homeDir	VARCHAR2(500);
+  4    javavmInstallDir VARCHAR2(500);
+  5  BEGIN
+  6    -- Determine ORACLE_HOME value and admin dir
+  7    SELECT NLS_UPPER(platform_name)
+  8  	 INTO platform
+  9  	 FROM v$database;
+ 10  
+ 11    -- 9938689: Default to $ORACLE_BASE/cfgtoollogs/catbundle; if $ORACLE_BASE
+ 12    -- is not defined then use $ORACLE_HOME/cfgtoollogs/catbundle; if
+ 13    -- $ORACLE_HOME is not defined then error
+ 14    DBMS_SYSTEM.GET_ENV('ORACLE_HOME', homeDir);
+ 15  
+ 16    IF homeDir IS NULL THEN
+ 17  	 RAISE_APPLICATION_ERROR(-20000, 'ORACLE_HOME is not defined');
+ 18    END IF;
+ 19  
+ 20    IF INSTR(platform, 'WINDOWS') != 0 THEN
+ 21  	 -- Windows, use '\'
+ 22  	 javavmInstallDir := homeDir || '\javavm\install\';
+ 23    ELSIF INSTR(platform, 'VMS') != 0 THEN
+ 24  	 -- VMS, use [] and .
+ 25  	 javavmInstallDir := REPLACE(homeDir || '[javavm.install]', '][', '.');
+ 26    ELSE
+ 27  	 -- Unix and z/OS, '/'
+ 28  	 javavmInstallDir := homeDir || '/javavm/install/';
+ 29    END IF;
+ 30  
+ 31    IF file_exists(javavmInstallDir, 'jvmpsu.sql') THEN
+ 32  	 :scriptFile := '?/javavm/install/jvmpsu.sql';
+ 33    ELSE
+ 34  	 :scriptFile := '?/rdbms/admin/nothing.sql';
+ 35    END IF;
+ 36  
+ 37  END;
+ 38  /
+
+PL/SQL procedure successfully completed.
+
+SQL> 
+SQL> COLUMN scriptFile new_value sf
+SQL> SELECT :scriptFile AS scriptFile FROM dual;
+
+SCRIPTFILE
+--------------------------------------------------------------------------------
+?/javavm/install/jvmpsu.sql
+
+SQL> 
+SQL> @&sf
+SQL> Rem
+SQL> Rem $Header: javavm/install/jvmpsu.sql /main/2 2013/12/25 23:25:03 tnadkarn Exp $
+SQL> Rem
+SQL> Rem jvmpsu.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem	 jvmpsu.sql - JAVAVM Patch Set Update script
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem	 Script to be run during post-install in a PSU.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem	 To be run as SYS
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    nneeluru	08/16/13 - JAVAVM post-install script for PSU
+SQL> Rem    nneeluru	08/16/13 - Created
+SQL> Rem
+SQL> Rem    BEGIN SQL_FILE_METADATA
+SQL> Rem    SQL_SOURCE_FILE: javavm/install/jvmpsu.sql
+SQL> Rem    SQL_SHIPPED_FILE: javavm/install/jvmpsu.sql
+SQL> Rem    SQL_PHASE: INSTALL
+SQL> Rem    SQL_STARTUP_MODE: NORMAL
+SQL> Rem    SQL_IGNORABLE_ERRORS: NONE
+SQL> Rem    SQL_CALLING_FILE: catbundle.sql
+SQL> Rem    END SQL_FILE_METADATA
+SQL> 
+SQL> SET ECHO ON
+SQL> SET FEEDBACK 1
+SQL> SET NUMWIDTH 10
+SQL> SET LINESIZE 80
+SQL> SET TRIMSPOOL ON
+SQL> SET TAB OFF
+SQL> SET PAGESIZE 100
+SQL> 
+SQL> -- If Java is installed, do CJS, etc.
+SQL> 
+SQL> BEGIN
+  2    IF dbms_registry.is_valid('JAVAVM', dbms_registry.release_version) = 1 THEN
+  3  
+  4      initjvmaux.drop_sros();
+  5  
+  6      EXECUTE IMMEDIATE 'create or replace java system';
+  7  
+  8      update dependency$
+  9        set p_timestamp=(select stime from obj$ where obj#=p_obj#)
+ 10        where (select stime from obj$ where obj#=p_obj#)!=p_timestamp and
+ 11              (select type# from obj$ where obj#=p_obj#)=29  and
+ 12              (select owner# from obj$ where obj#=p_obj#)=0;
+ 13  
+ 14  --  Sanity check: the query below should not raise any error.
+ 15  
+ 16      EXECUTE IMMEDIATE
+ 17        'select dbms_java.longname(''java/lang/System'') from dual';
+ 18  
+ 19   END IF;
+ 20  END;
+ 21  /
+    initjvmaux.drop_sros();
+    *
+ERROR at line 4:
+ORA-06550: line 4, column 5:
+PLS-00201: identifier 'INITJVMAUX.DROP_SROS' must be declared
+ORA-06550: line 4, column 5:
+PL/SQL: Statement ignored
+
+
+SQL> 
+SQL> commit;
+
+Commit complete.
+
+SQL> 
+SQL> 
+SQL> DROP FUNCTION file_exists;
+
+Function dropped.
+
+SQL> 
+SQL> @?/rdbms/admin/sqlsessend.sql
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/sqlsessend.sql /main/1 2013/03/13 13:08:33 surman Exp $
+SQL> Rem
+SQL> Rem sqlsessend.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      sqlsessend.sql - SQL session end
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      Any commands which should be run at the end of all oracle
+SQL> Rem      supplied scripts.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem      See sqlsessstart.sql for the corresponding start script.
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    surman      03/08/13 - 16462837: Common start and end scripts
+SQL> Rem    surman      03/08/13 - Created
+SQL> Rem
+SQL> 
+SQL> alter session set "_ORACLE_SCRIPT" = false;
+
+Session altered.
+
+SQL> 
+SQL> 
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:PDB$SEED I
+d:2 16-04-13 04:41:58 Proc:0 ====
+
+
+1 row selected.
+
+SQL> 
+END_RUNNING
+--------------------------------------------------------------------------------
+==== @/u01/app/12.1.0.2/grid/rdbms/admin/catbundleapply.sql Container:PDB$SEED I
+d:2 16-04-13 04:41:58 Proc:0 ====
+
+
+1 row selected.
+
+SQL> SQL> 
+SQL>   2  
+Session altered.
+
+SQL> SQL> 
+SQL> ========== PROCESS ENDED ==========
+SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, Automatic Storage Management and Advanced Analytics options
