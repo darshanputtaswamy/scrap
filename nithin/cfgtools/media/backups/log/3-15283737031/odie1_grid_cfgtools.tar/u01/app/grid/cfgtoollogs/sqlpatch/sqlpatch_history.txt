@@ -1,4 +1,0 @@
-sqlpatch invocation with log directory /u01/app/grid/cfgtoollogs/sqlpatch/sqlpatch_99240_2016_08_01_16_59_54
-
-sqlpatch invocation with log directory /u01/app/grid/cfgtoollogs/sqlpatch/sqlpatch_27868_2016_08_02_00_33_45
-
