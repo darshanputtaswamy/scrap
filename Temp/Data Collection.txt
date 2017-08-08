@@ -657,7 +657,7 @@ sqlplus / as sysasm
  
 
 
-while true; do pid=$(pgrep 'gipcd.bin' | head -1); if [[ -n "$pid" ]]; then strace  -s 2000 -o /tmp/gipcstarce.log -vvtf -p "$pid"; break; fi; done &
+while true; do pid=$(pgrep 'ocssd.bin' | head -1); if [[ -n "$pid" ]]; then strace  -s 200 -o /tmp/ocssdstarce.log -vvtf -p "$pid"; break; fi; done &
 
 
 while true; do pid=$(pgrep 'oraagent.bin' | head -1); if [[ -n "$pid" ]]; then strace  -s 2000 -o /tmp/ohasdoraagentstarce.log -vvtf -p "$pid"; break; fi; done &
@@ -757,7 +757,7 @@ Please Upload
 Refer How to trace OUI (Doc ID 269837.1).
 
 
-
+date chronyc tracking
 
 
 Please upload the output of the following:
@@ -786,7 +786,15 @@ lfsdiag.sql collection
 
 
 
+Please Dettach the Old Oracle Home which are not used from the Central Inventory :
 
+cd $OHOME/oui/bin
+./runInstaller -detachhome ORACLE_HOME=$OHOME ORACLE_HOME_NAME=$OHOMENAME
+Example :
+
+cd  /orabin/grid/product/12.1.0.2/grid/oui/bin
+./runInstaller -detachhome ORACLE_HOME=/orabin/grid/product/11.2.0/grid ORACLE_HOME_NAME=Ora11g_gridinfrahome1          
+./runInstaller -detachhome ORACLE_HOME= /orabin/agent10g  ORACLE_HOME_NAME=agent10g
 
 
 
