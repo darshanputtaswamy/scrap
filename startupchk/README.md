@@ -17,23 +17,23 @@ download the file startupchk.zip  and unzip this file (an unzipped folder alread
 
     .
     |-- README.md
-    |-- src                                                                                     <(= All the source file will be inside this directory
-    |   |-- config                                                                             <(=   Folder Containing Configuration check script
+    |-- src                                                <(= All the source file will be inside this directory
+    |   |-- config                                         <(=   Folder Containing Configuration check script
     |   |   |-- 010f256633c8bcf7f4212d516b517391.sh
     |   |   |-- 7ca444a1f147034b602efebd86c53f14.sh
     |   |   `-- b1e0ac093941296e780f9c09fd5f175f.sh
-    |   |-- disk                                                                               <(=   Folder Containing disk check  script
-    |   |-- fs                                                                                   <(=   Folder Containing Filesystem check  script
-    |   |-- html                                                                               <(=   HTML Folder contains standard html head content
+    |   |-- disk                                           <(=   Folder Containing disk check  script
+    |   |-- fs                                             <(=   Folder Containing Filesystem check  script
+    |   |-- html                                           <(=   HTML Folder contains standard html head content
     |   |   |-- head.html
     |   |   `-- head.part.html
-    |   |-- knownbugs                                                                      <(=   Folder Containing Known Bug Check  script
-    |   |-- net                                                                                   <(=   Folder Containing Network Related Check  script
+    |   |-- knownbugs                                      <(=   Folder Containing Known Bug Check  script
+    |   |-- net                                            <(=   Folder Containing Network Related Check  script
     |   |   `-- 3eca033abdd1a2426fa0f636de8911f5.sh  
-    |   |-- profile.dat                                                                        <(=   profile.dat  contains an index of all checks
-    |   |-- test_node_reachability.sh                                                  <(=   any other scripts  used by plug-in
-    |   `-- validate.pl                                                                        <(=   Validation perl script
-    `-- startupchk                                      <(=   Mian Executable
+    |   |-- profile.dat                                    <(=   profile.dat  contains an index of all checks
+    |   |-- test_node_reachability.sh                      <(=   any other scripts  used by plug-in
+    |   `-- validate.pl                                    <(=   Validation perl script
+    `-- startupchk                                         <(=   Mian Executable
 
 
 
