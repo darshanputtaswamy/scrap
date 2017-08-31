@@ -118,21 +118,13 @@ download the file startupchk.zip  and unzip this file (an unzipped folder alread
 
     Output File is Written to {pwd}/startupchk_xxx_xxx.html
 
-
-6] Download  file {{pwd}}/startupchk_xxxx_xxxx.html to your local machine to check this report .
+    Download  file {{pwd}}/startupchk_xxxx_xxxx.html to your local machine to check this report .
 
 
 ### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
@@ -152,72 +144,5 @@ Add additional notes about how to deploy this on a live system
 
 ## Acknowledgments
 
-
-
-
-#############################################################################################
-DIRECTORY STRUCTURE
-############################################################################################
-startupchk
-         *----> startupchk 
-		 *====> SRC
-   		 **        +---->profile.dat
-  		 **	      +---->validate.pl
-		 	      +====>CONFIG
-         |        |        +--->case 1  <ID>.sh
-         |        |        |     .
-		 |	  	  |	       |     . 
-		 |	      |	       +--->case n  <ID>.sh
-		 |	      |
-		 |	      +====>DISK
-         |        |        +--->case 1
-         |        |        |     .
-		 |	      |	       |     .
-		 |	      | 	   +--->case n				  
-		 |	      |
-		 |	      +====>FS
-	     |        |   	   +--->case 1
-         |        |        |     .
-		 |	      |        |     .
-		 |	      |	       +--->case n
-		 |	      |
-		 | 	      +====>NET
-	     |        |        +--->case 1
-         |        |        |     .
-		 |	      |	       |     .
-		 |	      |	       +--->case n				  
-		 |	      | 		  
-		 |	      +====>KNOWNBUGS
-	     |        |        +--->case 1
-         |        |        |     .
-		 |	      |	       |     .
-		 |	      |	       +--->case n
-		 |	      |   		   
-		 |	      +====>HTML
-		 |	             +---->header.html
-		 |		         +---->tail.html				
-		 |									
-	     +====> .INPUT<TIMESTAMP> [hidden]
-		 |        +---->watchdog.sh
-		 |        +---->o_host_list.out
-	     |        +---->cluster_env.out
-		 |
-         +====> OUTPUT<TIMESTAMP>
-         |
-		 +====> html
-		 |	  		+---->header_com_validation.html		 
-		 |       	+---->summary.html
-		 |	 		+----><ID>case1.part.html
-		 |	        +----><ID>case2.part.html
-		 |	        .
-	     |	        +----><ID>casen.part.html
-		 |	        +---->Tail.html
-		 |
-	     +====> logs
-					+ watchdog.logs
-					+ <ID>case1.log
-                    + <ID>case2.log
-                               .
-                    + <ID>casen.log
 
 
