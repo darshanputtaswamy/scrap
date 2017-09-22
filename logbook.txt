@@ -1,0 +1,10 @@
+DAILY LOGING 
+-------------
+
+DATE 
+22-9-2017             UML-Based methodology for distributed systems  http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=723237
+
+						an ODP(Open distributed processing) system can be described in terms of related, interacting objects. The foundation of the ODP	standards is deked by a set of basic modelling concepts,
+						specification concepts and structuring concepts. The basic modelling concepts define the general object-model of ODP and include the notions of object, interface, action and interaction.. The specification concepts define
+						elements for reasoning about specifications, including composition, decomposition, type and class, templates and roles. Thms structuring concepts address recurrent structures in distributed systems, e.g. groups, policies,
+						naming, behaw'our and communication. 
